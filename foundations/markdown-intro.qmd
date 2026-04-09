@@ -1,0 +1,101 @@
+---
+title: "Markdown for Beginners"
+---
+
+# Short Introduction
+
+Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.
+
+## Why This Matters For Researchers
+
+Markdown is worth learning because it is:
+
+- fast to write
+- easy to read in raw form
+- suitable for version control
+- flexible across websites, reports, and manuscripts
+
+For workshop participants, Markdown is the main skill that unlocks most of Quarto.
+
+## Core Syntax
+
+### Headings
+
+```markdown
+# Main Title
+## Section
+### Subsection
+```
+
+### Emphasis
+
+```markdown
+*italic*
+**bold**
+```
+
+### Lists
+
+```markdown
+- bullet item
+- another bullet
+
+1. first step
+2. second step
+```
+
+### Links and Images
+
+```markdown
+[Quarto](https://quarto.org)
+![Figure description](images/field-site.png)
+```
+
+### Code
+
+Inline code looks like `quarto render`.
+
+Code blocks look like this:
+
+````markdown
+```bash
+quarto render
+```
+````
+
+## Quarto-Focused Additions
+
+Quarto keeps standard Markdown, but it also makes room for:
+
+- callout blocks for notes, warnings, and tips
+- cross-references for sections, figures, and tables
+- executable code chunks
+- layout features for richer publishing
+
+::: {.callout-tip}
+## Beginner mindset
+
+You do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.
+:::
+
+## Concrete Academic Example
+
+A methods note written in Quarto might use:
+
+- headings to separate data collection, cleaning, and analysis
+- bullet points for decisions and open questions
+- links to protocols or repositories
+- fenced code blocks to show commands used in the workflow
+
+## Mini Practice
+
+Try writing a short research note with:
+
+1. a title heading
+2. one short paragraph
+3. a list of three tasks
+4. a link to a project repository or journal website
+
+## Next Step
+
+Continue to [YAML Headers](yaml-intro.qmd) to see how Quarto stores document settings at the top of a file.

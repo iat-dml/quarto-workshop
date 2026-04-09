@@ -1,0 +1,49 @@
+---
+title: "Writing Manuscripts"
+---
+
+# Short Introduction
+
+Quarto can support manuscript writing by keeping narrative text, citations, figures, tables, and optional code in a single reproducible workflow. It is especially helpful when the same article needs to move between collaborator-friendly and submission-ready formats.
+
+## Why This Matters For Researchers
+
+Manuscripts often require repeated changes across many components:
+
+- main text
+- references
+- tables and figures
+- supplementary material
+- multiple export formats
+
+Quarto reduces friction by keeping these connected rather than scattered across separate systems.
+
+## Key Quarto Features For This Workflow
+
+### Multi-Format Output
+
+The same source can often render to HTML, PDF, and DOCX, which is useful for review, sharing, and submission preparation.
+
+### Citation Support
+
+Quarto works with bibliographies and citation styles, allowing references to stay embedded in the writing workflow.
+
+### Reproducible Figures and Tables
+
+When analysis is embedded, manuscript results become easier to update and verify.
+
+## Concrete Academic Example
+
+A research team drafting a journal article might use HTML for internal review, DOCX for collaborators who prefer tracked changes, and PDF for a polished reading version. The content stays aligned because it comes from the same source file.
+
+::: {.callout-tip}
+## Practical starting point
+
+You do not need to begin with a fully automated manuscript. Even using Quarto first as a well-structured writing environment already creates value.
+:::
+
+## Guided Practice
+
+The exercise page focuses on setting up a starter manuscript with metadata, sections, and room for references.
+
+[Go to the manuscripts exercise](../exercises/manuscripts-exercise.qmd)

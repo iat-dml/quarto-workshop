@@ -1,0 +1,54 @@
+---
+title: "Exercise: Plan a Simple Dashboard"
+---
+
+# Learning Goal
+
+Sketch a beginner-friendly Quarto dashboard concept for communicating research results to a non-specialist audience.
+
+## Prerequisites
+
+You should understand:
+
+- how Quarto organizes content into pages
+- the difference between static and interactive communication
+- the importance of choosing a clear audience
+
+## Starter Scenario
+
+Your project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.
+
+## Step-By-Step Exercise
+
+1. Identify the audience for the dashboard.
+2. Choose three indicators or summaries that matter most to them.
+3. Draft a page title and one-sentence purpose statement.
+4. Plan a layout with an introduction, three metric areas, and a short interpretation section.
+5. Write one note about what should stay simple in version one.
+6. Add one sentence explaining where the underlying data would come from.
+
+## Suggested Starter Prompt
+
+Use this sentence to begin:
+
+> This dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.
+
+## Stretch Task
+
+Add an idea for one interactive feature, such as choosing a site or time period.
+
+## Expected Outcome
+
+You should finish with a dashboard concept that:
+
+- has a defined audience
+- avoids trying to show everything at once
+- could later become a real Quarto dashboard project
+
+## Self-Check
+
+Ask yourself:
+
+- Is the intended audience clear?
+- Are the selected indicators genuinely useful?
+- Does the plan stay focused enough for a first version?

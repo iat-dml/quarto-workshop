@@ -1,0 +1,65 @@
+---
+title: "One Tool to Rule Them All"
+subtitle: "Quarto for Documentation, Presentations, Manuscripts and Outreach"
+---
+
+# Welcome
+
+Quarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
+
+This workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.
+
+::: {.callout-note}
+## Workshop idea
+
+The core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides.
+:::
+
+## Who This Workshop Is For
+
+This material is especially useful for:
+
+- early career researchers building their first durable workflow
+- experienced researchers who want fewer disconnected tools
+- teams that care about reproducibility, transparency, and reuse
+- anyone who wants websites, manuscripts, presentations, and notes to feel part of the same system
+
+Basic familiarity with at least one language such as R, Python, or Julia can help, but it is not required for most of the lessons here.
+
+## What You Will Learn
+
+By working through this site, participants will learn how to:
+
+- understand what Quarto is and where it fits relative to R Markdown
+- write basic content using Markdown and YAML
+- install Quarto and understand the main tooling options
+- use Quarto for lab notebooks, manuscripts, presentations, websites, and dashboards
+- explore more advanced tools such as extensions, templates, and `brand.yml`
+
+## How To Use This Site
+
+The workshop is organized in three parts:
+
+1. Start with the Foundations pages if Quarto is new to you.
+2. Move into the Academic Use Cases to see how one tool supports different research outputs.
+3. Finish with the Advanced Topics when you are ready to customize or scale your work.
+
+Each use-case lesson has a separate guided exercise page. The lesson explains the workflow, and the exercise helps you practice it with an academic scenario.
+
+## Why Quarto Matters For Researchers
+
+Academic work usually produces many related outputs:
+
+- rough notes and exploratory documentation
+- figures and tables for papers
+- slides for talks
+- websites for projects, labs, or personal profiles
+- interactive communication for stakeholders or collaborators
+
+Quarto makes these outputs easier to manage because the underlying authoring model stays consistent. That means less time relearning tools and more time focusing on the research itself.
+
+::: {.callout-tip}
+## Suggested path
+
+If you are brand new, begin with [What Is Quarto?](foundations/quarto-intro.qmd) and then continue to [Markdown for Beginners](foundations/markdown-intro.qmd).
+:::

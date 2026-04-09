@@ -1,0 +1,66 @@
+---
+title: "Exercise: Build a Short Slide Deck"
+---
+
+# Learning Goal
+
+Create a minimal Quarto presentation that could support a short research talk.
+
+## Prerequisites
+
+You should know:
+
+- basic Markdown headings
+- how YAML configures document format
+- that RevealJS is one common Quarto presentation format
+
+## Starter Scenario
+
+You have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.
+
+## Step-By-Step Exercise
+
+1. Create a file called `talk.qmd`.
+2. Add a YAML header with a title and `format: revealjs`.
+3. Create a first slide with the title and presenter name.
+4. Add slides for research question, methods, key finding, and next steps.
+5. Keep each slide concise using bullets instead of paragraphs.
+6. Add one placeholder line for a future figure.
+
+## Suggested Starter Content
+
+```markdown
+---
+title: "Drought Impacts on Vegetation"
+format: revealjs
+---
+
+## Research Question
+
+- How did vegetation response differ across sites?
+
+## Methods
+
+- Remote sensing summary
+- Field validation
+```
+
+## Stretch Task
+
+Add speaker notes or a final slide with contact information.
+
+## Expected Outcome
+
+Your slide deck should:
+
+- have a clear sequence
+- be appropriate for a short academic talk
+- show how Quarto can switch from document writing to presentation authoring
+
+## Self-Check
+
+Ask yourself:
+
+- Would each slide be readable in a live talk?
+- Is there one main message per slide?
+- Can this deck grow into a fuller presentation later?

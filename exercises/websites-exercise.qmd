@@ -1,0 +1,66 @@
+---
+title: "Exercise: Sketch a Research Website"
+---
+
+# Learning Goal
+
+Create the skeleton of a small Quarto website for a project or personal academic profile.
+
+## Prerequisites
+
+You should understand:
+
+- the role of `_quarto.yml`
+- the difference between a single document and a website project
+- basic Markdown page authoring
+
+## Starter Scenario
+
+You want a project website for a workshop or research initiative. It should contain a homepage, an about page, and a materials page.
+
+## Step-By-Step Exercise
+
+1. Imagine a new folder for your site project.
+2. Draft an `_quarto.yml` file with `project.type: website`.
+3. Add a site title and simple navigation.
+4. Plan three pages: home, about, and materials.
+5. Write one sentence describing the purpose of each page.
+6. Add one callout on the homepage inviting visitors to start with the key materials.
+
+## Suggested Starter Content
+
+```yaml
+project:
+  type: website
+
+website:
+  title: "Research Project Site"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: materials.qmd
+        text: Materials
+```
+
+## Stretch Task
+
+Add a sidebar or a footer idea that would help visitors navigate the site.
+
+## Expected Outcome
+
+You should have a simple site plan that:
+
+- separates page-level content from site-level configuration
+- reflects a clear audience
+- could be expanded into a real project website
+
+## Self-Check
+
+Ask yourself:
+
+- Is the site purpose obvious from the title and planned pages?
+- Would a visitor know where to click first?
+- Is the structure small enough to maintain?

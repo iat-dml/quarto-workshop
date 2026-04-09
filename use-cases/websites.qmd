@@ -1,0 +1,54 @@
+---
+title: "Creating Project and Personal Websites"
+---
+
+# Short Introduction
+
+Quarto can generate full websites as well as single documents. This makes it useful for research groups, project pages, course materials, and personal academic profiles.
+
+## Why This Matters For Researchers
+
+Web presence matters for:
+
+- public outreach
+- professional visibility
+- transparent sharing of outputs
+- communicating with collaborators, students, or stakeholders
+
+Using Quarto for websites means the same writing habits you use in documents can also support online publishing.
+
+## Key Quarto Features For This Workflow
+
+### Website Projects
+
+Quarto websites use a project-level `_quarto.yml` file to define navigation and shared formatting.
+
+### Reusable Authoring Patterns
+
+The same Markdown, YAML, callouts, and code chunk patterns appear in websites too.
+
+### Easy Publication Of Research Outputs
+
+Project summaries, people pages, methods notes, and downloadable materials can all sit in one structured site.
+
+## Concrete Academic Example
+
+A collaborative research project could maintain a site with:
+
+- a short overview
+- team members
+- methods documentation
+- workshop materials
+- links to publications and datasets
+
+::: {.callout-tip}
+## Outreach benefit
+
+For many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.
+:::
+
+## Guided Practice
+
+The exercise page focuses on planning and creating a small research website structure.
+
+[Go to the websites exercise](../exercises/websites-exercise.qmd)

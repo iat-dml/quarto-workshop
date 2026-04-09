@@ -1,0 +1,57 @@
+---
+title: "Documenting Research in Progress"
+---
+
+# Short Introduction
+
+Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.
+
+## Why This Matters For Researchers
+
+Research in progress generates many small but important pieces of context:
+
+- what you tried
+- what worked and failed
+- which files or datasets you used
+- what to do next
+
+A Quarto notebook helps capture that context in a durable and shareable format.
+
+## Key Quarto Features For This Workflow
+
+### Clear Daily or Weekly Entries
+
+Markdown headings make it easy to separate entries by date, experiment, or task.
+
+### Metadata At The Top
+
+YAML can record authorship, date, project name, and output preferences.
+
+### Optional Code Chunks
+
+If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.
+
+### Multiple Outputs
+
+An HTML version may be useful for browsing, while PDF can work for archiving or sharing.
+
+## Concrete Academic Example
+
+Imagine a field ecology project. A researcher can keep one `.qmd` file for weekly notes that includes:
+
+- observations from the field
+- links to raw data files
+- a short list of unresolved issues
+- a simple chunk that prints the number of new observations collected
+
+::: {.callout-note}
+## Good notebook habit
+
+Write what you decided and why, not only what you did. Future-you will care about the reasoning.
+:::
+
+## Guided Practice
+
+The exercise page walks through creating a starter research notebook with headings, tasks, and a simple output format.
+
+[Go to the lab notebook exercise](../exercises/lab-notebook-exercise.qmd)

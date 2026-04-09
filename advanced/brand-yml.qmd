@@ -1,0 +1,42 @@
+---
+title: "Using brand.yml"
+---
+
+# Short Introduction
+
+`brand.yml` is a Quarto branding file used to define shared visual identity such as colors, logos, and typography across outputs. It is particularly useful for websites, presentations, and other materials that should feel consistent.
+
+## Why This Matters For Researchers
+
+Research groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, `brand.yml` provides a shared source of branding choices.
+
+## What It Can Contain
+
+Depending on the project, a branding file may define:
+
+- color palette
+- logo assets
+- typography choices
+- reusable visual identity settings
+
+## Concrete Academic Example
+
+A collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style.
+
+## Teaching Focus
+
+In this workshop, `brand.yml` should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:
+
+- what problem it solves
+- when it becomes useful
+- why consistent branding can improve professional visibility and project coherence
+
+::: {.callout-note}
+## Keep the priority straight
+
+Branding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.
+:::
+
+## Suggested Next Conversation
+
+If this workshop later expands, `brand.yml` would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions.

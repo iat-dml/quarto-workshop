@@ -1,0 +1,63 @@
+---
+title: "Installing Quarto"
+---
+
+# Short Introduction
+
+Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.
+
+## Why This Matters For Researchers
+
+A clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed.
+
+## What To Install
+
+### Quarto CLI
+
+The Quarto command line interface is the core tool. It handles rendering and project management.
+
+### An Editor
+
+Participants can use:
+
+- Positron or RStudio
+- VS Code
+- another plain text editor they are comfortable with
+
+### Optional Language Runtime
+
+If they want executable code chunks, they will also need at least one language runtime such as:
+
+- R
+- Python
+- Julia
+
+## Suggested Installation Workflow
+
+1. Download Quarto from the official website.
+2. Install it using the standard installer for your operating system.
+3. Open a terminal and run `quarto check`.
+4. Confirm your editor recognizes `.qmd` files.
+5. If you want live code execution, confirm that R, Python, or Julia is also available.
+
+## Concrete Academic Example
+
+A participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.
+
+::: {.callout-tip}
+## Workshop-friendly setup
+
+For a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code.
+:::
+
+## Self-Check
+
+After installation, participants should be able to answer yes to these questions:
+
+- Can I open or create a `.qmd` file?
+- Can I run `quarto check` in a terminal?
+- Do I know which editor I will use during the workshop?
+
+## Next Step
+
+Once the foundations are in place, move into the first use case: [Documenting Research in Progress](../use-cases/lab-notebook.qmd).

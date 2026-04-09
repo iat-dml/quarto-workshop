@@ -1,0 +1,48 @@
+---
+title: "Interactive Dashboards"
+---
+
+# Short Introduction
+
+Quarto can also support interactive outputs, including dashboard-style communication. For researchers, this can be a useful bridge between formal publication and exploratory sharing with collaborators or stakeholders.
+
+## Why This Matters For Researchers
+
+Some audiences need more than a static paper or slide deck. They may benefit from:
+
+- filterable summaries
+- updated visuals
+- browsable indicators
+- lightweight interaction around results
+
+Quarto dashboards can serve these needs while staying close to the same publishing ecosystem.
+
+## Key Quarto Features For This Workflow
+
+### Structured Pages For Communication
+
+Dashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.
+
+### Connection To Reproducible Workflows
+
+Interactive views can still draw on the same documented analysis pipeline used elsewhere in a project.
+
+### Gradual Adoption
+
+Researchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.
+
+## Concrete Academic Example
+
+A project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.
+
+::: {.callout-warning}
+## Scope reminder
+
+Dashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.
+:::
+
+## Guided Practice
+
+The exercise page introduces a small dashboard concept suitable for first-time users.
+
+[Go to the dashboards exercise](../exercises/dashboards-exercise.qmd)

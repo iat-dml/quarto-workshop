@@ -1,0 +1,60 @@
+---
+title: "What Is Quarto?"
+---
+
+# Short Introduction
+
+Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.
+
+Quarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.
+
+## Why This Matters For Researchers
+
+Research outputs rarely stay in one format. The same project may need:
+
+- notes during exploration
+- a manuscript draft
+- conference slides
+- a project website
+- an interactive communication piece
+
+Quarto supports all of these with a common syntax and shared project structure.
+
+## Key Strengths
+
+### Universal Plain-Text Syntax
+
+Quarto uses readable plain text files with the `.qmd` extension. That makes documents easier to version, review, and reuse than proprietary binary formats.
+
+### Multiple Outputs From One Source
+
+A single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.
+
+### Executable Code In Multiple Languages
+
+Quarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.
+
+## Concrete Academic Example
+
+A doctoral researcher might use:
+
+- one Quarto file as a lab notebook for ongoing observations
+- another as a manuscript draft that renders to PDF and DOCX
+- a slide deck generated from the same project for a conference talk
+- a simple website to share outputs and project updates
+
+That is the larger theme of this workshop: one authoring system, many academic uses.
+
+::: {.callout-important}
+## Quarto, Markdown, and YAML
+
+Most Quarto files combine three ingredients:
+
+- YAML for metadata and configuration
+- Markdown for the written content
+- optional code chunks for computation and generated output
+:::
+
+## Next Step
+
+Continue to [Markdown for Beginners](markdown-intro.qmd) to learn the authoring syntax that most Quarto pages rely on.

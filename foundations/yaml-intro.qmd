@@ -1,0 +1,73 @@
+---
+title: "YAML Headers in Quarto"
+---
+
+# Short Introduction
+
+YAML is the metadata block at the top of a Quarto document. It sits between two lines of `---` and controls document information such as title, author, date, output formats, and execution settings.
+
+## Why This Matters For Researchers
+
+YAML is where Quarto moves from "plain text note" to "configured publication". A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.
+
+## Basic Example
+
+```yaml
+---
+title: "Fieldwork Notes"
+author: "A. Researcher"
+date: today
+format: html
+---
+```
+
+## What YAML Usually Controls
+
+### Document Metadata
+
+This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.
+
+### Output Format
+
+This tells Quarto what to create, such as HTML, PDF, DOCX, or `revealjs` slides.
+
+### Execution Defaults
+
+This controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.
+
+## Concrete Academic Example
+
+A manuscript draft might use a header like this:
+
+```yaml
+---
+title: "How Soil Moisture Shapes Restoration Outcomes"
+author:
+  - "Research Team"
+format:
+  html: default
+  docx: default
+  pdf: default
+bibliography: references.bib
+---
+```
+
+That one header already signals a multi-format workflow.
+
+::: {.callout-warning}
+## Common beginner issue
+
+YAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.
+:::
+
+## YAML vs Markdown vs Code Chunks
+
+- YAML configures the document
+- Markdown writes the document
+- code chunks generate results inside the document
+
+Keeping these roles separate makes Quarto much easier to understand.
+
+## Next Step
+
+Continue to [Installing Quarto](installing-quarto.qmd) for a practical overview of what participants need on their machine.

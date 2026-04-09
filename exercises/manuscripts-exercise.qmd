@@ -1,0 +1,62 @@
+---
+title: "Exercise: Draft a Manuscript Skeleton"
+---
+
+# Learning Goal
+
+Create a starter Quarto manuscript structure that is ready for writing, review, and later expansion.
+
+## Prerequisites
+
+You should be comfortable with:
+
+- headings in Markdown
+- basic YAML metadata
+- the idea that Quarto can render to more than one format
+
+## Starter Scenario
+
+You are preparing the first draft of a paper on land-use change and pollinator diversity. You want a manuscript skeleton that can later grow into a full article.
+
+## Step-By-Step Exercise
+
+1. Create a new file called `manuscript.qmd`.
+2. Add a YAML header with title, author, date, and outputs for HTML and DOCX.
+3. Add headings for Introduction, Methods, Results, Discussion, and References.
+4. Under each heading, write one or two placeholder sentences.
+5. Add a note where a figure or table will eventually appear.
+6. If you already use citation files, add a placeholder `bibliography` entry in YAML.
+
+## Suggested Starter Content
+
+```yaml
+---
+title: "Pollinator Diversity Under Land-Use Change"
+author: "Your Name"
+date: today
+format:
+  html: default
+  docx: default
+bibliography: references.bib
+---
+```
+
+## Stretch Task
+
+Add a subsection under Methods for data collection and another for analysis.
+
+## Expected Outcome
+
+You should end with a manuscript file that:
+
+- has a clear academic structure
+- is ready for collaborative expansion
+- can later support citations, figures, and tables
+
+## Self-Check
+
+Ask yourself:
+
+- Does the document already look like the beginning of a paper?
+- Are the sections in a sensible order for your discipline?
+- Would a collaborator understand where to add new material?

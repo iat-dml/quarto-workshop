@@ -1,0 +1,72 @@
+---
+title: "Exercise: Build a Lab Notebook Page"
+---
+
+# Learning Goal
+
+Create a Quarto document for documenting ongoing research activity in a structured, readable way.
+
+## Prerequisites
+
+You should be familiar with:
+
+- basic Markdown headings and lists
+- the idea of a YAML header
+- opening or creating a `.qmd` file
+
+## Starter Scenario
+
+You are working on a small restoration ecology project. You want a notebook entry that captures this week's work, next steps, and one optional code area for later use.
+
+## Step-By-Step Exercise
+
+1. Create a new file called `notebook.qmd`.
+2. Add a YAML header with a title, your name, today's date, and `format: html`.
+3. Add a heading for the current week.
+4. Write a short paragraph describing what you did.
+5. Add a bullet list of observations or decisions.
+6. Add a numbered list of next steps.
+7. Add a fenced code block or commented placeholder showing where a future chunk could go.
+
+## Suggested Starter Content
+
+```markdown
+---
+title: "Restoration Project Notebook"
+author: "Your Name"
+date: today
+format: html
+---
+
+## Week 1
+
+This week I reviewed the sampling plan and checked the latest field observations.
+
+- Confirmed plot IDs
+- Flagged missing measurements
+- Noted one sensor calibration issue
+
+1. Recheck the field sheet
+2. Contact collaborators about the missing values
+3. Prepare the next visit
+```
+
+## Stretch Task
+
+Add a callout block with a reminder about one issue to revisit next week.
+
+## Expected Outcome
+
+By the end, you should have a simple notebook page that:
+
+- renders as a readable HTML document
+- separates narrative, decisions, and tasks clearly
+- could be reused as a template for future entries
+
+## Self-Check
+
+Ask yourself:
+
+- Does the page make sense if I read it again in a month?
+- Can another team member understand what happened this week?
+- Is the structure simple enough to reuse consistently?

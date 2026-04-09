@@ -1,0 +1,41 @@
+---
+title: "Creating Presentations"
+---
+
+# Short Introduction
+
+Quarto can create slide decks using formats such as RevealJS. This is useful for researchers who want presentations to live close to the same material as their reports, papers, and websites.
+
+## Why This Matters For Researchers
+
+Talks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.
+
+## Key Quarto Features For This Workflow
+
+### Slide-Based Authoring
+
+In a Quarto slide deck, level-two headings usually create new slides.
+
+### Reusable Content
+
+Speaker notes, figures, and short summaries can be adapted from existing Quarto material.
+
+### Web-Native Output
+
+HTML slides are easy to share and update, and they work well for teaching or conference talks.
+
+## Concrete Academic Example
+
+A conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.
+
+::: {.callout-note}
+## Presentation mindset
+
+A good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.
+:::
+
+## Guided Practice
+
+The exercise page shows how to build a small presentation skeleton for an academic audience.
+
+[Go to the presentations exercise](../exercises/presentations-exercise.qmd)

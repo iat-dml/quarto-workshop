@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "One Tool to Rule Them All"
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+    style: floating
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Foundations"
+        contents:
+          - foundations/quarto-intro.qmd
+          - foundations/markdown-intro.qmd
+          - foundations/yaml-intro.qmd
+          - foundations/installing-quarto.qmd
+      - section: "Academic Use Cases"
+        contents:
+          - use-cases/lab-notebook.qmd
+          - exercises/lab-notebook-exercise.qmd
+          - use-cases/manuscripts.qmd
+          - exercises/manuscripts-exercise.qmd
+          - use-cases/presentations.qmd
+          - exercises/presentations-exercise.qmd
+          - use-cases/websites.qmd
+          - exercises/websites-exercise.qmd
+          - use-cases/dashboards.qmd
+          - exercises/dashboards-exercise.qmd
+      - section: "Advanced Topics"
+        contents:
+          - advanced/templates-and-extensions.qmd
+          - advanced/brand-yml.qmd
+
+format:
+  html:
+    theme: sandstone
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+
+execute:
+  echo: true
+  warning: false
+  message: false
