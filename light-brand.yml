@@ -1,0 +1,83 @@
+meta:
+  name: One Tool to Rule Them All — Workshop
+  link: https://example.org/quarto-workshop
+
+color:
+  palette:
+    # Neutrals — warm paper to deep ink
+    paper: "#FBF7F0"        # background
+    paper-2: "#F4EFE4"      # subtle surfaces
+    paper-3: "#E8E1D2"      # borders, dividers
+    ink: "#1A1B2E"          # primary text
+    ink-2: "#3A3B52"        # secondary text
+    muted: "#6B6275"        # tertiary text / captions
+
+    # Quartile accents — four flavors, one family
+    indigo: "#3D2F8C"       # primary — depth, trust
+    coral:  "#D9543F"       # warm accent — energy, callouts
+    moss:   "#2F7D6A"       # cool accent — code, success
+    amber:  "#C98A2B"       # signal — warning, highlights
+
+    # Lifted variants for hovers / fills
+    indigo-soft: "#EDE9FA"
+    coral-soft:  "#FBE7E1"
+    moss-soft:   "#E0EFE9"
+    amber-soft:  "#F5EAD3"
+
+  # Semantic mappings (used by Quarto + Bootstrap)
+  background: paper
+  foreground: ink
+  primary: indigo
+  secondary: ink-2
+  tertiary: muted
+  success: moss
+  info: indigo
+  warning: amber
+  danger: coral
+  light: paper-2
+  dark: ink
+
+typography:
+  fonts:
+    - family: Newsreader
+      source: google
+      weight: [400, 500, 600, 700]
+      style: [normal, italic]
+    - family: IBM Plex Sans
+      source: google
+      weight: [400, 500, 600, 700]
+      style: [normal, italic]
+    - family: IBM Plex Mono
+      source: google
+      weight: [400, 500, 600]
+      style: [normal, italic]
+
+  base:
+    family: IBM Plex Sans
+    size: 1.0625rem
+    line-height: 1.65
+    weight: 400
+
+  headings:
+    family: Newsreader
+    weight: 600
+    style: normal
+    line-height: 1.15
+    color: ink
+
+  monospace:
+    family: IBM Plex Mono
+    size: 0.92em
+
+  monospace-inline:
+    color: moss
+    background-color: moss-soft
+
+  monospace-block:
+    color: ink
+    background-color: paper-2
+
+  link:
+    color: indigo
+    weight: 500
+    decoration: underline

@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Preview — One Tool to Rule Them All</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ───── Tokens (light) ───── */
+:root {
+  --ds-paper:        #FBF7F0;
+  --ds-paper-2:      #F4EFE4;
+  --ds-paper-3:      #E8E1D2;
+  --ds-ink:          #1A1B2E;
+  --ds-ink-2:        #3A3B52;
+  --ds-muted:        #6B6275;
+  --ds-indigo:       #3D2F8C;
+  --ds-coral:        #D9543F;
+  --ds-moss:         #2F7D6A;
+  --ds-amber:        #C98A2B;
+  --ds-indigo-soft:  #EDE9FA;
+  --ds-coral-soft:   #FBE7E1;
+  --ds-moss-soft:    #E0EFE9;
+  --ds-amber-soft:   #F5EAD3;
+  --ds-rule:         rgba(26, 27, 46, 0.12);
+  --ds-shadow:       0 1px 2px rgba(26, 27, 46, 0.04),
+                     0 6px 24px -10px rgba(26, 27, 46, 0.10);
+  --ds-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ds-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --ds-sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+.quarto-dark {
+  --ds-paper:        #0F1024;
+  --ds-paper-2:      #171936;
+  --ds-paper-3:      #23254A;
+  --ds-ink:          #F2EBE0;
+  --ds-ink-2:        #C8C2BA;
+  --ds-muted:        #8A8499;
+  --ds-indigo:       #A899FF;
+  --ds-coral:        #FF8B7A;
+  --ds-moss:         #6BCFB3;
+  --ds-amber:        #F2C56B;
+  --ds-indigo-soft:  #1F1F4D;
+  --ds-coral-soft:   #3A1F1F;
+  --ds-moss-soft:    #143028;
+  --ds-amber-soft:   #3A2D14;
+  --ds-rule:         rgba(242, 235, 224, 0.14);
+  --ds-shadow:       0 1px 2px rgba(0,0,0,0.4),
+                     0 8px 28px -12px rgba(0,0,0,0.6);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--ds-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ds-ink);
+  background: var(--ds-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--ds-serif);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
+  color: var(--ds-ink);
+  margin: 0;
+}
+
+a {
+  color: var(--ds-indigo);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  font-weight: 500;
+  transition: text-decoration-color 120ms ease, color 120ms ease;
+}
+a:hover { text-decoration-color: currentColor; }
+
+code, kbd, pre { font-family: var(--ds-mono); }
+
+::selection {
+  background: color-mix(in oklab, var(--ds-coral) 35%, transparent);
+  color: var(--ds-ink);
+}
+
+/* ───── Preview chrome (not part of the Quarto site) ───── */
+.preview-bar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  border-bottom: 1px solid var(--ds-rule);
+  font-family: var(--ds-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.preview-bar .pb-label {
+  color: var(--ds-paper);
+  opacity: 0.55;
+}
+.preview-bar .pb-spacer { flex: 1; }
+.preview-bar button {
+  font-family: var(--ds-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ds-paper);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.preview-bar button:hover { background: rgba(255,255,255,0.06); }
+.preview-bar button.active {
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  border-color: var(--ds-paper);
+}
+.preview-bar .pb-group { display: inline-flex; gap: 0.35rem; }
+.preview-bar .pb-quartile {
+  display: inline-block; width: 14px; height: 14px;
+  background-image:
+    linear-gradient(#A899FF,#A899FF),
+    linear-gradient(#FF8B7A,#FF8B7A),
+    linear-gradient(#6BCFB3,#6BCFB3),
+    linear-gradient(#F2C56B,#F2C56B);
+  background-size: 50% 50%;
+  background-position: top left, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  vertical-align: -2px;
+  margin-right: 0.5rem;
+}
+
+/* ───── Quarto navbar mock ───── */
+.navbar {
+  display: flex; align-items: center;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--ds-rule);
+  background: var(--ds-paper);
+  backdrop-filter: saturate(1.1) blur(6px);
+  position: sticky; top: 41px; z-index: 40;
+}
+.navbar-brand {
+  font-family: var(--ds-serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--ds-ink);
+  display: inline-flex;
+  align-items: center;
+}
+.navbar-brand .brand-colon {
+  display: inline-block;
+  margin: 0 0.65rem;
+  color: var(--ds-muted);
+  font-weight: 400;
+  font-family: var(--ds-serif);
+  font-size: 1.35em;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+.navbar-brand .quarto-logo {
+  display: inline-block;
+  height: 20px;
+  width: auto;
+  vertical-align: -4px;
+  color: var(--ds-ink);
+}
+.navbar-brand .quartile {
+  display: inline-block;
+  width: 16px; height: 16px;
+  margin-right: 0.6rem;
+  background-image:
+    linear-gradient(var(--ds-indigo),  var(--ds-indigo)),
+    linear-gradient(var(--ds-coral),   var(--ds-coral)),
+    linear-gradient(var(--ds-moss),    var(--ds-moss)),
+    linear-gradient(var(--ds-amber),   var(--ds-amber));
+  background-size: 50% 50%;
+  background-position: top left, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+}
+.navbar-nav {
+  margin-left: 2rem;
+  display: flex; gap: 1.25rem;
+  list-style: none; padding: 0;
+}
+.navbar-nav a {
+  color: var(--ds-ink-2);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.navbar-nav a:hover, .navbar-nav a.active { color: var(--ds-ink); }
+.navbar-search {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--ds-paper-2);
+  border: 1px solid var(--ds-rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  color: var(--ds-muted);
+  font-size: 0.88rem;
+  min-width: 220px;
+}
+.navbar-search kbd {
+  font-family: var(--ds-mono);
+  font-size: 0.74em;
+  background: var(--ds-paper);
+  border: 1px solid var(--ds-rule);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+  color: var(--ds-ink-2);
+  margin-left: auto;
+}
+.theme-toggle {
+  margin-left: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--ds-rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--ds-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ds-ink-2);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ds-ink); border-color: var(--ds-ink-2); }
+
+/* ───── Layout ───── */
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 220px;
+  gap: 2.5rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2rem 1.75rem 4rem;
+}
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 220px minmax(0, 1fr); }
+  .toc { display: none; }
+}
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; padding: 1.25rem; }
+  .sidebar { display: none; }
+}
+
+/* ───── Sidebar ───── */
+.sidebar { font-size: 0.94rem; }
+.sidebar .menu-text {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--ds-muted);
+  margin: 1.5rem 0 0.45rem;
+}
+.sidebar .menu-text:first-child { margin-top: 0; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li a {
+  display: block;
+  padding: 0.25rem 0;
+  color: var(--ds-ink-2);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+.sidebar li a:hover { color: var(--ds-indigo); }
+.sidebar li.active a {
+  color: var(--ds-indigo);
+  font-weight: 500;
+  border-left: 2px solid var(--ds-indigo);
+  padding-left: 0.6rem;
+  margin-left: -0.62rem;
+}
+
+/* ───── Content ───── */
+.content { min-width: 0; }
+.title-block { margin-bottom: 2rem; }
+h1.title {
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.04;
+  margin-bottom: 0.4rem;
+}
+h1.title em { font-style: italic; color: var(--ds-coral); }
+.subtitle {
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  color: var(--ds-ink-2);
+  line-height: 1.35;
+  margin: 0;
+}
+.meta-row {
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--ds-rule);
+  font-size: 0.88rem;
+  color: var(--ds-muted);
+}
+.meta-row .meta-label {
+  font-family: var(--ds-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.meta-row .meta-value { color: var(--ds-ink); font-weight: 500; }
+
+.content h2 {
+  font-size: 1.9rem;
+  margin-top: 2.6rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ds-rule);
+}
+.content h2 .section-num { color: var(--ds-muted); font-weight: 500; margin-right: 0.4em; font-feature-settings: "tnum"; }
+.content h3 { font-size: 1.45rem; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+.content p { margin: 0.8rem 0; }
+.content ul { padding-left: 1.4rem; }
+.content ul li { margin: 0.25rem 0; }
+
+/* ───── Callouts ───── */
+.callout {
+  margin: 1.4rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid var(--ds-rule);
+  border-left-width: 4px;
+  background: var(--ds-paper-2);
+  box-shadow: var(--ds-shadow);
+  overflow: hidden;
+}
+.callout-header {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding: 0.8rem 1.1rem 0;
+  font-family: var(--ds-sans);
+  font-weight: 600;
+}
+.callout-body {
+  padding: 0.4rem 1.1rem 0.95rem 1.1rem;
+}
+.callout-body p:first-child { margin-top: 0.3rem; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout .icon { width: 16px; height: 16px; }
+
+.callout-note    { border-left-color: var(--ds-indigo); }
+.callout-note    .callout-header,
+.callout-note    .icon { color: var(--ds-indigo); }
+.callout-tip     { border-left-color: var(--ds-moss); }
+.callout-tip     .callout-header,
+.callout-tip     .icon { color: var(--ds-moss); }
+.callout-warning { border-left-color: var(--ds-amber); }
+.callout-warning .callout-header,
+.callout-warning .icon { color: var(--ds-amber); }
+.callout-important { border-left-color: var(--ds-coral); }
+.callout-important .callout-header,
+.callout-important .icon { color: var(--ds-coral); }
+
+/* ───── Inline + block code ───── */
+:not(pre) > code {
+  padding: 0.12em 0.38em;
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+  background: var(--ds-moss-soft);
+  color: var(--ds-moss);
+  border: 1px solid color-mix(in oklab, var(--ds-moss) 18%, transparent);
+  font-weight: 500;
+}
+
+.sourceCode {
+  margin: 1.1rem 0;
+  border-radius: 0.5rem;
+  background: var(--ds-paper-2);
+  border: 1px solid var(--ds-rule);
+  position: relative;
+  overflow: hidden;
+}
+.sourceCode .lang-tag {
+  position: absolute;
+  top: 0.35rem; right: 0.7rem;
+  font-family: var(--ds-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+}
+.sourceCode pre {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  font-size: 0.92em;
+  line-height: 1.6;
+  color: var(--ds-ink);
+  overflow-x: auto;
+}
+.tok-kw { color: var(--ds-indigo); font-weight: 500; }
+.tok-fn { color: var(--ds-coral); }
+.tok-str { color: var(--ds-moss); }
+.tok-com { color: var(--ds-muted); font-style: italic; }
+.tok-num { color: var(--ds-amber); }
+.tok-op  { color: var(--ds-ink-2); }
+
+/* ───── Blockquote ───── */
+.blockquote {
+  border-left: 3px solid var(--ds-indigo);
+  background: var(--ds-indigo-soft);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-size: 1.08em;
+  margin: 1.4rem 0;
+  color: var(--ds-ink);
+}
+.blockquote footer {
+  margin-top: 0.5rem;
+  font-family: var(--ds-sans);
+  font-style: normal;
+  font-size: 0.85em;
+  color: var(--ds-muted);
+}
+
+/* ───── Cards (mock for landing) ───── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.card {
+  border: 1px solid var(--ds-rule);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  background: var(--ds-paper-2);
+  text-decoration: none;
+  color: var(--ds-ink);
+  display: block;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+.card:hover { transform: translateY(-1px); border-color: var(--ds-ink-2); }
+.card .card-num {
+  font-family: var(--ds-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+.card .card-title {
+  font-family: var(--ds-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+.card .card-desc { font-size: 0.92rem; color: var(--ds-ink-2); margin: 0; line-height: 1.45; }
+.card .card-corner {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: 2px;
+}
+
+/* ───── Table ───── */
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95em;
+  margin: 1.2rem 0;
+}
+table.table thead { border-bottom: 2px solid var(--ds-ink); }
+table.table th, table.table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ds-rule);
+}
+table.table th {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.74em;
+  color: var(--ds-ink-2);
+}
+
+/* ───── HR ───── */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--ds-rule);
+  margin: 2.8rem 0;
+  position: relative;
+}
+hr::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; height: 10px;
+  background-image:
+    linear-gradient(var(--ds-indigo),  var(--ds-indigo)),
+    linear-gradient(var(--ds-coral),   var(--ds-coral)),
+    linear-gradient(var(--ds-moss),    var(--ds-moss)),
+    linear-gradient(var(--ds-amber),   var(--ds-amber));
+  background-size: 50% 50%;
+  background-position: top left, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  outline: 4px solid var(--ds-paper);
+}
+
+/* ───── TOC ───── */
+.toc { font-size: 0.88rem; position: sticky; top: 7rem; align-self: start; }
+.toc .toc-title {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--ds-muted);
+  margin: 0 0 0.5rem;
+}
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc li { margin: 0.3rem 0; }
+.toc a { color: var(--ds-ink-2); text-decoration: none; font-weight: 400; }
+.toc a:hover { color: var(--ds-indigo); }
+.toc li.active a { color: var(--ds-indigo); font-weight: 500; }
+
+/* ───── Footer ───── */
+footer.site-footer {
+  border-top: 1px solid var(--ds-rule);
+  padding: 1.5rem 1.75rem 2.5rem;
+  font-size: 0.86rem;
+  color: var(--ds-muted);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  margin: 1rem auto 0;
+}
+footer.site-footer .spacer { flex: 1; }
+
+/* ───── Buttons ───── */
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.btn-primary { background: var(--ds-ink); color: var(--ds-paper); }
+.btn-primary:hover { background: var(--ds-indigo); }
+.btn-outline { color: var(--ds-ink); border-color: var(--ds-rule); background: transparent; }
+.btn-outline:hover { background: var(--ds-paper-2); border-color: var(--ds-ink-2); }
+.btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.25rem 0; }
+
+/* ───── Tags / chips ───── */
+.tag {
+  display: inline-block;
+  font-family: var(--ds-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  border: 1px solid var(--ds-rule);
+  color: var(--ds-ink-2);
+  background: var(--ds-paper-2);
+  margin-right: 0.35rem;
+}
+.tag-indigo { color: var(--ds-indigo); background: var(--ds-indigo-soft); border-color: transparent; }
+.tag-coral  { color: var(--ds-coral);  background: var(--ds-coral-soft);  border-color: transparent; }
+.tag-moss   { color: var(--ds-moss);   background: var(--ds-moss-soft);   border-color: transparent; }
+.tag-amber  { color: var(--ds-amber);  background: var(--ds-amber-soft);  border-color: transparent; }
+
+/* ───── Tokens view ───── */
+.tokens-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1.75rem 4rem; }
+.tokens-head { margin-bottom: 2rem; }
+.tokens-head h1 { font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 0.3rem; }
+.tokens-head p  { color: var(--ds-ink-2); margin: 0; max-width: 60ch; }
+.tokens-section { margin-bottom: 3rem; }
+.tokens-section > h2 {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: var(--ds-muted);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ds-rule);
+  margin-bottom: 1.25rem;
+}
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.85rem;
+}
+.swatch {
+  border: 1px solid var(--ds-rule);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: var(--ds-paper-2);
+}
+.swatch .chip { height: 88px; }
+.swatch .info { padding: 0.55rem 0.7rem 0.7rem; }
+.swatch .info .nm {
+  font-family: var(--ds-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ds-ink);
+  letter-spacing: 0.02em;
+}
+.swatch .info .role {
+  font-family: var(--ds-sans);
+  font-size: 0.72rem;
+  color: var(--ds-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+  display: block;
+}
+.swatch .info .hex {
+  font-family: var(--ds-mono);
+  font-size: 0.74rem;
+  color: var(--ds-muted);
+  margin-top: 0.15rem;
+}
+
+.type-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ds-rule);
+  align-items: baseline;
+}
+.type-row .meta {
+  font-family: var(--ds-mono);
+  font-size: 0.76rem;
+  color: var(--ds-muted);
+  letter-spacing: 0.04em;
+}
+.type-row .meta strong {
+  display: block;
+  font-family: var(--ds-sans);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--ds-ink-2);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.08em;
+}
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+.spec-card {
+  border: 1px solid var(--ds-rule);
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  background: var(--ds-paper-2);
+}
+.spec-card .label {
+  font-family: var(--ds-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ds-muted);
+  margin-bottom: 0.35rem;
+}
+.spec-card .value {
+  font-family: var(--ds-mono);
+  font-size: 0.92rem;
+  color: var(--ds-ink);
+}
+
+.hidden { display: none !important; }
+
+/* Polish on small screens for the preview bar */
+@media (max-width: 600px) {
+  .preview-bar { flex-wrap: wrap; gap: 0.5rem; padding: 0.5rem 0.8rem; }
+  .preview-bar .pb-label { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="preview-bar">
+  <span class="pb-quartile"></span>
+  <span class="pb-label">Design preview</span>
+  <span style="opacity:.4">/</span>
+  <span class="pb-group" role="tablist">
+    <button id="tab-site" class="active" onclick="setView('site')">Site mock</button>
+    <button id="tab-tokens" onclick="setView('tokens')">Tokens</button>
+  </span>
+  <span class="pb-spacer"></span>
+  <button id="theme-btn" onclick="toggleTheme()">☾ Dark</button>
+</div>
+
+<!-- ─────────────── SITE MOCK VIEW ─────────────── -->
+<div id="view-site">
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <span class="quartile"></span> One Tool to Rule Them All
+      <span class="brand-colon" aria-hidden="true">:</span>
+      <svg class="quarto-logo" aria-label="Quarto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="38 200 420 92"><defs></defs><path class="cls-1" d="m80.97,244.3v-36.37c-19.31,1.36-34.71,16.96-35.74,36.37h35.74Z"></path><path class="cls-1" d="m85.79,244.3h36.43c-1.03-19.64-16.77-35.4-36.43-36.43v36.43h0Z"></path><path class="cls-1" d="m80.97,249.15h-35.68c1.36,19.1,16.6,34.34,35.68,35.68v-35.68Z"></path><path class="cls-1" d="m85.79,249.15v35.74c19.42-1.03,35.01-16.43,36.37-35.74h-36.37Z"></path><path class="cls-2" d="m445.92,222.72h1.34v-3h.99l1.83,3h1.4l-1.9-3.1c.5-.06.91-.24,1.25-.56.32-.32.5-.8.5-1.44,0-.71-.22-1.25-.63-1.64-.41-.39-1.08-.56-1.96-.56h-2.82v7.31Zm1.36-6.19h.99c.22,0,.41,0,.63.02s.39.04.56.13c.17.06.3.17.41.3s.15.32.15.56-.04.43-.15.56-.24.24-.41.3c-.17.06-.34.11-.56.13s-.41.02-.63.02h-.99v-2.03Zm-4.79,5.07c.34.78.8,1.44,1.38,2.03.58.58,1.25,1.03,2.03,1.38.78.34,1.6.52,2.48.52s1.7-.17,2.48-.52,1.44-.8,2.03-1.38c.58-.58,1.03-1.25,1.38-2.03s.52-1.6.52-2.48-.17-1.7-.52-2.48c-.34-.78-.8-1.44-1.38-2.03-.58-.58-1.25-1.03-2.03-1.38-.78-.34-1.6-.52-2.48-.52s-1.7.17-2.48.52-1.44.8-2.03,1.38c-.58.58-1.03,1.25-1.38,2.03-.34.78-.52,1.6-.52,2.48.02.86.17,1.7.52,2.48Zm1.03-4.55c.28-.65.65-1.21,1.12-1.68.47-.47,1.03-.86,1.68-1.12.65-.28,1.31-.41,2.05-.41s1.4.13,2.05.41c.65.28,1.21.65,1.68,1.12s.86,1.03,1.12,1.68c.28.65.41,1.31.41,2.05s-.13,1.4-.41,2.05c-.28.65-.65,1.21-1.12,1.68-.47.47-1.03.86-1.68,1.12-.65.28-1.31.41-2.05.41s-1.4-.13-2.05-.41c-.65-.28-1.21-.65-1.68-1.12-.47-.47-.86-1.03-1.12-1.68-.28-.65-.41-1.31-.41-2.05s.15-1.4.41-2.05Z"></path><path class="cls-2" d="m190.17,223.95v9.03c-3.97-6.94-11.02-11.45-20.26-11.45-14.66,0-24.9,11.12-24.9,26.21s10.24,26.1,24.9,26.1c9.25,0,16.3-4.4,20.26-11.34v29.08c0,.99.67,1.66,1.66,1.66h2.76c.99,0,1.66-.67,1.66-1.66v-67.64c0-.99-.67-1.66-1.66-1.66h-2.76c-1.01,0-1.66.67-1.66,1.66Zm-19.62,44.06c-11.79,0-19.72-8.36-19.72-20.26s7.93-20.48,19.72-20.48,19.59,8.6,19.59,20.48c0,11.88-7.7,20.26-19.59,20.26Z"></path><path class="cls-2" d="m247.9,223.95v28.97c0,10.02-6.83,15.63-15.63,15.63s-15.63-5.63-15.63-15.63v-28.97c0-.99-.67-1.66-1.66-1.66h-2.76c-.99,0-1.66.67-1.66,1.66v29.73c0,13.88,9.92,20.16,20.37,20.16,6.73,0,13.21-2.65,16.96-8.36v5.84c0,.99.67,1.66,1.66,1.66h2.76c.99,0,1.66-.67,1.66-1.66v-47.38c0-.99-.67-1.66-1.66-1.66h-2.76c-.99.02-1.66.69-1.66,1.68Z"></path><path class="cls-2" d="m312.11,223.95v8.92c-3.97-6.94-11.02-11.34-20.26-11.34-14.66,0-24.9,10.91-24.9,26.1s10.24,26.21,24.9,26.21c9.25,0,16.3-4.51,20.26-11.45v8.92c0,.99.67,1.66,1.66,1.66h2.76c.99,0,1.66-.67,1.66-1.66v-47.38c0-.99-.67-1.66-1.66-1.66h-2.76c-.99,0-1.66.67-1.66,1.66Zm-19.62,44.06c-11.79,0-19.72-8.47-19.72-20.37s7.93-20.37,19.72-20.37,19.59,8.47,19.59,20.37-7.67,20.37-19.59,20.37Z"></path><path class="cls-2" d="m338.54,231.65v-7.72c0-.99-.67-1.66-1.66-1.66h-2.76c-.99,0-1.66.67-1.66,1.66v47.38c0,.99.67,1.66,1.66,1.66h2.76c.99,0,1.66-.67,1.66-1.66v-27.01c0-11.02,7.93-16.19,16.3-16.96.99-.11,1.55-.78,1.55-1.77v-2.41c0-1.1-.56-1.66-1.66-1.55-6.7.58-12.76,3.88-16.19,10.05Z"></path><path class="cls-2" d="m390.11,225.48v-1.55c0-.99-.67-1.66-1.66-1.66h-11.02v-13.77c0-.99-.67-1.66-1.66-1.66h-2.78c-.99,0-1.66.67-1.66,1.66v13.77h-5.63c-.99,0-1.66.67-1.66,1.66v1.55c0,.99.67,1.66,1.66,1.66h5.63v34.58c0,7.16,4.4,11.23,11.34,11.23h5.17c.99,0,1.66-.67,1.66-1.66v-1.77c0-.99-.67-1.66-1.66-1.66h-3.3c-3.86,0-7.16-1.77-7.16-6.94v-33.82h11.02c1.06.04,1.7-.63,1.7-1.62Z"></path><path class="cls-2" d="m422.94,273.96c15.2,0,25.54-11.23,25.54-26.32s-10.35-26.21-25.54-26.21-25.65,11.02-25.65,26.21,10.45,26.32,25.65,26.32Zm0-5.95c-11.68,0-19.59-8.71-19.59-20.37s7.93-20.37,19.59-20.37,19.38,8.71,19.38,20.37c0,11.68-7.7,20.37-19.38,20.37Z"></path></svg>
+    </a>
+    <ul class="navbar-nav">
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="#">Foundations</a></li>
+      <li><a href="#">Use Cases</a></li>
+      <li><a href="#">Advanced</a></li>
+    </ul>
+    <div class="navbar-search">
+      <span>Search the workshop…</span>
+      <kbd>/</kbd>
+    </div>
+  </nav>
+
+  <main class="layout">
+
+    <aside class="sidebar">
+      <div class="menu-text">Foundations</div>
+      <ul>
+        <li><a href="#">What Is Quarto?</a></li>
+        <li><a href="#">Markdown for Beginners</a></li>
+        <li><a href="#">YAML Headers</a></li>
+        <li><a href="#">Installing Quarto</a></li>
+      </ul>
+      <div class="menu-text">Academic Use Cases</div>
+      <ul>
+        <li><a href="#">Lab Notebook</a></li>
+        <li><a href="#">↳ Exercise</a></li>
+        <li><a href="#">Manuscripts</a></li>
+        <li><a href="#">↳ Exercise</a></li>
+        <li class="active"><a href="#">Presentations</a></li>
+        <li><a href="#">↳ Exercise</a></li>
+        <li><a href="#">Websites</a></li>
+        <li><a href="#">↳ Exercise</a></li>
+        <li><a href="#">Dashboards</a></li>
+        <li><a href="#">↳ Exercise</a></li>
+      </ul>
+      <div class="menu-text">Advanced Topics</div>
+      <ul>
+        <li><a href="#">Templates &amp; Extensions</a></li>
+        <li><a href="#">Using brand.yml</a></li>
+      </ul>
+    </aside>
+
+    <article class="content">
+
+      <header class="title-block">
+        <div style="margin-bottom:0.85rem;">
+          <span class="tag tag-indigo">Workshop</span>
+          <span class="tag tag-coral">Hands-on</span>
+          <span class="tag tag-moss">R · Python · Julia</span>
+        </div>
+        <h1 class="title">One Tool to <em>Rule Them All</em></h1>
+        <p class="subtitle">Quarto for documentation, presentations, manuscripts, and outreach — a unified workflow for academic communication.</p>
+
+        <div class="meta-row">
+          <div>
+            <span class="meta-label">Format</span>
+            <span class="meta-value">Hands-on workshop</span>
+          </div>
+          <div>
+            <span class="meta-label">Audience</span>
+            <span class="meta-value">Early-career &amp; experienced researchers</span>
+          </div>
+          <div>
+            <span class="meta-label">Outputs covered</span>
+            <span class="meta-value">HTML · PDF · DOCX · Slides · Dashboards</span>
+          </div>
+          <div>
+            <span class="meta-label">Languages</span>
+            <span class="meta-value">R · Python · Julia · Observable</span>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#">Start with the foundations →</a>
+          <a class="btn btn-outline" href="#">Jump to use cases</a>
+        </div>
+      </header>
+
+      <p>Quarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.</p>
+
+      <p>This workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format. The core promise is simple: write once in plain text and render to <code>html</code>, <code>pdf</code>, <code>docx</code>, and <code>revealjs</code> slides — without rewriting any of the content.</p>
+
+      <div class="callout callout-note">
+        <div class="callout-header">
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM7.25 4.75a.75.75 0 0 1 1.5 0v.5a.75.75 0 0 1-1.5 0v-.5Zm.75 2.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0V8a.75.75 0 0 1 .75-.75Z"/></svg>
+          Workshop idea
+        </div>
+        <div class="callout-body">
+          <p>The core promise of Quarto is simple: write once in a plain-text source file and render to multiple professional outputs — HTML, PDF, DOCX, and slides — from one consistent authoring model.</p>
+        </div>
+      </div>
+
+      <h2 id="who"><span class="section-num">1</span>Who this workshop is for</h2>
+      <p>This material is especially useful for:</p>
+      <ul>
+        <li>early-career researchers building their first durable workflow</li>
+        <li>experienced researchers who want fewer disconnected tools</li>
+        <li>teams that care about reproducibility, transparency, and reuse</li>
+        <li>anyone who wants websites, manuscripts, presentations, and notes to feel part of the same system</li>
+      </ul>
+
+      <h2 id="learn"><span class="section-num">2</span>What you will learn</h2>
+      <div class="cards">
+        <a class="card" href="#">
+          <span class="card-num"><span class="card-corner" style="background:var(--ds-indigo)"></span>01 · Foundations</span>
+          <h3 class="card-title">Plain-text authoring</h3>
+          <p class="card-desc">Markdown, YAML, and Quarto's project model — the building blocks every output shares.</p>
+        </a>
+        <a class="card" href="#">
+          <span class="card-num"><span class="card-corner" style="background:var(--ds-coral)"></span>02 · Notebooks</span>
+          <h3 class="card-title">Lab notebooks &amp; manuscripts</h3>
+          <p class="card-desc">Reproducible research from rough exploration to a journal-ready PDF.</p>
+        </a>
+        <a class="card" href="#">
+          <span class="card-num"><span class="card-corner" style="background:var(--ds-moss)"></span>03 · Outreach</span>
+          <h3 class="card-title">Slides &amp; websites</h3>
+          <p class="card-desc">Revealjs talks and personal/project sites that share one source of truth.</p>
+        </a>
+        <a class="card" href="#">
+          <span class="card-num"><span class="card-corner" style="background:var(--ds-amber)"></span>04 · Advanced</span>
+          <h3 class="card-title">Dashboards &amp; brand</h3>
+          <p class="card-desc">Interactive dashboards plus <code>brand.yml</code> for consistent visual identity.</p>
+        </a>
+      </div>
+
+      <h2 id="example"><span class="section-num">3</span>A taste of the workflow</h2>
+      <p>Here is a tiny Quarto document. The same source becomes a styled HTML page, a print-ready PDF, or a Word file — depending on how you render it.</p>
+
+      <div class="sourceCode">
+        <span class="lang-tag">yaml + python</span>
+<pre><span class="tok-op">---</span>
+<span class="tok-kw">title</span>: <span class="tok-str">"Soil moisture across plots"</span>
+<span class="tok-kw">author</span>: <span class="tok-str">"E. Researcher"</span>
+<span class="tok-kw">format</span>:
+  <span class="tok-kw">html</span>: <span class="tok-kw">default</span>
+  <span class="tok-kw">pdf</span>:   <span class="tok-kw">default</span>
+  <span class="tok-kw">docx</span>:  <span class="tok-kw">default</span>
+<span class="tok-op">---</span>
+
+<span class="tok-com">## Quick look at the data</span>
+
+```{python}
+<span class="tok-kw">import</span> pandas <span class="tok-kw">as</span> pd
+df <span class="tok-op">=</span> pd.<span class="tok-fn">read_csv</span>(<span class="tok-str">"plots.csv"</span>)
+df.<span class="tok-fn">groupby</span>(<span class="tok-str">"plot"</span>)[<span class="tok-str">"vwc"</span>].<span class="tok-fn">mean</span>().<span class="tok-fn">round</span>(<span class="tok-num">2</span>)
+```
+</pre>
+      </div>
+
+      <p>Render the same file three ways from the terminal:</p>
+      <div class="sourceCode">
+        <span class="lang-tag">shell</span>
+<pre><span class="tok-com"># a single source → three professional outputs</span>
+quarto render notes.qmd <span class="tok-op">--to</span> html
+quarto render notes.qmd <span class="tok-op">--to</span> pdf
+quarto render notes.qmd <span class="tok-op">--to</span> docx
+</pre>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-header">
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a5 5 0 0 0-3 9c.5.4.8.9.9 1.4v.6a1 1 0 0 0 1 1h2.2a1 1 0 0 0 1-1v-.6c.1-.5.4-1 .9-1.4A5 5 0 0 0 8 1Zm-1.5 13.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/></svg>
+          Suggested path
+        </div>
+        <div class="callout-body">
+          <p>If you are brand new, begin with <a href="#">What Is Quarto?</a> and then continue to <a href="#">Markdown for Beginners</a>. The first two sections take roughly 30 minutes combined.</p>
+        </div>
+      </div>
+
+      <h2 id="outputs"><span class="section-num">4</span>Outputs at a glance</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Use case</th>
+            <th>Quarto format</th>
+            <th>Typical deliverable</th>
+            <th>Lab status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Lab notebook</td><td><code>html</code></td><td>Browsable site, per-experiment pages</td><td><span class="tag tag-moss">ready</span></td></tr>
+          <tr><td>Manuscript</td><td><code>pdf</code>, <code>docx</code></td><td>Submission-ready article</td><td><span class="tag tag-moss">ready</span></td></tr>
+          <tr><td>Presentation</td><td><code>revealjs</code></td><td>HTML slides with live code</td><td><span class="tag tag-amber">draft</span></td></tr>
+          <tr><td>Personal site</td><td><code>website</code></td><td>Outreach &amp; profile pages</td><td><span class="tag tag-moss">ready</span></td></tr>
+          <tr><td>Dashboard</td><td><code>dashboard</code></td><td>Interactive data view</td><td><span class="tag tag-coral">new</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="blockquote">
+        Branding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.
+        <footer>— from <em>Using brand.yml</em></footer>
+      </div>
+
+      <hr>
+
+      <h2 id="next"><span class="section-num">5</span>How to use this site</h2>
+      <p>The workshop is organized in three parts:</p>
+      <ol>
+        <li>Start with the Foundations pages if Quarto is new to you.</li>
+        <li>Move into the Academic Use Cases to see how one tool supports different research outputs.</li>
+        <li>Finish with the Advanced Topics when you are ready to customise or scale your work.</li>
+      </ol>
+      <p>Each use-case lesson has a separate guided exercise page. The lesson explains the workflow, and the exercise helps you practice it with an academic scenario.</p>
+
+      <div class="callout callout-warning">
+        <div class="callout-header">
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M7.13 1.94a1 1 0 0 1 1.74 0l6.43 11.13a1 1 0 0 1-.87 1.5H1.57a1 1 0 0 1-.87-1.5L7.13 1.94ZM8 6a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 6Zm0 6.25A.75.75 0 1 0 8 13.75a.75.75 0 0 0 0-1.5Z"/></svg>
+          Before you start
+        </div>
+        <div class="callout-body">
+          <p>Make sure Quarto <code>≥ 1.5</code> is installed and that you can run <code>quarto check</code> in your terminal. If you hit issues, see the <a href="#">Installing Quarto</a> page.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-important">
+        <div class="callout-header">
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm.93 4.59a.75.75 0 0 0-1.5.16l.4 4.5a.75.75 0 0 0 1.5 0l.4-4.5a.75.75 0 0 0-.8-.66Zm-.93 7.41a.94.94 0 1 0 0 1.88.94.94 0 0 0 0-1.88Z"/></svg>
+          One source, many outputs
+        </div>
+        <div class="callout-body">
+          <p>The same <code>.qmd</code> file you write today for a quick lab note can become a submission-ready PDF tomorrow — and a slide deck the week after. That is the workflow this workshop is built around.</p>
+        </div>
+      </div>
+
+    </article>
+
+    <aside class="toc">
+      <p class="toc-title">On this page</p>
+      <ul>
+        <li><a href="#who">1 · Who this workshop is for</a></li>
+        <li><a href="#learn">2 · What you will learn</a></li>
+        <li class="active"><a href="#example">3 · A taste of the workflow</a></li>
+        <li><a href="#outputs">4 · Outputs at a glance</a></li>
+        <li><a href="#next">5 · How to use this site</a></li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 · One Tool to Rule Them All workshop</span>
+    <span class="spacer"></span>
+    <span>Built with <a href="#">Quarto</a> · Source on <a href="#">GitHub</a></span>
+  </footer>
+
+</div>
+
+<!-- ─────────────── TOKENS VIEW ─────────────── -->
+<div id="view-tokens" class="hidden">
+  <div class="tokens-wrap">
+    <header class="tokens-head">
+      <h1>Design tokens</h1>
+      <p>The single source of truth for the workshop site. Everything below is defined in <code>light-brand.yml</code>, <code>dark-brand.yml</code>, and <code>styles.scss</code>. Toggle the theme above to see how each token shifts.</p>
+    </header>
+
+    <section class="tokens-section">
+      <h2>Quartile · core accents</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="chip" style="background:var(--ds-indigo)"></div><div class="info"><span class="role">Primary</span><div class="nm">indigo</div><div class="hex" data-var="--ds-indigo"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-coral)"></div><div class="info"><span class="role">Danger · warm accent</span><div class="nm">coral</div><div class="hex" data-var="--ds-coral"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-moss)"></div><div class="info"><span class="role">Success · code</span><div class="nm">moss</div><div class="hex" data-var="--ds-moss"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-amber)"></div><div class="info"><span class="role">Warning</span><div class="nm">amber</div><div class="hex" data-var="--ds-amber"></div></div></div>
+      </div>
+    </section>
+
+    <section class="tokens-section">
+      <h2>Soft tints · callouts &amp; chips</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="chip" style="background:var(--ds-indigo-soft)"></div><div class="info"><span class="role">Tint</span><div class="nm">indigo-soft</div><div class="hex" data-var="--ds-indigo-soft"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-coral-soft)"></div><div class="info"><span class="role">Tint</span><div class="nm">coral-soft</div><div class="hex" data-var="--ds-coral-soft"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-moss-soft)"></div><div class="info"><span class="role">Tint</span><div class="nm">moss-soft</div><div class="hex" data-var="--ds-moss-soft"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-amber-soft)"></div><div class="info"><span class="role">Tint</span><div class="nm">amber-soft</div><div class="hex" data-var="--ds-amber-soft"></div></div></div>
+      </div>
+    </section>
+
+    <section class="tokens-section">
+      <h2>Neutrals · paper to ink</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="chip" style="background:var(--ds-paper); border-bottom:1px solid var(--ds-rule)"></div><div class="info"><span class="role">Background</span><div class="nm">paper</div><div class="hex" data-var="--ds-paper"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-paper-2)"></div><div class="info"><span class="role">Surface</span><div class="nm">paper-2</div><div class="hex" data-var="--ds-paper-2"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-paper-3)"></div><div class="info"><span class="role">Divider</span><div class="nm">paper-3</div><div class="hex" data-var="--ds-paper-3"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-muted)"></div><div class="info"><span class="role">Tertiary text</span><div class="nm">muted</div><div class="hex" data-var="--ds-muted"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-ink-2)"></div><div class="info"><span class="role">Secondary text</span><div class="nm">ink-2</div><div class="hex" data-var="--ds-ink-2"></div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--ds-ink)"></div><div class="info"><span class="role">Primary text</span><div class="nm">ink</div><div class="hex" data-var="--ds-ink"></div></div></div>
+      </div>
+    </section>
+
+    <section class="tokens-section">
+      <h2>Typography</h2>
+      <div class="type-row">
+        <div class="meta">
+          <strong>Display · h1</strong>
+          Newsreader · 600 · −0.012em<br>
+          clamp(2.2rem, 4.2vw, 3.4rem)
+        </div>
+        <div style="font-family:var(--ds-serif); font-weight:600; font-size:3rem; line-height:1.04; letter-spacing:-0.012em;">
+          One Tool to <em style="color:var(--ds-coral)">Rule Them All</em>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="meta">
+          <strong>Subtitle</strong>
+          Newsreader italic · 400<br>
+          clamp(1.1rem, 1.6vw, 1.35rem)
+        </div>
+        <div style="font-family:var(--ds-serif); font-style:italic; font-size:1.3rem; color:var(--ds-ink-2)">
+          Quarto for documentation, presentations, manuscripts, and outreach.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="meta">
+          <strong>Heading · h2</strong>
+          Newsreader · 600<br>
+          1.9rem
+        </div>
+        <div style="font-family:var(--ds-serif); font-weight:600; font-size:1.9rem; letter-spacing:-0.012em;">
+          A taste of the workflow
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="meta">
+          <strong>Body</strong>
+          IBM Plex Sans · 400<br>
+          17px / 1.65
+        </div>
+        <div style="font-size:17px; line-height:1.65; max-width:60ch;">
+          Quarto helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work — without locking you into one editor, one language, or one output format.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="meta">
+          <strong>Code · inline + block</strong>
+          IBM Plex Mono · 500<br>
+          0.9em / 0.92em
+        </div>
+        <div>
+          Inline: <code>quarto render notes.qmd</code><br>
+          <div class="sourceCode" style="margin-top:0.6rem;">
+            <span class="lang-tag">python</span>
+<pre><span class="tok-kw">def</span> <span class="tok-fn">render</span>(src):
+    <span class="tok-kw">return</span> [<span class="tok-str">"html"</span>, <span class="tok-str">"pdf"</span>, <span class="tok-str">"docx"</span>]</pre>
+          </div>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="meta">
+          <strong>Eyebrow · UI labels</strong>
+          IBM Plex Sans · 600 · uppercase<br>
+          0.7rem / 0.06em
+        </div>
+        <div style="font-family:var(--ds-sans); font-weight:600; text-transform:uppercase; letter-spacing:0.06em; font-size:0.7rem; color:var(--ds-muted);">
+          Foundations · Academic Use Cases · Advanced Topics
+        </div>
+      </div>
+    </section>
+
+    <section class="tokens-section">
+      <h2>Spacing &amp; radii</h2>
+      <div class="spec-grid">
+        <div class="spec-card"><div class="label">Radius · sm</div><div class="value">0.35rem · chips, kbd</div></div>
+        <div class="spec-card"><div class="label">Radius · base</div><div class="value">0.5rem · code blocks</div></div>
+        <div class="spec-card"><div class="label">Radius · lg</div><div class="value">0.75rem · callouts, cards</div></div>
+        <div class="spec-card"><div class="label">Radius · pill</div><div class="value">999px · buttons, tags</div></div>
+        <div class="spec-card"><div class="label">Rule</div><div class="value">1px var(--ds-rule)</div></div>
+        <div class="spec-card"><div class="label">Shadow</div><div class="value">subtle · 6/24 px combo</div></div>
+        <div class="spec-card"><div class="label">Base font size</div><div class="value">17px / 1.65</div></div>
+        <div class="spec-card"><div class="label">Heading tracking</div><div class="value">−0.012em</div></div>
+      </div>
+    </section>
+
+    <section class="tokens-section">
+      <h2>Component samples</h2>
+      <p style="margin-top:-0.4rem; color:var(--ds-ink-2)">Pulled directly from the SCSS — these are what callouts, code blocks, blockquotes, and tables render as.</p>
+
+      <div class="callout callout-note">
+        <div class="callout-header">Note · indigo</div>
+        <div class="callout-body"><p>Used for explanatory framing — what something is, why it matters.</p></div>
+      </div>
+      <div class="callout callout-tip">
+        <div class="callout-header">Tip · moss</div>
+        <div class="callout-body"><p>Used for workflow advice and shortcuts. Reuses the same green as the code accent.</p></div>
+      </div>
+      <div class="callout callout-warning">
+        <div class="callout-header">Warning · amber</div>
+        <div class="callout-body"><p>Setup gotchas, version requirements, things to double-check.</p></div>
+      </div>
+      <div class="callout callout-important">
+        <div class="callout-header">Important · coral</div>
+        <div class="callout-body"><p>Reserved for genuinely-important points; uses the same warm accent as the display italic.</p></div>
+      </div>
+
+      <div class="blockquote" style="margin-top:1.4rem">
+        Plain text, vivid ideas — the design system in one line.
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#">Primary action</a>
+        <a class="btn btn-outline" href="#">Secondary</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  // ─── Theme toggle ───────────────────────────────────────────────
+  const root = document.documentElement;
+  const btn  = document.getElementById('theme-btn');
+  function applyTheme(t) {
+    if (t === 'dark') {
+      document.body.classList.add('quarto-dark');
+      btn.textContent = '☀ Light';
+    } else {
+      document.body.classList.remove('quarto-dark');
+      btn.textContent = '☾ Dark';
+    }
+    try { localStorage.setItem('ds-theme', t); } catch(_) {}
+    refreshHexLabels();
+  }
+  function toggleTheme() {
+    const isDark = document.body.classList.contains('quarto-dark');
+    applyTheme(isDark ? 'light' : 'dark');
+  }
+  // Initial theme: stored preference > system
+  const stored = (() => { try { return localStorage.getItem('ds-theme'); } catch(_) { return null; } })();
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+
+  // ─── View tabs ──────────────────────────────────────────────────
+  function setView(v) {
+    document.getElementById('view-site').classList.toggle('hidden', v !== 'site');
+    document.getElementById('view-tokens').classList.toggle('hidden', v !== 'tokens');
+    document.getElementById('tab-site').classList.toggle('active', v === 'site');
+    document.getElementById('tab-tokens').classList.toggle('active', v === 'tokens');
+    try { localStorage.setItem('ds-view', v); } catch(_) {}
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  const storedView = (() => { try { return localStorage.getItem('ds-view'); } catch(_) { return null; } })();
+  if (storedView) setView(storedView);
+
+  // ─── Live hex labels in token swatches ─────────────────────────
+  function refreshHexLabels() {
+    // Read from <body> (or the .hex element itself) — NOT documentElement —
+    // because the `.quarto-dark` override is scoped to <body>.
+    const cs = getComputedStyle(document.body);
+    document.querySelectorAll('.hex[data-var]').forEach(el => {
+      const v = cs.getPropertyValue(el.dataset.var).trim();
+      el.textContent = v.toUpperCase();
+    });
+  }
+  refreshHexLabels();
+</script>
+
+</body>
+</html>

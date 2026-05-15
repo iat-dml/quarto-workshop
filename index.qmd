@@ -1,6 +1,6 @@
 ---
-title: "One Tool to Rule Them All"
-subtitle: "Quarto for Documentation, Presentations, Manuscripts and Outreach"
+title: "One Tool to *Rule Them All*"
+subtitle: "![](assets/logo-quarto.svg){width=1in}for Documentation, Presentations, Manuscripts and Outreach"
 ---
 
 # Welcome

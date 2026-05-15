@@ -2,7 +2,7 @@
 title: "Installing Quarto"
 ---
 
-# Short Introduction
+## Short Introduction
 
 Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.
 

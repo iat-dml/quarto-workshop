@@ -9,7 +9,14 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: foundations/quarto-intro.qmd
+        text: Foundations
+      - href: use-cases/lab-notebook.qmd
+        text: Academic Use Cases
+      - href: advanced/templates-and-extensions.qmd
+        text: Advanced Topics
   sidebar:
+    logo: false
     style: floating
     search: true
     collapse-level: 1
@@ -36,10 +43,12 @@ website:
         contents:
           - advanced/templates-and-extensions.qmd
           - advanced/brand-yml.qmd
-
+brand: 
+  light: light-brand.yml
+  dark: dark-brand.yml
 format:
   html:
-    theme: sandstone
+    theme: styles.scss
     toc: true
     toc-depth: 3
     toc-location: right
