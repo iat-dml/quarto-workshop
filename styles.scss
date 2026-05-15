@@ -172,6 +172,7 @@ a {
 .sidebar {
   font-size: 0.94rem;
 }
+// TODO: This rule is not taking for the section labels in the sidebar for some reason. We may need to add a custom class to those elements in the HTML to target them reliably.
 // Section labels in the sidebar — force the sans face
 .sidebar .sidebar-item-section > .sidebar-item-container .sidebar-item-text,
 .sidebar .sidebar-item-section > .sidebar-item-container .menu-text,
