@@ -38,7 +38,9 @@ An HTML version may be useful for browsing, while PDF can work for archiving or 
 
 ## Concrete Academic Example
 
-Think of a recent modelling project you've worked on. A researcher can keep one `.qmd` file for weekly notes that includes:
+Think of a recent modelling project you've worked on. How did you keep track of your decisions, observations and intermediate results? 
+
+A researcher can keep one `.qmd` file for weekly notes that includes:
 
 - observations from different stages of model development
 - links to datasets, scripts, and model runs
