@@ -1,6 +1,15 @@
 project:
   type: website
-  output-dir: _site
+brand:
+  light: light-brand.yml
+  dark: dark-brand.yml
+execute:
+  echo: true
+  warning: false
+  message: false
+profile:
+  group:
+    - [revealjs, website]
 
 website:
   title: ""
@@ -33,44 +42,28 @@ website:
         contents:
           - text: "Documenting Research in Progress"
             href: use-cases/lab-notebook.qmd
-          - text: "   ↳ Exercise"
+          - text: "   ↳ Exercise"
             href: exercises/lab-notebook-exercise.qmd
           - text: "Writing Manuscripts"
             href: use-cases/manuscripts.qmd
-          - text: "   ↳ Exercise"
+          - text: "   ↳ Exercise"
             href: exercises/manuscripts-exercise.qmd
           - text: "Creating Presentations"
             href: use-cases/presentations.qmd
-          - text: "   ↳ Exercise"
+          - text: "   ↳ Exercise"
             href: exercises/presentations-exercise.qmd
-          - text: "Creating Project and Personal Websites"
-            href: use-cases/websites.qmd
-          - text: "   ↳ Exercise"
-            href: exercises/websites-exercise.qmd
+          #- text: "Creating Project and Personal Websites"
+          #  href: use-cases/websites.qmd
+          #- text: "   ↳ Exercise"
+          #  href: exercises/websites-exercise.qmd
           - text: "Interactive Dashboards"
             href: use-cases/dashboards.qmd
-          - text: "   ↳ Exercise"
+          - text: "   ↳ Exercise"
             href: exercises/dashboards-exercise.qmd
       - section: "Advanced Topics"
         contents:
           - advanced/templates-and-extensions.qmd
           - advanced/brand-yml.qmd
-brand: 
-  light: light-brand.yml
-  dark: dark-brand.yml
-format:
-  html:
-    theme: styles.scss
-    toc: true
-    toc-depth: 3
-    toc-location: right
-    number-sections: true
-    code-copy: true
-    code-overflow: wrap
-    smooth-scroll: true
-    include-after-body: card-nav.html
 
-execute:
-  echo: true
-  warning: false
-  message: false
+
+

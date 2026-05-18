@@ -1,0 +1,320 @@
+/*-- scss:defaults --*/
+// Reveal.js theme for the workshop — mirrors brand tokens from
+// light-brand.yml / dark-brand.yml and inherits structural rules from styles.scss.
+// Usage in a .qmd front matter:
+//   format:
+//     revealjs:
+//       theme: [default, revealjs.scss]
+
+// ── Fonts ──────────────────────────────────────────────────────────────
+$font-family-sans-serif:  "IBM Plex Sans", system-ui, -apple-system, sans-serif !default;
+$font-family-monospace:   "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace !default;
+$presentation-font-size-root: 40px !default;
+$presentation-font-smaller: 0.7 !default;
+$presentation-line-height: 1.5 !default;
+
+// ── Colors (light defaults — brand paper/ink palette) ───────────────────
+$body-bg:    #FBF7F0 !default;   // paper
+$body-color: #1A1B2E !default;   // ink
+
+$link-color:       #3D2F8C !default;   // indigo
+$link-color-hover: lighten(#3D2F8C, 15%) !default;
+$selection-bg:     #EDE9FA !default;   // indigo-soft
+$selection-color:  #1A1B2E !default;   // ink
+
+$text-muted: #6B6275 !default;   // muted
+
+// Light/dark bg text helpers
+$light-bg-text-color: #1A1B2E !default;
+$light-bg-link-color: #3D2F8C !default;
+$light-bg-code-color: #2F7D6A !default;   // moss
+$dark-bg-text-color:  #F2EBE0 !default;   // paper (dark brand)
+$dark-bg-link-color:  #A899FF !default;   // indigo (dark brand)
+$dark-bg-code-color:  #6BCFB3 !default;   // moss (dark brand)
+
+// ── Headings ────────────────────────────────────────────────────────────
+$presentation-heading-font:           "Newsreader", "Iowan Old Style", Georgia, serif !default;
+$presentation-heading-color:          #1A1B2E !default;   // ink
+$presentation-heading-line-height:    1.15 !default;
+$presentation-heading-letter-spacing: -0.012em !default;
+$presentation-heading-font-weight:    600 !default;
+$presentation-heading-text-transform: none !default;
+$presentation-heading-text-shadow:    none !default;
+$presentation-h1-text-shadow:         none !default;
+
+$presentation-h1-font-size: 2.4em !default;
+$presentation-h2-font-size: 1.6em !default;
+$presentation-h3-font-size: 1.25em !default;
+$presentation-h4-font-size: 1.0em !default;
+
+// ── Code blocks ─────────────────────────────────────────────────────────
+$code-block-bg:           #F4EFE4 !default;   // paper-2
+$code-block-border-color: #E8E1D2 !default;   // paper-3
+$code-block-font-size:    0.58em !default;
+
+// ── Inline code ─────────────────────────────────────────────────────────
+$code-color: #2F7D6A !default;   // moss
+$code-bg:    #E0EFE9 !default;   // moss-soft
+
+// ── Layout ──────────────────────────────────────────────────────────────
+$border-color:  #E8E1D2 !default;   // paper-3
+$border-width:  1px !default;
+$border-radius: 0.5rem !default;
+
+$presentation-block-margin:           14px !default;
+$presentation-slide-text-align:       left !default;
+$presentation-title-slide-text-align: center !default;
+
+// ── Callouts ────────────────────────────────────────────────────────────
+$callout-border-width:  0.3rem !default;
+$callout-border-scale:  0% !default;
+$callout-icon-scale:    10% !default;
+$callout-margin-top:    1rem !default;
+$callout-margin-bottom: 1rem !default;
+
+$callout-color-note:      #3D2F8C !default;   // indigo
+$callout-color-tip:       #2F7D6A !default;   // moss
+$callout-color-warning:   #C98A2B !default;   // amber
+$callout-color-important: #D9543F !default;   // coral
+$callout-color-caution:   #D9543F !default;   // coral
+
+/*-- scss:rules --*/
+
+// ── CSS variables (mirrors styles.scss :root block) ─────────────────────
+// Makes all brand tokens available to slide HTML via var()
+.reveal {
+  --ds-paper:       #{$body-bg};
+  --ds-paper-2:     #F4EFE4;
+  --ds-paper-3:     #E8E1D2;
+  --ds-ink:         #{$body-color};
+  --ds-ink-2:       #3A3B52;
+  --ds-muted:       #6B6275;
+  --ds-indigo:      #3D2F8C;
+  --ds-coral:       #D9543F;
+  --ds-moss:        #2F7D6A;
+  --ds-amber:       #C98A2B;
+  --ds-indigo-soft: #EDE9FA;
+  --ds-coral-soft:  #FBE7E1;
+  --ds-moss-soft:   #E0EFE9;
+  --ds-amber-soft:  #F5EAD3;
+  --ds-rule:        color-mix(in oklab, #{$body-color} 12%, transparent);
+  --ds-shadow:      0 1px 2px color-mix(in oklab, #{$body-color} 4%, transparent),
+                    0 6px 24px -10px color-mix(in oklab, #{$body-color} 10%, transparent);
+  --ds-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ds-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --ds-sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+}
+
+// ── Typography ───────────────────────────────────────────────────────────
+
+.reveal {
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-feature-settings: "ss01";
+}
+
+// Italic emphasis in titles picks up coral accent (mirrors h1.title em)
+.reveal h1 em { font-style: italic; color: var(--ds-coral); }
+
+.reveal .subtitle,
+.reveal p.subtitle {
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ds-ink-2);
+}
+
+.reveal .slide-number {
+  font-family: var(--ds-mono);
+  font-size: 0.7rem;
+  color: var(--ds-muted);
+  background: transparent;
+}
+
+// ── Links ────────────────────────────────────────────────────────────────
+
+.reveal a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  transition: text-decoration-color 120ms ease, color 120ms ease;
+
+  &:hover { text-decoration-color: currentColor; }
+}
+
+// ── Code ─────────────────────────────────────────────────────────────────
+
+.reveal code,
+.reveal kbd,
+.reveal samp,
+.reveal pre {
+  font-family: var(--ds-mono);
+  font-feature-settings: "ss01", "calt";
+}
+
+// Inline code
+.reveal :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border-radius: 0.35rem;
+  font-size: 0.88em;
+  background: var(--ds-moss-soft);
+  color: var(--ds-moss);
+  border: 1px solid color-mix(in oklab, var(--ds-moss) 18%, transparent);
+}
+
+// Code block container
+.reveal div.sourceCode,
+.reveal pre.sourceCode {
+  border-radius: 0.5rem;
+  background: var(--ds-paper-2) !important;
+  border: 1px solid var(--ds-rule);
+}
+
+.reveal pre.sourceCode {
+  padding: 0.85rem 1rem !important;
+  line-height: 1.5;
+}
+
+// ── Blockquote ───────────────────────────────────────────────────────────
+
+.reveal blockquote {
+  border-left: 3px solid var(--ds-indigo) !important;
+  background: var(--ds-indigo-soft);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.75rem 1rem !important;
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-size: 0.95em;
+  color: var(--ds-ink);
+  box-shadow: none;
+  width: auto;
+}
+
+// ── Callouts ─────────────────────────────────────────────────────────────
+
+.reveal .callout {
+  border-radius: 0.75rem !important;
+  border: 1px solid var(--ds-rule) !important;
+  border-left-width: 4px !important;
+  background-color: var(--ds-paper-2);
+  box-shadow: var(--ds-shadow);
+  font-size: 0.85em;
+}
+.reveal .callout-header {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  background-color: transparent !important;
+}
+
+.reveal .callout-note      { border-left-color: var(--ds-indigo) !important; }
+.reveal .callout-note      .callout-header { color: var(--ds-indigo); }
+.reveal .callout-tip       { border-left-color: var(--ds-moss) !important; }
+.reveal .callout-tip       .callout-header { color: var(--ds-moss); }
+.reveal .callout-warning   { border-left-color: var(--ds-amber) !important; }
+.reveal .callout-warning   .callout-header { color: var(--ds-amber); }
+.reveal .callout-important,
+.reveal .callout-caution   { border-left-color: var(--ds-coral) !important; }
+.reveal .callout-important .callout-header,
+.reveal .callout-caution   .callout-header { color: var(--ds-coral); }
+
+// ── Tables ───────────────────────────────────────────────────────────────
+
+.reveal table,
+.reveal .table {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85em;
+  border-collapse: collapse;
+}
+.reveal table thead {
+  border-bottom: 2px solid var(--ds-ink);
+}
+.reveal table thead th {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.78em;
+  color: var(--ds-ink-2);
+}
+.reveal table td,
+.reveal table th {
+  padding: 0.45em 0.75em;
+  border-bottom: 1px solid var(--ds-rule);
+}
+
+// ── HR ───────────────────────────────────────────────────────────────────
+
+.reveal hr {
+  border: none;
+  height: 1px;
+  background: var(--ds-rule);
+  margin: 1.5rem 0;
+}
+
+// ── Subject cards (reuse .subject-cards class on slides) ─────────────────
+
+.reveal .subject-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.reveal .subject-cards .card {
+  border: 1px solid var(--ds-rule);
+  border-left-width: 3px;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--ds-paper-2);
+  color: var(--ds-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  box-shadow: var(--ds-shadow);
+}
+
+.reveal .subject-cards .card:nth-child(1) { border-left-color: var(--ds-indigo); }
+.reveal .subject-cards .card:nth-child(2) { border-left-color: var(--ds-coral);  }
+.reveal .subject-cards .card:nth-child(3) { border-left-color: var(--ds-moss);   }
+.reveal .subject-cards .card:nth-child(4) { border-left-color: var(--ds-amber);  }
+.reveal .subject-cards .card:nth-child(5) { border-left-color: var(--ds-indigo); }
+.reveal .subject-cards .card:nth-child(6) { border-left-color: var(--ds-coral);  }
+
+.reveal .subject-cards .card .card-num {
+  font-family: var(--ds-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+}
+
+.reveal .subject-cards .card .card-title {
+  font-family: var(--ds-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--ds-ink);
+}
+
+.reveal .subject-cards .card .card-desc {
+  font-size: 0.82rem;
+  color: var(--ds-ink-2);
+  line-height: 1.4;
+}
+
+// ── Selection ────────────────────────────────────────────────────────────
+
+.reveal ::selection {
+  background: color-mix(in oklab, var(--ds-coral) 35%, transparent);
+  color: var(--ds-ink);
+}

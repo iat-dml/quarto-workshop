@@ -1,0 +1,9 @@
+project:
+  output-dir: _slides
+
+format:
+  revealjs:
+    theme: [default, revealjs.scss]
+    slide-number: true
+    chalkboard: false
+    preview-links: auto
