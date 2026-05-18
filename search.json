@@ -1,0 +1,1232 @@
+[
+  {
+    "objectID": "use-cases/websites.html",
+    "href": "use-cases/websites.html",
+    "title": "Creating Project and Personal Websites",
+    "section": "",
+    "text": "Quarto can generate full websites as well as single documents. This makes it useful for research groups, project pages, course materials, and personal academic profiles.\n\n\nWeb presence matters for:\n\npublic outreach\nprofessional visibility\ntransparent sharing of outputs\ncommunicating with collaborators, students, or stakeholders\n\nUsing Quarto for websites means the same writing habits you use in documents can also support online publishing.\n\n\n\n\n\nQuarto websites use a project-level _quarto.yml file to define navigation and shared formatting.\n\n\n\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too.\n\n\n\nProject summaries, people pages, methods notes, and downloadable materials can all sit in one structured site.\n\n\n\n\nA collaborative research project could maintain a site with:\n\na short overview\nteam members\nmethods documentation\nworkshop materials\nlinks to publications and datasets\n\n\n\n\n\n\n\nTipOutreach benefit\n\n\n\nFor many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.\n\n\nGo to the websites exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
+  },
+  {
+    "objectID": "use-cases/websites.html#why-this-matters-for-researchers",
+    "href": "use-cases/websites.html#why-this-matters-for-researchers",
+    "title": "Creating Project and Personal Websites",
+    "section": "",
+    "text": "Web presence matters for:\n\npublic outreach\nprofessional visibility\ntransparent sharing of outputs\ncommunicating with collaborators, students, or stakeholders\n\nUsing Quarto for websites means the same writing habits you use in documents can also support online publishing.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
+  },
+  {
+    "objectID": "use-cases/websites.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/websites.html#key-quarto-features-for-this-workflow",
+    "title": "Creating Project and Personal Websites",
+    "section": "",
+    "text": "Quarto websites use a project-level _quarto.yml file to define navigation and shared formatting.\n\n\n\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too.\n\n\n\nProject summaries, people pages, methods notes, and downloadable materials can all sit in one structured site.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
+  },
+  {
+    "objectID": "use-cases/websites.html#concrete-academic-example",
+    "href": "use-cases/websites.html#concrete-academic-example",
+    "title": "Creating Project and Personal Websites",
+    "section": "",
+    "text": "A collaborative research project could maintain a site with:\n\na short overview\nteam members\nmethods documentation\nworkshop materials\nlinks to publications and datasets\n\n\n\n\n\n\n\nTipOutreach benefit\n\n\n\nFor many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.\n\n\nGo to the websites exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
+  },
+  {
+    "objectID": "use-cases/manuscripts.html",
+    "href": "use-cases/manuscripts.html",
+    "title": "Writing Manuscripts",
+    "section": "",
+    "text": "Quarto can support manuscript writing by keeping narrative text, citations, figures, tables, and optional code in a single reproducible workflow. It is especially helpful when the same article needs to move between collaborator-friendly and submission-ready formats.\n\n\nManuscripts often require repeated changes across many components:\n\nmain text\nreferences\ntables and figures\nsupplementary material\nmultiple export formats\n\nQuarto reduces friction by keeping these connected rather than scattered across separate systems.\n\n\n\n\n\nThe same source can often render to HTML, PDF, and DOCX, which is useful for review, sharing, and submission preparation.\n\n\n\nQuarto works with bibliographies and citation styles, allowing references to stay embedded in the writing workflow.\n\n\n\nWhen analysis is embedded, manuscript results become easier to update and verify.\n\n\n\n\nA research team drafting a journal article might use HTML for internal review, DOCX for collaborators who prefer tracked changes, and PDF for a polished reading version. The content stays aligned because it comes from the same source file.\n\n\n\n\n\n\nTipPractical starting point\n\n\n\nYou do not need to begin with a fully automated manuscript. Even using Quarto first as a well-structured writing environment already creates value.\n\n\nGo to the manuscripts exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Writing Manuscripts"
+    ]
+  },
+  {
+    "objectID": "use-cases/manuscripts.html#why-this-matters-for-researchers",
+    "href": "use-cases/manuscripts.html#why-this-matters-for-researchers",
+    "title": "Writing Manuscripts",
+    "section": "",
+    "text": "Manuscripts often require repeated changes across many components:\n\nmain text\nreferences\ntables and figures\nsupplementary material\nmultiple export formats\n\nQuarto reduces friction by keeping these connected rather than scattered across separate systems.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Writing Manuscripts"
+    ]
+  },
+  {
+    "objectID": "use-cases/manuscripts.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/manuscripts.html#key-quarto-features-for-this-workflow",
+    "title": "Writing Manuscripts",
+    "section": "",
+    "text": "The same source can often render to HTML, PDF, and DOCX, which is useful for review, sharing, and submission preparation.\n\n\n\nQuarto works with bibliographies and citation styles, allowing references to stay embedded in the writing workflow.\n\n\n\nWhen analysis is embedded, manuscript results become easier to update and verify.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Writing Manuscripts"
+    ]
+  },
+  {
+    "objectID": "use-cases/manuscripts.html#concrete-academic-example",
+    "href": "use-cases/manuscripts.html#concrete-academic-example",
+    "title": "Writing Manuscripts",
+    "section": "",
+    "text": "A research team drafting a journal article might use HTML for internal review, DOCX for collaborators who prefer tracked changes, and PDF for a polished reading version. The content stays aligned because it comes from the same source file.\n\n\n\n\n\n\nTipPractical starting point\n\n\n\nYou do not need to begin with a fully automated manuscript. Even using Quarto first as a well-structured writing environment already creates value.\n\n\nGo to the manuscripts exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Writing Manuscripts"
+    ]
+  },
+  {
+    "objectID": "use-cases/dashboards.html",
+    "href": "use-cases/dashboards.html",
+    "title": "Interactive Dashboards",
+    "section": "",
+    "text": "Quarto can also support interactive outputs, including dashboard-style communication. For researchers, this can be a useful bridge between formal publication and exploratory sharing with collaborators or stakeholders.\n\n\nSome audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem.\n\n\n\n\n\nDashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\n\n\n\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\n\n\n\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.\n\n\n\n\nA project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nWarningScope reminder\n\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\nGo to the dashboards exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
+  },
+  {
+    "objectID": "use-cases/dashboards.html#why-this-matters-for-researchers",
+    "href": "use-cases/dashboards.html#why-this-matters-for-researchers",
+    "title": "Interactive Dashboards",
+    "section": "",
+    "text": "Some audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
+  },
+  {
+    "objectID": "use-cases/dashboards.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/dashboards.html#key-quarto-features-for-this-workflow",
+    "title": "Interactive Dashboards",
+    "section": "",
+    "text": "Dashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\n\n\n\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\n\n\n\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
+  },
+  {
+    "objectID": "use-cases/dashboards.html#concrete-academic-example",
+    "href": "use-cases/dashboards.html#concrete-academic-example",
+    "title": "Interactive Dashboards",
+    "section": "",
+    "text": "A project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nWarningScope reminder\n\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\nGo to the dashboards exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "One Tool to Rule Them All",
+    "section": "",
+    "text": "Start with the foundations →\nJump to use cases\nQuarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.\nThis workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format."
+  },
+  {
+    "objectID": "index.html#who-we-are",
+    "href": "index.html#who-we-are",
+    "title": "One Tool to Rule Them All",
+    "section": "Who We Are",
+    "text": "Who We Are\n\n\n\n\n\nBen Black\nHead of the group Data and Modelling Infrastructure for Living Labs\nETH Zürich\n\n    \n\n\n\n\n\n\nIsabel Nicholson-Thomas\nDoctoral Researcher\nETH Zürich\n\n   \n\n\n\n\n\n\nManuel Kurmann\nResearch Assistant\nETH Zürich"
+  },
+  {
+    "objectID": "index.html#who-this-workshop-is-for",
+    "href": "index.html#who-this-workshop-is-for",
+    "title": "One Tool to Rule Them All",
+    "section": "Who This Workshop Is For",
+    "text": "Who This Workshop Is For\nThis material is especially useful for:\n\nEarly career researchers building their first durable workflow\nExperienced researchers who want fewer disconnected tools\nTeams that care about reproducibility, transparency, and reuse\nAnyone who wants websites, manuscripts, presentations, and notes to feel part of the same system\n\nBasic familiarity with at least one programming language such as R, Python, or Julia can help, but it is not required for most of the lessons here."
+  },
+  {
+    "objectID": "index.html#why-quarto-matters-for-researchers",
+    "href": "index.html#why-quarto-matters-for-researchers",
+    "title": "One Tool to Rule Them All",
+    "section": "Why Quarto Matters For Researchers",
+    "text": "Why Quarto Matters For Researchers\nIn a nutshell, academic work usually produces and involves many related outputs:\nWe take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.\nQuarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.\n\n\n\n\n\n\nNoteWorkshop idea\n\n\n\nThe core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides."
+  },
+  {
+    "objectID": "index.html#how-to-use-this-site-what-you-will-learn",
+    "href": "index.html#how-to-use-this-site-what-you-will-learn",
+    "title": "One Tool to Rule Them All",
+    "section": "How To Use This Site & What You Will Learn",
+    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n01 · Foundations\n\nPlain-text authoring\nMarkdown, YAML, and Quarto’s project model — the building blocks every output shares.\n\n\n\n02 · Notebooks\n\nLab notebooks\nReproducible research from rough exploration to a journal-ready PDF.\n\n\n\n03 · Manuscripts\n\nManuscripts\nWrite in plain text, render to PDF, HTML or DOCX, share with collaborators and streamline journal submission.\n\n\n\n04 · Outreach\n\nSlides\nRevealjs talks\n\n\n\n05 · Outreach\n\nWebsites\nProject, lab, and personal websites with Quarto’s website mode.\n\n\n\n06 · Advanced\n\nDashboards & brand\nInteractive dashboards plus brand.yml for consistent visual identity.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
+  },
+  {
+    "objectID": "foundations/quarto-intro.html",
+    "href": "foundations/quarto-intro.html",
+    "title": "What Is Quarto?",
+    "section": "",
+    "text": "Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.\nQuarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.\n\n\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.\n\n\n\n\n\nQuarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\n\n\n\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\n\n\n\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.\n\n\n\n\nA doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output\n\n\n\n\n\n\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
+  },
+  {
+    "objectID": "foundations/quarto-intro.html#why-this-matters-for-researchers",
+    "href": "foundations/quarto-intro.html#why-this-matters-for-researchers",
+    "title": "What Is Quarto?",
+    "section": "",
+    "text": "Research outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
+  },
+  {
+    "objectID": "foundations/quarto-intro.html#key-strengths",
+    "href": "foundations/quarto-intro.html#key-strengths",
+    "title": "What Is Quarto?",
+    "section": "",
+    "text": "Quarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\n\n\n\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\n\n\n\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
+  },
+  {
+    "objectID": "foundations/quarto-intro.html#concrete-academic-example",
+    "href": "foundations/quarto-intro.html#concrete-academic-example",
+    "title": "What Is Quarto?",
+    "section": "",
+    "text": "A doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
+  },
+  {
+    "objectID": "foundations/quarto-intro.html#next-step",
+    "href": "foundations/quarto-intro.html#next-step",
+    "title": "What Is Quarto?",
+    "section": "",
+    "text": "Continue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html",
+    "href": "foundations/installing-quarto.html",
+    "title": "Installing Quarto",
+    "section": "",
+    "text": "Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#short-introduction",
+    "href": "foundations/installing-quarto.html#short-introduction",
+    "title": "Installing Quarto",
+    "section": "",
+    "text": "Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#why-this-matters-for-researchers",
+    "href": "foundations/installing-quarto.html#why-this-matters-for-researchers",
+    "title": "Installing Quarto",
+    "section": "2 Why This Matters For Researchers",
+    "text": "2 Why This Matters For Researchers\nA clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#what-to-install",
+    "href": "foundations/installing-quarto.html#what-to-install",
+    "title": "Installing Quarto",
+    "section": "3 What To Install",
+    "text": "3 What To Install\n\n3.1 Quarto CLI\nThe Quarto command line interface is the core tool. It handles rendering and project management.\n\n\n3.2 An Editor\nParticipants can use:\n\nPositron or RStudio\nVS Code\nanother plain text editor they are comfortable with\n\n\n\n3.3 Optional Language Runtime\nIf they want executable code chunks, they will also need at least one language runtime such as:\n\nR\nPython\nJulia",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#suggested-installation-workflow",
+    "href": "foundations/installing-quarto.html#suggested-installation-workflow",
+    "title": "Installing Quarto",
+    "section": "4 Suggested Installation Workflow",
+    "text": "4 Suggested Installation Workflow\n\nDownload Quarto from the official website.\nInstall it using the standard installer for your operating system.\nOpen a terminal and run quarto check.\nConfirm your editor recognizes .qmd files.\nIf you want live code execution, confirm that R, Python, or Julia is also available.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#concrete-academic-example",
+    "href": "foundations/installing-quarto.html#concrete-academic-example",
+    "title": "Installing Quarto",
+    "section": "5 Concrete Academic Example",
+    "text": "5 Concrete Academic Example\nA participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.\n\n\n\n\n\n\nTipWorkshop-friendly setup\n\n\n\nFor a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#self-check",
+    "href": "foundations/installing-quarto.html#self-check",
+    "title": "Installing Quarto",
+    "section": "6 Self-Check",
+    "text": "6 Self-Check\nAfter installation, participants should be able to answer yes to these questions:\n\nCan I open or create a .qmd file?\nCan I run quarto check in a terminal?\nDo I know which editor I will use during the workshop?",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#next-step",
+    "href": "foundations/installing-quarto.html#next-step",
+    "title": "Installing Quarto",
+    "section": "7 Next Step",
+    "text": "7 Next Step\nOnce the foundations are in place, move into the first use case: Documenting Research in Progress.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html",
+    "href": "exercises/presentations-exercise.html",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "Create a minimal Quarto presentation that could support a short research talk.\n\n\nYou should know:\n\nbasic Markdown headings\nhow YAML configures document format\nthat RevealJS is one common Quarto presentation format\n\n\n\n\nYou have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.\n\n\n\n\nCreate a file called talk.qmd.\nAdd a YAML header with a title and format: revealjs.\nCreate a first slide with the title and presenter name.\nAdd slides for research question, methods, key finding, and next steps.\nKeep each slide concise using bullets instead of paragraphs.\nAdd one placeholder line for a future figure.\n\n\n\n\n---\ntitle: \"Drought Impacts on Vegetation\"\nformat: revealjs\n---\n\n## Research Question\n\n- How did vegetation response differ across sites?\n\n## Methods\n\n- Remote sensing summary\n- Field validation\n\n\n\nAdd speaker notes or a final slide with contact information.\n\n\n\nYour slide deck should:\n\nhave a clear sequence\nbe appropriate for a short academic talk\nshow how Quarto can switch from document writing to presentation authoring\n\n\n\n\nAsk yourself:\n\nWould each slide be readable in a live talk?\nIs there one main message per slide?\nCan this deck grow into a fuller presentation later?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#prerequisites",
+    "href": "exercises/presentations-exercise.html#prerequisites",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "You should know:\n\nbasic Markdown headings\nhow YAML configures document format\nthat RevealJS is one common Quarto presentation format",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#starter-scenario",
+    "href": "exercises/presentations-exercise.html#starter-scenario",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "You have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-by-step-exercise",
+    "href": "exercises/presentations-exercise.html#step-by-step-exercise",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "Create a file called talk.qmd.\nAdd a YAML header with a title and format: revealjs.\nCreate a first slide with the title and presenter name.\nAdd slides for research question, methods, key finding, and next steps.\nKeep each slide concise using bullets instead of paragraphs.\nAdd one placeholder line for a future figure.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#suggested-starter-content",
+    "href": "exercises/presentations-exercise.html#suggested-starter-content",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "---\ntitle: \"Drought Impacts on Vegetation\"\nformat: revealjs\n---\n\n## Research Question\n\n- How did vegetation response differ across sites?\n\n## Methods\n\n- Remote sensing summary\n- Field validation",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#stretch-task",
+    "href": "exercises/presentations-exercise.html#stretch-task",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "Add speaker notes or a final slide with contact information.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#expected-outcome",
+    "href": "exercises/presentations-exercise.html#expected-outcome",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "Your slide deck should:\n\nhave a clear sequence\nbe appropriate for a short academic talk\nshow how Quarto can switch from document writing to presentation authoring",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#self-check",
+    "href": "exercises/presentations-exercise.html#self-check",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "Ask yourself:\n\nWould each slide be readable in a live talk?\nIs there one main message per slide?\nCan this deck grow into a fuller presentation later?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html",
+    "href": "exercises/lab-notebook-exercise.html",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "Create a Quarto document for documenting ongoing research activity in a structured, readable way.\n\n\nYou should be familiar with:\n\nbasic Markdown headings and lists\nthe idea of a YAML header\nopening or creating a .qmd file\n\n\n\n\nYou are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use.\n\n\n\n\nCreate a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a heading for the current week.\nWrite a short paragraph describing what you did.\nAdd a bullet list of observations or decisions.\nAdd a numbered list of next steps.\nAdd a fenced code block or commented placeholder showing where a future chunk could go.\n\n\n\n\n---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Week 1\n\nThis week I reviewed the sampling plan and checked the latest field observations.\n\n- Confirmed plot IDs\n- Flagged missing measurements\n- Noted one sensor calibration issue\n\n1. Recheck the field sheet\n2. Contact collaborators about the missing values\n3. Prepare the next visit\n\n\n\nAdd a callout block with a reminder about one issue to revisit next week.\n\n\n\nBy the end, you should have a simple notebook page that:\n\nrenders as a readable HTML document\nseparates narrative, decisions, and tasks clearly\ncould be reused as a template for future entries\n\n\n\n\nAsk yourself:\n\nDoes the page make sense if I read it again in a month?\nCan another team member understand what happened this week?\nIs the structure simple enough to reuse consistently?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#prerequisites",
+    "href": "exercises/lab-notebook-exercise.html#prerequisites",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "You should be familiar with:\n\nbasic Markdown headings and lists\nthe idea of a YAML header\nopening or creating a .qmd file",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#starter-scenario",
+    "href": "exercises/lab-notebook-exercise.html#starter-scenario",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "You are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#step-by-step-exercise",
+    "href": "exercises/lab-notebook-exercise.html#step-by-step-exercise",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "Create a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a heading for the current week.\nWrite a short paragraph describing what you did.\nAdd a bullet list of observations or decisions.\nAdd a numbered list of next steps.\nAdd a fenced code block or commented placeholder showing where a future chunk could go.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#suggested-starter-content",
+    "href": "exercises/lab-notebook-exercise.html#suggested-starter-content",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Week 1\n\nThis week I reviewed the sampling plan and checked the latest field observations.\n\n- Confirmed plot IDs\n- Flagged missing measurements\n- Noted one sensor calibration issue\n\n1. Recheck the field sheet\n2. Contact collaborators about the missing values\n3. Prepare the next visit",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#stretch-task",
+    "href": "exercises/lab-notebook-exercise.html#stretch-task",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "Add a callout block with a reminder about one issue to revisit next week.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#expected-outcome",
+    "href": "exercises/lab-notebook-exercise.html#expected-outcome",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "By the end, you should have a simple notebook page that:\n\nrenders as a readable HTML document\nseparates narrative, decisions, and tasks clearly\ncould be reused as a template for future entries",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html#self-check",
+    "href": "exercises/lab-notebook-exercise.html#self-check",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "Ask yourself:\n\nDoes the page make sense if I read it again in a month?\nCan another team member understand what happened this week?\nIs the structure simple enough to reuse consistently?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html",
+    "href": "advanced/templates-and-extensions.html",
+    "title": "Templates and Extensions",
+    "section": "",
+    "text": "Once participants are comfortable with Quarto basics, templates and extensions provide ways to speed up repeated work and add specialized functionality.\n\n\nAcademic workflows often repeat familiar patterns:\n\nmanuscript structures\nrecurring workshop materials\nshared project websites\njournal-specific output requirements\n\nTemplates reduce setup time, and extensions can add features that are not included by default.\n\n\n\nTemplates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.\n\n\n\nQuarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.\nExample install command:\nquarto add quarto-ext/fontawesome\n\n\n\nA lab could keep:\n\na manuscript starter structure for new papers\na workshop exercise template\na project website template with agreed navigation and style\n\nExtensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.\n\n\n\n\n\n\nTipGood habit\n\n\n\nTreat extensions like dependencies: document them clearly and only add them when they solve a real need.\n\n\n\n\n\nFor beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html#why-this-matters-for-researchers",
+    "href": "advanced/templates-and-extensions.html#why-this-matters-for-researchers",
+    "title": "Templates and Extensions",
+    "section": "",
+    "text": "Academic workflows often repeat familiar patterns:\n\nmanuscript structures\nrecurring workshop materials\nshared project websites\njournal-specific output requirements\n\nTemplates reduce setup time, and extensions can add features that are not included by default.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html#templates",
+    "href": "advanced/templates-and-extensions.html#templates",
+    "title": "Templates and Extensions",
+    "section": "",
+    "text": "Templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html#extensions",
+    "href": "advanced/templates-and-extensions.html#extensions",
+    "title": "Templates and Extensions",
+    "section": "",
+    "text": "Quarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.\nExample install command:\nquarto add quarto-ext/fontawesome",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html#concrete-academic-example",
+    "href": "advanced/templates-and-extensions.html#concrete-academic-example",
+    "title": "Templates and Extensions",
+    "section": "",
+    "text": "A lab could keep:\n\na manuscript starter structure for new papers\na workshop exercise template\na project website template with agreed navigation and style\n\nExtensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.\n\n\n\n\n\n\nTipGood habit\n\n\n\nTreat extensions like dependencies: document them clearly and only add them when they solve a real need.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html#what-to-emphasize-in-the-workshop",
+    "href": "advanced/templates-and-extensions.html#what-to-emphasize-in-the-workshop",
+    "title": "Templates and Extensions",
+    "section": "",
+    "text": "For beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html",
+    "href": "advanced/brand-yml.html",
+    "title": "Using brand.yml",
+    "section": "",
+    "text": "brand.yml is a Quarto branding file used to define shared visual identity such as colors, logos, and typography across outputs. It is particularly useful for websites, presentations, and other materials that should feel consistent.\n\n\nResearch groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, brand.yml provides a shared source of branding choices.\n\n\n\nDepending on the project, a branding file may define:\n\ncolor palette\nlogo assets\ntypography choices\nreusable visual identity settings\n\n\n\n\nA collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style.\n\n\n\nIn this workshop, brand.yml should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:\n\nwhat problem it solves\nwhen it becomes useful\nwhy consistent branding can improve professional visibility and project coherence\n\n\n\n\n\n\n\nNoteKeep the priority straight\n\n\n\nBranding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.\n\n\n\n\n\nIf this workshop later expands, brand.yml would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Using brand.yml"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#why-this-matters-for-researchers",
+    "href": "advanced/brand-yml.html#why-this-matters-for-researchers",
+    "title": "Using brand.yml",
+    "section": "",
+    "text": "Research groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, brand.yml provides a shared source of branding choices.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Using brand.yml"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#what-it-can-contain",
+    "href": "advanced/brand-yml.html#what-it-can-contain",
+    "title": "Using brand.yml",
+    "section": "",
+    "text": "Depending on the project, a branding file may define:\n\ncolor palette\nlogo assets\ntypography choices\nreusable visual identity settings",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Using brand.yml"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#concrete-academic-example",
+    "href": "advanced/brand-yml.html#concrete-academic-example",
+    "title": "Using brand.yml",
+    "section": "",
+    "text": "A collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Using brand.yml"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#teaching-focus",
+    "href": "advanced/brand-yml.html#teaching-focus",
+    "title": "Using brand.yml",
+    "section": "",
+    "text": "In this workshop, brand.yml should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:\n\nwhat problem it solves\nwhen it becomes useful\nwhy consistent branding can improve professional visibility and project coherence\n\n\n\n\n\n\n\nNoteKeep the priority straight\n\n\n\nBranding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Using brand.yml"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#suggested-next-conversation",
+    "href": "advanced/brand-yml.html#suggested-next-conversation",
+    "title": "Using brand.yml",
+    "section": "",
+    "text": "If this workshop later expands, brand.yml would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Using brand.yml"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html",
+    "href": "exercises/dashboards-exercise.html",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Sketch a beginner-friendly Quarto dashboard concept for communicating research results to a non-specialist audience.\n\n\nYou should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience\n\n\n\n\nYour project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.\n\n\n\n\nIdentify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from.\n\n\n\n\nUse this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.\n\n\n\n\nAdd an idea for one interactive feature, such as choosing a site or time period.\n\n\n\nYou should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project\n\n\n\n\nAsk yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#prerequisites",
+    "href": "exercises/dashboards-exercise.html#prerequisites",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "You should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#starter-scenario",
+    "href": "exercises/dashboards-exercise.html#starter-scenario",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Your project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#step-by-step-exercise",
+    "href": "exercises/dashboards-exercise.html#step-by-step-exercise",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Identify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#suggested-starter-prompt",
+    "href": "exercises/dashboards-exercise.html#suggested-starter-prompt",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Use this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#stretch-task",
+    "href": "exercises/dashboards-exercise.html#stretch-task",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Add an idea for one interactive feature, such as choosing a site or time period.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#expected-outcome",
+    "href": "exercises/dashboards-exercise.html#expected-outcome",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "You should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html#self-check",
+    "href": "exercises/dashboards-exercise.html#self-check",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Ask yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html",
+    "href": "exercises/manuscripts-exercise.html",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "Create a starter Quarto manuscript structure that is ready for writing, review, and later expansion.\n\n\nYou should be comfortable with:\n\nheadings in Markdown\nbasic YAML metadata\nthe idea that Quarto can render to more than one format\n\n\n\n\nYou are preparing the first draft of a paper on land-use change and pollinator diversity. You want a manuscript skeleton that can later grow into a full article.\n\n\n\n\nCreate a new file called manuscript.qmd.\nAdd a YAML header with title, author, date, and outputs for HTML and DOCX.\nAdd headings for Introduction, Methods, Results, Discussion, and References.\nUnder each heading, write one or two placeholder sentences.\nAdd a note where a figure or table will eventually appear.\nIf you already use citation files, add a placeholder bibliography entry in YAML.\n\n\n\n\n---\ntitle: \"Pollinator Diversity Under Land-Use Change\"\nauthor: \"Your Name\"\ndate: today\nformat:\n  html: default\n  docx: default\nbibliography: references.bib\n---\n\n\n\nAdd a subsection under Methods for data collection and another for analysis.\n\n\n\nYou should end with a manuscript file that:\n\nhas a clear academic structure\nis ready for collaborative expansion\ncan later support citations, figures, and tables\n\n\n\n\nAsk yourself:\n\nDoes the document already look like the beginning of a paper?\nAre the sections in a sensible order for your discipline?\nWould a collaborator understand where to add new material?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#prerequisites",
+    "href": "exercises/manuscripts-exercise.html#prerequisites",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "You should be comfortable with:\n\nheadings in Markdown\nbasic YAML metadata\nthe idea that Quarto can render to more than one format",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#starter-scenario",
+    "href": "exercises/manuscripts-exercise.html#starter-scenario",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "You are preparing the first draft of a paper on land-use change and pollinator diversity. You want a manuscript skeleton that can later grow into a full article.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#step-by-step-exercise",
+    "href": "exercises/manuscripts-exercise.html#step-by-step-exercise",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "Create a new file called manuscript.qmd.\nAdd a YAML header with title, author, date, and outputs for HTML and DOCX.\nAdd headings for Introduction, Methods, Results, Discussion, and References.\nUnder each heading, write one or two placeholder sentences.\nAdd a note where a figure or table will eventually appear.\nIf you already use citation files, add a placeholder bibliography entry in YAML.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#suggested-starter-content",
+    "href": "exercises/manuscripts-exercise.html#suggested-starter-content",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "---\ntitle: \"Pollinator Diversity Under Land-Use Change\"\nauthor: \"Your Name\"\ndate: today\nformat:\n  html: default\n  docx: default\nbibliography: references.bib\n---",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#stretch-task",
+    "href": "exercises/manuscripts-exercise.html#stretch-task",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "Add a subsection under Methods for data collection and another for analysis.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#expected-outcome",
+    "href": "exercises/manuscripts-exercise.html#expected-outcome",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "You should end with a manuscript file that:\n\nhas a clear academic structure\nis ready for collaborative expansion\ncan later support citations, figures, and tables",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html#self-check",
+    "href": "exercises/manuscripts-exercise.html#self-check",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "Ask yourself:\n\nDoes the document already look like the beginning of a paper?\nAre the sections in a sensible order for your discipline?\nWould a collaborator understand where to add new material?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html",
+    "href": "exercises/websites-exercise.html",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "Create the skeleton of a small Quarto website for a project or personal academic profile.\n\n\nYou should understand:\n\nthe role of _quarto.yml\nthe difference between a single document and a website project\nbasic Markdown page authoring\n\n\n\n\nYou want a project website for a workshop or research initiative. It should contain a homepage, an about page, and a materials page.\n\n\n\n\nImagine a new folder for your site project.\nDraft an _quarto.yml file with project.type: website.\nAdd a site title and simple navigation.\nPlan three pages: home, about, and materials.\nWrite one sentence describing the purpose of each page.\nAdd one callout on the homepage inviting visitors to start with the key materials.\n\n\n\n\nproject:\n  type: website\n\nwebsite:\n  title: \"Research Project Site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: materials.qmd\n        text: Materials\n\n\n\nAdd a sidebar or a footer idea that would help visitors navigate the site.\n\n\n\nYou should have a simple site plan that:\n\nseparates page-level content from site-level configuration\nreflects a clear audience\ncould be expanded into a real project website\n\n\n\n\nAsk yourself:\n\nIs the site purpose obvious from the title and planned pages?\nWould a visitor know where to click first?\nIs the structure small enough to maintain?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#prerequisites",
+    "href": "exercises/websites-exercise.html#prerequisites",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "You should understand:\n\nthe role of _quarto.yml\nthe difference between a single document and a website project\nbasic Markdown page authoring",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#starter-scenario",
+    "href": "exercises/websites-exercise.html#starter-scenario",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "You want a project website for a workshop or research initiative. It should contain a homepage, an about page, and a materials page.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#step-by-step-exercise",
+    "href": "exercises/websites-exercise.html#step-by-step-exercise",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "Imagine a new folder for your site project.\nDraft an _quarto.yml file with project.type: website.\nAdd a site title and simple navigation.\nPlan three pages: home, about, and materials.\nWrite one sentence describing the purpose of each page.\nAdd one callout on the homepage inviting visitors to start with the key materials.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#suggested-starter-content",
+    "href": "exercises/websites-exercise.html#suggested-starter-content",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "project:\n  type: website\n\nwebsite:\n  title: \"Research Project Site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: materials.qmd\n        text: Materials",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#stretch-task",
+    "href": "exercises/websites-exercise.html#stretch-task",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "Add a sidebar or a footer idea that would help visitors navigate the site.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#expected-outcome",
+    "href": "exercises/websites-exercise.html#expected-outcome",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "You should have a simple site plan that:\n\nseparates page-level content from site-level configuration\nreflects a clear audience\ncould be expanded into a real project website",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html#self-check",
+    "href": "exercises/websites-exercise.html#self-check",
+    "title": "Exercise: Sketch a Research Website",
+    "section": "",
+    "text": "Ask yourself:\n\nIs the site purpose obvious from the title and planned pages?\nWould a visitor know where to click first?\nIs the structure small enough to maintain?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html",
+    "href": "foundations/markdown-intro.html",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.\n\n\nMarkdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto.\n\n\n\n\n\n# Main Title\n## Section\n### Subsection\n\n\n\n*italic*\n**bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\n\n\n\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```\n\n\n\n\nQuarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nTipBeginner mindset\n\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.\n\n\n\n\n\nA methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow\n\n\n\n\nTry writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website\n\n\n\n\nContinue to YAML Headers to see how Quarto stores document settings at the top of a file.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html#why-this-matters-for-researchers",
+    "href": "foundations/markdown-intro.html#why-this-matters-for-researchers",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "Markdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html#core-syntax",
+    "href": "foundations/markdown-intro.html#core-syntax",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "# Main Title\n## Section\n### Subsection\n\n\n\n*italic*\n**bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\n\n\n\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html#quarto-focused-additions",
+    "href": "foundations/markdown-intro.html#quarto-focused-additions",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "Quarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nTipBeginner mindset\n\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html#concrete-academic-example",
+    "href": "foundations/markdown-intro.html#concrete-academic-example",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "A methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html#mini-practice",
+    "href": "foundations/markdown-intro.html#mini-practice",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "Try writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html#next-step",
+    "href": "foundations/markdown-intro.html#next-step",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "Continue to YAML Headers to see how Quarto stores document settings at the top of a file.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html",
+    "href": "foundations/yaml-intro.html",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "YAML is the metadata block at the top of a Quarto document. It sits between two lines of --- and controls document information such as title, author, date, output formats, and execution settings.\n\n\nYAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.\n\n\n\n---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---\n\n\n\n\n\nThis includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.\n\n\n\n\nA manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.\n\n\n\n\n\n\nYAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand.\n\n\n\nContinue to Installing Quarto for a practical overview of what participants need on their machine.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html#why-this-matters-for-researchers",
+    "href": "foundations/yaml-intro.html#why-this-matters-for-researchers",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "YAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html#basic-example",
+    "href": "foundations/yaml-intro.html#basic-example",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html#what-yaml-usually-controls",
+    "href": "foundations/yaml-intro.html#what-yaml-usually-controls",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html#concrete-academic-example",
+    "href": "foundations/yaml-intro.html#concrete-academic-example",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "A manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html#yaml-vs-markdown-vs-code-chunks",
+    "href": "foundations/yaml-intro.html#yaml-vs-markdown-vs-code-chunks",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "YAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html#next-step",
+    "href": "foundations/yaml-intro.html#next-step",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "Continue to Installing Quarto for a practical overview of what participants need on their machine.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "plan.html",
+    "href": "plan.html",
+    "title": "1 AI assistance",
+    "section": "",
+    "text": "1 AI assistance\nAdd the quarto-authoring skill for IDE agents from: https://mcpmarket.com/tools/skills/quarto-authoring-migration\n$quarto-authoring I want to develop a website with guided excercises to explore the many uses of Quarto for academic researchers. It should have sections in seperate qmd files covering the following topics: - Short intro to Quarto: Whjat it is, who made it, relation Rmarkdown, key strengths: I.e. universal syntax, multiple output formats from single files simultanesously, embedded executable code chunks in multiple languages. - Intro to markdown syntax for beginners, with a focus on Quarto. - Intro to YAML headers - Installing Quarto\nSeperate sections for each ‘use-case’ for academics, each section should have an explanatory introduction and an accompanying guided exercise: - Documenting research in progress (i.e a lab notebook) - Writing Manuscripts - Creating presentations - Creating project and personal websites for outreach and professional visibility - Interactive dashboards\nAdvanced topics: - templates and extensions - brand.yml\nHere is a text I produced to describe the workshop: Title: One Tool to Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach\nThis hands-on workshop will explore Quarto, an open-source scientific and technical publishing system from Posit (makers of RStudio), as a unified solution for academic communication. A key strength of Quarto is its ability to generate multiple output formats (e.g., PDF, HTML, LaTeX, and DOCX) from a single source document, while supporting executable code in multiple programming languages (Python, R, Julia, and Observable). This enables a more efficient, integrated, and reproducible workflow across all stages of research and dissemination. Through a combination of short presentations and guided exercises, participants will learn how Quarto can be used to produce the full spectrum of academic outputs: documentation of exploratory research and experiments; submission-ready, reproducible journal articles; conference presentations; project and personal websites for outreach and professional visibility; as well as interactive dashboards and personalized mass communication. The workshop is particularly well suited for early career researchers who are still developing their workflows, as well as more experienced researchers seeking a more integrated approach to managing research outputs. All workshop materials will be provided as an open-access website for future reference. Basic familiarity with at least one programming language (R, Python, or Julia) is helpful but not required. By the end of the session, participants will be equipped to streamline their workflows and produce professional, reproducible outputs across multiple formats from a single source."
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html",
+    "href": "use-cases/lab-notebook.html",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.\n\n\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.\n\n\n\n\n\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.\n\n\n\n\nImagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
+    "href": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Research in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Markdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html#concrete-academic-example",
+    "href": "use-cases/lab-notebook.html#concrete-academic-example",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Imagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/presentations.html",
+    "href": "use-cases/presentations.html",
+    "title": "Creating Presentations",
+    "section": "",
+    "text": "Quarto can create slide decks using formats such as RevealJS. This is useful for researchers who want presentations to live close to the same material as their reports, papers, and websites.\n\n\nTalks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.\n\n\n\n\n\nIn a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.\n\n\n\n\nA conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
+  },
+  {
+    "objectID": "use-cases/presentations.html#why-this-matters-for-researchers",
+    "href": "use-cases/presentations.html#why-this-matters-for-researchers",
+    "title": "Creating Presentations",
+    "section": "",
+    "text": "Talks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
+  },
+  {
+    "objectID": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
+    "title": "Creating Presentations",
+    "section": "",
+    "text": "In a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
+  },
+  {
+    "objectID": "use-cases/presentations.html#concrete-academic-example",
+    "href": "use-cases/presentations.html#concrete-academic-example",
+    "title": "Creating Presentations",
+    "section": "",
+    "text": "A conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
+  }
+]
