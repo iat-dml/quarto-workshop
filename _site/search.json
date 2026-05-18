@@ -148,42 +148,35 @@
     "href": "index.html",
     "title": "One Tool to Rule Them All",
     "section": "",
-    "text": "Quarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.\nThis workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.\n\n\n\n\n\n\nNoteWorkshop idea\n\n\n\nThe core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides.\n\n\n\n\n\n\n\n\n\nBen Black\nHead of the group Data and Modelling Infrastructure for Living Labs\nETH Zürich\n\n    \n\n\n\n\n\n\nIsabel Nicholson-Thomas\nDoctoral Researcher\nETH Zürich\n\n   \n\n\n\n\n\n\nManuel Kurmann\nResearch Assistant\nETH Zürich\n\n   \n\n\n\n\n\n\nThis material is especially useful for:\n\nearly career researchers building their first durable workflow\nexperienced researchers who want fewer disconnected tools\nteams that care about reproducibility, transparency, and reuse\nanyone who wants websites, manuscripts, presentations, and notes to feel part of the same system\n\nBasic familiarity with at least one language such as R, Python, or Julia can help, but it is not required for most of the lessons here.\n\n\n\nBy working through this site, participants will learn how to:\n\nunderstand what Quarto is and where it fits relative to R Markdown\nwrite basic content using Markdown and YAML\ninstall Quarto and understand the main tooling options\nuse Quarto for lab notebooks, manuscripts, presentations, websites, and dashboards\nexplore more advanced tools such as extensions, templates, and brand.yml\n\n\n\n\nThe workshop is organized in three parts:\n\nStart with the Foundations pages if Quarto is new to you.\nMove into the Academic Use Cases to see how one tool supports different research outputs.\nFinish with the Advanced Topics when you are ready to customize or scale your work.\n\nEach use-case lesson has a separate guided exercise page. The lesson explains the workflow, and the exercise helps you practice it with an academic scenario.\n\n\n\nAcademic work usually produces many related outputs:\n\nrough notes and exploratory documentation\nfigures and tables for papers\nslides for talks\nwebsites for projects, labs, or personal profiles\ninteractive communication for stakeholders or collaborators\n\nQuarto makes these outputs easier to manage because the underlying authoring model stays consistent. That means less time relearning tools and more time focusing on the research itself.\n\n\n\n\n\n\nTipSuggested path\n\n\n\nIf you are brand new, begin with What Is Quarto? and then continue to Markdown for Beginners."
+    "text": "Start with the foundations →\nJump to use cases\nQuarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.\nThis workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format."
   },
   {
     "objectID": "index.html#who-we-are",
     "href": "index.html#who-we-are",
     "title": "One Tool to Rule Them All",
-    "section": "",
-    "text": "Ben Black\nHead of the group Data and Modelling Infrastructure for Living Labs\nETH Zürich\n\n    \n\n\n\n\n\n\nIsabel Nicholson-Thomas\nDoctoral Researcher\nETH Zürich\n\n   \n\n\n\n\n\n\nManuel Kurmann\nResearch Assistant\nETH Zürich"
+    "section": "Who We Are",
+    "text": "Who We Are\n\n\n\n\n\nBen Black\nHead of the group Data and Modelling Infrastructure for Living Labs\nETH Zürich\n\n    \n\n\n\n\n\n\nIsabel Nicholson-Thomas\nDoctoral Researcher\nETH Zürich\n\n   \n\n\n\n\n\n\nManuel Kurmann\nResearch Assistant\nETH Zürich"
   },
   {
     "objectID": "index.html#who-this-workshop-is-for",
     "href": "index.html#who-this-workshop-is-for",
     "title": "One Tool to Rule Them All",
-    "section": "",
-    "text": "This material is especially useful for:\n\nearly career researchers building their first durable workflow\nexperienced researchers who want fewer disconnected tools\nteams that care about reproducibility, transparency, and reuse\nanyone who wants websites, manuscripts, presentations, and notes to feel part of the same system\n\nBasic familiarity with at least one language such as R, Python, or Julia can help, but it is not required for most of the lessons here."
-  },
-  {
-    "objectID": "index.html#what-you-will-learn",
-    "href": "index.html#what-you-will-learn",
-    "title": "One Tool to Rule Them All",
-    "section": "",
-    "text": "By working through this site, participants will learn how to:\n\nunderstand what Quarto is and where it fits relative to R Markdown\nwrite basic content using Markdown and YAML\ninstall Quarto and understand the main tooling options\nuse Quarto for lab notebooks, manuscripts, presentations, websites, and dashboards\nexplore more advanced tools such as extensions, templates, and brand.yml"
-  },
-  {
-    "objectID": "index.html#how-to-use-this-site",
-    "href": "index.html#how-to-use-this-site",
-    "title": "One Tool to Rule Them All",
-    "section": "",
-    "text": "The workshop is organized in three parts:\n\nStart with the Foundations pages if Quarto is new to you.\nMove into the Academic Use Cases to see how one tool supports different research outputs.\nFinish with the Advanced Topics when you are ready to customize or scale your work.\n\nEach use-case lesson has a separate guided exercise page. The lesson explains the workflow, and the exercise helps you practice it with an academic scenario."
+    "section": "Who This Workshop Is For",
+    "text": "Who This Workshop Is For\nThis material is especially useful for:\n\nEarly career researchers building their first durable workflow\nExperienced researchers who want fewer disconnected tools\nTeams that care about reproducibility, transparency, and reuse\nAnyone who wants websites, manuscripts, presentations, and notes to feel part of the same system\n\nBasic familiarity with at least one programming language such as R, Python, or Julia can help, but it is not required for most of the lessons here."
   },
   {
     "objectID": "index.html#why-quarto-matters-for-researchers",
     "href": "index.html#why-quarto-matters-for-researchers",
     "title": "One Tool to Rule Them All",
-    "section": "",
-    "text": "Academic work usually produces many related outputs:\n\nrough notes and exploratory documentation\nfigures and tables for papers\nslides for talks\nwebsites for projects, labs, or personal profiles\ninteractive communication for stakeholders or collaborators\n\nQuarto makes these outputs easier to manage because the underlying authoring model stays consistent. That means less time relearning tools and more time focusing on the research itself.\n\n\n\n\n\n\nTipSuggested path\n\n\n\nIf you are brand new, begin with What Is Quarto? and then continue to Markdown for Beginners."
+    "section": "Why Quarto Matters For Researchers",
+    "text": "Why Quarto Matters For Researchers\nIn a nutshell, academic work usually produces and involves many related outputs:\nWe take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.\nQuarto makes all of these activities easier to manage in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.\n\n\n\n\n\n\nNoteWorkshop idea\n\n\n\nThe core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides."
+  },
+  {
+    "objectID": "index.html#how-to-use-this-site-what-you-will-learn",
+    "href": "index.html#how-to-use-this-site-what-you-will-learn",
+    "title": "One Tool to Rule Them All",
+    "section": "How To Use This Site & What You Will Learn",
+    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n01 · Foundations\n\nPlain-text authoring\nMarkdown, YAML, and Quarto’s project model — the building blocks every output shares.\n\n\n\n02 · Notebooks\n\nLab notebooks\nReproducible research from rough exploration to a journal-ready PDF.\n\n\n\n03 · Manuscripts\n\nManuscripts\nWrite in plain text, render to PDF, HTML or DOCX, share with collaborators and streamline journal submission.\n\n\n\n04 · Outreach\n\nSlides\nRevealjs talks\n\n\n\n05 · Outreach\n\nWebsites\nProject, lab, and personal websites with Quarto’s website mode.\n\n\n\n06 · Advanced\n\nDashboards & brand\nInteractive dashboards plus brand.yml for consistent visual identity.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
   },
   {
     "objectID": "foundations/quarto-intro.html",
@@ -350,8 +343,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -363,8 +355,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -376,8 +367,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -389,8 +379,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -402,8 +391,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -415,8 +403,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -428,8 +415,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -441,8 +427,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations",
-      "Exercise: Build a Short Slide Deck"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -454,8 +439,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -467,8 +451,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -480,8 +463,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -493,8 +475,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -506,8 +487,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -519,8 +499,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -532,8 +511,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -545,8 +523,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Documenting Research in Progress",
-      "Exercise: Build a Lab Notebook Page"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -702,7 +679,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -714,7 +691,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -726,7 +703,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -738,7 +715,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -750,7 +727,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -762,7 +739,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -774,7 +751,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -786,7 +763,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Exercise: Plan a Simple Dashboard"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -798,8 +775,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -811,8 +787,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -824,8 +799,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -837,8 +811,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -850,8 +823,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -863,8 +835,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -876,8 +847,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -889,8 +859,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Writing Manuscripts",
-      "Exercise: Draft a Manuscript Skeleton"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -902,8 +871,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -915,8 +883,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -928,8 +895,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -941,8 +907,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -954,8 +919,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -967,8 +931,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -980,8 +943,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -993,8 +955,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Creating Project and Personal Websites",
-      "Exercise: Sketch a Research Website"
+      "   ↳ Exercise"
     ]
   },
   {
@@ -1229,7 +1190,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations"
+      "Creating Presentations"
     ]
   },
   {
@@ -1241,7 +1202,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations"
+      "Creating Presentations"
     ]
   },
   {
@@ -1253,7 +1214,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations"
+      "Creating Presentations"
     ]
   },
   {
@@ -1265,7 +1226,7 @@
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      " Creating Presentations"
+      "Creating Presentations"
     ]
   }
 ]

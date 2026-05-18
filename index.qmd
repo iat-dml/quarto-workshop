@@ -4,24 +4,21 @@ subtitle: "![](assets/logo-quarto.svg){width=1in}for Documentation, Presentation
 number-sections: false
 ---
 
-# Welcome
+::: btn-row
+[Start with the foundations →](foundations/quarto-intro.qmd){.btn .btn-primary}
 
-Quarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
+[Jump to use cases](use-cases/lab-notebook.qmd){.btn .btn-outline}
+:::
+
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
 
 This workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.
 
-::: {.callout-note}
-## Workshop idea
-
-The core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides.
-:::
-
 ## Who We Are
 
-::: {.team-grid}
-
-::: {.quarto-grid-item .card-team}
-::: {.team-image-container}
+:::::::::::: {.team-grid}
+::::: {.quarto-grid-item .card-team}
+::: team-image-container
 ![](assets/Ben.jpg){.team-image .lightbox}
 :::
 
@@ -31,17 +28,13 @@ The core promise of Quarto is simple: write once in a plain text source file and
 
 [ETH Zürich]{.team-employer}
 
-::: {.team-member-links}
-[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://blenback.github.io/){.listing-link-icon}
-[{{< iconify fa6-solid envelope size=xl >}}](mailto:bblack@ethz.ch){.listing-link-icon}
-[{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/ben-black-9889a1150/){.listing-link-icon}
-[{{< iconify fa6-brands github size=xl >}}](https://github.com/blenback/){.listing-link-icon}
-[{{< iconify fa6-brands researchgate size=xl >}}](https://www.researchgate.net/profile/Benjamin-Black-5/){.listing-link-icon}
+::: team-member-links
+[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://blenback.github.io/){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:bblack@ethz.ch){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/ben-black-9889a1150/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/blenback/){.listing-link-icon} [{{< iconify fa6-brands researchgate size=xl >}}](https://www.researchgate.net/profile/Benjamin-Black-5/){.listing-link-icon}
 :::
-:::
+:::::
 
-::: {.quarto-grid-item .card-team}
-::: {.team-image-container}
+::::: {.quarto-grid-item .card-team}
+::: team-image-container
 ![](assets/isabel.jpg){.team-image .lightbox}
 :::
 
@@ -51,16 +44,13 @@ The core promise of Quarto is simple: write once in a plain text source file and
 
 [ETH Zürich]{.team-employer}
 
-::: {.team-member-links}
-[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://irl.ethz.ch/people/person-detail.Mjg5Mjgx.TGlzdC8zNzc5LC0xMzk1OTgzMDM3.html){.listing-link-icon}
-[{{< iconify fa6-solid envelope size=xl >}}](mailto:nharisena@ethz.ch){.listing-link-icon}
-[{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/nivedita-varma-harisena-667298141/){.listing-link-icon}
-[{{< iconify fa6-brands github size=xl >}}](https://github.com/NVHarisena1){.listing-link-icon}
+::: team-member-links
+[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://irl.ethz.ch/people/person-detail.Mjg5Mjgx.TGlzdC8zNzc5LC0xMzk1OTgzMDM3.html){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:nharisena@ethz.ch){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/nivedita-varma-harisena-667298141/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/NVHarisena1){.listing-link-icon}
 :::
-:::
+:::::
 
-::: {.quarto-grid-item .card-team}
-::: {.team-image-container}
+::::: {.quarto-grid-item .card-team}
+::: team-image-container
 ![](assets/manuel.png){.team-image .lightbox}
 :::
 
@@ -70,61 +60,94 @@ The core promise of Quarto is simple: write once in a plain text source file and
 
 [ETH Zürich]{.team-employer}
 
-::: {.team-member-links}
-[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://pedroribalmeida.com.br/){.listing-link-icon}
-[{{< iconify fa6-solid envelope size=xl >}}](mailto:pedroribalmeida@gmail.com){.listing-link-icon}
-[{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/perial/){.listing-link-icon}
-[{{< iconify fa6-brands github size=xl >}}](https://github.com/Zapiano){.listing-link-icon}
+::: team-member-links
+[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://pedroribalmeida.com.br/){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:pedroribalmeida@gmail.com){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/perial/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/Zapiano){.listing-link-icon}
 :::
-:::
-
-:::
+:::::
+::::::::::::
 
 ## Who This Workshop Is For
 
 This material is especially useful for:
 
-- early career researchers building their first durable workflow
-- experienced researchers who want fewer disconnected tools
-- teams that care about reproducibility, transparency, and reuse
-- anyone who wants websites, manuscripts, presentations, and notes to feel part of the same system
+- Early career researchers building their first durable workflow
+- Experienced researchers who want fewer disconnected tools
+- Teams that care about reproducibility, transparency, and reuse
+- Anyone who wants websites, manuscripts, presentations, and notes to feel part of the same system
 
-Basic familiarity with at least one language such as R, Python, or Julia can help, but it is not required for most of the lessons here.
-
-## What You Will Learn
-
-By working through this site, participants will learn how to:
-
-- understand what Quarto is and where it fits relative to R Markdown
-- write basic content using Markdown and YAML
-- install Quarto and understand the main tooling options
-- use Quarto for lab notebooks, manuscripts, presentations, websites, and dashboards
-- explore more advanced tools such as extensions, templates, and `brand.yml`
-
-## How To Use This Site
-
-The workshop is organized in three parts:
-
-1. Start with the Foundations pages if Quarto is new to you.
-2. Move into the Academic Use Cases to see how one tool supports different research outputs.
-3. Finish with the Advanced Topics when you are ready to customize or scale your work.
-
-Each use-case lesson has a separate guided exercise page. The lesson explains the workflow, and the exercise helps you practice it with an academic scenario.
+Basic familiarity with at least one programming language such as R, Python, or Julia can help, but it is not required for most of the lessons here.
 
 ## Why Quarto Matters For Researchers
 
-Academic work usually produces many related outputs:
+In a nutshell, academic work usually produces and involves many related outputs: 
 
-- rough notes and exploratory documentation
-- figures and tables for papers
-- slides for talks
-- websites for projects, labs, or personal profiles
-- interactive communication for stakeholders or collaborators
+We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.
 
-Quarto makes these outputs easier to manage because the underlying authoring model stays consistent. That means less time relearning tools and more time focusing on the research itself.
+Quarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.
 
-::: {.callout-tip}
-## Suggested path
 
-If you are brand new, begin with [What Is Quarto?](foundations/quarto-intro.qmd) and then continue to [Markdown for Beginners](foundations/markdown-intro.qmd).
+::: callout-note
+## Workshop idea
+
+The core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides.
+:::
+
+## How To Use This Site & What You Will Learn
+
+We have broken down the workshop into six  main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don't have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.
+
+::: {.subject-cards}
+
+::: {.card data-href="foundations/quarto-intro.qmd"}
+[[]{.card-corner style="background:var(--ds-indigo)"}01 · Foundations]{.card-num}
+
+#### Plain-text authoring {.card-title}
+
+[Markdown, YAML, and Quarto's project model — the building blocks every output shares.]{.card-desc}
+:::
+
+::: {.card data-href="use-cases/lab-notebook.qmd"}
+[[]{.card-corner style="background:var(--ds-coral)"}02 · Notebooks]{.card-num}
+
+#### Lab notebooks {.card-title}
+
+[Reproducible research from rough exploration to a journal-ready PDF.]{.card-desc}
+:::
+
+::: {.card data-href="use-cases/manuscripts.qmd"}
+[[]{.card-corner style="background:var(--ds-moss)"}03 · Manuscripts]{.card-num}
+
+#### Manuscripts {.card-title}
+[Write in plain text, render to PDF, HTML or DOCX, share with collaborators and streamline journal submission.]{.card-desc}
+:::
+
+::: {.card data-href="use-cases/presentations.qmd"}
+[[]{.card-corner style="background:var(--ds-amber)"}04 · Outreach]{.card-num}
+
+#### Slides {.card-title}
+
+[Revealjs talks ]{.card-desc}
+:::
+
+::: {.card data-href="use-cases/websites.qmd"}
+[[]{.card-corner style="background:var(--ds-indigo)"}05 · Outreach]{.card-num}
+
+#### Websites {.card-title}
+[Project, lab, and personal websites with Quarto's website mode.]{.card-desc}
+:::
+
+::: {.card data-href="advanced/templates-and-extensions.qmd"}
+[[]{.card-corner style="background:var(--ds-amber)"}06 · Advanced]{.card-num}
+
+#### Dashboards & brand {.card-title}
+
+[Interactive dashboards plus `brand.yml` for consistent visual identity.]{.card-desc}
+:::
+
+:::
+
+::: callout-warning
+## Before you start
+
+Make sure Quarto `≥ 1.5` is installed and that you can run `quarto check` in your terminal. If you hit issues, see the [Installing Quarto](#) page.
 :::

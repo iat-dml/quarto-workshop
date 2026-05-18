@@ -8,6 +8,7 @@ color:
     night: "#0F1024"        # background
     night-2: "#171936"      # surfaces (cards, sidebar)
     night-3: "#23254A"      # borders, dividers
+    paper-3: "#23254A"      # cross-theme alias for night-3 (used in SCSS as $brand-paper-3)
     paper: "#F2EBE0"        # primary text (warm paper)
     paper-2: "#C8C2BA"      # secondary text
     muted: "#8A8499"        # tertiary text / captions
