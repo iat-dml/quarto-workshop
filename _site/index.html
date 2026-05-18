@@ -534,7 +534,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="why-quarto-matters-for-researchers">Why Quarto Matters For Researchers</h2>
 <p>In a nutshell, academic work usually produces and involves many related outputs:</p>
 <p>We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.</p>
-<p>Quarto makes all of these activities easier to manage in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.</p>
+<p>Quarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -615,11 +615,17 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <script>
+
 document.querySelectorAll('.card[data-href]').forEach(el => {
+
   el.style.cursor = 'pointer';
+
   el.addEventListener('click', () => location.href = el.dataset.href);
+
 });
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

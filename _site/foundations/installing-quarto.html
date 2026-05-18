@@ -556,11 +556,17 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <script>
+
 document.querySelectorAll('.card[data-href]').forEach(el => {
+
   el.style.cursor = 'pointer';
+
   el.addEventListener('click', () => location.href = el.dataset.href);
+
 });
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
