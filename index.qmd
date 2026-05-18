@@ -1,6 +1,7 @@
 ---
 title: "One Tool to *Rule Them All*"
 subtitle: "![](assets/logo-quarto.svg){width=1in}for Documentation, Presentations, Manuscripts and Outreach"
+number-sections: false
 ---
 
 # Welcome
@@ -13,6 +14,70 @@ This workshop website is designed as a guided reference. You can follow it from 
 ## Workshop idea
 
 The core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides.
+:::
+
+## Who We Are
+
+::: {.team-grid}
+
+::: {.quarto-grid-item .card-team}
+::: {.team-image-container}
+![](assets/Ben.jpg){.team-image .lightbox}
+:::
+
+[Ben Black]{.team-member-name}
+
+[Head of the group Data and Modelling Infrastructure for Living Labs]{.team-job-title}
+
+[ETH Zürich]{.team-employer}
+
+::: {.team-member-links}
+[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://blenback.github.io/){.listing-link-icon}
+[{{< iconify fa6-solid envelope size=xl >}}](mailto:bblack@ethz.ch){.listing-link-icon}
+[{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/ben-black-9889a1150/){.listing-link-icon}
+[{{< iconify fa6-brands github size=xl >}}](https://github.com/blenback/){.listing-link-icon}
+[{{< iconify fa6-brands researchgate size=xl >}}](https://www.researchgate.net/profile/Benjamin-Black-5/){.listing-link-icon}
+:::
+:::
+
+::: {.quarto-grid-item .card-team}
+::: {.team-image-container}
+![](assets/isabel.jpg){.team-image .lightbox}
+:::
+
+[Isabel Nicholson-Thomas]{.team-member-name}
+
+[Doctoral Researcher]{.team-job-title}
+
+[ETH Zürich]{.team-employer}
+
+::: {.team-member-links}
+[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://irl.ethz.ch/people/person-detail.Mjg5Mjgx.TGlzdC8zNzc5LC0xMzk1OTgzMDM3.html){.listing-link-icon}
+[{{< iconify fa6-solid envelope size=xl >}}](mailto:nharisena@ethz.ch){.listing-link-icon}
+[{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/nivedita-varma-harisena-667298141/){.listing-link-icon}
+[{{< iconify fa6-brands github size=xl >}}](https://github.com/NVHarisena1){.listing-link-icon}
+:::
+:::
+
+::: {.quarto-grid-item .card-team}
+::: {.team-image-container}
+![](assets/manuel.png){.team-image .lightbox}
+:::
+
+[Manuel Kurmann]{.team-member-name}
+
+[Research Assistant]{.team-job-title}
+
+[ETH Zürich]{.team-employer}
+
+::: {.team-member-links}
+[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://pedroribalmeida.com.br/){.listing-link-icon}
+[{{< iconify fa6-solid envelope size=xl >}}](mailto:pedroribalmeida@gmail.com){.listing-link-icon}
+[{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/perial/){.listing-link-icon}
+[{{< iconify fa6-brands github size=xl >}}](https://github.com/Zapiano){.listing-link-icon}
+:::
+:::
+
 :::
 
 ## Who This Workshop Is For

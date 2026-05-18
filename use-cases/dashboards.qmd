@@ -41,8 +41,4 @@ A project team monitoring restoration sites could create a dashboard summarizing
 Dashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.
 :::
 
-## Guided Practice
-
-The exercise page introduces a small dashboard concept suitable for first-time users.
-
-[Go to the dashboards exercise](../exercises/dashboards-exercise.qmd)
+[Go to the dashboards exercise](../exercises/dashboards-exercise.qmd){.btn .btn-primary}

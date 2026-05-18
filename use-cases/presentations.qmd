@@ -34,8 +34,4 @@ A conference presentation can be produced from the same project that contains th
 A good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.
 :::
 
-## Guided Practice
-
-The exercise page shows how to build a small presentation skeleton for an academic audience.
-
-[Go to the presentations exercise](../exercises/presentations-exercise.qmd)
+[Go to the presentations exercise](../exercises/presentations-exercise.qmd){.btn .btn-primary}

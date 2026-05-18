@@ -42,8 +42,4 @@ A research team drafting a journal article might use HTML for internal review, D
 You do not need to begin with a fully automated manuscript. Even using Quarto first as a well-structured writing environment already creates value.
 :::
 
-## Guided Practice
-
-The exercise page focuses on setting up a starter manuscript with metadata, sections, and room for references.
-
-[Go to the manuscripts exercise](../exercises/manuscripts-exercise.qmd)
+[Go to the manuscripts exercise](../exercises/manuscripts-exercise.qmd){.btn .btn-primary}

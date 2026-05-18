@@ -47,8 +47,4 @@ A collaborative research project could maintain a site with:
 For many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.
 :::
 
-## Guided Practice
-
-The exercise page focuses on planning and creating a small research website structure.
-
-[Go to the websites exercise](../exercises/websites-exercise.qmd)
+[Go to the websites exercise](../exercises/websites-exercise.qmd){.btn .btn-primary}

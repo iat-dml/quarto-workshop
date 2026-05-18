@@ -50,8 +50,4 @@ Imagine a field ecology project. A researcher can keep one `.qmd` file for weekl
 Write what you decided and why, not only what you did. Future-you will care about the reasoning.
 :::
 
-## Guided Practice
-
-The exercise page walks through creating a starter research notebook with headings, tasks, and a simple output format.
-
-[Go to the lab notebook exercise](../exercises/lab-notebook-exercise.qmd)
+[Go to the lab notebook exercise](../exercises/lab-notebook-exercise.qmd){.btn .btn-primary}

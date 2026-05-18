@@ -3,8 +3,10 @@ project:
   output-dir: _site
 
 website:
-  title: "One Tool to Rule Them All"
-  page-navigation: true
+  title: ""
+  page-navigation: false
+  repo-url: https://github.com/zalf-lli/LCSfFE-handbook
+  repo-actions: [edit]
   navbar:
     left:
       - href: index.qmd
@@ -29,15 +31,25 @@ website:
           - foundations/installing-quarto.qmd
       - section: "Academic Use Cases"
         contents:
-          - use-cases/lab-notebook.qmd
-          - exercises/lab-notebook-exercise.qmd
-          - use-cases/manuscripts.qmd
-          - exercises/manuscripts-exercise.qmd
-          - use-cases/presentations.qmd
-          - exercises/presentations-exercise.qmd
-          - use-cases/websites.qmd
-          - exercises/websites-exercise.qmd
-          - use-cases/dashboards.qmd
+          - section: "Documenting Research in Progress"
+            href: use-cases/lab-notebook.qmd
+            contents:
+            - exercises/lab-notebook-exercise.qmd
+          - section: "Writing Manuscripts"
+            href: use-cases/manuscripts.qmd
+            contents:
+            - exercises/manuscripts-exercise.qmd
+          - section: " Creating Presentations"
+            href: use-cases/presentations.qmd
+            contents:
+            - exercises/presentations-exercise.qmd
+          - section: "Creating Project and Personal Websites"
+            href: use-cases/websites.qmd
+            contents:
+            - exercises/websites-exercise.qmd
+          - section: "Interactive Dashboards"
+            href: use-cases/dashboards.qmd
+            contents:
           - exercises/dashboards-exercise.qmd
       - section: "Advanced Topics"
         contents:
