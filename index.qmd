@@ -103,7 +103,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 
 #### Plain-text authoring {.card-title}
 
-[Markdown, YAML, and Quarto's project model — the building blocks every output shares.]{.card-desc}
+[Markdown, YAML, and Quarto's project model: the building blocks every output shares.]{.card-desc}
 :::
 
 ::: {.card data-href="use-cases/lab-notebook.qmd"}
