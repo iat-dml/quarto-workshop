@@ -6,10 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
-  <title>Creating Project and Personal Websites</title>
+  <title>Creating Websites for Research Outreach</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -129,7 +129,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Creating Project and Personal Websites</h1>
+  <h1 class="title">Creating Websites for Research Outreach</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -138,37 +138,63 @@
 <section>
 <section id="short-introduction" class="title-slide slide level1 center">
 <h1>Short Introduction</h1>
-<p>Quarto can generate full websites as well as single documents. This makes it useful for research groups, project pages, course materials, and personal academic profiles.</p>
+<p>Quarto allows you to generate full websites which can then be deployed for free using services such as GitHub Pages or Netlify. This provides an easy solution to create web content for research groups, project pages, course and teaching materials, as well as personal academic profiles.</p>
+<p>In the exercise for this section, you will create a simple website to share your research outputs.</p>
 </section>
-<section id="why-this-matters-for-researchers" class="slide level2">
-<h2>Why This Matters For Researchers</h2>
-<p>Web presence matters for:</p>
+<section id="why-this-use-case-matters-for-researchers" class="slide level2">
+<h2>Why This Use-Case Matters For Researchers</h2>
+<p>Doing some form of outreach activities has become increasingly important for:</p>
 <ul>
-<li>public outreach</li>
-<li>professional visibility</li>
-<li>transparent sharing of outputs</li>
-<li>communicating with collaborators, students, or stakeholders</li>
+<li>Increasing your professional visibility</li>
+<li>Communicating research outputs to audiences beyond academic journals</li>
+<li>Sharing research materials and methods with the broader community</li>
 </ul>
-<p>Using Quarto for websites means the same writing habits you use in documents can also support online publishing.</p>
 </section>
-<section id="key-quarto-features-for-this-workflow" class="slide level2">
-<h2>Key Quarto Features For This Workflow</h2>
-<h3 id="website-projects">Website Projects</h3>
-<p>Quarto websites use a project-level <code>_quarto.yml</code> file to define navigation and shared formatting.</p>
+<section id="the-basics-of-websites-with-quarto" class="slide level2">
+<h2>The basics of websites with Quarto</h2>
+</section>
+<section id="rendering" class="slide level2">
+<h2>Rendering</h2>
+<p>The websites functionality of Quarto is built on top of an existing framework called Bootstrap.</p>
+<p>Like all websites Quarto website pages render as .HTML files. In many IDEs such as Rstudio, VScode and Positron these can be viewed locally directly in the ‘viewer pane’ by clicking the ‘Preview’ button at the top of the file editor window ir right clicking on the file itself.</p>
+<h3 id="project-level-configuration">Project-level configuration</h3>
+<p>Like all Quarto projects, websites should use a project-level <code>_quarto.yml</code> file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site.</p>
+</section>
+<section id="the-front-page-index.qmd" class="slide level2">
+<h2>The Front Page: index.qmd</h2>
+<p>Websites must have an <code>index.qmd</code> file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.</p>
+<h3 id="formatting-and-theming">Formatting and Theming</h3>
 <h3 id="reusable-authoring-patterns">Reusable Authoring Patterns</h3>
-<p>The same Markdown, YAML, callouts, and code chunk patterns appear in websites too.</p>
+<p>The same Markdown, YAML, callouts, and code chunk patterns appear in websites too. They can also include HTML blocks.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Websites can include other Quarto ocntent such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other HTML content you like.</p>
+</div>
+</div>
+</div>
 <h3 id="easy-publication-of-research-outputs">Easy Publication Of Research Outputs</h3>
 <p>Project summaries, people pages, methods notes, and downloadable materials can all sit in one structured site.</p>
 </section>
-<section id="concrete-academic-example" class="slide level2">
-<h2>Concrete Academic Example</h2>
-<p>A collaborative research project could maintain a site with:</p>
+<section id="concrete-examples" class="slide level2">
+<h2>Concrete Examples</h2>
+<p>Here are some real websites that we have built with Quarto:</p>
 <ul>
-<li>a short overview</li>
-<li>team members</li>
-<li>methods documentation</li>
-<li>workshop materials</li>
-<li>links to publications and datasets</li>
+<li><a href="https://blenback.github.io/">Personal academic profile</a></li>
+<li><a href="https://nascent-peru.github.io/">NASCENT-Peru</a> — a multi-lingual research project website (discussed further in the advanced topics section)</li>
+<li><a href="https://iat-dml.github.io/">Academic group website</a></li>
+<li><a href="https://monkshilllab-isolab.github.io/LCSfFE-handbook/">LCSfFE Handbook</a> — web version of an instructional guide for building field monitoring systems</li>
+</ul>
+<p>The website you are reading right now is also built with Quarto.</p>
+<p>Quarto isn’t limited to academic use either — it works just as well for personal projects:</p>
+<ul>
+<li><a href="https://janna-and-ben.github.io/">Wedding website</a></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">

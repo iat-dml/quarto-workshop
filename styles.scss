@@ -398,94 +398,121 @@ hr::after {
   color: var(--ds-ink);
 }
 
-// ───── Subject Cards  ───── */
+// ───── Subject cards ──────────────────────────────────────────────────────
+// A breakpoint-free grid of navigation cards. The quartile color is carried by
+// each card's icon (and a hover border tint), never a side-stripe; the title is
+// a stretched link so the whole card is one accessible, keyboard-focusable target.
 .subject-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  margin: 1.25rem 0 2rem;
+  margin: 1.5rem 0 2.5rem;
 }
 
 .subject-cards .card {
-  border: 1px solid var(--ds-rule);
-  border-left-width: 3px;
-  border-radius: 0.75rem;
-  padding: 1.1rem 1.2rem 1.15rem;
-  background: var(--ds-paper-2);
-  text-decoration: none !important;
-  color: var(--ds-ink);
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.3rem 1.35rem 1.2rem;
+  background: var(--ds-paper-2);
+  border: 1px solid var(--ds-rule);
+  border-radius: $border-radius-lg;
   box-shadow: var(--ds-shadow);
-  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  color: var(--ds-ink);
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 180ms ease;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(26, 27, 46, 0.12), 0 2px 6px rgba(26, 27, 46, 0.07);
-    text-decoration: none !important;
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(26, 27, 46, 0.13), 0 2px 6px rgba(26, 27, 46, 0.07);
+    border-color: color-mix(in oklab, var(--card-accent, var(--ds-ink)) 45%, var(--ds-rule));
   }
 }
 
-// Per-card accent: left border color matches the corner dot
-// Card 01 — indigo
-.subject-cards .card:nth-child(1) { border-left-color: var(--ds-indigo); &:hover { border-left-color: var(--ds-indigo); } }
-// Card 02 — coral
-.subject-cards .card:nth-child(2) { border-left-color: var(--ds-coral);  &:hover { border-left-color: var(--ds-coral);  } }
-// Card 03 — moss
-.subject-cards .card:nth-child(3) { border-left-color: var(--ds-moss);   &:hover { border-left-color: var(--ds-moss);   } }
-// Card 04 — amber
-.subject-cards .card:nth-child(4) { border-left-color: var(--ds-amber);  &:hover { border-left-color: var(--ds-amber);  } }
-// Card 05 — blueberry (indigo-soft)
-.subject-cards .card:nth-child(5) { border-left-color: var(--ds-indigo);  &:hover { border-left-color: var(--ds-indigo);  } }
-// Card 06 — sunflower (amber-soft)
-.subject-cards .card:nth-child(6) { border-left-color: var(--ds-coral);  &:hover { border-left-color: var(--ds-coral);  } }
+// Pandoc wraps each bracketed span/link in its own <p>; flatten those wrappers so
+// the card's flex column lays out the real elements. The last <p> (the arrow) takes
+// margin-top:auto to bottom-align it across cards of differing description length.
+.subject-cards .card > p { margin: 0; width: 100%; }
+.subject-cards .card > p:last-child { margin-top: auto; }
 
-.subject-cards .card .card-num {
-  font-family: var(--ds-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ds-muted);
-  margin-bottom: 0.4rem;
-  display: flex;
+// Quartile accent per card — the four brand hues rotate across the six cards.
+.subject-cards .card:nth-child(1) { --card-accent: var(--ds-indigo); }
+.subject-cards .card:nth-child(2) { --card-accent: var(--ds-coral); }
+.subject-cards .card:nth-child(3) { --card-accent: var(--ds-moss); }
+.subject-cards .card:nth-child(4) { --card-accent: var(--ds-amber); }
+.subject-cards .card:nth-child(5) { --card-accent: var(--ds-indigo); }
+.subject-cards .card:nth-child(6) { --card-accent: var(--ds-coral); }
+
+.subject-cards .card .card-icon {
+  display: inline-flex;
   align-items: center;
-  gap: 0;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--card-accent, var(--ds-indigo));
+  background: color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 12%, transparent);
 }
 
-.subject-cards .card .card-corner {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  margin-right: 0.45rem;
-  flex-shrink: 0;
-}
-
+// Title is a real link; its ::after overlay stretches the hit area over the
+// whole card so mouse and keyboard both reach one target with the link's name.
 .subject-cards .card .card-title {
   font-family: var(--ds-serif);
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   font-weight: 600;
-  margin: 0 0 0.3rem;
   letter-spacing: -0.01em;
   line-height: 1.25;
+  margin: 0.15rem 0 0;
   color: var(--ds-ink);
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  &:hover { color: var(--ds-ink); text-decoration: none; }
+  &:focus-visible {
+    outline: 2px solid var(--card-accent, var(--ds-indigo));
+    outline-offset: 4px;
+    border-radius: 3px;
+  }
 }
 
 .subject-cards .card .card-desc {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--ds-ink-2);
   margin: 0;
   line-height: 1.5;
   flex: 1;
 }
 
-.subject-cards .card code {
-  font-size: 0.82em;
-  background: transparent;
-  border: none;
-  padding: 0;
-  color: inherit;
+.subject-cards .card .card-go {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--card-accent, var(--ds-muted));
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.subject-cards .card:hover .card-go,
+.subject-cards .card:focus-within .card-go { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .subject-cards .card,
+  .subject-cards .card .card-go { transition: none; }
+  .subject-cards .card:hover,
+  .subject-cards .card:focus-within { transform: none; }
+  .subject-cards .card:hover .card-go,
+  .subject-cards .card:focus-within .card-go { transform: none; }
 }
 
 // ─── Team member cards (used on about page) ─────────────────────────────
@@ -499,7 +526,6 @@ hr::after {
     border-radius: $border-radius-lg;
     background-color: var(--ds-paper-2) !important;
     border: 1px solid var(--ds-rule);
-    border-left-width: 3px;
     box-shadow: var(--ds-shadow);
     transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
     display: flex;
@@ -509,6 +535,7 @@ hr::after {
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 20px rgba(26, 27, 46, 0.12), 0 2px 6px rgba(26, 27, 46, 0.07);
+      border-color: color-mix(in oklab, var(--card-accent, var(--ds-ink)) 38%, var(--ds-rule));
     }
 
     .card-body {
@@ -520,23 +547,54 @@ hr::after {
     }
   }
 
-  // Per-card accent colors mirror subject-cards sequence
-  .quarto-grid-item.card-team:nth-child(1) { border-left-color: var(--ds-indigo); }
-  .quarto-grid-item.card-team:nth-child(2) { border-left-color: var(--ds-coral); }
-  .quarto-grid-item.card-team:nth-child(3) { border-left-color: var(--ds-moss); }
-  .quarto-grid-item.card-team:nth-child(4) { border-left-color: var(--ds-amber); }
+  // Per-card accent colors mirror the subject-cards sequence — carried on the
+  // avatar ring (below), not a side-stripe.
+  .quarto-grid-item.card-team:nth-child(1) { --card-accent: var(--ds-indigo); }
+  .quarto-grid-item.card-team:nth-child(2) { --card-accent: var(--ds-coral); }
+  .quarto-grid-item.card-team:nth-child(3) { --card-accent: var(--ds-moss); }
+  .quarto-grid-item.card-team:nth-child(4) { --card-accent: var(--ds-amber); }
+
+  // Pandoc wraps each text span in its own <p>; the employer is the last <p>.
+  // margin-top:auto on it drops the employer + links group to the card bottom,
+  // so the social icon rows line up across cards of differing title length.
+  .quarto-grid-item.card-team > p:last-of-type { margin-top: auto; }
 
   .team-image-container {
-    display: flex;
-    justify-content: center;
-    padding: 1.25rem 0 0.75rem;
+    position: relative;
+    width: 104px;
+    height: 104px;
+    margin: 1.4rem auto 0.9rem;
 
+    // Initials disc — the avatar shown when no photo file is present.
+    .team-avatar {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-family: var(--ds-serif);
+      font-weight: 600;
+      font-size: 2.1rem;
+      letter-spacing: -0.02em;
+      color: var(--card-accent, var(--ds-indigo));
+      background: color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 14%, var(--ds-paper));
+      border: 1px solid color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 30%, var(--ds-paper-3));
+      user-select: none;
+    }
+
+    // A real photo, when added, overlays and fully covers the initials.
+    // Markup: ![Name](assets/photo.jpg){.team-image} inside this container.
     .team-image {
-      width: 100px;
-      height: 100px;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--ds-rule);
+      background: var(--ds-paper-2);
+      border: 3px solid color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 45%, var(--ds-paper-3));
+      z-index: 1;
     }
   }
 
@@ -558,7 +616,6 @@ hr::after {
     color: var(--ds-ink-2);
     line-height: 1.45;
     margin: 0;
-    flex: 1; // fills remaining space so employer + links stay bottom-aligned
   }
 
   .team-employer {
@@ -568,7 +625,7 @@ hr::after {
     font-size: 0.74em;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--ds-indigo);
+    color: var(--card-accent, var(--ds-indigo));
     margin-top: 0.6rem;
     margin-bottom: 0;
   }
@@ -578,8 +635,9 @@ hr::after {
     gap: 0.6rem;
     justify-content: center;
     width: 100%;
-    margin-top: 0.6rem;
-    padding-top: 0.6rem;
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--ds-rule);
 
     .listing-link-icon {
       display: inline-flex;
@@ -591,11 +649,16 @@ hr::after {
       transition: color 120ms ease;
 
       &:hover {
-        color: var(--ds-indigo);
+        color: var(--card-accent, var(--ds-indigo));
         text-decoration: none;
       }
 
       i { line-height: 1; }
     }
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-grid .quarto-grid-item.card-team { transition: none; }
+  .team-grid .quarto-grid-item.card-team:hover { transform: none; }
 }

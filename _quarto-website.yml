@@ -54,6 +54,8 @@ website:
         contents:
           - advanced/templates-and-extensions.qmd
           - advanced/brand-yml.qmd
+      - text: "Go Further"
+        href: go-further.qmd
 
 format:
   html:
@@ -63,4 +65,3 @@ format:
     toc-location: right
     number-sections: true
     smooth-scroll: true
-    include-after-body: card-nav.html

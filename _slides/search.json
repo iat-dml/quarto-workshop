@@ -1,24 +1,38 @@
 [
   {
-    "objectID": "use-cases/websites.html#why-this-matters-for-researchers",
-    "href": "use-cases/websites.html#why-this-matters-for-researchers",
-    "title": "Creating Project and Personal Websites",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nWeb presence matters for:\n\npublic outreach\nprofessional visibility\ntransparent sharing of outputs\ncommunicating with collaborators, students, or stakeholders\n\nUsing Quarto for websites means the same writing habits you use in documents can also support online publishing."
+    "objectID": "use-cases/websites.html#why-this-use-case-matters-for-researchers",
+    "href": "use-cases/websites.html#why-this-use-case-matters-for-researchers",
+    "title": "Creating Websites for Research Outreach",
+    "section": "Why This Use-Case Matters For Researchers",
+    "text": "Why This Use-Case Matters For Researchers\nDoing some form of outreach activities has become increasingly important for:\n\nIncreasing your professional visibility\nCommunicating research outputs to audiences beyond academic journals\nSharing research materials and methods with the broader community"
   },
   {
-    "objectID": "use-cases/websites.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/websites.html#key-quarto-features-for-this-workflow",
-    "title": "Creating Project and Personal Websites",
-    "section": "Key Quarto Features For This Workflow",
-    "text": "Key Quarto Features For This Workflow\nWebsite Projects\nQuarto websites use a project-level _quarto.yml file to define navigation and shared formatting.\nReusable Authoring Patterns\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too.\nEasy Publication Of Research Outputs\nProject summaries, people pages, methods notes, and downloadable materials can all sit in one structured site."
+    "objectID": "use-cases/websites.html#the-basics-of-websites-with-quarto",
+    "href": "use-cases/websites.html#the-basics-of-websites-with-quarto",
+    "title": "Creating Websites for Research Outreach",
+    "section": "The basics of websites with Quarto",
+    "text": "The basics of websites with Quarto"
   },
   {
-    "objectID": "use-cases/websites.html#concrete-academic-example",
-    "href": "use-cases/websites.html#concrete-academic-example",
-    "title": "Creating Project and Personal Websites",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA collaborative research project could maintain a site with:\n\na short overview\nteam members\nmethods documentation\nworkshop materials\nlinks to publications and datasets\n\n\n\n\n\n\n\nOutreach benefit\n\n\nFor many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.\n\n\n\nGo to the websites exercise"
+    "objectID": "use-cases/websites.html#rendering",
+    "href": "use-cases/websites.html#rendering",
+    "title": "Creating Websites for Research Outreach",
+    "section": "Rendering",
+    "text": "Rendering\nThe websites functionality of Quarto is built on top of an existing framework called Bootstrap.\nLike all websites Quarto website pages render as .HTML files. In many IDEs such as Rstudio, VScode and Positron these can be viewed locally directly in the ‘viewer pane’ by clicking the ‘Preview’ button at the top of the file editor window ir right clicking on the file itself.\nProject-level configuration\nLike all Quarto projects, websites should use a project-level _quarto.yml file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site."
+  },
+  {
+    "objectID": "use-cases/websites.html#the-front-page-index.qmd",
+    "href": "use-cases/websites.html#the-front-page-index.qmd",
+    "title": "Creating Websites for Research Outreach",
+    "section": "The Front Page: index.qmd",
+    "text": "The Front Page: index.qmd\nWebsites must have an index.qmd file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.\nFormatting and Theming\nReusable Authoring Patterns\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too. They can also include HTML blocks.\n\n\n\n\n\n\nTip\n\n\nWebsites can include other Quarto ocntent such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other HTML content you like.\n\n\n\nEasy Publication Of Research Outputs\nProject summaries, people pages, methods notes, and downloadable materials can all sit in one structured site."
+  },
+  {
+    "objectID": "use-cases/websites.html#concrete-examples",
+    "href": "use-cases/websites.html#concrete-examples",
+    "title": "Creating Websites for Research Outreach",
+    "section": "Concrete Examples",
+    "text": "Concrete Examples\nHere are some real websites that we have built with Quarto:\n\nPersonal academic profile\nNASCENT-Peru — a multi-lingual research project website (discussed further in the advanced topics section)\nAcademic group website\nLCSfFE Handbook — web version of an instructional guide for building field monitoring systems\n\nThe website you are reading right now is also built with Quarto.\nQuarto isn’t limited to academic use either — it works just as well for personal projects:\n\nWedding website\n\n\n\n\n\n\n\nOutreach benefit\n\n\nFor many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.\n\n\n\nGo to the websites exercise"
   },
   {
     "objectID": "use-cases/manuscripts.html#why-this-matters-for-researchers",

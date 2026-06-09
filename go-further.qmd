@@ -1,0 +1,36 @@
+---
+title: "Go Further"
+---
+
+Ready to explore more of what Quarto can do? This page collects videos, guides, and community resources to help you keep learning.
+
+## Guidance for academics
+- [Quarto for Scientists](https://qmd4sci.njtierney.com/)
+
+## Video Introduction
+
+Watch this 20-minute overview of Quarto for academic workflows by Mine Çetinkaya-Rundel, one of the core developers of Quarto:
+
+{{< video https://www.youtube.com/embed/EbAAmrB0luA?si=AwJ3szmUKECHfwuS >}}
+
+## Writing a Thesis or Dissertation
+
+Quarto is well suited for writing long-form academic documents such as term papers, theses, and dissertations. Several researchers have shared their experiences and templates:
+
+- [Cameron Patrick's Quarto thesis formatting guide](https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/#html-output) — lessons learned from writing a doctoral thesis in Quarto
+- [Ben Black's ETH doctoral thesis template](https://blenback.github.io/posts/PhD_template.html) — a template tailored for cumulative PhD theses
+- [Gina Reinhard's term paper and thesis template](https://github.com/ginareinhard/thesisTemplate) — an open-access template for M.A. theses and term papers
+- [James D. H.'s PhD thesis template](https://github.com/james-d-h/quarto-phd-thesis) — a clean, general-purpose Quarto PhD template
+- [Monash University thesis template](https://github.com/quarto-monash/thesis) — an extension-based template from Monash
+- [UPF thesis template](https://gongcastro.github.io/blog/upfthesis/upfthesis.html) — a Quarto extension for Universitat Pompeu Fabra theses
+
+## Writing a Book or Open Textbook
+
+Quarto's book format makes it straightforward to author and publish multi-chapter documents online. Utrecht University has put together a practical guide on creating open textbooks with Quarto and GitHub Pages:
+
+- [Open Textbooks with Quarto — Utrecht University](https://utrechtuniversity.github.io/open-textbooks/)
+
+## The Quarto Ecosystem
+
+[Awesome Quarto](https://github.com/mcanouil/awesome-quarto) is a community-maintained list of Quarto-related talks, tools, templates, examples, and articles — a great place to discover what others are building and find inspiration for your own projects.
+

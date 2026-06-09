@@ -19,7 +19,7 @@ This workshop website is designed as a guided reference. You can follow it from 
 :::::::::::: {.team-grid}
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-![](assets/Ben.jpg){.team-image .lightbox}
+[BB]{.team-avatar aria-hidden="true"}
 :::
 
 [Ben Black]{.team-member-name}
@@ -35,7 +35,7 @@ This workshop website is designed as a guided reference. You can follow it from 
 
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-![](assets/isabel.jpg){.team-image .lightbox}
+[IN]{.team-avatar aria-hidden="true"}
 :::
 
 [Isabel Nicholson-Thomas]{.team-member-name}
@@ -51,7 +51,7 @@ This workshop website is designed as a guided reference. You can follow it from 
 
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-![](assets/manuel.png){.team-image .lightbox}
+[MK]{.team-avatar aria-hidden="true"}
 :::
 
 [Manuel Kurmann]{.team-member-name}
@@ -98,50 +98,64 @@ We have broken down the workshop into six  main sections (with an advanced secti
 
 ::: {.subject-cards}
 
-::: {.card data-href="foundations/quarto-intro.qmd"}
-[[]{.card-corner style="background:var(--ds-indigo)"}01 · Foundations]{.card-num}
+::: {.card}
+[{{< iconify fa6-solid layer-group >}}]{.card-icon aria-hidden="true"}
 
-#### Plain-text authoring {.card-title}
+[Foundations](foundations/quarto-intro.qmd){.card-title}
 
-[Markdown, YAML, and Quarto's project model — the building blocks every output shares.]{.card-desc}
+[Markdown, YAML, and Quarto's project model: the building blocks every output shares.]{.card-desc}
+
+[{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
 
-::: {.card data-href="use-cases/lab-notebook.qmd"}
-[[]{.card-corner style="background:var(--ds-coral)"}02 · Notebooks]{.card-num}
+::: {.card}
+[{{< iconify fa6-solid flask >}}]{.card-icon aria-hidden="true"}
 
-#### Lab notebooks {.card-title}
+[Lab notebooks](use-cases/lab-notebook.qmd){.card-title}
 
-[Reproducible research from rough exploration to a journal-ready PDF.]{.card-desc}
+[Reproducible research, from rough exploration to a journal-ready PDF.]{.card-desc}
+
+[{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
 
-::: {.card data-href="use-cases/manuscripts.qmd"}
-[[]{.card-corner style="background:var(--ds-moss)"}03 · Manuscripts]{.card-num}
+::: {.card}
+[{{< iconify fa6-solid file-lines >}}]{.card-icon aria-hidden="true"}
 
-#### Manuscripts {.card-title}
-[Write in plain text, render to PDF, HTML or DOCX, share with collaborators and streamline journal submission.]{.card-desc}
+[Manuscripts](use-cases/manuscripts.qmd){.card-title}
+
+[Write in plain text; render to PDF, HTML, or DOCX, then share with collaborators.]{.card-desc}
+
+[{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
 
-::: {.card data-href="use-cases/presentations.qmd"}
-[[]{.card-corner style="background:var(--ds-amber)"}04 · Outreach]{.card-num}
+::: {.card}
+[{{< iconify fa6-solid person-chalkboard >}}]{.card-icon aria-hidden="true"}
 
-#### Slides {.card-title}
+[Slides](use-cases/presentations.qmd){.card-title}
 
-[Revealjs talks ]{.card-desc}
+[Build reveal.js talks from the same source as your paper.]{.card-desc}
+
+[{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
 
-::: {.card data-href="use-cases/websites.qmd"}
-[[]{.card-corner style="background:var(--ds-indigo)"}05 · Outreach]{.card-num}
+::: {.card}
+[{{< iconify fa6-solid globe >}}]{.card-icon aria-hidden="true"}
 
-#### Websites {.card-title}
-[Project, lab, and personal websites with Quarto's website mode.]{.card-desc}
+[Websites](use-cases/websites.qmd){.card-title}
+
+[Project, lab, and personal sites with Quarto's website mode.]{.card-desc}
+
+[{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
 
-::: {.card data-href="advanced/templates-and-extensions.qmd"}
-[[]{.card-corner style="background:var(--ds-amber)"}06 · Advanced]{.card-num}
+::: {.card}
+[{{< iconify fa6-solid chart-line >}}]{.card-icon aria-hidden="true"}
 
-#### Dashboards & brand {.card-title}
+[Dashboards & brand](advanced/templates-and-extensions.qmd){.card-title}
 
-[Interactive dashboards plus `brand.yml` for consistent visual identity.]{.card-desc}
+[Interactive dashboards, plus `brand.yml` for one consistent visual identity.]{.card-desc}
+
+[{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
 
 :::
