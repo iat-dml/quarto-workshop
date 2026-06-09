@@ -6,10 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
-  <title>Exercise: Sketch a Research Website</title>
+  <title>Exercise: Build and Publish a Quarto Website</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Exercise: Sketch a Research Website</h1>
+  <h1 class="title">Exercise: Build and Publish a Quarto Website</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -204,68 +204,226 @@
 <section>
 <section id="learning-goal" class="title-slide slide level1 center">
 <h1>Learning Goal</h1>
-<p>Create the skeleton of a small Quarto website for a project or personal academic profile.</p>
+<p>By the end of this exercise you will have built a small Quarto website on your own computer and published it live on the internet — with a web address you can share. It is written for people who are completely new to Quarto, so each step explains what you are doing and why.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>No coding required</strong></p>
+</div>
+<div class="callout-content">
+<p>A Quarto website is just a folder of plain-text pages. You can build and publish the whole thing without writing a single line of R or Python. If you later want to embed analysis, you can — but that is not needed here.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="prerequisites" class="slide level2">
-<h2>Prerequisites</h2>
-<p>You should understand:</p>
+<section id="before-you-start" class="slide level2">
+<h2>Before You Start</h2>
+<p>You will need three things:</p>
 <ul>
-<li>the role of <code>_quarto.yml</code></li>
-<li>the difference between a single document and a website project</li>
-<li>basic Markdown page authoring</li>
+<li><strong>Quarto installed</strong>, and an editor you are comfortable with. If you have not done this yet, follow <a href="../foundations/installing-quarto.html">Installing Quarto</a> first. You can check your install by running <code>quarto check</code> in a terminal.</li>
+<li><strong>A terminal</strong> (the Terminal app, PowerShell, or the terminal panel inside your editor). Every command below is typed there.</li>
+<li><strong>A free GitHub account</strong>, which you will only need for the publishing step near the end. If you do not have one, you can sign up at <a href="https://github.com/">github.com</a> — or skip Step 6 and still complete everything else locally.</li>
 </ul>
 </section>
-<section id="starter-scenario" class="slide level2">
-<h2>Starter Scenario</h2>
-<p>You want a project website for a workshop or research initiative. It should contain a homepage, an about page, and a materials page.</p>
+<section id="what-you-will-build" class="slide level2">
+<h2>What You Will Build</h2>
+<p>A small site with two pages — a <strong>home page</strong> and an <strong>about page</strong> — connected by a navigation bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny: the point is to see the full path from empty folder to live website.</p>
 </section>
-<section id="step-by-step-exercise" class="slide level2">
-<h2>Step-By-Step Exercise</h2>
+<section id="step-1-create-the-website-project" class="slide level2">
+<h2>Step 1 — Create the Website Project</h2>
+<p>Quarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you keep projects and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">quarto</span> create project website my-site</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This makes a new folder called <code>my-site</code> containing a few starter files:</p>
+<ul>
+<li><strong><code>_quarto.yml</code></strong> — the project’s settings file. It controls things that apply to the <em>whole</em> site, like its title, the navigation bar, and the colour theme.</li>
+<li><strong><code>index.qmd</code></strong> — your <strong>home page</strong>. (<code>index</code> is the special name web servers look for first.)</li>
+<li><strong><code>about.qmd</code></strong> — a second example page.</li>
+<li><strong><code>styles.css</code></strong> — a place for custom styling (you will swap this for a nicer option in Step 5).</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Prefer buttons to typing?</strong></p>
+</div>
+<div class="callout-content">
+<p>You do not have to use the terminal to create the project. The same wizard is available through your editor: in Positron or VS Code open the command palette and choose <strong>Quarto: Create Project → Website Project</strong>; in RStudio use <strong>New Project → Quarto Website</strong>. The result is the same starter folder.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-preview-your-site" class="slide level2">
+<h2>Step 2 — Preview Your Site</h2>
+<p>Move into the new folder and start a live preview:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="bu">cd</span> my-site</span>
+<span id="cb2-2"><a></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your browser opens with the site already running. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly. Press <code>Ctrl + C</code> in the terminal to stop it later.</p>
+</section>
+<section id="step-3-understand-_quarto.yml" class="slide level2">
+<h2>Step 3 — Understand <code>_quarto.yml</code></h2>
+<p>Open <code>_quarto.yml</code>. This is the one file that ties the site together. A minimal version looks like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb3-5"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Research Site"</span></span>
+<span id="cb3-6"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb3-7"><a></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb3-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb3-9"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb3-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
+<span id="cb3-11"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> About</span></span>
+<span id="cb3-12"><a></a></span>
+<span id="cb3-13"><a></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-14"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb3-15"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb3-16"><a></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Reading it from top to bottom:</p>
+<ul>
+<li><code>project: type: website</code> tells Quarto to treat the whole folder as one website rather than a single document.</li>
+<li><code>website: title:</code> is the name shown in the browser tab and in the top-left of the navigation bar. Change it to something of your own.</li>
+<li><code>navbar:</code> is the menu across the top. Each entry has an <code>href</code> (the page it links to) and the <code>text</code> shown for it. Adding a page to your site is mostly a matter of adding a line here.</li>
+<li><code>format: html:</code> sets options for every page at once — here, the <code>cosmo</code> theme and a table of contents (<code>toc</code>).</li>
+</ul>
+<p>Change the <code>title</code> to your own and save. Watch the preview update.</p>
+</section>
+<section id="step-4-edit-the-home-page-and-add-a-page" class="slide level2">
+<h2>Step 4 — Edit the Home Page and Add a Page</h2>
+<p>Open <code>index.qmd</code>. Below the <code>---</code> header, the content is just Markdown — the same headings, lists, links, and callouts you have already met in this workshop. Replace the starter text with a short welcome:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="co">---</span></span>
+<span id="cb4-2"><a></a><span class="an">title:</span><span class="co"> "Welcome"</span></span>
+<span id="cb4-3"><a></a><span class="co">---</span></span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="fu">## About this site</span></span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>A small site I built while learning Quarto. Use the menu above to look around.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now add a third page. Create a file called <code>resources.qmd</code> next to the others:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a><span class="co">---</span></span>
+<span id="cb5-2"><a></a><span class="an">title:</span><span class="co"> "Resources"</span></span>
+<span id="cb5-3"><a></a><span class="co">---</span></span>
+<span id="cb5-4"><a></a></span>
+<span id="cb5-5"><a></a>A few links and materials I want to share.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A new file is not visible to visitors until you link it. Add it to the navbar in <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb6-2"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb6-3"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb6-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
+<span id="cb6-5"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> About</span></span>
+<span id="cb6-6"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> resources.qmd</span></span>
+<span id="cb6-7"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Resources</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Save and check that the new menu item appears and works in the preview.</p>
+</section>
+<section id="step-5-change-how-it-looks" class="slide level2">
+<h2>Step 5 — Change How It Looks</h2>
+<p>The quickest way to restyle a site is to pick a different built-in <strong>theme</strong>. Quarto ships with many; try swapping <code>cosmo</code> for another such as <code>flatly</code>, <code>litera</code>, or <code>journal</code> in <code>_quarto.yml</code> and watch the preview change.</p>
+<p>To go a little further, you can override individual colours with a small style file. Create a file named <code>styles.scss</code> containing:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb7-1"><a></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="co">// a couple of colour tweaks</span></span>
+<span id="cb7-4"><a></a><span class="va">$navbar-bg</span>: <span class="cn">#2c3e50</span><span class="op">;</span></span>
+<span id="cb7-5"><a></a><span class="va">$link-color</span>: <span class="cn">#18bc9c</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>/*-- scss:defaults --*/</code> line at the top is required — it tells Quarto these are style variables. Then layer it on top of your theme in <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb8-2"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb8-3"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">cosmo</span><span class="kw">,</span><span class="at"> styles.scss</span><span class="kw">]</span></span>
+<span id="cb8-4"><a></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>(You can now remove the original <code>styles.css</code> line if your config still references it.)</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Going further with branding</strong></p>
+</div>
+<div class="callout-content">
+<p>Picking colours by hand is fine for one site. When a whole research group or project wants a shared, consistent look across its website, slides, and documents, Quarto offers a dedicated branding file — see <a href="../advanced/brand-yml.html">Using brand.yml</a> in the advanced topics. Treat that as a later step; clear structure matters more than polish when you are starting out.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-6-publish-to-github-pages" class="slide level2">
+<h2>Step 6 — Publish to GitHub Pages</h2>
+<p>Your site only exists on your laptop so far. <strong>GitHub Pages</strong> is a free service that turns a GitHub repository into a live website, and Quarto can publish to it with a single command.</p>
+<p>First, put your project on GitHub:</p>
 <ol type="1">
-<li>Imagine a new folder for your site project.</li>
-<li>Draft an <code>_quarto.yml</code> file with <code>project.type: website</code>.</li>
-<li>Add a site title and simple navigation.</li>
-<li>Plan three pages: home, about, and materials.</li>
-<li>Write one sentence describing the purpose of each page.</li>
-<li>Add one callout on the homepage inviting visitors to start with the key materials.</li>
+<li>On <a href="https://github.com/">github.com</a>, create a <strong>new, empty repository</strong> (no README) named, for example, <code>my-site</code>.</li>
+<li>Back in your terminal, inside the project folder, connect your files to it:</li>
 </ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="fu">git</span> init</span>
+<span id="cb9-2"><a></a><span class="fu">git</span> add .</span>
+<span id="cb9-3"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"First version of my site"</span></span>
+<span id="cb9-4"><a></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb9-5"><a></a><span class="fu">git</span> remote add origin https://github.com/YOUR-USERNAME/my-site.git</span>
+<span id="cb9-6"><a></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now publish:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Quarto renders your site, copies the finished pages onto a special branch called <code>gh-pages</code>, and switches on GitHub Pages for you. After a minute or so it prints your live address, which will look like <code>https://YOUR-USERNAME.github.io/my-site/</code>. Open it — your site is on the internet.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What is the <code>gh-pages</code> branch?</strong></p>
+</div>
+<div class="callout-content">
+<p>It is a separate branch that holds only the <em>built</em> website (the HTML), kept apart from your editable source files on <code>main</code>. You normally never touch it by hand — <code>quarto publish</code> manages it for you.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Publishing automatically</strong></p>
+</div>
+<div class="callout-content">
+<p>Running a command each time works well, but you can also have the site rebuild itself every time you push a change. This very workshop site does that with a small GitHub Actions workflow file, so no one has to remember to publish. Once you are comfortable with the manual command, the <a href="https://quarto.org/docs/publishing/github-pages.html">Quarto publishing docs</a> show how to set the automatic version up.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="suggested-starter-content" class="slide level2">
-<h2>Suggested Starter Content</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb1-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb1-5"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Research Project Site"</span></span>
-<span id="cb1-6"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb1-7"><a></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="cb1-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
-<span id="cb1-9"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
-<span id="cb1-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
-<span id="cb1-11"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> About</span></span>
-<span id="cb1-12"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> materials.qmd</span></span>
-<span id="cb1-13"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Materials</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="step-7-make-a-change-and-republish" class="slide level2">
+<h2>Step 7 — Make a Change and Republish</h2>
+<p>Edit one of your pages — add a sentence to the home page, for instance — and save. Then run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>again. Refresh your live URL after a moment and your update is there. This edit-and-republish loop is the whole rhythm of maintaining a Quarto website.</p>
 </section>
-<section id="stretch-task" class="slide level2">
-<h2>Stretch Task</h2>
-<p>Add a sidebar or a footer idea that would help visitors navigate the site.</p>
+<section id="stretch-tasks" class="slide level2">
+<h2>Stretch Tasks</h2>
+<p>If you finish early, try one of these:</p>
+<ul>
+<li>Add a <strong>footer</strong> to the bottom of every page using a <code>page-footer:</code> entry under <code>website:</code>.</li>
+<li>Move your navigation into a <strong>sidebar</strong> instead of (or as well as) the top navbar.</li>
+<li>Add a fourth page and link it.</li>
+<li>Try a custom <strong>Google Font</strong> by importing it in <code>styles.scss</code> and setting <code>mainfont:</code> in the HTML format options.</li>
+</ul>
 </section>
 <section id="expected-outcome" class="slide level2">
 <h2>Expected Outcome</h2>
-<p>You should have a simple site plan that:</p>
+<p>You should now have:</p>
 <ul>
-<li>separates page-level content from site-level configuration</li>
-<li>reflects a clear audience</li>
-<li>could be expanded into a real project website</li>
+<li>a small Quarto website project with at least two linked pages,</li>
+<li>a colour theme of your choosing,</li>
+<li>and a live URL you can share with anyone.</li>
 </ul>
 </section>
 <section id="self-check" class="slide level2">
 <h2>Self-Check</h2>
 <p>Ask yourself:</p>
 <ul>
-<li>Is the site purpose obvious from the title and planned pages?</li>
-<li>Would a visitor know where to click first?</li>
-<li>Is the structure small enough to maintain?</li>
+<li>Does the site open and refresh when I run <code>quarto preview</code>?</li>
+<li>Does every item in the navigation bar go to the right page?</li>
+<li>Can I visit my site at its <code>github.io</code> address from a different browser or device?</li>
+<li>Could I add another page and republish without looking up the steps?</li>
 </ul>
 
 

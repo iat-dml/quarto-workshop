@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Documenting Research in Progress</title>
+  <title>product</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,11 +31,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-abac06e4d7481df1d5d4c332a562a1d5.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-abac06e4d7481df1d5d4c332a562a1d5.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -128,63 +128,69 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Documenting Research in Progress</h1>
 
-<div class="quarto-title-authors">
-</div>
-
-</section>
 <section>
-<section id="short-introduction" class="title-slide slide level1 center">
-<h1>Short Introduction</h1>
-<p>Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.</p>
+<section id="product" class="title-slide slide level1 center">
+<h1>Product</h1>
+
 </section>
-<section id="why-this-matters-for-researchers" class="slide level2">
-<h2>Why This Matters For Researchers</h2>
-<p>Research in progress generates many small but important pieces of context:</p>
+<section id="register" class="slide level2">
+<h2>Register</h2>
+<p>brand</p>
+<p><em>Split surface: the landing page and overall identity are <strong>brand</strong> (the design is part of the message), while the interior reference pages lean <strong>product</strong> (design serves fast lookup). PRODUCT.md carries <code>brand</code> as the default; override to product when working purely on interior docs utility.</em></p>
+</section>
+<section id="users" class="slide level2">
+<h2>Users</h2>
+<p>Researchers, across two arrival paths:</p>
 <ul>
-<li>what you tried</li>
-<li>what worked and failed</li>
-<li>which files or datasets you used</li>
-<li>what to do next</li>
+<li><strong>In a live workshop session</strong>, following the site top-to-bottom while learning.</li>
+<li><strong>Returning later</strong>, jumping straight to one page when stuck on a specific output format.</li>
 </ul>
-<p>A Quarto notebook helps capture that context in a durable and shareable format.</p>
+<p>Spanning early-career researchers building their first durable workflow, experienced researchers tired of juggling disconnected tools, and teams that care about reproducibility, transparency, and reuse. Mixed technical background: comfortable with at least one of R / Python / Julia is helpful but not assumed.</p>
+<p><strong>The job to be done:</strong> learn to author once in plain text and render to many professional outputs (HTML, PDF, DOCX, slides, dashboards, websites) without switching tools, then keep the site as a reference.</p>
 </section>
-<section id="key-quarto-features-for-this-workflow" class="slide level2">
-<h2>Key Quarto Features For This Workflow</h2>
-<h3 id="clear-daily-or-weekly-entries">Clear Daily or Weekly Entries</h3>
-<p>Markdown headings make it easy to separate entries by date, experiment, or task.</p>
-<h3 id="metadata-at-the-top">Metadata At The Top</h3>
-<p>YAML can record authorship, date, project name, and output preferences.</p>
-<h3 id="optional-code-chunks">Optional Code Chunks</h3>
-<p>If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.</p>
-<h3 id="multiple-outputs">Multiple Outputs</h3>
-<p>An HTML version may be useful for browsing, while PDF can work for archiving or sharing.</p>
+<section id="product-purpose" class="slide level2">
+<h2>Product Purpose</h2>
+<p>A guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.</p>
+<p>Success: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce.</p>
 </section>
-<section id="concrete-academic-example" class="slide level2">
-<h2>Concrete Academic Example</h2>
-<p>Imagine a field ecology project. A researcher can keep one <code>.qmd</code> file for weekly notes that includes:</p>
+<section id="brand-personality" class="slide level2">
+<h2>Brand Personality</h2>
+<p>Scholarly and editorial. Warm, literate, quietly confident, the feel of a well-made academic publication rather than a software landing page. The voice is clear, specific, and generous; it explains the <em>why</em>, not only the <em>how</em>.</p>
 <ul>
-<li>observations from the field</li>
-<li>links to raw data files</li>
-<li>a short list of unresolved issues</li>
-<li>a simple chunk that prints the number of new observations collected</li>
+<li>Three words: <strong>literate, credible, unhurried.</strong></li>
+<li>Emotional goal: a researcher should feel that adopting Quarto is a calm, sensible upgrade in capable hands, with no hype.</li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Good notebook habit</strong></p>
-</div>
-<div class="callout-content">
-<p>Write what you decided and why, not only what you did. Future-you will care about the reasoning.</p>
-</div>
-</div>
-</div>
-<p><a href="../exercises/lab-notebook-exercise.html" class="btn btn-primary">Go to the lab notebook exercise</a></p>
+</section>
+<section id="anti-references" class="slide level2">
+<h2>Anti-references</h2>
+<ul>
+<li><strong>Generic default docs theme</strong> — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.</li>
+<li><strong>Corporate SaaS landing</strong> — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.</li>
+<li><strong>Overdesigned / flashy</strong> — heavy animation, glassmorphism, decorative effects that compete with learning.</li>
+<li><strong>AI-slop card scaffolding</strong> — the current homepage subject cards and after-body nav cards lean on numbered section markers (<code>01 ·</code> / <code>02 ·</code>) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend.</li>
+</ul>
+</section>
+<section id="design-principles" class="slide level2">
+<h2>Design Principles</h2>
+<ol type="1">
+<li><strong>Practice what you preach.</strong> The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.</li>
+<li><strong>Teach by showing.</strong> Real rendered output and runnable code over abstract description.</li>
+<li><strong>Reference-first navigation.</strong> A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.</li>
+<li><strong>Earn every flourish.</strong> Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.</li>
+<li><strong>Credible, not corporate.</strong> Scholarly restraint throughout; no marketing cadence, no hype.</li>
+</ol>
+</section>
+<section id="accessibility-inclusion" class="slide level2">
+<h2>Accessibility &amp; Inclusion</h2>
+<p>Target <strong>WCAG 2.1 AA</strong>.</p>
+<ul>
+<li>Body text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.</li>
+<li>Visible keyboard focus and full keyboard navigability.</li>
+<li>Full <code>prefers-reduced-motion</code> alternatives for any motion.</li>
+<li>Both the light and dark <code>brand.yml</code> themes must pass contrast.</li>
+<li>Content must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session.</li>
+</ul>
 
 
 </section></section>
@@ -196,19 +202,19 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
