@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "One Tool to Rule Them All",
+    "section": "",
+    "text": "Start with the foundations →\nJump to use cases\nQuarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.\nThis workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format."
+  },
+  {
     "objectID": "index.html#who-we-are",
     "href": "index.html#who-we-are",
     "title": "One Tool to Rule Them All",
@@ -18,769 +25,1448 @@
     "href": "index.html#why-quarto-matters-for-researchers",
     "title": "One Tool to Rule Them All",
     "section": "Why Quarto Matters For Researchers",
-    "text": "Why Quarto Matters For Researchers\nIn a nutshell, academic work usually produces and involves many related outputs:\nWe take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.\nQuarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.\n\n\n\n\n\n\nWorkshop idea\n\n\nThe core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides."
+    "text": "Why Quarto Matters For Researchers\nIn a nutshell, academic work usually produces and involves many related outputs:\nWe take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.\nQuarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.\n\n\n\n\n\n\nNoteWorkshop idea\n\n\n\nThe core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides."
   },
   {
     "objectID": "index.html#how-to-use-this-site-what-you-will-learn",
     "href": "index.html#how-to-use-this-site-what-you-will-learn",
     "title": "One Tool to Rule Them All",
     "section": "How To Use This Site & What You Will Learn",
-    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n\nFoundations\nMarkdown, YAML, and Quarto’s project model: the building blocks every output shares.\n\n\n\n\nLab notebooks\nReproducible research, from rough exploration to a journal-ready PDF.\n\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\n\nSlides\nBuild reveal.js talks from the same source as your paper.\n\n\n\n\nWebsites\nProject, lab, and personal sites with Quarto’s website mode.\n\n\n\n\nDashboards & brand\nInteractive dashboards, plus brand.yml for one consistent visual identity.\n\n\n\n\n\n\n\n\n\nBefore you start\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
+    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n\nFoundations\nMarkdown, YAML, and Quarto’s project model: the building blocks every output shares.\n\n\n\n\nLab notebooks\nReproducible research, from rough exploration to a journal-ready PDF.\n\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\n\nSlides\nBuild reveal.js talks from the same source as your paper.\n\n\n\n\nWebsites\nProject, lab, and personal sites with Quarto’s website mode.\n\n\n\n\nDashboards & brand\nInteractive dashboards, plus brand.yml for one consistent visual identity.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
+  },
+  {
+    "objectID": "plan.html",
+    "href": "plan.html",
+    "title": "1 AI assistance",
+    "section": "",
+    "text": "1 AI assistance\nAdd the quarto-authoring skill for IDE agents from: https://mcpmarket.com/tools/skills/quarto-authoring-migration\n$quarto-authoring I want to develop a website with guided excercises to explore the many uses of Quarto for academic researchers. It should have sections in seperate qmd files covering the following topics: - Short intro to Quarto: Whjat it is, who made it, relation Rmarkdown, key strengths: I.e. universal syntax, multiple output formats from single files simultanesously, embedded executable code chunks in multiple languages. - Intro to markdown syntax for beginners, with a focus on Quarto. - Intro to YAML headers - Installing Quarto\nSeperate sections for each ‘use-case’ for academics, each section should have an explanatory introduction and an accompanying guided exercise: - Documenting research in progress (i.e a lab notebook) - Writing Manuscripts - Creating presentations - Creating project and personal websites for outreach and professional visibility - Interactive dashboards\nAdvanced topics: - templates and extensions - brand.yml\nHere is a text I produced to describe the workshop: Title: One Tool to Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach\nThis hands-on workshop will explore Quarto, an open-source scientific and technical publishing system from Posit (makers of RStudio), as a unified solution for academic communication. A key strength of Quarto is its ability to generate multiple output formats (e.g., PDF, HTML, LaTeX, and DOCX) from a single source document, while supporting executable code in multiple programming languages (Python, R, Julia, and Observable). This enables a more efficient, integrated, and reproducible workflow across all stages of research and dissemination. Through a combination of short presentations and guided exercises, participants will learn how Quarto can be used to produce the full spectrum of academic outputs: documentation of exploratory research and experiments; submission-ready, reproducible journal articles; conference presentations; project and personal websites for outreach and professional visibility; as well as interactive dashboards and personalized mass communication. The workshop is particularly well suited for early career researchers who are still developing their workflows, as well as more experienced researchers seeking a more integrated approach to managing research outputs. All workshop materials will be provided as an open-access website for future reference. Basic familiarity with at least one programming language (R, Python, or Julia) is helpful but not required. By the end of the session, participants will be equipped to streamline their workflows and produce professional, reproducible outputs across multiple formats from a single source."
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html",
+    "href": "exercises/presentations-exercise.html",
+    "title": "Exercise: Build a Short Slide Deck",
+    "section": "",
+    "text": "Create a minimal Quarto presentation that could support a short research talk.\n\n\nYou should know:\n\nbasic Markdown headings\nhow YAML configures document format\nthat RevealJS is one common Quarto presentation format\n\n\n\n\nYou have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.\n\n\n\n\nCreate a file called talk.qmd.\nAdd a YAML header with a title and format: revealjs.\nCreate a first slide with the title and presenter name.\nAdd slides for research question, methods, key finding, and next steps.\nKeep each slide concise using bullets instead of paragraphs.\nAdd one placeholder line for a future figure.\n\n\n\n\n---\ntitle: \"Drought Impacts on Vegetation\"\nformat: revealjs\n---\n\n## Research Question\n\n- How did vegetation response differ across sites?\n\n## Methods\n\n- Remote sensing summary\n- Field validation\n\n\n\nAdd speaker notes or a final slide with contact information.\n\n\n\nYour slide deck should:\n\nhave a clear sequence\nbe appropriate for a short academic talk\nshow how Quarto can switch from document writing to presentation authoring\n\n\n\n\nAsk yourself:\n\nWould each slide be readable in a live talk?\nIs there one main message per slide?\nCan this deck grow into a fuller presentation later?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#prerequisites",
     "href": "exercises/presentations-exercise.html#prerequisites",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nYou should know:\n\nbasic Markdown headings\nhow YAML configures document format\nthat RevealJS is one common Quarto presentation format"
+    "section": "",
+    "text": "You should know:\n\nbasic Markdown headings\nhow YAML configures document format\nthat RevealJS is one common Quarto presentation format",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#starter-scenario",
     "href": "exercises/presentations-exercise.html#starter-scenario",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Starter Scenario",
-    "text": "Starter Scenario\nYou have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps."
+    "section": "",
+    "text": "You have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#step-by-step-exercise",
     "href": "exercises/presentations-exercise.html#step-by-step-exercise",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Step-By-Step Exercise",
-    "text": "Step-By-Step Exercise\n\nCreate a file called talk.qmd.\nAdd a YAML header with a title and format: revealjs.\nCreate a first slide with the title and presenter name.\nAdd slides for research question, methods, key finding, and next steps.\nKeep each slide concise using bullets instead of paragraphs.\nAdd one placeholder line for a future figure."
+    "section": "",
+    "text": "Create a file called talk.qmd.\nAdd a YAML header with a title and format: revealjs.\nCreate a first slide with the title and presenter name.\nAdd slides for research question, methods, key finding, and next steps.\nKeep each slide concise using bullets instead of paragraphs.\nAdd one placeholder line for a future figure.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#suggested-starter-content",
     "href": "exercises/presentations-exercise.html#suggested-starter-content",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Suggested Starter Content",
-    "text": "Suggested Starter Content\n---\ntitle: \"Drought Impacts on Vegetation\"\nformat: revealjs\n---\n\n## Research Question\n\n- How did vegetation response differ across sites?\n\n## Methods\n\n- Remote sensing summary\n- Field validation"
+    "section": "",
+    "text": "---\ntitle: \"Drought Impacts on Vegetation\"\nformat: revealjs\n---\n\n## Research Question\n\n- How did vegetation response differ across sites?\n\n## Methods\n\n- Remote sensing summary\n- Field validation",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#stretch-task",
     "href": "exercises/presentations-exercise.html#stretch-task",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Stretch Task",
-    "text": "Stretch Task\nAdd speaker notes or a final slide with contact information."
+    "section": "",
+    "text": "Add speaker notes or a final slide with contact information.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#expected-outcome",
     "href": "exercises/presentations-exercise.html#expected-outcome",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Expected Outcome",
-    "text": "Expected Outcome\nYour slide deck should:\n\nhave a clear sequence\nbe appropriate for a short academic talk\nshow how Quarto can switch from document writing to presentation authoring"
+    "section": "",
+    "text": "Your slide deck should:\n\nhave a clear sequence\nbe appropriate for a short academic talk\nshow how Quarto can switch from document writing to presentation authoring",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/presentations-exercise.html#self-check",
     "href": "exercises/presentations-exercise.html#self-check",
     "title": "Exercise: Build a Short Slide Deck",
-    "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nWould each slide be readable in a live talk?\nIs there one main message per slide?\nCan this deck grow into a fuller presentation later?"
+    "section": "",
+    "text": "Ask yourself:\n\nWould each slide be readable in a live talk?\nIs there one main message per slide?\nCan this deck grow into a fuller presentation later?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/manuscripts-exercise.html",
+    "href": "exercises/manuscripts-exercise.html",
+    "title": "Exercise: Draft a Manuscript Skeleton",
+    "section": "",
+    "text": "Create a starter Quarto manuscript structure that is ready for writing, review, and later expansion.\n\n\nYou should be comfortable with:\n\nheadings in Markdown\nbasic YAML metadata\nthe idea that Quarto can render to more than one format\n\n\n\n\nYou are preparing the first draft of a paper on land-use change and pollinator diversity. You want a manuscript skeleton that can later grow into a full article.\n\n\n\n\nCreate a new file called manuscript.qmd.\nAdd a YAML header with title, author, date, and outputs for HTML and DOCX.\nAdd headings for Introduction, Methods, Results, Discussion, and References.\nUnder each heading, write one or two placeholder sentences.\nAdd a note where a figure or table will eventually appear.\nIf you already use citation files, add a placeholder bibliography entry in YAML.\n\n\n\n\n---\ntitle: \"Pollinator Diversity Under Land-Use Change\"\nauthor: \"Your Name\"\ndate: today\nformat:\n  html: default\n  docx: default\nbibliography: references.bib\n---\n\n\n\nAdd a subsection under Methods for data collection and another for analysis.\n\n\n\nYou should end with a manuscript file that:\n\nhas a clear academic structure\nis ready for collaborative expansion\ncan later support citations, figures, and tables\n\n\n\n\nAsk yourself:\n\nDoes the document already look like the beginning of a paper?\nAre the sections in a sensible order for your discipline?\nWould a collaborator understand where to add new material?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#prerequisites",
     "href": "exercises/manuscripts-exercise.html#prerequisites",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nYou should be comfortable with:\n\nheadings in Markdown\nbasic YAML metadata\nthe idea that Quarto can render to more than one format"
+    "section": "",
+    "text": "You should be comfortable with:\n\nheadings in Markdown\nbasic YAML metadata\nthe idea that Quarto can render to more than one format",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#starter-scenario",
     "href": "exercises/manuscripts-exercise.html#starter-scenario",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Starter Scenario",
-    "text": "Starter Scenario\nYou are preparing the first draft of a paper on land-use change and pollinator diversity. You want a manuscript skeleton that can later grow into a full article."
+    "section": "",
+    "text": "You are preparing the first draft of a paper on land-use change and pollinator diversity. You want a manuscript skeleton that can later grow into a full article.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#step-by-step-exercise",
     "href": "exercises/manuscripts-exercise.html#step-by-step-exercise",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Step-By-Step Exercise",
-    "text": "Step-By-Step Exercise\n\nCreate a new file called manuscript.qmd.\nAdd a YAML header with title, author, date, and outputs for HTML and DOCX.\nAdd headings for Introduction, Methods, Results, Discussion, and References.\nUnder each heading, write one or two placeholder sentences.\nAdd a note where a figure or table will eventually appear.\nIf you already use citation files, add a placeholder bibliography entry in YAML."
+    "section": "",
+    "text": "Create a new file called manuscript.qmd.\nAdd a YAML header with title, author, date, and outputs for HTML and DOCX.\nAdd headings for Introduction, Methods, Results, Discussion, and References.\nUnder each heading, write one or two placeholder sentences.\nAdd a note where a figure or table will eventually appear.\nIf you already use citation files, add a placeholder bibliography entry in YAML.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#suggested-starter-content",
     "href": "exercises/manuscripts-exercise.html#suggested-starter-content",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Suggested Starter Content",
-    "text": "Suggested Starter Content\n---\ntitle: \"Pollinator Diversity Under Land-Use Change\"\nauthor: \"Your Name\"\ndate: today\nformat:\n  html: default\n  docx: default\nbibliography: references.bib\n---"
+    "section": "",
+    "text": "---\ntitle: \"Pollinator Diversity Under Land-Use Change\"\nauthor: \"Your Name\"\ndate: today\nformat:\n  html: default\n  docx: default\nbibliography: references.bib\n---",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#stretch-task",
     "href": "exercises/manuscripts-exercise.html#stretch-task",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Stretch Task",
-    "text": "Stretch Task\nAdd a subsection under Methods for data collection and another for analysis."
+    "section": "",
+    "text": "Add a subsection under Methods for data collection and another for analysis.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#expected-outcome",
     "href": "exercises/manuscripts-exercise.html#expected-outcome",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Expected Outcome",
-    "text": "Expected Outcome\nYou should end with a manuscript file that:\n\nhas a clear academic structure\nis ready for collaborative expansion\ncan later support citations, figures, and tables"
+    "section": "",
+    "text": "You should end with a manuscript file that:\n\nhas a clear academic structure\nis ready for collaborative expansion\ncan later support citations, figures, and tables",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/manuscripts-exercise.html#self-check",
     "href": "exercises/manuscripts-exercise.html#self-check",
     "title": "Exercise: Draft a Manuscript Skeleton",
-    "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nDoes the document already look like the beginning of a paper?\nAre the sections in a sensible order for your discipline?\nWould a collaborator understand where to add new material?"
+    "section": "",
+    "text": "Ask yourself:\n\nDoes the document already look like the beginning of a paper?\nAre the sections in a sensible order for your discipline?\nWould a collaborator understand where to add new material?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "go-further.html",
+    "href": "go-further.html",
+    "title": "Go Further",
+    "section": "",
+    "text": "Ready to explore more of what Quarto can do? This page collects videos, guides, and community resources to help you keep learning.",
+    "crumbs": [
+      "Home",
+      "Go Further"
+    ]
   },
   {
     "objectID": "go-further.html#guidance-for-academics",
     "href": "go-further.html#guidance-for-academics",
     "title": "Go Further",
-    "section": "Guidance for academics",
-    "text": "Guidance for academics\n\nQuarto for Scientists"
+    "section": "1 Guidance for academics",
+    "text": "1 Guidance for academics\n\nQuarto for Scientists",
+    "crumbs": [
+      "Home",
+      "Go Further"
+    ]
   },
   {
     "objectID": "go-further.html#video-introduction",
     "href": "go-further.html#video-introduction",
     "title": "Go Further",
-    "section": "Video Introduction",
-    "text": "Video Introduction\nWatch this 20-minute overview of Quarto for academic workflows by Mine Çetinkaya-Rundel, one of the core developers of Quarto:"
+    "section": "2 Video Introduction",
+    "text": "2 Video Introduction\nWatch this 20-minute overview of Quarto for academic workflows by Mine Çetinkaya-Rundel, one of the core developers of Quarto:",
+    "crumbs": [
+      "Home",
+      "Go Further"
+    ]
   },
   {
     "objectID": "go-further.html#writing-a-thesis-or-dissertation",
     "href": "go-further.html#writing-a-thesis-or-dissertation",
     "title": "Go Further",
-    "section": "Writing a Thesis or Dissertation",
-    "text": "Writing a Thesis or Dissertation\nQuarto is well suited for writing long-form academic documents such as term papers, theses, and dissertations. Several researchers have shared their experiences and templates:\n\nCameron Patrick’s Quarto thesis formatting guide — lessons learned from writing a doctoral thesis in Quarto\nBen Black’s ETH doctoral thesis template — a template tailored for cumulative PhD theses\nGina Reinhard’s term paper and thesis template — an open-access template for M.A. theses and term papers\nJames D. H.’s PhD thesis template — a clean, general-purpose Quarto PhD template\nMonash University thesis template — an extension-based template from Monash\nUPF thesis template — a Quarto extension for Universitat Pompeu Fabra theses"
+    "section": "3 Writing a Thesis or Dissertation",
+    "text": "3 Writing a Thesis or Dissertation\nQuarto is well suited for writing long-form academic documents such as term papers, theses, and dissertations. Several researchers have shared their experiences and templates:\n\nCameron Patrick’s Quarto thesis formatting guide — lessons learned from writing a doctoral thesis in Quarto\nBen Black’s ETH doctoral thesis template — a template tailored for cumulative PhD theses\nGina Reinhard’s term paper and thesis template — an open-access template for M.A. theses and term papers\nJames D. H.’s PhD thesis template — a clean, general-purpose Quarto PhD template\nMonash University thesis template — an extension-based template from Monash\nUPF thesis template — a Quarto extension for Universitat Pompeu Fabra theses",
+    "crumbs": [
+      "Home",
+      "Go Further"
+    ]
   },
   {
     "objectID": "go-further.html#writing-a-book-or-open-textbook",
     "href": "go-further.html#writing-a-book-or-open-textbook",
     "title": "Go Further",
-    "section": "Writing a Book or Open Textbook",
-    "text": "Writing a Book or Open Textbook\nQuarto’s book format makes it straightforward to author and publish multi-chapter documents online. Utrecht University has put together a practical guide on creating open textbooks with Quarto and GitHub Pages:\n\nOpen Textbooks with Quarto — Utrecht University"
+    "section": "4 Writing a Book or Open Textbook",
+    "text": "4 Writing a Book or Open Textbook\nQuarto’s book format makes it straightforward to author and publish multi-chapter documents online. Utrecht University has put together a practical guide on creating open textbooks with Quarto and GitHub Pages:\n\nOpen Textbooks with Quarto — Utrecht University",
+    "crumbs": [
+      "Home",
+      "Go Further"
+    ]
   },
   {
     "objectID": "go-further.html#the-quarto-ecosystem",
     "href": "go-further.html#the-quarto-ecosystem",
     "title": "Go Further",
-    "section": "The Quarto Ecosystem",
-    "text": "The Quarto Ecosystem\nAwesome Quarto is a community-maintained list of Quarto-related talks, tools, templates, examples, and articles — a great place to discover what others are building and find inspiration for your own projects."
+    "section": "5 The Quarto Ecosystem",
+    "text": "5 The Quarto Ecosystem\nAwesome Quarto is a community-maintained list of Quarto-related talks, tools, templates, examples, and articles — a great place to discover what others are building and find inspiration for your own projects.",
+    "crumbs": [
+      "Home",
+      "Go Further"
+    ]
+  },
+  {
+    "objectID": "foundations/yaml-intro.html",
+    "href": "foundations/yaml-intro.html",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "YAML is the metadata block at the top of a Quarto document. It sits between two lines of --- and controls document information such as title, author, date, output formats, and execution settings.\n\n\nYAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.\n\n\n\n---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---\n\n\n\n\n\nThis includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.\n\n\n\n\nA manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.\n\n\n\n\n\n\nYAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand.\n\n\n\nContinue to Installing Quarto for a practical overview of what participants need on their machine.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
   },
   {
     "objectID": "foundations/yaml-intro.html#why-this-matters-for-researchers",
     "href": "foundations/yaml-intro.html#why-this-matters-for-researchers",
     "title": "YAML Headers in Quarto",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nYAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page."
+    "section": "",
+    "text": "YAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
   },
   {
     "objectID": "foundations/yaml-intro.html#basic-example",
     "href": "foundations/yaml-intro.html#basic-example",
     "title": "YAML Headers in Quarto",
-    "section": "Basic Example",
-    "text": "Basic Example\n---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---"
+    "section": "",
+    "text": "---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
   },
   {
     "objectID": "foundations/yaml-intro.html#what-yaml-usually-controls",
     "href": "foundations/yaml-intro.html#what-yaml-usually-controls",
     "title": "YAML Headers in Quarto",
-    "section": "What YAML Usually Controls",
-    "text": "What YAML Usually Controls\nDocument Metadata\nThis includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\nOutput Format\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\nExecution Defaults\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden."
+    "section": "",
+    "text": "This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
   },
   {
     "objectID": "foundations/yaml-intro.html#concrete-academic-example",
     "href": "foundations/yaml-intro.html#concrete-academic-example",
     "title": "YAML Headers in Quarto",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nCommon beginner issue\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct."
+    "section": "",
+    "text": "A manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
   },
   {
     "objectID": "foundations/yaml-intro.html#yaml-vs-markdown-vs-code-chunks",
     "href": "foundations/yaml-intro.html#yaml-vs-markdown-vs-code-chunks",
     "title": "YAML Headers in Quarto",
-    "section": "YAML vs Markdown vs Code Chunks",
-    "text": "YAML vs Markdown vs Code Chunks\n\nYAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand."
+    "section": "",
+    "text": "YAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
   },
   {
     "objectID": "foundations/yaml-intro.html#next-step",
     "href": "foundations/yaml-intro.html#next-step",
     "title": "YAML Headers in Quarto",
-    "section": "Next Step",
-    "text": "Next Step\nContinue to Installing Quarto for a practical overview of what participants need on their machine."
+    "section": "",
+    "text": "Continue to Installing Quarto for a practical overview of what participants need on their machine.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/markdown-intro.html",
+    "href": "foundations/markdown-intro.html",
+    "title": "Markdown for Beginners",
+    "section": "",
+    "text": "Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.\n\n\nMarkdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto.\n\n\n\n\n\n# Main Title\n## Section\n### Subsection\n\n\n\n*italic*\n**bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\n\n\n\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```\n\n\n\n\nQuarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nTipBeginner mindset\n\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.\n\n\n\n\n\nA methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow\n\n\n\n\nTry writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website\n\n\n\n\nContinue to YAML Headers to see how Quarto stores document settings at the top of a file.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
   },
   {
     "objectID": "foundations/markdown-intro.html#why-this-matters-for-researchers",
     "href": "foundations/markdown-intro.html#why-this-matters-for-researchers",
     "title": "Markdown for Beginners",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nMarkdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto."
+    "section": "",
+    "text": "Markdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
   },
   {
     "objectID": "foundations/markdown-intro.html#core-syntax",
     "href": "foundations/markdown-intro.html#core-syntax",
     "title": "Markdown for Beginners",
-    "section": "Core Syntax",
-    "text": "Core Syntax\nHeadings\n# Main Title\n## Section\n### Subsection\nEmphasis\n*italic*\n**bold**\nLists\n- bullet item\n- another bullet\n\n1. first step\n2. second step\nLinks and Images\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\nCode\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```"
+    "section": "",
+    "text": "# Main Title\n## Section\n### Subsection\n\n\n\n*italic*\n**bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\n\n\n\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
   },
   {
     "objectID": "foundations/markdown-intro.html#quarto-focused-additions",
     "href": "foundations/markdown-intro.html#quarto-focused-additions",
     "title": "Markdown for Beginners",
-    "section": "Quarto-Focused Additions",
-    "text": "Quarto-Focused Additions\nQuarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nBeginner mindset\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started."
+    "section": "",
+    "text": "Quarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nTipBeginner mindset\n\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
   },
   {
     "objectID": "foundations/markdown-intro.html#concrete-academic-example",
     "href": "foundations/markdown-intro.html#concrete-academic-example",
     "title": "Markdown for Beginners",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow"
+    "section": "",
+    "text": "A methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
   },
   {
     "objectID": "foundations/markdown-intro.html#mini-practice",
     "href": "foundations/markdown-intro.html#mini-practice",
     "title": "Markdown for Beginners",
-    "section": "Mini Practice",
-    "text": "Mini Practice\nTry writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website"
+    "section": "",
+    "text": "Try writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
   },
   {
     "objectID": "foundations/markdown-intro.html#next-step",
     "href": "foundations/markdown-intro.html#next-step",
     "title": "Markdown for Beginners",
-    "section": "Next Step",
-    "text": "Next Step\nContinue to YAML Headers to see how Quarto stores document settings at the top of a file."
+    "section": "",
+    "text": "Continue to YAML Headers to see how Quarto stores document settings at the top of a file.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Markdown for Beginners"
+    ]
+  },
+  {
+    "objectID": "advanced/templates-and-extensions.html",
+    "href": "advanced/templates-and-extensions.html",
+    "title": "Creating Custom Templates and Extensions",
+    "section": "",
+    "text": "Once participants are comfortable with Quarto basics, templates and extensions provide ways to speed up repeated work and add specialized functionality.\n\n\nAcademic workflows often repeat familiar patterns:\n\nmanuscript structures\nrecurring workshop materials\nshared project websites\njournal-specific output requirements\n\nTemplates reduce setup time, and extensions can add features that are not included by default.\n\n\n\nTemplates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.\n\n\n\nQuarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.\nExample install command:\nquarto add quarto-ext/fontawesome\n\n\n\nA lab could keep:\n\na manuscript starter structure for new papers\na workshop exercise template\na project website template with agreed navigation and style\n\nExtensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.\n\n\n\n\n\n\nTipGood habit\n\n\n\nTreat extensions like dependencies: document them clearly and only add them when they solve a real need.\n\n\n\n\n\nFor beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Creating Custom Templates and Extensions"
+    ]
   },
   {
     "objectID": "advanced/templates-and-extensions.html#why-this-matters-for-researchers",
     "href": "advanced/templates-and-extensions.html#why-this-matters-for-researchers",
     "title": "Creating Custom Templates and Extensions",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nAcademic workflows often repeat familiar patterns:\n\nmanuscript structures\nrecurring workshop materials\nshared project websites\njournal-specific output requirements\n\nTemplates reduce setup time, and extensions can add features that are not included by default."
+    "section": "",
+    "text": "Academic workflows often repeat familiar patterns:\n\nmanuscript structures\nrecurring workshop materials\nshared project websites\njournal-specific output requirements\n\nTemplates reduce setup time, and extensions can add features that are not included by default.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Creating Custom Templates and Extensions"
+    ]
   },
   {
     "objectID": "advanced/templates-and-extensions.html#templates",
     "href": "advanced/templates-and-extensions.html#templates",
     "title": "Creating Custom Templates and Extensions",
-    "section": "Templates",
-    "text": "Templates\nTemplates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place."
+    "section": "",
+    "text": "Templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Creating Custom Templates and Extensions"
+    ]
   },
   {
     "objectID": "advanced/templates-and-extensions.html#extensions",
     "href": "advanced/templates-and-extensions.html#extensions",
     "title": "Creating Custom Templates and Extensions",
-    "section": "Extensions",
-    "text": "Extensions\nQuarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.\nExample install command:\nquarto add quarto-ext/fontawesome"
+    "section": "",
+    "text": "Quarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.\nExample install command:\nquarto add quarto-ext/fontawesome",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Creating Custom Templates and Extensions"
+    ]
   },
   {
     "objectID": "advanced/templates-and-extensions.html#concrete-academic-example",
     "href": "advanced/templates-and-extensions.html#concrete-academic-example",
     "title": "Creating Custom Templates and Extensions",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA lab could keep:\n\na manuscript starter structure for new papers\na workshop exercise template\na project website template with agreed navigation and style\n\nExtensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.\n\n\n\n\n\n\nGood habit\n\n\nTreat extensions like dependencies: document them clearly and only add them when they solve a real need."
+    "section": "",
+    "text": "A lab could keep:\n\na manuscript starter structure for new papers\na workshop exercise template\na project website template with agreed navigation and style\n\nExtensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.\n\n\n\n\n\n\nTipGood habit\n\n\n\nTreat extensions like dependencies: document them clearly and only add them when they solve a real need.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Creating Custom Templates and Extensions"
+    ]
   },
   {
     "objectID": "advanced/templates-and-extensions.html#what-to-emphasize-in-the-workshop",
     "href": "advanced/templates-and-extensions.html#what-to-emphasize-in-the-workshop",
     "title": "Creating Custom Templates and Extensions",
-    "section": "What To Emphasize In The Workshop",
-    "text": "What To Emphasize In The Workshop\nFor beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows."
+    "section": "",
+    "text": "For beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Creating Custom Templates and Extensions"
+    ]
+  },
+  {
+    "objectID": "use-cases/presentations.html",
+    "href": "use-cases/presentations.html",
+    "title": "Creating Presentations",
+    "section": "",
+    "text": "Quarto can create slide decks using formats such as RevealJS. This is useful for researchers who want presentations to live close to the same material as their reports, papers, and websites.\n\n\nTalks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.\n\n\n\n\n\nIn a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.\n\n\n\n\nA conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
   },
   {
     "objectID": "use-cases/presentations.html#why-this-matters-for-researchers",
     "href": "use-cases/presentations.html#why-this-matters-for-researchers",
     "title": "Creating Presentations",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nTalks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent."
+    "section": "",
+    "text": "Talks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
   },
   {
     "objectID": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
     "href": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
     "title": "Creating Presentations",
-    "section": "Key Quarto Features For This Workflow",
-    "text": "Key Quarto Features For This Workflow\nSlide-Based Authoring\nIn a Quarto slide deck, level-two headings usually create new slides.\nReusable Content\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\nWeb-Native Output\nHTML slides are easy to share and update, and they work well for teaching or conference talks."
+    "section": "",
+    "text": "In a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
   },
   {
     "objectID": "use-cases/presentations.html#concrete-academic-example",
     "href": "use-cases/presentations.html#concrete-academic-example",
     "title": "Creating Presentations",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nPresentation mindset\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\n\nGo to the presentations exercise"
+    "section": "",
+    "text": "A conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html",
+    "href": "use-cases/lab-notebook.html",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.\n\n\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.\n\n\n\n\n\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.\n\n\n\n\nImagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
   },
   {
     "objectID": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
     "href": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
     "title": "Documenting Research in Progress",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format."
+    "section": "",
+    "text": "Research in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
   },
   {
     "objectID": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
     "href": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
     "title": "Documenting Research in Progress",
-    "section": "Key Quarto Features For This Workflow",
-    "text": "Key Quarto Features For This Workflow\nClear Daily or Weekly Entries\nMarkdown headings make it easy to separate entries by date, experiment, or task.\nMetadata At The Top\nYAML can record authorship, date, project name, and output preferences.\nOptional Code Chunks\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\nMultiple Outputs\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing."
+    "section": "",
+    "text": "Markdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
   },
   {
     "objectID": "use-cases/lab-notebook.html#concrete-academic-example",
     "href": "use-cases/lab-notebook.html#concrete-academic-example",
     "title": "Documenting Research in Progress",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nImagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nGood notebook habit\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\n\nGo to the lab notebook exercise"
+    "section": "",
+    "text": "Imagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "DESIGN.html",
+    "href": "DESIGN.html",
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "Creative North Star: “The Quartile Press”\nThis is an editorial press rendered in HTML. The page is warm paper stock; the type is set, not typed; and the system carries four signature accent colors — indigo, coral, moss, amber — as its four “quarters,” one per family of Quarto output. The whole site is its own proof of concept: a Quarto site that teaches Quarto, so every surface has to read as something a careful researcher would be proud to publish. Restraint is the house style. Warmth comes from the paper, the Newsreader serif, and the quartile accents, never from effects.\nThe system rejects four things by name. It is not the out-of-the-box Bootstrap/Quarto default theme — undifferentiated, obviously templated. It is not a corporate SaaS landing page — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy. It is not overdesigned — no decorative animation, no glassmorphism, nothing that competes with reading. And it is done with AI-slop card scaffolding: numbered section markers (01 · / 02 ·) and colored left-stripe borders are recognised tells, slated for removal, never to be extended.\nThe reader is either mid-workshop or returning in a hurry; both must find the right page fast. On interior reference pages, structure and findability outrank decoration. On the landing page, the design is allowed to carry the message.\nKey Characteristics: - Warm paper ground (#FBF7F0), deep indigo-black ink (#1A1B2E) — never pure white, never pure black. - Four-accent “quartile” system, used sparingly and meaningfully, one accent per use-case family. - Serif display (Newsreader) over sans body (IBM Plex Sans) over mono (IBM Plex Mono) — a three-axis contrast, not three competing voices. - Soft ambient depth at rest, a gentle 2px lift on hover. Nothing floats. - First-party light and dark brand.yml themes, both contrast-checked to WCAG 2.1 AA.\n\n\n\nA warm-neutral ground carrying four deliberately spaced accents — one cool-deep, one warm, one green, one gold — so each Quarto use-case can own a hue without the palette fragmenting.\n\n\n\nDeep Indigo (#3D2F8C): The brand spine. Links, the active sidebar item, primary emphasis, the Foundations quarter. Conveys depth and trust. In dark theme it lifts to #A899FF for contrast.\n\n\n\n\n\nWarm Coral (#D9543F): Energy and warning. Callout accents (important/caution), the italic emphasis inside the page title, the Notebooks quarter, text selection. The single warmest note in the system; deploy it where you want the eye to land.\n\n\n\n\n\nForest Moss (#2F7D6A): Code and success. Inline code text on a moss-soft fill, success callouts, the Manuscripts quarter. The “this works” color.\nGolden Amber (#C98A2B): Signal and highlight. Warning callouts, the Outreach/Advanced quarters. A measured gold, never neon.\n\n\n\n\n\nPaper (#FBF7F0): The page ground. Warm off-white, the default body background.\nPaper 2 (#F4EFE4): Subtle raised surfaces — cards, code blocks, callout bodies.\nPaper 3 (#E8E1D2): Borders and dividers at full strength.\nInk (#1A1B2E): Primary text and the primary button fill. A deep indigo-black, not neutral black.\nInk 2 (#3A3B52): Secondary text, lead paragraphs, nav links at rest.\nMuted (#6B6275): Tertiary text, captions, section numbers, label/eyebrow text. Audit: muted on paper is the system’s tightest contrast pairing — verify ≥4.5:1 before using it for anything a reader must actually read; reserve it for genuinely secondary text.\n\n\n\n\n\nIndigo / Coral / Moss / Amber Soft (#EDE9FA / #FBE7E1 / #E0EFE9 / #F5EAD3): Fills for callout bodies, inline code, blockquotes, and chips. Each is a near-white wash of its parent accent.\n\n\n\n\nThe Quartile Rule. Each of the four accents maps to a use-case family and keeps that meaning everywhere: indigo = Foundations/links, coral = energy/notebooks, moss = code/success, amber = signal/advanced. Never pick an accent for decoration alone; pick it because it carries that meaning here.\nThe Warm-Ground Rule. Pure #FFFFFF and pure #000000 are forbidden. The page is paper and ink. Every neutral carries a trace of the brand’s warmth.\n\n\n\n\nDisplay Font: Newsreader (with Iowan Old Style, Georgia, serif) Body Font: IBM Plex Sans (with system-ui, -apple-system, sans-serif) Label/Mono Font: IBM Plex Mono (with ui-monospace, Menlo, monospace)\nCharacter: A literary serif paired with a clear, slightly technical humanist sans and an honest mono. The pairing works on a true contrast axis (serif display + sans body + mono labels), so it reads as edited, not indecisive. Newsreader supplies the editorial warmth; Plex Sans keeps long instructional prose comfortable; Plex Mono signals “this is code or a literal token.”\n\n\n\nDisplay (Newsreader 600, clamp(2.2rem, 4.2vw, 3.4rem), line-height 1.04, tracking -0.012em): Page titles only. Italic &lt;em&gt; inside a title renders in Warm Coral.\nHeadline (Newsreader 600, 1.9rem, line-height 1.15): h2 section headings.\nTitle (Newsreader 600, 1.45rem, line-height 1.2): h3 subsection headings.\nBody (IBM Plex Sans 400, 1.0625rem, line-height 1.65): All prose. Cap measure at 65–75ch.\nSubtitle (Newsreader 400 italic, clamp(1.1rem, 1.6vw, 1.35rem), Ink 2): The line under a page title.\nLabel (IBM Plex Mono 500, 0.74em, tracking 0.04em, UPPERCASE): Chips, tags, table headers, the employer line on team cards, sidebar/TOC section labels. ≤4 words only.\nMono (IBM Plex Mono 400, 0.92em, line-height 1.55): Code blocks and inline code.\n\n\n\n\nThe Three-Voice Rule. Three families, no more: serif to display, sans to read, mono to signal code. Adding a fourth typeface is forbidden; hierarchy comes from weight and scale within these three.\nThe Caps-Label-Only Rule. Uppercase is permitted only for labels of four words or fewer (chips, table headers, the mono section labels). Sentences and headings are never set in all caps.\n\n\n\n\nThe system is mostly flat, lifted by a single soft ambient shadow that warms rather than darkens (it is mixed from the ink color, not black). Surfaces sit quietly on the paper at rest and rise a gentle 2px on hover. Depth is a response to interaction, not a permanent decoration.\n\n\n\nAmbient rest (box-shadow: 0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent)): The resting shadow under cards, callouts, and code blocks. Barely there; it separates the surface from the paper without announcing itself.\nLifted hover (box-shadow: 0 4px 20px rgba(26,27,46,0.12), 0 2px 6px rgba(26,27,46,0.07) paired with transform: translateY(-2px)): The interactive state for clickable cards.\n\n\n\n\nThe Warm-Shadow Rule. Shadows are mixed from Ink (#1A1B2E), never pure black. A neutral-black shadow on warm paper reads as cheap and cold.\nThe Lift-On-Intent Rule. The 2px rise is reserved for surfaces the reader can actually click. Don’t lift static containers; the motion is a signal, not a flourish.\n\n\n\n\n\n\n\nShape: Fully pill (999px radius), weight 500, padding 0.55rem 1.1rem.\nPrimary: Ink fill (#1A1B2E), Paper text. On hover the fill shifts to Deep Indigo — the button “warms into” the brand color rather than just darkening.\nOutline: Transparent fill, Ink text, hairline rule border. On hover, a Paper 2 fill and an Ink 2 border.\nHover / Focus: Color transitions ~120ms ease. Keep a visible :focus-visible ring for keyboard users.\n\n\n\n\n\nStyle: Mono Label type (uppercase, tracked), pill shape, a soft-accent fill with its parent accent as text (e.g. indigo-soft bg / indigo text).\nUse: Exercise labels, metadata badges. Never as decorative sprinkles.\n\n\n\n\n\nCorner Style: 0.75rem (lg) radius.\nBackground: Paper 2 on the Paper ground.\nShadow Strategy: Ambient rest → Lifted hover (see Elevation). Clickable cards get cursor: pointer and the 2px lift.\nBorder: A single hairline rule on all four sides — 1px solid of the 12%-ink rule color. No colored left-stripe. (The current homepage subject cards and team cards still carry a 3px colored border-left; that is the flagged slop and is being removed, not the pattern to copy.)\nInternal Padding: ~1.1rem to 1.2rem.\n\n\n\n\n\nStyle: Hairline rule border, Paper or Paper 2 fill, md (0.5rem) radius, body type.\nFocus: Border shifts to Deep Indigo with a soft indigo focus ring. No glow, no glassmorphism.\nPlaceholder: Must clear 4.5:1 — use Ink 2, not Muted.\n\n\n\n\n\nNavbar: Paper background with a hairline bottom rule and a faint saturate(1.1) blur(6px) backdrop. Brand in Newsreader; nav links in Plex Sans 500, Ink 2 at rest → Ink on hover/active.\nSidebar: Mono uppercase section labels (Muted); item text in Ink 2 → Deep Indigo on hover/active. The active item carries a 2px indigo left-accent — the one sanctioned left-accent in the system, because it marks position in a list rather than decorating a card.\nTOC (right rail): Small (0.88rem), mono uppercase title, active entry in Deep Indigo.\n\n\n\n\n\nStyle: Paper 2 body, lg radius, hairline rule, ambient-rest shadow, header in Plex Sans 600. The colored accent rides the left edge (4px) and the header text matches: indigo (note), moss (tip), amber (warning), coral (important/caution). This left-accent is Quarto’s native callout idiom and is the one place a thick colored left-edge is allowed — it is not licence to put stripes on cards.\n\n\n\n\n\nInline: Moss text on Moss Soft fill, sm radius, a hairline moss-tinted border, 0.9em.\nBlock: Paper 2 fill, hairline rule, md radius, 0.92em Plex Mono at line-height 1.55. Copy button in Muted → Deep Indigo on hover.\n\n\n\n\n\nIndigo Soft fill, 3px indigo left border, Newsreader italic at 1.08em. The editorial pull-quote voice of the system.\n\n\n\n\nHorizontal rules render not as a line but as a 10px four-square mark: indigo / coral / moss / amber in a 2×2, the system’s logo in miniature. Use it as a section break with meaning; it is the press’s colophon.\n\n\n\n\n\n\n\nDo keep the warm paper-and-ink ground. Background is Paper (#FBF7F0), text is Ink (#1A1B2E).\nDo honor the Quartile Rule — each accent carries its use-case meaning everywhere it appears.\nDo border cards on all four sides with a single hairline rule; let the ambient shadow and the 2px hover lift carry separation and interactivity.\nDo keep prose at 65–75ch and body type at line-height 1.65.\nDo restrict uppercase to mono labels of ≤4 words.\nDo mix shadows from Ink, never black, and reserve the 2px lift for clickable surfaces.\nDo provide a prefers-reduced-motion alternative for every transition, and a visible :focus-visible ring everywhere.\nDo verify Muted-on-Paper hits ≥4.5:1 before using it for readable text; bump to Ink 2 if it’s close.\n\n\n\n\n\nDon’t ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.\nDon’t build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy (“streamline”, “empower”, “seamless”, “world-class”).\nDon’t overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.\nDon’t use colored left-stripe borders greater than 1px on cards, list items, or grid items (the homepage subject/team cards currently do; they are being reworked). The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.\nDon’t scaffold sections with numbered markers (01 · / 02 ·) by reflex — numbers earn their place only in a genuine ordered sequence.\nDon’t use gradient text (background-clip: text) or pure-white/pure-black anywhere.\nDon’t add a fourth typeface, and don’t set sentences or headings in all caps.\nDon’t use Muted gray for body text or placeholders — it fails contrast on warm paper."
   },
   {
     "objectID": "DESIGN.html#overview",
     "href": "DESIGN.html#overview",
-    "title": "",
-    "section": "1. Overview",
-    "text": "1. Overview\nCreative North Star: “The Quartile Press”\nThis is an editorial press rendered in HTML. The page is warm paper stock; the type is set, not typed; and the system carries four signature accent colors — indigo, coral, moss, amber — as its four “quarters,” one per family of Quarto output. The whole site is its own proof of concept: a Quarto site that teaches Quarto, so every surface has to read as something a careful researcher would be proud to publish. Restraint is the house style. Warmth comes from the paper, the Newsreader serif, and the quartile accents, never from effects.\nThe system rejects four things by name. It is not the out-of-the-box Bootstrap/Quarto default theme — undifferentiated, obviously templated. It is not a corporate SaaS landing page — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy. It is not overdesigned — no decorative animation, no glassmorphism, nothing that competes with reading. And it is done with AI-slop card scaffolding: numbered section markers (01 · / 02 ·) and colored left-stripe borders are recognised tells, slated for removal, never to be extended.\nThe reader is either mid-workshop or returning in a hurry; both must find the right page fast. On interior reference pages, structure and findability outrank decoration. On the landing page, the design is allowed to carry the message.\nKey Characteristics: - Warm paper ground (#FBF7F0), deep indigo-black ink (#1A1B2E) — never pure white, never pure black. - Four-accent “quartile” system, used sparingly and meaningfully, one accent per use-case family. - Serif display (Newsreader) over sans body (IBM Plex Sans) over mono (IBM Plex Mono) — a three-axis contrast, not three competing voices. - Soft ambient depth at rest, a gentle 2px lift on hover. Nothing floats. - First-party light and dark brand.yml themes, both contrast-checked to WCAG 2.1 AA."
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "Creative North Star: “The Quartile Press”\nThis is an editorial press rendered in HTML. The page is warm paper stock; the type is set, not typed; and the system carries four signature accent colors — indigo, coral, moss, amber — as its four “quarters,” one per family of Quarto output. The whole site is its own proof of concept: a Quarto site that teaches Quarto, so every surface has to read as something a careful researcher would be proud to publish. Restraint is the house style. Warmth comes from the paper, the Newsreader serif, and the quartile accents, never from effects.\nThe system rejects four things by name. It is not the out-of-the-box Bootstrap/Quarto default theme — undifferentiated, obviously templated. It is not a corporate SaaS landing page — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy. It is not overdesigned — no decorative animation, no glassmorphism, nothing that competes with reading. And it is done with AI-slop card scaffolding: numbered section markers (01 · / 02 ·) and colored left-stripe borders are recognised tells, slated for removal, never to be extended.\nThe reader is either mid-workshop or returning in a hurry; both must find the right page fast. On interior reference pages, structure and findability outrank decoration. On the landing page, the design is allowed to carry the message.\nKey Characteristics: - Warm paper ground (#FBF7F0), deep indigo-black ink (#1A1B2E) — never pure white, never pure black. - Four-accent “quartile” system, used sparingly and meaningfully, one accent per use-case family. - Serif display (Newsreader) over sans body (IBM Plex Sans) over mono (IBM Plex Mono) — a three-axis contrast, not three competing voices. - Soft ambient depth at rest, a gentle 2px lift on hover. Nothing floats. - First-party light and dark brand.yml themes, both contrast-checked to WCAG 2.1 AA."
   },
   {
     "objectID": "DESIGN.html#colors",
     "href": "DESIGN.html#colors",
-    "title": "",
-    "section": "2. Colors",
-    "text": "2. Colors\nA warm-neutral ground carrying four deliberately spaced accents — one cool-deep, one warm, one green, one gold — so each Quarto use-case can own a hue without the palette fragmenting.\nPrimary\n\nDeep Indigo (#3D2F8C): The brand spine. Links, the active sidebar item, primary emphasis, the Foundations quarter. Conveys depth and trust. In dark theme it lifts to #A899FF for contrast.\n\nSecondary\n\nWarm Coral (#D9543F): Energy and warning. Callout accents (important/caution), the italic emphasis inside the page title, the Notebooks quarter, text selection. The single warmest note in the system; deploy it where you want the eye to land.\n\nTertiary\n\nForest Moss (#2F7D6A): Code and success. Inline code text on a moss-soft fill, success callouts, the Manuscripts quarter. The “this works” color.\nGolden Amber (#C98A2B): Signal and highlight. Warning callouts, the Outreach/Advanced quarters. A measured gold, never neon.\n\nNeutral\n\nPaper (#FBF7F0): The page ground. Warm off-white, the default body background.\nPaper 2 (#F4EFE4): Subtle raised surfaces — cards, code blocks, callout bodies.\nPaper 3 (#E8E1D2): Borders and dividers at full strength.\nInk (#1A1B2E): Primary text and the primary button fill. A deep indigo-black, not neutral black.\nInk 2 (#3A3B52): Secondary text, lead paragraphs, nav links at rest.\nMuted (#6B6275): Tertiary text, captions, section numbers, label/eyebrow text. Audit: muted on paper is the system’s tightest contrast pairing — verify ≥4.5:1 before using it for anything a reader must actually read; reserve it for genuinely secondary text.\n\nTinted Surfaces\n\nIndigo / Coral / Moss / Amber Soft (#EDE9FA / #FBE7E1 / #E0EFE9 / #F5EAD3): Fills for callout bodies, inline code, blockquotes, and chips. Each is a near-white wash of its parent accent.\n\nNamed Rules\nThe Quartile Rule. Each of the four accents maps to a use-case family and keeps that meaning everywhere: indigo = Foundations/links, coral = energy/notebooks, moss = code/success, amber = signal/advanced. Never pick an accent for decoration alone; pick it because it carries that meaning here.\nThe Warm-Ground Rule. Pure #FFFFFF and pure #000000 are forbidden. The page is paper and ink. Every neutral carries a trace of the brand’s warmth."
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "A warm-neutral ground carrying four deliberately spaced accents — one cool-deep, one warm, one green, one gold — so each Quarto use-case can own a hue without the palette fragmenting.\n\n\n\nDeep Indigo (#3D2F8C): The brand spine. Links, the active sidebar item, primary emphasis, the Foundations quarter. Conveys depth and trust. In dark theme it lifts to #A899FF for contrast.\n\n\n\n\n\nWarm Coral (#D9543F): Energy and warning. Callout accents (important/caution), the italic emphasis inside the page title, the Notebooks quarter, text selection. The single warmest note in the system; deploy it where you want the eye to land.\n\n\n\n\n\nForest Moss (#2F7D6A): Code and success. Inline code text on a moss-soft fill, success callouts, the Manuscripts quarter. The “this works” color.\nGolden Amber (#C98A2B): Signal and highlight. Warning callouts, the Outreach/Advanced quarters. A measured gold, never neon.\n\n\n\n\n\nPaper (#FBF7F0): The page ground. Warm off-white, the default body background.\nPaper 2 (#F4EFE4): Subtle raised surfaces — cards, code blocks, callout bodies.\nPaper 3 (#E8E1D2): Borders and dividers at full strength.\nInk (#1A1B2E): Primary text and the primary button fill. A deep indigo-black, not neutral black.\nInk 2 (#3A3B52): Secondary text, lead paragraphs, nav links at rest.\nMuted (#6B6275): Tertiary text, captions, section numbers, label/eyebrow text. Audit: muted on paper is the system’s tightest contrast pairing — verify ≥4.5:1 before using it for anything a reader must actually read; reserve it for genuinely secondary text.\n\n\n\n\n\nIndigo / Coral / Moss / Amber Soft (#EDE9FA / #FBE7E1 / #E0EFE9 / #F5EAD3): Fills for callout bodies, inline code, blockquotes, and chips. Each is a near-white wash of its parent accent.\n\n\n\n\nThe Quartile Rule. Each of the four accents maps to a use-case family and keeps that meaning everywhere: indigo = Foundations/links, coral = energy/notebooks, moss = code/success, amber = signal/advanced. Never pick an accent for decoration alone; pick it because it carries that meaning here.\nThe Warm-Ground Rule. Pure #FFFFFF and pure #000000 are forbidden. The page is paper and ink. Every neutral carries a trace of the brand’s warmth."
   },
   {
     "objectID": "DESIGN.html#typography",
     "href": "DESIGN.html#typography",
-    "title": "",
-    "section": "3. Typography",
-    "text": "3. Typography\nDisplay Font: Newsreader (with Iowan Old Style, Georgia, serif) Body Font: IBM Plex Sans (with system-ui, -apple-system, sans-serif) Label/Mono Font: IBM Plex Mono (with ui-monospace, Menlo, monospace)\nCharacter: A literary serif paired with a clear, slightly technical humanist sans and an honest mono. The pairing works on a true contrast axis (serif display + sans body + mono labels), so it reads as edited, not indecisive. Newsreader supplies the editorial warmth; Plex Sans keeps long instructional prose comfortable; Plex Mono signals “this is code or a literal token.”\nHierarchy\n\nDisplay (Newsreader 600, clamp(2.2rem, 4.2vw, 3.4rem), line-height 1.04, tracking -0.012em): Page titles only. Italic &lt;em&gt; inside a title renders in Warm Coral.\nHeadline (Newsreader 600, 1.9rem, line-height 1.15): h2 section headings.\nTitle (Newsreader 600, 1.45rem, line-height 1.2): h3 subsection headings.\nBody (IBM Plex Sans 400, 1.0625rem, line-height 1.65): All prose. Cap measure at 65–75ch.\nSubtitle (Newsreader 400 italic, clamp(1.1rem, 1.6vw, 1.35rem), Ink 2): The line under a page title.\nLabel (IBM Plex Mono 500, 0.74em, tracking 0.04em, UPPERCASE): Chips, tags, table headers, the employer line on team cards, sidebar/TOC section labels. ≤4 words only.\nMono (IBM Plex Mono 400, 0.92em, line-height 1.55): Code blocks and inline code.\n\nNamed Rules\nThe Three-Voice Rule. Three families, no more: serif to display, sans to read, mono to signal code. Adding a fourth typeface is forbidden; hierarchy comes from weight and scale within these three.\nThe Caps-Label-Only Rule. Uppercase is permitted only for labels of four words or fewer (chips, table headers, the mono section labels). Sentences and headings are never set in all caps."
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "Display Font: Newsreader (with Iowan Old Style, Georgia, serif) Body Font: IBM Plex Sans (with system-ui, -apple-system, sans-serif) Label/Mono Font: IBM Plex Mono (with ui-monospace, Menlo, monospace)\nCharacter: A literary serif paired with a clear, slightly technical humanist sans and an honest mono. The pairing works on a true contrast axis (serif display + sans body + mono labels), so it reads as edited, not indecisive. Newsreader supplies the editorial warmth; Plex Sans keeps long instructional prose comfortable; Plex Mono signals “this is code or a literal token.”\n\n\n\nDisplay (Newsreader 600, clamp(2.2rem, 4.2vw, 3.4rem), line-height 1.04, tracking -0.012em): Page titles only. Italic &lt;em&gt; inside a title renders in Warm Coral.\nHeadline (Newsreader 600, 1.9rem, line-height 1.15): h2 section headings.\nTitle (Newsreader 600, 1.45rem, line-height 1.2): h3 subsection headings.\nBody (IBM Plex Sans 400, 1.0625rem, line-height 1.65): All prose. Cap measure at 65–75ch.\nSubtitle (Newsreader 400 italic, clamp(1.1rem, 1.6vw, 1.35rem), Ink 2): The line under a page title.\nLabel (IBM Plex Mono 500, 0.74em, tracking 0.04em, UPPERCASE): Chips, tags, table headers, the employer line on team cards, sidebar/TOC section labels. ≤4 words only.\nMono (IBM Plex Mono 400, 0.92em, line-height 1.55): Code blocks and inline code.\n\n\n\n\nThe Three-Voice Rule. Three families, no more: serif to display, sans to read, mono to signal code. Adding a fourth typeface is forbidden; hierarchy comes from weight and scale within these three.\nThe Caps-Label-Only Rule. Uppercase is permitted only for labels of four words or fewer (chips, table headers, the mono section labels). Sentences and headings are never set in all caps."
   },
   {
     "objectID": "DESIGN.html#elevation",
     "href": "DESIGN.html#elevation",
-    "title": "",
-    "section": "4. Elevation",
-    "text": "4. Elevation\nThe system is mostly flat, lifted by a single soft ambient shadow that warms rather than darkens (it is mixed from the ink color, not black). Surfaces sit quietly on the paper at rest and rise a gentle 2px on hover. Depth is a response to interaction, not a permanent decoration.\nShadow Vocabulary\n\nAmbient rest (box-shadow: 0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent)): The resting shadow under cards, callouts, and code blocks. Barely there; it separates the surface from the paper without announcing itself.\nLifted hover (box-shadow: 0 4px 20px rgba(26,27,46,0.12), 0 2px 6px rgba(26,27,46,0.07) paired with transform: translateY(-2px)): The interactive state for clickable cards.\n\nNamed Rules\nThe Warm-Shadow Rule. Shadows are mixed from Ink (#1A1B2E), never pure black. A neutral-black shadow on warm paper reads as cheap and cold.\nThe Lift-On-Intent Rule. The 2px rise is reserved for surfaces the reader can actually click. Don’t lift static containers; the motion is a signal, not a flourish."
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "The system is mostly flat, lifted by a single soft ambient shadow that warms rather than darkens (it is mixed from the ink color, not black). Surfaces sit quietly on the paper at rest and rise a gentle 2px on hover. Depth is a response to interaction, not a permanent decoration.\n\n\n\nAmbient rest (box-shadow: 0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent)): The resting shadow under cards, callouts, and code blocks. Barely there; it separates the surface from the paper without announcing itself.\nLifted hover (box-shadow: 0 4px 20px rgba(26,27,46,0.12), 0 2px 6px rgba(26,27,46,0.07) paired with transform: translateY(-2px)): The interactive state for clickable cards.\n\n\n\n\nThe Warm-Shadow Rule. Shadows are mixed from Ink (#1A1B2E), never pure black. A neutral-black shadow on warm paper reads as cheap and cold.\nThe Lift-On-Intent Rule. The 2px rise is reserved for surfaces the reader can actually click. Don’t lift static containers; the motion is a signal, not a flourish."
   },
   {
     "objectID": "DESIGN.html#components",
     "href": "DESIGN.html#components",
-    "title": "",
-    "section": "5. Components",
-    "text": "5. Components\nButtons\n\nShape: Fully pill (999px radius), weight 500, padding 0.55rem 1.1rem.\nPrimary: Ink fill (#1A1B2E), Paper text. On hover the fill shifts to Deep Indigo — the button “warms into” the brand color rather than just darkening.\nOutline: Transparent fill, Ink text, hairline rule border. On hover, a Paper 2 fill and an Ink 2 border.\nHover / Focus: Color transitions ~120ms ease. Keep a visible :focus-visible ring for keyboard users.\n\nChips / Tags\n\nStyle: Mono Label type (uppercase, tracked), pill shape, a soft-accent fill with its parent accent as text (e.g. indigo-soft bg / indigo text).\nUse: Exercise labels, metadata badges. Never as decorative sprinkles.\n\nCards / Containers\n\nCorner Style: 0.75rem (lg) radius.\nBackground: Paper 2 on the Paper ground.\nShadow Strategy: Ambient rest → Lifted hover (see Elevation). Clickable cards get cursor: pointer and the 2px lift.\nBorder: A single hairline rule on all four sides — 1px solid of the 12%-ink rule color. No colored left-stripe. (The current homepage subject cards and team cards still carry a 3px colored border-left; that is the flagged slop and is being removed, not the pattern to copy.)\nInternal Padding: ~1.1rem to 1.2rem.\n\nInputs / Fields\n\nStyle: Hairline rule border, Paper or Paper 2 fill, md (0.5rem) radius, body type.\nFocus: Border shifts to Deep Indigo with a soft indigo focus ring. No glow, no glassmorphism.\nPlaceholder: Must clear 4.5:1 — use Ink 2, not Muted.\n\nNavigation\n\nNavbar: Paper background with a hairline bottom rule and a faint saturate(1.1) blur(6px) backdrop. Brand in Newsreader; nav links in Plex Sans 500, Ink 2 at rest → Ink on hover/active.\nSidebar: Mono uppercase section labels (Muted); item text in Ink 2 → Deep Indigo on hover/active. The active item carries a 2px indigo left-accent — the one sanctioned left-accent in the system, because it marks position in a list rather than decorating a card.\nTOC (right rail): Small (0.88rem), mono uppercase title, active entry in Deep Indigo.\n\nCallouts\n\nStyle: Paper 2 body, lg radius, hairline rule, ambient-rest shadow, header in Plex Sans 600. The colored accent rides the left edge (4px) and the header text matches: indigo (note), moss (tip), amber (warning), coral (important/caution). This left-accent is Quarto’s native callout idiom and is the one place a thick colored left-edge is allowed — it is not licence to put stripes on cards.\n\nCode\n\nInline: Moss text on Moss Soft fill, sm radius, a hairline moss-tinted border, 0.9em.\nBlock: Paper 2 fill, hairline rule, md radius, 0.92em Plex Mono at line-height 1.55. Copy button in Muted → Deep Indigo on hover.\n\nBlockquote\n\nIndigo Soft fill, 3px indigo left border, Newsreader italic at 1.08em. The editorial pull-quote voice of the system.\n\nSignature Component — The Quartile Rule (&lt;hr&gt;)\nHorizontal rules render not as a line but as a 10px four-square mark: indigo / coral / moss / amber in a 2×2, the system’s logo in miniature. Use it as a section break with meaning; it is the press’s colophon."
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "Shape: Fully pill (999px radius), weight 500, padding 0.55rem 1.1rem.\nPrimary: Ink fill (#1A1B2E), Paper text. On hover the fill shifts to Deep Indigo — the button “warms into” the brand color rather than just darkening.\nOutline: Transparent fill, Ink text, hairline rule border. On hover, a Paper 2 fill and an Ink 2 border.\nHover / Focus: Color transitions ~120ms ease. Keep a visible :focus-visible ring for keyboard users.\n\n\n\n\n\nStyle: Mono Label type (uppercase, tracked), pill shape, a soft-accent fill with its parent accent as text (e.g. indigo-soft bg / indigo text).\nUse: Exercise labels, metadata badges. Never as decorative sprinkles.\n\n\n\n\n\nCorner Style: 0.75rem (lg) radius.\nBackground: Paper 2 on the Paper ground.\nShadow Strategy: Ambient rest → Lifted hover (see Elevation). Clickable cards get cursor: pointer and the 2px lift.\nBorder: A single hairline rule on all four sides — 1px solid of the 12%-ink rule color. No colored left-stripe. (The current homepage subject cards and team cards still carry a 3px colored border-left; that is the flagged slop and is being removed, not the pattern to copy.)\nInternal Padding: ~1.1rem to 1.2rem.\n\n\n\n\n\nStyle: Hairline rule border, Paper or Paper 2 fill, md (0.5rem) radius, body type.\nFocus: Border shifts to Deep Indigo with a soft indigo focus ring. No glow, no glassmorphism.\nPlaceholder: Must clear 4.5:1 — use Ink 2, not Muted.\n\n\n\n\n\nNavbar: Paper background with a hairline bottom rule and a faint saturate(1.1) blur(6px) backdrop. Brand in Newsreader; nav links in Plex Sans 500, Ink 2 at rest → Ink on hover/active.\nSidebar: Mono uppercase section labels (Muted); item text in Ink 2 → Deep Indigo on hover/active. The active item carries a 2px indigo left-accent — the one sanctioned left-accent in the system, because it marks position in a list rather than decorating a card.\nTOC (right rail): Small (0.88rem), mono uppercase title, active entry in Deep Indigo.\n\n\n\n\n\nStyle: Paper 2 body, lg radius, hairline rule, ambient-rest shadow, header in Plex Sans 600. The colored accent rides the left edge (4px) and the header text matches: indigo (note), moss (tip), amber (warning), coral (important/caution). This left-accent is Quarto’s native callout idiom and is the one place a thick colored left-edge is allowed — it is not licence to put stripes on cards.\n\n\n\n\n\nInline: Moss text on Moss Soft fill, sm radius, a hairline moss-tinted border, 0.9em.\nBlock: Paper 2 fill, hairline rule, md radius, 0.92em Plex Mono at line-height 1.55. Copy button in Muted → Deep Indigo on hover.\n\n\n\n\n\nIndigo Soft fill, 3px indigo left border, Newsreader italic at 1.08em. The editorial pull-quote voice of the system.\n\n\n\n\nHorizontal rules render not as a line but as a 10px four-square mark: indigo / coral / moss / amber in a 2×2, the system’s logo in miniature. Use it as a section break with meaning; it is the press’s colophon."
   },
   {
     "objectID": "DESIGN.html#dos-and-donts",
     "href": "DESIGN.html#dos-and-donts",
-    "title": "",
-    "section": "6. Do’s and Don’ts",
-    "text": "6. Do’s and Don’ts\nDo:\n\nDo keep the warm paper-and-ink ground. Background is Paper (#FBF7F0), text is Ink (#1A1B2E).\nDo honor the Quartile Rule — each accent carries its use-case meaning everywhere it appears.\nDo border cards on all four sides with a single hairline rule; let the ambient shadow and the 2px hover lift carry separation and interactivity.\nDo keep prose at 65–75ch and body type at line-height 1.65.\nDo restrict uppercase to mono labels of ≤4 words.\nDo mix shadows from Ink, never black, and reserve the 2px lift for clickable surfaces.\nDo provide a prefers-reduced-motion alternative for every transition, and a visible :focus-visible ring everywhere.\nDo verify Muted-on-Paper hits ≥4.5:1 before using it for readable text; bump to Ink 2 if it’s close.\n\nDon’t:\n\nDon’t ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.\nDon’t build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy (“streamline”, “empower”, “seamless”, “world-class”).\nDon’t overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.\nDon’t use colored left-stripe borders greater than 1px on cards, list items, or grid items (the homepage subject/team cards currently do; they are being reworked). The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.\nDon’t scaffold sections with numbered markers (01 · / 02 ·) by reflex — numbers earn their place only in a genuine ordered sequence.\nDon’t use gradient text (background-clip: text) or pure-white/pure-black anywhere.\nDon’t add a fourth typeface, and don’t set sentences or headings in all caps.\nDon’t use Muted gray for body text or placeholders — it fails contrast on warm paper."
+    "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
+    "section": "",
+    "text": "Do keep the warm paper-and-ink ground. Background is Paper (#FBF7F0), text is Ink (#1A1B2E).\nDo honor the Quartile Rule — each accent carries its use-case meaning everywhere it appears.\nDo border cards on all four sides with a single hairline rule; let the ambient shadow and the 2px hover lift carry separation and interactivity.\nDo keep prose at 65–75ch and body type at line-height 1.65.\nDo restrict uppercase to mono labels of ≤4 words.\nDo mix shadows from Ink, never black, and reserve the 2px lift for clickable surfaces.\nDo provide a prefers-reduced-motion alternative for every transition, and a visible :focus-visible ring everywhere.\nDo verify Muted-on-Paper hits ≥4.5:1 before using it for readable text; bump to Ink 2 if it’s close.\n\n\n\n\n\nDon’t ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.\nDon’t build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy (“streamline”, “empower”, “seamless”, “world-class”).\nDon’t overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.\nDon’t use colored left-stripe borders greater than 1px on cards, list items, or grid items (the homepage subject/team cards currently do; they are being reworked). The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.\nDon’t scaffold sections with numbered markers (01 · / 02 ·) by reflex — numbers earn their place only in a genuine ordered sequence.\nDon’t use gradient text (background-clip: text) or pure-white/pure-black anywhere.\nDon’t add a fourth typeface, and don’t set sentences or headings in all caps.\nDon’t use Muted gray for body text or placeholders — it fails contrast on warm paper."
+  },
+  {
+    "objectID": "use-cases/dashboards.html",
+    "href": "use-cases/dashboards.html",
+    "title": "Interactive Dashboards",
+    "section": "",
+    "text": "Quarto can also support interactive outputs, including dashboard-style communication. For researchers, this can be a useful bridge between formal publication and exploratory sharing with collaborators or stakeholders.\n\n\nSome audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem.\n\n\n\n\n\nDashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\n\n\n\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\n\n\n\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.\n\n\n\n\nA project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nWarningScope reminder\n\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\nGo to the dashboards exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
   },
   {
     "objectID": "use-cases/dashboards.html#why-this-matters-for-researchers",
     "href": "use-cases/dashboards.html#why-this-matters-for-researchers",
     "title": "Interactive Dashboards",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nSome audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem."
+    "section": "",
+    "text": "Some audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
   },
   {
     "objectID": "use-cases/dashboards.html#key-quarto-features-for-this-workflow",
     "href": "use-cases/dashboards.html#key-quarto-features-for-this-workflow",
     "title": "Interactive Dashboards",
-    "section": "Key Quarto Features For This Workflow",
-    "text": "Key Quarto Features For This Workflow\nStructured Pages For Communication\nDashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\nConnection To Reproducible Workflows\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\nGradual Adoption\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable."
+    "section": "",
+    "text": "Dashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\n\n\n\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\n\n\n\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
   },
   {
     "objectID": "use-cases/dashboards.html#concrete-academic-example",
     "href": "use-cases/dashboards.html#concrete-academic-example",
     "title": "Interactive Dashboards",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nScope reminder\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\n\nGo to the dashboards exercise"
+    "section": "",
+    "text": "A project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nWarningScope reminder\n\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\nGo to the dashboards exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Interactive Dashboards"
+    ]
+  },
+  {
+    "objectID": "use-cases/websites.html",
+    "href": "use-cases/websites.html",
+    "title": "Creating Websites for Research Outreach",
+    "section": "",
+    "text": "Quarto allows you to generate full websites which can then be deployed for free using services such as GitHub Pages or Netlify. This provides an easy solution to create web content for research groups, project pages, course and teaching materials, as well as personal academic profiles.\nIn the exercise for this section, you will create a simple website to share your research outputs.\n\n\nDoing some form of outreach activities has become increasingly important for:\n\nIncreasing your professional visibility\nCommunicating research outputs to audiences beyond academic journals\nSharing research materials and methods with the broader community\n\n\n\n\n\n\n\nThe websites functionality of Quarto is built on top of an existing framework called Bootstrap.\nLike all websites Quarto website pages render as .HTML files. In many IDEs such as Rstudio, VScode and Positron these can be viewed locally directly in the ‘viewer pane’ by clicking the ‘Preview’ button at the top of the file editor window ir right clicking on the file itself.\n\n\nLike all Quarto projects, websites should use a project-level _quarto.yml file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site.\n\n\n\n\nWebsites must have an index.qmd file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.\n\n\n\n\n\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too. They can also include HTML blocks.\n\n\n\n\n\n\nTip\n\n\n\nWebsites can include other Quarto ocntent such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other HTML content you like.\n\n\n\n\n\n\nHere are some real websites that we have built with Quarto:\n\nPersonal academic profile\nNASCENT-Peru — a multi-lingual research project website (discussed further in the advanced topics section)\nAcademic group website\nLCSfFE Handbook — web version of an instructional guide for building field monitoring systems\n\nThe website you are reading right now is also built with Quarto.\nQuarto isn’t limited to academic use either — it works just as well for personal projects:\n\nWedding website\n\nGo to the websites exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
   },
   {
     "objectID": "use-cases/websites.html#why-this-use-case-matters-for-researchers",
     "href": "use-cases/websites.html#why-this-use-case-matters-for-researchers",
     "title": "Creating Websites for Research Outreach",
-    "section": "Why This Use-Case Matters For Researchers",
-    "text": "Why This Use-Case Matters For Researchers\nDoing some form of outreach activities has become increasingly important for:\n\nIncreasing your professional visibility\nCommunicating research outputs to audiences beyond academic journals\nSharing research materials and methods with the broader community"
-  },
-  {
-    "objectID": "use-cases/websites.html#the-basics-of-websites-with-quarto",
-    "href": "use-cases/websites.html#the-basics-of-websites-with-quarto",
-    "title": "Creating Websites for Research Outreach",
-    "section": "The basics of websites with Quarto",
-    "text": "The basics of websites with Quarto"
+    "section": "",
+    "text": "Doing some form of outreach activities has become increasingly important for:\n\nIncreasing your professional visibility\nCommunicating research outputs to audiences beyond academic journals\nSharing research materials and methods with the broader community",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
   },
   {
     "objectID": "use-cases/websites.html#rendering",
     "href": "use-cases/websites.html#rendering",
     "title": "Creating Websites for Research Outreach",
-    "section": "Rendering",
-    "text": "Rendering\nThe websites functionality of Quarto is built on top of an existing framework called Bootstrap.\nLike all websites Quarto website pages render as .HTML files. In many IDEs such as Rstudio, VScode and Positron these can be viewed locally directly in the ‘viewer pane’ by clicking the ‘Preview’ button at the top of the file editor window ir right clicking on the file itself.\nProject-level configuration\nLike all Quarto projects, websites should use a project-level _quarto.yml file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site."
+    "section": "",
+    "text": "The websites functionality of Quarto is built on top of an existing framework called Bootstrap.\nLike all websites Quarto website pages render as .HTML files. In many IDEs such as Rstudio, VScode and Positron these can be viewed locally directly in the ‘viewer pane’ by clicking the ‘Preview’ button at the top of the file editor window ir right clicking on the file itself.\n\n\nLike all Quarto projects, websites should use a project-level _quarto.yml file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
   },
   {
     "objectID": "use-cases/websites.html#the-front-page-index.qmd",
     "href": "use-cases/websites.html#the-front-page-index.qmd",
     "title": "Creating Websites for Research Outreach",
-    "section": "The Front Page: index.qmd",
-    "text": "The Front Page: index.qmd\nWebsites must have an index.qmd file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.\nFormatting and Theming\nReusable Authoring Patterns\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too. They can also include HTML blocks.\n\n\n\n\n\n\nTip\n\n\nWebsites can include other Quarto ocntent such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other HTML content you like."
+    "section": "",
+    "text": "Websites must have an index.qmd file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.\n\n\n\n\n\nThe same Markdown, YAML, callouts, and code chunk patterns appear in websites too. They can also include HTML blocks.\n\n\n\n\n\n\nTip\n\n\n\nWebsites can include other Quarto ocntent such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other HTML content you like.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
   },
   {
     "objectID": "use-cases/websites.html#concrete-examples",
     "href": "use-cases/websites.html#concrete-examples",
     "title": "Creating Websites for Research Outreach",
-    "section": "Concrete Examples",
-    "text": "Concrete Examples\nHere are some real websites that we have built with Quarto:\n\nPersonal academic profile\nNASCENT-Peru — a multi-lingual research project website (discussed further in the advanced topics section)\nAcademic group website\nLCSfFE Handbook — web version of an instructional guide for building field monitoring systems\n\nThe website you are reading right now is also built with Quarto.\nQuarto isn’t limited to academic use either — it works just as well for personal projects:\n\nWedding website\n\nGo to the websites exercise"
+    "section": "",
+    "text": "Here are some real websites that we have built with Quarto:\n\nPersonal academic profile\nNASCENT-Peru — a multi-lingual research project website (discussed further in the advanced topics section)\nAcademic group website\nLCSfFE Handbook — web version of an instructional guide for building field monitoring systems\n\nThe website you are reading right now is also built with Quarto.\nQuarto isn’t limited to academic use either — it works just as well for personal projects:\n\nWedding website\n\nGo to the websites exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Project and Personal Websites"
+    ]
+  },
+  {
+    "objectID": "use-cases/manuscripts.html",
+    "href": "use-cases/manuscripts.html",
+    "title": "Writing Manuscripts",
+    "section": "",
+    "text": "Everyone knows that managing the drafting, feedback and submission of manuscripts is a lot of work. Some colleagues require .docx format to allow for track changes, some work with LaTeX. Journals each have their own arcane formatting requirements, which are rarely corrected documented in their own author guides… Using Quarto for manuscripts is not a silver bullet for all these problems but it does reduce a lot of the headaches by keeping narrative text, citations, figures, tables (generated by code or imported) in a single reproducible workflow.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Writing Manuscripts"
+    ]
   },
   {
     "objectID": "use-cases/manuscripts.html#key-benefits-of-using-quarto-for-manuscripts",
     "href": "use-cases/manuscripts.html#key-benefits-of-using-quarto-for-manuscripts",
     "title": "Writing Manuscripts",
-    "section": "Key benefits of using Quarto for manuscripts",
-    "text": "Key benefits of using Quarto for manuscripts\nMulti-Format Output\nLeverage Quarto’s ability to render to multiple formats from the same source file to fufill different format needs: - HTML or DOCX for internal review and sharing with collaborators. - PDF or LaTeX for journal submission. THere are quite a number of journal templates available for Quarto that can be used to format your manuscript according to specific journal requirements. But equally using journals LaTeX submission portal is often easiest.\nTODO: Include link to Quarto journal templates\n\n\n\n\n\n\nEarly Mover Advantage\n\n\nA major benefit for PhD researchers doing cumulative theses is if you write each of your papers with Quarto it is easier to combine them into a thesis (link to my thesis template).\n\n\n\nReproducible Figures and Tables\nWhen analysis is embedded, manuscript results become easier to update and verify. By setting up a custom ggplot or matplotlib theme in a separate script, you can ensure that all your figures have a consistent style and easily change colours or fonts according to journal requirements without having to manually edit each figure. This also makes it easier to maintain a consistent visual identity across all your publications.\n\n\n\n\n\n\nTip\n\n\nLong code chunks in manuscript qmds for figures can be cumbersome, better to separate out into a script and source it in the header the manuscript. For example, you can have a figures.R script that generates all your figures and saves them to the figures/ directory. Then in your manuscript.qmd, you can source this script in the YAML header or at the beginning of the document to ensure all figures are re-generated before rendering.\n\n\n\nInline statistics from data\nQuarto’s in-line code chunks allow you to pull values directly from your data, for example, p-values or summary statistics, ensuring that your manuscript always reflects the most current results without manual updates.\nTODO Insert in line code chunk example here, e.g. “The mean pollinator diversity was r mean(diversity) across all sites.”\nIntegrated citation support\nIntegration with Zotero to keep citations in the same workflow as writing. In the visual editor you can also add a citation directly from the DOI\nWhen you add a citation using the @ syntax Quarto automatically adds it to the bibliography (.bib) file and then upon rednering applies the citation style you have specified in the YAML header. This means you can easily switch between different citation styles (e.g., APA, MLA, Chicago) without having to manually reformat your references.\nCross-referencing\nQuarto supports cross-referencing of figures, tables, and sections to keep everything aligned as the manuscript evolves.\nSupplementary Material Management\nSupplementary material, including code for reproducing analyses, can be kept in the same project and linked to the main manuscript.\nGo to the excercise to try writing your own manuscript"
+    "section": "1 Key benefits of using Quarto for manuscripts",
+    "text": "1 Key benefits of using Quarto for manuscripts\n\n1.1 Multi-Format Output\nLeverage Quarto’s ability to render to multiple formats from the same source file to fufill different format needs: - HTML or DOCX for internal review and sharing with collaborators. - PDF or LaTeX for journal submission. THere are quite a number of journal templates available for Quarto that can be used to format your manuscript according to specific journal requirements. But equally using journals LaTeX submission portal is often easiest.\nTODO: Include link to Quarto journal templates\n\n\n\n\n\n\nTipEarly Mover Advantage\n\n\n\nA major benefit for PhD researchers doing cumulative theses is if you write each of your papers with Quarto it is easier to combine them into a thesis (link to my thesis template).\n\n\n\n\n1.2 Reproducible Figures and Tables\nWhen analysis is embedded, manuscript results become easier to update and verify. By setting up a custom ggplot or matplotlib theme in a separate script, you can ensure that all your figures have a consistent style and easily change colours or fonts according to journal requirements without having to manually edit each figure. This also makes it easier to maintain a consistent visual identity across all your publications.\n\n\n\n\n\n\nTip\n\n\n\nLong code chunks in manuscript qmds for figures can be cumbersome, better to separate out into a script and source it in the header the manuscript. For example, you can have a figures.R script that generates all your figures and saves them to the figures/ directory. Then in your manuscript.qmd, you can source this script in the YAML header or at the beginning of the document to ensure all figures are re-generated before rendering.\n\n\n\n\n1.3 Inline statistics from data\nQuarto’s in-line code chunks allow you to pull values directly from your data, for example, p-values or summary statistics, ensuring that your manuscript always reflects the most current results without manual updates.\nTODO Insert in line code chunk example here, e.g. “The mean pollinator diversity was r mean(diversity) across all sites.”\n\n\n1.4 Integrated citation support\nIntegration with Zotero to keep citations in the same workflow as writing. In the visual editor you can also add a citation directly from the DOI\nWhen you add a citation using the @ syntax Quarto automatically adds it to the bibliography (.bib) file and then upon rednering applies the citation style you have specified in the YAML header. This means you can easily switch between different citation styles (e.g., APA, MLA, Chicago) without having to manually reformat your references.\n\n\n1.5 Cross-referencing\nQuarto supports cross-referencing of figures, tables, and sections to keep everything aligned as the manuscript evolves.\n\n\n1.6 Supplementary Material Management\nSupplementary material, including code for reproducing analyses, can be kept in the same project and linked to the main manuscript.\nGo to the excercise to try writing your own manuscript",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Writing Manuscripts"
+    ]
+  },
+  {
+    "objectID": "advanced/ai-assistance.html",
+    "href": "advanced/ai-assistance.html",
+    "title": "A helping hand from AI",
+    "section": "",
+    "text": "In case you need yet another reason to switch to make the switch to Quarto: Markdown is (currently) heavily used in the Agentic AI space. Precisely because it is a lightweight markup language Chatbots are very proficient at writing in it. It is also the format of choice for the ’SKILL’s (Including those authored specifcally for Quarto) for various agentic AI services like Anthropic’s Claude and OpenAI’s Codex. Both of these services have extensions for VScode/Positron, so you can use them for assistance directly in your IDE."
   },
   {
     "objectID": "advanced/ai-assistance.html#sec-quarto_skills",
     "href": "advanced/ai-assistance.html#sec-quarto_skills",
     "title": "A helping hand from AI",
-    "section": "Quarto Agent SKILLs",
-    "text": "Quarto Agent SKILLs"
+    "section": "1 Quarto Agent SKILLs",
+    "text": "1 Quarto Agent SKILLs"
   },
   {
     "objectID": "advanced/ai-assistance.html#using-open-design-to-help-develop-your-personal-brand",
     "href": "advanced/ai-assistance.html#using-open-design-to-help-develop-your-personal-brand",
     "title": "A helping hand from AI",
-    "section": "Using Open Design to help develop your personal brand",
-    "text": "Using Open Design to help develop your personal brand\nAs researchers not many of us have backgrounds in professional design, as evidenced by many of the graphical abstracts you see even in top journals…\nHere is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for website styling (TODO: Cross-ref to website section.). While most chat services can provide this advice the Open Design framework (an open-sourced Claude Design clone) can help you take your websites to the next level.\n\n\n\n\n\n\nWarning\n\n\nWe take no responsibilitiy for the use of Agentic AI applications in your professional life. Always follow the guidelines of your institution and use good judgement when applying new technologies to your work."
+    "section": "2 Using Open Design to help develop your personal brand",
+    "text": "2 Using Open Design to help develop your personal brand\nAs researchers not many of us have backgrounds in professional design, as evidenced by many of the graphical abstracts you see even in top journals…\nHere is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for website styling (TODO: Cross-ref to website section.). While most chat services can provide this advice the Open Design framework (an open-sourced Claude Design clone) can help you take your websites to the next level.\n\n\n\n\n\n\nWarning\n\n\n\nWe take no responsibilitiy for the use of Agentic AI applications in your professional life. Always follow the guidelines of your institution and use good judgement when applying new technologies to your work."
+  },
+  {
+    "objectID": "advanced/brand-yml.html",
+    "href": "advanced/brand-yml.html",
+    "title": "Consistent Branding with brand.yml",
+    "section": "",
+    "text": "brand.yml is a Quarto branding file used to define shared visual identity such as colors, logos, and typography across outputs. It is particularly useful for websites, presentations, and other materials that should feel consistent.\n\n\nResearch groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, brand.yml provides a shared source of branding choices.\n\n\n\nDepending on the project, a branding file may define:\n\ncolor palette\nlogo assets\ntypography choices\nreusable visual identity settings\n\n\n\n\nA collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style.\n\n\n\nIn this workshop, brand.yml should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:\n\nwhat problem it solves\nwhen it becomes useful\nwhy consistent branding can improve professional visibility and project coherence\n\n\n\n\n\n\n\nNoteKeep the priority straight\n\n\n\nBranding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.\n\n\n\n\n\nIf this workshop later expands, brand.yml would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with brand.yml"
+    ]
   },
   {
     "objectID": "advanced/brand-yml.html#why-this-matters-for-researchers",
     "href": "advanced/brand-yml.html#why-this-matters-for-researchers",
     "title": "Consistent Branding with brand.yml",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nResearch groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, brand.yml provides a shared source of branding choices."
+    "section": "",
+    "text": "Research groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, brand.yml provides a shared source of branding choices.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with brand.yml"
+    ]
   },
   {
     "objectID": "advanced/brand-yml.html#what-it-can-contain",
     "href": "advanced/brand-yml.html#what-it-can-contain",
     "title": "Consistent Branding with brand.yml",
-    "section": "What It Can Contain",
-    "text": "What It Can Contain\nDepending on the project, a branding file may define:\n\ncolor palette\nlogo assets\ntypography choices\nreusable visual identity settings"
+    "section": "",
+    "text": "Depending on the project, a branding file may define:\n\ncolor palette\nlogo assets\ntypography choices\nreusable visual identity settings",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with brand.yml"
+    ]
   },
   {
     "objectID": "advanced/brand-yml.html#concrete-academic-example",
     "href": "advanced/brand-yml.html#concrete-academic-example",
     "title": "Consistent Branding with brand.yml",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style."
+    "section": "",
+    "text": "A collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with brand.yml"
+    ]
   },
   {
     "objectID": "advanced/brand-yml.html#teaching-focus",
     "href": "advanced/brand-yml.html#teaching-focus",
     "title": "Consistent Branding with brand.yml",
-    "section": "Teaching Focus",
-    "text": "Teaching Focus\nIn this workshop, brand.yml should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:\n\nwhat problem it solves\nwhen it becomes useful\nwhy consistent branding can improve professional visibility and project coherence\n\n\n\n\n\n\n\nKeep the priority straight\n\n\nBranding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain."
+    "section": "",
+    "text": "In this workshop, brand.yml should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:\n\nwhat problem it solves\nwhen it becomes useful\nwhy consistent branding can improve professional visibility and project coherence\n\n\n\n\n\n\n\nNoteKeep the priority straight\n\n\n\nBranding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with brand.yml"
+    ]
   },
   {
     "objectID": "advanced/brand-yml.html#suggested-next-conversation",
     "href": "advanced/brand-yml.html#suggested-next-conversation",
     "title": "Consistent Branding with brand.yml",
-    "section": "Suggested Next Conversation",
-    "text": "Suggested Next Conversation\nIf this workshop later expands, brand.yml would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions."
+    "section": "",
+    "text": "If this workshop later expands, brand.yml would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with brand.yml"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html",
+    "href": "foundations/installing-quarto.html",
+    "title": "Installing Quarto",
+    "section": "",
+    "text": "Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#short-introduction",
     "href": "foundations/installing-quarto.html#short-introduction",
     "title": "Installing Quarto",
-    "section": "Short Introduction",
-    "text": "Short Introduction\nBefore creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks."
+    "section": "",
+    "text": "Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#why-this-matters-for-researchers",
     "href": "foundations/installing-quarto.html#why-this-matters-for-researchers",
     "title": "Installing Quarto",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nA clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed."
+    "section": "2 Why This Matters For Researchers",
+    "text": "2 Why This Matters For Researchers\nA clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#what-to-install",
     "href": "foundations/installing-quarto.html#what-to-install",
     "title": "Installing Quarto",
-    "section": "What To Install",
-    "text": "What To Install\nQuarto CLI\nThe Quarto command line interface is the core tool. It handles rendering and project management.\nAn Editor\nParticipants can use:\n\nPositron or RStudio\nVS Code\nanother plain text editor they are comfortable with\n\nOptional Language Runtime\nIf they want executable code chunks, they will also need at least one language runtime such as:\n\nR\nPython\nJulia"
+    "section": "3 What To Install",
+    "text": "3 What To Install\n\n3.1 Quarto CLI\nThe Quarto command line interface is the core tool. It handles rendering and project management.\n\n\n3.2 An Editor\nParticipants can use:\n\nPositron or RStudio\nVS Code\nanother plain text editor they are comfortable with\n\n\n\n3.3 Optional Language Runtime\nIf they want executable code chunks, they will also need at least one language runtime such as:\n\nR\nPython\nJulia",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#suggested-installation-workflow",
     "href": "foundations/installing-quarto.html#suggested-installation-workflow",
     "title": "Installing Quarto",
-    "section": "Suggested Installation Workflow",
-    "text": "Suggested Installation Workflow\n\nDownload Quarto from the official website.\nInstall it using the standard installer for your operating system.\nOpen a terminal and run quarto check.\nConfirm your editor recognizes .qmd files.\nIf you want live code execution, confirm that R, Python, or Julia is also available."
+    "section": "4 Suggested Installation Workflow",
+    "text": "4 Suggested Installation Workflow\n\nDownload Quarto from the official website.\nInstall it using the standard installer for your operating system.\nOpen a terminal and run quarto check.\nConfirm your editor recognizes .qmd files.\nIf you want live code execution, confirm that R, Python, or Julia is also available.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#concrete-academic-example",
     "href": "foundations/installing-quarto.html#concrete-academic-example",
     "title": "Installing Quarto",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.\n\n\n\n\n\n\nWorkshop-friendly setup\n\n\nFor a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code."
+    "section": "5 Concrete Academic Example",
+    "text": "5 Concrete Academic Example\nA participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.\n\n\n\n\n\n\nTipWorkshop-friendly setup\n\n\n\nFor a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#self-check",
     "href": "foundations/installing-quarto.html#self-check",
     "title": "Installing Quarto",
-    "section": "Self-Check",
-    "text": "Self-Check\nAfter installation, participants should be able to answer yes to these questions:\n\nCan I open or create a .qmd file?\nCan I run quarto check in a terminal?\nDo I know which editor I will use during the workshop?"
+    "section": "6 Self-Check",
+    "text": "6 Self-Check\nAfter installation, participants should be able to answer yes to these questions:\n\nCan I open or create a .qmd file?\nCan I run quarto check in a terminal?\nDo I know which editor I will use during the workshop?",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
   },
   {
     "objectID": "foundations/installing-quarto.html#next-step",
     "href": "foundations/installing-quarto.html#next-step",
     "title": "Installing Quarto",
-    "section": "Next Step",
-    "text": "Next Step\nOnce the foundations are in place, move into the first use case: Documenting Research in Progress."
+    "section": "7 Next Step",
+    "text": "7 Next Step\nOnce the foundations are in place, move into the first use case: Documenting Research in Progress.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/quarto-intro.html",
+    "href": "foundations/quarto-intro.html",
+    "title": "What Is Quarto?",
+    "section": "",
+    "text": "Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.\nQuarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.\n\n\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.\n\n\n\n\n\nQuarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\n\n\n\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\n\n\n\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.\n\n\n\n\nA doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output\n\n\n\n\n\n\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
   },
   {
     "objectID": "foundations/quarto-intro.html#why-this-matters-for-researchers",
     "href": "foundations/quarto-intro.html#why-this-matters-for-researchers",
     "title": "What Is Quarto?",
-    "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure."
+    "section": "",
+    "text": "Research outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
   },
   {
     "objectID": "foundations/quarto-intro.html#key-strengths",
     "href": "foundations/quarto-intro.html#key-strengths",
     "title": "What Is Quarto?",
-    "section": "Key Strengths",
-    "text": "Key Strengths\nUniversal Plain-Text Syntax\nQuarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\nMultiple Outputs From One Source\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\nExecutable Code In Multiple Languages\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language."
+    "section": "",
+    "text": "Quarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\n\n\n\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\n\n\n\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
   },
   {
     "objectID": "foundations/quarto-intro.html#concrete-academic-example",
     "href": "foundations/quarto-intro.html#concrete-academic-example",
     "title": "What Is Quarto?",
-    "section": "Concrete Academic Example",
-    "text": "Concrete Academic Example\nA doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nQuarto, Markdown, and YAML\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output"
+    "section": "",
+    "text": "A doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
   },
   {
     "objectID": "foundations/quarto-intro.html#next-step",
     "href": "foundations/quarto-intro.html#next-step",
     "title": "What Is Quarto?",
-    "section": "Next Step",
-    "text": "Next Step\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on."
+    "section": "",
+    "text": "Continue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "What Is Quarto?"
+    ]
+  },
+  {
+    "objectID": "exercises/lab-notebook-exercise.html",
+    "href": "exercises/lab-notebook-exercise.html",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "",
+    "text": "Create a Quarto document for documenting ongoing research activity in a structured, readable way.\n\n\nYou should be familiar with:\n\nbasic Markdown headings and lists\nthe idea of a YAML header\nopening or creating a .qmd file\n\n\n\n\nYou are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use.\n\n\n\n\nCreate a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a heading for the current week.\nWrite a short paragraph describing what you did.\nAdd a bullet list of observations or decisions.\nAdd a numbered list of next steps.\nAdd a fenced code block or commented placeholder showing where a future chunk could go.\n\n\n\n\n---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Week 1\n\nThis week I reviewed the sampling plan and checked the latest field observations.\n\n- Confirmed plot IDs\n- Flagged missing measurements\n- Noted one sensor calibration issue\n\n1. Recheck the field sheet\n2. Contact collaborators about the missing values\n3. Prepare the next visit\n\n\n\nAdd a callout block with a reminder about one issue to revisit next week.\n\n\n\nBy the end, you should have a simple notebook page that:\n\nrenders as a readable HTML document\nseparates narrative, decisions, and tasks clearly\ncould be reused as a template for future entries\n\n\n\n\nAsk yourself:\n\nDoes the page make sense if I read it again in a month?\nCan another team member understand what happened this week?\nIs the structure simple enough to reuse consistently?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#prerequisites",
     "href": "exercises/lab-notebook-exercise.html#prerequisites",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nYou should be familiar with:\n\nbasic Markdown headings and lists\nthe idea of a YAML header\nopening or creating a .qmd file"
+    "section": "",
+    "text": "You should be familiar with:\n\nbasic Markdown headings and lists\nthe idea of a YAML header\nopening or creating a .qmd file",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#starter-scenario",
     "href": "exercises/lab-notebook-exercise.html#starter-scenario",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Starter Scenario",
-    "text": "Starter Scenario\nYou are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use."
+    "section": "",
+    "text": "You are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#step-by-step-exercise",
     "href": "exercises/lab-notebook-exercise.html#step-by-step-exercise",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Step-By-Step Exercise",
-    "text": "Step-By-Step Exercise\n\nCreate a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a heading for the current week.\nWrite a short paragraph describing what you did.\nAdd a bullet list of observations or decisions.\nAdd a numbered list of next steps.\nAdd a fenced code block or commented placeholder showing where a future chunk could go."
+    "section": "",
+    "text": "Create a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a heading for the current week.\nWrite a short paragraph describing what you did.\nAdd a bullet list of observations or decisions.\nAdd a numbered list of next steps.\nAdd a fenced code block or commented placeholder showing where a future chunk could go.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#suggested-starter-content",
     "href": "exercises/lab-notebook-exercise.html#suggested-starter-content",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Suggested Starter Content",
-    "text": "Suggested Starter Content\n---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Week 1\n\nThis week I reviewed the sampling plan and checked the latest field observations.\n\n- Confirmed plot IDs\n- Flagged missing measurements\n- Noted one sensor calibration issue\n\n1. Recheck the field sheet\n2. Contact collaborators about the missing values\n3. Prepare the next visit"
+    "section": "",
+    "text": "---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Week 1\n\nThis week I reviewed the sampling plan and checked the latest field observations.\n\n- Confirmed plot IDs\n- Flagged missing measurements\n- Noted one sensor calibration issue\n\n1. Recheck the field sheet\n2. Contact collaborators about the missing values\n3. Prepare the next visit",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#stretch-task",
     "href": "exercises/lab-notebook-exercise.html#stretch-task",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Stretch Task",
-    "text": "Stretch Task\nAdd a callout block with a reminder about one issue to revisit next week."
+    "section": "",
+    "text": "Add a callout block with a reminder about one issue to revisit next week.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#expected-outcome",
     "href": "exercises/lab-notebook-exercise.html#expected-outcome",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Expected Outcome",
-    "text": "Expected Outcome\nBy the end, you should have a simple notebook page that:\n\nrenders as a readable HTML document\nseparates narrative, decisions, and tasks clearly\ncould be reused as a template for future entries"
+    "section": "",
+    "text": "By the end, you should have a simple notebook page that:\n\nrenders as a readable HTML document\nseparates narrative, decisions, and tasks clearly\ncould be reused as a template for future entries",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/lab-notebook-exercise.html#self-check",
     "href": "exercises/lab-notebook-exercise.html#self-check",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nDoes the page make sense if I read it again in a month?\nCan another team member understand what happened this week?\nIs the structure simple enough to reuse consistently?"
+    "section": "",
+    "text": "Ask yourself:\n\nDoes the page make sense if I read it again in a month?\nCan another team member understand what happened this week?\nIs the structure simple enough to reuse consistently?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/dashboards-exercise.html",
+    "href": "exercises/dashboards-exercise.html",
+    "title": "Exercise: Plan a Simple Dashboard",
+    "section": "",
+    "text": "Sketch a beginner-friendly Quarto dashboard concept for communicating research results to a non-specialist audience.\n\n\nYou should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience\n\n\n\n\nYour project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.\n\n\n\n\nIdentify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from.\n\n\n\n\nUse this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.\n\n\n\n\nAdd an idea for one interactive feature, such as choosing a site or time period.\n\n\n\nYou should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project\n\n\n\n\nAsk yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#prerequisites",
     "href": "exercises/dashboards-exercise.html#prerequisites",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nYou should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience"
+    "section": "",
+    "text": "You should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#starter-scenario",
     "href": "exercises/dashboards-exercise.html#starter-scenario",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Starter Scenario",
-    "text": "Starter Scenario\nYour project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report."
+    "section": "",
+    "text": "Your project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#step-by-step-exercise",
     "href": "exercises/dashboards-exercise.html#step-by-step-exercise",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Step-By-Step Exercise",
-    "text": "Step-By-Step Exercise\n\nIdentify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from."
+    "section": "",
+    "text": "Identify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#suggested-starter-prompt",
     "href": "exercises/dashboards-exercise.html#suggested-starter-prompt",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Suggested Starter Prompt",
-    "text": "Suggested Starter Prompt\nUse this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators."
+    "section": "",
+    "text": "Use this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#stretch-task",
     "href": "exercises/dashboards-exercise.html#stretch-task",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Stretch Task",
-    "text": "Stretch Task\nAdd an idea for one interactive feature, such as choosing a site or time period."
+    "section": "",
+    "text": "Add an idea for one interactive feature, such as choosing a site or time period.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#expected-outcome",
     "href": "exercises/dashboards-exercise.html#expected-outcome",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Expected Outcome",
-    "text": "Expected Outcome\nYou should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project"
+    "section": "",
+    "text": "You should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/dashboards-exercise.html#self-check",
     "href": "exercises/dashboards-exercise.html#self-check",
     "title": "Exercise: Plan a Simple Dashboard",
-    "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?"
+    "section": "",
+    "text": "Ask yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/websites-exercise.html",
+    "href": "exercises/websites-exercise.html",
+    "title": "Exercise: Build and Publish a Quarto Website",
+    "section": "",
+    "text": "By the end of this exercise you will have built a small Quarto website on your own computer and published it live on the internet — with a web address you can share. It is written for people who are completely new to Quarto, so each step explains what you are doing and why.\n\n\n\n\n\n\nNoteNo coding required\n\n\n\nA Quarto website is just a folder of plain-text pages. You can build and publish the whole thing without writing a single line of R or Python. If you later want to embed analysis, you can — but that is not needed here.\n\n\n\n\nYou will need three things:\n\nQuarto installed, and an editor you are comfortable with. If you have not done this yet, follow Installing Quarto first. You can check your install by running quarto check in a terminal.\nA terminal (the Terminal app, PowerShell, or the terminal panel inside your editor). Every command below is typed there.\nA free GitHub account, which you will only need for the publishing step near the end. If you do not have one, you can sign up at github.com — or skip Step 6 and still complete everything else locally.\n\n\n\n\nA small site with two pages — a home page and an about page — connected by a navigation bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny: the point is to see the full path from empty folder to live website.\n\n\n\nQuarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you keep projects and run:\nquarto create project website my-site\nThis makes a new folder called my-site containing a few starter files:\n\n_quarto.yml — the project’s settings file. It controls things that apply to the whole site, like its title, the navigation bar, and the colour theme.\nindex.qmd — your home page. (index is the special name web servers look for first.)\nabout.qmd — a second example page.\nstyles.css — a place for custom styling (you will swap this for a nicer option in Step 5).\n\n\n\n\n\n\n\nTipPrefer buttons to typing?\n\n\n\nYou do not have to use the terminal to create the project. The same wizard is available through your editor: in Positron or VS Code open the command palette and choose Quarto: Create Project → Website Project; in RStudio use New Project → Quarto Website. The result is the same starter folder.\n\n\n\n\n\nMove into the new folder and start a live preview:\ncd my-site\nquarto preview\nYour browser opens with the site already running. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly. Press Ctrl + C in the terminal to stop it later.\n\n\n\nOpen _quarto.yml. This is the one file that ties the site together. A minimal version looks like this:\nproject:\n  type: website\n\nwebsite:\n  title: \"My Research Site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\nReading it from top to bottom:\n\nproject: type: website tells Quarto to treat the whole folder as one website rather than a single document.\nwebsite: title: is the name shown in the browser tab and in the top-left of the navigation bar. Change it to something of your own.\nnavbar: is the menu across the top. Each entry has an href (the page it links to) and the text shown for it. Adding a page to your site is mostly a matter of adding a line here.\nformat: html: sets options for every page at once — here, the cosmo theme and a table of contents (toc).\n\nChange the title to your own and save. Watch the preview update.\n\n\n\nOpen index.qmd. Below the --- header, the content is just Markdown — the same headings, lists, links, and callouts you have already met in this workshop. Replace the starter text with a short welcome:\n---\ntitle: \"Welcome\"\n---\n\n## About this site\n\nA small site I built while learning Quarto. Use the menu above to look around.\nNow add a third page. Create a file called resources.qmd next to the others:\n---\ntitle: \"Resources\"\n---\n\nA few links and materials I want to share.\nA new file is not visible to visitors until you link it. Add it to the navbar in _quarto.yml:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: resources.qmd\n        text: Resources\nSave and check that the new menu item appears and works in the preview.\n\n\n\nThe quickest way to restyle a site is to pick a different built-in theme. Quarto ships with many; try swapping cosmo for another such as flatly, litera, or journal in _quarto.yml and watch the preview change.\nTo go a little further, you can override individual colours with a small style file. Create a file named styles.scss containing:\n/*-- scss:defaults --*/\n\n// a couple of colour tweaks\n$navbar-bg: #2c3e50;\n$link-color: #18bc9c;\nThe /*-- scss:defaults --*/ line at the top is required — it tells Quarto these are style variables. Then layer it on top of your theme in _quarto.yml:\nformat:\n  html:\n    theme: [cosmo, styles.scss]\n    toc: true\n(You can now remove the original styles.css line if your config still references it.)\n\n\n\n\n\n\nNoteGoing further with branding\n\n\n\nPicking colours by hand is fine for one site. When a whole research group or project wants a shared, consistent look across its website, slides, and documents, Quarto offers a dedicated branding file — see Using brand.yml in the advanced topics. Treat that as a later step; clear structure matters more than polish when you are starting out.\n\n\n\n\n\nYour site only exists on your laptop so far. GitHub Pages is a free service that turns a GitHub repository into a live website, and Quarto can publish to it with a single command.\nFirst, put your project on GitHub:\n\nOn github.com, create a new, empty repository (no README) named, for example, my-site.\nBack in your terminal, inside the project folder, connect your files to it:\n\ngit init\ngit add .\ngit commit -m \"First version of my site\"\ngit branch -M main\ngit remote add origin https://github.com/YOUR-USERNAME/my-site.git\ngit push -u origin main\nNow publish:\nquarto publish gh-pages\nQuarto renders your site, copies the finished pages onto a special branch called gh-pages, and switches on GitHub Pages for you. After a minute or so it prints your live address, which will look like https://YOUR-USERNAME.github.io/my-site/. Open it — your site is on the internet.\n\n\n\n\n\n\nTipWhat is the gh-pages branch?\n\n\n\nIt is a separate branch that holds only the built website (the HTML), kept apart from your editable source files on main. You normally never touch it by hand — quarto publish manages it for you.\n\n\n\n\n\n\n\n\nNotePublishing automatically\n\n\n\nRunning a command each time works well, but you can also have the site rebuild itself every time you push a change. This very workshop site does that with a small GitHub Actions workflow file, so no one has to remember to publish. Once you are comfortable with the manual command, the Quarto publishing docs show how to set the automatic version up.\n\n\n\n\n\nEdit one of your pages — add a sentence to the home page, for instance — and save. Then run:\nquarto publish gh-pages\nagain. Refresh your live URL after a moment and your update is there. This edit-and-republish loop is the whole rhythm of maintaining a Quarto website.\n\n\n\nIf you finish early, try one of these:\n\nAdd a footer to the bottom of every page using a page-footer: entry under website:.\nMove your navigation into a sidebar instead of (or as well as) the top navbar.\nAdd a fourth page and link it.\nTry a custom Google Font by importing it in styles.scss and setting mainfont: in the HTML format options.\n\n\n\n\nYou should now have:\n\na small Quarto website project with at least two linked pages,\na colour theme of your choosing,\nand a live URL you can share with anyone.\n\n\n\n\nAsk yourself:\n\nDoes the site open and refresh when I run quarto preview?\nDoes every item in the navigation bar go to the right page?\nCan I visit my site at its github.io address from a different browser or device?\nCould I add another page and republish without looking up the steps?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#before-you-start",
     "href": "exercises/websites-exercise.html#before-you-start",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Before You Start",
-    "text": "Before You Start\nYou will need three things:\n\nQuarto installed, and an editor you are comfortable with. If you have not done this yet, follow Installing Quarto first. You can check your install by running quarto check in a terminal.\nA terminal (the Terminal app, PowerShell, or the terminal panel inside your editor). Every command below is typed there.\nA free GitHub account, which you will only need for the publishing step near the end. If you do not have one, you can sign up at github.com — or skip Step 6 and still complete everything else locally."
+    "section": "",
+    "text": "You will need three things:\n\nQuarto installed, and an editor you are comfortable with. If you have not done this yet, follow Installing Quarto first. You can check your install by running quarto check in a terminal.\nA terminal (the Terminal app, PowerShell, or the terminal panel inside your editor). Every command below is typed there.\nA free GitHub account, which you will only need for the publishing step near the end. If you do not have one, you can sign up at github.com — or skip Step 6 and still complete everything else locally.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#what-you-will-build",
     "href": "exercises/websites-exercise.html#what-you-will-build",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "What You Will Build",
-    "text": "What You Will Build\nA small site with two pages — a home page and an about page — connected by a navigation bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny: the point is to see the full path from empty folder to live website."
+    "section": "",
+    "text": "A small site with two pages — a home page and an about page — connected by a navigation bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny: the point is to see the full path from empty folder to live website.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-1-create-the-website-project",
     "href": "exercises/websites-exercise.html#step-1-create-the-website-project",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 1 — Create the Website Project",
-    "text": "Step 1 — Create the Website Project\nQuarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you keep projects and run:\nquarto create project website my-site\nThis makes a new folder called my-site containing a few starter files:\n\n_quarto.yml — the project’s settings file. It controls things that apply to the whole site, like its title, the navigation bar, and the colour theme.\nindex.qmd — your home page. (index is the special name web servers look for first.)\nabout.qmd — a second example page.\nstyles.css — a place for custom styling (you will swap this for a nicer option in Step 5).\n\n\n\n\n\n\n\nPrefer buttons to typing?\n\n\nYou do not have to use the terminal to create the project. The same wizard is available through your editor: in Positron or VS Code open the command palette and choose Quarto: Create Project → Website Project; in RStudio use New Project → Quarto Website. The result is the same starter folder."
+    "section": "",
+    "text": "Quarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you keep projects and run:\nquarto create project website my-site\nThis makes a new folder called my-site containing a few starter files:\n\n_quarto.yml — the project’s settings file. It controls things that apply to the whole site, like its title, the navigation bar, and the colour theme.\nindex.qmd — your home page. (index is the special name web servers look for first.)\nabout.qmd — a second example page.\nstyles.css — a place for custom styling (you will swap this for a nicer option in Step 5).\n\n\n\n\n\n\n\nTipPrefer buttons to typing?\n\n\n\nYou do not have to use the terminal to create the project. The same wizard is available through your editor: in Positron or VS Code open the command palette and choose Quarto: Create Project → Website Project; in RStudio use New Project → Quarto Website. The result is the same starter folder.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-2-preview-your-site",
     "href": "exercises/websites-exercise.html#step-2-preview-your-site",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 2 — Preview Your Site",
-    "text": "Step 2 — Preview Your Site\nMove into the new folder and start a live preview:\ncd my-site\nquarto preview\nYour browser opens with the site already running. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly. Press Ctrl + C in the terminal to stop it later."
+    "section": "",
+    "text": "Move into the new folder and start a live preview:\ncd my-site\nquarto preview\nYour browser opens with the site already running. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly. Press Ctrl + C in the terminal to stop it later.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-3-understand-_quarto.yml",
     "href": "exercises/websites-exercise.html#step-3-understand-_quarto.yml",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 3 — Understand _quarto.yml",
-    "text": "Step 3 — Understand _quarto.yml\nOpen _quarto.yml. This is the one file that ties the site together. A minimal version looks like this:\nproject:\n  type: website\n\nwebsite:\n  title: \"My Research Site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\nReading it from top to bottom:\n\nproject: type: website tells Quarto to treat the whole folder as one website rather than a single document.\nwebsite: title: is the name shown in the browser tab and in the top-left of the navigation bar. Change it to something of your own.\nnavbar: is the menu across the top. Each entry has an href (the page it links to) and the text shown for it. Adding a page to your site is mostly a matter of adding a line here.\nformat: html: sets options for every page at once — here, the cosmo theme and a table of contents (toc).\n\nChange the title to your own and save. Watch the preview update."
+    "section": "",
+    "text": "Open _quarto.yml. This is the one file that ties the site together. A minimal version looks like this:\nproject:\n  type: website\n\nwebsite:\n  title: \"My Research Site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n\nformat:\n  html:\n    theme: cosmo\n    toc: true\nReading it from top to bottom:\n\nproject: type: website tells Quarto to treat the whole folder as one website rather than a single document.\nwebsite: title: is the name shown in the browser tab and in the top-left of the navigation bar. Change it to something of your own.\nnavbar: is the menu across the top. Each entry has an href (the page it links to) and the text shown for it. Adding a page to your site is mostly a matter of adding a line here.\nformat: html: sets options for every page at once — here, the cosmo theme and a table of contents (toc).\n\nChange the title to your own and save. Watch the preview update.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-4-edit-the-home-page-and-add-a-page",
     "href": "exercises/websites-exercise.html#step-4-edit-the-home-page-and-add-a-page",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 4 — Edit the Home Page and Add a Page",
-    "text": "Step 4 — Edit the Home Page and Add a Page\nOpen index.qmd. Below the --- header, the content is just Markdown — the same headings, lists, links, and callouts you have already met in this workshop. Replace the starter text with a short welcome:\n---\ntitle: \"Welcome\"\n---\n\n## About this site\n\nA small site I built while learning Quarto. Use the menu above to look around.\nNow add a third page. Create a file called resources.qmd next to the others:\n---\ntitle: \"Resources\"\n---\n\nA few links and materials I want to share.\nA new file is not visible to visitors until you link it. Add it to the navbar in _quarto.yml:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: resources.qmd\n        text: Resources\nSave and check that the new menu item appears and works in the preview."
+    "section": "",
+    "text": "Open index.qmd. Below the --- header, the content is just Markdown — the same headings, lists, links, and callouts you have already met in this workshop. Replace the starter text with a short welcome:\n---\ntitle: \"Welcome\"\n---\n\n## About this site\n\nA small site I built while learning Quarto. Use the menu above to look around.\nNow add a third page. Create a file called resources.qmd next to the others:\n---\ntitle: \"Resources\"\n---\n\nA few links and materials I want to share.\nA new file is not visible to visitors until you link it. Add it to the navbar in _quarto.yml:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: resources.qmd\n        text: Resources\nSave and check that the new menu item appears and works in the preview.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-5-change-how-it-looks",
     "href": "exercises/websites-exercise.html#step-5-change-how-it-looks",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 5 — Change How It Looks",
-    "text": "Step 5 — Change How It Looks\nThe quickest way to restyle a site is to pick a different built-in theme. Quarto ships with many; try swapping cosmo for another such as flatly, litera, or journal in _quarto.yml and watch the preview change.\nTo go a little further, you can override individual colours with a small style file. Create a file named styles.scss containing:\n/*-- scss:defaults --*/\n\n// a couple of colour tweaks\n$navbar-bg: #2c3e50;\n$link-color: #18bc9c;\nThe /*-- scss:defaults --*/ line at the top is required — it tells Quarto these are style variables. Then layer it on top of your theme in _quarto.yml:\nformat:\n  html:\n    theme: [cosmo, styles.scss]\n    toc: true\n(You can now remove the original styles.css line if your config still references it.)\n\n\n\n\n\n\nGoing further with branding\n\n\nPicking colours by hand is fine for one site. When a whole research group or project wants a shared, consistent look across its website, slides, and documents, Quarto offers a dedicated branding file — see Using brand.yml in the advanced topics. Treat that as a later step; clear structure matters more than polish when you are starting out."
+    "section": "",
+    "text": "The quickest way to restyle a site is to pick a different built-in theme. Quarto ships with many; try swapping cosmo for another such as flatly, litera, or journal in _quarto.yml and watch the preview change.\nTo go a little further, you can override individual colours with a small style file. Create a file named styles.scss containing:\n/*-- scss:defaults --*/\n\n// a couple of colour tweaks\n$navbar-bg: #2c3e50;\n$link-color: #18bc9c;\nThe /*-- scss:defaults --*/ line at the top is required — it tells Quarto these are style variables. Then layer it on top of your theme in _quarto.yml:\nformat:\n  html:\n    theme: [cosmo, styles.scss]\n    toc: true\n(You can now remove the original styles.css line if your config still references it.)\n\n\n\n\n\n\nNoteGoing further with branding\n\n\n\nPicking colours by hand is fine for one site. When a whole research group or project wants a shared, consistent look across its website, slides, and documents, Quarto offers a dedicated branding file — see Using brand.yml in the advanced topics. Treat that as a later step; clear structure matters more than polish when you are starting out.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-6-publish-to-github-pages",
     "href": "exercises/websites-exercise.html#step-6-publish-to-github-pages",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 6 — Publish to GitHub Pages",
-    "text": "Step 6 — Publish to GitHub Pages\nYour site only exists on your laptop so far. GitHub Pages is a free service that turns a GitHub repository into a live website, and Quarto can publish to it with a single command.\nFirst, put your project on GitHub:\n\nOn github.com, create a new, empty repository (no README) named, for example, my-site.\nBack in your terminal, inside the project folder, connect your files to it:\n\ngit init\ngit add .\ngit commit -m \"First version of my site\"\ngit branch -M main\ngit remote add origin https://github.com/YOUR-USERNAME/my-site.git\ngit push -u origin main\nNow publish:\nquarto publish gh-pages\nQuarto renders your site, copies the finished pages onto a special branch called gh-pages, and switches on GitHub Pages for you. After a minute or so it prints your live address, which will look like https://YOUR-USERNAME.github.io/my-site/. Open it — your site is on the internet.\n\n\n\n\n\n\nWhat is the gh-pages branch?\n\n\nIt is a separate branch that holds only the built website (the HTML), kept apart from your editable source files on main. You normally never touch it by hand — quarto publish manages it for you.\n\n\n\n\n\n\n\n\n\nPublishing automatically\n\n\nRunning a command each time works well, but you can also have the site rebuild itself every time you push a change. This very workshop site does that with a small GitHub Actions workflow file, so no one has to remember to publish. Once you are comfortable with the manual command, the Quarto publishing docs show how to set the automatic version up."
+    "section": "",
+    "text": "Your site only exists on your laptop so far. GitHub Pages is a free service that turns a GitHub repository into a live website, and Quarto can publish to it with a single command.\nFirst, put your project on GitHub:\n\nOn github.com, create a new, empty repository (no README) named, for example, my-site.\nBack in your terminal, inside the project folder, connect your files to it:\n\ngit init\ngit add .\ngit commit -m \"First version of my site\"\ngit branch -M main\ngit remote add origin https://github.com/YOUR-USERNAME/my-site.git\ngit push -u origin main\nNow publish:\nquarto publish gh-pages\nQuarto renders your site, copies the finished pages onto a special branch called gh-pages, and switches on GitHub Pages for you. After a minute or so it prints your live address, which will look like https://YOUR-USERNAME.github.io/my-site/. Open it — your site is on the internet.\n\n\n\n\n\n\nTipWhat is the gh-pages branch?\n\n\n\nIt is a separate branch that holds only the built website (the HTML), kept apart from your editable source files on main. You normally never touch it by hand — quarto publish manages it for you.\n\n\n\n\n\n\n\n\nNotePublishing automatically\n\n\n\nRunning a command each time works well, but you can also have the site rebuild itself every time you push a change. This very workshop site does that with a small GitHub Actions workflow file, so no one has to remember to publish. Once you are comfortable with the manual command, the Quarto publishing docs show how to set the automatic version up.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#step-7-make-a-change-and-republish",
     "href": "exercises/websites-exercise.html#step-7-make-a-change-and-republish",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Step 7 — Make a Change and Republish",
-    "text": "Step 7 — Make a Change and Republish\nEdit one of your pages — add a sentence to the home page, for instance — and save. Then run:\nquarto publish gh-pages\nagain. Refresh your live URL after a moment and your update is there. This edit-and-republish loop is the whole rhythm of maintaining a Quarto website."
+    "section": "",
+    "text": "Edit one of your pages — add a sentence to the home page, for instance — and save. Then run:\nquarto publish gh-pages\nagain. Refresh your live URL after a moment and your update is there. This edit-and-republish loop is the whole rhythm of maintaining a Quarto website.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#stretch-tasks",
     "href": "exercises/websites-exercise.html#stretch-tasks",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Stretch Tasks",
-    "text": "Stretch Tasks\nIf you finish early, try one of these:\n\nAdd a footer to the bottom of every page using a page-footer: entry under website:.\nMove your navigation into a sidebar instead of (or as well as) the top navbar.\nAdd a fourth page and link it.\nTry a custom Google Font by importing it in styles.scss and setting mainfont: in the HTML format options."
+    "section": "",
+    "text": "If you finish early, try one of these:\n\nAdd a footer to the bottom of every page using a page-footer: entry under website:.\nMove your navigation into a sidebar instead of (or as well as) the top navbar.\nAdd a fourth page and link it.\nTry a custom Google Font by importing it in styles.scss and setting mainfont: in the HTML format options.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#expected-outcome",
     "href": "exercises/websites-exercise.html#expected-outcome",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Expected Outcome",
-    "text": "Expected Outcome\nYou should now have:\n\na small Quarto website project with at least two linked pages,\na colour theme of your choosing,\nand a live URL you can share with anyone."
+    "section": "",
+    "text": "You should now have:\n\na small Quarto website project with at least two linked pages,\na colour theme of your choosing,\nand a live URL you can share with anyone.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
   },
   {
     "objectID": "exercises/websites-exercise.html#self-check",
     "href": "exercises/websites-exercise.html#self-check",
     "title": "Exercise: Build and Publish a Quarto Website",
-    "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nDoes the site open and refresh when I run quarto preview?\nDoes every item in the navigation bar go to the right page?\nCan I visit my site at its github.io address from a different browser or device?\nCould I add another page and republish without looking up the steps?"
+    "section": "",
+    "text": "Ask yourself:\n\nDoes the site open and refresh when I run quarto preview?\nDoes every item in the navigation bar go to the right page?\nCan I visit my site at its github.io address from a different browser or device?\nCould I add another page and republish without looking up the steps?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "PRODUCT.html",
+    "href": "PRODUCT.html",
+    "title": "1 Product",
+    "section": "",
+    "text": "brand\nSplit surface: the landing page and overall identity are brand (the design is part of the message), while the interior reference pages lean product (design serves fast lookup). PRODUCT.md carries brand as the default; override to product when working purely on interior docs utility.\n\n\n\nResearchers, across two arrival paths:\n\nIn a live workshop session, following the site top-to-bottom while learning.\nReturning later, jumping straight to one page when stuck on a specific output format.\n\nSpanning early-career researchers building their first durable workflow, experienced researchers tired of juggling disconnected tools, and teams that care about reproducibility, transparency, and reuse. Mixed technical background: comfortable with at least one of R / Python / Julia is helpful but not assumed.\nThe job to be done: learn to author once in plain text and render to many professional outputs (HTML, PDF, DOCX, slides, dashboards, websites) without switching tools, then keep the site as a reference.\n\n\n\nA guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce.\n\n\n\nScholarly and editorial. Warm, literate, quietly confident, the feel of a well-made academic publication rather than a software landing page. The voice is clear, specific, and generous; it explains the why, not only the how.\n\nThree words: literate, credible, unhurried.\nEmotional goal: a researcher should feel that adopting Quarto is a calm, sensible upgrade in capable hands, with no hype.\n\n\n\n\n\nGeneric default docs theme — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.\nCorporate SaaS landing — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.\nOverdesigned / flashy — heavy animation, glassmorphism, decorative effects that compete with learning.\nAI-slop card scaffolding — the current homepage subject cards and after-body nav cards lean on numbered section markers (01 · / 02 ·) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend.\n\n\n\n\n\nPractice what you preach. The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.\nTeach by showing. Real rendered output and runnable code over abstract description.\nReference-first navigation. A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.\nEarn every flourish. Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.\nCredible, not corporate. Scholarly restraint throughout; no marketing cadence, no hype.\n\n\n\n\nTarget WCAG 2.1 AA.\n\nBody text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.\nVisible keyboard focus and full keyboard navigability.\nFull prefers-reduced-motion alternatives for any motion.\nBoth the light and dark brand.yml themes must pass contrast.\nContent must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session."
   },
   {
     "objectID": "PRODUCT.html#register",
     "href": "PRODUCT.html#register",
-    "title": "",
-    "section": "Register",
-    "text": "Register\nbrand\nSplit surface: the landing page and overall identity are brand (the design is part of the message), while the interior reference pages lean product (design serves fast lookup). PRODUCT.md carries brand as the default; override to product when working purely on interior docs utility."
+    "title": "1 Product",
+    "section": "",
+    "text": "brand\nSplit surface: the landing page and overall identity are brand (the design is part of the message), while the interior reference pages lean product (design serves fast lookup). PRODUCT.md carries brand as the default; override to product when working purely on interior docs utility."
   },
   {
     "objectID": "PRODUCT.html#users",
     "href": "PRODUCT.html#users",
-    "title": "",
-    "section": "Users",
-    "text": "Users\nResearchers, across two arrival paths:\n\nIn a live workshop session, following the site top-to-bottom while learning.\nReturning later, jumping straight to one page when stuck on a specific output format.\n\nSpanning early-career researchers building their first durable workflow, experienced researchers tired of juggling disconnected tools, and teams that care about reproducibility, transparency, and reuse. Mixed technical background: comfortable with at least one of R / Python / Julia is helpful but not assumed.\nThe job to be done: learn to author once in plain text and render to many professional outputs (HTML, PDF, DOCX, slides, dashboards, websites) without switching tools, then keep the site as a reference."
+    "title": "1 Product",
+    "section": "",
+    "text": "Researchers, across two arrival paths:\n\nIn a live workshop session, following the site top-to-bottom while learning.\nReturning later, jumping straight to one page when stuck on a specific output format.\n\nSpanning early-career researchers building their first durable workflow, experienced researchers tired of juggling disconnected tools, and teams that care about reproducibility, transparency, and reuse. Mixed technical background: comfortable with at least one of R / Python / Julia is helpful but not assumed.\nThe job to be done: learn to author once in plain text and render to many professional outputs (HTML, PDF, DOCX, slides, dashboards, websites) without switching tools, then keep the site as a reference."
   },
   {
     "objectID": "PRODUCT.html#product-purpose",
     "href": "PRODUCT.html#product-purpose",
-    "title": "",
-    "section": "Product Purpose",
-    "text": "Product Purpose\nA guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce."
+    "title": "1 Product",
+    "section": "",
+    "text": "A guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce."
   },
   {
     "objectID": "PRODUCT.html#brand-personality",
     "href": "PRODUCT.html#brand-personality",
-    "title": "",
-    "section": "Brand Personality",
-    "text": "Brand Personality\nScholarly and editorial. Warm, literate, quietly confident, the feel of a well-made academic publication rather than a software landing page. The voice is clear, specific, and generous; it explains the why, not only the how.\n\nThree words: literate, credible, unhurried.\nEmotional goal: a researcher should feel that adopting Quarto is a calm, sensible upgrade in capable hands, with no hype."
+    "title": "1 Product",
+    "section": "",
+    "text": "Scholarly and editorial. Warm, literate, quietly confident, the feel of a well-made academic publication rather than a software landing page. The voice is clear, specific, and generous; it explains the why, not only the how.\n\nThree words: literate, credible, unhurried.\nEmotional goal: a researcher should feel that adopting Quarto is a calm, sensible upgrade in capable hands, with no hype."
   },
   {
     "objectID": "PRODUCT.html#anti-references",
     "href": "PRODUCT.html#anti-references",
-    "title": "",
-    "section": "Anti-references",
-    "text": "Anti-references\n\nGeneric default docs theme — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.\nCorporate SaaS landing — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.\nOverdesigned / flashy — heavy animation, glassmorphism, decorative effects that compete with learning.\nAI-slop card scaffolding — the current homepage subject cards and after-body nav cards lean on numbered section markers (01 · / 02 ·) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend."
+    "title": "1 Product",
+    "section": "",
+    "text": "Generic default docs theme — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.\nCorporate SaaS landing — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.\nOverdesigned / flashy — heavy animation, glassmorphism, decorative effects that compete with learning.\nAI-slop card scaffolding — the current homepage subject cards and after-body nav cards lean on numbered section markers (01 · / 02 ·) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend."
   },
   {
     "objectID": "PRODUCT.html#design-principles",
     "href": "PRODUCT.html#design-principles",
-    "title": "",
-    "section": "Design Principles",
-    "text": "Design Principles\n\nPractice what you preach. The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.\nTeach by showing. Real rendered output and runnable code over abstract description.\nReference-first navigation. A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.\nEarn every flourish. Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.\nCredible, not corporate. Scholarly restraint throughout; no marketing cadence, no hype."
+    "title": "1 Product",
+    "section": "",
+    "text": "Practice what you preach. The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.\nTeach by showing. Real rendered output and runnable code over abstract description.\nReference-first navigation. A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.\nEarn every flourish. Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.\nCredible, not corporate. Scholarly restraint throughout; no marketing cadence, no hype."
   },
   {
     "objectID": "PRODUCT.html#accessibility-inclusion",
     "href": "PRODUCT.html#accessibility-inclusion",
-    "title": "",
-    "section": "Accessibility & Inclusion",
-    "text": "Accessibility & Inclusion\nTarget WCAG 2.1 AA.\n\nBody text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.\nVisible keyboard focus and full keyboard navigability.\nFull prefers-reduced-motion alternatives for any motion.\nBoth the light and dark brand.yml themes must pass contrast.\nContent must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session."
+    "title": "1 Product",
+    "section": "",
+    "text": "Target WCAG 2.1 AA.\n\nBody text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.\nVisible keyboard focus and full keyboard navigability.\nFull prefers-reduced-motion alternatives for any motion.\nBoth the light and dark brand.yml themes must pass contrast.\nContent must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session."
   }
 ]
