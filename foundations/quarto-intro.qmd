@@ -40,7 +40,13 @@ A single source file can render to many polished outputs: the *same* content, re
 ![Word (DOCX)](/assets/formats/docx.png)
 :::
 
-You write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop.
+You write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.
+
+::: {.callout-note}
+## If you know LaTeX
+
+If you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.
+:::
 
 ### Executable Code In Multiple Languages
 
