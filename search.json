@@ -600,54 +600,6 @@
     ]
   },
   {
-    "objectID": "use-cases/lab-notebook.html",
-    "href": "use-cases/lab-notebook.html",
-    "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.\n\n\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.\n\n\n\n\n\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.\n\n\n\n\nImagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
-    "crumbs": [
-      "Home",
-      "Academic Use Cases",
-      "Documenting Research in Progress"
-    ]
-  },
-  {
-    "objectID": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
-    "href": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
-    "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Research in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
-    "crumbs": [
-      "Home",
-      "Academic Use Cases",
-      "Documenting Research in Progress"
-    ]
-  },
-  {
-    "objectID": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
-    "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Markdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
-    "crumbs": [
-      "Home",
-      "Academic Use Cases",
-      "Documenting Research in Progress"
-    ]
-  },
-  {
-    "objectID": "use-cases/lab-notebook.html#concrete-academic-example",
-    "href": "use-cases/lab-notebook.html#concrete-academic-example",
-    "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Imagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
-    "crumbs": [
-      "Home",
-      "Academic Use Cases",
-      "Documenting Research in Progress"
-    ]
-  },
-  {
     "objectID": "DESIGN.html",
     "href": "DESIGN.html",
     "title": "1 Design System: One Tool to Rule Them All — Quarto Workshop",
@@ -699,49 +651,109 @@
   {
     "objectID": "use-cases/dashboards.html",
     "href": "use-cases/dashboards.html",
-    "title": "Interactive Dashboards",
+    "title": "Dashboards",
     "section": "",
-    "text": "Quarto can also support interactive outputs, including dashboard-style communication. For researchers, this can be a useful bridge between formal publication and exploratory sharing with collaborators or stakeholders.\n\n\nSome audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem.\n\n\n\n\n\nDashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\n\n\n\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\n\n\n\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.\n\n\n\n\nA project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nWarningScope reminder\n\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\nGo to the dashboards exercise",
+    "text": "A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with format: dashboard.\n\n\nDashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.\n\n\n\nA Quarto dashboard is built from a few simple pieces:\n\nformat: dashboard in the YAML turns the document into a dashboard.\nHeadings lay out the page: ## starts a row, and the cards inside it sit side by side as columns.\nCards are the panels that hold your content. Two special kinds are value boxes (a single headline number) and plot cards (a chart).\n\nIn code, the shape looks like this (each code cell uses an executable {r} block, shown here as plain text):\n---\ntitle: \"My Dashboard\"\nformat: dashboard\n---\n\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = 4)\n```\n\n## Row\n\n```r\n#| title: \"A chart\"\nplot_ly(...)\n```\n\n\n\nIn the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:\n\n\n\nA restoration-monitoring dashboard: value boxes across the top, interactive charts below.\n\n\nYou can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:\n\n\nA dashboard is normally a full-screen page of its own. See it in full screen here.\n\n\n\nQuarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:\n\nplotly charts: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.\nsortable tables: click a column header in the table above to reorder the rows (built with the DT package).\ntabsets: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.\n\nThe boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs Shiny and a running server, which a static host like GitHub Pages cannot provide.\nGo to the dashboards exercise",
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Interactive Dashboards"
+      "Dashboards"
     ]
   },
   {
-    "objectID": "use-cases/dashboards.html#why-this-matters-for-researchers",
-    "href": "use-cases/dashboards.html#why-this-matters-for-researchers",
-    "title": "Interactive Dashboards",
+    "objectID": "use-cases/dashboards.html#when-a-dashboard-helps",
+    "href": "use-cases/dashboards.html#when-a-dashboard-helps",
+    "title": "Dashboards",
     "section": "",
-    "text": "Some audiences need more than a static paper or slide deck. They may benefit from:\n\nfilterable summaries\nupdated visuals\nbrowsable indicators\nlightweight interaction around results\n\nQuarto dashboards can serve these needs while staying close to the same publishing ecosystem.",
+    "text": "Dashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Interactive Dashboards"
+      "Dashboards"
     ]
   },
   {
-    "objectID": "use-cases/dashboards.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/dashboards.html#key-quarto-features-for-this-workflow",
-    "title": "Interactive Dashboards",
+    "objectID": "use-cases/dashboards.html#how-a-dashboard-is-structured",
+    "href": "use-cases/dashboards.html#how-a-dashboard-is-structured",
+    "title": "Dashboards",
     "section": "",
-    "text": "Dashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.\n\n\n\nInteractive views can still draw on the same documented analysis pipeline used elsewhere in a project.\n\n\n\nResearchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.",
+    "text": "A Quarto dashboard is built from a few simple pieces:\n\nformat: dashboard in the YAML turns the document into a dashboard.\nHeadings lay out the page: ## starts a row, and the cards inside it sit side by side as columns.\nCards are the panels that hold your content. Two special kinds are value boxes (a single headline number) and plot cards (a chart).\n\nIn code, the shape looks like this (each code cell uses an executable {r} block, shown here as plain text):\n---\ntitle: \"My Dashboard\"\nformat: dashboard\n---\n\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = 4)\n```\n\n## Row\n\n```r\n#| title: \"A chart\"\nplot_ly(...)\n```",
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Interactive Dashboards"
+      "Dashboards"
     ]
   },
   {
-    "objectID": "use-cases/dashboards.html#concrete-academic-example",
-    "href": "use-cases/dashboards.html#concrete-academic-example",
-    "title": "Interactive Dashboards",
+    "objectID": "use-cases/dashboards.html#what-you-will-build",
+    "href": "use-cases/dashboards.html#what-you-will-build",
+    "title": "Dashboards",
     "section": "",
-    "text": "A project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.\n\n\n\n\n\n\nWarningScope reminder\n\n\n\nDashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.\n\n\nGo to the dashboards exercise",
+    "text": "In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:\n\n\n\nA restoration-monitoring dashboard: value boxes across the top, interactive charts below.\n\n\nYou can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:\n\n\nA dashboard is normally a full-screen page of its own. See it in full screen here.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
-      "Interactive Dashboards"
+      "Dashboards"
+    ]
+  },
+  {
+    "objectID": "use-cases/dashboards.html#how-interactive-can-a-dashboard-be",
+    "href": "use-cases/dashboards.html#how-interactive-can-a-dashboard-be",
+    "title": "Dashboards",
+    "section": "",
+    "text": "Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:\n\nplotly charts: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.\nsortable tables: click a column header in the table above to reorder the rows (built with the DT package).\ntabsets: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.\n\nThe boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs Shiny and a running server, which a static host like GitHub Pages cannot provide.\nGo to the dashboards exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Dashboards"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html",
+    "href": "use-cases/lab-notebook.html",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.\n\n\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.\n\n\n\n\n\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.\n\n\n\n\nImagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
+    "href": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Research in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Markdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/lab-notebook.html#concrete-academic-example",
+    "href": "use-cases/lab-notebook.html#concrete-academic-example",
+    "title": "Documenting Research in Progress",
+    "section": "",
+    "text": "Imagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Documenting Research in Progress"
     ]
   },
   {
@@ -1188,9 +1200,9 @@
   {
     "objectID": "exercises/dashboards-exercise.html",
     "href": "exercises/dashboards-exercise.html",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Sketch a beginner-friendly Quarto dashboard concept for communicating research results to a non-specialist audience.\n\n\nYou should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience\n\n\n\n\nYour project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.\n\n\n\n\nIdentify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from.\n\n\n\n\nUse this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.\n\n\n\n\nAdd an idea for one interactive feature, such as choosing a site or time period.\n\n\n\nYou should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project\n\n\n\n\nAsk yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?",
+    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as use-cases/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\n# A tibble: 6 × 5\n  site   date       vegetation_cover_pct species_richness soil_moisture_pct\n  &lt;chr&gt;  &lt;date&gt;                    &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;\n1 Site A 2023-04-01                   51               13                28\n2 Site A 2023-07-01                   57               13                23\n3 Site A 2023-10-01                   55               14                26\n4 Site A 2024-01-01                   53               15                34\n5 Site A 2024-04-01                   60               15                28\n6 Site A 2024-07-01                   66               16                23\n\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.\n\n\n\n\n\nCreate a file my-dashboard.qmd. Use the path to the CSV relative to your file (for example data/restoration-sites.csv if the file sits in the project root).\n1. Header and setup.\n---\ntitle: \"Restoration Site Monitoring\"\nformat: dashboard\nexecute:\n  echo: false\n---\n\n```r\n#| label: setup\n#| include: false\nlibrary(readr)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(DT)\n\nsites &lt;- read_csv(\"data/restoration-sites.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nlatest &lt;- sites |&gt;\n  filter(date == max(date))\n\nfirst &lt;- sites |&gt;\n  filter(date == min(date))\n```\necho: false hides the code, so the dashboard shows only results. latest keeps the most recent survey per site (used by the value boxes and the table), and first keeps the earliest one, so we can show how much cover has changed.\n2. A row of headline numbers (value boxes).\nA value box is a code cell with #| content: valuebox that returns a small list:\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = n_distinct(sites$site), icon = \"geo-alt\", color = \"primary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Surveys recorded\"\nlist(value = nrow(sites), icon = \"clipboard-data\", color = \"secondary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Cover change since 2023\"\nlist(value = paste0(\"+\", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), \"%\"),\n     icon = \"graph-up-arrow\", color = \"success\")\n```\nRender. Three coloured boxes appear side by side, three cards in one row.\n\n\n\n\n\n\nTipYou can put plain text on a dashboard too\n\n\n\nA card does not have to hold code. Write a short paragraph in its own row to add a description, exactly as the finished dashboard does at the top:\n## Row {height=\"15%\"}\n\nVegetation cover is recovering across all four restoration sites.\n\n\n3. Add the first chart: cover over time.\n## Row\n\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\nRender and hover the lines to read values. That is plotly’s interactivity, and it needs no server.\n4. Put a table beside it: the latest readings.\nA dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable DT table in the other:\n## Row\n\n### Column\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\n\n### Column\n```r\n#| title: \"Latest readings by site\"\nlatest |&gt;\n  select(Site = site,\n         `Cover (%)` = vegetation_cover_pct,\n         `Richness` = species_richness,\n         `Soil moisture (%)` = soil_moisture_pct) |&gt;\n  datatable(options = list(dom = \"t\"), rownames = FALSE)\n```\nRender. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.\n\n\n\nTo give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a tabset. We provide a second dataset, data/restoration-scenarios.csv, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).\nHere is what it produces. Switch the tabs above the chart to compare the scenarios:\n\n\nRead it in your setup chunk and add a small helper:\nscenarios &lt;- read_csv(\"data/restoration-scenarios.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nplot_cover &lt;- function(scenario_name) {\n  scenarios |&gt;\n    filter(scenario == scenario_name) |&gt;\n    plot_ly(x = ~date, y = ~vegetation_cover_pct, color = ~site,\n            type = \"scatter\", mode = \"lines+markers\") |&gt;\n    layout(xaxis = list(title = \"\"),\n           yaxis = list(title = \"Cover (%)\", range = c(30, 95)),\n           legend = list(title = list(text = \"\")))\n}\nThen turn one column into a tabset, with one tab per scenario:\n### Column {.tabset}\n\n```r\n#| title: \"Baseline (no action)\"\nplot_cover(\"Baseline\")\n```\n\n```r\n#| title: \"Moderate restoration\"\nplot_cover(\"Moderate\")\n```\n\n```r\n#| title: \"Intensive restoration\"\nplot_cover(\"Intensive\")\n```\nBecause all three charts share a fixed y-axis (range = c(30, 95)), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.\n\n\n\nThe same structure works for any tidy dataset:\n\nswap restoration-sites.csv for your own CSV\nchange the column names in the value boxes, the plot_ly() call, and the table\nkeep the layout (## for rows, ### for columns) as it is\n\n\n\n\n\nDoes your dashboard render with format: dashboard?\nDo the three value boxes sit together in one row?\nDo the chart and the table sit side by side in a second row?\nCan you hover the chart, and sort the table by clicking a column header?",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1198,11 +1210,11 @@
     ]
   },
   {
-    "objectID": "exercises/dashboards-exercise.html#prerequisites",
-    "href": "exercises/dashboards-exercise.html#prerequisites",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "objectID": "exercises/dashboards-exercise.html#the-data",
+    "href": "exercises/dashboards-exercise.html#the-data",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "You should understand:\n\nhow Quarto organizes content into pages\nthe difference between static and interactive communication\nthe importance of choosing a clear audience",
+    "text": "You will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\n# A tibble: 6 × 5\n  site   date       vegetation_cover_pct species_richness soil_moisture_pct\n  &lt;chr&gt;  &lt;date&gt;                    &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;\n1 Site A 2023-04-01                   51               13                28\n2 Site A 2023-07-01                   57               13                23\n3 Site A 2023-10-01                   55               14                26\n4 Site A 2024-01-01                   53               15                34\n5 Site A 2024-04-01                   60               15                28\n6 Site A 2024-07-01                   66               16                23\n\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1210,11 +1222,11 @@
     ]
   },
   {
-    "objectID": "exercises/dashboards-exercise.html#starter-scenario",
-    "href": "exercises/dashboards-exercise.html#starter-scenario",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "objectID": "exercises/dashboards-exercise.html#how-a-dashboard-is-laid-out-rows-and-columns",
+    "href": "exercises/dashboards-exercise.html#how-a-dashboard-is-laid-out-rows-and-columns",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Your project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.",
+    "text": "This is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1222,11 +1234,11 @@
     ]
   },
   {
-    "objectID": "exercises/dashboards-exercise.html#step-by-step-exercise",
-    "href": "exercises/dashboards-exercise.html#step-by-step-exercise",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "objectID": "exercises/dashboards-exercise.html#build-it-step-by-step",
+    "href": "exercises/dashboards-exercise.html#build-it-step-by-step",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Identify the audience for the dashboard.\nChoose three indicators or summaries that matter most to them.\nDraft a page title and one-sentence purpose statement.\nPlan a layout with an introduction, three metric areas, and a short interpretation section.\nWrite one note about what should stay simple in version one.\nAdd one sentence explaining where the underlying data would come from.",
+    "text": "Create a file my-dashboard.qmd. Use the path to the CSV relative to your file (for example data/restoration-sites.csv if the file sits in the project root).\n1. Header and setup.\n---\ntitle: \"Restoration Site Monitoring\"\nformat: dashboard\nexecute:\n  echo: false\n---\n\n```r\n#| label: setup\n#| include: false\nlibrary(readr)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(DT)\n\nsites &lt;- read_csv(\"data/restoration-sites.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nlatest &lt;- sites |&gt;\n  filter(date == max(date))\n\nfirst &lt;- sites |&gt;\n  filter(date == min(date))\n```\necho: false hides the code, so the dashboard shows only results. latest keeps the most recent survey per site (used by the value boxes and the table), and first keeps the earliest one, so we can show how much cover has changed.\n2. A row of headline numbers (value boxes).\nA value box is a code cell with #| content: valuebox that returns a small list:\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = n_distinct(sites$site), icon = \"geo-alt\", color = \"primary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Surveys recorded\"\nlist(value = nrow(sites), icon = \"clipboard-data\", color = \"secondary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Cover change since 2023\"\nlist(value = paste0(\"+\", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), \"%\"),\n     icon = \"graph-up-arrow\", color = \"success\")\n```\nRender. Three coloured boxes appear side by side, three cards in one row.\n\n\n\n\n\n\nTipYou can put plain text on a dashboard too\n\n\n\nA card does not have to hold code. Write a short paragraph in its own row to add a description, exactly as the finished dashboard does at the top:\n## Row {height=\"15%\"}\n\nVegetation cover is recovering across all four restoration sites.\n\n\n3. Add the first chart: cover over time.\n## Row\n\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\nRender and hover the lines to read values. That is plotly’s interactivity, and it needs no server.\n4. Put a table beside it: the latest readings.\nA dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable DT table in the other:\n## Row\n\n### Column\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\n\n### Column\n```r\n#| title: \"Latest readings by site\"\nlatest |&gt;\n  select(Site = site,\n         `Cover (%)` = vegetation_cover_pct,\n         `Richness` = species_richness,\n         `Soil moisture (%)` = soil_moisture_pct) |&gt;\n  datatable(options = list(dom = \"t\"), rownames = FALSE)\n```\nRender. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1234,11 +1246,11 @@
     ]
   },
   {
-    "objectID": "exercises/dashboards-exercise.html#suggested-starter-prompt",
-    "href": "exercises/dashboards-exercise.html#suggested-starter-prompt",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "objectID": "exercises/dashboards-exercise.html#stretch-a-what-if-scenario-explorer-optional",
+    "href": "exercises/dashboards-exercise.html#stretch-a-what-if-scenario-explorer-optional",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Use this sentence to begin:\n\nThis dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.",
+    "text": "To give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a tabset. We provide a second dataset, data/restoration-scenarios.csv, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).\nHere is what it produces. Switch the tabs above the chart to compare the scenarios:\n\n\nRead it in your setup chunk and add a small helper:\nscenarios &lt;- read_csv(\"data/restoration-scenarios.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nplot_cover &lt;- function(scenario_name) {\n  scenarios |&gt;\n    filter(scenario == scenario_name) |&gt;\n    plot_ly(x = ~date, y = ~vegetation_cover_pct, color = ~site,\n            type = \"scatter\", mode = \"lines+markers\") |&gt;\n    layout(xaxis = list(title = \"\"),\n           yaxis = list(title = \"Cover (%)\", range = c(30, 95)),\n           legend = list(title = list(text = \"\")))\n}\nThen turn one column into a tabset, with one tab per scenario:\n### Column {.tabset}\n\n```r\n#| title: \"Baseline (no action)\"\nplot_cover(\"Baseline\")\n```\n\n```r\n#| title: \"Moderate restoration\"\nplot_cover(\"Moderate\")\n```\n\n```r\n#| title: \"Intensive restoration\"\nplot_cover(\"Intensive\")\n```\nBecause all three charts share a fixed y-axis (range = c(30, 95)), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1246,23 +1258,11 @@
     ]
   },
   {
-    "objectID": "exercises/dashboards-exercise.html#stretch-task",
-    "href": "exercises/dashboards-exercise.html#stretch-task",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "objectID": "exercises/dashboards-exercise.html#adapt-it-to-your-own-data",
+    "href": "exercises/dashboards-exercise.html#adapt-it-to-your-own-data",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Add an idea for one interactive feature, such as choosing a site or time period.",
-    "crumbs": [
-      "Home",
-      "Academic Use Cases",
-      "   ↳ Exercise"
-    ]
-  },
-  {
-    "objectID": "exercises/dashboards-exercise.html#expected-outcome",
-    "href": "exercises/dashboards-exercise.html#expected-outcome",
-    "title": "Exercise: Plan a Simple Dashboard",
-    "section": "",
-    "text": "You should finish with a dashboard concept that:\n\nhas a defined audience\navoids trying to show everything at once\ncould later become a real Quarto dashboard project",
+    "text": "The same structure works for any tidy dataset:\n\nswap restoration-sites.csv for your own CSV\nchange the column names in the value boxes, the plot_ly() call, and the table\nkeep the layout (## for rows, ### for columns) as it is",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1272,9 +1272,9 @@
   {
     "objectID": "exercises/dashboards-exercise.html#self-check",
     "href": "exercises/dashboards-exercise.html#self-check",
-    "title": "Exercise: Plan a Simple Dashboard",
+    "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Ask yourself:\n\nIs the intended audience clear?\nAre the selected indicators genuinely useful?\nDoes the plan stay focused enough for a first version?",
+    "text": "Does your dashboard render with format: dashboard?\nDo the three value boxes sit together in one row?\nDo the chart and the table sit side by side in a second row?\nCan you hover the chart, and sort the table by clicking a column header?",
     "crumbs": [
       "Home",
       "Academic Use Cases",
