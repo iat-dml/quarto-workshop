@@ -4,11 +4,11 @@ title: "Installing Quarto"
 
 ## Short Introduction
 
-Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks.
+Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your quarto documents.
 
-## Why This Matters For Researchers
+## One Install, Every Output
 
-You do not need a heavy setup to get started. You can install the publishing workflow first and decide later how much computation you want to embed.
+A single Quarto installation powers everything that Quarto can produce, including lab notes, manuscripts, slides, websites and dashboards. Setting it up once unlocks all of these features for your own research, and the install itself is quick and straightforward. You can initially use just Quarto and a text editor, and then add a programming language when you want to run code and include its outputs (e.g. figures and tables) directly in your documents.
 
 ## You Might Already Have Quarto
 
@@ -22,15 +22,18 @@ If a version number appears (1.5 or newer is recommended for this workshop), you
 
 ## What To Install
 
-### Quarto CLI
+### Quarto
 
-The Quarto command line interface is the core tool; it handles rendering and project management. Download the installer for your operating system from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), which provides a Windows `.msi`, a macOS `.pkg`, and Linux packages. Run the installer and Quarto is added to your system.
+Quarto is the core tool that does the actual work, turning your `.qmd` files into finished documents such as web pages, PDFs, or slides. Download the installer for your operating system from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), which provides a Windows `.msi`, a macOS `.pkg`, and Linux packages. Run the installer and Quarto is added to your system.
 
 ### An Editor
 
 You can use:
 
-- **Positron** or **RStudio**, which support `.qmd` files out of the box (syntax highlighting for the YAML, Markdown, and code; a Render button with live preview instead of typing `quarto render`; and inline code-chunk output)
+- **Positron** or **RStudio**, which support `.qmd` files out of the box:
+    - syntax highlighting for the YAML, Markdown, and code
+    - a Render button with live preview, instead of typing `quarto render`
+    - code-chunk output shown inline
 - **VS Code** with the official [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) for live preview and syntax highlighting
 - another plain text editor you are comfortable with
 
