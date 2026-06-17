@@ -1,0 +1,84 @@
+---
+title: "Restoration Site Monitoring"
+format: dashboard
+execute:
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(readr)
+library(dplyr)
+library(plotly)
+library(DT)
+
+sites <- read_csv("../data/restoration-sites.csv") |>
+  mutate(date = as.Date(date))
+
+latest <- sites |>
+  filter(date == max(date))
+
+first <- sites |>
+  filter(date == min(date))
+```
+
+## Row {height="15%"}
+
+Vegetation cover is recovering across all four restoration sites, with a clear upward trend despite the usual winter dip.
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "Sites monitored"
+list(value = n_distinct(sites$site), icon = "geo-alt", color = "primary")
+```
+
+```{r}
+#| content: valuebox
+#| title: "Surveys recorded"
+list(value = nrow(sites), icon = "clipboard-data", color = "secondary")
+```
+
+```{r}
+#| content: valuebox
+#| title: "Cover change since 2023"
+list(
+  value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), "%"),
+  icon = "graph-up-arrow",
+  color = "success"
+)
+```
+
+## Row
+
+### Column
+
+```{r}
+#| title: "Vegetation cover over time"
+plot_ly(
+  sites,
+  x = ~date, y = ~vegetation_cover_pct, color = ~site,
+  type = "scatter", mode = "lines+markers"
+) |>
+  layout(
+    xaxis = list(title = ""),
+    yaxis = list(title = "Cover (%)"),
+    legend = list(title = list(text = ""))
+  )
+```
+
+### Column
+
+```{r}
+#| title: "Latest readings by site"
+latest |>
+  select(
+    Site = site,
+    `Cover (%)` = vegetation_cover_pct,
+    `Richness` = species_richness,
+    `Soil moisture (%)` = soil_moisture_pct
+  ) |>
+  datatable(options = list(dom = "t"), rownames = FALSE)
+```

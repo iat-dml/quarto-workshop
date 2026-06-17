@@ -1,54 +1,274 @@
 ---
-title: "Exercise: Plan a Simple Dashboard"
+title: "Exercise: Build a Dashboard"
 ---
 
 # Learning Goal
 
-Sketch a beginner-friendly Quarto dashboard concept for communicating research results to a non-specialist audience.
+Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how `format: dashboard` arranges a page into rows and columns.
 
-## Prerequisites
+You are building toward the dashboard shown on the [Dashboards](../use-cases/dashboards.qmd) page. The complete, ready-to-run version lives in the repository as `use-cases/restoration-dashboard.qmd`, so you can copy exact code from there or compare as you go.
 
-You should understand:
+## The Data
 
-- how Quarto organizes content into pages
-- the difference between static and interactive communication
-- the importance of choosing a clear audience
+You will use a small synthetic dataset, `data/restoration-sites.csv`. Each row is one survey of one site:
 
-## Starter Scenario
+```{r}
+library(readr)
+sites <- read_csv("../data/restoration-sites.csv")
+head(sites)
+```
 
-Your project needs a simple web-based summary for partners who want to monitor three indicators without reading a full report.
+It has five columns:
 
-## Step-By-Step Exercise
+- `site` — the monitoring site (A to D)
+- `date` — survey date (quarterly)
+- `vegetation_cover_pct` — vegetation cover, in percent
+- `species_richness` — number of species recorded
+- `soil_moisture_pct` — soil moisture, in percent
 
-1. Identify the audience for the dashboard.
-2. Choose three indicators or summaries that matter most to them.
-3. Draft a page title and one-sentence purpose statement.
-4. Plan a layout with an introduction, three metric areas, and a short interpretation section.
-5. Write one note about what should stay simple in version one.
-6. Add one sentence explaining where the underlying data would come from.
+## How a Dashboard Is Laid Out: Rows and Columns
 
-## Suggested Starter Prompt
+This is the part that trips most people up at first, so it is worth getting clear before you build.
 
-Use this sentence to begin:
+A dashboard fills the browser window and arranges your content into a grid of **cards**. Two heading levels control that grid:
 
-> This dashboard helps project partners monitor restoration progress across sites using a small set of regularly updated indicators.
+- `##` starts a new **row**
+- `###` starts a new **column** inside the current row
 
-## Stretch Task
+By default a dashboard is **row-oriented**: rows stack from top to bottom, and cards placed in the same row sit side by side.
 
-Add an idea for one interactive feature, such as choosing a site or time period.
+**One row, two columns (charts side by side):**
 
-## Expected Outcome
+````markdown
+## Row
 
-You should finish with a dashboard concept that:
+### Column
+```r
+chart_one
+```
 
-- has a defined audience
-- avoids trying to show everything at once
-- could later become a real Quarto dashboard project
+### Column
+```r
+chart_two
+```
+````
+
+`chart_one` and `chart_two` appear next to each other.
+
+**Two rows (charts stacked):**
+
+````markdown
+## Row
+```r
+chart_one
+```
+
+## Row
+```r
+chart_two
+```
+````
+
+Now `chart_one` is on top and `chart_two` below it.
+
+::: {.callout-tip}
+## Shortcut
+Inside a single `##` row you can leave out the `###` headings: each code cell already becomes its own column. The `###` headings just make the layout explicit (and let you set widths later).
+:::
+
+If you would rather have your top-level `##` headings create **columns** instead of rows, flip the orientation in the YAML:
+
+```yaml
+format:
+  dashboard:
+    orientation: columns
+```
+
+::: {.callout-note}
+## A note on the code fences below
+Every code cell in a dashboard is an executable chunk, so in your own file its fence is ```` ```{r} ```` (with curly braces). In the sketches on this page we write ```` ```r ```` without braces only so they display as text instead of running.
+:::
+
+## Build It Step by Step
+
+Create a file `my-dashboard.qmd`. Use the path to the CSV relative to *your* file (for example `data/restoration-sites.csv` if the file sits in the project root).
+
+**1. Header and setup.**
+
+````markdown
+---
+title: "Restoration Site Monitoring"
+format: dashboard
+execute:
+  echo: false
+---
+
+```r
+#| label: setup
+#| include: false
+library(readr)
+library(dplyr)
+library(plotly)
+library(DT)
+
+sites <- read_csv("data/restoration-sites.csv") |>
+  mutate(date = as.Date(date))
+
+latest <- sites |>
+  filter(date == max(date))
+
+first <- sites |>
+  filter(date == min(date))
+```
+````
+
+`echo: false` hides the code, so the dashboard shows only results. `latest` keeps the most recent survey per site (used by the value boxes and the table), and `first` keeps the earliest one, so we can show how much cover has changed.
+
+**2. A row of headline numbers (value boxes).**
+
+A value box is a code cell with `#| content: valuebox` that returns a small list:
+
+````markdown
+## Row
+
+```r
+#| content: valuebox
+#| title: "Sites monitored"
+list(value = n_distinct(sites$site), icon = "geo-alt", color = "primary")
+```
+
+```r
+#| content: valuebox
+#| title: "Surveys recorded"
+list(value = nrow(sites), icon = "clipboard-data", color = "secondary")
+```
+
+```r
+#| content: valuebox
+#| title: "Cover change since 2023"
+list(value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), "%"),
+     icon = "graph-up-arrow", color = "success")
+```
+````
+
+Render. Three coloured boxes appear side by side, three cards in one row.
+
+::: {.callout-tip}
+## You can put plain text on a dashboard too
+A card does not have to hold code. Write a short paragraph in its own row to add a description, exactly as the finished dashboard does at the top:
+
+````markdown
+## Row {height="15%"}
+
+Vegetation cover is recovering across all four restoration sites.
+````
+:::
+
+**3. Add the first chart: cover over time.**
+
+````markdown
+## Row
+
+```r
+#| title: "Vegetation cover over time"
+plot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,
+        type = "scatter", mode = "lines+markers") |>
+  layout(xaxis = list(title = ""), yaxis = list(title = "Cover (%)"),
+         legend = list(title = list(text = "")))
+```
+````
+
+Render and hover the lines to read values. That is plotly's interactivity, and it needs no server.
+
+**4. Put a table beside it: the latest readings.**
+
+A dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable `DT` table in the other:
+
+````markdown
+## Row
+
+### Column
+```r
+#| title: "Vegetation cover over time"
+plot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,
+        type = "scatter", mode = "lines+markers") |>
+  layout(xaxis = list(title = ""), yaxis = list(title = "Cover (%)"),
+         legend = list(title = list(text = "")))
+```
+
+### Column
+```r
+#| title: "Latest readings by site"
+latest |>
+  select(Site = site,
+         `Cover (%)` = vegetation_cover_pct,
+         `Richness` = species_richness,
+         `Soil moisture (%)` = soil_moisture_pct) |>
+  datatable(options = list(dom = "t"), rownames = FALSE)
+```
+````
+
+Render. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.
+
+## Stretch: a what-if scenario explorer (optional)
+
+To give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a **tabset**. We provide a second dataset, `data/restoration-scenarios.csv`, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).
+
+Here is what it produces. Switch the tabs above the chart to compare the scenarios:
+
+<iframe src="../use-cases/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset"></iframe>
+
+Read it in your setup chunk and add a small helper:
+
+```r
+scenarios <- read_csv("data/restoration-scenarios.csv") |>
+  mutate(date = as.Date(date))
+
+plot_cover <- function(scenario_name) {
+  scenarios |>
+    filter(scenario == scenario_name) |>
+    plot_ly(x = ~date, y = ~vegetation_cover_pct, color = ~site,
+            type = "scatter", mode = "lines+markers") |>
+    layout(xaxis = list(title = ""),
+           yaxis = list(title = "Cover (%)", range = c(30, 95)),
+           legend = list(title = list(text = "")))
+}
+```
+
+Then turn one column into a tabset, with one tab per scenario:
+
+````markdown
+### Column {.tabset}
+
+```r
+#| title: "Baseline (no action)"
+plot_cover("Baseline")
+```
+
+```r
+#| title: "Moderate restoration"
+plot_cover("Moderate")
+```
+
+```r
+#| title: "Intensive restoration"
+plot_cover("Intensive")
+```
+````
+
+Because all three charts share a fixed y-axis (`range = c(30, 95)`), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.
+
+## Adapt It to Your Own Data
+
+The same structure works for any tidy dataset:
+
+- swap `restoration-sites.csv` for your own CSV
+- change the column names in the value boxes, the `plot_ly()` call, and the table
+- keep the layout (`##` for rows, `###` for columns) as it is
 
 ## Self-Check
 
-Ask yourself:
-
-- Is the intended audience clear?
-- Are the selected indicators genuinely useful?
-- Does the plan stay focused enough for a first version?
+- Does your dashboard render with `format: dashboard`?
+- Do the three value boxes sit together in one row?
+- Do the chart and the table sit side by side in a second row?
+- Can you hover the chart, and sort the table by clicking a column header?

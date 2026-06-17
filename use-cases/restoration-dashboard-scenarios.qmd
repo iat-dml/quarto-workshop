@@ -1,0 +1,102 @@
+---
+title: "Restoration Site Monitoring (Scenarios)"
+format: dashboard
+execute:
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(readr)
+library(dplyr)
+library(plotly)
+library(DT)
+
+sites <- read_csv("../data/restoration-sites.csv") |>
+  mutate(date = as.Date(date))
+
+latest <- sites |>
+  filter(date == max(date))
+
+first <- sites |>
+  filter(date == min(date))
+
+scenarios <- read_csv("../data/restoration-scenarios.csv") |>
+  mutate(date = as.Date(date))
+
+plot_cover <- function(scenario_name) {
+  scenarios |>
+    filter(scenario == scenario_name) |>
+    plot_ly(
+      x = ~date, y = ~vegetation_cover_pct, color = ~site,
+      type = "scatter", mode = "lines+markers"
+    ) |>
+    layout(
+      xaxis = list(title = ""),
+      yaxis = list(title = "Cover (%)", range = c(30, 95)),
+      legend = list(title = list(text = ""))
+    )
+}
+```
+
+## Row {height="15%"}
+
+Projected vegetation cover under three management scenarios. Switch the tabs to compare how each path changes the outcome.
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "Sites monitored"
+list(value = n_distinct(sites$site), icon = "geo-alt", color = "primary")
+```
+
+```{r}
+#| content: valuebox
+#| title: "Surveys recorded"
+list(value = nrow(sites), icon = "clipboard-data", color = "secondary")
+```
+
+```{r}
+#| content: valuebox
+#| title: "Cover change since 2023"
+list(
+  value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), "%"),
+  icon = "graph-up-arrow",
+  color = "success"
+)
+```
+
+## Row
+
+### Column {.tabset}
+
+```{r}
+#| title: "Baseline (no action)"
+plot_cover("Baseline")
+```
+
+```{r}
+#| title: "Moderate restoration"
+plot_cover("Moderate")
+```
+
+```{r}
+#| title: "Intensive restoration"
+plot_cover("Intensive")
+```
+
+### Column
+
+```{r}
+#| title: "Latest readings by site"
+latest |>
+  select(
+    Site = site,
+    `Cover (%)` = vegetation_cover_pct,
+    `Richness` = species_richness,
+    `Soil moisture (%)` = soil_moisture_pct
+  ) |>
+  datatable(options = list(dom = "t"), rownames = FALSE)
+```
