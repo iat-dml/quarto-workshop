@@ -22,6 +22,12 @@ $content-padding-top: 1.5rem !default;
 
 /*-- scss:rules --*/
 
+// Keep short inline snippets (e.g. `format: dashboard`) from breaking across lines.
+// !important is needed because Quarto's `p code:not(.sourceCode)` rule
+// (white-space: pre-wrap) is more specific and would otherwise win.
+.nowrap,
+.nowrap code { white-space: nowrap !important; }
+
 // ─── Design tokens ──────────────────────────────────────────────────────
 // Expose every brand color as a CSS variable so JS/HTML and components
 // outside the Bootstrap pipeline can use them. Names mirror brand.yml.

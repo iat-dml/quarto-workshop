@@ -46,7 +46,7 @@ website:
             href: use-cases/websites.qmd
           - text: "   ↳ Exercise"
             href: exercises/websites-exercise.qmd
-          - text: "Interactive Dashboards"
+          - text: "Dashboards"
             href: use-cases/dashboards.qmd
           - text: "   ↳ Exercise"
             href: exercises/dashboards-exercise.qmd

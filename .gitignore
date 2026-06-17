@@ -1,3 +1,8 @@
 /.quarto/
 **/*.quarto_ipynb
 /skills
+WORKING-NOTES.md
+.DS_Store
+**/.DS_Store
+/_site/
+/_slides/
