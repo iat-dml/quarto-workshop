@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d345043ecda1e52a30f3c6161ecf36a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f8bf45537915420c3223215cd5326a69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d345043ecda1e52a30f3c6161ecf36a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -504,15 +539,74 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.2" class="anchored" data-anchor-id="key-strengths"><span class="header-section-number">1.2</span> Key Strengths</h2>
 <section id="universal-plain-text-syntax" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="universal-plain-text-syntax"><span class="header-section-number">1.2.1</span> Universal Plain-Text Syntax</h3>
-<p>Quarto uses readable plain text files with the <code>.qmd</code> extension. That makes documents easier to version, review, and reuse than proprietary binary formats.</p>
+<p>Quarto uses readable plain text files with the <code>.qmd</code> extension. A <em>binary</em> format (such as <code>.docx</code> or <code>.xlsx</code>) is stored in a way only its own software can read, so you cannot see what actually changed between two versions of a file. Plain text can: every edit is a visible line that you can track, review, and roll back.</p>
+<div id="fig-plain-text-diff" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plain-text-diff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/plain-text-diff.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plain-text-diff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="multiple-outputs-from-one-source" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="multiple-outputs-from-one-source"><span class="header-section-number">1.2.2</span> Multiple Outputs From One Source</h3>
-<p>A single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.</p>
+<p>A single source file can render to many polished outputs: the <em>same</em> content, reshaped for each medium. Here is one short document rendered three different ways:</p>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/formats/html.png" class="img-fluid figure-img"></p>
+<figcaption>HTML page</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/formats/pdf.png" class="img-fluid figure-img"></p>
+<figcaption>PDF</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/formats/docx.png" class="img-fluid figure-img"></p>
+<figcaption>Word (DOCX)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>You write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>If you know LaTeX
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.</p>
+</div>
+</div>
 </section>
 <section id="executable-code-in-multiple-languages" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="executable-code-in-multiple-languages"><span class="header-section-number">1.2.3</span> Executable Code In Multiple Languages</h3>
-<p>Quarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.</p>
+<p>Quarto can <em>run</em> code inside the document, not just display it. The result below is computed when the page is rendered, not typed in by hand:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>Quarto supports R, Python, Julia, and Observable JavaScript. Swap <code>r</code> for <code>python</code> or <code>julia</code> in the chunk header and the same idea works, so everyone can stay in the language they know.</p>
 </section>
 </section>
 <section id="concrete-academic-example" class="level2" data-number="1.3">

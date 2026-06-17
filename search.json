@@ -304,7 +304,7 @@
     "href": "foundations/yaml-intro.html",
     "title": "YAML Headers in Quarto",
     "section": "",
-    "text": "YAML is the metadata block at the top of a Quarto document. It sits between two lines of --- and controls document information such as title, author, date, output formats, and execution settings.\n\n\nYAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.\n\n\n\n---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---\n\n\n\n\n\nThis includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.\n\n\n\n\nA manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.\n\n\n\n\n\n\nYAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand.\n\n\n\nContinue to Installing Quarto for a practical overview of what participants need on their machine.",
+    "text": "YAML is the metadata block at the top of a Quarto document. It sits between two lines of --- and controls document information such as title, author, date, output formats, and execution settings.\n\n\nThe header is only a few lines, but it decides what your document becomes. Because it sits separately from your writing, you can turn the same text into a webpage, a PDF, or a slide deck by changing the header alone, without touching a word of your content.\n\n\n\n---\ntitle: \"Fieldwork Notes\"\nauthor: \"A. Researcher\"\ndate: today\nformat: html\n---\n\n\n\nYAML is a list of settings, one per line, written as key: value:\n\nthe key is the setting name, such as title or format\nthe value is what you assign to it, such as \"Fieldwork Notes\" or html\n\nSome settings group several values underneath them. You create that grouping by indenting the lines below with spaces, as with the multiple formats in the example further down. Because the indentation is what defines the grouping, it has to be consistent.\n\n\n\n\n\nThis includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden:\nexecute:\n  echo: false\n  warning: false\nThis hides the code and any warnings across the whole document, so the output shows only the results.\n\n\n\n\nA manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format (html, docx, and pdf) workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.\n\n\n\n\n\n\nYAML configures the document\nMarkdown writes the document\ncode chunks generate results inside the document\n\nKeeping these roles separate makes Quarto much easier to understand.\n\n\n\nContinue to Installing Quarto for a practical overview of what you need on your machine.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -312,11 +312,11 @@
     ]
   },
   {
-    "objectID": "foundations/yaml-intro.html#why-this-matters-for-researchers",
-    "href": "foundations/yaml-intro.html#why-this-matters-for-researchers",
+    "objectID": "foundations/yaml-intro.html#from-plain-note-to-configured-publication",
+    "href": "foundations/yaml-intro.html#from-plain-note-to-configured-publication",
     "title": "YAML Headers in Quarto",
     "section": "",
-    "text": "YAML is where Quarto moves from “plain text note” to “configured publication”. A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.",
+    "text": "The header is only a few lines, but it decides what your document becomes. Because it sits separately from your writing, you can turn the same text into a webpage, a PDF, or a slide deck by changing the header alone, without touching a word of your content.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -336,11 +336,23 @@
     ]
   },
   {
+    "objectID": "foundations/yaml-intro.html#how-yaml-is-written",
+    "href": "foundations/yaml-intro.html#how-yaml-is-written",
+    "title": "YAML Headers in Quarto",
+    "section": "",
+    "text": "YAML is a list of settings, one per line, written as key: value:\n\nthe key is the setting name, such as title or format\nthe value is what you assign to it, such as \"Fieldwork Notes\" or html\n\nSome settings group several values underneath them. You create that grouping by indenting the lines below with spaces, as with the multiple formats in the example further down. Because the indentation is what defines the grouping, it has to be consistent.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "YAML Headers in Quarto"
+    ]
+  },
+  {
     "objectID": "foundations/yaml-intro.html#what-yaml-usually-controls",
     "href": "foundations/yaml-intro.html#what-yaml-usually-controls",
     "title": "YAML Headers in Quarto",
     "section": "",
-    "text": "This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.",
+    "text": "This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.\n\n\n\nThis tells Quarto what to create, such as HTML, PDF, DOCX, or revealjs slides.\n\n\n\nThis controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden:\nexecute:\n  echo: false\n  warning: false\nThis hides the code and any warnings across the whole document, so the output shows only the results.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -352,7 +364,7 @@
     "href": "foundations/yaml-intro.html#concrete-academic-example",
     "title": "YAML Headers in Quarto",
     "section": "",
-    "text": "A manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.",
+    "text": "A manuscript draft might use a header like this:\n---\ntitle: \"How Soil Moisture Shapes Restoration Outcomes\"\nauthor:\n  - \"Research Team\"\nformat:\n  html: default\n  docx: default\n  pdf: default\nbibliography: references.bib\n---\nThat one header already signals a multi-format (html, docx, and pdf) workflow.\n\n\n\n\n\n\nWarningCommon beginner issue\n\n\n\nYAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -376,7 +388,7 @@
     "href": "foundations/yaml-intro.html#next-step",
     "title": "YAML Headers in Quarto",
     "section": "",
-    "text": "Continue to Installing Quarto for a practical overview of what participants need on their machine.",
+    "text": "Continue to Installing Quarto for a practical overview of what you need on your machine.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -388,7 +400,7 @@
     "href": "foundations/markdown-intro.html",
     "title": "Markdown for Beginners",
     "section": "",
-    "text": "Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.\n\n\nMarkdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto.\n\n\n\n\n\n# Main Title\n## Section\n### Subsection\n\n\n\n*italic*\n**bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\n\n\n\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```\n\n\n\n\nQuarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nTipBeginner mindset\n\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.\n\n\n\n\n\nA methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow\n\n\n\n\nTry writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website\n\n\n\n\nContinue to YAML Headers to see how Quarto stores document settings at the top of a file.",
+    "text": "Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.\n\n\nMarkdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nOnce you are comfortable with Markdown, most of Quarto opens up to you.\n\n\n\n\n\n# Main Title\n## Section\n### Subsection\n\n\n\n*italic* and **bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n\n![Quarto logo](/assets/logo-quarto.svg){width=\"120px\"}\n\n\n\nWrap a short snippet in single backticks to format it as inline code within a sentence.\nFor longer code, use a fenced block: open with three backticks and a language name, then close with three backticks. The block displays the code with the right syntax highlighting, but does not run it:\n```bash\nquarto render\n```\n\n```python\nprint(\"Hello from Python\")\n```\n\n```r\nprint(\"Hello from R\")\n```\nWrapping the language name in curly braces instead, such as {r}, turns the block into an executable chunk that Quarto runs when the document renders, placing the result in the output.\n\n\n\n\nQuarto keeps standard Markdown, but it also makes room for:\n\ncallout blocks for notes, warnings, and tips\ncross-references for sections, figures, and tables\nexecutable code chunks\nlayout features for richer publishing\n\n\n\n\n\n\n\nTipBeginner mindset\n\n\n\nYou do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.\n\n\n\n\n\nA methods note written in Quarto might use:\n\nheadings to separate data collection, cleaning, and analysis\nbullet points for decisions and open questions\nlinks to protocols or repositories\nfenced code blocks to show commands used in the workflow\n\n\n\n\nTask\nWrite a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website\n\nIf you are not sure how to create the file or render it, the Setup and rendering steps just below walk you through it.\nSetup and rendering\n\nCreate a file called practice.qmd.\nGive it this header:\n---\ntitle: \"Markdown Practice\"\nformat: html\n---\nWrite the task above in the body, underneath the header.\nRender the document by running this in your terminal:\nquarto render path/to/practice.qmd\nReplace path/to/practice.qmd with the real path to your file, including the filename. This step requires Quarto to be installed; see Installing Quarto if you have not set it up yet.\n\n\n\n\nContinue to YAML Headers to see how Quarto stores document settings at the top of a file.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -400,7 +412,7 @@
     "href": "foundations/markdown-intro.html#why-this-matters-for-researchers",
     "title": "Markdown for Beginners",
     "section": "",
-    "text": "Markdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nFor workshop participants, Markdown is the main skill that unlocks most of Quarto.",
+    "text": "Markdown is worth learning because it is:\n\nfast to write\neasy to read in raw form\nsuitable for version control\nflexible across websites, reports, and manuscripts\n\nOnce you are comfortable with Markdown, most of Quarto opens up to you.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -412,7 +424,7 @@
     "href": "foundations/markdown-intro.html#core-syntax",
     "title": "Markdown for Beginners",
     "section": "",
-    "text": "# Main Title\n## Section\n### Subsection\n\n\n\n*italic*\n**bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n![Figure description](images/field-site.png)\n\n\n\nInline code looks like quarto render.\nCode blocks look like this:\n```bash\nquarto render\n```",
+    "text": "# Main Title\n## Section\n### Subsection\n\n\n\n*italic* and **bold**\n\n\n\n- bullet item\n- another bullet\n\n1. first step\n2. second step\n\n\n\n[Quarto](https://quarto.org)\n\n![Quarto logo](/assets/logo-quarto.svg){width=\"120px\"}\n\n\n\nWrap a short snippet in single backticks to format it as inline code within a sentence.\nFor longer code, use a fenced block: open with three backticks and a language name, then close with three backticks. The block displays the code with the right syntax highlighting, but does not run it:\n```bash\nquarto render\n```\n\n```python\nprint(\"Hello from Python\")\n```\n\n```r\nprint(\"Hello from R\")\n```\nWrapping the language name in curly braces instead, such as {r}, turns the block into an executable chunk that Quarto runs when the document renders, placing the result in the output.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -448,7 +460,7 @@
     "href": "foundations/markdown-intro.html#mini-practice",
     "title": "Markdown for Beginners",
     "section": "",
-    "text": "Try writing a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website",
+    "text": "Task\nWrite a short research note with:\n\na title heading\none short paragraph\na list of three tasks\na link to a project repository or journal website\n\nIf you are not sure how to create the file or render it, the Setup and rendering steps just below walk you through it.\nSetup and rendering\n\nCreate a file called practice.qmd.\nGive it this header:\n---\ntitle: \"Markdown Practice\"\nformat: html\n---\nWrite the task above in the body, underneath the header.\nRender the document by running this in your terminal:\nquarto render path/to/practice.qmd\nReplace path/to/practice.qmd with the real path to your file, including the filename. This step requires Quarto to be installed; see Installing Quarto if you have not set it up yet.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -914,7 +926,7 @@
     "href": "foundations/installing-quarto.html",
     "title": "Installing Quarto",
     "section": "",
-    "text": "Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.",
+    "text": "Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your quarto documents.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -926,7 +938,7 @@
     "href": "foundations/installing-quarto.html#short-introduction",
     "title": "Installing Quarto",
     "section": "",
-    "text": "Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.",
+    "text": "Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your quarto documents.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -934,11 +946,23 @@
     ]
   },
   {
-    "objectID": "foundations/installing-quarto.html#why-this-matters-for-researchers",
-    "href": "foundations/installing-quarto.html#why-this-matters-for-researchers",
+    "objectID": "foundations/installing-quarto.html#one-install-every-output",
+    "href": "foundations/installing-quarto.html#one-install-every-output",
     "title": "Installing Quarto",
-    "section": "2 Why This Matters For Researchers",
-    "text": "2 Why This Matters For Researchers\nA clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed.",
+    "section": "2 One Install, Every Output",
+    "text": "2 One Install, Every Output\nA single Quarto installation powers everything that Quarto can produce, including lab notes, manuscripts, slides, websites and dashboards. Setting it up once unlocks all of these features for your own research, and the install itself is quick and straightforward. You can initially use just Quarto and a text editor, and then add a programming language when you want to run code and include its outputs (e.g. figures and tables) directly in your documents.",
+    "crumbs": [
+      "Home",
+      "Foundations",
+      "Installing Quarto"
+    ]
+  },
+  {
+    "objectID": "foundations/installing-quarto.html#you-might-already-have-quarto",
+    "href": "foundations/installing-quarto.html#you-might-already-have-quarto",
+    "title": "Installing Quarto",
+    "section": "3 You Might Already Have Quarto",
+    "text": "3 You Might Already Have Quarto\nQuarto ships with recent versions of RStudio (v2022.07 and later) and with Positron, so you may not need a separate install. To check, open a terminal and run:\nquarto --version\nIf a version number appears (1.5 or newer is recommended for this workshop), you are ready. If you instead see “command not found”, install it using the steps below.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -949,8 +973,8 @@
     "objectID": "foundations/installing-quarto.html#what-to-install",
     "href": "foundations/installing-quarto.html#what-to-install",
     "title": "Installing Quarto",
-    "section": "3 What To Install",
-    "text": "3 What To Install\n\n3.1 Quarto CLI\nThe Quarto command line interface is the core tool. It handles rendering and project management.\n\n\n3.2 An Editor\nParticipants can use:\n\nPositron or RStudio\nVS Code\nanother plain text editor they are comfortable with\n\n\n\n3.3 Optional Language Runtime\nIf they want executable code chunks, they will also need at least one language runtime such as:\n\nR\nPython\nJulia",
+    "section": "4 What To Install",
+    "text": "4 What To Install\n\n4.1 Quarto\nQuarto is the core tool that does the actual work, turning your .qmd files into finished documents such as web pages, PDFs, or slides. Download the installer for your operating system from quarto.org/docs/get-started, which provides a Windows .msi, a macOS .pkg, and Linux packages. Run the installer and Quarto is added to your system.\n\n\n4.2 An Editor\nYou can use:\n\nPositron or RStudio, which support .qmd files out of the box:\n\nsyntax highlighting for the YAML, Markdown, and code\na Render button with live preview, instead of typing quarto render\ncode-chunk output shown inline\n\nVS Code with the official Quarto extension for live preview and syntax highlighting\nanother plain text editor you are comfortable with\n\n\n\n4.3 Optional Language Runtime\nIf you want to run executable code chunks, you also need at least one language runtime such as R, Python, or Julia. You only need the language you actually plan to use.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -961,8 +985,8 @@
     "objectID": "foundations/installing-quarto.html#suggested-installation-workflow",
     "href": "foundations/installing-quarto.html#suggested-installation-workflow",
     "title": "Installing Quarto",
-    "section": "4 Suggested Installation Workflow",
-    "text": "4 Suggested Installation Workflow\n\nDownload Quarto from the official website.\nInstall it using the standard installer for your operating system.\nOpen a terminal and run quarto check.\nConfirm your editor recognizes .qmd files.\nIf you want live code execution, confirm that R, Python, or Julia is also available.",
+    "section": "5 Suggested Installation Workflow",
+    "text": "5 Suggested Installation Workflow\n\nDownload Quarto from quarto.org/docs/get-started.\nInstall it using the standard installer for your operating system.\nOpen a terminal and run quarto check to confirm the installation.\nConfirm your editor recognizes .qmd files.\nIf you want live code execution, confirm that R, Python, or Julia is also available.\n\nThe quarto check command verifies the whole setup and reports on each part. The full output is longer than what is shown below, but a healthy result looks roughly like this:\nPS C:\\Users\\mankurma&gt; quarto check\nQuarto 1.9.38\n[&gt;] Checking versions of quarto binary dependencies...\n      Pandoc version 3.8.3: OK\n      Dart Sass version 1.87.0: OK\n      Deno version 2.4.5: OK\n      Typst version 0.14.2: OK\n[&gt;] Checking versions of quarto dependencies......OK\n[&gt;] Checking Quarto installation......OK\n      Version: 1.9.38\n      Path: C:\\Users\\mankurma\\AppData\\Local\\Programs\\Quarto\\bin\n\n[&gt;] Checking tools....................OK\n      TinyTeX: (not installed)\n      Chromium: (not installed)\n      ...\n\n[&gt;] Checking LaTeX....................OK\n      Tex:  (not detected)\n\n[&gt;] Checking basic markdown render....OK\n\n[&gt;] Checking R installation...........OK\n      Version: 4.6.0\n      Path: F:/APPS/R/R-4.6.0\n      knitr: 1.51\n      rmarkdown: 2.31\n\n[&gt;] Checking Knitr engine render......OK\n\n[&gt;] Checking Python 3 installation....OK\n      Version: 3.7.8\n      Jupyter: (None)\n      ...\nNotice that each step reports OK even though some optional tools, such as TinyTeX or LaTeX, are not installed. You only need those for specific outputs like PDF, so an installation can be healthy without them.\n\n\n\n\n\n\nTipRendering to PDF\n\n\n\nPDF output relies on a LaTeX installation. If you do not already have one, the simplest option is to let Quarto manage it for you:\nquarto install tinytex",
     "crumbs": [
       "Home",
       "Foundations",
@@ -970,11 +994,11 @@
     ]
   },
   {
-    "objectID": "foundations/installing-quarto.html#concrete-academic-example",
-    "href": "foundations/installing-quarto.html#concrete-academic-example",
+    "objectID": "foundations/installing-quarto.html#choosing-your-setup",
+    "href": "foundations/installing-quarto.html#choosing-your-setup",
     "title": "Installing Quarto",
-    "section": "5 Concrete Academic Example",
-    "text": "5 Concrete Academic Example\nA participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.\n\n\n\n\n\n\nTipWorkshop-friendly setup\n\n\n\nFor a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code.",
+    "section": "6 Choosing Your Setup",
+    "text": "6 Choosing Your Setup\nWhat you need depends on what you want to produce:\n\n\n\nIf you want to…\nYou need\n\n\n\n\nWrite and render to HTML or Word\nQuarto + an editor\n\n\nAlso export PDF\n+ TinyTeX\n\n\nRun R or Python inside the document\n+ that language runtime\n\n\n\nYou can start minimal and add pieces later. Writing and rendering to HTML or Word needs nothing beyond Quarto and an editor; the language runtime only matters once you want to execute code.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -985,8 +1009,8 @@
     "objectID": "foundations/installing-quarto.html#self-check",
     "href": "foundations/installing-quarto.html#self-check",
     "title": "Installing Quarto",
-    "section": "6 Self-Check",
-    "text": "6 Self-Check\nAfter installation, participants should be able to answer yes to these questions:\n\nCan I open or create a .qmd file?\nCan I run quarto check in a terminal?\nDo I know which editor I will use during the workshop?",
+    "section": "7 Self-Check",
+    "text": "7 Self-Check\nAfter installation, you should be able to answer yes to these questions:\n\nCan I open or create a .qmd file?\nDoes quarto check report a working installation?\nDo I know which editor I will use?",
     "crumbs": [
       "Home",
       "Foundations",
@@ -997,8 +1021,8 @@
     "objectID": "foundations/installing-quarto.html#next-step",
     "href": "foundations/installing-quarto.html#next-step",
     "title": "Installing Quarto",
-    "section": "7 Next Step",
-    "text": "7 Next Step\nOnce the foundations are in place, move into the first use case: Documenting Research in Progress.",
+    "section": "8 Next Step",
+    "text": "8 Next Step\nOnce the foundations are in place, move into the first use case: Documenting Research in Progress.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -1010,7 +1034,7 @@
     "href": "foundations/quarto-intro.html",
     "title": "What Is Quarto?",
     "section": "",
-    "text": "Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.\nQuarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.\n\n\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.\n\n\n\n\n\nQuarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\n\n\n\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\n\n\n\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.\n\n\n\n\nA doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output\n\n\n\n\n\n\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
+    "text": "Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.\nQuarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.\n\n\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.\n\n\n\n\n\nQuarto uses readable plain text files with the .qmd extension. A binary format (such as .docx or .xlsx) is stored in a way only its own software can read, so you cannot see what actually changed between two versions of a file. Plain text can: every edit is a visible line that you can track, review, and roll back.\n\n\n\n\n\n\nFigure 1: A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.\n\n\n\n\n\n\nA single source file can render to many polished outputs: the same content, reshaped for each medium. Here is one short document rendered three different ways:\n\n\n\n\n\n\nHTML page\n\n\n\n\n\n\n\nPDF\n\n\n\n\n\n\n\nWord (DOCX)\n\n\n\n\n\nYou write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.\n\n\n\n\n\n\nNoteIf you know LaTeX\n\n\n\nIf you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.\n\n\n\n\n\nQuarto can run code inside the document, not just display it. The result below is computed when the page is rendered, not typed in by hand:\n\n2 + 2\n\n[1] 4\n\n\nQuarto supports R, Python, Julia, and Observable JavaScript. Swap r for python or julia in the chunk header and the same idea works, so everyone can stay in the language they know.\n\n\n\n\nA doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output\n\n\n\n\n\n\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -1034,7 +1058,7 @@
     "href": "foundations/quarto-intro.html#key-strengths",
     "title": "What Is Quarto?",
     "section": "",
-    "text": "Quarto uses readable plain text files with the .qmd extension. That makes documents easier to version, review, and reuse than proprietary binary formats.\n\n\n\nA single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.\n\n\n\nQuarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.",
+    "text": "Quarto uses readable plain text files with the .qmd extension. A binary format (such as .docx or .xlsx) is stored in a way only its own software can read, so you cannot see what actually changed between two versions of a file. Plain text can: every edit is a visible line that you can track, review, and roll back.\n\n\n\n\n\n\nFigure 1: A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.\n\n\n\n\n\n\nA single source file can render to many polished outputs: the same content, reshaped for each medium. Here is one short document rendered three different ways:\n\n\n\n\n\n\nHTML page\n\n\n\n\n\n\n\nPDF\n\n\n\n\n\n\n\nWord (DOCX)\n\n\n\n\n\nYou write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.\n\n\n\n\n\n\nNoteIf you know LaTeX\n\n\n\nIf you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.\n\n\n\n\n\nQuarto can run code inside the document, not just display it. The result below is computed when the page is rendered, not typed in by hand:\n\n2 + 2\n\n[1] 4\n\n\nQuarto supports R, Python, Julia, and Observable JavaScript. Swap r for python or julia in the chunk header and the same idea works, so everyone can stay in the language they know.",
     "crumbs": [
       "Home",
       "Foundations",

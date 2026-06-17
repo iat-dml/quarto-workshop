@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -44,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d345043ecda1e52a30f3c6161ecf36a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f8bf45537915420c3223215cd5326a69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d345043ecda1e52a30f3c6161ecf36a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -447,17 +482,18 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction"><span class="header-section-number">1</span> Short Introduction</a></li>
-  <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link" data-scroll-target="#why-this-matters-for-researchers"><span class="header-section-number">2</span> Why This Matters For Researchers</a></li>
-  <li><a href="#what-to-install" id="toc-what-to-install" class="nav-link" data-scroll-target="#what-to-install"><span class="header-section-number">3</span> What To Install</a>
+  <li><a href="#one-install-every-output" id="toc-one-install-every-output" class="nav-link" data-scroll-target="#one-install-every-output"><span class="header-section-number">2</span> One Install, Every Output</a></li>
+  <li><a href="#you-might-already-have-quarto" id="toc-you-might-already-have-quarto" class="nav-link" data-scroll-target="#you-might-already-have-quarto"><span class="header-section-number">3</span> You Might Already Have Quarto</a></li>
+  <li><a href="#what-to-install" id="toc-what-to-install" class="nav-link" data-scroll-target="#what-to-install"><span class="header-section-number">4</span> What To Install</a>
   <ul class="collapse">
-  <li><a href="#quarto-cli" id="toc-quarto-cli" class="nav-link" data-scroll-target="#quarto-cli"><span class="header-section-number">3.1</span> Quarto CLI</a></li>
-  <li><a href="#an-editor" id="toc-an-editor" class="nav-link" data-scroll-target="#an-editor"><span class="header-section-number">3.2</span> An Editor</a></li>
-  <li><a href="#optional-language-runtime" id="toc-optional-language-runtime" class="nav-link" data-scroll-target="#optional-language-runtime"><span class="header-section-number">3.3</span> Optional Language Runtime</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">4.1</span> Quarto</a></li>
+  <li><a href="#an-editor" id="toc-an-editor" class="nav-link" data-scroll-target="#an-editor"><span class="header-section-number">4.2</span> An Editor</a></li>
+  <li><a href="#optional-language-runtime" id="toc-optional-language-runtime" class="nav-link" data-scroll-target="#optional-language-runtime"><span class="header-section-number">4.3</span> Optional Language Runtime</a></li>
   </ul></li>
-  <li><a href="#suggested-installation-workflow" id="toc-suggested-installation-workflow" class="nav-link" data-scroll-target="#suggested-installation-workflow"><span class="header-section-number">4</span> Suggested Installation Workflow</a></li>
-  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example"><span class="header-section-number">5</span> Concrete Academic Example</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">6</span> Self-Check</a></li>
-  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step"><span class="header-section-number">7</span> Next Step</a></li>
+  <li><a href="#suggested-installation-workflow" id="toc-suggested-installation-workflow" class="nav-link" data-scroll-target="#suggested-installation-workflow"><span class="header-section-number">5</span> Suggested Installation Workflow</a></li>
+  <li><a href="#choosing-your-setup" id="toc-choosing-your-setup" class="nav-link" data-scroll-target="#choosing-your-setup"><span class="header-section-number">6</span> Choosing Your Setup</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">7</span> Self-Check</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step"><span class="header-section-number">8</span> Next Step</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/foundations/installing-quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -486,75 +522,141 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="short-introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="short-introduction"><span class="header-section-number">1</span> Short Introduction</h2>
-<p>Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.</p>
+<p>Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your quarto documents.</p>
 </section>
-<section id="why-this-matters-for-researchers" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="why-this-matters-for-researchers"><span class="header-section-number">2</span> Why This Matters For Researchers</h2>
-<p>A clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed.</p>
+<section id="one-install-every-output" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="one-install-every-output"><span class="header-section-number">2</span> One Install, Every Output</h2>
+<p>A single Quarto installation powers everything that Quarto can produce, including lab notes, manuscripts, slides, websites and dashboards. Setting it up once unlocks all of these features for your own research, and the install itself is quick and straightforward. You can initially use just Quarto and a text editor, and then add a programming language when you want to run code and include its outputs (e.g.&nbsp;figures and tables) directly in your documents.</p>
 </section>
-<section id="what-to-install" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="what-to-install"><span class="header-section-number">3</span> What To Install</h2>
-<section id="quarto-cli" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="quarto-cli"><span class="header-section-number">3.1</span> Quarto CLI</h3>
-<p>The Quarto command line interface is the core tool. It handles rendering and project management.</p>
+<section id="you-might-already-have-quarto" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="you-might-already-have-quarto"><span class="header-section-number">3</span> You Might Already Have Quarto</h2>
+<p>Quarto ships with recent versions of RStudio (v2022.07 and later) and with Positron, so you may not need a separate install. To check, open a terminal and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If a version number appears (1.5 or newer is recommended for this workshop), you are ready. If you instead see “command not found”, install it using the steps below.</p>
 </section>
-<section id="an-editor" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="an-editor"><span class="header-section-number">3.2</span> An Editor</h3>
-<p>Participants can use:</p>
+<section id="what-to-install" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="what-to-install"><span class="header-section-number">4</span> What To Install</h2>
+<section id="quarto" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="quarto"><span class="header-section-number">4.1</span> Quarto</h3>
+<p>Quarto is the core tool that does the actual work, turning your <code>.qmd</code> files into finished documents such as web pages, PDFs, or slides. Download the installer for your operating system from <a href="https://quarto.org/docs/get-started/">quarto.org/docs/get-started</a>, which provides a Windows <code>.msi</code>, a macOS <code>.pkg</code>, and Linux packages. Run the installer and Quarto is added to your system.</p>
+</section>
+<section id="an-editor" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="an-editor"><span class="header-section-number">4.2</span> An Editor</h3>
+<p>You can use:</p>
 <ul>
-<li>Positron or RStudio</li>
-<li>VS Code</li>
-<li>another plain text editor they are comfortable with</li>
+<li><strong>Positron</strong> or <strong>RStudio</strong>, which support <code>.qmd</code> files out of the box:
+<ul>
+<li>syntax highlighting for the YAML, Markdown, and code</li>
+<li>a Render button with live preview, instead of typing <code>quarto render</code></li>
+<li>code-chunk output shown inline</li>
+</ul></li>
+<li><strong>VS Code</strong> with the official <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">Quarto extension</a> for live preview and syntax highlighting</li>
+<li>another plain text editor you are comfortable with</li>
 </ul>
 </section>
-<section id="optional-language-runtime" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="optional-language-runtime"><span class="header-section-number">3.3</span> Optional Language Runtime</h3>
-<p>If they want executable code chunks, they will also need at least one language runtime such as:</p>
-<ul>
-<li>R</li>
-<li>Python</li>
-<li>Julia</li>
-</ul>
+<section id="optional-language-runtime" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="optional-language-runtime"><span class="header-section-number">4.3</span> Optional Language Runtime</h3>
+<p>If you want to run executable code chunks, you also need at least one language runtime such as R, Python, or Julia. You only need the language you actually plan to use.</p>
 </section>
 </section>
-<section id="suggested-installation-workflow" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="suggested-installation-workflow"><span class="header-section-number">4</span> Suggested Installation Workflow</h2>
+<section id="suggested-installation-workflow" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="suggested-installation-workflow"><span class="header-section-number">5</span> Suggested Installation Workflow</h2>
 <ol type="1">
-<li>Download Quarto from the official website.</li>
+<li>Download Quarto from <a href="https://quarto.org/docs/get-started/">quarto.org/docs/get-started</a>.</li>
 <li>Install it using the standard installer for your operating system.</li>
-<li>Open a terminal and run <code>quarto check</code>.</li>
+<li>Open a terminal and run <code>quarto check</code> to confirm the installation.</li>
 <li>Confirm your editor recognizes <code>.qmd</code> files.</li>
 <li>If you want live code execution, confirm that R, Python, or Julia is also available.</li>
 </ol>
-</section>
-<section id="concrete-academic-example" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="concrete-academic-example"><span class="header-section-number">5</span> Concrete Academic Example</h2>
-<p>A participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.</p>
+<p>The <code>quarto check</code> command verifies the whole setup and reports on each part. The full output is longer than what is shown below, but a healthy result looks roughly like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">PS</span> C:<span class="dt">\U</span>sers<span class="dt">\m</span>ankurma<span class="op">&gt;</span> quarto check</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Quarto</span> 1.9.38</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking versions of quarto binary dependencies...</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Pandoc</span> version 3.8.3: OK</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Dart</span> Sass version 1.87.0: OK</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Deno</span> version 2.4.5: OK</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Typst</span> version 0.14.2: OK</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking versions of quarto dependencies......OK</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking Quarto installation......OK</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Version:</span> 1.9.38</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Path:</span> C:<span class="dt">\U</span>sers<span class="dt">\m</span>ankurma<span class="dt">\A</span>ppData<span class="dt">\L</span>ocal<span class="dt">\P</span>rograms<span class="dt">\Q</span>uarto<span class="dt">\b</span>in</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking tools....................OK</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">TinyTeX:</span> <span class="er">(</span><span class="ex">not</span> installed<span class="kw">)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Chromium:</span> <span class="er">(</span><span class="ex">not</span> installed<span class="kw">)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="ex">...</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking LaTeX....................OK</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Tex:</span>  <span class="er">(</span><span class="ex">not</span> detected<span class="kw">)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking basic markdown render....OK</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking R installation...........OK</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Version:</span> 4.6.0</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Path:</span> F:/APPS/R/R-4.6.0</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="ex">knitr:</span> 1.51</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="ex">rmarkdown:</span> 2.31</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking Knitr engine render......OK</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="op">&gt;</span>] Checking Python 3 installation....OK</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Version:</span> 3.7.8</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      <span class="ex">Jupyter:</span> <span class="er">(</span><span class="ex">None</span><span class="kw">)</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>      <span class="ex">...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Notice that each step reports <code>OK</code> even though some optional tools, such as TinyTeX or LaTeX, are not installed. You only need those for specific outputs like PDF, so an installation can be healthy without them.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Workshop-friendly setup
+<span class="screen-reader-only">Tip</span>Rendering to PDF
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code.</p>
+<p>PDF output relies on a LaTeX installation. If you do not already have one, the simplest option is to let Quarto manage it for you:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
-<section id="self-check" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="self-check"><span class="header-section-number">6</span> Self-Check</h2>
-<p>After installation, participants should be able to answer yes to these questions:</p>
+<section id="choosing-your-setup" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="choosing-your-setup"><span class="header-section-number">6</span> Choosing Your Setup</h2>
+<p>What you need depends on what you want to produce:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>If you want to…</th>
+<th>You need</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Write and render to HTML or Word</td>
+<td>Quarto + an editor</td>
+</tr>
+<tr class="even">
+<td>Also export PDF</td>
+<td>+ TinyTeX</td>
+</tr>
+<tr class="odd">
+<td>Run R or Python inside the document</td>
+<td>+ that language runtime</td>
+</tr>
+</tbody>
+</table>
+<p>You can start minimal and add pieces later. Writing and rendering to HTML or Word needs nothing beyond Quarto and an editor; the language runtime only matters once you want to execute code.</p>
+</section>
+<section id="self-check" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="self-check"><span class="header-section-number">7</span> Self-Check</h2>
+<p>After installation, you should be able to answer yes to these questions:</p>
 <ul>
 <li>Can I open or create a <code>.qmd</code> file?</li>
-<li>Can I run <code>quarto check</code> in a terminal?</li>
-<li>Do I know which editor I will use during the workshop?</li>
+<li>Does <code>quarto check</code> report a working installation?</li>
+<li>Do I know which editor I will use?</li>
 </ul>
 </section>
-<section id="next-step" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="next-step"><span class="header-section-number">7</span> Next Step</h2>
+<section id="next-step" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="next-step"><span class="header-section-number">8</span> Next Step</h2>
 <p>Once the foundations are in place, move into the first use case: <a href="../use-cases/lab-notebook.html">Documenting Research in Progress</a>.</p>
 
 
