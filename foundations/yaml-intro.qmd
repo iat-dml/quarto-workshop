@@ -4,11 +4,11 @@ title: "YAML Headers in Quarto"
 
 # Short Introduction
 
-YAML is the metadata block at the top of a Quarto document. It sits between two lines of `---` and controls document information such as title, author, date, output formats, and execution settings.
+YAML is the metadata block at the top of a Quarto document. It sits between two lines of [`---`]{.nowrap} and controls document information such as title, author, date, output formats, and execution settings.
 
-## Why This Matters For Researchers
+## From Plain Note to Configured Publication
 
-YAML is where Quarto moves from "plain text note" to "configured publication". A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.
+The header is only a few lines, but it decides what your document becomes. Because it sits separately from your writing, you can turn the same text into a webpage, a PDF, or a slide deck by changing the header alone, without touching a word of your content.
 
 ## Basic Example
 
@@ -20,6 +20,15 @@ date: today
 format: html
 ---
 ```
+
+## How YAML Is Written
+
+YAML is a list of settings, one per line, written as `key: value`:
+
+- the **key** is the setting name, such as `title` or `format`
+- the **value** is what you assign to it, such as `"Fieldwork Notes"` or `html`
+
+Some settings group several values underneath them. You create that grouping by **indenting** the lines below with spaces, as with the multiple formats in the example further down. Because the indentation is what defines the grouping, it has to be consistent.
 
 ## What YAML Usually Controls
 
@@ -33,7 +42,15 @@ This tells Quarto what to create, such as HTML, PDF, DOCX, or `revealjs` slides.
 
 ### Execution Defaults
 
-This controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden.
+This controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden:
+
+```yaml
+execute:
+  echo: false
+  warning: false
+```
+
+This hides the code and any warnings across the whole document, so the output shows only the results.
 
 ## Concrete Academic Example
 
@@ -52,7 +69,7 @@ bibliography: references.bib
 ---
 ```
 
-That one header already signals a multi-format workflow.
+That one header already signals a multi-format (html, docx, and pdf) workflow.
 
 ::: {.callout-warning}
 ## Common beginner issue
@@ -70,4 +87,4 @@ Keeping these roles separate makes Quarto much easier to understand.
 
 ## Next Step
 
-Continue to [Installing Quarto](installing-quarto.qmd) for a practical overview of what participants need on their machine.
+Continue to [Installing Quarto](installing-quarto.qmd) for a practical overview of what you need on your machine.

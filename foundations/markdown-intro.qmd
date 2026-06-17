@@ -15,7 +15,7 @@ Markdown is worth learning because it is:
 - suitable for version control
 - flexible across websites, reports, and manuscripts
 
-For workshop participants, Markdown is the main skill that unlocks most of Quarto.
+Once you are comfortable with Markdown, most of Quarto opens up to you.
 
 ## Core Syntax
 
@@ -30,8 +30,7 @@ For workshop participants, Markdown is the main skill that unlocks most of Quart
 ### Emphasis
 
 ```markdown
-*italic*
-**bold**
+*italic* and **bold**
 ```
 
 ### Lists
@@ -48,20 +47,31 @@ For workshop participants, Markdown is the main skill that unlocks most of Quart
 
 ```markdown
 [Quarto](https://quarto.org)
-![Figure description](images/field-site.png)
+
+![Quarto logo](/assets/logo-quarto.svg){width="120px"}
 ```
 
 ### Code
 
-Inline code looks like `quarto render`.
+Wrap a short snippet in single backticks to format it as `inline code` within a sentence.
 
-Code blocks look like this:
+For longer code, use a **fenced block**: open with three backticks and a language name, then close with three backticks. The block displays the code with the right syntax highlighting, but does not run it:
 
 ````markdown
 ```bash
 quarto render
 ```
+
+```python
+print("Hello from Python")
+```
+
+```r
+print("Hello from R")
+```
 ````
+
+Wrapping the language name in curly braces instead, such as `{r}`, turns the block into an executable chunk that Quarto runs when the document renders, placing the result in the output.
 
 ## Quarto-Focused Additions
 
@@ -89,12 +99,37 @@ A methods note written in Quarto might use:
 
 ## Mini Practice
 
-Try writing a short research note with:
+**Task**
+
+Write a short research note with:
 
 1. a title heading
 2. one short paragraph
 3. a list of three tasks
 4. a link to a project repository or journal website
+
+If you are not sure how to create the file or render it, the **Setup and rendering** steps just below walk you through it.
+
+**Setup and rendering**
+
+1. Create a file called `practice.qmd`.
+2. Give it this header:
+
+   ```yaml
+   ---
+   title: "Markdown Practice"
+   format: html
+   ---
+   ```
+
+3. Write the task above in the body, underneath the header.
+4. Render the document by running this in your terminal:
+
+   ```bash
+   quarto render path/to/practice.qmd
+   ```
+
+   Replace `path/to/practice.qmd` with the real path to your file, including the filename. This step requires Quarto to be installed; see [Installing Quarto](installing-quarto.qmd) if you have not set it up yet.
 
 ## Next Step
 

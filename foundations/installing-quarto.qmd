@@ -4,59 +4,121 @@ title: "Installing Quarto"
 
 ## Short Introduction
 
-Before creating projects, participants need Quarto itself installed on their computer. They also need at least one way to edit plain text files, and optionally a programming environment if they want to run code chunks.
+Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your quarto documents.
 
-## Why This Matters For Researchers
+## One Install, Every Output
 
-A clear installation path lowers the barrier to entry. Many workshop participants are interested in the publishing workflow first and only later decide how much computation they want to embed.
+A single Quarto installation powers everything that Quarto can produce, including lab notes, manuscripts, slides, websites and dashboards. Setting it up once unlocks all of these features for your own research, and the install itself is quick and straightforward. You can initially use just Quarto and a text editor, and then add a programming language when you want to run code and include its outputs (e.g. figures and tables) directly in your documents.
+
+## You Might Already Have Quarto
+
+Quarto ships with recent versions of RStudio (v2022.07 and later) and with Positron, so you may not need a separate install. To check, open a terminal and run:
+
+```bash
+quarto --version
+```
+
+If a version number appears (1.5 or newer is recommended for this workshop), you are ready. If you instead see "command not found", install it using the steps below.
 
 ## What To Install
 
-### Quarto CLI
+### Quarto
 
-The Quarto command line interface is the core tool. It handles rendering and project management.
+Quarto is the core tool that does the actual work, turning your `.qmd` files into finished documents such as web pages, PDFs, or slides. Download the installer for your operating system from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), which provides a Windows `.msi`, a macOS `.pkg`, and Linux packages. Run the installer and Quarto is added to your system.
 
 ### An Editor
 
-Participants can use:
+You can use:
 
-- Positron or RStudio
-- VS Code
-- another plain text editor they are comfortable with
+- **Positron** or **RStudio**, which support `.qmd` files out of the box:
+    - syntax highlighting for the YAML, Markdown, and code
+    - a Render button with live preview, instead of typing `quarto render`
+    - code-chunk output shown inline
+- **VS Code** with the official [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) for live preview and syntax highlighting
+- another plain text editor you are comfortable with
 
 ### Optional Language Runtime
 
-If they want executable code chunks, they will also need at least one language runtime such as:
-
-- R
-- Python
-- Julia
+If you want to run executable code chunks, you also need at least one language runtime such as R, Python, or Julia. You only need the language you actually plan to use.
 
 ## Suggested Installation Workflow
 
-1. Download Quarto from the official website.
+1. Download Quarto from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
 2. Install it using the standard installer for your operating system.
-3. Open a terminal and run `quarto check`.
+3. Open a terminal and run `quarto check` to confirm the installation.
 4. Confirm your editor recognizes `.qmd` files.
 5. If you want live code execution, confirm that R, Python, or Julia is also available.
 
-## Concrete Academic Example
+The `quarto check` command verifies the whole setup and reports on each part. The full output is longer than what is shown below, but a healthy result looks roughly like this:
 
-A participant who mainly wants to create websites and notes may only need Quarto and an editor at first. A participant building reproducible reports with figures from analysis will also want a runtime such as R or Python installed.
+```bash
+PS C:\Users\mankurma> quarto check
+Quarto 1.9.38
+[>] Checking versions of quarto binary dependencies...
+      Pandoc version 3.8.3: OK
+      Dart Sass version 1.87.0: OK
+      Deno version 2.4.5: OK
+      Typst version 0.14.2: OK
+[>] Checking versions of quarto dependencies......OK
+[>] Checking Quarto installation......OK
+      Version: 1.9.38
+      Path: C:\Users\mankurma\AppData\Local\Programs\Quarto\bin
+
+[>] Checking tools....................OK
+      TinyTeX: (not installed)
+      Chromium: (not installed)
+      ...
+
+[>] Checking LaTeX....................OK
+      Tex:  (not detected)
+
+[>] Checking basic markdown render....OK
+
+[>] Checking R installation...........OK
+      Version: 4.6.0
+      Path: F:/APPS/R/R-4.6.0
+      knitr: 1.51
+      rmarkdown: 2.31
+
+[>] Checking Knitr engine render......OK
+
+[>] Checking Python 3 installation....OK
+      Version: 3.7.8
+      Jupyter: (None)
+      ...
+```
+
+Notice that each step reports `OK` even though some optional tools, such as TinyTeX or LaTeX, are not installed. You only need those for specific outputs like PDF, so an installation can be healthy without them.
 
 ::: {.callout-tip}
-## Workshop-friendly setup
+## Rendering to PDF
 
-For a mixed audience, it helps to frame code execution as optional. Participants can still learn a lot from Quarto even before they start running embedded code.
+PDF output relies on a LaTeX installation. If you do not already have one, the simplest option is to let Quarto manage it for you:
+
+```bash
+quarto install tinytex
+```
 :::
+
+## Choosing Your Setup
+
+What you need depends on what you want to produce:
+
+| If you want to…                     | You need                  |
+|-------------------------------------|---------------------------|
+| Write and render to HTML or Word    | Quarto + an editor        |
+| Also export PDF                     | + TinyTeX                 |
+| Run R or Python inside the document | + that language runtime   |
+
+You can start minimal and add pieces later. Writing and rendering to HTML or Word needs nothing beyond Quarto and an editor; the language runtime only matters once you want to execute code.
 
 ## Self-Check
 
-After installation, participants should be able to answer yes to these questions:
+After installation, you should be able to answer yes to these questions:
 
 - Can I open or create a `.qmd` file?
-- Can I run `quarto check` in a terminal?
-- Do I know which editor I will use during the workshop?
+- Does `quarto check` report a working installation?
+- Do I know which editor I will use?
 
 ## Next Step
 
