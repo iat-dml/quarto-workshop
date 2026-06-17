@@ -1,0 +1,17 @@
+---
+title: "A helping hand from AI"
+---
+
+In case you need yet another reason to switch to make the switch to Quarto: Markdown is (currently) heavily used in the Agentic AI space. Precisely because it is a lightweight markup language Chatbots are very proficient at writing in it. It is also the format of choice for the 'SKILL's (Including those authored specifcally for [Quarto](@sec-quarto_skills)) for various agentic AI services like Anthropic's  Claude and OpenAI's Codex. Both of these services have extensions for VScode/Positron, so you can use them for assistance directly in your IDE.
+
+## Quarto Agent SKILLs {#sec-quarto_skills}
+
+## Using Open Design to help develop your personal brand
+
+As researchers not many of us have backgrounds in professional design, as evidenced by many of the graphical abstracts you see even in top journals...
+
+Here is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for website styling (**TODO: Cross-ref to website section.**). While most chat services can provide this advice the [Open Design]() framework (an open-sourced Claude Design clone) can help you take your websites to the next level. 
+
+::: callout-warning
+We take no responsibilitiy for the use of Agentic AI applications in your professional life. Always follow the guidelines of your institution and use good judgement when applying new technologies to your work.
+:::

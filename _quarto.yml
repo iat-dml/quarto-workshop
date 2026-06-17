@@ -11,58 +11,6 @@ profile:
   group:
     - [revealjs, website]
 
-website:
-  title: ""
-  page-navigation: false
-  repo-url: https://github.com/iat-dml/quarto-workshop
-  repo-actions: [edit]
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: foundations/quarto-intro.qmd
-        text: Foundations
-      - href: use-cases/lab-notebook.qmd
-        text: Academic Use Cases
-      - href: advanced/templates-and-extensions.qmd
-        text: Advanced Topics
-  sidebar:
-    style: floating
-    search: true
-    collapse-level: 2
-    contents:
-      - section: "Foundations"
-        contents:
-          - foundations/quarto-intro.qmd
-          - foundations/markdown-intro.qmd
-          - foundations/yaml-intro.qmd
-          - foundations/installing-quarto.qmd
-      - section: "Academic Use Cases"
-        contents:
-          - text: "Documenting Research in Progress"
-            href: use-cases/lab-notebook.qmd
-          - text: "   ↳ Exercise"
-            href: exercises/lab-notebook-exercise.qmd
-          - text: "Writing Manuscripts"
-            href: use-cases/manuscripts.qmd
-          - text: "   ↳ Exercise"
-            href: exercises/manuscripts-exercise.qmd
-          - text: "Creating Presentations"
-            href: use-cases/presentations.qmd
-          - text: "   ↳ Exercise"
-            href: exercises/presentations-exercise.qmd
-          #- text: "Creating Project and Personal Websites"
-          #  href: use-cases/websites.qmd
-          #- text: "   ↳ Exercise"
-          #  href: exercises/websites-exercise.qmd
-          - text: "Interactive Dashboards"
-            href: use-cases/dashboards.qmd
-          - text: "   ↳ Exercise"
-            href: exercises/dashboards-exercise.qmd
-      - section: "Advanced Topics"
-        contents:
-          - advanced/templates-and-extensions.qmd
-          - advanced/brand-yml.qmd
 
 
 

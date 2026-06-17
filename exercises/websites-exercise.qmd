@@ -1,66 +1,276 @@
 ---
-title: "Exercise: Sketch a Research Website"
+title: "Exercise: Build and Publish a Quarto Website"
 ---
 
 # Learning Goal
 
-Create the skeleton of a small Quarto website for a project or personal academic profile.
+By the end of this exercise you will have built a small Quarto website on your own computer and
+published it live on the internet — with a web address you can share. It is written for people
+who are completely new to Quarto, so each step explains what you are doing and why.
 
-## Prerequisites
+::: {.callout-note}
+## No coding required
 
-You should understand:
+A Quarto website is just a folder of plain-text pages. You can build and publish the whole thing
+without writing a single line of R or Python. If you later want to embed analysis, you can — but
+that is not needed here.
+:::
 
-- the role of `_quarto.yml`
-- the difference between a single document and a website project
-- basic Markdown page authoring
+## Before You Start
 
-## Starter Scenario
+You will need three things:
 
-You want a project website for a workshop or research initiative. It should contain a homepage, an about page, and a materials page.
+- **Quarto installed**, and an editor you are comfortable with. If you have not done this yet,
+  follow [Installing Quarto](../foundations/installing-quarto.qmd) first. You can check your
+  install by running `quarto check` in a terminal.
+- **A terminal** (the Terminal app, PowerShell, or the terminal panel inside your editor). Every
+  command below is typed there.
+- **A free GitHub account**, which you will only need for the publishing step near the end. If you
+  do not have one, you can sign up at [github.com](https://github.com/) — or skip Step 6 and still
+  complete everything else locally.
 
-## Step-By-Step Exercise
+## What You Will Build
 
-1. Imagine a new folder for your site project.
-2. Draft an `_quarto.yml` file with `project.type: website`.
-3. Add a site title and simple navigation.
-4. Plan three pages: home, about, and materials.
-5. Write one sentence describing the purpose of each page.
-6. Add one callout on the homepage inviting visitors to start with the key materials.
+A small site with two pages — a **home page** and an **about page** — connected by a navigation
+bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny:
+the point is to see the full path from empty folder to live website.
 
-## Suggested Starter Content
+## Step 1 — Create the Website Project
+
+Quarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you
+keep projects and run:
+
+```bash
+quarto create project website my-site
+```
+
+This makes a new folder called `my-site` containing a few starter files:
+
+- **`_quarto.yml`** — the project's settings file. It controls things that apply to the *whole*
+  site, like its title, the navigation bar, and the colour theme.
+- **`index.qmd`** — your **home page**. (`index` is the special name web servers look for first.)
+- **`about.qmd`** — a second example page.
+- **`styles.css`** — a place for custom styling (you will swap this for a nicer option in Step 5).
+
+::: {.callout-tip}
+## Prefer buttons to typing?
+
+You do not have to use the terminal to create the project. The same wizard is available through
+your editor: in Positron or VS Code open the command palette and choose **Quarto: Create
+Project → Website Project**; in RStudio use **New Project → Quarto Website**. The result is the
+same starter folder.
+:::
+
+## Step 2 — Preview Your Site
+
+Move into the new folder and start a live preview:
+
+```bash
+cd my-site
+quarto preview
+```
+
+Your browser opens with the site already running. Leave this command going while you work —
+every time you save a file, the preview refreshes automatically so you can see changes instantly.
+Press `Ctrl + C` in the terminal to stop it later.
+
+## Step 3 — Understand `_quarto.yml`
+
+Open `_quarto.yml`. This is the one file that ties the site together. A minimal version looks
+like this:
 
 ```yaml
 project:
   type: website
 
 website:
-  title: "Research Project Site"
+  title: "My Research Site"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
         text: About
-      - href: materials.qmd
-        text: Materials
+
+format:
+  html:
+    theme: cosmo
+    toc: true
 ```
 
-## Stretch Task
+Reading it from top to bottom:
 
-Add a sidebar or a footer idea that would help visitors navigate the site.
+- `project: type: website` tells Quarto to treat the whole folder as one website rather than a
+  single document.
+- `website: title:` is the name shown in the browser tab and in the top-left of the navigation
+  bar. Change it to something of your own.
+- `navbar:` is the menu across the top. Each entry has an `href` (the page it links to) and the
+  `text` shown for it. Adding a page to your site is mostly a matter of adding a line here.
+- `format: html:` sets options for every page at once — here, the `cosmo` theme and a table of
+  contents (`toc`).
+
+Change the `title` to your own and save. Watch the preview update.
+
+## Step 4 — Edit the Home Page and Add a Page
+
+Open `index.qmd`. Below the `---` header, the content is just Markdown — the same headings,
+lists, links, and callouts you have already met in this workshop. Replace the starter text with a
+short welcome:
+
+```markdown
+---
+title: "Welcome"
+---
+
+## About this site
+
+A small site I built while learning Quarto. Use the menu above to look around.
+```
+
+Now add a third page. Create a file called `resources.qmd` next to the others:
+
+```markdown
+---
+title: "Resources"
+---
+
+A few links and materials I want to share.
+```
+
+A new file is not visible to visitors until you link it. Add it to the navbar in `_quarto.yml`:
+
+```yaml
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: resources.qmd
+        text: Resources
+```
+
+Save and check that the new menu item appears and works in the preview.
+
+## Step 5 — Change How It Looks
+
+The quickest way to restyle a site is to pick a different built-in **theme**. Quarto ships with
+many; try swapping `cosmo` for another such as `flatly`, `litera`, or `journal` in `_quarto.yml`
+and watch the preview change.
+
+To go a little further, you can override individual colours with a small style file. Create a file
+named `styles.scss` containing:
+
+```scss
+/*-- scss:defaults --*/
+
+// a couple of colour tweaks
+$navbar-bg: #2c3e50;
+$link-color: #18bc9c;
+```
+
+The `/*-- scss:defaults --*/` line at the top is required — it tells Quarto these are style
+variables. Then layer it on top of your theme in `_quarto.yml`:
+
+```yaml
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: true
+```
+
+(You can now remove the original `styles.css` line if your config still references it.)
+
+::: {.callout-note}
+## Going further with branding
+
+Picking colours by hand is fine for one site. When a whole research group or project wants a
+shared, consistent look across its website, slides, and documents, Quarto offers a dedicated
+branding file — see [Using brand.yml](../advanced/brand-yml.qmd) in the advanced topics. Treat
+that as a later step; clear structure matters more than polish when you are starting out.
+:::
+
+## Step 6 — Publish to GitHub Pages
+
+Your site only exists on your laptop so far. **GitHub Pages** is a free service that turns a
+GitHub repository into a live website, and Quarto can publish to it with a single command.
+
+First, put your project on GitHub:
+
+1. On [github.com](https://github.com/), create a **new, empty repository** (no README) named, for
+   example, `my-site`.
+2. Back in your terminal, inside the project folder, connect your files to it:
+
+```bash
+git init
+git add .
+git commit -m "First version of my site"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/my-site.git
+git push -u origin main
+```
+
+Now publish:
+
+```bash
+quarto publish gh-pages
+```
+
+Quarto renders your site, copies the finished pages onto a special branch called `gh-pages`, and
+switches on GitHub Pages for you. After a minute or so it prints your live address, which will
+look like `https://YOUR-USERNAME.github.io/my-site/`. Open it — your site is on the internet.
+
+::: {.callout-tip}
+## What is the `gh-pages` branch?
+
+It is a separate branch that holds only the *built* website (the HTML), kept apart from your
+editable source files on `main`. You normally never touch it by hand — `quarto publish` manages
+it for you.
+:::
+
+::: {.callout-note}
+## Publishing automatically
+
+Running a command each time works well, but you can also have the site rebuild itself every time
+you push a change. This very workshop site does that with a small GitHub Actions workflow file, so
+no one has to remember to publish. Once you are comfortable with the manual command, the
+[Quarto publishing docs](https://quarto.org/docs/publishing/github-pages.html) show how to set the
+automatic version up.
+:::
+
+## Step 7 — Make a Change and Republish
+
+Edit one of your pages — add a sentence to the home page, for instance — and save. Then run:
+
+```bash
+quarto publish gh-pages
+```
+
+again. Refresh your live URL after a moment and your update is there. This edit-and-republish loop
+is the whole rhythm of maintaining a Quarto website.
+
+## Stretch Tasks
+
+If you finish early, try one of these:
+
+- Add a **footer** to the bottom of every page using a `page-footer:` entry under `website:`.
+- Move your navigation into a **sidebar** instead of (or as well as) the top navbar.
+- Add a fourth page and link it.
+- Try a custom **Google Font** by importing it in `styles.scss` and setting `mainfont:` in the
+  HTML format options.
 
 ## Expected Outcome
 
-You should have a simple site plan that:
+You should now have:
 
-- separates page-level content from site-level configuration
-- reflects a clear audience
-- could be expanded into a real project website
+- a small Quarto website project with at least two linked pages,
+- a colour theme of your choosing,
+- and a live URL you can share with anyone.
 
 ## Self-Check
 
 Ask yourself:
 
-- Is the site purpose obvious from the title and planned pages?
-- Would a visitor know where to click first?
-- Is the structure small enough to maintain?
+- Does the site open and refresh when I run `quarto preview`?
+- Does every item in the navigation bar go to the right page?
+- Can I visit my site at its `github.io` address from a different browser or device?
+- Could I add another page and republish without looking up the steps?

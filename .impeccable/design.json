@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-08T00:00:00Z",
+  "title": "Design System: One Tool to Rule Them All — Quarto Workshop",
+  "extensions": {
+    "colorMeta": {
+      "indigo": { "role": "primary", "displayName": "Deep Indigo", "canonical": "#3D2F8C", "darkThemeValue": "#A899FF", "tonalRamp": ["oklch(0.18 0.10 285)", "oklch(0.27 0.13 285)", "oklch(0.36 0.15 285)", "oklch(0.46 0.15 285)", "oklch(0.57 0.14 285)", "oklch(0.69 0.11 285)", "oklch(0.82 0.07 285)", "oklch(0.94 0.03 285)"] },
+      "coral": { "role": "secondary", "displayName": "Warm Coral", "canonical": "#D9543F", "darkThemeValue": "#FF8B7A", "tonalRamp": ["oklch(0.25 0.09 32)", "oklch(0.36 0.12 32)", "oklch(0.46 0.15 32)", "oklch(0.56 0.17 32)", "oklch(0.64 0.17 32)", "oklch(0.74 0.13 32)", "oklch(0.85 0.08 32)", "oklch(0.95 0.03 32)"] },
+      "moss": { "role": "tertiary", "displayName": "Forest Moss", "canonical": "#2F7D6A", "darkThemeValue": "#6BCFB3", "tonalRamp": ["oklch(0.20 0.05 170)", "oklch(0.29 0.06 170)", "oklch(0.38 0.07 170)", "oklch(0.47 0.08 170)", "oklch(0.56 0.08 170)", "oklch(0.68 0.07 170)", "oklch(0.81 0.05 170)", "oklch(0.94 0.02 170)"] },
+      "amber": { "role": "tertiary", "displayName": "Golden Amber", "canonical": "#C98A2B", "darkThemeValue": "#F2C56B", "tonalRamp": ["oklch(0.24 0.06 75)", "oklch(0.34 0.08 75)", "oklch(0.44 0.10 75)", "oklch(0.54 0.11 75)", "oklch(0.66 0.12 75)", "oklch(0.76 0.10 75)", "oklch(0.86 0.06 75)", "oklch(0.95 0.03 75)"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#FBF7F0", "tonalRamp": ["oklch(0.21 0.03 285)", "oklch(0.33 0.02 90)", "oklch(0.45 0.02 90)", "oklch(0.58 0.015 90)", "oklch(0.71 0.015 88)", "oklch(0.84 0.012 88)", "oklch(0.93 0.01 86)", "oklch(0.97 0.008 86)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1A1B2E", "tonalRamp": ["oklch(0.21 0.04 285)", "oklch(0.30 0.04 285)", "oklch(0.40 0.035 285)", "oklch(0.50 0.03 285)", "oklch(0.62 0.025 285)", "oklch(0.74 0.018 285)", "oklch(0.86 0.012 285)", "oklch(0.95 0.008 285)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles only. Italic <em> renders in Warm Coral." },
+      "headline": { "displayName": "Headline", "purpose": "h2 section headings (Newsreader)." },
+      "title": { "displayName": "Title", "purpose": "h3 subsection headings (Newsreader)." },
+      "body": { "displayName": "Body", "purpose": "All prose. Cap measure at 65-75ch." },
+      "label": { "displayName": "Label", "purpose": "Mono uppercase, <=4 words: chips, tags, table headers, sidebar/TOC labels." },
+      "mono": { "displayName": "Mono", "purpose": "Code blocks and inline code (IBM Plex Mono)." }
+    },
+    "shadows": [
+      { "name": "ambient-rest", "value": "0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent)", "purpose": "Resting shadow under cards, callouts, code blocks. Warm, barely there." },
+      { "name": "lifted-hover", "value": "0 4px 20px rgba(26,27,46,0.12), 0 2px 6px rgba(26,27,46,0.07)", "purpose": "Hover state for clickable cards, paired with translateY(-2px)." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "ease", "duration": "120ms", "purpose": "Color and link transitions (nav links, copy button, link underline)." },
+      { "name": "ease-lift", "value": "ease", "duration": "140ms", "purpose": "Card transform + box-shadow + border-color on hover." }
+    ],
+    "breakpoints": [
+      { "name": "card-min", "value": "220px", "purpose": "Subject card grid min track (repeat(auto-fill, minmax(220px, 1fr)))." },
+      { "name": "team-card-min", "value": "180px", "purpose": "Team card grid min track." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill button, ink fill that warms into Deep Indigo on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Start with the foundations →</a>",
+      "css": ".ds-btn-primary { display: inline-block; background: #1A1B2E; color: #FBF7F0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 500; font-size: 1.0625rem; padding: 0.55rem 1.1rem; border-radius: 999px; text-decoration: none; transition: background 120ms ease, color 120ms ease; } .ds-btn-primary:hover { background: #3D2F8C; color: #FBF7F0; } .ds-btn-primary:focus-visible { outline: 2px solid #3D2F8C; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Transparent pill with a hairline rule; fills to Paper 2 on hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Jump to use cases</a>",
+      "css": ".ds-btn-outline { display: inline-block; background: transparent; color: #1A1B2E; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 500; font-size: 1.0625rem; padding: 0.55rem 1.1rem; border: 1px solid color-mix(in oklab, #1A1B2E 12%, transparent); border-radius: 999px; text-decoration: none; transition: background 120ms ease, border-color 120ms ease; } .ds-btn-outline:hover { background: #F4EFE4; border-color: #3A3B52; } .ds-btn-outline:focus-visible { outline: 2px solid #3D2F8C; outline-offset: 2px; }"
+    },
+    {
+      "name": "Subject Card (on-brand target)",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Clickable card with a hairline rule on all four sides and a 2px hover lift. No colored left-stripe, no numbered marker — the corrected form the homepage cards are being moved toward.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card-kicker\">Foundations</span><span class=\"ds-card-title\">Plain-text authoring</span><span class=\"ds-card-desc\">Markdown, YAML, and Quarto's project model — the building blocks every output shares.</span></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 0.35rem; background: #F4EFE4; color: #1A1B2E; border: 1px solid color-mix(in oklab, #1A1B2E 12%, transparent); border-radius: 0.75rem; padding: 1.1rem 1.2rem; text-decoration: none; box-shadow: 0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent); transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease; } .ds-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(26,27,46,0.12), 0 2px 6px rgba(26,27,46,0.07); border-color: #3D2F8C; } .ds-card-kicker { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.74em; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #6B6275; } .ds-card-title { font-family: 'Newsreader', Georgia, serif; font-size: 1.12rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; } .ds-card-desc { font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.9rem; line-height: 1.5; color: #3A3B52; }"
+    },
+    {
+      "name": "Chip / Tag",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Mono uppercase pill on a soft-accent fill with parent-accent text.",
+      "html": "<span class=\"ds-chip\">Exercise</span>",
+      "css": ".ds-chip { display: inline-block; background: #EDE9FA; color: #3D2F8C; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.74em; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.25em 0.7em; border-radius: 999px; }"
+    },
+    {
+      "name": "Inline Code",
+      "kind": "custom",
+      "refersTo": "inline-code",
+      "description": "Moss text on a moss-soft fill with a hairline moss-tinted border.",
+      "html": "<p style=\"font-family:'IBM Plex Sans',sans-serif;color:#1A1B2E\">Run <code class=\"ds-code\">quarto check</code> to verify.</p>",
+      "css": ".ds-code { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.9em; background: #E0EFE9; color: #2F7D6A; padding: 0.12em 0.38em; border-radius: 0.35rem; border: 1px solid color-mix(in oklab, #2F7D6A 18%, transparent); }"
+    },
+    {
+      "name": "Note Callout",
+      "kind": "custom",
+      "refersTo": "blockquote",
+      "description": "Quarto-native callout: Paper 2 body, 4px indigo left-accent (the one sanctioned thick left-edge), ambient shadow.",
+      "html": "<div class=\"ds-callout\"><div class=\"ds-callout-header\">Workshop idea</div><div class=\"ds-callout-body\">Write once in a plain text source file and render to HTML, PDF, DOCX, and slides.</div></div>",
+      "css": ".ds-callout { background: #F4EFE4; border: 1px solid color-mix(in oklab, #1A1B2E 12%, transparent); border-left: 4px solid #3D2F8C; border-radius: 0.75rem; padding: 0.9rem 1.1rem; box-shadow: 0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent); } .ds-callout-header { font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; color: #3D2F8C; margin-bottom: 0.3rem; } .ds-callout-body { font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.65; color: #1A1B2E; }"
+    },
+    {
+      "name": "Quartile Rule (signature)",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Section break rendered as a 10px four-square mark in the brand's four accents — the press colophon.",
+      "html": "<hr class=\"ds-quartile-rule\">",
+      "css": ".ds-quartile-rule { border: none; height: 1px; background: color-mix(in oklab, #1A1B2E 12%, transparent); margin: 2.5rem 0; position: relative; } .ds-quartile-rule::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #FBF7F0; background-image: linear-gradient(#3D2F8C,#3D2F8C), linear-gradient(#D9543F,#D9543F), linear-gradient(#2F7D6A,#2F7D6A), linear-gradient(#C98A2B,#C98A2B); background-size: 50% 50%; background-position: top left, top right, bottom left, bottom right; background-repeat: no-repeat; border-radius: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quartile Press",
+    "overview": "This is an editorial press rendered in HTML. The page is warm paper stock; the type is set, not typed; and the system carries four signature accent colors — indigo, coral, moss, amber — as its four 'quarters,' one per family of Quarto output. The whole site is its own proof of concept: a Quarto site that teaches Quarto, so every surface has to read as something a careful researcher would be proud to publish. Restraint is the house style; warmth comes from the paper, the Newsreader serif, and the quartile accents, never from effects.",
+    "keyCharacteristics": [
+      "Warm paper ground (#FBF7F0), deep indigo-black ink (#1A1B2E) — never pure white, never pure black.",
+      "Four-accent 'quartile' system, used sparingly and meaningfully, one accent per use-case family.",
+      "Serif display (Newsreader) over sans body (IBM Plex Sans) over mono (IBM Plex Mono).",
+      "Soft ambient depth at rest, a gentle 2px lift on hover. Nothing floats.",
+      "First-party light and dark brand.yml themes, both contrast-checked to WCAG 2.1 AA."
+    ],
+    "rules": [
+      { "name": "The Quartile Rule", "body": "Each of the four accents maps to a use-case family and keeps that meaning everywhere: indigo = Foundations/links, coral = energy/notebooks, moss = code/success, amber = signal/advanced. Never pick an accent for decoration alone.", "section": "colors" },
+      { "name": "The Warm-Ground Rule", "body": "Pure #FFFFFF and pure #000000 are forbidden. The page is paper and ink; every neutral carries a trace of the brand's warmth.", "section": "colors" },
+      { "name": "The Three-Voice Rule", "body": "Three families, no more: serif to display, sans to read, mono to signal code. Adding a fourth typeface is forbidden.", "section": "typography" },
+      { "name": "The Caps-Label-Only Rule", "body": "Uppercase is permitted only for labels of four words or fewer. Sentences and headings are never set in all caps.", "section": "typography" },
+      { "name": "The Warm-Shadow Rule", "body": "Shadows are mixed from Ink (#1A1B2E), never pure black.", "section": "elevation" },
+      { "name": "The Lift-On-Intent Rule", "body": "The 2px rise is reserved for surfaces the reader can actually click.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the warm paper-and-ink ground. Background is Paper (#FBF7F0), text is Ink (#1A1B2E).",
+      "Do honor the Quartile Rule — each accent carries its use-case meaning everywhere it appears.",
+      "Do border cards on all four sides with a single hairline rule; let the ambient shadow and 2px hover lift carry separation and interactivity.",
+      "Do keep prose at 65-75ch and body type at line-height 1.65.",
+      "Do restrict uppercase to mono labels of <=4 words.",
+      "Do mix shadows from Ink, never black, and reserve the 2px lift for clickable surfaces.",
+      "Do provide a prefers-reduced-motion alternative for every transition, and a visible :focus-visible ring everywhere.",
+      "Do verify Muted-on-Paper hits >=4.5:1 before using it for readable text; bump to Ink 2 if it's close."
+    ],
+    "donts": [
+      "Don't ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.",
+      "Don't build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy.",
+      "Don't overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.",
+      "Don't use colored left-stripe borders greater than 1px on cards, list items, or grid items. The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.",
+      "Don't scaffold sections with numbered markers (01 / 02) by reflex — numbers earn their place only in a genuine ordered sequence.",
+      "Don't use gradient text (background-clip: text) or pure-white/pure-black anywhere.",
+      "Don't add a fourth typeface, and don't set sentences or headings in all caps.",
+      "Don't use Muted gray for body text or placeholders — it fails contrast on warm paper."
+    ]
+  }
+}

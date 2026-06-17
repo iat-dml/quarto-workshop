@@ -1,5 +1,5 @@
 ---
-title: "Templates and Extensions"
+title: "Creating Custom Templates and Extensions"
 ---
 
 # Short Introduction

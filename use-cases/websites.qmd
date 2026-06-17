@@ -1,50 +1,60 @@
 ---
-title: "Creating Project and Personal Websites"
+title: "Creating Websites for Research Outreach"
 ---
 
 # Short Introduction
+Quarto allows you to generate full websites which can then be deployed for free using services such as GitHub Pages or Netlify. This provides an easy solution to create web content for research groups, project pages, course and teaching materials, as well as personal academic profiles.
 
-Quarto can generate full websites as well as single documents. This makes it useful for research groups, project pages, course materials, and personal academic profiles.
+In the exercise for this section, you will create a simple website to share your research outputs.
 
-## Why This Matters For Researchers
+## Why This Use-Case Matters For Researchers
 
-Web presence matters for:
+Doing some form of outreach activities has become increasingly important for:
 
-- public outreach
-- professional visibility
-- transparent sharing of outputs
-- communicating with collaborators, students, or stakeholders
+- Increasing your professional visibility
+- Communicating research outputs to audiences beyond academic journals
+- Sharing research materials and methods with the broader community
 
-Using Quarto for websites means the same writing habits you use in documents can also support online publishing.
+## The basics of websites with Quarto
 
-## Key Quarto Features For This Workflow
+## Rendering 
 
-### Website Projects
+The websites functionality of Quarto is built on top of an existing framework called Bootstrap. 
 
-Quarto websites use a project-level `_quarto.yml` file to define navigation and shared formatting.
+Like all websites Quarto website pages render as .HTML files. In many IDEs such as Rstudio,  VScode and Positron these can be viewed locally directly in the 'viewer pane' by clicking the 'Preview' button at the top of the file editor window ir right clicking on the file itself. 
+
+### Project-level configuration
+
+Like all Quarto projects, websites should use a project-level `_quarto.yml` file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site.
+
+## The Front Page: index.qmd
+
+Websites must have an `index.qmd` file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.
+
+### Formatting and Theming
+
 
 ### Reusable Authoring Patterns
 
-The same Markdown, YAML, callouts, and code chunk patterns appear in websites too.
-
-### Easy Publication Of Research Outputs
-
-Project summaries, people pages, methods notes, and downloadable materials can all sit in one structured site.
-
-## Concrete Academic Example
-
-A collaborative research project could maintain a site with:
-
-- a short overview
-- team members
-- methods documentation
-- workshop materials
-- links to publications and datasets
+The same Markdown, YAML, callouts, and code chunk patterns appear in websites too. They can also include HTML blocks.
 
 ::: {.callout-tip}
-## Outreach benefit
-
-For many researchers, a small, well-maintained website is more useful than an ambitious site that never gets updated.
+Websites can include other Quarto ocntent such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other HTML content you like.
 :::
+
+## Concrete Examples
+
+Here are some real websites that we have built with Quarto:
+
+- [Personal academic profile](https://blenback.github.io/)
+- [NASCENT-Peru](https://nascent-peru.github.io/) — a multi-lingual research project website (discussed further in the advanced topics section)
+- [Academic group website](https://iat-dml.github.io/)
+- [LCSfFE Handbook](https://monkshilllab-isolab.github.io/LCSfFE-handbook/) — web version of an instructional guide for building field monitoring systems
+
+The website you are reading right now is also built with Quarto.
+
+Quarto isn't limited to academic use either — it works just as well for personal projects:
+
+- [Wedding website](https://janna-and-ben.github.io/)
 
 [Go to the websites exercise](../exercises/websites-exercise.qmd){.btn .btn-primary}
