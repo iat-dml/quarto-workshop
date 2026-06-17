@@ -6,9 +6,9 @@ title: "YAML Headers in Quarto"
 
 YAML is the metadata block at the top of a Quarto document. It sits between two lines of [`---`]{.nowrap} and controls document information such as title, author, date, output formats, and execution settings.
 
-## Why This Matters For Researchers
+## From Plain Note to Configured Publication
 
-YAML is where Quarto moves from "plain text note" to "configured publication". A well-chosen header can make the same source file render as a report, manuscript, slide deck, or website page.
+The header is only a few lines, but it decides what your document becomes. Because it sits separately from your writing, you can turn the same text into a webpage, a PDF, or a slide deck by changing the header alone, without touching a word of your content.
 
 ## Basic Example
 
