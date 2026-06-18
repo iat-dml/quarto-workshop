@@ -1,44 +1,67 @@
 ---
-title: "Interactive Dashboards"
+title: "Dashboards"
 ---
 
 # Short Introduction
 
-Quarto can also support interactive outputs, including dashboard-style communication. For researchers, this can be a useful bridge between formal publication and exploratory sharing with collaborators or stakeholders.
+A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with [`format: dashboard`]{.nowrap}.
 
-## Why This Matters For Researchers
+## When a Dashboard Helps
 
-Some audiences need more than a static paper or slide deck. They may benefit from:
+Dashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.
 
-- filterable summaries
-- updated visuals
-- browsable indicators
-- lightweight interaction around results
+## How A Dashboard Is Structured
 
-Quarto dashboards can serve these needs while staying close to the same publishing ecosystem.
+A Quarto dashboard is built from a few simple pieces:
 
-## Key Quarto Features For This Workflow
+- [**`format: dashboard`**]{.nowrap} in the YAML turns the document into a dashboard.
+- **Headings** lay out the page: `##` starts a row, and the cards inside it sit side by side as columns.
+- **Cards** are the panels that hold your content. Two special kinds are **value boxes** (a single headline number) and **plot cards** (a chart).
 
-### Structured Pages For Communication
+In code, the shape looks like this (each code cell uses an executable `{r}` block, shown here as plain text):
 
-Dashboards can organize findings into cards, sections, and panels that are easier to scan than a long narrative report.
+````markdown
+---
+title: "My Dashboard"
+format: dashboard
+---
 
-### Connection To Reproducible Workflows
+## Row
 
-Interactive views can still draw on the same documented analysis pipeline used elsewhere in a project.
+```r
+#| content: valuebox
+#| title: "Sites monitored"
+list(value = 4)
+```
 
-### Gradual Adoption
+## Row
 
-Researchers do not need to begin with a complex application. Even a small dashboard with a few indicators can be valuable.
+```r
+#| title: "A chart"
+plot_ly(...)
+```
+````
 
-## Concrete Academic Example
+## What You Will Build
 
-A project team monitoring restoration sites could create a dashboard summarizing site status, recent measurements, and key indicators for partners who do not need the full technical report.
+In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:
 
-::: {.callout-warning}
-## Scope reminder
+![A restoration-monitoring dashboard: value boxes across the top, interactive charts below.](/assets/restoration-dashboard.png)
 
-Dashboards can become technically demanding quickly. For a beginner workshop, it is often better to teach the concept and a simple starter pattern rather than a full production system.
-:::
+You can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:
+
+<iframe src="restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard"></iframe>
+
+A dashboard is normally a full-screen page of its own. [See it in full screen here](restoration-dashboard.html){target="_blank"}.
+
+## How Interactive Can a Dashboard Be?
+
+Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:
+
+- **plotly charts**: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.
+- **sortable tables**: click a column header in the table above to reorder the rows (built with the `DT` package).
+- **tabsets**: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.
+
+The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs **Shiny** and a running server, which a static host like GitHub Pages cannot provide.
 
 [Go to the dashboards exercise](../exercises/dashboards-exercise.qmd){.btn .btn-primary}

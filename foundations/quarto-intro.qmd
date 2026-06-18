@@ -24,15 +24,39 @@ Quarto supports all of these with a common syntax and shared project structure.
 
 ### Universal Plain-Text Syntax
 
-Quarto uses readable plain text files with the `.qmd` extension. That makes documents easier to version, review, and reuse than proprietary binary formats.
+Quarto uses readable plain text files with the `.qmd` extension. A *binary* format (such as `.docx` or `.xlsx`) is stored in a way only its own software can read, so you cannot see what actually changed between two versions of a file. Plain text can: every edit is a visible line that you can track, review, and roll back.
+
+![A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.](/assets/plain-text-diff.png){#fig-plain-text-diff}
 
 ### Multiple Outputs From One Source
 
-A single source file can often render to several outputs such as HTML, PDF, and DOCX. This reduces duplication and keeps content aligned across formats.
+A single source file can render to many polished outputs: the *same* content, reshaped for each medium. Here is one short document rendered three different ways:
+
+::: {layout-ncol=3}
+![HTML page](/assets/formats/html.png)
+
+![PDF](/assets/formats/pdf.png)
+
+![Word (DOCX)](/assets/formats/docx.png)
+:::
+
+You write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.
+
+::: {.callout-note}
+## If you know LaTeX
+
+If you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.
+:::
 
 ### Executable Code In Multiple Languages
 
-Quarto can include executable code chunks in languages such as R, Python, Julia, and Observable JavaScript. That supports reproducible analysis and reporting without forcing everyone into the same language.
+Quarto can *run* code inside the document, not just display it. The result below is computed when the page is rendered, not typed in by hand:
+
+```{r}
+2 + 2
+```
+
+Quarto supports R, Python, Julia, and Observable JavaScript. Swap `r` for `python` or `julia` in the chunk header and the same idea works, so everyone can stay in the language they know.
 
 ## Concrete Academic Example
 

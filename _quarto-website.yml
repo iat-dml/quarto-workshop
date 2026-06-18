@@ -17,7 +17,6 @@ website:
       - href: advanced/templates-and-extensions.qmd
         text: Advanced Topics
   sidebar:
-    logo: false
     style: floating
     search: true
     collapse-level: 2
@@ -46,7 +45,7 @@ website:
             href: use-cases/websites.qmd
           - text: "   ↳ Exercise"
             href: exercises/websites-exercise.qmd
-          - text: "Interactive Dashboards"
+          - text: "Dashboards"
             href: use-cases/dashboards.qmd
           - text: "   ↳ Exercise"
             href: exercises/dashboards-exercise.qmd
