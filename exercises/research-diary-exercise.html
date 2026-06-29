@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dashboards</title>
+<title>Exercise: Build a Research Diary</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/dashboards.html">Dashboards</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/research-diary-exercise.html">↳ Exercise</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exercises/research-diary-exercise.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/research-diary-exercise.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">↳ Exercise</span></a>
   </div>
 </li>
@@ -430,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../use-cases/dashboards.html" class="sidebar-item-text sidebar-link active">
+  <a href="../use-cases/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dashboards</span></a>
   </div>
 </li>
@@ -499,20 +499,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#when-a-dashboard-helps" id="toc-when-a-dashboard-helps" class="nav-link active" data-scroll-target="#when-a-dashboard-helps">When a Dashboard Helps</a></li>
-  <li><a href="#how-a-dashboard-is-structured" id="toc-how-a-dashboard-is-structured" class="nav-link" data-scroll-target="#how-a-dashboard-is-structured">How A Dashboard Is Structured</a></li>
-  <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build">What You Will Build</a></li>
-  <li><a href="#how-interactive-can-a-dashboard-be" id="toc-how-interactive-can-a-dashboard-be" class="nav-link" data-scroll-target="#how-interactive-can-a-dashboard-be">How Interactive Can a Dashboard Be?</a></li>
+  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning Goal</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#starter-scenario" id="toc-starter-scenario" class="nav-link" data-scroll-target="#starter-scenario">Starter Scenario</a></li>
+  <li><a href="#step-by-step-exercise" id="toc-step-by-step-exercise" class="nav-link" data-scroll-target="#step-by-step-exercise">Step-By-Step Exercise</a></li>
+  <li><a href="#suggested-starter-content" id="toc-suggested-starter-content" class="nav-link" data-scroll-target="#suggested-starter-content">Suggested Starter Content</a></li>
+  <li><a href="#advanced-tasks" id="toc-advanced-tasks" class="nav-link" data-scroll-target="#advanced-tasks">Advanced tasks</a></li>
+  <li><a href="#expected-outcome" id="toc-expected-outcome" class="nav-link" data-scroll-target="#expected-outcome">Expected Outcome</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/dashboards.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/research-diary-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/dashboards.html">Dashboards</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/research-diary-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Dashboards</h1>
+<h1 class="title">Exercise: Build a Research Diary</h1>
 </div>
 
 
@@ -529,64 +533,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with <span class="nowrap"><code>format: dashboard</code></span>.</p>
-<section id="when-a-dashboard-helps" class="level2">
-<h2 class="anchored" data-anchor-id="when-a-dashboard-helps">When a Dashboard Helps</h2>
-<p>Dashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.</p>
+<section id="learning-goal" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
+<p>Create a Quarto document for documenting ongoing research activity in a structured, readable way.</p>
+<p>The focus is not only on recording what you did. The goal is to make the reasoning, evidence, uncertainty, and next steps clear enough that you or a collaborator could understand the decision later.</p>
 </section>
-<section id="how-a-dashboard-is-structured" class="level2">
-<h2 class="anchored" data-anchor-id="how-a-dashboard-is-structured">How A Dashboard Is Structured</h2>
-<p>A Quarto dashboard is built from a few simple pieces:</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>You should be familiar with:</p>
 <ul>
-<li><span class="nowrap"><strong><code>format: dashboard</code></strong></span> in the YAML turns the document into a dashboard.</li>
-<li><strong>Headings</strong> lay out the page: <code>##</code> starts a row, and the cards inside it sit side by side as columns.</li>
-<li><strong>Cards</strong> are the panels that hold your content. Two special kinds are <strong>value boxes</strong> (a single headline number) and <strong>plot cards</strong> (a chart).</li>
+<li><a href="../foundations/markdown-intro.html">Basic Markdown headings and lists</a></li>
+<li><a href="../foundations/yaml-intro.html">The idea of a YAML header</a></li>
+<li><a href="../foundations/quarto-intro.html">Opening or creating a <code>.qmd</code> file</a></li>
 </ul>
-<p>In code, the shape looks like this (each code cell uses an executable <code>{r}</code> block, shown here as plain text):</p>
+</section>
+<section id="starter-scenario" class="level2">
+<h2 class="anchored" data-anchor-id="starter-scenario">Starter Scenario</h2>
+<p>Choose one recent decision, comparison, or exploratory step from your own modelling work. This does not need to be a major result.</p>
+<p>Examples include:</p>
+<ul>
+<li>Choosing between two environmental datasets</li>
+<li>Excluding, transforming, or aggregating observations</li>
+<li>Changing a parameter value or model setting</li>
+<li>Comparing alternative model runs</li>
+<li>Diagnosing unexpected spatial or temporal patterns</li>
+<li>Deciding whether to trust a model output</li>
+<li>Recording why a result was not used</li>
+<li>Noting an assumption that may need to be revisited</li>
+</ul>
+</section>
+<section id="step-by-step-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-exercise">Step-By-Step Exercise</h2>
+<ol type="1">
+<li>Create a new file called <code>notebook.qmd</code>.</li>
+<li>Add a YAML header with a title, your name, today’s date, and <code>format: html</code>.</li>
+<li>Add a short context section explaining the project, model, dataset, or research question.</li>
+<li>Describe the recent data exploration or modelling decision you selected.</li>
+<li>List the inputs used, such as datasets, scripts, model versions, parameters, spatial extent, time period, or assumptions.</li>
+<li>Summarise the evidence you looked at by including a code chunk that prints relevant information to the html output. This could include a table, figure, map, model run ID, file path, warning message.</li>
+<li>State the decision or outcome.</li>
+<li>Explain the rationale for the decision.</li>
+<li>Note any uncertainty, limitations, or conditions under which the decision should be revisited.</li>
+<li>Add one to three concrete next steps.</li>
+</ol>
+</section>
+<section id="suggested-starter-content" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-starter-content">Suggested Starter Content</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My Dashboard"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> dashboard</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Restoration Project Notebook"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Sites monitored"</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">value =</span> <span class="dv">4</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Project, model, dataset, or research question:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Entry 1: dd/mm/yyyy</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Briefly describe the recent modelling decision or data exploration. Explain why this step mattered for the modelling workflow or research question.</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "A chart"</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(...)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inputs used</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dataset(s):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Script(s) or workflow step(s):</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Model version or settings:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spatial extent and time period:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Key assumptions:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Evidence</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Describe the evidence used to support the decision, using a code chunk to include any relevant data, summary, or visualization. </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observations</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What did you notice?</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Were there unexpected patterns, warnings, or inconsistencies?</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What seemed reliable or unreliable?</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision or outcome</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>State what you decided, changed, kept, rejected, or postponed.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rationale</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Explain why the decision makes sense based on the available evidence.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Uncertainty and limitations</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>What remains uncertain? Under what conditions should this decision be revisited?</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next steps</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>1.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>2.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>3.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="what-you-will-build" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-will-build">What You Will Build</h2>
-<p>In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/restoration-dashboard.png" class="img-fluid figure-img"></p>
-<figcaption>A restoration-monitoring dashboard: value boxes across the top, interactive charts below.</figcaption>
-</figure>
-</div>
-<p>You can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:</p>
-<iframe src="restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard">
-</iframe>
-<p>A dashboard is normally a full-screen page of its own. <a href="restoration-dashboard.html" target="_blank">See it in full screen here</a>.</p>
-</section>
-<section id="how-interactive-can-a-dashboard-be" class="level2">
-<h2 class="anchored" data-anchor-id="how-interactive-can-a-dashboard-be">How Interactive Can a Dashboard Be?</h2>
-<p>Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:</p>
+<section id="advanced-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-tasks">Advanced tasks</h2>
 <ul>
-<li><strong>plotly charts</strong>: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.</li>
-<li><strong>sortable tables</strong>: click a column header in the table above to reorder the rows (built with the <code>DT</code> package).</li>
-<li><strong>tabsets</strong>: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.</li>
+<li>Add a callout to highlight an assumption, risk, or issue to revisit.</li>
+<li>Add caching to the code chunk so that it runs only when the underlying data or code changes.</li>
+<li>Add a second entry for the next week and add the first entry to a collapsible callout. (works best for HTML output, not PDF)</li>
 </ul>
-<p>The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs <strong>Shiny</strong> and a running server, which a static host like GitHub Pages cannot provide.</p>
-<p><a href="../exercises/dashboards-exercise.html" class="btn btn-primary">Go to the dashboards exercise</a></p>
+</section>
+<section id="expected-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="expected-outcome">Expected Outcome</h2>
+<p>By the end, you should have a Research Diary entry that:</p>
+<ul>
+<li>renders as a readable HTML document</li>
+<li>records a real environmental modelling decision or exploration</li>
+<li>separates context, evidence, decision, rationale, uncertainty, and next steps</li>
+<li>could help you or a collaborator understand the decision later</li>
+<li>could be reused as a template for future modelling work</li>
+</ul>
+</section>
+<section id="self-check" class="level2">
+<h2 class="anchored" data-anchor-id="self-check">Self-Check</h2>
+<p>Ask yourself:</p>
+<ul>
+<li>Would this entry make sense if I read it again in a month?</li>
+<li>Can another researcher understand why the decision was made?</li>
+<li>Is the evidence specific enough to locate or reproduce the check?</li>
+<li>Are uncertainty and next steps recorded clearly?</li>
+<li>Is the structure simple enough to reuse consistently?</li>
+</ul>
 
 
 </section>
@@ -1010,5 +1082,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/dashboards.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/research-diary-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
