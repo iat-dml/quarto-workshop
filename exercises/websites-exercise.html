@@ -79,9 +79,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a73fa0704d58be47e16656a2b83da599.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -463,6 +465,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Consistent Branding with brand.yml</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/ai-assistance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A helping hand from AI</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -481,21 +501,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal"><span class="header-section-number">1</span> Learning Goal</a>
-  <ul class="collapse">
-  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start"><span class="header-section-number">1.1</span> Before You Start</a></li>
-  <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build"><span class="header-section-number">1.2</span> What You Will Build</a></li>
-  <li><a href="#step-1-create-the-website-project" id="toc-step-1-create-the-website-project" class="nav-link" data-scroll-target="#step-1-create-the-website-project"><span class="header-section-number">1.3</span> Step 1 — Create the Website Project</a></li>
-  <li><a href="#step-2-preview-your-site" id="toc-step-2-preview-your-site" class="nav-link" data-scroll-target="#step-2-preview-your-site"><span class="header-section-number">1.4</span> Step 2 — Preview Your Site</a></li>
-  <li><a href="#step-3-understand-_quarto.yml" id="toc-step-3-understand-_quarto.yml" class="nav-link" data-scroll-target="#step-3-understand-_quarto.yml"><span class="header-section-number">1.5</span> Step 3 — Understand <code>_quarto.yml</code></a></li>
-  <li><a href="#step-4-edit-the-home-page-and-add-a-page" id="toc-step-4-edit-the-home-page-and-add-a-page" class="nav-link" data-scroll-target="#step-4-edit-the-home-page-and-add-a-page"><span class="header-section-number">1.6</span> Step 4 — Edit the Home Page and Add a Page</a></li>
-  <li><a href="#step-5-change-how-it-looks" id="toc-step-5-change-how-it-looks" class="nav-link" data-scroll-target="#step-5-change-how-it-looks"><span class="header-section-number">1.7</span> Step 5 — Change How It Looks</a></li>
-  <li><a href="#step-6-publish-to-github-pages" id="toc-step-6-publish-to-github-pages" class="nav-link" data-scroll-target="#step-6-publish-to-github-pages"><span class="header-section-number">1.8</span> Step 6 — Publish to GitHub Pages</a></li>
-  <li><a href="#step-7-make-a-change-and-republish" id="toc-step-7-make-a-change-and-republish" class="nav-link" data-scroll-target="#step-7-make-a-change-and-republish"><span class="header-section-number">1.9</span> Step 7 — Make a Change and Republish</a></li>
-  <li><a href="#stretch-tasks" id="toc-stretch-tasks" class="nav-link" data-scroll-target="#stretch-tasks"><span class="header-section-number">1.10</span> Stretch Tasks</a></li>
-  <li><a href="#expected-outcome" id="toc-expected-outcome" class="nav-link" data-scroll-target="#expected-outcome"><span class="header-section-number">1.11</span> Expected Outcome</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">1.12</span> Self-Check</a></li>
-  </ul></li>
+  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning Goal</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start">Before You Start</a></li>
+  <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build">What You Will Build</a></li>
+  <li><a href="#step-1-create-the-website-project" id="toc-step-1-create-the-website-project" class="nav-link" data-scroll-target="#step-1-create-the-website-project">Step 1 — Create the Website Project</a></li>
+  <li><a href="#step-2-preview-your-site" id="toc-step-2-preview-your-site" class="nav-link" data-scroll-target="#step-2-preview-your-site">Step 2 — Preview Your Site</a></li>
+  <li><a href="#step-3-understand-_quarto.yml" id="toc-step-3-understand-_quarto.yml" class="nav-link" data-scroll-target="#step-3-understand-_quarto.yml">Step 3 — Understand <code>_quarto.yml</code></a></li>
+  <li><a href="#step-4-edit-the-home-page" id="toc-step-4-edit-the-home-page" class="nav-link" data-scroll-target="#step-4-edit-the-home-page">Step 4 — Edit the Home Page</a></li>
+  <li><a href="#step-5-adding-an-about-page" id="toc-step-5-adding-an-about-page" class="nav-link" data-scroll-target="#step-5-adding-an-about-page">Step 5 — Adding an About Page</a></li>
+  <li><a href="#step-6-add-a-publications-page-a-listing" id="toc-step-6-add-a-publications-page-a-listing" class="nav-link" data-scroll-target="#step-6-add-a-publications-page-a-listing">Step 6 — Add a Publications Page (a Listing)</a></li>
+  <li><a href="#step-7-change-how-it-looks" id="toc-step-7-change-how-it-looks" class="nav-link" data-scroll-target="#step-7-change-how-it-looks">Step 7 — Change How It Looks</a></li>
+  <li><a href="#step-8-publish-to-github-pages" id="toc-step-8-publish-to-github-pages" class="nav-link" data-scroll-target="#step-8-publish-to-github-pages">Step 8 — Publish to GitHub Pages</a></li>
+  <li><a href="#step-9-make-a-change-and-republish" id="toc-step-9-make-a-change-and-republish" class="nav-link" data-scroll-target="#step-9-make-a-change-and-republish">Step 9 — Make a Change and Republish</a></li>
+  <li><a href="#stretch-tasks" id="toc-stretch-tasks" class="nav-link" data-scroll-target="#stretch-tasks">Stretch Tasks</a></li>
+  <li><a href="#expected-outcome" id="toc-expected-outcome" class="nav-link" data-scroll-target="#expected-outcome">Expected Outcome</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/websites-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -522,8 +542,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="learning-goal" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Learning Goal</h1>
+<section id="learning-goal" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
 <p>By the end of this exercise you will have built a small Quarto website on your own computer and published it live on the internet — with a web address you can share. It is written for people who are completely new to Quarto, so each step explains what you are doing and why.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -538,8 +558,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A Quarto website is just a folder of plain-text pages. You can build and publish the whole thing without writing a single line of R or Python. If you later want to embed analysis, you can — but that is not needed here.</p>
 </div>
 </div>
-<section id="before-you-start" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">1.1</span> Before You Start</h2>
+</section>
+<section id="before-you-start" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-start">Before You Start</h2>
 <p>You will need three things:</p>
 <ul>
 <li><strong>Quarto installed</strong>, and an editor you are comfortable with. If you have not done this yet, follow <a href="../foundations/installing-quarto.html">Installing Quarto</a> first. You can check your install by running <code>quarto check</code> in a terminal.</li>
@@ -547,15 +568,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>A free GitHub account</strong>, which you will only need for the publishing step near the end. If you do not have one, you can sign up at <a href="https://github.com/">github.com</a> — or skip Step 6 and still complete everything else locally.</li>
 </ul>
 </section>
-<section id="what-you-will-build" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="what-you-will-build"><span class="header-section-number">1.2</span> What You Will Build</h2>
+<section id="what-you-will-build" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-will-build">What You Will Build</h2>
 <p>A small site with two pages — a <strong>home page</strong> and an <strong>about page</strong> — connected by a navigation bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny: the point is to see the full path from empty folder to live website.</p>
 </section>
-<section id="step-1-create-the-website-project" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="step-1-create-the-website-project"><span class="header-section-number">1.3</span> Step 1 — Create the Website Project</h2>
+<section id="step-1-create-the-website-project" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-create-the-website-project">Step 1 — Create the Website Project</h2>
 <p>Quarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you keep projects and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project website my-site</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This makes a new folder called <code>my-site</code> containing a few starter files:</p>
+<p>You will be asked to provide a title for your website in the terminal, enter what you want or just ‘my-site’.</p>
+<p>This makes a new folder called <code>my-site</code>, in the directory that your terminal was set to, navigate into this folder in the file explorer of your editor. It contains a few starter files:</p>
 <ul>
 <li><strong><code>_quarto.yml</code></strong> — the project’s settings file. It controls things that apply to the <em>whole</em> site, like its title, the navigation bar, and the colour theme.</li>
 <li><strong><code>index.qmd</code></strong> — your <strong>home page</strong>. (<code>index</code> is the special name web servers look for first.)</li>
@@ -576,15 +598,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-2-preview-your-site" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="step-2-preview-your-site"><span class="header-section-number">1.4</span> Step 2 — Preview Your Site</h2>
-<p>Move into the new folder and start a live preview:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-site</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your browser opens with the site already running. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly. Press <code>Ctrl + C</code> in the terminal to stop it later.</p>
+<section id="step-2-preview-your-site" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-preview-your-site">Step 2 — Preview Your Site</h2>
+<p><strong>Option 1</strong>: Open one of your pages such as <code>index.qmd</code> in your editor and click the <strong>Preview</strong> button at the top of the file editor window. This opens a live preview of the page in your browser.</p>
+<p><strong>Option 2</strong>: In your terminal, make sure you are in the <code>my-site</code> folder and start a live preview:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The page will be opened in the viewer window on the right side of your editor. You can also open it in your default browser by clicking the link in the terminal. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly. Press <code>Ctrl + C</code> in the terminal to stop it later.</p>
 </section>
-<section id="step-3-understand-_quarto.yml" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="step-3-understand-_quarto.yml"><span class="header-section-number">1.5</span> Step 3 — Understand <code>_quarto.yml</code></h2>
+<section id="step-3-understand-_quarto.yml" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-understand-_quarto.yml">Step 3 — Understand <code>_quarto.yml</code></h2>
 <p>Open <code>_quarto.yml</code>. This is the one file that ties the site together. A minimal version looks like this:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
@@ -611,46 +633,161 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Change the <code>title</code> to your own and save. Watch the preview update.</p>
 </section>
-<section id="step-4-edit-the-home-page-and-add-a-page" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="step-4-edit-the-home-page-and-add-a-page"><span class="header-section-number">1.6</span> Step 4 — Edit the Home Page and Add a Page</h2>
+<section id="step-4-edit-the-home-page" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-edit-the-home-page">Step 4 — Edit the Home Page</h2>
 <p>Open <code>index.qmd</code>. Below the <code>---</code> header, the content is just Markdown — the same headings, lists, links, and callouts you have already met in this workshop. Replace the starter text with a short welcome:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Welcome"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## About this site</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>A small site I built while learning Quarto. Use the menu above to look around.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now add a third page. Create a file called <code>resources.qmd</code> next to the others:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Resources"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>A few links and materials I want to share.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A new file is not visible to visitors until you link it. Add it to the navbar in <code>_quarto.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> About</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> resources.qmd</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Resources</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Save and check that the new menu item appears and works in the preview.</p>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>A small site I built while learning Quarto. Use the menu above to look around.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-5-change-how-it-looks" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="step-5-change-how-it-looks"><span class="header-section-number">1.7</span> Step 5 — Change How It Looks</h2>
-<p>The quickest way to restyle a site is to pick a different built-in <strong>theme</strong>. Quarto ships with many; try swapping <code>cosmo</code> for another such as <code>flatly</code>, <code>litera</code>, or <code>journal</code> in <code>_quarto.yml</code> and watch the preview change.</p>
+<section id="step-5-adding-an-about-page" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-adding-an-about-page">Step 5 — Adding an About Page</h2>
+<p>Your starter project already includes a second page, <code>about.qmd</code>. Quarto has a dedicated <strong>About</strong> layout that turns an ordinary page into a tidy profile — a photo, a short bio, and a row of links to your professional profiles. You switch it on by adding an <code>about:</code> block to the page’s front matter. The full reference is in the <a href="https://quarto.org/docs/websites/website-about.html">Quarto About Pages guide</a>.</p>
+<p>Open <code>about.qmd</code> and replace its contents with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "About Me"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> profile.jpg</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">about:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">  template: jolla</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">  image-shape: round</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">  image-width: 12em</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">  links:</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: github</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">      text: GitHub</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">      href: https://github.com/your-username</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: envelope</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">      text: Email</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">      href: mailto:you@example.com</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: mortarboard</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">      text: Google Scholar</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">      href: https://scholar.google.com</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>I am a researcher working on something interesting. I built this site while learning Quarto.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Drop a photo of yourself named <code>profile.jpg</code> next to the page — or point <code>image:</code> at any image you have, or remove that line to skip the photo entirely.</p>
+<p>Reading the <code>about:</code> block:</p>
+<ul>
+<li><code>template:</code> chooses the overall layout. Quarto ships five, each arranging the photo, bio, and links differently: <strong><code>jolla</code></strong> (centred photo with links below — a clean personal profile), <strong><code>trestles</code></strong>, <strong><code>solana</code></strong>, <strong><code>marquee</code></strong>, and <strong><code>broadside</code></strong>. Swap the name and watch the preview rearrange until one fits.</li>
+<li><code>image:</code>, <code>image-shape:</code> (<code>round</code>, <code>rounded</code>, or <code>rectangle</code>), and <code>image-width:</code> control how the photo appears.</li>
+<li><code>links:</code> is the row of profile links. Each entry has an <code>href</code>, the <code>text</code> shown, and an <code>icon</code>. Everything below the front matter becomes your bio.</li>
+</ul>
+<p>The <code>icon:</code> names come from the built-in <a href="https://icons.getbootstrap.com/">Bootstrap icon set</a>, which covers the common ones (<code>github</code>, <code>twitter</code>, <code>linkedin</code>, <code>envelope</code>, and so on).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Icons for academic services
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The built-in Bootstrap icons don’t include some services researchers rely on, such as <strong>ORCID</strong> and <strong>ResearchGate</strong>. For those, add the <a href="https://github.com/quarto-ext/fontawesome">Font Awesome extension</a>, which brings roughly 2,000 more icons (including academic brands). Install it from inside your project folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/fontawesome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then drop its shortcode wherever you want an icon — for example, a small link row in your bio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot"> ORCID</span><span class="co">](https://orcid.org/0000-0000-0000-0000)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot"> ResearchGate</span><span class="co">](https://www.researchgate.net/profile/your-name)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Brand icons need the <code>brands</code> keyword. Browse the full set at <a href="https://fontawesome.com/search?m=free">fontawesome.com</a>.</p>
+</div>
+</div>
+</section>
+<section id="step-6-add-a-publications-page-a-listing" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-add-a-publications-page-a-listing">Step 6 — Add a Publications Page (a Listing)</h2>
+<p>So far you have written every page by hand. Quarto can also build a page <em>for</em> you from a data file — this is called a <strong>listing</strong>. Listings can be used for <a href="https://iat-dml.github.io/news.html">blogs</a>, <a href="https://blenback.github.io/presentations.html">presentations</a> or even <a href="https://nascent-peru.github.io/about/team.html">staff pages</a> and as usual the Quarto guide provides a lot of detail on how to do this <a href="https://quarto.org/docs/websites/website-listings.html">here</a>. In this exercise however we will use it to make a page listing your scientific publications. This is actually a more advanced use-case and uses a custom listing template that the authors developed for their own sites.</p>
+<p>The approach has three ingredients:</p>
+<ol type="1">
+<li><strong>A data file</strong> (<code>.yaml</code>) holding the details of each publication — title, authors, year, DOI, links, and so on.</li>
+<li><strong>A template</strong> (<code>.ejs</code>) that controls how each entry is laid out.</li>
+<li><strong>A page</strong> (<code>.qmd</code>) with a <code>listing</code> block that points at the data and the template.</li>
+</ol>
+<p>You don’t have to write the data file or the template from scratch — download the two starter files below and save them into your project:</p>
+<p><a href="../assets/publications.yaml" class="btn btn-primary" download="publications.yaml">Download publications.yaml</a></p>
+<p><a href="../assets/publication_yearly.ejs" class="btn btn-primary" download="publication_yearly.ejs">Download publication_yearly.ejs</a></p>
+<p>Keep things tidy by giving each file its own folder inside your project:</p>
+<ul>
+<li>put <strong><code>publication_yearly.ejs</code></strong> in a new folder called <strong><code>ejs/</code></strong>, so it lives at <code>ejs/publication_yearly.ejs</code></li>
+<li>put <strong><code>publications.yaml</code></strong> in a new folder called <strong><code>publications/</code></strong>, so it lives at <code>publications/publications.yaml</code></li>
+</ul>
+<p>Open <code>publications.yaml</code> to see how it is built. It contains a single complete example entry. Each publication is a list item (it begins with a <code>-</code>) carrying fields such as <code>title</code>, <code>authors</code>, <code>year</code>, <code>doi</code>, and an optional <code>summary</code>. To add your own work, copy the whole block and fill in your details; empty fields like <code>code_url: ''</code> simply don’t appear.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Let your reference manager do the typing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You don’t have to fill in <code>publications.yaml</code> entirely by hand. Most of these fields already live in your reference manager. Export your publications as a <strong>BibTeX (<code>.bib</code>) file</strong> from whichever tool you use — Zotero, Mendeley, EndNote, and others all support this — and use it to populate the YAML. That keeps your publications page in step with the library you already maintain.</p>
+</div>
+</div>
+<p>With the data and template in place, create the page that ties them together. Make a new file called <code>publications.qmd</code> next to your other pages and paste in:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    anchor-sections: true</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: Journal-articles</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">    template: ejs/publication_yearly.ejs</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">    contents:</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - publications/publications.yaml</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    field-display-names:</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">      summary: "Summary"</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">    field-types:</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">      summary: raw</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Journal Articles</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>::: {#Journal-articles}</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Reading the front matter:</p>
+<ul>
+<li><code>listing:</code> tells Quarto to build a listing, here given the id <code>Journal-articles</code>.</li>
+<li><code>template:</code> points at the <code>.ejs</code> file in your <code>ejs/</code> folder, which decides how each entry looks.</li>
+<li><code>contents:</code> points at the data file in your <code>publications/</code> folder.</li>
+<li><code>field-types: summary: raw</code> lets the rich HTML summaries in the data file render as formatted text instead of as plain characters.</li>
+<li>The empty <code>::: {#Journal-articles}</code> block in the body is the placeholder where Quarto drops the finished listing.</li>
+</ul>
+<p>Finally, a new page is invisible until you link it. Add it to the navbar in <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> About</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> publications.qmd</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Publications</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Save and check the preview — your publications should appear as a clean, consistent list, each entry formatted by the template rather than by hand.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A publications page needn’t stop at journal articles. Because each listing is simply a data file plus a template, you can stack several on a single page — one for journal articles, another for theses, talks, datasets, or software. For an example built this way, see <a href="https://blenback.github.io/publications.html">Ben’s publications page</a>, which combines multiple listings for different kinds of research output.</p>
+</div>
+</div>
+</section>
+<section id="step-7-change-how-it-looks" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-change-how-it-looks">Step 7 — Change How It Looks</h2>
+<p>The quickest way to restyle a site is to pick a different built-in <strong>theme</strong>. Quarto ships with many; try swapping <code>cosmo</code> for another such as <code>flatly</code>, <code>litera</code>, or <code>sandstone</code> in <code>_quarto.yml</code> and watch the preview change.</p>
 <p>To go a little further, you can override individual colours with a small style file. Create a file named <code>styles.scss</code> containing:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">// a couple of colour tweaks</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="va">$navbar-bg</span>: <span class="cn">#2c3e50</span><span class="op">;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">$link-color</span>: <span class="cn">#18bc9c</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">// a couple of colour tweaks</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="va">$navbar-bg</span>: <span class="cn">#2c3e50</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">$link-color</span>: <span class="cn">#18bc9c</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>/*-- scss:defaults --*/</code> line at the top is required — it tells Quarto these are style variables. Then layer it on top of your theme in <code>_quarto.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">cosmo</span><span class="kw">,</span><span class="at"> styles.scss</span><span class="kw">]</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">cosmo</span><span class="kw">,</span><span class="at"> styles.scss</span><span class="kw">]</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>(You can now remove the original <code>styles.css</code> line if your config still references it.)</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -666,22 +803,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-6-publish-to-github-pages" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="step-6-publish-to-github-pages"><span class="header-section-number">1.8</span> Step 6 — Publish to GitHub Pages</h2>
+<section id="step-8-publish-to-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="step-8-publish-to-github-pages">Step 8 — Publish to GitHub Pages</h2>
 <p>Your site only exists on your laptop so far. <strong>GitHub Pages</strong> is a free service that turns a GitHub repository into a live website, and Quarto can publish to it with a single command.</p>
 <p>First, put your project on GitHub:</p>
 <ol type="1">
 <li>On <a href="https://github.com/">github.com</a>, create a <strong>new, empty repository</strong> (no README) named, for example, <code>my-site</code>.</li>
 <li>Back in your terminal, inside the project folder, connect your files to it:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"First version of my site"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YOUR-USERNAME/my-site.git</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"First version of my site"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YOUR-USERNAME/my-site.git</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now publish:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Quarto renders your site, copies the finished pages onto a special branch called <code>gh-pages</code>, and switches on GitHub Pages for you. After a minute or so it prints your live address, which will look like <code>https://YOUR-USERNAME.github.io/my-site/</code>. Open it — your site is on the internet.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -710,14 +847,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-7-make-a-change-and-republish" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="step-7-make-a-change-and-republish"><span class="header-section-number">1.9</span> Step 7 — Make a Change and Republish</h2>
+<section id="step-9-make-a-change-and-republish" class="level2">
+<h2 class="anchored" data-anchor-id="step-9-make-a-change-and-republish">Step 9 — Make a Change and Republish</h2>
 <p>Edit one of your pages — add a sentence to the home page, for instance — and save. Then run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>again. Refresh your live URL after a moment and your update is there. This edit-and-republish loop is the whole rhythm of maintaining a Quarto website.</p>
 </section>
-<section id="stretch-tasks" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="stretch-tasks"><span class="header-section-number">1.10</span> Stretch Tasks</h2>
+<section id="stretch-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="stretch-tasks">Stretch Tasks</h2>
 <p>If you finish early, try one of these:</p>
 <ul>
 <li>Add a <strong>footer</strong> to the bottom of every page using a <code>page-footer:</code> entry under <code>website:</code>.</li>
@@ -726,8 +863,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Try a custom <strong>Google Font</strong> by importing it in <code>styles.scss</code> and setting <code>mainfont:</code> in the HTML format options.</li>
 </ul>
 </section>
-<section id="expected-outcome" class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" data-anchor-id="expected-outcome"><span class="header-section-number">1.11</span> Expected Outcome</h2>
+<section id="expected-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="expected-outcome">Expected Outcome</h2>
 <p>You should now have:</p>
 <ul>
 <li>a small Quarto website project with at least two linked pages,</li>
@@ -735,8 +872,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>and a live URL you can share with anyone.</li>
 </ul>
 </section>
-<section id="self-check" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="self-check"><span class="header-section-number">1.12</span> Self-Check</h2>
+<section id="self-check" class="level2">
+<h2 class="anchored" data-anchor-id="self-check">Self-Check</h2>
 <p>Ask yourself:</p>
 <ul>
 <li>Does the site open and refresh when I run <code>quarto preview</code>?</li>
@@ -746,7 +883,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

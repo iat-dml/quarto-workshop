@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a73fa0704d58be47e16656a2b83da599.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -463,6 +463,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Consistent Branding with brand.yml</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/ai-assistance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A helping hand from AI</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -481,12 +499,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction"><span class="header-section-number">1</span> Short Introduction</a>
+  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction">Short Introduction</a>
   <ul class="collapse">
-  <li><a href="#when-a-dashboard-helps" id="toc-when-a-dashboard-helps" class="nav-link" data-scroll-target="#when-a-dashboard-helps"><span class="header-section-number">1.1</span> When a Dashboard Helps</a></li>
-  <li><a href="#how-a-dashboard-is-structured" id="toc-how-a-dashboard-is-structured" class="nav-link" data-scroll-target="#how-a-dashboard-is-structured"><span class="header-section-number">1.2</span> How A Dashboard Is Structured</a></li>
-  <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build"><span class="header-section-number">1.3</span> What You Will Build</a></li>
-  <li><a href="#how-interactive-can-a-dashboard-be" id="toc-how-interactive-can-a-dashboard-be" class="nav-link" data-scroll-target="#how-interactive-can-a-dashboard-be"><span class="header-section-number">1.4</span> How Interactive Can a Dashboard Be?</a></li>
+  <li><a href="#when-a-dashboard-helps" id="toc-when-a-dashboard-helps" class="nav-link" data-scroll-target="#when-a-dashboard-helps">When a Dashboard Helps</a></li>
+  <li><a href="#how-a-dashboard-is-structured" id="toc-how-a-dashboard-is-structured" class="nav-link" data-scroll-target="#how-a-dashboard-is-structured">How A Dashboard Is Structured</a></li>
+  <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build">What You Will Build</a></li>
+  <li><a href="#how-interactive-can-a-dashboard-be" id="toc-how-interactive-can-a-dashboard-be" class="nav-link" data-scroll-target="#how-interactive-can-a-dashboard-be">How Interactive Can a Dashboard Be?</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/dashboards.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -514,15 +532,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="short-introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Short Introduction</h1>
+<section id="short-introduction" class="level1">
+<h1>Short Introduction</h1>
 <p>A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with <span class="nowrap"><code>format: dashboard</code></span>.</p>
-<section id="when-a-dashboard-helps" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="when-a-dashboard-helps"><span class="header-section-number">1.1</span> When a Dashboard Helps</h2>
+<section id="when-a-dashboard-helps" class="level2">
+<h2 class="anchored" data-anchor-id="when-a-dashboard-helps">When a Dashboard Helps</h2>
 <p>Dashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.</p>
 </section>
-<section id="how-a-dashboard-is-structured" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="how-a-dashboard-is-structured"><span class="header-section-number">1.2</span> How A Dashboard Is Structured</h2>
+<section id="how-a-dashboard-is-structured" class="level2">
+<h2 class="anchored" data-anchor-id="how-a-dashboard-is-structured">How A Dashboard Is Structured</h2>
 <p>A Quarto dashboard is built from a few simple pieces:</p>
 <ul>
 <li><span class="nowrap"><strong><code>format: dashboard</code></strong></span> in the YAML turns the document into a dashboard.</li>
@@ -550,8 +568,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(...)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="what-you-will-build" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="what-you-will-build"><span class="header-section-number">1.3</span> What You Will Build</h2>
+<section id="what-you-will-build" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-will-build">What You Will Build</h2>
 <p>In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -564,8 +582,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </iframe>
 <p>A dashboard is normally a full-screen page of its own. <a href="restoration-dashboard.html" target="_blank">See it in full screen here</a>.</p>
 </section>
-<section id="how-interactive-can-a-dashboard-be" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="how-interactive-can-a-dashboard-be"><span class="header-section-number">1.4</span> How Interactive Can a Dashboard Be?</h2>
+<section id="how-interactive-can-a-dashboard-be" class="level2">
+<h2 class="anchored" data-anchor-id="how-interactive-can-a-dashboard-be">How Interactive Can a Dashboard Be?</h2>
 <p>Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:</p>
 <ul>
 <li><strong>plotly charts</strong>: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.</li>

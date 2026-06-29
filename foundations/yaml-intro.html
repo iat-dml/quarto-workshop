@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a73fa0704d58be47e16656a2b83da599.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -463,6 +463,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Consistent Branding with brand.yml</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/ai-assistance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A helping hand from AI</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -481,20 +499,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction"><span class="header-section-number">1</span> Short Introduction</a>
+  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction">Short Introduction</a>
   <ul class="collapse">
-  <li><a href="#from-plain-note-to-configured-publication" id="toc-from-plain-note-to-configured-publication" class="nav-link" data-scroll-target="#from-plain-note-to-configured-publication"><span class="header-section-number">1.1</span> From Plain Note to Configured Publication</a></li>
-  <li><a href="#basic-example" id="toc-basic-example" class="nav-link" data-scroll-target="#basic-example"><span class="header-section-number">1.2</span> Basic Example</a></li>
-  <li><a href="#how-yaml-is-written" id="toc-how-yaml-is-written" class="nav-link" data-scroll-target="#how-yaml-is-written"><span class="header-section-number">1.3</span> How YAML Is Written</a></li>
-  <li><a href="#what-yaml-usually-controls" id="toc-what-yaml-usually-controls" class="nav-link" data-scroll-target="#what-yaml-usually-controls"><span class="header-section-number">1.4</span> What YAML Usually Controls</a>
+  <li><a href="#from-plain-note-to-configured-publication" id="toc-from-plain-note-to-configured-publication" class="nav-link" data-scroll-target="#from-plain-note-to-configured-publication">From Plain Note to Configured Publication</a></li>
+  <li><a href="#basic-example" id="toc-basic-example" class="nav-link" data-scroll-target="#basic-example">Basic Example</a></li>
+  <li><a href="#how-yaml-is-written" id="toc-how-yaml-is-written" class="nav-link" data-scroll-target="#how-yaml-is-written">How YAML Is Written</a></li>
+  <li><a href="#what-yaml-usually-controls" id="toc-what-yaml-usually-controls" class="nav-link" data-scroll-target="#what-yaml-usually-controls">What YAML Usually Controls</a>
   <ul class="collapse">
-  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata"><span class="header-section-number">1.4.1</span> Document Metadata</a></li>
-  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format"><span class="header-section-number">1.4.2</span> Output Format</a></li>
-  <li><a href="#execution-defaults" id="toc-execution-defaults" class="nav-link" data-scroll-target="#execution-defaults"><span class="header-section-number">1.4.3</span> Execution Defaults</a></li>
+  <li><a href="#document-metadata" id="toc-document-metadata" class="nav-link" data-scroll-target="#document-metadata">Document Metadata</a></li>
+  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output Format</a></li>
+  <li><a href="#execution-defaults" id="toc-execution-defaults" class="nav-link" data-scroll-target="#execution-defaults">Execution Defaults</a></li>
   </ul></li>
-  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example"><span class="header-section-number">1.5</span> Concrete Academic Example</a></li>
-  <li><a href="#yaml-vs-markdown-vs-code-chunks" id="toc-yaml-vs-markdown-vs-code-chunks" class="nav-link" data-scroll-target="#yaml-vs-markdown-vs-code-chunks"><span class="header-section-number">1.6</span> YAML vs Markdown vs Code Chunks</a></li>
-  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step"><span class="header-section-number">1.7</span> Next Step</a></li>
+  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example">Concrete Academic Example</a></li>
+  <li><a href="#yaml-vs-markdown-vs-code-chunks" id="toc-yaml-vs-markdown-vs-code-chunks" class="nav-link" data-scroll-target="#yaml-vs-markdown-vs-code-chunks">YAML vs Markdown vs Code Chunks</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next Step</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/foundations/yaml-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -522,15 +540,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="short-introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Short Introduction</h1>
+<section id="short-introduction" class="level1">
+<h1>Short Introduction</h1>
 <p>YAML is the metadata block at the top of a Quarto document. It sits between two lines of <span class="nowrap"><code>---</code></span> and controls document information such as title, author, date, output formats, and execution settings.</p>
-<section id="from-plain-note-to-configured-publication" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="from-plain-note-to-configured-publication"><span class="header-section-number">1.1</span> From Plain Note to Configured Publication</h2>
+<section id="from-plain-note-to-configured-publication" class="level2">
+<h2 class="anchored" data-anchor-id="from-plain-note-to-configured-publication">From Plain Note to Configured Publication</h2>
 <p>The header is only a few lines, but it decides what your document becomes. Because it sits separately from your writing, you can turn the same text into a webpage, a PDF, or a slide deck by changing the header alone, without touching a word of your content.</p>
 </section>
-<section id="basic-example" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="basic-example"><span class="header-section-number">1.2</span> Basic Example</h2>
+<section id="basic-example" class="level2">
+<h2 class="anchored" data-anchor-id="basic-example">Basic Example</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Fieldwork Notes"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"A. Researcher"</span></span>
@@ -538,8 +556,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="how-yaml-is-written" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="how-yaml-is-written"><span class="header-section-number">1.3</span> How YAML Is Written</h2>
+<section id="how-yaml-is-written" class="level2">
+<h2 class="anchored" data-anchor-id="how-yaml-is-written">How YAML Is Written</h2>
 <p>YAML is a list of settings, one per line, written as <code>key: value</code>:</p>
 <ul>
 <li>the <strong>key</strong> is the setting name, such as <code>title</code> or <code>format</code></li>
@@ -547,18 +565,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Some settings group several values underneath them. You create that grouping by <strong>indenting</strong> the lines below with spaces, as with the multiple formats in the example further down. Because the indentation is what defines the grouping, it has to be consistent.</p>
 </section>
-<section id="what-yaml-usually-controls" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="what-yaml-usually-controls"><span class="header-section-number">1.4</span> What YAML Usually Controls</h2>
-<section id="document-metadata" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="document-metadata"><span class="header-section-number">1.4.1</span> Document Metadata</h3>
+<section id="what-yaml-usually-controls" class="level2">
+<h2 class="anchored" data-anchor-id="what-yaml-usually-controls">What YAML Usually Controls</h2>
+<section id="document-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="document-metadata">Document Metadata</h3>
 <p>This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.</p>
 </section>
-<section id="output-format" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="output-format"><span class="header-section-number">1.4.2</span> Output Format</h3>
+<section id="output-format" class="level3">
+<h3 class="anchored" data-anchor-id="output-format">Output Format</h3>
 <p>This tells Quarto what to create, such as HTML, PDF, DOCX, or <code>revealjs</code> slides.</p>
 </section>
-<section id="execution-defaults" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="execution-defaults"><span class="header-section-number">1.4.3</span> Execution Defaults</h3>
+<section id="execution-defaults" class="level3">
+<h3 class="anchored" data-anchor-id="execution-defaults">Execution Defaults</h3>
 <p>This controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
@@ -566,8 +584,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This hides the code and any warnings across the whole document, so the output shows only the results.</p>
 </section>
 </section>
-<section id="concrete-academic-example" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="concrete-academic-example"><span class="header-section-number">1.5</span> Concrete Academic Example</h2>
+<section id="concrete-academic-example" class="level2">
+<h2 class="anchored" data-anchor-id="concrete-academic-example">Concrete Academic Example</h2>
 <p>A manuscript draft might use a header like this:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"How Soil Moisture Shapes Restoration Outcomes"</span></span>
@@ -594,8 +612,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="yaml-vs-markdown-vs-code-chunks" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="yaml-vs-markdown-vs-code-chunks"><span class="header-section-number">1.6</span> YAML vs Markdown vs Code Chunks</h2>
+<section id="yaml-vs-markdown-vs-code-chunks" class="level2">
+<h2 class="anchored" data-anchor-id="yaml-vs-markdown-vs-code-chunks">YAML vs Markdown vs Code Chunks</h2>
 <ul>
 <li>YAML configures the document</li>
 <li>Markdown writes the document</li>
@@ -603,8 +621,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Keeping these roles separate makes Quarto much easier to understand.</p>
 </section>
-<section id="next-step" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="next-step"><span class="header-section-number">1.7</span> Next Step</h2>
+<section id="next-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-step">Next Step</h2>
 <p>Continue to <a href="../foundations/installing-quarto.html">Installing Quarto</a> for a practical overview of what you need on your machine.</p>
 
 

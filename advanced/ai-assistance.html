@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a73fa0704d58be47e16656a2b83da599.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -281,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">A helping hand from AI</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../advanced/templates-and-extensions.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="../advanced/ai-assistance.html">A helping hand from AI</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -428,6 +428,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Consistent Branding with brand.yml</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/ai-assistance.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">A helping hand from AI</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -446,8 +464,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-quarto_skills" id="toc-sec-quarto_skills" class="nav-link active" data-scroll-target="#sec-quarto_skills"><span class="header-section-number">1</span> Quarto Agent SKILLs</a></li>
-  <li><a href="#using-open-design-to-help-develop-your-personal-brand" id="toc-using-open-design-to-help-develop-your-personal-brand" class="nav-link" data-scroll-target="#using-open-design-to-help-develop-your-personal-brand"><span class="header-section-number">2</span> Using Open Design to help develop your personal brand</a></li>
+  <li><a href="#sec-quarto_skills" id="toc-sec-quarto_skills" class="nav-link active" data-scroll-target="#sec-quarto_skills">Quarto Agent SKILLs</a>
+  <ul class="collapse">
+  <li><a href="#authoring" id="toc-authoring" class="nav-link" data-scroll-target="#authoring"><code>authoring</code></a></li>
+  <li><a href="#brand-yml" id="toc-brand-yml" class="nav-link" data-scroll-target="#brand-yml"><code>brand-yml</code></a></li>
+  <li><a href="#alt-text" id="toc-alt-text" class="nav-link" data-scroll-target="#alt-text"><code>alt-text</code></a></li>
+  </ul></li>
+  <li><a href="#using-open-design-to-help-develop-your-personal-brand" id="toc-using-open-design-to-help-develop-your-personal-brand" class="nav-link" data-scroll-target="#using-open-design-to-help-develop-your-personal-brand">Using Open Design to help develop your personal brand</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/advanced/ai-assistance.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -455,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../advanced/templates-and-extensions.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="../advanced/ai-assistance.html">A helping hand from AI</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">A helping hand from AI</h1>
 </div>
@@ -474,14 +497,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In case you need yet another reason to switch to make the switch to Quarto: Markdown is (currently) heavily used in the Agentic AI space. Precisely because it is a lightweight markup language Chatbots are very proficient at writing in it. It is also the format of choice for the ’SKILL’s (Including those authored specifcally for <a href="@sec-quarto_skills">Quarto</a>) for various agentic AI services like Anthropic’s Claude and OpenAI’s Codex. Both of these services have extensions for VScode/Positron, so you can use them for assistance directly in your IDE.</p>
-<section id="sec-quarto_skills" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="sec-quarto_skills"><span class="header-section-number">1</span> Quarto Agent SKILLs</h2>
+<p>In case you need yet another reason to switch to make the switch to Quarto: Markdown is (currently) heavily used in the Agentic AI space. Precisely because it is a lightweight markup language Chatbots are very proficient at writing in it. It is also the format of choice for the ’SKILL’s (Including those authored specifcally for <a href="@sec-quarto_skills">Quarto</a>) for various agentic AI services like Anthropic’s <a href="https://claude.ai/">Claude</a> and OpenAI’s <a href="https://openai.com/codex/">Codex</a>. Both of these services have extensions for VScode/Positron, so you can use them for assistance directly in your IDE.</p>
+<section id="sec-quarto_skills" class="level2">
+<h2 class="anchored" data-anchor-id="sec-quarto_skills">Quarto Agent SKILLs</h2>
+<p>A <em>Skill</em> is a small, self-contained folder of instructions (and sometimes scripts) that an AI agent can load <em>on demand</em> when a task calls for it. Rather than hoping the model remembers the finer points of Quarto syntax from its training data, a Skill hands it up-to-date, task-specific guidance at exactly the moment it is needed. The Posit team maintains an official set of <a href="https://github.com/posit-dev/skills/tree/main/quarto">Quarto Skills</a> that you can drop into a Claude- or Codex-enabled IDE and put to work straight away. Three are currently available.</p>
+<section id="authoring" class="level3">
+<h3 class="anchored" data-anchor-id="authoring"><code>authoring</code></h3>
+<p>The workhorse of the collection. It gives the agent comprehensive guidance for writing Quarto documents <em>the right way</em> — using the hashpipe (<code>#|</code>) cell-option syntax, <a href="../use-cases/manuscripts.html">cross-references</a>, <a href="../use-cases/manuscripts.html">callout blocks</a>, and extensions as Quarto intends, rather than improvising. It also knows how to <strong>migrate</strong> existing work: point it at an old R Markdown (<code>.Rmd</code>) file, or a whole <code>bookdown</code>, <code>blogdown</code>, <code>xaringan</code>, or <code>distill</code> project, and it will convert the source to Quarto for you. If you are coming to this workshop from an R Markdown background, this is the Skill to reach for first.</p>
 </section>
-<section id="using-open-design-to-help-develop-your-personal-brand" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="using-open-design-to-help-develop-your-personal-brand"><span class="header-section-number">2</span> Using Open Design to help develop your personal brand</h2>
+<section id="brand-yml" class="level3">
+<h3 class="anchored" data-anchor-id="brand-yml"><code>brand-yml</code></h3>
+<p>Consistency of style is one of the things <a href="../use-cases/websites.html"><code>brand.yml</code></a> does best, and this Skill teaches the agent to create and apply one for you. It will discover any existing brand definition in your project and layer your colours, fonts, and logos across every output format — HTML documents, <a href="../use-cases/dashboards.html">dashboards</a>, RevealJS presentations, Typst PDFs, and full <a href="../use-cases/websites.html">websites</a> — so a single source of truth drives the look of everything you publish. A genuine time-saver once you have settled on a personal or institutional identity.</p>
+</section>
+<section id="alt-text" class="level3">
+<h3 class="anchored" data-anchor-id="alt-text"><code>alt-text</code></h3>
+<p>Accessible figures are easy to neglect and tedious to write by hand. This Skill generates and improves alt text for both code-generated plots and static images, following Amy Cesal’s three-part formula: the <strong>chart type</strong>, the <strong>data being shown</strong>, and the <strong>key insight</strong> a reader should take away. The result is alt text that does real work for screen-reader users instead of restating the caption — a small effort that makes your research meaningfully more inclusive.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Skills are not magic: they steer the agent towards good practice, but you remain the author. Always read what the agent produces, especially migrations and generated text, before committing it.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="using-open-design-to-help-develop-your-personal-brand" class="level2">
+<h2 class="anchored" data-anchor-id="using-open-design-to-help-develop-your-personal-brand">Using Open Design to help develop your personal brand</h2>
 <p>As researchers not many of us have backgrounds in professional design, as evidenced by many of the graphical abstracts you see even in top journals…</p>
-<p>Here is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for website styling (<strong>TODO: Cross-ref to website section.</strong>). While most chat services can provide this advice the <a href="">Open Design</a> framework (an open-sourced Claude Design clone) can help you take your websites to the next level.</p>
+<p>Here is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for <a href="../use-cases/websites.html">website styling</a>. While most chat services can provide this advice the <a href="https://open-design.ai/">Open Design</a> framework (an open-sourced Claude Design clone) can help you take your websites to the next level.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

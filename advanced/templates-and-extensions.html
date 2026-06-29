@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5d1617054968bf438f2d6365dff42879.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2be563b1f8f89d5a2554309e9537a350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a73fa0704d58be47e16656a2b83da599.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-015bc2851cc485c06e372ce9ce431202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -463,6 +463,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Consistent Branding with brand.yml</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advanced/ai-assistance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A helping hand from AI</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -481,14 +499,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction"><span class="header-section-number">1</span> Short Introduction</a>
-  <ul class="collapse">
-  <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link" data-scroll-target="#why-this-matters-for-researchers"><span class="header-section-number">1.1</span> Why This Matters For Researchers</a></li>
-  <li><a href="#templates" id="toc-templates" class="nav-link" data-scroll-target="#templates"><span class="header-section-number">1.2</span> Templates</a></li>
-  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="header-section-number">1.3</span> Extensions</a></li>
-  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example"><span class="header-section-number">1.4</span> Concrete Academic Example</a></li>
-  <li><a href="#what-to-emphasize-in-the-workshop" id="toc-what-to-emphasize-in-the-workshop" class="nav-link" data-scroll-target="#what-to-emphasize-in-the-workshop"><span class="header-section-number">1.5</span> What To Emphasize In The Workshop</a></li>
-  </ul></li>
+  <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link active" data-scroll-target="#why-this-matters-for-researchers">Why This Matters For Researchers</a></li>
+  <li><a href="#templates" id="toc-templates" class="nav-link" data-scroll-target="#templates">Templates</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
+  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example">Concrete Academic Example</a></li>
+  <li><a href="#what-to-emphasize-in-the-workshop" id="toc-what-to-emphasize-in-the-workshop" class="nav-link" data-scroll-target="#what-to-emphasize-in-the-workshop">What To Emphasize In The Workshop</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/advanced/templates-and-extensions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -515,32 +530,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="short-introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Short Introduction</h1>
-<p>Once participants are comfortable with Quarto basics, templates and extensions provide ways to speed up repeated work and add specialized functionality.</p>
-<section id="why-this-matters-for-researchers" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="why-this-matters-for-researchers"><span class="header-section-number">1.1</span> Why This Matters For Researchers</h2>
+<p>Another neat feature that comes from Quarto being an open source project is the ability to create and contribute your own templates and exentensions for customized outputs such as project/institutional reports, letters, invoices or slide decks.</p>
+<section id="why-this-matters-for-researchers" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-for-researchers">Why This Matters For Researchers</h2>
 <p>Academic workflows often repeat familiar patterns:</p>
 <ul>
-<li>manuscript structures</li>
-<li>recurring workshop materials</li>
-<li>shared project websites</li>
-<li>journal-specific output requirements</li>
+<li>manuscripts have pre-defined sections</li>
+<li>projects required standardized reports</li>
+<li>teaching materials share structure</li>
 </ul>
 <p>Templates reduce setup time, and extensions can add features that are not included by default.</p>
 </section>
-<section id="templates" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="templates"><span class="header-section-number">1.2</span> Templates</h2>
+<section id="templates" class="level2">
+<h2 class="anchored" data-anchor-id="templates">Templates</h2>
 <p>Templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.</p>
 </section>
-<section id="extensions" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="extensions"><span class="header-section-number">1.3</span> Extensions</h2>
+<section id="extensions" class="level2">
+<h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
 <p>Quarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.</p>
 <p>Example install command:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/fontawesome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="concrete-academic-example" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="concrete-academic-example"><span class="header-section-number">1.4</span> Concrete Academic Example</h2>
+<section id="concrete-academic-example" class="level2">
+<h2 class="anchored" data-anchor-id="concrete-academic-example">Concrete Academic Example</h2>
 <p>A lab could keep:</p>
 <ul>
 <li>a manuscript starter structure for new papers</li>
@@ -562,12 +574,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="what-to-emphasize-in-the-workshop" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="what-to-emphasize-in-the-workshop"><span class="header-section-number">1.5</span> What To Emphasize In The Workshop</h2>
+<section id="what-to-emphasize-in-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-emphasize-in-the-workshop">What To Emphasize In The Workshop</h2>
 <p>For beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
