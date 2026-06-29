@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "One Tool to Rule Them All",
     "section": "",
-    "text": "Start with the foundations →\nJump to use cases\nQuarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.\nThis workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format."
+    "text": "Start with the foundations →\nJump to use cases\nQuarto is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.\nThis website is designed as a guided reference to our workshop that was first given at the 13th International Congress on Environmental Modelling and Software in 2026. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format."
   },
   {
     "objectID": "index.html#who-we-are",
@@ -32,7 +32,7 @@
     "href": "index.html#how-to-use-this-site-what-you-will-learn",
     "title": "One Tool to Rule Them All",
     "section": "How To Use This Site & What You Will Learn",
-    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n\nFoundations\nMarkdown, YAML, and Quarto’s project model: the building blocks every output shares.\n\n\n\n\nResearch Diary\nReproducible research, from rough exploration to a journal-ready PDF.\n\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\n\nSlides\nBuild reveal.js talks from the same source as your paper.\n\n\n\n\nWebsites\nProject, lab, and personal sites with Quarto’s website mode.\n\n\n\n\nDashboards\nInteractive dashboards, plus brand.yml for one consistent visual identity.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
+    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n\nFoundations\nMarkdown, YAML, and Quarto’s project model: the building blocks every output shares.\n\n\n\n\nResearch Diary\nDocumenting your research in a reproducible way from the very beginning.\n\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\n\nSlides\nBuild reveal.js talks from the same source as your research.\n\n\n\n\nWebsites\nProject, lab, and personal websites to improve outreach.\n\n\n\n\nDashboards\nInteractive dashboards for exploring and communicating your research.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
   },
   {
     "objectID": "exercises/websites-exercise.html",
@@ -755,11 +755,11 @@
     ]
   },
   {
-    "objectID": "use-cases/research-diary.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/research-diary.html#key-quarto-features-for-this-workflow",
+    "objectID": "use-cases/research-diary.html#key-benefits-of-using-quarto-for-research-diaries",
+    "href": "use-cases/research-diary.html#key-benefits-of-using-quarto-for-research-diaries",
     "title": "Documenting Research in Progress",
-    "section": "Key Quarto Features For This Workflow",
-    "text": "Key Quarto Features For This Workflow\n\nClear Daily or Weekly Entries: Markdown headings make it easy to separate entries by date, experiment, or task.\nMetadata At The Top: YAML can record authorship, date, project name, and output preferences.\nOptional Code Chunks: If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\nMultiple Outputs: An HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
+    "section": "Key benefits of using Quarto for research diaries",
+    "text": "Key benefits of using Quarto for research diaries\n\nClear Daily or Weekly Entries: Markdown headings make it easy to separate entries by date, experiment, or task.\nMetadata At The Top: YAML can record authorship, date, project name, and output preferences.\nOptional Code Chunks: If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\nMultiple Outputs: An HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -940,7 +940,7 @@
     "href": "use-cases/presentations.html",
     "title": "Creating Presentations",
     "section": "",
-    "text": "Quarto can create slide decks using formats such as RevealJS. This is useful for researchers who want presentations to live close to the same material as their reports, papers, and websites.\n\n\nTalks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.\n\n\n\n\n\nIn a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.\n\n\n\n\nA conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "text": "Quarto can create presentations in several different formats: - reveal.js (HTML) - PowerPoint (MS Office) - Beamer (LaTeX/PDF)\nand we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -951,8 +951,8 @@
     "objectID": "use-cases/presentations.html#why-this-matters-for-researchers",
     "href": "use-cases/presentations.html#why-this-matters-for-researchers",
     "title": "Creating Presentations",
-    "section": "",
-    "text": "Talks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.",
+    "section": "Why This Matters For Researchers",
+    "text": "Why This Matters For Researchers\nThe typical presentations we have to give as researchers often incorporate the same text content, figures, tables, and sometimes even code that we use in our manuscripts and other outputs so it makes sense to use the same publishing system to create them. Quarto allows you to do this in a way that is reproducible and easy to update, so that your slides are always consistent with your other outputs.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -960,11 +960,11 @@
     ]
   },
   {
-    "objectID": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
+    "objectID": "use-cases/presentations.html#key-benefits-of-using-quarto-revealjs-for-presentations",
+    "href": "use-cases/presentations.html#key-benefits-of-using-quarto-revealjs-for-presentations",
     "title": "Creating Presentations",
-    "section": "",
-    "text": "In a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.",
+    "section": "Key benefits of using Quarto-revealjs for presentations",
+    "text": "Key benefits of using Quarto-revealjs for presentations\n\nReusable Content\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\nEmbedded interactive and dynamic content\nHTML/JS based diagrams can be directly embedded in slides, and code can be run live in the browser. This is particularly useful for teaching and workshops. iframes can also be embedded to show external content, such as videos, in a more seamless fashion than PowerPoint.\n\n\nWeb-Native Output\nHTML slides are easy to share and update, and they work well for teaching or conference talks.\n\n\nCustomizable Themes\nQuarto provides 11 built in themes for reveal.js slides or you can prepare your own lightweight CSS theme based on your own branding and apply it to your slides as a template.\n\n\nEstablished Ecosystem with continued development\nreveal.js is an established ecosystem with it’s own plugins to extend it’s functionality, some of which have already been adapted for Quarto: Quarto Reveal Plugins",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -972,11 +972,11 @@
     ]
   },
   {
-    "objectID": "use-cases/presentations.html#concrete-academic-example",
-    "href": "use-cases/presentations.html#concrete-academic-example",
+    "objectID": "use-cases/presentations.html#caveats",
+    "href": "use-cases/presentations.html#caveats",
     "title": "Creating Presentations",
-    "section": "",
-    "text": "A conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "section": "Caveats",
+    "text": "Caveats\nWhile we can recommend Quarto-revealjs for presentations where the actual content is the main focus, it is not a good choice for presentations where the visual design is the main focus. Specifically reveal.js offers very little capacity for creating and manipulating vector graphics compared to PowerPoint.\nGo to the presentations exercise",
     "crumbs": [
       "Home",
       "Academic Use Cases",
