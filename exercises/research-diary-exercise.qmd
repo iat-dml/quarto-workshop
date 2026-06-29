@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Build a Lab Notebook Page"
+title: "Exercise: Build a Research Diary"
 ---
 
 ## Learning Goal
@@ -12,9 +12,9 @@ The focus is not only on recording what you did. The goal is to make the reasoni
 
 You should be familiar with:
 
-- basic Markdown headings and lists
-- the idea of a YAML header
-- opening or creating a `.qmd` file
+- [Basic Markdown headings and lists](../foundations/markdown-intro.qmd)
+- [The idea of a YAML header](../foundations/yaml-intro.qmd)
+- [Opening or creating a `.qmd` file](../foundations/quarto-intro.qmd)
 
 ## Starter Scenario
 
@@ -22,14 +22,14 @@ Choose one recent decision, comparison, or exploratory step from your own modell
 
 Examples include:
 
-- choosing between two environmental datasets
-- excluding, transforming, or aggregating observations
-- changing a parameter value or model setting
-- comparing alternative model runs
-- diagnosing unexpected spatial or temporal patterns
-- deciding whether to trust a model output
-- recording why a result was not used
-- noting an assumption that may need to be revisited
+- Choosing between two environmental datasets
+- Excluding, transforming, or aggregating observations
+- Changing a parameter value or model setting
+- Comparing alternative model runs
+- Diagnosing unexpected spatial or temporal patterns
+- Deciding whether to trust a model output
+- Recording why a result was not used
+- Noting an assumption that may need to be revisited
 
 ## Step-By-Step Exercise
 
@@ -97,6 +97,7 @@ What remains uncertain? Under what conditions should this decision be revisited?
 1.
 2.
 3.
+```
 
 ## Advanced tasks
 
@@ -106,7 +107,7 @@ What remains uncertain? Under what conditions should this decision be revisited?
 
 ## Expected Outcome
 
-By the end, you should have a lab notebook entry that:
+By the end, you should have a Research Diary entry that:
 
 - renders as a readable HTML document
 - records a real environmental modelling decision or exploration

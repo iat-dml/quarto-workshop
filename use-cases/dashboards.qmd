@@ -2,8 +2,6 @@
 title: "Dashboards"
 ---
 
-# Short Introduction
-
 A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with [`format: dashboard`]{.nowrap}.
 
 ## When a Dashboard Helps

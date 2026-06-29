@@ -122,4 +122,4 @@ After installation, you should be able to answer yes to these questions:
 
 ## Next Step
 
-Once the foundations are in place, move into the first use case: [Documenting Research in Progress](../use-cases/lab-notebook.qmd).
+Once the foundations are in place, move into the first use case: [Documenting Research in Progress](../use-cases/research-diary.qmd).

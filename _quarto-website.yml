@@ -17,7 +17,7 @@ website:
         text: Home
       - href: foundations/quarto-intro.qmd
         text: Foundations
-      - href: use-cases/lab-notebook.qmd
+      - href: use-cases/research-diary.qmd
         text: Academic Use Cases
       - href: advanced/templates-and-extensions.qmd
         text: Advanced Topics
@@ -35,9 +35,9 @@ website:
       - section: "Academic Use Cases"
         contents:
           - text: "Documenting Research in Progress"
-            href: use-cases/lab-notebook.qmd
+            href: use-cases/research-diary.qmd
           - text: "   ↳ Exercise"
-            href: exercises/lab-notebook-exercise.qmd
+            href: exercises/research-diary-exercise.qmd
           - text: "Writing Manuscripts"
             href: use-cases/manuscripts.qmd
           - text: "   ↳ Exercise"

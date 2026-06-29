@@ -2,9 +2,7 @@
 title: "Documenting Research in Progress"
 ---
 
-# Short Introduction
-
-Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.
+Quarto works well as a research diary or experiment log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.
 
 ## Why This Matters For Researchers
 
@@ -53,4 +51,4 @@ A researcher can keep one `.qmd` file for weekly notes that includes:
 Write what you decided and why, not only what you did. Future-you will care about the reasoning.
 :::
 
-[Go to the lab notebook exercise](../exercises/lab-notebook-exercise.qmd){.btn .btn-primary}
+[Go to the research diary exercise](../exercises/research-diary-exercise.qmd){.btn .btn-primary}

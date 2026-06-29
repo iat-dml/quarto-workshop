@@ -7,7 +7,7 @@ number-sections: false
 ::: btn-row
 [Start with the foundations →](foundations/quarto-intro.qmd){.btn .btn-primary}
 
-[Jump to use cases](use-cases/lab-notebook.qmd){.btn .btn-outline}
+[Jump to use cases](use-cases/research-diary.qmd){.btn .btn-outline}
 :::
 
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
@@ -111,7 +111,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 ::: {.card}
 [{{< iconify fa6-solid flask >}}]{.card-icon aria-hidden="true"}
 
-[Lab notebooks](use-cases/lab-notebook.qmd){.card-title}
+[Research Diary](use-cases/research-diary.qmd){.card-title}
 
 [Reproducible research, from rough exploration to a journal-ready PDF.]{.card-desc}
 

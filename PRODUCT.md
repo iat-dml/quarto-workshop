@@ -21,7 +21,7 @@ Spanning early-career researchers building their first durable workflow, experie
 
 A guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.
 
-Success: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce.
+Success: a researcher leaves able to produce a genuine output (research diary, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce.
 
 ## Brand Personality
 

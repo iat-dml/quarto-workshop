@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Foundations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../use-cases/lab-notebook.html"> 
+    <a class="nav-link" href="../use-cases/research-diary.html"> 
 <span class="menu-text">Academic Use Cases</span></a>
   </li>  
   <li class="nav-item">
@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/lab-notebook.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -382,13 +382,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../use-cases/lab-notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Documenting Research in Progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exercises/lab-notebook-exercise.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/research-diary-exercise.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">↳ Exercise</span></a>
   </div>
 </li>
@@ -503,11 +503,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
   <li><a href="#how-a-dashboard-is-laid-out-rows-and-columns" id="toc-how-a-dashboard-is-laid-out-rows-and-columns" class="nav-link" data-scroll-target="#how-a-dashboard-is-laid-out-rows-and-columns">How a Dashboard Is Laid Out: Rows and Columns</a></li>
+  </ul></li>
   <li><a href="#build-it-step-by-step" id="toc-build-it-step-by-step" class="nav-link" data-scroll-target="#build-it-step-by-step">Build It Step by Step</a></li>
   <li><a href="#stretch-a-what-if-scenario-explorer-optional" id="toc-stretch-a-what-if-scenario-explorer-optional" class="nav-link" data-scroll-target="#stretch-a-what-if-scenario-explorer-optional">Stretch: a what-if scenario explorer (optional)</a></li>
   <li><a href="#adapt-it-to-your-own-data" id="toc-adapt-it-to-your-own-data" class="nav-link" data-scroll-target="#adapt-it-to-your-own-data">Adapt It to Your Own Data</a></li>
   <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/dashboards-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -515,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/lab-notebook.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exercise: Build a Dashboard</h1>
 </div>
@@ -534,12 +534,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="learning-goal" class="level1">
-<h1>Learning Goal</h1>
+<section id="learning-goal" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
 <p>Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how <code>format: dashboard</code> arranges a page into rows and columns.</p>
 <p>You are building toward the dashboard shown on the <a href="../use-cases/dashboards.html">Dashboards</a> page. The complete, ready-to-run version lives in the repository as <code>use-cases/restoration-dashboard.qmd</code>, so you can copy exact code from there or compare as you go.</p>
-<section id="the-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<section id="the-data" class="level3">
+<h3 class="anchored" data-anchor-id="the-data">The Data</h3>
 <p>You will use a small synthetic dataset, <code>data/restoration-sites.csv</code>. Each row is one survey of one site:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
@@ -556,8 +556,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><a href="..\data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a></p>
 </section>
-<section id="how-a-dashboard-is-laid-out-rows-and-columns" class="level2">
-<h2 class="anchored" data-anchor-id="how-a-dashboard-is-laid-out-rows-and-columns">How a Dashboard Is Laid Out: Rows and Columns</h2>
+<section id="how-a-dashboard-is-laid-out-rows-and-columns" class="level3">
+<h3 class="anchored" data-anchor-id="how-a-dashboard-is-laid-out-rows-and-columns">How a Dashboard Is Laid Out: Rows and Columns</h3>
 <p>This is the part that trips most people up at first, so it is worth getting clear before you build.</p>
 <p>A dashboard fills the browser window and arranges your content into a grid of <strong>cards</strong>. Two heading levels control that grid:</p>
 <ul>
@@ -619,6 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Every code cell in a dashboard is an executable chunk, so in your own file its fence is <code>```{r}</code> (with curly braces). In the sketches on this page we write <code>```r</code> without braces only so they display as text instead of running.</p>
 </div>
 </div>
+</section>
 </section>
 <section id="build-it-step-by-step" class="level2">
 <h2 class="anchored" data-anchor-id="build-it-step-by-step">Build It Step by Step</h2>
@@ -782,7 +783,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

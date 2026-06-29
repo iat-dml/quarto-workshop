@@ -62,7 +62,7 @@ Quarto supports R, Python, Julia, and Observable JavaScript. Swap `r` for `pytho
 
 A doctoral researcher might use:
 
-- one Quarto file as a lab notebook for ongoing observations
+- one Quarto file as a research diary for ongoing observations
 - another as a manuscript draft that renders to PDF and DOCX
 - a slide deck generated from the same project for a conference talk
 - a simple website to share outputs and project updates

@@ -2,13 +2,13 @@
 title: "Exercise: Build a Dashboard"
 ---
 
-# Learning Goal
+## Learning Goal
 
 Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how `format: dashboard` arranges a page into rows and columns.
 
 You are building toward the dashboard shown on the [Dashboards](../use-cases/dashboards.qmd) page. The complete, ready-to-run version lives in the repository as `use-cases/restoration-dashboard.qmd`, so you can copy exact code from there or compare as you go.
 
-## The Data
+### The Data
 
 You will use a small synthetic dataset, `data/restoration-sites.csv`. Each row is one survey of one site:
 
@@ -29,7 +29,7 @@ It has five columns:
 
 [Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
 
-## How a Dashboard Is Laid Out: Rows and Columns
+### How a Dashboard Is Laid Out: Rows and Columns
 
 This is the part that trips most people up at first, so it is worth getting clear before you build.
 

@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Foundations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../use-cases/lab-notebook.html"> 
+    <a class="nav-link" href="../use-cases/research-diary.html"> 
 <span class="menu-text">Academic Use Cases</span></a>
   </li>  
   <li class="nav-item">
@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/lab-notebook.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/dashboards.html">Dashboards</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/dashboards.html">Dashboards</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -382,13 +382,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../use-cases/lab-notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Documenting Research in Progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exercises/lab-notebook-exercise.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercises/research-diary-exercise.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">↳ Exercise</span></a>
   </div>
 </li>
@@ -499,13 +499,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction">Short Introduction</a>
-  <ul class="collapse">
-  <li><a href="#when-a-dashboard-helps" id="toc-when-a-dashboard-helps" class="nav-link" data-scroll-target="#when-a-dashboard-helps">When a Dashboard Helps</a></li>
+  <li><a href="#when-a-dashboard-helps" id="toc-when-a-dashboard-helps" class="nav-link active" data-scroll-target="#when-a-dashboard-helps">When a Dashboard Helps</a></li>
   <li><a href="#how-a-dashboard-is-structured" id="toc-how-a-dashboard-is-structured" class="nav-link" data-scroll-target="#how-a-dashboard-is-structured">How A Dashboard Is Structured</a></li>
   <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build">What You Will Build</a></li>
   <li><a href="#how-interactive-can-a-dashboard-be" id="toc-how-interactive-can-a-dashboard-be" class="nav-link" data-scroll-target="#how-interactive-can-a-dashboard-be">How Interactive Can a Dashboard Be?</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/dashboards.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -513,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/lab-notebook.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/dashboards.html">Dashboards</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/dashboards.html">Dashboards</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Dashboards</h1>
 </div>
@@ -532,8 +529,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="short-introduction" class="level1">
-<h1>Short Introduction</h1>
 <p>A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with <span class="nowrap"><code>format: dashboard</code></span>.</p>
 <section id="when-a-dashboard-helps" class="level2">
 <h2 class="anchored" data-anchor-id="when-a-dashboard-helps">When a Dashboard Helps</h2>
@@ -594,7 +589,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="../exercises/dashboards-exercise.html" class="btn btn-primary">Go to the dashboards exercise</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -297,7 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Foundations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../use-cases/lab-notebook.html"> 
+    <a class="nav-link" href="../use-cases/research-diary.html"> 
 <span class="menu-text">Academic Use Cases</span></a>
   </li>  
   <li class="nav-item">
@@ -316,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/lab-notebook.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/lab-notebook-exercise.html">↳ Exercise</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/research-diary-exercise.html">↳ Exercise</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -382,13 +347,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../use-cases/lab-notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Documenting Research in Progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exercises/lab-notebook-exercise.html" class="sidebar-item-text sidebar-link active">
+  <a href="../exercises/research-diary-exercise.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">↳ Exercise</span></a>
   </div>
 </li>
@@ -504,17 +469,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#starter-scenario" id="toc-starter-scenario" class="nav-link" data-scroll-target="#starter-scenario">Starter Scenario</a></li>
   <li><a href="#step-by-step-exercise" id="toc-step-by-step-exercise" class="nav-link" data-scroll-target="#step-by-step-exercise">Step-By-Step Exercise</a></li>
   <li><a href="#suggested-starter-content" id="toc-suggested-starter-content" class="nav-link" data-scroll-target="#suggested-starter-content">Suggested Starter Content</a></li>
-  <li><a href="#stretch-task" id="toc-stretch-task" class="nav-link" data-scroll-target="#stretch-task">Stretch Task</a></li>
+  <li><a href="#advanced-tasks" id="toc-advanced-tasks" class="nav-link" data-scroll-target="#advanced-tasks">Advanced tasks</a></li>
   <li><a href="#expected-outcome" id="toc-expected-outcome" class="nav-link" data-scroll-target="#expected-outcome">Expected Outcome</a></li>
   <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/lab-notebook-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/research-diary-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/lab-notebook.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/lab-notebook-exercise.html">↳ Exercise</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/research-diary-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exercise: Build a Lab Notebook Page</h1>
 </div>
@@ -536,72 +501,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-goal" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
 <p>Create a Quarto document for documenting ongoing research activity in a structured, readable way.</p>
+<p>The focus is not only on recording what you did. The goal is to make the reasoning, evidence, uncertainty, and next steps clear enough that you or a collaborator could understand the decision later.</p>
 </section>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>You should be familiar with:</p>
 <ul>
-<li>basic Markdown headings and lists</li>
-<li>the idea of a YAML header</li>
-<li>opening or creating a <code>.qmd</code> file</li>
+<li><a href="../foundations/markdown-intro.html">Basic Markdown headings and lists</a></li>
+<li><a href="../foundations/yaml-intro.html">The idea of a YAML header</a></li>
+<li><a href="../foundations/quarto-intro.html">Opening or creating a <code>.qmd</code> file</a></li>
 </ul>
 </section>
 <section id="starter-scenario" class="level2">
 <h2 class="anchored" data-anchor-id="starter-scenario">Starter Scenario</h2>
-<p>You are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use.</p>
+<p>Choose one recent decision, comparison, or exploratory step from your own modelling work. This does not need to be a major result.</p>
+<p>Examples include:</p>
+<ul>
+<li>Choosing between two environmental datasets</li>
+<li>Excluding, transforming, or aggregating observations</li>
+<li>Changing a parameter value or model setting</li>
+<li>Comparing alternative model runs</li>
+<li>Diagnosing unexpected spatial or temporal patterns</li>
+<li>Deciding whether to trust a model output</li>
+<li>Recording why a result was not used</li>
+<li>Noting an assumption that may need to be revisited</li>
+</ul>
 </section>
 <section id="step-by-step-exercise" class="level2">
 <h2 class="anchored" data-anchor-id="step-by-step-exercise">Step-By-Step Exercise</h2>
 <ol type="1">
 <li>Create a new file called <code>notebook.qmd</code>.</li>
 <li>Add a YAML header with a title, your name, today’s date, and <code>format: html</code>.</li>
-<li>Add a heading for the current week.</li>
-<li>Write a short paragraph describing what you did.</li>
-<li>Add a bullet list of observations or decisions.</li>
-<li>Add a numbered list of next steps.</li>
-<li>Add a fenced code block or commented placeholder showing where a future chunk could go.</li>
+<li>Add a short context section explaining the project, model, dataset, or research question.</li>
+<li>Describe the recent data exploration or modelling decision you selected.</li>
+<li>List the inputs used, such as datasets, scripts, model versions, parameters, spatial extent, time period, or assumptions.</li>
+<li>Summarise the evidence you looked at by including a code chunk that prints relevant information to the html output. This could include a table, figure, map, model run ID, file path, warning message.</li>
+<li>State the decision or outcome.</li>
+<li>Explain the rationale for the decision.</li>
+<li>Note any uncertainty, limitations, or conditions under which the decision should be revisited.</li>
+<li>Add one to three concrete next steps.</li>
 </ol>
 </section>
 <section id="suggested-starter-content" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-starter-content">Suggested Starter Content</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Restoration Project Notebook"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Week 1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>This week I reviewed the sampling plan and checked the latest field observations.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Confirmed plot IDs</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Flagged missing measurements</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Noted one sensor calibration issue</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Recheck the field sheet</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Contact collaborators about the missing values</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Prepare the next visit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>---
+title: "Restoration Project Notebook"
+author: "Your Name"
+date: today
+format: html
+---
+
+## Context
+
+Project, model, dataset, or research question:
+
+## Entry 1: dd/mm/yyyy
+
+Briefly describe the recent modelling decision or data exploration. Explain why this step mattered for the modelling workflow or research question.
+
+## Inputs used
+
+- Dataset(s):
+- Script(s) or workflow step(s):
+- Model version or settings:
+- Spatial extent and time period:
+- Key assumptions:
+
+## Evidence
+
+Describe the evidence used to support the decision, using a code chunk to include any relevant data, summary, or visualization. 
+
+## Observations
+
+- What did you notice?
+- Were there unexpected patterns, warnings, or inconsistencies?
+- What seemed reliable or unreliable?
+
+## Decision or outcome
+
+State what you decided, changed, kept, rejected, or postponed.
+
+## Rationale
+
+Explain why the decision makes sense based on the available evidence.
+
+## Uncertainty and limitations
+
+What remains uncertain? Under what conditions should this decision be revisited?
+
+## Next steps
+
+1.
+2.
+3.</code></pre>
 </section>
-<section id="stretch-task" class="level2">
-<h2 class="anchored" data-anchor-id="stretch-task">Stretch Task</h2>
-<p>Add a callout block with a reminder about one issue to revisit next week.</p>
+<section id="advanced-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-tasks">Advanced tasks</h2>
+<ul>
+<li>Add a callout to highlight an assumption, risk, or issue to revisit.</li>
+<li>Add caching to the code chunk so that it runs only when the underlying data or code changes.</li>
+<li>Add a second entry for the next week and add the first entry to a collapsible callout. (works best for HTML output, not PDF)</li>
+</ul>
 </section>
 <section id="expected-outcome" class="level2">
 <h2 class="anchored" data-anchor-id="expected-outcome">Expected Outcome</h2>
-<p>By the end, you should have a simple notebook page that:</p>
+<p>By the end, you should have a research diary entry that:</p>
 <ul>
 <li>renders as a readable HTML document</li>
-<li>separates narrative, decisions, and tasks clearly</li>
-<li>could be reused as a template for future entries</li>
+<li>records a real environmental modelling decision or exploration</li>
+<li>separates context, evidence, decision, rationale, uncertainty, and next steps</li>
+<li>could help you or a collaborator understand the decision later</li>
+<li>could be reused as a template for future modelling work</li>
 </ul>
 </section>
 <section id="self-check" class="level2">
 <h2 class="anchored" data-anchor-id="self-check">Self-Check</h2>
 <p>Ask yourself:</p>
 <ul>
-<li>Does the page make sense if I read it again in a month?</li>
-<li>Can another team member understand what happened this week?</li>
+<li>Would this entry make sense if I read it again in a month?</li>
+<li>Can another researcher understand why the decision was made?</li>
+<li>Is the evidence specific enough to locate or reproduce the check?</li>
+<li>Are uncertainty and next steps recorded clearly?</li>
 <li>Is the structure simple enough to reuse consistently?</li>
 </ul>
 
@@ -1027,5 +1047,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/lab-notebook-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/research-diary-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

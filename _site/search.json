@@ -76,7 +76,7 @@
     "href": "use-cases/dashboards.html",
     "title": "Dashboards",
     "section": "",
-    "text": "A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with format: dashboard.\n\n\nDashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.\n\n\n\nA Quarto dashboard is built from a few simple pieces:\n\nformat: dashboard in the YAML turns the document into a dashboard.\nHeadings lay out the page: ## starts a row, and the cards inside it sit side by side as columns.\nCards are the panels that hold your content. Two special kinds are value boxes (a single headline number) and plot cards (a chart).\n\nIn code, the shape looks like this (each code cell uses an executable {r} block, shown here as plain text):\n---\ntitle: \"My Dashboard\"\nformat: dashboard\n---\n\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = 4)\n```\n\n## Row\n\n```r\n#| title: \"A chart\"\nplot_ly(...)\n```\n\n\n\nIn the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:\n\n\n\nA restoration-monitoring dashboard: value boxes across the top, interactive charts below.\n\n\nYou can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:\n\n\nA dashboard is normally a full-screen page of its own. See it in full screen here.\n\n\n\nQuarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:\n\nplotly charts: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.\nsortable tables: click a column header in the table above to reorder the rows (built with the DT package).\ntabsets: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.\n\nThe boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs Shiny and a running server, which a static host like GitHub Pages cannot provide.\nGo to the dashboards exercise",
+    "text": "A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with format: dashboard.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -87,8 +87,8 @@
     "objectID": "use-cases/dashboards.html#when-a-dashboard-helps",
     "href": "use-cases/dashboards.html#when-a-dashboard-helps",
     "title": "Dashboards",
-    "section": "",
-    "text": "Dashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.",
+    "section": "When a Dashboard Helps",
+    "text": "When a Dashboard Helps\nDashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -99,8 +99,8 @@
     "objectID": "use-cases/dashboards.html#how-a-dashboard-is-structured",
     "href": "use-cases/dashboards.html#how-a-dashboard-is-structured",
     "title": "Dashboards",
-    "section": "",
-    "text": "A Quarto dashboard is built from a few simple pieces:\n\nformat: dashboard in the YAML turns the document into a dashboard.\nHeadings lay out the page: ## starts a row, and the cards inside it sit side by side as columns.\nCards are the panels that hold your content. Two special kinds are value boxes (a single headline number) and plot cards (a chart).\n\nIn code, the shape looks like this (each code cell uses an executable {r} block, shown here as plain text):\n---\ntitle: \"My Dashboard\"\nformat: dashboard\n---\n\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = 4)\n```\n\n## Row\n\n```r\n#| title: \"A chart\"\nplot_ly(...)\n```",
+    "section": "How A Dashboard Is Structured",
+    "text": "How A Dashboard Is Structured\nA Quarto dashboard is built from a few simple pieces:\n\nformat: dashboard in the YAML turns the document into a dashboard.\nHeadings lay out the page: ## starts a row, and the cards inside it sit side by side as columns.\nCards are the panels that hold your content. Two special kinds are value boxes (a single headline number) and plot cards (a chart).\n\nIn code, the shape looks like this (each code cell uses an executable {r} block, shown here as plain text):\n---\ntitle: \"My Dashboard\"\nformat: dashboard\n---\n\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = 4)\n```\n\n## Row\n\n```r\n#| title: \"A chart\"\nplot_ly(...)\n```",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -111,8 +111,8 @@
     "objectID": "use-cases/dashboards.html#what-you-will-build",
     "href": "use-cases/dashboards.html#what-you-will-build",
     "title": "Dashboards",
-    "section": "",
-    "text": "In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:\n\n\n\nA restoration-monitoring dashboard: value boxes across the top, interactive charts below.\n\n\nYou can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:\n\n\nA dashboard is normally a full-screen page of its own. See it in full screen here.",
+    "section": "What You Will Build",
+    "text": "What You Will Build\nIn the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:\n\n\n\nA restoration-monitoring dashboard: value boxes across the top, interactive charts below.\n\n\nYou can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:\n\n\nA dashboard is normally a full-screen page of its own. See it in full screen here.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -123,8 +123,8 @@
     "objectID": "use-cases/dashboards.html#how-interactive-can-a-dashboard-be",
     "href": "use-cases/dashboards.html#how-interactive-can-a-dashboard-be",
     "title": "Dashboards",
-    "section": "",
-    "text": "Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:\n\nplotly charts: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.\nsortable tables: click a column header in the table above to reorder the rows (built with the DT package).\ntabsets: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.\n\nThe boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs Shiny and a running server, which a static host like GitHub Pages cannot provide.\nGo to the dashboards exercise",
+    "section": "How Interactive Can a Dashboard Be?",
+    "text": "How Interactive Can a Dashboard Be?\nQuarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:\n\nplotly charts: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.\nsortable tables: click a column header in the table above to reorder the rows (built with the DT package).\ntabsets: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.\n\nThe boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs Shiny and a running server, which a static host like GitHub Pages cannot provide.\nGo to the dashboards exercise",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -164,7 +164,7 @@
     "href": "index.html#how-to-use-this-site-what-you-will-learn",
     "title": "One Tool to Rule Them All",
     "section": "How To Use This Site & What You Will Learn",
-    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n\nFoundations\nMarkdown, YAML, and Quarto’s project model: the building blocks every output shares.\n\n\n\n\nLab notebooks\nReproducible research, from rough exploration to a journal-ready PDF.\n\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\n\nSlides\nBuild reveal.js talks from the same source as your paper.\n\n\n\n\nWebsites\nProject, lab, and personal sites with Quarto’s website mode.\n\n\n\n\nDashboards\nInteractive dashboards, plus brand.yml for one consistent visual identity.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
+    "text": "How To Use This Site & What You Will Learn\nWe have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.\n\n\n\nFoundations\nMarkdown, YAML, and Quarto’s project model: the building blocks every output shares.\n\n\n\n\nResearch Diary\nReproducible research, from rough exploration to a journal-ready PDF.\n\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\n\nSlides\nBuild reveal.js talks from the same source as your paper.\n\n\n\n\nWebsites\nProject, lab, and personal sites with Quarto’s website mode.\n\n\n\n\nDashboards\nInteractive dashboards, plus brand.yml for one consistent visual identity.\n\n\n\n\n\n\n\n\n\nWarningBefore you start\n\n\n\nMake sure Quarto ≥ 1.5 is installed and that you can run quarto check in your terminal. If you hit issues, see the Installing Quarto page."
   },
   {
     "objectID": "foundations/yaml-intro.html",
@@ -723,7 +723,7 @@
     "href": "exercises/dashboards-exercise.html",
     "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as use-cases/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.\n\n\n\n\n\nCreate a file my-dashboard.qmd. Use the path to the CSV relative to your file (for example data/restoration-sites.csv if the file sits in the project root).\n1. Header and setup.\n---\ntitle: \"Restoration Site Monitoring\"\nformat: dashboard\nexecute:\n  echo: false\n---\n\n```r\n#| label: setup\n#| include: false\nlibrary(readr)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(DT)\n\nsites &lt;- read_csv(\"../data/restoration-sites.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nlatest &lt;- sites |&gt;\n  filter(date == max(date))\n\nfirst &lt;- sites |&gt;\n  filter(date == min(date))\n```\necho: false hides the code, so the dashboard shows only results. latest keeps the most recent survey per site (used by the value boxes and the table), and first keeps the earliest one, so we can show how much cover has changed.\n2. A row of headline numbers (value boxes).\nA value box is a code cell with #| content: valuebox that returns a small list:\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = n_distinct(sites$site), icon = \"geo-alt\", color = \"primary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Surveys recorded\"\nlist(value = nrow(sites), icon = \"clipboard-data\", color = \"secondary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Cover change since 2023\"\nlist(value = paste0(\"+\", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), \"%\"),\n     icon = \"graph-up-arrow\", color = \"success\")\n```\nRender. Three coloured boxes appear side by side, three cards in one row.\n\n\n\n\n\n\nTipYou can put plain text on a dashboard too\n\n\n\nA card does not have to hold code. Write a short paragraph in its own row to add a description, exactly as the finished dashboard does at the top:\n## Row {height=\"15%\"}\n\nVegetation cover is recovering across all four restoration sites.\n\n\n3. Add the first chart: cover over time.\n## Row\n\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\nRender and hover the lines to read values. That is plotly’s interactivity, and it needs no server.\n4. Put a table beside it: the latest readings.\nA dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable DT table in the other:\n## Row\n\n### Column\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\n\n### Column\n```r\n#| title: \"Latest readings by site\"\nlatest |&gt;\n  select(Site = site,\n         `Cover (%)` = vegetation_cover_pct,\n         `Richness` = species_richness,\n         `Soil moisture (%)` = soil_moisture_pct) |&gt;\n  datatable(options = list(dom = \"t\"), rownames = FALSE)\n```\nRender. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.\n\n\n\nTo give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a tabset. We provide a second dataset, data/restoration-scenarios.csv, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).\nDownload restoration-scenarios.csv\nHere is what it produces. Switch the tabs above the chart to compare the scenarios:\n\n\nRead it in your setup chunk and add a small helper:\nscenarios &lt;- read_csv(\"../data/restoration-scenarios.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nplot_cover &lt;- function(scenario_name) {\n  scenarios |&gt;\n    filter(scenario == scenario_name) |&gt;\n    plot_ly(x = ~date, y = ~vegetation_cover_pct, color = ~site,\n            type = \"scatter\", mode = \"lines+markers\") |&gt;\n    layout(xaxis = list(title = \"\"),\n           yaxis = list(title = \"Cover (%)\", range = c(30, 95)),\n           legend = list(title = list(text = \"\")))\n}\nThen turn one column into a tabset, with one tab per scenario:\n### Column {.tabset}\n\n```r\n#| title: \"Baseline (no action)\"\nplot_cover(\"Baseline\")\n```\n\n```r\n#| title: \"Moderate restoration\"\nplot_cover(\"Moderate\")\n```\n\n```r\n#| title: \"Intensive restoration\"\nplot_cover(\"Intensive\")\n```\nBecause all three charts share a fixed y-axis (range = c(30, 95)), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.\n\n\n\nThe same structure works for any tidy dataset:\n\nswap restoration-sites.csv for your own CSV\nchange the column names in the value boxes, the plot_ly() call, and the table\nkeep the layout (## for rows, ### for columns) as it is\n\n\n\n\n\nDoes your dashboard render with format: dashboard?\nDo the three value boxes sit together in one row?\nDo the chart and the table sit side by side in a second row?\nCan you hover the chart, and sort the table by clicking a column header?",
+    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as use-cases/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -731,23 +731,11 @@
     ]
   },
   {
-    "objectID": "exercises/dashboards-exercise.html#the-data",
-    "href": "exercises/dashboards-exercise.html#the-data",
+    "objectID": "exercises/dashboards-exercise.html#learning-goal",
+    "href": "exercises/dashboards-exercise.html#learning-goal",
     "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "You will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv",
-    "crumbs": [
-      "Home",
-      "Academic Use Cases",
-      "   ↳ Exercise"
-    ]
-  },
-  {
-    "objectID": "exercises/dashboards-exercise.html#how-a-dashboard-is-laid-out-rows-and-columns",
-    "href": "exercises/dashboards-exercise.html#how-a-dashboard-is-laid-out-rows-and-columns",
-    "title": "Exercise: Build a Dashboard",
-    "section": "",
-    "text": "This is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
+    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as use-cases/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -758,8 +746,8 @@
     "objectID": "exercises/dashboards-exercise.html#build-it-step-by-step",
     "href": "exercises/dashboards-exercise.html#build-it-step-by-step",
     "title": "Exercise: Build a Dashboard",
-    "section": "",
-    "text": "Create a file my-dashboard.qmd. Use the path to the CSV relative to your file (for example data/restoration-sites.csv if the file sits in the project root).\n1. Header and setup.\n---\ntitle: \"Restoration Site Monitoring\"\nformat: dashboard\nexecute:\n  echo: false\n---\n\n```r\n#| label: setup\n#| include: false\nlibrary(readr)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(DT)\n\nsites &lt;- read_csv(\"../data/restoration-sites.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nlatest &lt;- sites |&gt;\n  filter(date == max(date))\n\nfirst &lt;- sites |&gt;\n  filter(date == min(date))\n```\necho: false hides the code, so the dashboard shows only results. latest keeps the most recent survey per site (used by the value boxes and the table), and first keeps the earliest one, so we can show how much cover has changed.\n2. A row of headline numbers (value boxes).\nA value box is a code cell with #| content: valuebox that returns a small list:\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = n_distinct(sites$site), icon = \"geo-alt\", color = \"primary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Surveys recorded\"\nlist(value = nrow(sites), icon = \"clipboard-data\", color = \"secondary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Cover change since 2023\"\nlist(value = paste0(\"+\", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), \"%\"),\n     icon = \"graph-up-arrow\", color = \"success\")\n```\nRender. Three coloured boxes appear side by side, three cards in one row.\n\n\n\n\n\n\nTipYou can put plain text on a dashboard too\n\n\n\nA card does not have to hold code. Write a short paragraph in its own row to add a description, exactly as the finished dashboard does at the top:\n## Row {height=\"15%\"}\n\nVegetation cover is recovering across all four restoration sites.\n\n\n3. Add the first chart: cover over time.\n## Row\n\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\nRender and hover the lines to read values. That is plotly’s interactivity, and it needs no server.\n4. Put a table beside it: the latest readings.\nA dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable DT table in the other:\n## Row\n\n### Column\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\n\n### Column\n```r\n#| title: \"Latest readings by site\"\nlatest |&gt;\n  select(Site = site,\n         `Cover (%)` = vegetation_cover_pct,\n         `Richness` = species_richness,\n         `Soil moisture (%)` = soil_moisture_pct) |&gt;\n  datatable(options = list(dom = \"t\"), rownames = FALSE)\n```\nRender. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.",
+    "section": "Build It Step by Step",
+    "text": "Build It Step by Step\nCreate a file my-dashboard.qmd. Use the path to the CSV relative to your file (for example data/restoration-sites.csv if the file sits in the project root).\n1. Header and setup.\n---\ntitle: \"Restoration Site Monitoring\"\nformat: dashboard\nexecute:\n  echo: false\n---\n\n```r\n#| label: setup\n#| include: false\nlibrary(readr)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(DT)\n\nsites &lt;- read_csv(\"../data/restoration-sites.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nlatest &lt;- sites |&gt;\n  filter(date == max(date))\n\nfirst &lt;- sites |&gt;\n  filter(date == min(date))\n```\necho: false hides the code, so the dashboard shows only results. latest keeps the most recent survey per site (used by the value boxes and the table), and first keeps the earliest one, so we can show how much cover has changed.\n2. A row of headline numbers (value boxes).\nA value box is a code cell with #| content: valuebox that returns a small list:\n## Row\n\n```r\n#| content: valuebox\n#| title: \"Sites monitored\"\nlist(value = n_distinct(sites$site), icon = \"geo-alt\", color = \"primary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Surveys recorded\"\nlist(value = nrow(sites), icon = \"clipboard-data\", color = \"secondary\")\n```\n\n```r\n#| content: valuebox\n#| title: \"Cover change since 2023\"\nlist(value = paste0(\"+\", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), \"%\"),\n     icon = \"graph-up-arrow\", color = \"success\")\n```\nRender. Three coloured boxes appear side by side, three cards in one row.\n\n\n\n\n\n\nTipYou can put plain text on a dashboard too\n\n\n\nA card does not have to hold code. Write a short paragraph in its own row to add a description, exactly as the finished dashboard does at the top:\n## Row {height=\"15%\"}\n\nVegetation cover is recovering across all four restoration sites.\n\n\n3. Add the first chart: cover over time.\n## Row\n\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\nRender and hover the lines to read values. That is plotly’s interactivity, and it needs no server.\n4. Put a table beside it: the latest readings.\nA dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable DT table in the other:\n## Row\n\n### Column\n```r\n#| title: \"Vegetation cover over time\"\nplot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,\n        type = \"scatter\", mode = \"lines+markers\") |&gt;\n  layout(xaxis = list(title = \"\"), yaxis = list(title = \"Cover (%)\"),\n         legend = list(title = list(text = \"\")))\n```\n\n### Column\n```r\n#| title: \"Latest readings by site\"\nlatest |&gt;\n  select(Site = site,\n         `Cover (%)` = vegetation_cover_pct,\n         `Richness` = species_richness,\n         `Soil moisture (%)` = soil_moisture_pct) |&gt;\n  datatable(options = list(dom = \"t\"), rownames = FALSE)\n```\nRender. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -770,8 +758,8 @@
     "objectID": "exercises/dashboards-exercise.html#stretch-a-what-if-scenario-explorer-optional",
     "href": "exercises/dashboards-exercise.html#stretch-a-what-if-scenario-explorer-optional",
     "title": "Exercise: Build a Dashboard",
-    "section": "",
-    "text": "To give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a tabset. We provide a second dataset, data/restoration-scenarios.csv, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).\nDownload restoration-scenarios.csv\nHere is what it produces. Switch the tabs above the chart to compare the scenarios:\n\n\nRead it in your setup chunk and add a small helper:\nscenarios &lt;- read_csv(\"../data/restoration-scenarios.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nplot_cover &lt;- function(scenario_name) {\n  scenarios |&gt;\n    filter(scenario == scenario_name) |&gt;\n    plot_ly(x = ~date, y = ~vegetation_cover_pct, color = ~site,\n            type = \"scatter\", mode = \"lines+markers\") |&gt;\n    layout(xaxis = list(title = \"\"),\n           yaxis = list(title = \"Cover (%)\", range = c(30, 95)),\n           legend = list(title = list(text = \"\")))\n}\nThen turn one column into a tabset, with one tab per scenario:\n### Column {.tabset}\n\n```r\n#| title: \"Baseline (no action)\"\nplot_cover(\"Baseline\")\n```\n\n```r\n#| title: \"Moderate restoration\"\nplot_cover(\"Moderate\")\n```\n\n```r\n#| title: \"Intensive restoration\"\nplot_cover(\"Intensive\")\n```\nBecause all three charts share a fixed y-axis (range = c(30, 95)), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.",
+    "section": "Stretch: a what-if scenario explorer (optional)",
+    "text": "Stretch: a what-if scenario explorer (optional)\nTo give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a tabset. We provide a second dataset, data/restoration-scenarios.csv, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).\nDownload restoration-scenarios.csv\nHere is what it produces. Switch the tabs above the chart to compare the scenarios:\n\n\nRead it in your setup chunk and add a small helper:\nscenarios &lt;- read_csv(\"../data/restoration-scenarios.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nplot_cover &lt;- function(scenario_name) {\n  scenarios |&gt;\n    filter(scenario == scenario_name) |&gt;\n    plot_ly(x = ~date, y = ~vegetation_cover_pct, color = ~site,\n            type = \"scatter\", mode = \"lines+markers\") |&gt;\n    layout(xaxis = list(title = \"\"),\n           yaxis = list(title = \"Cover (%)\", range = c(30, 95)),\n           legend = list(title = list(text = \"\")))\n}\nThen turn one column into a tabset, with one tab per scenario:\n### Column {.tabset}\n\n```r\n#| title: \"Baseline (no action)\"\nplot_cover(\"Baseline\")\n```\n\n```r\n#| title: \"Moderate restoration\"\nplot_cover(\"Moderate\")\n```\n\n```r\n#| title: \"Intensive restoration\"\nplot_cover(\"Intensive\")\n```\nBecause all three charts share a fixed y-axis (range = c(30, 95)), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -782,8 +770,8 @@
     "objectID": "exercises/dashboards-exercise.html#adapt-it-to-your-own-data",
     "href": "exercises/dashboards-exercise.html#adapt-it-to-your-own-data",
     "title": "Exercise: Build a Dashboard",
-    "section": "",
-    "text": "The same structure works for any tidy dataset:\n\nswap restoration-sites.csv for your own CSV\nchange the column names in the value boxes, the plot_ly() call, and the table\nkeep the layout (## for rows, ### for columns) as it is",
+    "section": "Adapt It to Your Own Data",
+    "text": "Adapt It to Your Own Data\nThe same structure works for any tidy dataset:\n\nswap restoration-sites.csv for your own CSV\nchange the column names in the value boxes, the plot_ly() call, and the table\nkeep the layout (## for rows, ### for columns) as it is",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -794,8 +782,8 @@
     "objectID": "exercises/dashboards-exercise.html#self-check",
     "href": "exercises/dashboards-exercise.html#self-check",
     "title": "Exercise: Build a Dashboard",
-    "section": "",
-    "text": "Does your dashboard render with format: dashboard?\nDo the three value boxes sit together in one row?\nDo the chart and the table sit side by side in a second row?\nCan you hover the chart, and sort the table by clicking a column header?",
+    "section": "Self-Check",
+    "text": "Self-Check\n\nDoes your dashboard render with format: dashboard?\nDo the three value boxes sit together in one row?\nDo the chart and the table sit side by side in a second row?\nCan you hover the chart, and sort the table by clicking a column header?",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1128,11 +1116,11 @@
     "text": "Do keep the warm paper-and-ink ground. Background is Paper (#FBF7F0), text is Ink (#1A1B2E).\nDo honor the Quartile Rule — each accent carries its use-case meaning everywhere it appears.\nDo border cards on all four sides with a single hairline rule; let the ambient shadow and the 2px hover lift carry separation and interactivity.\nDo keep prose at 65–75ch and body type at line-height 1.65.\nDo restrict uppercase to mono labels of ≤4 words.\nDo mix shadows from Ink, never black, and reserve the 2px lift for clickable surfaces.\nDo provide a prefers-reduced-motion alternative for every transition, and a visible :focus-visible ring everywhere.\nDo verify Muted-on-Paper hits ≥4.5:1 before using it for readable text; bump to Ink 2 if it’s close.\n\n\n\n\n\nDon’t ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.\nDon’t build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy (“streamline”, “empower”, “seamless”, “world-class”).\nDon’t overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.\nDon’t use colored left-stripe borders greater than 1px on cards, list items, or grid items (the homepage subject/team cards currently do; they are being reworked). The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.\nDon’t scaffold sections with numbered markers (01 · / 02 ·) by reflex — numbers earn their place only in a genuine ordered sequence.\nDon’t use gradient text (background-clip: text) or pure-white/pure-black anywhere.\nDon’t add a fourth typeface, and don’t set sentences or headings in all caps.\nDon’t use Muted gray for body text or placeholders — it fails contrast on warm paper."
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html",
-    "href": "exercises/lab-notebook-exercise.html",
+    "objectID": "exercises/research-diary-exercise.html",
+    "href": "exercises/research-diary-exercise.html",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "",
-    "text": "Create a Quarto document for documenting ongoing research activity in a structured, readable way.",
+    "text": "Create a Quarto document for documenting ongoing research activity in a structured, readable way.\nThe focus is not only on recording what you did. The goal is to make the reasoning, evidence, uncertainty, and next steps clear enough that you or a collaborator could understand the decision later.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1140,11 +1128,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#learning-goal",
-    "href": "exercises/lab-notebook-exercise.html#learning-goal",
+    "objectID": "exercises/research-diary-exercise.html#learning-goal",
+    "href": "exercises/research-diary-exercise.html#learning-goal",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "",
-    "text": "Create a Quarto document for documenting ongoing research activity in a structured, readable way.",
+    "text": "Create a Quarto document for documenting ongoing research activity in a structured, readable way.\nThe focus is not only on recording what you did. The goal is to make the reasoning, evidence, uncertainty, and next steps clear enough that you or a collaborator could understand the decision later.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1152,11 +1140,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#prerequisites",
-    "href": "exercises/lab-notebook-exercise.html#prerequisites",
+    "objectID": "exercises/research-diary-exercise.html#prerequisites",
+    "href": "exercises/research-diary-exercise.html#prerequisites",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "Prerequisites",
-    "text": "Prerequisites\nYou should be familiar with:\n\nbasic Markdown headings and lists\nthe idea of a YAML header\nopening or creating a .qmd file",
+    "text": "Prerequisites\nYou should be familiar with:\n\nBasic Markdown headings and lists\nThe idea of a YAML header\nOpening or creating a .qmd file",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1164,11 +1152,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#starter-scenario",
-    "href": "exercises/lab-notebook-exercise.html#starter-scenario",
+    "objectID": "exercises/research-diary-exercise.html#starter-scenario",
+    "href": "exercises/research-diary-exercise.html#starter-scenario",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "Starter Scenario",
-    "text": "Starter Scenario\nYou are working on a small restoration ecology project. You want a notebook entry that captures this week’s work, next steps, and one optional code area for later use.",
+    "text": "Starter Scenario\nChoose one recent decision, comparison, or exploratory step from your own modelling work. This does not need to be a major result.\nExamples include:\n\nChoosing between two environmental datasets\nExcluding, transforming, or aggregating observations\nChanging a parameter value or model setting\nComparing alternative model runs\nDiagnosing unexpected spatial or temporal patterns\nDeciding whether to trust a model output\nRecording why a result was not used\nNoting an assumption that may need to be revisited",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1176,11 +1164,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#step-by-step-exercise",
-    "href": "exercises/lab-notebook-exercise.html#step-by-step-exercise",
+    "objectID": "exercises/research-diary-exercise.html#step-by-step-exercise",
+    "href": "exercises/research-diary-exercise.html#step-by-step-exercise",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "Step-By-Step Exercise",
-    "text": "Step-By-Step Exercise\n\nCreate a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a heading for the current week.\nWrite a short paragraph describing what you did.\nAdd a bullet list of observations or decisions.\nAdd a numbered list of next steps.\nAdd a fenced code block or commented placeholder showing where a future chunk could go.",
+    "text": "Step-By-Step Exercise\n\nCreate a new file called notebook.qmd.\nAdd a YAML header with a title, your name, today’s date, and format: html.\nAdd a short context section explaining the project, model, dataset, or research question.\nDescribe the recent data exploration or modelling decision you selected.\nList the inputs used, such as datasets, scripts, model versions, parameters, spatial extent, time period, or assumptions.\nSummarise the evidence you looked at by including a code chunk that prints relevant information to the html output. This could include a table, figure, map, model run ID, file path, warning message.\nState the decision or outcome.\nExplain the rationale for the decision.\nNote any uncertainty, limitations, or conditions under which the decision should be revisited.\nAdd one to three concrete next steps.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1188,11 +1176,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#suggested-starter-content",
-    "href": "exercises/lab-notebook-exercise.html#suggested-starter-content",
+    "objectID": "exercises/research-diary-exercise.html#suggested-starter-content",
+    "href": "exercises/research-diary-exercise.html#suggested-starter-content",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "Suggested Starter Content",
-    "text": "Suggested Starter Content\n---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Week 1\n\nThis week I reviewed the sampling plan and checked the latest field observations.\n\n- Confirmed plot IDs\n- Flagged missing measurements\n- Noted one sensor calibration issue\n\n1. Recheck the field sheet\n2. Contact collaborators about the missing values\n3. Prepare the next visit",
+    "text": "Suggested Starter Content\n---\ntitle: \"Restoration Project Notebook\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\n\n## Context\n\nProject, model, dataset, or research question:\n\n## Entry 1: dd/mm/yyyy\n\nBriefly describe the recent modelling decision or data exploration. Explain why this step mattered for the modelling workflow or research question.\n\n## Inputs used\n\n- Dataset(s):\n- Script(s) or workflow step(s):\n- Model version or settings:\n- Spatial extent and time period:\n- Key assumptions:\n\n## Evidence\n\nDescribe the evidence used to support the decision, using a code chunk to include any relevant data, summary, or visualization. \n\n## Observations\n\n- What did you notice?\n- Were there unexpected patterns, warnings, or inconsistencies?\n- What seemed reliable or unreliable?\n\n## Decision or outcome\n\nState what you decided, changed, kept, rejected, or postponed.\n\n## Rationale\n\nExplain why the decision makes sense based on the available evidence.\n\n## Uncertainty and limitations\n\nWhat remains uncertain? Under what conditions should this decision be revisited?\n\n## Next steps\n\n1.\n2.\n3.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1200,11 +1188,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#stretch-task",
-    "href": "exercises/lab-notebook-exercise.html#stretch-task",
+    "objectID": "exercises/research-diary-exercise.html#markdown",
+    "href": "exercises/research-diary-exercise.html#markdown",
     "title": "Exercise: Build a Lab Notebook Page",
-    "section": "Stretch Task",
-    "text": "Stretch Task\nAdd a callout block with a reminder about one issue to revisit next week.",
+    "section": "```markdown",
+    "text": "```markdown\ntitle: “Restoration Project Notebook” author: “Your Name” date: today format: html —",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1212,11 +1200,131 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#expected-outcome",
-    "href": "exercises/lab-notebook-exercise.html#expected-outcome",
+    "objectID": "exercises/research-diary-exercise.html#context",
+    "href": "exercises/research-diary-exercise.html#context",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Context",
+    "text": "Context\nProject, model, dataset, or research question:",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#entry-1-ddmmyyyy",
+    "href": "exercises/research-diary-exercise.html#entry-1-ddmmyyyy",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Entry 1: dd/mm/yyyy",
+    "text": "Entry 1: dd/mm/yyyy\nBriefly describe the recent modelling decision or data exploration. Explain why this step mattered for the modelling workflow or research question.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#inputs-used",
+    "href": "exercises/research-diary-exercise.html#inputs-used",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Inputs used",
+    "text": "Inputs used\n\nDataset(s):\nScript(s) or workflow step(s):\nModel version or settings:\nSpatial extent and time period:\nKey assumptions:",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#evidence",
+    "href": "exercises/research-diary-exercise.html#evidence",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Evidence",
+    "text": "Evidence\nDescribe the evidence used to support the decision, using a code chunk to include any relevant data, summary, or visualization.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#observations",
+    "href": "exercises/research-diary-exercise.html#observations",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Observations",
+    "text": "Observations\n\nWhat did you notice?\nWere there unexpected patterns, warnings, or inconsistencies?\nWhat seemed reliable or unreliable?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#decision-or-outcome",
+    "href": "exercises/research-diary-exercise.html#decision-or-outcome",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Decision or outcome",
+    "text": "Decision or outcome\nState what you decided, changed, kept, rejected, or postponed.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#rationale",
+    "href": "exercises/research-diary-exercise.html#rationale",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Rationale",
+    "text": "Rationale\nExplain why the decision makes sense based on the available evidence.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#uncertainty-and-limitations",
+    "href": "exercises/research-diary-exercise.html#uncertainty-and-limitations",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Uncertainty and limitations",
+    "text": "Uncertainty and limitations\nWhat remains uncertain? Under what conditions should this decision be revisited?",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#next-steps",
+    "href": "exercises/research-diary-exercise.html#next-steps",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Next steps",
+    "text": "Next steps",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#advanced-tasks",
+    "href": "exercises/research-diary-exercise.html#advanced-tasks",
+    "title": "Exercise: Build a Lab Notebook Page",
+    "section": "Advanced tasks",
+    "text": "Advanced tasks\n\nAdd a callout to highlight an assumption, risk, or issue to revisit.\nAdd caching to the code chunk so that it runs only when the underlying data or code changes.\nAdd a second entry for the next week and add the first entry to a collapsible callout. (works best for HTML output, not PDF)",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/research-diary-exercise.html#expected-outcome",
+    "href": "exercises/research-diary-exercise.html#expected-outcome",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "Expected Outcome",
-    "text": "Expected Outcome\nBy the end, you should have a simple notebook page that:\n\nrenders as a readable HTML document\nseparates narrative, decisions, and tasks clearly\ncould be reused as a template for future entries",
+    "text": "Expected Outcome\nBy the end, you should have a research diary entry that:\n\nrenders as a readable HTML document\nrecords a real environmental modelling decision or exploration\nseparates context, evidence, decision, rationale, uncertainty, and next steps\ncould help you or a collaborator understand the decision later\ncould be reused as a template for future modelling work",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1224,11 +1332,11 @@
     ]
   },
   {
-    "objectID": "exercises/lab-notebook-exercise.html#self-check",
-    "href": "exercises/lab-notebook-exercise.html#self-check",
+    "objectID": "exercises/research-diary-exercise.html#self-check",
+    "href": "exercises/research-diary-exercise.html#self-check",
     "title": "Exercise: Build a Lab Notebook Page",
     "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nDoes the page make sense if I read it again in a month?\nCan another team member understand what happened this week?\nIs the structure simple enough to reuse consistently?",
+    "text": "Self-Check\nAsk yourself:\n\nWould this entry make sense if I read it again in a month?\nCan another researcher understand why the decision was made?\nIs the evidence specific enough to locate or reproduce the check?\nAre uncertainty and next steps recorded clearly?\nIs the structure simple enough to reuse consistently?",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1456,7 +1564,7 @@
     "href": "foundations/quarto-intro.html",
     "title": "What Is Quarto?",
     "section": "",
-    "text": "Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.\nQuarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.\n\n\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.\n\n\n\n\n\nQuarto uses readable plain text files with the .qmd extension. A binary format (such as .docx or .xlsx) is stored in a way only its own software can read, so you cannot see what actually changed between two versions of a file. Plain text can: every edit is a visible line that you can track, review, and roll back.\n\n\n\n\n\n\nFigure 1: A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.\n\n\n\n\n\n\nA single source file can render to many polished outputs: the same content, reshaped for each medium. Here is one short document rendered three different ways:\n\n\n\n\n\n\nHTML page\n\n\n\n\n\n\n\nPDF\n\n\n\n\n\n\n\nWord (DOCX)\n\n\n\n\n\nYou write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.\n\n\n\n\n\n\nNoteIf you know LaTeX\n\n\n\nIf you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.\n\n\n\n\n\nQuarto can run code inside the document, not just display it. The result below is computed when the page is rendered, not typed in by hand:\n\n2 + 2\n\n[1] 4\n\n\nQuarto supports R, Python, Julia, and Observable JavaScript. Swap r for python or julia in the chunk header and the same idea works, so everyone can stay in the language they know.\n\n\n\n\nA doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output\n\n\n\n\n\n\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
+    "text": "Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.\nQuarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.\n\n\nResearch outputs rarely stay in one format. The same project may need:\n\nnotes during exploration\na manuscript draft\nconference slides\na project website\nan interactive communication piece\n\nQuarto supports all of these with a common syntax and shared project structure.\n\n\n\n\n\nQuarto uses readable plain text files with the .qmd extension. A binary format (such as .docx or .xlsx) is stored in a way only its own software can read, so you cannot see what actually changed between two versions of a file. Plain text can: every edit is a visible line that you can track, review, and roll back.\n\n\n\n\n\n\nFigure 1: A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.\n\n\n\n\n\n\nA single source file can render to many polished outputs: the same content, reshaped for each medium. Here is one short document rendered three different ways:\n\n\n\n\n\n\nHTML page\n\n\n\n\n\n\n\nPDF\n\n\n\n\n\n\n\nWord (DOCX)\n\n\n\n\n\nYou write it once; Quarto handles the formatting for each. The same idea extends to slides, dashboards, and full websites, the outputs you will build in the rest of this workshop. In fact, the website you are reading right now was built with Quarto.\n\n\n\n\n\n\nNoteIf you know LaTeX\n\n\n\nIf you have used LaTeX, for example through Overleaf, Quarto will feel familiar: you write in a plain-text source and can produce PDFs with proper mathematical notation. The main difference is that Quarto uses Markdown, which is simpler than LaTeX markup, and renders the same source to other formats as well, such as HTML, Word, and slides, not only PDF. For PDF output Quarto relies on LaTeX internally, so you can still include raw LaTeX where you need it.\n\n\n\n\n\nQuarto can run code inside the document, not just display it. The result below is computed when the page is rendered, not typed in by hand:\n\n2 + 2\n\n[1] 4\n\n\nQuarto supports R, Python, Julia, and Observable JavaScript. Swap r for python or julia in the chunk header and the same idea works, so everyone can stay in the language they know.\n\n\n\n\nA doctoral researcher might use:\n\none Quarto file as a research diary for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output\n\n\n\n\n\n\nContinue to Markdown for Beginners to learn the authoring syntax that most Quarto pages rely on.",
     "crumbs": [
       "Home",
       "Foundations",
@@ -1492,7 +1600,7 @@
     "href": "foundations/quarto-intro.html#concrete-academic-example",
     "title": "What Is Quarto?",
     "section": "",
-    "text": "A doctoral researcher might use:\n\none Quarto file as a lab notebook for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output",
+    "text": "A doctoral researcher might use:\n\none Quarto file as a research diary for ongoing observations\nanother as a manuscript draft that renders to PDF and DOCX\na slide deck generated from the same project for a conference talk\na simple website to share outputs and project updates\n\nThat is the larger theme of this workshop: one authoring system, many academic uses.\n\n\n\n\n\n\nImportantQuarto, Markdown, and YAML\n\n\n\nMost Quarto files combine three ingredients:\n\nYAML for metadata and configuration\nMarkdown for the written content\noptional code chunks for computation and generated output",
     "crumbs": [
       "Home",
       "Foundations",
@@ -1582,7 +1690,7 @@
     "href": "PRODUCT.html",
     "title": "Product",
     "section": "",
-    "text": "brand\nSplit surface: the landing page and overall identity are brand (the design is part of the message), while the interior reference pages lean product (design serves fast lookup). PRODUCT.md carries brand as the default; override to product when working purely on interior docs utility.\n\n\n\nResearchers, across two arrival paths:\n\nIn a live workshop session, following the site top-to-bottom while learning.\nReturning later, jumping straight to one page when stuck on a specific output format.\n\nSpanning early-career researchers building their first durable workflow, experienced researchers tired of juggling disconnected tools, and teams that care about reproducibility, transparency, and reuse. Mixed technical background: comfortable with at least one of R / Python / Julia is helpful but not assumed.\nThe job to be done: learn to author once in plain text and render to many professional outputs (HTML, PDF, DOCX, slides, dashboards, websites) without switching tools, then keep the site as a reference.\n\n\n\nA guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce.\n\n\n\nScholarly and editorial. Warm, literate, quietly confident, the feel of a well-made academic publication rather than a software landing page. The voice is clear, specific, and generous; it explains the why, not only the how.\n\nThree words: literate, credible, unhurried.\nEmotional goal: a researcher should feel that adopting Quarto is a calm, sensible upgrade in capable hands, with no hype.\n\n\n\n\n\nGeneric default docs theme — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.\nCorporate SaaS landing — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.\nOverdesigned / flashy — heavy animation, glassmorphism, decorative effects that compete with learning.\nAI-slop card scaffolding — the current homepage subject cards and after-body nav cards lean on numbered section markers (01 · / 02 ·) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend.\n\n\n\n\n\nPractice what you preach. The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.\nTeach by showing. Real rendered output and runnable code over abstract description.\nReference-first navigation. A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.\nEarn every flourish. Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.\nCredible, not corporate. Scholarly restraint throughout; no marketing cadence, no hype.\n\n\n\n\nTarget WCAG 2.1 AA.\n\nBody text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.\nVisible keyboard focus and full keyboard navigability.\nFull prefers-reduced-motion alternatives for any motion.\nBoth the light and dark brand.yml themes must pass contrast.\nContent must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session."
+    "text": "brand\nSplit surface: the landing page and overall identity are brand (the design is part of the message), while the interior reference pages lean product (design serves fast lookup). PRODUCT.md carries brand as the default; override to product when working purely on interior docs utility.\n\n\n\nResearchers, across two arrival paths:\n\nIn a live workshop session, following the site top-to-bottom while learning.\nReturning later, jumping straight to one page when stuck on a specific output format.\n\nSpanning early-career researchers building their first durable workflow, experienced researchers tired of juggling disconnected tools, and teams that care about reproducibility, transparency, and reuse. Mixed technical background: comfortable with at least one of R / Python / Julia is helpful but not assumed.\nThe job to be done: learn to author once in plain text and render to many professional outputs (HTML, PDF, DOCX, slides, dashboards, websites) without switching tools, then keep the site as a reference.\n\n\n\nA guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (research diary, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce.\n\n\n\nScholarly and editorial. Warm, literate, quietly confident, the feel of a well-made academic publication rather than a software landing page. The voice is clear, specific, and generous; it explains the why, not only the how.\n\nThree words: literate, credible, unhurried.\nEmotional goal: a researcher should feel that adopting Quarto is a calm, sensible upgrade in capable hands, with no hype.\n\n\n\n\n\nGeneric default docs theme — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.\nCorporate SaaS landing — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.\nOverdesigned / flashy — heavy animation, glassmorphism, decorative effects that compete with learning.\nAI-slop card scaffolding — the current homepage subject cards and after-body nav cards lean on numbered section markers (01 · / 02 ·) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend.\n\n\n\n\n\nPractice what you preach. The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.\nTeach by showing. Real rendered output and runnable code over abstract description.\nReference-first navigation. A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.\nEarn every flourish. Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.\nCredible, not corporate. Scholarly restraint throughout; no marketing cadence, no hype.\n\n\n\n\nTarget WCAG 2.1 AA.\n\nBody text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.\nVisible keyboard focus and full keyboard navigability.\nFull prefers-reduced-motion alternatives for any motion.\nBoth the light and dark brand.yml themes must pass contrast.\nContent must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session."
   },
   {
     "objectID": "PRODUCT.html#register",
@@ -1603,7 +1711,7 @@
     "href": "PRODUCT.html#product-purpose",
     "title": "Product",
     "section": "",
-    "text": "A guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (lab notebook, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce."
+    "text": "A guided workshop and standing reference for Quarto, the open-source scientific and technical publishing system. It moves researchers from scattered authoring workflows to a single integrated system, organised as Foundations → Academic Use Cases → Advanced Topics, each section paired with a hands-on exercise grounded in a real academic scenario.\nSuccess: a researcher leaves able to produce a genuine output (research diary, manuscript, talk, or website) in Quarto, and comes back to the site when they need it again. The site is also a working demonstration: built in Quarto itself, it is evidence of what the tool can produce."
   },
   {
     "objectID": "PRODUCT.html#brand-personality",
@@ -1634,11 +1742,11 @@
     "text": "Target WCAG 2.1 AA.\n\nBody text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.\nVisible keyboard focus and full keyboard navigability.\nFull prefers-reduced-motion alternatives for any motion.\nBoth the light and dark brand.yml themes must pass contrast.\nContent must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session."
   },
   {
-    "objectID": "use-cases/lab-notebook.html",
-    "href": "use-cases/lab-notebook.html",
+    "objectID": "use-cases/research-diary.html",
+    "href": "use-cases/research-diary.html",
     "title": "Documenting Research in Progress",
     "section": "",
-    "text": "Quarto works well as a lab notebook or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.\n\n\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.\n\n\n\n\n\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.\n\n\n\n\nImagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "text": "Quarto works well as a research diary or research log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1646,11 +1754,11 @@
     ]
   },
   {
-    "objectID": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
-    "href": "use-cases/lab-notebook.html#why-this-matters-for-researchers",
+    "objectID": "use-cases/research-diary.html#why-this-matters-for-researchers",
+    "href": "use-cases/research-diary.html#why-this-matters-for-researchers",
     "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Research in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
+    "section": "Why This Matters For Researchers",
+    "text": "Why This Matters For Researchers\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nintermediate results that informed decisions\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1658,11 +1766,11 @@
     ]
   },
   {
-    "objectID": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/lab-notebook.html#key-quarto-features-for-this-workflow",
+    "objectID": "use-cases/research-diary.html#key-quarto-features-for-this-workflow",
+    "href": "use-cases/research-diary.html#key-quarto-features-for-this-workflow",
     "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Markdown headings make it easy to separate entries by date, experiment, or task.\n\n\n\nYAML can record authorship, date, project name, and output preferences.\n\n\n\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\n\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
+    "section": "Key Quarto Features For This Workflow",
+    "text": "Key Quarto Features For This Workflow\n\nClear Daily or Weekly Entries\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\nMetadata At The Top\nYAML can record authorship, date, project name, and output preferences.\n\n\nOptional Code Chunks\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\nMultiple Outputs\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1670,11 +1778,11 @@
     ]
   },
   {
-    "objectID": "use-cases/lab-notebook.html#concrete-academic-example",
-    "href": "use-cases/lab-notebook.html#concrete-academic-example",
+    "objectID": "use-cases/research-diary.html#concrete-academic-example",
+    "href": "use-cases/research-diary.html#concrete-academic-example",
     "title": "Documenting Research in Progress",
-    "section": "",
-    "text": "Imagine a field ecology project. A researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from the field\nlinks to raw data files\na short list of unresolved issues\na simple chunk that prints the number of new observations collected\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the lab notebook exercise",
+    "section": "Concrete Academic Example",
+    "text": "Concrete Academic Example\nThink of a recent modelling project you’ve worked on. How did you keep track of your decisions, observations and intermediate results?\nA researcher can keep one .qmd file for weekly notes that includes:\n\nobservations from different stages of model development\nlinks to datasets, scripts, and model runs\na short list of unresolved issues\na simple chunk that prints the current state of results or a key figure\n\n\n\n\n\n\n\nNoteGood notebook habit\n\n\n\nWrite what you decided and why, not only what you did. Future-you will care about the reasoning.\n\n\nGo to the research diary exercise",
     "crumbs": [
       "Home",
       "Academic Use Cases",
