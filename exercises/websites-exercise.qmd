@@ -2,7 +2,7 @@
 title: "Exercise: Build and Publish a Quarto Website"
 ---
 
-# Learning Goal
+## Learning Goal
 
 By the end of this exercise you will have built a small Quarto website on your own computer and
 published it live on the internet — with a web address you can share. It is written for people
@@ -44,7 +44,9 @@ keep projects and run:
 quarto create project website my-site
 ```
 
-This makes a new folder called `my-site` containing a few starter files:
+You will be asked to provide a title for your website in the terminal, enter what you want or just 'my-site'. 
+
+This makes a new folder called `my-site`, in the directory that your terminal was set to, navigate into this folder in the file explorer of your editor. It contains a few starter files:
 
 - **`_quarto.yml`** — the project's settings file. It controls things that apply to the *whole*
   site, like its title, the navigation bar, and the colour theme.
@@ -63,15 +65,14 @@ same starter folder.
 
 ## Step 2 — Preview Your Site
 
-Move into the new folder and start a live preview:
+**Option 1**: Open one of your pages such as `index.qmd` in your editor and click the **Preview** button at the top of the file editor window. This opens a live preview of the page in your browser.
 
+**Option 2**: In your terminal, make sure you are in the `my-site` folder and start a live preview:
 ```bash
-cd my-site
 quarto preview
 ```
 
-Your browser opens with the site already running. Leave this command going while you work —
-every time you save a file, the preview refreshes automatically so you can see changes instantly.
+The page will be opened in the viewer window on the right side of your editor. You can also open it in your default browser by clicking the link in the terminal. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly.
 Press `Ctrl + C` in the terminal to stop it later.
 
 ## Step 3 — Understand `_quarto.yml`
@@ -111,7 +112,7 @@ Reading it from top to bottom:
 
 Change the `title` to your own and save. Watch the preview update.
 
-## Step 4 — Edit the Home Page and Add a Page
+## Step 4 — Edit the Home Page
 
 Open `index.qmd`. Below the `---` header, the content is just Markdown — the same headings,
 lists, links, and callouts you have already met in this workshop. Replace the starter text with a
@@ -122,22 +123,154 @@ short welcome:
 title: "Welcome"
 ---
 
-## About this site
-
 A small site I built while learning Quarto. Use the menu above to look around.
 ```
 
-Now add a third page. Create a file called `resources.qmd` next to the others:
+## Step 5 — Adding an About Page
+
+Your starter project already includes a second page, `about.qmd`. Quarto has a dedicated
+**About** layout that turns an ordinary page into a tidy profile — a photo, a short bio, and a
+row of links to your professional profiles. You switch it on by adding an `about:` block to the
+page's front matter. The full reference is in the
+[Quarto About Pages guide](https://quarto.org/docs/websites/website-about.html).
+
+Open `about.qmd` and replace its contents with:
 
 ```markdown
 ---
-title: "Resources"
+title: "About Me"
+image: profile.jpg
+about:
+  template: jolla
+  image-shape: round
+  image-width: 12em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/your-username
+    - icon: envelope
+      text: Email
+      href: mailto:you@example.com
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.com
 ---
 
-A few links and materials I want to share.
+I am a researcher working on something interesting. I built this site while learning Quarto.
 ```
 
-A new file is not visible to visitors until you link it. Add it to the navbar in `_quarto.yml`:
+Drop a photo of yourself named `profile.jpg` next to the page — or point `image:` at any image you have, or
+remove that line to skip the photo entirely.
+
+Reading the `about:` block:
+
+- `template:` chooses the overall layout. Quarto ships five, each arranging the photo, bio, and
+  links differently: **`jolla`** (centred photo with links below — a clean personal profile),
+  **`trestles`**, **`solana`**, **`marquee`**, and **`broadside`**. Swap the name and watch the
+  preview rearrange until one fits.
+- `image:`, `image-shape:` (`round`, `rounded`, or `rectangle`), and `image-width:` control how
+  the photo appears.
+- `links:` is the row of profile links. Each entry has an `href`, the `text` shown, and an `icon`.
+  Everything below the front matter becomes your bio.
+
+The `icon:` names come from the built-in [Bootstrap icon set](https://icons.getbootstrap.com/),
+which covers the common ones (`github`, `twitter`, `linkedin`, `envelope`, and so on).
+
+::: {.callout-tip}
+## Icons for academic services
+
+The built-in Bootstrap icons don't include some services researchers rely on, such as **ORCID**
+and **ResearchGate**. For those, add the
+[Font Awesome extension](https://github.com/quarto-ext/fontawesome), which brings roughly 2,000
+more icons (including academic brands). Install it from inside your project folder:
+
+```bash
+quarto add quarto-ext/fontawesome
+```
+
+Then drop its shortcode wherever you want an icon — for example, a small link row in your bio:
+
+```markdown
+[{{< fa brands orcid >}} ORCID](https://orcid.org/0000-0000-0000-0000)
+[{{< fa brands researchgate >}} ResearchGate](https://www.researchgate.net/profile/your-name)
+```
+
+Brand icons need the `brands` keyword. Browse the full set at
+[fontawesome.com](https://fontawesome.com/search?m=free).
+:::
+
+## Step 6 — Add a Publications Page (a Listing)
+
+So far you have written every page by hand. Quarto can also build a page *for* you
+from a data file — this is called a **listing**. Listings can be used for [blogs](https://iat-dml.github.io/news.html), [presentations](https://blenback.github.io/presentations.html) or even [staff pages](https://nascent-peru.github.io/about/team.html) and as usual the Quarto guide provides a lot of detail on how to do this [here](https://quarto.org/docs/websites/website-listings.html). In this exercise however we will use it to make a page listing your scientific publications. This is actually a more advanced use-case and uses a custom listing template that the authors developed for their own sites. 
+
+The approach has three ingredients:
+
+1. **A data file** (`.yaml`) holding the details of each publication — title, authors, year, DOI, links, and so on.
+2. **A template** (`.ejs`) that controls how each entry is laid out.
+3. **A page** (`.qmd`) with a `listing` block that points at the data and the template.
+
+You don't have to write the data file or the template from scratch — download the
+two starter files below and save them into your project:
+
+[Download publications.yaml](/assets/publications.yaml){.btn .btn-primary download="publications.yaml"}
+
+[Download publication_yearly.ejs](/assets/publication_yearly.ejs){.btn .btn-primary download="publication_yearly.ejs"}
+
+Keep things tidy by giving each file its own folder inside your project:
+
+- put **`publication_yearly.ejs`** in a new folder called **`ejs/`**, so it lives at `ejs/publication_yearly.ejs`
+- put **`publications.yaml`** in a new folder called **`publications/`**, so it lives at `publications/publications.yaml`
+
+Open `publications.yaml` to see how it is built. It contains a single complete
+example entry. Each publication is a list item (it begins with a `-`) carrying
+fields such as `title`, `authors`, `year`, `doi`, and an optional `summary`. To add
+your own work, copy the whole block and fill in your details; empty fields like
+`code_url: ''` simply don't appear.
+
+::: {.callout-tip}
+## Let your reference manager do the typing
+
+You don't have to fill in `publications.yaml` entirely by hand. Most of these
+fields already live in your reference manager. Export your publications as a
+**BibTeX (`.bib`) file** from whichever tool you use — Zotero, Mendeley, EndNote,
+and others all support this — and use it to populate the YAML. That keeps your
+publications page in step with the library you already maintain.
+:::
+
+With the data and template in place, create the page that ties them together. Make
+a new file called `publications.qmd` next to your other pages and paste in:
+
+```markdown
+---
+format:
+  html:
+    anchor-sections: true
+listing:
+  - id: Journal-articles
+    template: ejs/publication_yearly.ejs
+    contents:
+    - publications/publications.yaml
+    field-display-names:
+      summary: "Summary"
+    field-types:
+      summary: raw
+---
+
+## Journal Articles
+::: {#Journal-articles}
+:::
+```
+
+Reading the front matter:
+
+- `listing:` tells Quarto to build a listing, here given the id `Journal-articles`.
+- `template:` points at the `.ejs` file in your `ejs/` folder, which decides how each entry looks.
+- `contents:` points at the data file in your `publications/` folder.
+- `field-types: summary: raw` lets the rich HTML summaries in the data file render as formatted text instead of as plain characters.
+- The empty `::: {#Journal-articles}` block in the body is the placeholder where Quarto drops the finished listing.
+
+Finally, a new page is invisible until you link it. Add it to the navbar in `_quarto.yml`:
 
 ```yaml
     left:
@@ -145,16 +278,25 @@ A new file is not visible to visitors until you link it. Add it to the navbar in
         text: Home
       - href: about.qmd
         text: About
-      - href: resources.qmd
-        text: Resources
+      - href: publications.qmd
+        text: Publications
 ```
 
-Save and check that the new menu item appears and works in the preview.
+Save and check the preview — your publications should appear as a clean, consistent
+list, each entry formatted by the template rather than by hand.
 
-## Step 5 — Change How It Looks
+::: {.callout-note}
+A publications page needn't stop at journal articles. Because each listing is simply
+a data file plus a template, you can stack several on a single page — one for
+journal articles, another for theses, talks, datasets, or software. For an example
+built this way, see [Ben's publications page](https://blenback.github.io/publications.html),
+which combines multiple listings for different kinds of research output.
+:::
+
+## Step 7 — Change How It Looks
 
 The quickest way to restyle a site is to pick a different built-in **theme**. Quarto ships with
-many; try swapping `cosmo` for another such as `flatly`, `litera`, or `journal` in `_quarto.yml`
+many; try swapping `cosmo` for another such as `flatly`, `litera`, or `sandstone` in `_quarto.yml`
 and watch the preview change.
 
 To go a little further, you can override individual colours with a small style file. Create a file
@@ -189,7 +331,7 @@ branding file — see [Using brand.yml](../advanced/brand-yml.qmd) in the advanc
 that as a later step; clear structure matters more than polish when you are starting out.
 :::
 
-## Step 6 — Publish to GitHub Pages
+## Step 8 — Publish to GitHub Pages
 
 Your site only exists on your laptop so far. **GitHub Pages** is a free service that turns a
 GitHub repository into a live website, and Quarto can publish to it with a single command.
@@ -237,7 +379,7 @@ no one has to remember to publish. Once you are comfortable with the manual comm
 automatic version up.
 :::
 
-## Step 7 — Make a Change and Republish
+## Step 9 — Make a Change and Republish
 
 Edit one of your pages — add a sentence to the home page, for instance — and save. Then run:
 

@@ -2,18 +2,15 @@
 title: "Creating Custom Templates and Extensions"
 ---
 
-# Short Introduction
-
-Once participants are comfortable with Quarto basics, templates and extensions provide ways to speed up repeated work and add specialized functionality.
+Another neat feature that comes from Quarto being an open source project is the ability to create and contribute your own templates and exentensions for customized outputs such as project/institutional reports, letters, invoices or slide decks. 
 
 ## Why This Matters For Researchers
 
 Academic workflows often repeat familiar patterns:
 
-- manuscript structures
-- recurring workshop materials
-- shared project websites
-- journal-specific output requirements
+- manuscripts have pre-defined sections 
+- projects required standardized reports
+- teaching materials share structure 
 
 Templates reduce setup time, and extensions can add features that are not included by default.
 

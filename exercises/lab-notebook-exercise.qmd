@@ -2,7 +2,7 @@
 title: "Exercise: Build a Lab Notebook Page"
 ---
 
-# Learning Goal
+## Learning Goal
 
 Create a Quarto document for documenting ongoing research activity in a structured, readable way.
 

@@ -668,3 +668,134 @@ hr::after {
   .team-grid .quarto-grid-item.card-team { transition: none; }
   .team-grid .quarto-grid-item.card-team:hover { transform: none; }
 }
+
+// ─── Showcase cards (website examples) ──────────────────────────────────
+// Like .subject-cards, but each card leads with a full-bleed screenshot of the
+// site. The card has no padding of its own — the image runs edge-to-edge and a
+// nested .showcase-body supplies the text padding. The title is a stretched link
+// so the whole card (screenshot included) is one accessible, focusable target.
+.showcase-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.showcase-cards .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;            // clips the screenshot to the card's rounded corners
+  background: var(--ds-paper-2);
+  border: 1px solid var(--ds-rule);
+  border-radius: $border-radius-lg;
+  box-shadow: var(--ds-shadow);
+  color: var(--ds-ink);
+  text-decoration: none !important;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 180ms ease;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(26, 27, 46, 0.13), 0 2px 6px rgba(26, 27, 46, 0.07);
+    border-color: color-mix(in oklab, var(--card-accent, var(--ds-ink)) 45%, var(--ds-rule));
+  }
+}
+
+// Pandoc wraps the image and the body div each in their own <p>/block; flatten
+// those wrappers so the flex column lays out the real elements.
+.showcase-cards .card > p { margin: 0; }
+
+// Screenshot — cropped to a consistent browser-shaped frame, anchored to the top
+// so each site's header/hero is what shows. Subtle zoom on hover.
+.showcase-cards .card .showcase-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid var(--ds-rule);
+  background: var(--ds-paper-3);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.showcase-cards .card:hover .showcase-thumb,
+.showcase-cards .card:focus-within .showcase-thumb { transform: scale(1.035); }
+
+// Text body — supplies the padding the card itself drops.
+.showcase-cards .card .showcase-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.05rem 1.2rem 1.2rem;
+  flex: 1;
+}
+.showcase-cards .card .showcase-body > p { margin: 0; }
+.showcase-cards .card .showcase-body > p:last-child { margin-top: auto; }
+
+// Quartile accent per card — the four brand hues rotate across the cards.
+.showcase-cards .card:nth-child(1) { --card-accent: var(--ds-indigo); }
+.showcase-cards .card:nth-child(2) { --card-accent: var(--ds-coral); }
+.showcase-cards .card:nth-child(3) { --card-accent: var(--ds-moss); }
+.showcase-cards .card:nth-child(4) { --card-accent: var(--ds-amber); }
+.showcase-cards .card:nth-child(5) { --card-accent: var(--ds-indigo); }
+.showcase-cards .card:nth-child(6) { --card-accent: var(--ds-coral); }
+
+// Title is a real link; its ::after overlay stretches the hit area over the
+// whole card so mouse and keyboard both reach one target with the link's name.
+.showcase-cards .card .showcase-title {
+  font-family: var(--ds-serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--ds-ink);
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  &:hover { color: var(--card-accent, var(--ds-ink)); text-decoration: none; }
+  &:focus-visible {
+    outline: 2px solid var(--card-accent, var(--ds-indigo));
+    outline-offset: 4px;
+    border-radius: 3px;
+  }
+}
+
+.showcase-cards .card .showcase-desc {
+  font-size: 0.9rem;
+  color: var(--ds-ink-2);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.showcase-cards .card .showcase-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--ds-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--ds-muted));
+  transition: gap 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.showcase-cards .card:hover .showcase-go,
+.showcase-cards .card:focus-within .showcase-go { gap: 0.6rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-cards .card,
+  .showcase-cards .card .showcase-thumb,
+  .showcase-cards .card .showcase-go { transition: none; }
+  .showcase-cards .card:hover,
+  .showcase-cards .card:focus-within { transform: none; }
+  .showcase-cards .card:hover .showcase-thumb,
+  .showcase-cards .card:focus-within .showcase-thumb { transform: none; }
+}

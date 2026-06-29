@@ -13,6 +13,7 @@ You are building toward the dashboard shown on the [Dashboards](../use-cases/das
 You will use a small synthetic dataset, `data/restoration-sites.csv`. Each row is one survey of one site:
 
 ```{r}
+#| eval: false
 library(readr)
 sites <- read_csv("../data/restoration-sites.csv")
 head(sites)
@@ -25,6 +26,8 @@ It has five columns:
 - `vegetation_cover_pct` — vegetation cover, in percent
 - `species_richness` — number of species recorded
 - `soil_moisture_pct` — soil moisture, in percent
+
+[Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
 
 ## How a Dashboard Is Laid Out: Rows and Columns
 
@@ -111,7 +114,7 @@ library(dplyr)
 library(plotly)
 library(DT)
 
-sites <- read_csv("data/restoration-sites.csv") |>
+sites <- read_csv("../data/restoration-sites.csv") |>
   mutate(date = as.Date(date))
 
 latest <- sites |>
@@ -214,6 +217,8 @@ Render. The chart and the table now sit side by side under the value boxes. Clic
 
 To give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a **tabset**. We provide a second dataset, `data/restoration-scenarios.csv`, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).
 
+[Download restoration-scenarios.csv](/data/restoration-scenarios.csv){.btn .btn-secondary download="restoration-scenarios.csv"}
+
 Here is what it produces. Switch the tabs above the chart to compare the scenarios:
 
 <iframe src="../use-cases/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset"></iframe>
@@ -221,7 +226,7 @@ Here is what it produces. Switch the tabs above the chart to compare the scenari
 Read it in your setup chunk and add a small helper:
 
 ```r
-scenarios <- read_csv("data/restoration-scenarios.csv") |>
+scenarios <- read_csv("../data/restoration-scenarios.csv") |>
   mutate(date = as.Date(date))
 
 plot_cover <- function(scenario_name) {

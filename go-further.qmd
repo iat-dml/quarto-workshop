@@ -34,3 +34,4 @@ Quarto's book format makes it straightforward to author and publish multi-chapte
 
 [Awesome Quarto](https://github.com/mcanouil/awesome-quarto) is a community-maintained list of Quarto-related talks, tools, templates, examples, and articles — a great place to discover what others are building and find inspiration for your own projects.
 
+[Quarto gallery](https://quarto.org/docs/gallery/) is a collection of example Quarto projects, including books, websites, and articles. You can use these examples as starting points for your own work.

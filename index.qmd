@@ -151,7 +151,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 ::: {.card}
 [{{< iconify fa6-solid chart-line >}}]{.card-icon aria-hidden="true"}
 
-[Dashboards & brand](advanced/templates-and-extensions.qmd){.card-title}
+[Dashboards](advanced/templates-and-extensions.qmd){.card-title}
 
 [Interactive dashboards, plus `brand.yml` for one consistent visual identity.]{.card-desc}
 

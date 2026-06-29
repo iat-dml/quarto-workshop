@@ -1,5 +1,10 @@
 project:
   output-dir: _site
+  resources:
+    - assets/publications.yaml
+    - assets/publication_yearly.ejs
+    - data/restoration-sites.csv
+    - data/restoration-scenarios.csv
 
 website:
   title: ""
@@ -53,6 +58,9 @@ website:
         contents:
           - advanced/templates-and-extensions.qmd
           - advanced/brand-yml.qmd
+          - advanced/multi-lingual-outputs.qmd
+          - advanced/invites.qmd
+          - advanced/ai-assistance.qmd
       - text: "Go Further"
         href: go-further.qmd
 
@@ -62,5 +70,5 @@ format:
     toc: true
     toc-depth: 3
     toc-location: right
-    number-sections: true
+    number-sections: false
     smooth-scroll: true

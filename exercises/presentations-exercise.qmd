@@ -2,7 +2,7 @@
 title: "Exercise: Build a Short Slide Deck"
 ---
 
-# Learning Goal
+## Learning Goal
 
 Create a minimal Quarto presentation that could support a short research talk.
 

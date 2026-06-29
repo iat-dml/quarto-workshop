@@ -2,16 +2,35 @@
 title: "A helping hand from AI"
 ---
 
-In case you need yet another reason to switch to make the switch to Quarto: Markdown is (currently) heavily used in the Agentic AI space. Precisely because it is a lightweight markup language Chatbots are very proficient at writing in it. It is also the format of choice for the 'SKILL's (Including those authored specifcally for [Quarto](@sec-quarto_skills)) for various agentic AI services like Anthropic's  Claude and OpenAI's Codex. Both of these services have extensions for VScode/Positron, so you can use them for assistance directly in your IDE.
+In case you need yet another reason to switch to make the switch to Quarto: Markdown is (currently) heavily used in the Agentic AI space. Precisely because it is a lightweight markup language Chatbots are very proficient at writing in it. It is also the format of choice for the 'SKILL's (Including those authored specifcally for [Quarto](@sec-quarto_skills)) for various agentic AI services like Anthropic's [Claude](https://claude.ai/) and OpenAI's [Codex](https://openai.com/codex/). Both of these services have extensions for VScode/Positron, so you can use them for assistance directly in your IDE.
 
 ## Quarto Agent SKILLs {#sec-quarto_skills}
+
+A *Skill* is a small, self-contained folder of instructions (and sometimes scripts) that an AI agent can load *on demand* when a task calls for it. Rather than hoping the model remembers the finer points of Quarto syntax from its training data, a Skill hands it up-to-date, task-specific guidance at exactly the moment it is needed. The Posit team maintains an official set of [Quarto Skills](https://github.com/posit-dev/skills/tree/main/quarto) that you can drop into a Claude- or Codex-enabled IDE and put to work straight away. Three are currently available.
+
+### `authoring`
+
+The workhorse of the collection. It gives the agent comprehensive guidance for writing Quarto documents *the right way* — using the hashpipe (`#|`) cell-option syntax, [cross-references](../use-cases/manuscripts.qmd), [callout blocks](../use-cases/manuscripts.qmd), and extensions as Quarto intends, rather than improvising. It also knows how to **migrate** existing work: point it at an old R Markdown (`.Rmd`) file, or a whole `bookdown`, `blogdown`, `xaringan`, or `distill` project, and it will convert the source to Quarto for you. If you are coming to this workshop from an R Markdown background, this is the Skill to reach for first.
+
+### `brand-yml`
+
+Consistency of style is one of the things [`brand.yml`](../use-cases/websites.qmd) does best, and this Skill teaches the agent to create and apply one for you. It will discover any existing brand definition in your project and layer your colours, fonts, and logos across every output format — HTML documents, [dashboards](../use-cases/dashboards.qmd), RevealJS presentations, Typst PDFs, and full [websites](../use-cases/websites.qmd) — so a single source of truth drives the look of everything you publish. A genuine time-saver once you have settled on a personal or institutional identity.
+
+### `alt-text`
+
+Accessible figures are easy to neglect and tedious to write by hand. This Skill generates and improves alt text for both code-generated plots and static images, following Amy Cesal's three-part formula: the **chart type**, the **data being shown**, and the **key insight** a reader should take away. The result is alt text that does real work for screen-reader users instead of restating the caption — a small effort that makes your research meaningfully more inclusive.
+
+::: callout-tip
+Skills are not magic: they steer the agent towards good practice, but you remain the author. Always read what the agent produces, especially migrations and generated text, before committing it.
+:::
 
 ## Using Open Design to help develop your personal brand
 
 As researchers not many of us have backgrounds in professional design, as evidenced by many of the graphical abstracts you see even in top journals...
 
-Here is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for website styling (**TODO: Cross-ref to website section.**). While most chat services can provide this advice the [Open Design]() framework (an open-sourced Claude Design clone) can help you take your websites to the next level. 
+Here is another good use case for AI which is very proficient at selecting complementary colour palettes and editing CSS that is the bedrock for [website styling](../use-cases/websites.qmd). While most chat services can provide this advice the [Open Design](https://open-design.ai/) framework (an open-sourced Claude Design clone) can help you take your websites to the next level. 
 
 ::: callout-warning
 We take no responsibilitiy for the use of Agentic AI applications in your professional life. Always follow the guidelines of your institution and use good judgement when applying new technologies to your work.
 :::
+
