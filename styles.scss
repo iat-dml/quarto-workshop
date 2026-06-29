@@ -570,6 +570,12 @@ hr::after {
     width: 104px;
     height: 104px;
     margin: 1.4rem auto 0.9rem;
+    overflow: hidden;
+    border-radius: 50%;
+
+    // Pandoc wraps the image in a <p> — suppress its margins so the fixed
+    // height container isn't disturbed.
+    > p { margin: 0; }
 
     // Initials disc — the avatar shown when no photo file is present.
     .team-avatar {

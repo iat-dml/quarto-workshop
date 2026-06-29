@@ -19,14 +19,14 @@ This workshop website is designed as a guided reference. You can follow it from 
 :::::::::::: {.team-grid}
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-[BB]{.team-avatar aria-hidden="true"}
+![](assets/ben.png){.team-image}
 :::
 
 [Ben Black]{.team-member-name}
 
 [Head of the group Data and Modelling Infrastructure for Living Labs]{.team-job-title}
 
-[ETH Zürich]{.team-employer}
+[Leibniz Centre for Agricultural Landscape Research (ZALF)](https://iat-dml.github.io/){.team-employer}
 
 ::: team-member-links
 [{{< iconify fa6-solid house-chimney-user size=xl >}}](https://blenback.github.io/){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:bblack@ethz.ch){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/ben-black-9889a1150/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/blenback/){.listing-link-icon} [{{< iconify fa6-brands researchgate size=xl >}}](https://www.researchgate.net/profile/Benjamin-Black-5/){.listing-link-icon}
@@ -35,14 +35,14 @@ This workshop website is designed as a guided reference. You can follow it from 
 
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-[IN]{.team-avatar aria-hidden="true"}
+![](assets/isabel.jpg){.team-image}
 :::
 
 [Isabel Nicholson-Thomas]{.team-member-name}
 
-[Doctoral Researcher]{.team-job-title}
+[Doctoral Researcher at Planning of Landscape and Urban Systems (PLUS)]{.team-job-title}
 
-[ETH Zürich]{.team-employer}
+[ETH Zürich](https://plus.ethz.ch/){.team-employer}
 
 ::: team-member-links
 [{{< iconify fa6-solid house-chimney-user size=xl >}}](https://irl.ethz.ch/people/person-detail.Mjg5Mjgx.TGlzdC8zNzc5LC0xMzk1OTgzMDM3.html){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:nharisena@ethz.ch){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/nivedita-varma-harisena-667298141/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/NVHarisena1){.listing-link-icon}
@@ -51,14 +51,14 @@ This workshop website is designed as a guided reference. You can follow it from 
 
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-[MK]{.team-avatar aria-hidden="true"}
+![](assets/manuel.jpg){.team-image}
 :::
 
 [Manuel Kurmann]{.team-member-name}
 
-[Research Assistant]{.team-job-title}
+[Research Assistant at Planning of Landscape and Urban Systems (PLUS)]{.team-job-title}
 
-[ETH Zürich]{.team-employer}
+[ETH Zürich](https://plus.ethz.ch/){.team-employer}
 
 ::: team-member-links
 [{{< iconify fa6-solid house-chimney-user size=xl >}}](https://pedroribalmeida.com.br/){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:pedroribalmeida@gmail.com){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/perial/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/Zapiano){.listing-link-icon}

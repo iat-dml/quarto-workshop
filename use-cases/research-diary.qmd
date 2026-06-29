@@ -8,31 +8,23 @@ Quarto works well as a research diary or experiment log because it combines read
 
 Research in progress generates many small but important pieces of context:
 
-- what you tried
-- what worked and failed
-- which files or datasets you used
-- intermediate results that informed decisions
-- what to do next
+- What you tried
+- What worked and failed
+- Which files or datasets you used
+- Intermediate results that informed decisions
+- What to do next
 
 A Quarto notebook helps capture that context in a durable and shareable format.
 
 ## Key Quarto Features For This Workflow
 
-### Clear Daily or Weekly Entries
+- **Clear Daily or Weekly Entries:** Markdown headings make it easy to separate entries by date, experiment, or task.
 
-Markdown headings make it easy to separate entries by date, experiment, or task.
+- **Metadata At The Top:** YAML can record authorship, date, project name, and output preferences.
 
-### Metadata At The Top
+- **Optional Code Chunks:** If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.
 
-YAML can record authorship, date, project name, and output preferences.
-
-### Optional Code Chunks
-
-If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.
-
-### Multiple Outputs
-
-An HTML version may be useful for browsing, while PDF can work for archiving or sharing.
+- **Multiple Outputs:** An HTML version may be useful for browsing, while PDF can work for archiving or sharing.
 
 ## Concrete Academic Example
 
