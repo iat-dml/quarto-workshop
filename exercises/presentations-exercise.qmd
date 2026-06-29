@@ -1,66 +1,323 @@
 ---
-title: "Exercise: Build a Short Slide Deck"
+title: "Exercise: Build a Reveal.js Presentation"
 ---
 
 ## Learning Goal
 
-Create a minimal Quarto presentation that could support a short research talk.
+Build a real Quarto **presentation**: a single `.qmd` source that renders to a polished, web-native **reveal.js** slide deck you could give as a conference talk. Along the way you will add proper title-slide metadata, drop in a logo, build introductory and content slides, pull a figure straight from data, write speaker notes only you can see, and restyle the whole deck by changing a single line — first with Quarto's built-in themes, then with a community theme.
 
-## Prerequisites
+This is the hands-on companion to the [Creating Presentations](../use-cases/presentations.qmd) page. The full reference for everything below is the [Quarto reveal.js guide](https://quarto.org/docs/presentations/revealjs/).
 
-You should know:
+## Two Ways to Do This Exercise
 
-- basic Markdown headings
-- how YAML configures document format
-- that RevealJS is one common Quarto presentation format
+Pick whichever is more useful to you — the steps are the same either way:
 
-## Starter Scenario
+- **Path A — Bring your own.** Turn a talk you already need to give (or a recent paper or poster) into a Quarto deck. You will get the most out of the exercise this way, because you end with slides you can actually present.
+- **Path B — Use our sample data.** Build a short conference talk about ecological restoration from the dataset below — the same data behind the [manuscript](manuscripts-exercise.qmd) and [dashboard](dashboards-exercise.qmd) exercises. Choose this if you would rather not wrangle your own material right now.
 
-You have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.
+Wherever a step needs concrete code, we show it for the **sample data**. If you are on Path A, swap in your own slide titles, figure, and text.
 
-## Step-By-Step Exercise
+## The Sample Data (Path B)
 
-1. Create a file called `talk.qmd`.
-2. Add a YAML header with a title and `format: revealjs`.
-3. Create a first slide with the title and presenter name.
-4. Add slides for research question, methods, key finding, and next steps.
-5. Keep each slide concise using bullets instead of paragraphs.
-6. Add one placeholder line for a future figure.
+`restoration-sites.csv` records quarterly monitoring of four restoration sites (A–D) from 2023 to 2025. Each row is one survey of one site:
 
-## Suggested Starter Content
+- `site` — the monitoring site (A–D)
+- `date` — survey date (quarterly)
+- `vegetation_cover_pct` — vegetation cover, in percent
+- `species_richness` — number of species recorded
+- `soil_moisture_pct` — soil moisture, in percent
+
+[Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
+[Download restoration-scenarios.csv](/data/restoration-scenarios.csv){.btn .btn-secondary download="restoration-scenarios.csv"}
+
+(`restoration-scenarios.csv` holds vegetation cover under three management scenarios and is only needed for a stretch task.)
+
+## Step 1 — Create the Presentation File
+
+A reveal.js presentation is just one `.qmd` file with `format: revealjs`. Make a folder to keep this exercise in (say `my-talk/`), and inside it create a file called `talk.qmd` with this minimal starter:
 
 ```markdown
 ---
-title: "Drought Impacts on Vegetation"
+title: "Vegetation Recovery Across Four Restoration Sites"
 format: revealjs
 ---
 
-## Research Question
+## First slide
 
-- How did vegetation response differ across sites?
-
-## Methods
-
-- Remote sensing summary
-- Field validation
+Each level-2 heading (`##`) starts a new slide.
 ```
 
-## Stretch Task
+Now preview it. Open `talk.qmd` in your editor and click **Preview**, or run this in a terminal sitting in the `my-talk/` folder:
 
-Add speaker notes or a final slide with contact information.
+```bash
+quarto preview talk.qmd
+```
 
-## Expected Outcome
+A slide deck opens in your browser. Use the arrow keys to move through it; press <kbd>F</kbd> for fullscreen and <kbd>Esc</kbd> to leave. Leave the preview running — it refreshes every time you save.
 
-Your slide deck should:
+::: {.callout-tip}
+## Prefer buttons to typing?
 
-- have a clear sequence
-- be appropriate for a short academic talk
-- show how Quarto can switch from document writing to presentation authoring
+You don't have to start from scratch. In RStudio choose **New File → Quarto Presentation → Reveal JS**; in Positron or VS Code open the command palette and pick **Quarto: Create Document**. The result is the same kind of starter file.
+:::
+
+::: {.callout-note}
+## How slides are made
+
+Two heading levels shape the deck:
+
+- `#` (level 1) creates a **section divider** — a big title slide that breaks the talk into parts.
+- `##` (level 2) creates a **content slide**.
+
+Everything you write under a `##` — text, bullets, a figure — lands on that slide.
+:::
+
+::: {.callout-note}
+## A note on the code chunks below
+
+Every R chunk in your real `talk.qmd` opens with ```` ```{r} ```` — with curly braces — so Quarto runs it. In the sketches on this page we write ```` ```r ```` *without* braces only so they display as text instead of executing. When you copy them into your file, add the braces back.
+:::
+
+## Step 2 — Add Your Title Slide and Author Details
+
+The title slide is built automatically from the document's metadata. Replace the front matter with your own title, a subtitle naming the venue, and a proper author block — add **yourself**, with an ORCID, email, and affiliation:
+
+```yaml
+---
+title: "Vegetation Recovery Across Four Restoration Sites"
+subtitle: "iEMSs 2026, Dublin"
+author:
+  - name: Your Name
+    orcid: 0000-0000-0000-0000
+    email: you@institute.org
+    affiliations: Your Institute
+date: today
+format: revealjs
+---
+```
+
+Save and watch the preview: the title, subtitle, your name, affiliation, and date now fill the opening slide. This is the same author schema you used in the manuscript exercise — which is what lets you switch themes later without touching it.
+
+::: {.callout-note}
+## Where to find an ORCID
+
+Every researcher can register for a free ORCID at [orcid.org](https://orcid.org/) — it is the 16-digit ID in their profile URL. Use a real one if you have it; the placeholder above still renders fine.
+:::
+
+## Step 3 — Add a Logo
+
+A conference talk usually carries a logo — your institution's, or the conference's. Download the iEMSs 2026 logo (or use your own university's):
+
+[Download iemss2026_logo.png](/assets/iemss2026_logo.png){.btn .btn-primary download="iemss2026_logo.png"}
+
+Save it next to `talk.qmd`. Then tell reveal.js to use it. To add options to a format, you expand the single-line `format: revealjs` into a nested block:
+
+```yaml
+format:
+  revealjs:
+    logo: iemss2026_logo.png
+    footer: "Vegetation recovery · iEMSs 2026"
+```
+
+`logo:` pins your image to the bottom-right of every slide; `footer:` adds a line of text along the bottom. Render and you will see both.
+
+## Step 4 — Build Your Introductory Slides
+
+A talk needs a way in. Add a section divider and an opening content slide before you reach any results. Two reveal.js features make these feel like slides rather than a wall of text:
+
+- a list marked `{.incremental}` reveals its bullets **one click at a time**;
+- a line containing just `. . .` inserts a **pause** — the next content appears on the following click.
+
+```markdown
+# Background {background-color="#2c3e50"}
+
+## Why monitor restoration? {.incremental}
+
+- Restoration projects *promise* recovery — but do sites actually recover?
+- We surveyed four sites every quarter for two years
+- That gives a simple, testable signal: change in vegetation cover
+
+## Our question
+
+. . .
+
+How fast is vegetation cover recovering — and does the pace differ by site?
+```
+
+The `# Background` line is a section slide (the `{background-color=...}` gives it a coloured backdrop); the two `##` lines are content slides. Click through the preview to see the bullets and the pause reveal in turn.
+
+## Step 5 — Load Your Data in a Setup Chunk
+
+Your results slide will draw a figure from the data, so load it once near the top. Make a `data/` folder inside `my-talk/` and copy `restoration-sites.csv` into it (use the download button above). Then add a **setup chunk** just below the front matter. `include: false` runs the code but keeps it — and any messages — off your slides:
+
+````markdown
+```r
+#| label: setup
+#| include: false
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+sites <- read_csv("data/restoration-sites.csv") |>
+  mutate(date = as.Date(date))
+
+first  <- sites |> filter(date == min(date))   # earliest survey per site
+latest <- sites |> filter(date == max(date))   # most recent survey per site
+```
+````
+
+`first` and `latest` give the start and end of the monitoring period, which the next slide uses.
+
+## Step 6 — Add a Content Slide With a Figure and a Main Message
+
+This is the heart of the talk. A good results slide makes **one** point — so put the message in the slide *title*, and let a figure carry the evidence. Use a two-column layout to set the chart beside a few takeaways:
+
+````markdown
+## Cover is recovering at every site {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```r
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4.5
+
+ggplot(sites, aes(date, vegetation_cover_pct, colour = site)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  labs(x = NULL, y = "Vegetation cover (%)", colour = NULL) +
+  theme_minimal(base_size = 16)
+```
+:::
+
+::: {.column width="40%"}
+- Cover rose at **all four** sites
+- Site D leads; Site C lags
+- Mean cover is up **`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))` points** since 2023
+:::
+
+::::
+```
+````
+
+Three things to notice:
+
+- `echo: false` shows the **plot** but hides the code that made it — what an audience wants.
+- The `:::: {.columns}` / `::: {.column}` blocks split the slide; adjust the `width` percentages to taste.
+- That last bullet uses inline R, `` `r ...` ``, so the headline number is computed from the data — exactly as in the manuscript exercise. Change the CSV and the slide updates itself.
+
+The `{.smaller}` after the title shrinks the text on this one slide, which helps when a slide is busy.
+
+## Step 7 — Add Speaker Notes
+
+Reveal.js has a presenter view that shows notes only *you* can see. Add a `::: {.notes}` block to the bottom of your results slide:
+
+```markdown
+## Cover is recovering at every site
+
+<!-- your columns / figure / bullets from Step 6 -->
+
+::: {.notes}
+Remind the audience these are synthetic data. Point out Site C's slow start —
+likely the driest site. Pause here for questions before moving on.
+:::
+```
+
+The notes never appear on the slide itself. To read them while presenting, press <kbd>S</kbd> in the browser to open **speaker view** — a separate window with your notes, a timer, and a preview of the next slide.
+
+::: {.callout-tip}
+## Handy presenter keys
+
+With the deck open in a browser: <kbd>S</kbd> opens speaker view, <kbd>F</kbd> goes fullscreen, <kbd>O</kbd> shows a slide **overview** grid, and <kbd>E</kbd> switches to a print layout for exporting to PDF.
+:::
+
+## Step 8 — Switch Between the Built-In Themes
+
+Quarto ships with a set of reveal.js [themes](https://quarto.org/docs/presentations/revealjs/themes.html). Pick one with a `theme:` line under the format:
+
+```yaml
+format:
+  revealjs:
+    theme: serif
+    logo: iemss2026_logo.png
+    footer: "Vegetation recovery · iEMSs 2026"
+```
+
+Now try a few: swap `serif` for `simple`, `moon`, `solarized`, `sky`, `league`, `night`, or `dracula` and watch the preview restyle instantly. The content never changes — only the look.
+
+## Step 9 — Try the Custom "Clean" Theme
+
+For a more distinctive title slide, install a community theme — Grant McDermott's widely used [quarto-revealjs-clean](https://github.com/grantmcdermott/quarto-revealjs-clean). From a terminal inside your `my-talk/` folder:
+
+```bash
+quarto install extension grantmcdermott/quarto-revealjs-clean
+```
+
+This adds an `_extensions/` folder providing a new format, `clean-revealjs`. Switch to it by changing **only the format line** — the clean theme understands the same reveal.js options, so your logo and footer carry over:
+
+```yaml
+format:
+  clean-revealjs:
+    logo: iemss2026_logo.png
+    footer: "Vegetation recovery · iEMSs 2026"
+```
+
+Render again. Your title slide now uses the clean theme's layout — and because the author block from Step 2 follows Quarto's standard schema, your name, ORCID, and affiliation slot straight into it. That single-line swap, with everything else untouched, is the payoff of keeping content and styling separate.
+
+::: {.callout-note}
+## Where custom formats come from
+
+`clean-revealjs` is a Quarto **extension** — a small bundle of CSS and templates that adds a new output format. It is the same mechanism behind the journal templates in the manuscript exercise. Browse more at the [Quarto extensions listing](https://quarto.org/docs/extensions/).
+:::
+
+## Step 10 — Render to HTML
+
+While writing you have been using `quarto preview`. For the finished file, render it:
+
+```bash
+quarto render talk.qmd
+```
+
+This produces `talk.html` — a complete, self-contained slide deck that opens in any modern browser, no internet or server required. That single HTML file *is* your presentation: open it to present, or send it to a colleague.
+
+::: {.callout-tip}
+## Make it one shareable file
+
+By default the HTML references a few supporting folders. To bundle everything into a single file you can email or drop on a USB stick, add one line under the format:
+
+```yaml
+format:
+  revealjs:
+    embed-resources: true
+```
+:::
+
+## Stretch Tasks
+
+If you finish early, try one of these:
+
+- **Compare management scenarios.** Read `restoration-scenarios.csv` in your setup chunk and add a results slide with a second figure coloured or faceted by `scenario` (Baseline / Moderate / Intensive) — the same data behind the [scenarios dashboard](../dashboards/restoration-dashboard-scenarios.qmd).
+- **Embed an interactive chart.** Reuse a `plotly` chart from the dashboard exercise on a slide — it stays live and hoverable in the browser, something PowerPoint can't do.
+- **Animate a transition.** Put `{auto-animate=true}` on two consecutive `##` slides and move or resize an element between them; reveal.js tweens it. Or set `transition: slide` under the format for a global slide transition.
+- **Add a chalkboard.** Set `chalkboard: true` under the format, then press <kbd>B</kbd> while presenting to draw on the slide live.
+- **Export a PDF or PowerPoint.** Press <kbd>E</kbd> then print-to-PDF for a handout, or add `pptx: default` to the `format:` block and render again for a PowerPoint version colleagues can edit.
+
+## Adapting Path A (Your Own Talk)
+
+Converting a talk of your own follows exactly the same skeleton:
+
+- Put your real title-slide details in the front matter, and your institution's logo next to the file.
+- Break your talk into `#` section dividers and `##` content slides, one message per slide.
+- Re-create your key figure as a code chunk with `echo: false` (or drop in an image with `![](figure.png)`).
+- Move the script you would otherwise read aloud into `::: {.notes}` blocks.
+- Try a built-in theme, then `clean-revealjs`, and keep whichever fits your message.
 
 ## Self-Check
 
-Ask yourself:
-
-- Would each slide be readable in a live talk?
-- Is there one main message per slide?
-- Can this deck grow into a fuller presentation later?
+- Does `quarto render talk.qmd` produce a `talk.html` you can open in a browser?
+- Does the title slide show your name, affiliation, and the logo?
+- Does at least one slide carry a figure drawn from the data, under a single clear message?
+- Do your speaker notes show up in speaker view (press <kbd>S</kbd>) but never on the slides themselves?
+- Can you switch from a built-in theme to `clean-revealjs` by changing only the `format:` line?

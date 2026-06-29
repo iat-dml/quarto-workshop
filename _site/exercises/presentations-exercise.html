@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise: Build a Short Slide Deck</title>
+<title>Exercise: Build a Reveal.js Presentation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0fb7984bd7a2837b7719dc8f9e06b6f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f22a97106d05db53dddcf3a5637eec6f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-0fb7984bd7a2837b7719dc8f9e06b6f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7edb8d14c383aeea52f4c20b499ec805.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a57b28c65694907181ab0a9887c3e078.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7edb8d14c383aeea52f4c20b499ec805.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -483,12 +483,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../go-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Go Further</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../go-further.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Go Further</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -500,12 +511,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning Goal</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#starter-scenario" id="toc-starter-scenario" class="nav-link" data-scroll-target="#starter-scenario">Starter Scenario</a></li>
-  <li><a href="#step-by-step-exercise" id="toc-step-by-step-exercise" class="nav-link" data-scroll-target="#step-by-step-exercise">Step-By-Step Exercise</a></li>
-  <li><a href="#suggested-starter-content" id="toc-suggested-starter-content" class="nav-link" data-scroll-target="#suggested-starter-content">Suggested Starter Content</a></li>
-  <li><a href="#stretch-task" id="toc-stretch-task" class="nav-link" data-scroll-target="#stretch-task">Stretch Task</a></li>
-  <li><a href="#expected-outcome" id="toc-expected-outcome" class="nav-link" data-scroll-target="#expected-outcome">Expected Outcome</a></li>
+  <li><a href="#two-ways-to-do-this-exercise" id="toc-two-ways-to-do-this-exercise" class="nav-link" data-scroll-target="#two-ways-to-do-this-exercise">Two Ways to Do This Exercise</a></li>
+  <li><a href="#the-sample-data-path-b" id="toc-the-sample-data-path-b" class="nav-link" data-scroll-target="#the-sample-data-path-b">The Sample Data (Path B)</a></li>
+  <li><a href="#step-1-create-the-presentation-file" id="toc-step-1-create-the-presentation-file" class="nav-link" data-scroll-target="#step-1-create-the-presentation-file">Step 1 — Create the Presentation File</a></li>
+  <li><a href="#step-2-add-your-title-slide-and-author-details" id="toc-step-2-add-your-title-slide-and-author-details" class="nav-link" data-scroll-target="#step-2-add-your-title-slide-and-author-details">Step 2 — Add Your Title Slide and Author Details</a></li>
+  <li><a href="#step-3-add-a-logo" id="toc-step-3-add-a-logo" class="nav-link" data-scroll-target="#step-3-add-a-logo">Step 3 — Add a Logo</a></li>
+  <li><a href="#step-4-build-your-introductory-slides" id="toc-step-4-build-your-introductory-slides" class="nav-link" data-scroll-target="#step-4-build-your-introductory-slides">Step 4 — Build Your Introductory Slides</a></li>
+  <li><a href="#step-5-load-your-data-in-a-setup-chunk" id="toc-step-5-load-your-data-in-a-setup-chunk" class="nav-link" data-scroll-target="#step-5-load-your-data-in-a-setup-chunk">Step 5 — Load Your Data in a Setup Chunk</a></li>
+  <li><a href="#step-6-add-a-content-slide-with-a-figure-and-a-main-message" id="toc-step-6-add-a-content-slide-with-a-figure-and-a-main-message" class="nav-link" data-scroll-target="#step-6-add-a-content-slide-with-a-figure-and-a-main-message">Step 6 — Add a Content Slide With a Figure and a Main Message</a></li>
+  <li><a href="#step-7-add-speaker-notes" id="toc-step-7-add-speaker-notes" class="nav-link" data-scroll-target="#step-7-add-speaker-notes">Step 7 — Add Speaker Notes</a></li>
+  <li><a href="#step-8-switch-between-the-built-in-themes" id="toc-step-8-switch-between-the-built-in-themes" class="nav-link" data-scroll-target="#step-8-switch-between-the-built-in-themes">Step 8 — Switch Between the Built-In Themes</a></li>
+  <li><a href="#step-9-try-the-custom-clean-theme" id="toc-step-9-try-the-custom-clean-theme" class="nav-link" data-scroll-target="#step-9-try-the-custom-clean-theme">Step 9 — Try the Custom “Clean” Theme</a></li>
+  <li><a href="#step-10-render-to-html" id="toc-step-10-render-to-html" class="nav-link" data-scroll-target="#step-10-render-to-html">Step 10 — Render to HTML</a></li>
+  <li><a href="#stretch-tasks" id="toc-stretch-tasks" class="nav-link" data-scroll-target="#stretch-tasks">Stretch Tasks</a></li>
+  <li><a href="#adapting-path-a-your-own-talk" id="toc-adapting-path-a-your-own-talk" class="nav-link" data-scroll-target="#adapting-path-a-your-own-talk">Adapting Path A (Your Own Talk)</a></li>
   <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/presentations-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -516,7 +535,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/presentations-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercise: Build a Short Slide Deck</h1>
+<h1 class="title">Exercise: Build a Reveal.js Presentation</h1>
 </div>
 
 
@@ -535,68 +554,320 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="learning-goal" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
-<p>Create a minimal Quarto presentation that could support a short research talk.</p>
+<p>Build a real Quarto <strong>presentation</strong>: a single <code>.qmd</code> source that renders to a polished, web-native <strong>reveal.js</strong> slide deck you could give as a conference talk. Along the way you will add proper title-slide metadata, drop in a logo, build introductory and content slides, pull a figure straight from data, write speaker notes only you can see, and restyle the whole deck by changing a single line — first with Quarto’s built-in themes, then with a community theme.</p>
+<p>This is the hands-on companion to the <a href="../use-cases/presentations.html">Creating Presentations</a> page. The full reference for everything below is the <a href="https://quarto.org/docs/presentations/revealjs/">Quarto reveal.js guide</a>.</p>
 </section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>You should know:</p>
+<section id="two-ways-to-do-this-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-to-do-this-exercise">Two Ways to Do This Exercise</h2>
+<p>Pick whichever is more useful to you — the steps are the same either way:</p>
 <ul>
-<li>basic Markdown headings</li>
-<li>how YAML configures document format</li>
-<li>that RevealJS is one common Quarto presentation format</li>
+<li><strong>Path A — Bring your own.</strong> Turn a talk you already need to give (or a recent paper or poster) into a Quarto deck. You will get the most out of the exercise this way, because you end with slides you can actually present.</li>
+<li><strong>Path B — Use our sample data.</strong> Build a short conference talk about ecological restoration from the dataset below — the same data behind the <a href="../exercises/manuscripts-exercise.html">manuscript</a> and <a href="../exercises/dashboards-exercise.html">dashboard</a> exercises. Choose this if you would rather not wrangle your own material right now.</li>
 </ul>
+<p>Wherever a step needs concrete code, we show it for the <strong>sample data</strong>. If you are on Path A, swap in your own slide titles, figure, and text.</p>
 </section>
-<section id="starter-scenario" class="level2">
-<h2 class="anchored" data-anchor-id="starter-scenario">Starter Scenario</h2>
-<p>You have been asked to give a five-minute update on a project about drought impacts on vegetation. You need a quick slide deck with a title slide, research question, approach, and next steps.</p>
+<section id="the-sample-data-path-b" class="level2">
+<h2 class="anchored" data-anchor-id="the-sample-data-path-b">The Sample Data (Path B)</h2>
+<p><code>restoration-sites.csv</code> records quarterly monitoring of four restoration sites (A–D) from 2023 to 2025. Each row is one survey of one site:</p>
+<ul>
+<li><code>site</code> — the monitoring site (A–D)</li>
+<li><code>date</code> — survey date (quarterly)</li>
+<li><code>vegetation_cover_pct</code> — vegetation cover, in percent</li>
+<li><code>species_richness</code> — number of species recorded</li>
+<li><code>soil_moisture_pct</code> — soil moisture, in percent</li>
+</ul>
+<p><a href="..\data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a> <a href="..\data/restoration-scenarios.csv" class="btn btn-secondary" download="restoration-scenarios.csv">Download restoration-scenarios.csv</a></p>
+<p>(<code>restoration-scenarios.csv</code> holds vegetation cover under three management scenarios and is only needed for a stretch task.)</p>
 </section>
-<section id="step-by-step-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="step-by-step-exercise">Step-By-Step Exercise</h2>
-<ol type="1">
-<li>Create a file called <code>talk.qmd</code>.</li>
-<li>Add a YAML header with a title and <code>format: revealjs</code>.</li>
-<li>Create a first slide with the title and presenter name.</li>
-<li>Add slides for research question, methods, key finding, and next steps.</li>
-<li>Keep each slide concise using bullets instead of paragraphs.</li>
-<li>Add one placeholder line for a future figure.</li>
-</ol>
-</section>
-<section id="suggested-starter-content" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-starter-content">Suggested Starter Content</h2>
+<section id="step-1-create-the-presentation-file" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-create-the-presentation-file">Step 1 — Create the Presentation File</h2>
+<p>A reveal.js presentation is just one <code>.qmd</code> file with <code>format: revealjs</code>. Make a folder to keep this exercise in (say <code>my-talk/</code>), and inside it create a file called <code>talk.qmd</code> with this minimal starter:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Drought Impacts on Vegetation"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Vegetation Recovery Across Four Restoration Sites"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Research Question</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## First slide</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How did vegetation response differ across sites?</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Remote sensing summary</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Field validation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="stretch-task" class="level2">
-<h2 class="anchored" data-anchor-id="stretch-task">Stretch Task</h2>
-<p>Add speaker notes or a final slide with contact information.</p>
-</section>
-<section id="expected-outcome" class="level2">
-<h2 class="anchored" data-anchor-id="expected-outcome">Expected Outcome</h2>
-<p>Your slide deck should:</p>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Each level-2 heading (<span class="in">`##`</span>) starts a new slide.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now preview it. Open <code>talk.qmd</code> in your editor and click <strong>Preview</strong>, or run this in a terminal sitting in the <code>my-talk/</code> folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview talk.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A slide deck opens in your browser. Use the arrow keys to move through it; press <kbd>F</kbd> for fullscreen and <kbd>Esc</kbd> to leave. Leave the preview running — it refreshes every time you save.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Prefer buttons to typing?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You don’t have to start from scratch. In RStudio choose <strong>New File → Quarto Presentation → Reveal JS</strong>; in Positron or VS Code open the command palette and pick <strong>Quarto: Create Document</strong>. The result is the same kind of starter file.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How slides are made
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two heading levels shape the deck:</p>
 <ul>
-<li>have a clear sequence</li>
-<li>be appropriate for a short academic talk</li>
-<li>show how Quarto can switch from document writing to presentation authoring</li>
+<li><code>#</code> (level 1) creates a <strong>section divider</strong> — a big title slide that breaks the talk into parts.</li>
+<li><code>##</code> (level 2) creates a <strong>content slide</strong>.</li>
+</ul>
+<p>Everything you write under a <code>##</code> — text, bullets, a figure — lands on that slide.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A note on the code chunks below
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every R chunk in your real <code>talk.qmd</code> opens with <code>```{r}</code> — with curly braces — so Quarto runs it. In the sketches on this page we write <code>```r</code> <em>without</em> braces only so they display as text instead of executing. When you copy them into your file, add the braces back.</p>
+</div>
+</div>
+</section>
+<section id="step-2-add-your-title-slide-and-author-details" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-add-your-title-slide-and-author-details">Step 2 — Add Your Title Slide and Author Details</h2>
+<p>The title slide is built automatically from the document’s metadata. Replace the front matter with your own title, a subtitle naming the venue, and a proper author block — add <strong>yourself</strong>, with an ORCID, email, and affiliation:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation Recovery Across Four Restoration Sites"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"iEMSs 2026, Dublin"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Your Name</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> 0000-0000-0000-0000</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> you@institute.org</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliations</span><span class="kw">:</span><span class="at"> Your Institute</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> today</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Save and watch the preview: the title, subtitle, your name, affiliation, and date now fill the opening slide. This is the same author schema you used in the manuscript exercise — which is what lets you switch themes later without touching it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Where to find an ORCID
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every researcher can register for a free ORCID at <a href="https://orcid.org/">orcid.org</a> — it is the 16-digit ID in their profile URL. Use a real one if you have it; the placeholder above still renders fine.</p>
+</div>
+</div>
+</section>
+<section id="step-3-add-a-logo" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-add-a-logo">Step 3 — Add a Logo</h2>
+<p>A conference talk usually carries a logo — your institution’s, or the conference’s. Download the iEMSs 2026 logo (or use your own university’s):</p>
+<p><a href="..\assets/iemss2026_logo.png" class="btn btn-primary" download="iemss2026_logo.png">Download iemss2026_logo.png</a></p>
+<p>Save it next to <code>talk.qmd</code>. Then tell reveal.js to use it. To add options to a format, you expand the single-line <code>format: revealjs</code> into a nested block:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> iemss2026_logo.png</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation recovery · iEMSs 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>logo:</code> pins your image to the bottom-right of every slide; <code>footer:</code> adds a line of text along the bottom. Render and you will see both.</p>
+</section>
+<section id="step-4-build-your-introductory-slides" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-build-your-introductory-slides">Step 4 — Build Your Introductory Slides</h2>
+<p>A talk needs a way in. Add a section divider and an opening content slide before you reach any results. Two reveal.js features make these feel like slides rather than a wall of text:</p>
+<ul>
+<li>a list marked <code>{.incremental}</code> reveals its bullets <strong>one click at a time</strong>;</li>
+<li>a line containing just <code>. . .</code> inserts a <strong>pause</strong> — the next content appears on the following click.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Background {background-color="#2c3e50"}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why monitor restoration? {.incremental}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Restoration projects *promise* recovery — but do sites actually recover?</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>We surveyed four sites every quarter for two years</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>That gives a simple, testable signal: change in vegetation cover</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Our question</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>. . .</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>How fast is vegetation cover recovering — and does the pace differ by site?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code># Background</code> line is a section slide (the <code>{background-color=...}</code> gives it a coloured backdrop); the two <code>##</code> lines are content slides. Click through the preview to see the bullets and the pause reveal in turn.</p>
+</section>
+<section id="step-5-load-your-data-in-a-setup-chunk" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-load-your-data-in-a-setup-chunk">Step 5 — Load Your Data in a Setup Chunk</h2>
+<p>Your results slide will draw a figure from the data, so load it once near the top. Make a <code>data/</code> folder inside <code>my-talk/</code> and copy <code>restoration-sites.csv</code> into it (use the download button above). Then add a <strong>setup chunk</strong> just below the front matter. <code>include: false</code> runs the code but keeps it — and any messages — off your slides:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/restoration-sites.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>first  <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">min</span>(date))   <span class="co"># earliest survey per site</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>latest <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">max</span>(date))   <span class="co"># most recent survey per site</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>first</code> and <code>latest</code> give the start and end of the monitoring period, which the next slide uses.</p>
+</section>
+<section id="step-6-add-a-content-slide-with-a-figure-and-a-main-message" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-add-a-content-slide-with-a-figure-and-a-main-message">Step 6 — Add a Content Slide With a Figure and a Main Message</h2>
+<p>This is the heart of the talk. A good results slide makes <strong>one</strong> point — so put the message in the slide <em>title</em>, and let a figure carry the evidence. Use a two-column layout to set the chart beside a few takeaways:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cover is recovering at every site {.smaller}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::: {.columns}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>::: {.column width="60%"}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 6</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4.5</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sites, <span class="fu">aes</span>(date, vegetation_cover_pct, <span class="at">colour =</span> site)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Vegetation cover (%)"</span>, <span class="at">colour =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>::: {.column width="40%"}</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cover rose at **all four** sites</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Site D leads; Site C lags</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mean cover is up **`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))` points** since 2023</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Three things to notice:</p>
+<ul>
+<li><code>echo: false</code> shows the <strong>plot</strong> but hides the code that made it — what an audience wants.</li>
+<li>The <code>:::: {.columns}</code> / <code>::: {.column}</code> blocks split the slide; adjust the <code>width</code> percentages to taste.</li>
+<li>That last bullet uses inline R, <code>`r ...`</code>, so the headline number is computed from the data — exactly as in the manuscript exercise. Change the CSV and the slide updates itself.</li>
+</ul>
+<p>The <code>{.smaller}</code> after the title shrinks the text on this one slide, which helps when a slide is busy.</p>
+</section>
+<section id="step-7-add-speaker-notes" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-add-speaker-notes">Step 7 — Add Speaker Notes</h2>
+<p>Reveal.js has a presenter view that shows notes only <em>you</em> can see. Add a <code>::: {.notes}</code> block to the bottom of your results slide:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cover is recovering at every site</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- your columns / figure / bullets from Step 6 --&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>::: {.notes}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>Remind the audience these are synthetic data. Point out Site C's slow start —</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>likely the driest site. Pause here for questions before moving on.</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The notes never appear on the slide itself. To read them while presenting, press <kbd>S</kbd> in the browser to open <strong>speaker view</strong> — a separate window with your notes, a timer, and a preview of the next slide.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Handy presenter keys
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With the deck open in a browser: <kbd>S</kbd> opens speaker view, <kbd>F</kbd> goes fullscreen, <kbd>O</kbd> shows a slide <strong>overview</strong> grid, and <kbd>E</kbd> switches to a print layout for exporting to PDF.</p>
+</div>
+</div>
+</section>
+<section id="step-8-switch-between-the-built-in-themes" class="level2">
+<h2 class="anchored" data-anchor-id="step-8-switch-between-the-built-in-themes">Step 8 — Switch Between the Built-In Themes</h2>
+<p>Quarto ships with a set of reveal.js <a href="https://quarto.org/docs/presentations/revealjs/themes.html">themes</a>. Pick one with a <code>theme:</code> line under the format:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> serif</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> iemss2026_logo.png</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation recovery · iEMSs 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now try a few: swap <code>serif</code> for <code>simple</code>, <code>moon</code>, <code>solarized</code>, <code>sky</code>, <code>league</code>, <code>night</code>, or <code>dracula</code> and watch the preview restyle instantly. The content never changes — only the look.</p>
+</section>
+<section id="step-9-try-the-custom-clean-theme" class="level2">
+<h2 class="anchored" data-anchor-id="step-9-try-the-custom-clean-theme">Step 9 — Try the Custom “Clean” Theme</h2>
+<p>For a more distinctive title slide, install a community theme — Grant McDermott’s widely used <a href="https://github.com/grantmcdermott/quarto-revealjs-clean">quarto-revealjs-clean</a>. From a terminal inside your <code>my-talk/</code> folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension grantmcdermott/quarto-revealjs-clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This adds an <code>_extensions/</code> folder providing a new format, <code>clean-revealjs</code>. Switch to it by changing <strong>only the format line</strong> — the clean theme understands the same reveal.js options, so your logo and footer carry over:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">clean-revealjs</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> iemss2026_logo.png</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation recovery · iEMSs 2026"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Render again. Your title slide now uses the clean theme’s layout — and because the author block from Step 2 follows Quarto’s standard schema, your name, ORCID, and affiliation slot straight into it. That single-line swap, with everything else untouched, is the payoff of keeping content and styling separate.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Where custom formats come from
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>clean-revealjs</code> is a Quarto <strong>extension</strong> — a small bundle of CSS and templates that adds a new output format. It is the same mechanism behind the journal templates in the manuscript exercise. Browse more at the <a href="https://quarto.org/docs/extensions/">Quarto extensions listing</a>.</p>
+</div>
+</div>
+</section>
+<section id="step-10-render-to-html" class="level2">
+<h2 class="anchored" data-anchor-id="step-10-render-to-html">Step 10 — Render to HTML</h2>
+<p>While writing you have been using <code>quarto preview</code>. For the finished file, render it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render talk.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This produces <code>talk.html</code> — a complete, self-contained slide deck that opens in any modern browser, no internet or server required. That single HTML file <em>is</em> your presentation: open it to present, or send it to a colleague.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Make it one shareable file
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By default the HTML references a few supporting folders. To bundle everything into a single file you can email or drop on a USB stick, add one line under the format:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section id="stretch-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="stretch-tasks">Stretch Tasks</h2>
+<p>If you finish early, try one of these:</p>
+<ul>
+<li><strong>Compare management scenarios.</strong> Read <code>restoration-scenarios.csv</code> in your setup chunk and add a results slide with a second figure coloured or faceted by <code>scenario</code> (Baseline / Moderate / Intensive) — the same data behind the <a href="../dashboards/restoration-dashboard-scenarios.html">scenarios dashboard</a>.</li>
+<li><strong>Embed an interactive chart.</strong> Reuse a <code>plotly</code> chart from the dashboard exercise on a slide — it stays live and hoverable in the browser, something PowerPoint can’t do.</li>
+<li><strong>Animate a transition.</strong> Put <code>{auto-animate=true}</code> on two consecutive <code>##</code> slides and move or resize an element between them; reveal.js tweens it. Or set <code>transition: slide</code> under the format for a global slide transition.</li>
+<li><strong>Add a chalkboard.</strong> Set <code>chalkboard: true</code> under the format, then press <kbd>B</kbd> while presenting to draw on the slide live.</li>
+<li><strong>Export a PDF or PowerPoint.</strong> Press <kbd>E</kbd> then print-to-PDF for a handout, or add <code>pptx: default</code> to the <code>format:</code> block and render again for a PowerPoint version colleagues can edit.</li>
+</ul>
+</section>
+<section id="adapting-path-a-your-own-talk" class="level2">
+<h2 class="anchored" data-anchor-id="adapting-path-a-your-own-talk">Adapting Path A (Your Own Talk)</h2>
+<p>Converting a talk of your own follows exactly the same skeleton:</p>
+<ul>
+<li>Put your real title-slide details in the front matter, and your institution’s logo next to the file.</li>
+<li>Break your talk into <code>#</code> section dividers and <code>##</code> content slides, one message per slide.</li>
+<li>Re-create your key figure as a code chunk with <code>echo: false</code> (or drop in an image with <code>![](figure.png)</code>).</li>
+<li>Move the script you would otherwise read aloud into <code>::: {.notes}</code> blocks.</li>
+<li>Try a built-in theme, then <code>clean-revealjs</code>, and keep whichever fits your message.</li>
 </ul>
 </section>
 <section id="self-check" class="level2">
 <h2 class="anchored" data-anchor-id="self-check">Self-Check</h2>
-<p>Ask yourself:</p>
 <ul>
-<li>Would each slide be readable in a live talk?</li>
-<li>Is there one main message per slide?</li>
-<li>Can this deck grow into a fuller presentation later?</li>
+<li>Does <code>quarto render talk.qmd</code> produce a <code>talk.html</code> you can open in a browser?</li>
+<li>Does the title slide show your name, affiliation, and the logo?</li>
+<li>Does at least one slide carry a figure drawn from the data, under a single clear message?</li>
+<li>Do your speaker notes show up in speaker view (press <kbd>S</kbd>) but never on the slides themselves?</li>
+<li>Can you switch from a built-in theme to <code>clean-revealjs</code> by changing only the <code>format:</code> line?</li>
 </ul>
 
 

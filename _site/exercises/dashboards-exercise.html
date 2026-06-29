@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0fb7984bd7a2837b7719dc8f9e06b6f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f22a97106d05db53dddcf3a5637eec6f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-0fb7984bd7a2837b7719dc8f9e06b6f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7edb8d14c383aeea52f4c20b499ec805.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a57b28c65694907181ab0a9887c3e078.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7edb8d14c383aeea52f4c20b499ec805.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -483,12 +483,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../go-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Go Further</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../go-further.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Go Further</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -537,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-goal" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
 <p>Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how <code>format: dashboard</code> arranges a page into rows and columns.</p>
-<p>You are building toward the dashboard shown on the <a href="../use-cases/dashboards.html">Dashboards</a> page. The complete, ready-to-run version lives in the repository as <code>use-cases/restoration-dashboard.qmd</code>, so you can copy exact code from there or compare as you go.</p>
+<p>You are building toward the dashboard shown on the <a href="../use-cases/dashboards.html">Dashboards</a> page. The complete, ready-to-run version lives in the repository as <code>dashboards/restoration-dashboard.qmd</code>, so you can copy exact code from there or compare as you go.</p>
 <section id="the-data" class="level3">
 <h3 class="anchored" data-anchor-id="the-data">The Data</h3>
 <p>You will use a small synthetic dataset, <code>data/restoration-sites.csv</code>. Each row is one survey of one site:</p>
@@ -730,7 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a <strong>tabset</strong>. We provide a second dataset, <code>data/restoration-scenarios.csv</code>, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).</p>
 <p><a href="..\data/restoration-scenarios.csv" class="btn btn-secondary" download="restoration-scenarios.csv">Download restoration-scenarios.csv</a></p>
 <p>Here is what it produces. Switch the tabs above the chart to compare the scenarios:</p>
-<iframe src="../use-cases/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset">
+<iframe src="../dashboards/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset">
 </iframe>
 <p>Read it in your setup chunk and add a small helper:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>scenarios <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/restoration-scenarios.csv"</span>) <span class="sc">|&gt;</span></span>

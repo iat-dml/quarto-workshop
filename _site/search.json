@@ -52,7 +52,7 @@
     "href": "use-cases/presentations.html",
     "title": "Creating Presentations",
     "section": "",
-    "text": "Quarto can create slide decks using formats such as RevealJS. This is useful for researchers who want presentations to live close to the same material as their reports, papers, and websites.\n\n\nTalks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.\n\n\n\n\n\nIn a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.\n\n\n\n\nA conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "text": "Quarto can create presentations in several different formats: - reveal.js (HTML) - PowerPoint (MS Office) - Beamer (LaTeX/PDF)\nand we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -63,8 +63,8 @@
     "objectID": "use-cases/presentations.html#why-this-matters-for-researchers",
     "href": "use-cases/presentations.html#why-this-matters-for-researchers",
     "title": "Creating Presentations",
-    "section": "",
-    "text": "Talks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.",
+    "section": "Why This Matters For Researchers",
+    "text": "Why This Matters For Researchers\nThe typical presentations we have to give as researchers often incorporate the same text content, figures, tables, and sometimes even code that we use in our manuscripts and other outputs so it makes sense to use the same publishing system to create them. Quarto allows you to do this in a way that is reproducible and easy to update, so that your slides are always consistent with your other outputs.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -72,11 +72,11 @@
     ]
   },
   {
-    "objectID": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/presentations.html#key-quarto-features-for-this-workflow",
+    "objectID": "use-cases/presentations.html#key-benefits-of-using-quarto-revealjs-for-presentations",
+    "href": "use-cases/presentations.html#key-benefits-of-using-quarto-revealjs-for-presentations",
     "title": "Creating Presentations",
-    "section": "",
-    "text": "In a Quarto slide deck, level-two headings usually create new slides.\n\n\n\nSpeaker notes, figures, and short summaries can be adapted from existing Quarto material.\n\n\n\nHTML slides are easy to share and update, and they work well for teaching or conference talks.",
+    "section": "Key benefits of using Quarto-revealjs for presentations",
+    "text": "Key benefits of using Quarto-revealjs for presentations\n\nReuse your existing content\nCode generated figures, tables, citations and text can be adapted from existing material in other .qmd files. This is particularly useful for conference talks where you want to present your latest results.\n\n\nEmbedded interactive and dynamic content\nHTML and JavaScript diagrams can be directly embedded in slides, and code cells can be run live in the browser. This is particularly useful for teaching and workshops. you can also use iframes to embed external content, such as videos or websites, in your slides in a more seamless fashion than PowerPoint.\n\n\nPortability and shareability\nAs mentioned above, Quarto slides can be outputted as PowerPoint. However the results is sometimes not perfect and some features may be lost for complex slides. However, another alternative is to use the built-in plugin: Print-to-PDF to convert your slides to PDF.\n\n\nCustomizable Themes\nQuarto provides 11 built in themes for reveal.js slides or you can prepare your own lightweight CSS theme based on your own branding and apply it to your slides as a template.\n\n\nEstablished Ecosystem with continued development\nreveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many plugins available to extend its functionality, and some of these have already been adapted for Quarto: Quarto Reveal Plugins.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -84,11 +84,11 @@
     ]
   },
   {
-    "objectID": "use-cases/presentations.html#concrete-academic-example",
-    "href": "use-cases/presentations.html#concrete-academic-example",
+    "objectID": "use-cases/presentations.html#caveats",
+    "href": "use-cases/presentations.html#caveats",
     "title": "Creating Presentations",
-    "section": "",
-    "text": "A conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.\n\n\n\n\n\n\nNotePresentation mindset\n\n\n\nA good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.\n\n\nGo to the presentations exercise",
+    "section": "Caveats",
+    "text": "Caveats\nGraphics manipulation: While we can recommend Quarto-revealjs for presentations where the actual content is the main focus, it is not a good choice for presentations where the visual design is the main focus. Specifically reveal.js offers very little capacity for creating and manipulating vector graphics compared to PowerPoint.\nPortability: While Quarto-revealjs slides can be converted to PowerPoint, the conversion is not perfect and some features may be lost. If you need to share your slides with others who do not have access to a web browser, or if you need to present in a setting where internet access is limited, you may want to consider using PowerPoint or Beamer instead.\nGo to the presentations exercise",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -565,9 +565,9 @@
   {
     "objectID": "exercises/presentations-exercise.html",
     "href": "exercises/presentations-exercise.html",
-    "title": "Exercise: Build a Short Slide Deck",
+    "title": "Exercise: Build a Reveal.js Presentation",
     "section": "",
-    "text": "Create a minimal Quarto presentation that could support a short research talk.",
+    "text": "Build a real Quarto presentation: a single .qmd source that renders to a polished, web-native reveal.js slide deck you could give as a conference talk. Along the way you will add proper title-slide metadata, drop in a logo, build introductory and content slides, pull a figure straight from data, write speaker notes only you can see, and restyle the whole deck by changing a single line — first with Quarto’s built-in themes, then with a community theme.\nThis is the hands-on companion to the Creating Presentations page. The full reference for everything below is the Quarto reveal.js guide.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -577,9 +577,9 @@
   {
     "objectID": "exercises/presentations-exercise.html#learning-goal",
     "href": "exercises/presentations-exercise.html#learning-goal",
-    "title": "Exercise: Build a Short Slide Deck",
+    "title": "Exercise: Build a Reveal.js Presentation",
     "section": "",
-    "text": "Create a minimal Quarto presentation that could support a short research talk.",
+    "text": "Build a real Quarto presentation: a single .qmd source that renders to a polished, web-native reveal.js slide deck you could give as a conference talk. Along the way you will add proper title-slide metadata, drop in a logo, build introductory and content slides, pull a figure straight from data, write speaker notes only you can see, and restyle the whole deck by changing a single line — first with Quarto’s built-in themes, then with a community theme.\nThis is the hands-on companion to the Creating Presentations page. The full reference for everything below is the Quarto reveal.js guide.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -661,9 +661,9 @@
   {
     "objectID": "exercises/presentations-exercise.html#self-check",
     "href": "exercises/presentations-exercise.html#self-check",
-    "title": "Exercise: Build a Short Slide Deck",
+    "title": "Exercise: Build a Reveal.js Presentation",
     "section": "Self-Check",
-    "text": "Self-Check\nAsk yourself:\n\nWould each slide be readable in a live talk?\nIs there one main message per slide?\nCan this deck grow into a fuller presentation later?",
+    "text": "Self-Check\n\nDoes quarto render talk.qmd produce a talk.html you can open in a browser?\nDoes the title slide show your name, affiliation, and the logo?\nDoes at least one slide carry a figure drawn from the data, under a single clear message?\nDo your speaker notes show up in speaker view (press S) but never on the slides themselves?\nCan you switch from a built-in theme to clean-revealjs by changing only the format: line?",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -675,7 +675,7 @@
     "href": "exercises/dashboards-exercise.html",
     "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as use-cases/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
+    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as dashboards/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -687,7 +687,7 @@
     "href": "exercises/dashboards-exercise.html#learning-goal",
     "title": "Exercise: Build a Dashboard",
     "section": "",
-    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as use-cases/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
+    "text": "Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how format: dashboard arranges a page into rows and columns.\nYou are building toward the dashboard shown on the Dashboards page. The complete, ready-to-run version lives in the repository as dashboards/restoration-dashboard.qmd, so you can copy exact code from there or compare as you go.\n\n\nYou will use a small synthetic dataset, data/restoration-sites.csv. Each row is one survey of one site:\n\nlibrary(readr)\nsites &lt;- read_csv(\"../data/restoration-sites.csv\")\nhead(sites)\n\nIt has five columns:\n\nsite — the monitoring site (A to D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv\n\n\n\nThis is the part that trips most people up at first, so it is worth getting clear before you build.\nA dashboard fills the browser window and arranges your content into a grid of cards. Two heading levels control that grid:\n\n## starts a new row\n### starts a new column inside the current row\n\nBy default a dashboard is row-oriented: rows stack from top to bottom, and cards placed in the same row sit side by side.\nOne row, two columns (charts side by side):\n## Row\n\n### Column\n```r\nchart_one\n```\n\n### Column\n```r\nchart_two\n```\nchart_one and chart_two appear next to each other.\nTwo rows (charts stacked):\n## Row\n```r\nchart_one\n```\n\n## Row\n```r\nchart_two\n```\nNow chart_one is on top and chart_two below it.\n\n\n\n\n\n\nTipShortcut\n\n\n\nInside a single ## row you can leave out the ### headings: each code cell already becomes its own column. The ### headings just make the layout explicit (and let you set widths later).\n\n\nIf you would rather have your top-level ## headings create columns instead of rows, flip the orientation in the YAML:\nformat:\n  dashboard:\n    orientation: columns\n\n\n\n\n\n\nNoteA note on the code fences below\n\n\n\nEvery code cell in a dashboard is an executable chunk, so in your own file its fence is ```{r} (with curly braces). In the sketches on this page we write ```r without braces only so they display as text instead of running.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1686,7 +1686,7 @@
     "href": "use-cases/research-diary.html#why-this-matters-for-researchers",
     "title": "Documenting Research in Progress",
     "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nResearch in progress generates many small but important pieces of context:\n\nwhat you tried\nwhat worked and failed\nwhich files or datasets you used\nintermediate results that informed decisions\nwhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
+    "text": "Why This Matters For Researchers\nResearch in progress generates many small but important pieces of context:\n\nWhat you tried\nWhat worked and failed\nWhich files or datasets you used\nIntermediate results that informed decisions\nWhat to do next\n\nA Quarto notebook helps capture that context in a durable and shareable format.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1694,11 +1694,11 @@
     ]
   },
   {
-    "objectID": "use-cases/research-diary.html#key-quarto-features-for-this-workflow",
-    "href": "use-cases/research-diary.html#key-quarto-features-for-this-workflow",
+    "objectID": "use-cases/research-diary.html#key-benefits-of-using-quarto-for-research-diaries",
+    "href": "use-cases/research-diary.html#key-benefits-of-using-quarto-for-research-diaries",
     "title": "Documenting Research in Progress",
-    "section": "Key Quarto Features For This Workflow",
-    "text": "Key Quarto Features For This Workflow\n\nClear Daily or Weekly Entries\nMarkdown headings make it easy to separate entries by date, experiment, or task.\n\n\nMetadata At The Top\nYAML can record authorship, date, project name, and output preferences.\n\n\nOptional Code Chunks\nIf you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\n\n\nMultiple Outputs\nAn HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
+    "section": "Key benefits of using Quarto for research diaries",
+    "text": "Key benefits of using Quarto for research diaries\n\nClear Daily or Weekly Entries: Markdown headings make it easy to separate entries by date, experiment, or task.\nMetadata At The Top: YAML can record authorship, date, project name, and output preferences.\nOptional Code Chunks: If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.\nMultiple Outputs: An HTML version may be useful for browsing, while PDF can work for archiving or sharing.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -1715,6 +1715,186 @@
       "Home",
       "Academic Use Cases",
       "Documenting Research in Progress"
+    ]
+  },
+  {
+    "objectID": "use-cases/presentations.html#caveat-graphical-design",
+    "href": "use-cases/presentations.html#caveat-graphical-design",
+    "title": "Creating Presentations",
+    "section": "Caveat: Graphical Design",
+    "text": "Caveat: Graphical Design\nWhile we can recommend Quarto-revealjs for presentations where the actual content is the main focus, it is not a good choice for presentations where the visual design is the main focus. Specifically reveal.js offers very little capacity for creating and manipulating vector graphics compared to PowerPoint.\nGo to the presentations exercise",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "Creating Presentations"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#two-ways-to-do-this-exercise",
+    "href": "exercises/presentations-exercise.html#two-ways-to-do-this-exercise",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Two Ways to Do This Exercise",
+    "text": "Two Ways to Do This Exercise\nPick whichever is more useful to you — the steps are the same either way:\n\nPath A — Bring your own. Turn a talk you already need to give (or a recent paper or poster) into a Quarto deck. You will get the most out of the exercise this way, because you end with slides you can actually present.\nPath B — Use our sample data. Build a short conference talk about ecological restoration from the dataset below — the same data behind the manuscript and dashboard exercises. Choose this if you would rather not wrangle your own material right now.\n\nWherever a step needs concrete code, we show it for the sample data. If you are on Path A, swap in your own slide titles, figure, and text.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#the-sample-data-path-b",
+    "href": "exercises/presentations-exercise.html#the-sample-data-path-b",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "The Sample Data (Path B)",
+    "text": "The Sample Data (Path B)\nrestoration-sites.csv records quarterly monitoring of four restoration sites (A–D) from 2023 to 2025. Each row is one survey of one site:\n\nsite — the monitoring site (A–D)\ndate — survey date (quarterly)\nvegetation_cover_pct — vegetation cover, in percent\nspecies_richness — number of species recorded\nsoil_moisture_pct — soil moisture, in percent\n\nDownload restoration-sites.csv Download restoration-scenarios.csv\n(restoration-scenarios.csv holds vegetation cover under three management scenarios and is only needed for a stretch task.)",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-1-create-the-presentation-file",
+    "href": "exercises/presentations-exercise.html#step-1-create-the-presentation-file",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 1 — Create the Presentation File",
+    "text": "Step 1 — Create the Presentation File\nA reveal.js presentation is just one .qmd file with format: revealjs. Make a folder to keep this exercise in (say my-talk/), and inside it create a file called talk.qmd with this minimal starter:\n---\ntitle: \"Vegetation Recovery Across Four Restoration Sites\"\nformat: revealjs\n---\n\n## First slide\n\nEach level-2 heading (`##`) starts a new slide.\nNow preview it. Open talk.qmd in your editor and click Preview, or run this in a terminal sitting in the my-talk/ folder:\nquarto preview talk.qmd\nA slide deck opens in your browser. Use the arrow keys to move through it; press F for fullscreen and Esc to leave. Leave the preview running — it refreshes every time you save.\n\n\n\n\n\n\nTipPrefer buttons to typing?\n\n\n\nYou don’t have to start from scratch. In RStudio choose New File → Quarto Presentation → Reveal JS; in Positron or VS Code open the command palette and pick Quarto: Create Document. The result is the same kind of starter file.\n\n\n\n\n\n\n\n\nNoteHow slides are made\n\n\n\nTwo heading levels shape the deck:\n\n# (level 1) creates a section divider — a big title slide that breaks the talk into parts.\n## (level 2) creates a content slide.\n\nEverything you write under a ## — text, bullets, a figure — lands on that slide.\n\n\n\n\n\n\n\n\nNoteA note on the code chunks below\n\n\n\nEvery R chunk in your real talk.qmd opens with ```{r} — with curly braces — so Quarto runs it. In the sketches on this page we write ```r without braces only so they display as text instead of executing. When you copy them into your file, add the braces back.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-2-add-your-title-slide-and-author-details",
+    "href": "exercises/presentations-exercise.html#step-2-add-your-title-slide-and-author-details",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 2 — Add Your Title Slide and Author Details",
+    "text": "Step 2 — Add Your Title Slide and Author Details\nThe title slide is built automatically from the document’s metadata. Replace the front matter with your own title, a subtitle naming the venue, and a proper author block — add yourself, with an ORCID, email, and affiliation:\n---\ntitle: \"Vegetation Recovery Across Four Restoration Sites\"\nsubtitle: \"iEMSs 2026, Dublin\"\nauthor:\n  - name: Your Name\n    orcid: 0000-0000-0000-0000\n    email: you@institute.org\n    affiliations: Your Institute\ndate: today\nformat: revealjs\n---\nSave and watch the preview: the title, subtitle, your name, affiliation, and date now fill the opening slide. This is the same author schema you used in the manuscript exercise — which is what lets you switch themes later without touching it.\n\n\n\n\n\n\nNoteWhere to find an ORCID\n\n\n\nEvery researcher can register for a free ORCID at orcid.org — it is the 16-digit ID in their profile URL. Use a real one if you have it; the placeholder above still renders fine.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-3-add-a-logo",
+    "href": "exercises/presentations-exercise.html#step-3-add-a-logo",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 3 — Add a Logo",
+    "text": "Step 3 — Add a Logo\nA conference talk usually carries a logo — your institution’s, or the conference’s. Download the iEMSs 2026 logo (or use your own university’s):\nDownload iemss2026_logo.png\nSave it next to talk.qmd. Then tell reveal.js to use it. To add options to a format, you expand the single-line format: revealjs into a nested block:\nformat:\n  revealjs:\n    logo: iemss2026_logo.png\n    footer: \"Vegetation recovery · iEMSs 2026\"\nlogo: pins your image to the bottom-right of every slide; footer: adds a line of text along the bottom. Render and you will see both.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-4-build-your-introductory-slides",
+    "href": "exercises/presentations-exercise.html#step-4-build-your-introductory-slides",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 4 — Build Your Introductory Slides",
+    "text": "Step 4 — Build Your Introductory Slides\nA talk needs a way in. Add a section divider and an opening content slide before you reach any results. Two reveal.js features make these feel like slides rather than a wall of text:\n\na list marked {.incremental} reveals its bullets one click at a time;\na line containing just . . . inserts a pause — the next content appears on the following click.\n\n# Background {background-color=\"#2c3e50\"}\n\n## Why monitor restoration? {.incremental}\n\n- Restoration projects *promise* recovery — but do sites actually recover?\n- We surveyed four sites every quarter for two years\n- That gives a simple, testable signal: change in vegetation cover\n\n## Our question\n\n. . .\n\nHow fast is vegetation cover recovering — and does the pace differ by site?\nThe # Background line is a section slide (the {background-color=...} gives it a coloured backdrop); the two ## lines are content slides. Click through the preview to see the bullets and the pause reveal in turn.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-5-load-your-data-in-a-setup-chunk",
+    "href": "exercises/presentations-exercise.html#step-5-load-your-data-in-a-setup-chunk",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 5 — Load Your Data in a Setup Chunk",
+    "text": "Step 5 — Load Your Data in a Setup Chunk\nYour results slide will draw a figure from the data, so load it once near the top. Make a data/ folder inside my-talk/ and copy restoration-sites.csv into it (use the download button above). Then add a setup chunk just below the front matter. include: false runs the code but keeps it — and any messages — off your slides:\n```r\n#| label: setup\n#| include: false\n\nlibrary(readr)\nlibrary(dplyr)\nlibrary(ggplot2)\n\nsites &lt;- read_csv(\"data/restoration-sites.csv\") |&gt;\n  mutate(date = as.Date(date))\n\nfirst  &lt;- sites |&gt; filter(date == min(date))   # earliest survey per site\nlatest &lt;- sites |&gt; filter(date == max(date))   # most recent survey per site\n```\nfirst and latest give the start and end of the monitoring period, which the next slide uses.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-6-add-a-content-slide-with-a-figure-and-a-main-message",
+    "href": "exercises/presentations-exercise.html#step-6-add-a-content-slide-with-a-figure-and-a-main-message",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 6 — Add a Content Slide With a Figure and a Main Message",
+    "text": "Step 6 — Add a Content Slide With a Figure and a Main Message\nThis is the heart of the talk. A good results slide makes one point — so put the message in the slide title, and let a figure carry the evidence. Use a two-column layout to set the chart beside a few takeaways:\n## Cover is recovering at every site {.smaller}\n\n:::: {.columns}\n\n::: {.column width=\"60%\"}\n```r\n#| echo: false\n#| fig-width: 6\n#| fig-height: 4.5\n\nggplot(sites, aes(date, vegetation_cover_pct, colour = site)) +\n  geom_line(linewidth = 1) +\n  geom_point() +\n  labs(x = NULL, y = \"Vegetation cover (%)\", colour = NULL) +\n  theme_minimal(base_size = 16)\n```\n:::\n\n::: {.column width=\"40%\"}\n- Cover rose at **all four** sites\n- Site D leads; Site C lags\n- Mean cover is up **`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))` points** since 2023\n:::\n\n::::\n```\nThree things to notice:\n\necho: false shows the plot but hides the code that made it — what an audience wants.\nThe :::: {.columns} / ::: {.column} blocks split the slide; adjust the width percentages to taste.\nThat last bullet uses inline R, `r ...`, so the headline number is computed from the data — exactly as in the manuscript exercise. Change the CSV and the slide updates itself.\n\nThe {.smaller} after the title shrinks the text on this one slide, which helps when a slide is busy.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-7-add-speaker-notes",
+    "href": "exercises/presentations-exercise.html#step-7-add-speaker-notes",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 7 — Add Speaker Notes",
+    "text": "Step 7 — Add Speaker Notes\nReveal.js has a presenter view that shows notes only you can see. Add a ::: {.notes} block to the bottom of your results slide:\n## Cover is recovering at every site\n\n&lt;!-- your columns / figure / bullets from Step 6 --&gt;\n\n::: {.notes}\nRemind the audience these are synthetic data. Point out Site C's slow start —\nlikely the driest site. Pause here for questions before moving on.\n:::\nThe notes never appear on the slide itself. To read them while presenting, press S in the browser to open speaker view — a separate window with your notes, a timer, and a preview of the next slide.\n\n\n\n\n\n\nTipHandy presenter keys\n\n\n\nWith the deck open in a browser: S opens speaker view, F goes fullscreen, O shows a slide overview grid, and E switches to a print layout for exporting to PDF.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-8-switch-between-the-built-in-themes",
+    "href": "exercises/presentations-exercise.html#step-8-switch-between-the-built-in-themes",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 8 — Switch Between the Built-In Themes",
+    "text": "Step 8 — Switch Between the Built-In Themes\nQuarto ships with a set of reveal.js themes. Pick one with a theme: line under the format:\nformat:\n  revealjs:\n    theme: serif\n    logo: iemss2026_logo.png\n    footer: \"Vegetation recovery · iEMSs 2026\"\nNow try a few: swap serif for simple, moon, solarized, sky, league, night, or dracula and watch the preview restyle instantly. The content never changes — only the look.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-9-try-the-custom-clean-theme",
+    "href": "exercises/presentations-exercise.html#step-9-try-the-custom-clean-theme",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 9 — Try the Custom “Clean” Theme",
+    "text": "Step 9 — Try the Custom “Clean” Theme\nFor a more distinctive title slide, install a community theme — Grant McDermott’s widely used quarto-revealjs-clean. From a terminal inside your my-talk/ folder:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nThis adds an _extensions/ folder providing a new format, clean-revealjs. Switch to it by changing only the format line — the clean theme understands the same reveal.js options, so your logo and footer carry over:\nformat:\n  clean-revealjs:\n    logo: iemss2026_logo.png\n    footer: \"Vegetation recovery · iEMSs 2026\"\nRender again. Your title slide now uses the clean theme’s layout — and because the author block from Step 2 follows Quarto’s standard schema, your name, ORCID, and affiliation slot straight into it. That single-line swap, with everything else untouched, is the payoff of keeping content and styling separate.\n\n\n\n\n\n\nNoteWhere custom formats come from\n\n\n\nclean-revealjs is a Quarto extension — a small bundle of CSS and templates that adds a new output format. It is the same mechanism behind the journal templates in the manuscript exercise. Browse more at the Quarto extensions listing.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#step-10-render-to-html",
+    "href": "exercises/presentations-exercise.html#step-10-render-to-html",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Step 10 — Render to HTML",
+    "text": "Step 10 — Render to HTML\nWhile writing you have been using quarto preview. For the finished file, render it:\nquarto render talk.qmd\nThis produces talk.html — a complete, self-contained slide deck that opens in any modern browser, no internet or server required. That single HTML file is your presentation: open it to present, or send it to a colleague.\n\n\n\n\n\n\nTipMake it one shareable file\n\n\n\nBy default the HTML references a few supporting folders. To bundle everything into a single file you can email or drop on a USB stick, add one line under the format:\nformat:\n  revealjs:\n    embed-resources: true",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#stretch-tasks",
+    "href": "exercises/presentations-exercise.html#stretch-tasks",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Stretch Tasks",
+    "text": "Stretch Tasks\nIf you finish early, try one of these:\n\nCompare management scenarios. Read restoration-scenarios.csv in your setup chunk and add a results slide with a second figure coloured or faceted by scenario (Baseline / Moderate / Intensive) — the same data behind the scenarios dashboard.\nEmbed an interactive chart. Reuse a plotly chart from the dashboard exercise on a slide — it stays live and hoverable in the browser, something PowerPoint can’t do.\nAnimate a transition. Put {auto-animate=true} on two consecutive ## slides and move or resize an element between them; reveal.js tweens it. Or set transition: slide under the format for a global slide transition.\nAdd a chalkboard. Set chalkboard: true under the format, then press B while presenting to draw on the slide live.\nExport a PDF or PowerPoint. Press E then print-to-PDF for a handout, or add pptx: default to the format: block and render again for a PowerPoint version colleagues can edit.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
+    ]
+  },
+  {
+    "objectID": "exercises/presentations-exercise.html#adapting-path-a-your-own-talk",
+    "href": "exercises/presentations-exercise.html#adapting-path-a-your-own-talk",
+    "title": "Exercise: Build a Reveal.js Presentation",
+    "section": "Adapting Path A (Your Own Talk)",
+    "text": "Adapting Path A (Your Own Talk)\nConverting a talk of your own follows exactly the same skeleton:\n\nPut your real title-slide details in the front matter, and your institution’s logo next to the file.\nBreak your talk into # section dividers and ## content slides, one message per slide.\nRe-create your key figure as a code chunk with echo: false (or drop in an image with ![](figure.png)).\nMove the script you would otherwise read aloud into ::: {.notes} blocks.\nTry a built-in theme, then clean-revealjs, and keep whichever fits your message.",
+    "crumbs": [
+      "Home",
+      "Academic Use Cases",
+      "   ↳ Exercise"
     ]
   }
 ]

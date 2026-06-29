@@ -19,7 +19,7 @@ This website is designed as a guided reference to our workshop that was first gi
 :::::::::::: {.team-grid}
 ::::: {.quarto-grid-item .card-team}
 ::: team-image-container
-![](assets/ben.png){.team-image}
+![](assets/ben.jpg){.team-image}
 :::
 
 [Ben Black]{.team-member-name}
