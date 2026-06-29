@@ -13,6 +13,7 @@ Research in progress generates many small but important pieces of context:
 - what you tried
 - what worked and failed
 - which files or datasets you used
+- intermediate results that informed decisions
 - what to do next
 
 A Quarto notebook helps capture that context in a durable and shareable format.
@@ -37,12 +38,14 @@ An HTML version may be useful for browsing, while PDF can work for archiving or 
 
 ## Concrete Academic Example
 
-Imagine a field ecology project. A researcher can keep one `.qmd` file for weekly notes that includes:
+Think of a recent modelling project you've worked on. How did you keep track of your decisions, observations and intermediate results? 
 
-- observations from the field
-- links to raw data files
+A researcher can keep one `.qmd` file for weekly notes that includes:
+
+- observations from different stages of model development
+- links to datasets, scripts, and model runs
 - a short list of unresolved issues
-- a simple chunk that prints the number of new observations collected
+- a simple chunk that prints the current state of results or a key figure
 
 ::: {.callout-note}
 ## Good notebook habit
