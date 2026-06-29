@@ -1,0 +1,6 @@
+# Dashboards are standalone, full-page documents. Suppress the website
+# navbar and sidebar that would otherwise be inherited from the project
+# configuration in _quarto-website.yml.
+navbar: false
+sidebar: false
+repo-actions: false

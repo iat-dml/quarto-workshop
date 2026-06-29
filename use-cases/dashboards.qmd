@@ -48,18 +48,18 @@ In the exercise you will build a small restoration-monitoring dashboard with thr
 
 You can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:
 
-<iframe src="restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard"></iframe>
+<iframe src="../dashboards/restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard"></iframe>
 
-A dashboard is normally a full-screen page of its own. [See it in full screen here](restoration-dashboard.html){target="_blank"}.
+A dashboard is normally a full-screen page of its own. [See it in full screen here](../dashboards/restoration-dashboard.html){target="_blank"}.
 
 ## How Interactive Can a Dashboard Be?
 
 Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:
 
-- **plotly charts**: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.
-- **sortable tables**: click a column header in the table above to reorder the rows (built with the `DT` package).
-- **tabsets**: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.
+- **[Plotly charts](https://plotly.com/)**: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.
+- **Sortable tables**: click a column header in the table above to reorder the rows (built with the `DT` package).
+- **Tabsets**: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.
 
-The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs **Shiny** and a running server, which a static host like GitHub Pages cannot provide.
+The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs a running server which a static host like GitHub Pages cannot provide. To build such a dashboard you can use the [Shiny](https://shiny.posit.co/) framework. 
 
 [Go to the dashboards exercise](../exercises/dashboards-exercise.qmd){.btn .btn-primary}

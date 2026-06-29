@@ -6,7 +6,7 @@ title: "Exercise: Build a Dashboard"
 
 Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how `format: dashboard` arranges a page into rows and columns.
 
-You are building toward the dashboard shown on the [Dashboards](../use-cases/dashboards.qmd) page. The complete, ready-to-run version lives in the repository as `use-cases/restoration-dashboard.qmd`, so you can copy exact code from there or compare as you go.
+You are building toward the dashboard shown on the [Dashboards](../use-cases/dashboards.qmd) page. The complete, ready-to-run version lives in the repository as `dashboards/restoration-dashboard.qmd`, so you can copy exact code from there or compare as you go.
 
 ### The Data
 
@@ -221,7 +221,7 @@ To give the dashboard the feel of an interactive tool, you can let readers switc
 
 Here is what it produces. Switch the tabs above the chart to compare the scenarios:
 
-<iframe src="../use-cases/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset"></iframe>
+<iframe src="../dashboards/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset"></iframe>
 
 Read it in your setup chunk and add a small helper:
 
