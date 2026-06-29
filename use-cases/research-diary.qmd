@@ -16,7 +16,7 @@ Research in progress generates many small but important pieces of context:
 
 A Quarto notebook helps capture that context in a durable and shareable format.
 
-## Key Quarto Features For This Workflow
+## Key benefits of using Quarto for research diaries
 
 - **Clear Daily or Weekly Entries:** Markdown headings make it easy to separate entries by date, experiment, or task.
 

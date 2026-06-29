@@ -2,36 +2,41 @@
 title: "Creating Presentations"
 ---
 
-# Short Introduction
+Quarto can create presentations in several different formats:
+-   [reveal.js](https://revealjs.com/) (HTML)
+-   [PowerPoint](powerpoint.qmd) (MS Office)
+-   [Beamer](https://ctan.org/pkg/beamer?lang=en) (LaTeX/PDF)
 
-Quarto can create slide decks using formats such as RevealJS. This is useful for researchers who want presentations to live close to the same material as their reports, papers, and websites.
+and we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.
 
 ## Why This Matters For Researchers
 
-Talks often reuse the same ideas, figures, and summaries that also appear in manuscripts or project documentation. A shared authoring workflow helps reduce duplication and keeps messaging consistent.
+The typical presentations we have to give as researchers often incorporate the same text content, figures, tables, and sometimes even code that we use in our manuscripts and other outputs so it makes sense to use the same publishing system to create them. Quarto allows you to do this in a way that is reproducible and easy to update, so that your slides are always consistent with your other outputs.
 
-## Key Quarto Features For This Workflow
-
-### Slide-Based Authoring
-
-In a Quarto slide deck, level-two headings usually create new slides.
+## Key benefits of using Quarto-revealjs for presentations
 
 ### Reusable Content
 
 Speaker notes, figures, and short summaries can be adapted from existing Quarto material.
 
+### Embedded interactive and dynamic content
+
+HTML/JS based diagrams can be directly embedded in slides, and code can be run live in the browser. This is particularly useful for teaching and workshops. iframes can also be embedded to show external content, such as videos, in a more seamless fashion than PowerPoint. 
+
 ### Web-Native Output
 
 HTML slides are easy to share and update, and they work well for teaching or conference talks.
 
-## Concrete Academic Example
+### Customizable Themes
 
-A conference presentation can be produced from the same project that contains the paper draft and supporting notes. That makes it easier to keep claims, numbers, and figures aligned.
+Quarto provides 11 built in [themes for reveal.js slides](https://quarto.org/docs/presentations/revealjs/themes.html) or you can prepare your own lightweight CSS theme based on your own [branding](../advanced/brand-yml.qmd) and apply it to your slides as a [template](./advanced/templates-and-extensions.qmd). 
 
-::: {.callout-note}
-## Presentation mindset
+### Established Ecosystem with continued development
 
-A good slide deck is not a full paper on screen. Quarto makes it easy to write too much, so concise content still matters.
-:::
+reveal.js is an established ecosystem with it's own [plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware) to extend it's functionality, some of which have already been adapted for Quarto: [Quarto Reveal Plugins](https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins) 
+
+## Caveats 
+
+While we can recommend Quarto-revealjs for presentations where the actual content is the main focus, it is not a good choice for presentations where the visual design is the main focus. Specifically reveal.js offers very little capacity for creating and manipulating vector graphics compared to PowerPoint.
 
 [Go to the presentations exercise](../exercises/presentations-exercise.qmd){.btn .btn-primary}

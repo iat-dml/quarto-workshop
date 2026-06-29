@@ -61,8 +61,10 @@ website:
           - advanced/multi-lingual-outputs.qmd
           - advanced/invites.qmd
           - advanced/ai-assistance.qmd
-      - text: "Go Further"
+      - section: "Go Further"
         href: go-further.qmd
+        contents:
+          - go-further.qmd
 
 format:
   html:

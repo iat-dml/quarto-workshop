@@ -10,9 +10,9 @@ number-sections: false
 [Jump to use cases](use-cases/research-diary.qmd){.btn .btn-outline}
 :::
 
-[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by Posit. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by [Posit](https://posit.co/). It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
 
-This workshop website is designed as a guided reference. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.
+This website is designed as a guided reference to our workshop that was first given at the [13th International Congress on Environmental Modelling and Software in 2026](https://conference.iemss.org/timetable/event/wsc1/). You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.
 
 ## Who We Are
 
@@ -113,7 +113,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 
 [Research Diary](use-cases/research-diary.qmd){.card-title}
 
-[Reproducible research, from rough exploration to a journal-ready PDF.]{.card-desc}
+[Documenting your research in a reproducible way from the very beginning.]{.card-desc}
 
 [{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
@@ -133,7 +133,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 
 [Slides](use-cases/presentations.qmd){.card-title}
 
-[Build reveal.js talks from the same source as your paper.]{.card-desc}
+[Build reveal.js talks from the same source as your research.]{.card-desc}
 
 [{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
@@ -143,7 +143,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 
 [Websites](use-cases/websites.qmd){.card-title}
 
-[Project, lab, and personal sites with Quarto's website mode.]{.card-desc}
+[Project, lab, and personal websites to improve outreach.]{.card-desc}
 
 [{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::
@@ -153,7 +153,7 @@ We have broken down the workshop into six  main sections (with an advanced secti
 
 [Dashboards](advanced/templates-and-extensions.qmd){.card-title}
 
-[Interactive dashboards, plus `brand.yml` for one consistent visual identity.]{.card-desc}
+[Interactive dashboards for exploring and communicating your research.]{.card-desc}
 
 [{{< iconify fa6-solid arrow-right >}}]{.card-go aria-hidden="true"}
 :::

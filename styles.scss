@@ -164,7 +164,9 @@ a {
 // The `>` direct-child combinator ensures only the section header container is
 // targeted, not the leaf items nested inside it.
 .sidebar .sidebar-item-section > .sidebar-item-container .sidebar-item-text,
-.sidebar .sidebar-item-section > .sidebar-item-container .menu-text {
+.sidebar .sidebar-item-section > .sidebar-item-container .menu-text,
+.sidebar .sidebar-item-section > .sidebar-item-text,
+.sidebar .sidebar-item-section > .sidebar-item-text .menu-text {
   font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif !important;
   font-weight: 600 !important;
   letter-spacing: 0.06em;
@@ -184,6 +186,11 @@ a {
   border-left: 2px solid var(--ds-indigo);
   padding-left: 0.6rem;
   margin-left: -0.6rem;
+}
+// "Go Further" is a single-page section — hide the duplicate child item
+// so only the clickable header link shows.
+.sidebar-item-section:last-child > ul.sidebar-section {
+  display: none !important;
 }
 
 // ─── Callouts ───────────────────────────────────────────────────────────
