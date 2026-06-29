@@ -478,13 +478,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link active" data-scroll-target="#why-this-matters-for-researchers">Why This Matters For Researchers</a></li>
   <li><a href="#key-benefits-of-using-quarto-revealjs-for-presentations" id="toc-key-benefits-of-using-quarto-revealjs-for-presentations" class="nav-link" data-scroll-target="#key-benefits-of-using-quarto-revealjs-for-presentations">Key benefits of using Quarto-revealjs for presentations</a>
   <ul class="collapse">
-  <li><a href="#reusable-content" id="toc-reusable-content" class="nav-link" data-scroll-target="#reusable-content">Reusable Content</a></li>
+  <li><a href="#reuse-your-existing-content" id="toc-reuse-your-existing-content" class="nav-link" data-scroll-target="#reuse-your-existing-content">Reuse your existing content</a></li>
   <li><a href="#embedded-interactive-and-dynamic-content" id="toc-embedded-interactive-and-dynamic-content" class="nav-link" data-scroll-target="#embedded-interactive-and-dynamic-content">Embedded interactive and dynamic content</a></li>
-  <li><a href="#web-native-output" id="toc-web-native-output" class="nav-link" data-scroll-target="#web-native-output">Web-Native Output</a></li>
+  <li><a href="#portability-and-shareability" id="toc-portability-and-shareability" class="nav-link" data-scroll-target="#portability-and-shareability">Portability and shareability</a></li>
   <li><a href="#customizable-themes" id="toc-customizable-themes" class="nav-link" data-scroll-target="#customizable-themes">Customizable Themes</a></li>
   <li><a href="#established-ecosystem-with-continued-development" id="toc-established-ecosystem-with-continued-development" class="nav-link" data-scroll-target="#established-ecosystem-with-continued-development">Established Ecosystem with continued development</a></li>
   </ul></li>
-  <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats">Caveats</a></li>
+  <li><a href="#caveat-graphical-design" id="toc-caveat-graphical-design" class="nav-link" data-scroll-target="#caveat-graphical-design">Caveat: Graphical Design</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/presentations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -511,7 +511,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Quarto can create presentations in several different formats: - <a href="https://revealjs.com/">reveal.js</a> (HTML) - <a href="powerpoint.qmd">PowerPoint</a> (MS Office) - <a href="https://ctan.org/pkg/beamer?lang=en">Beamer</a> (LaTeX/PDF)</p>
+<p>Quarto can create presentations in several different formats: - <a href="https://revealjs.com/">reveal.js</a> (HTML) - PowerPoint (MS Office) - <a href="https://ctan.org/pkg/beamer?lang=en">Beamer</a> (LaTeX/PDF)</p>
 <p>and we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.</p>
 <section id="why-this-matters-for-researchers" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters-for-researchers">Why This Matters For Researchers</h2>
@@ -519,29 +519,29 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="key-benefits-of-using-quarto-revealjs-for-presentations" class="level2">
 <h2 class="anchored" data-anchor-id="key-benefits-of-using-quarto-revealjs-for-presentations">Key benefits of using Quarto-revealjs for presentations</h2>
-<section id="reusable-content" class="level3">
-<h3 class="anchored" data-anchor-id="reusable-content">Reusable Content</h3>
-<p>Speaker notes, figures, and short summaries can be adapted from existing Quarto material.</p>
+<section id="reuse-your-existing-content" class="level3">
+<h3 class="anchored" data-anchor-id="reuse-your-existing-content">Reuse your existing content</h3>
+<p>Code-generated figures, tables, citations and text can be adapted from existing material in other <code>.qmd</code> files. This is particularly useful for conference talks where you want to present your latest results.</p>
 </section>
 <section id="embedded-interactive-and-dynamic-content" class="level3">
 <h3 class="anchored" data-anchor-id="embedded-interactive-and-dynamic-content">Embedded interactive and dynamic content</h3>
-<p>HTML/JS based diagrams can be directly embedded in slides, and code can be run live in the browser. This is particularly useful for teaching and workshops. iframes can also be embedded to show external content, such as videos, in a more seamless fashion than PowerPoint.</p>
+<p>HTML and JavaScript diagrams can be directly embedded in slides, and code cells can be run live in the browser. This is particularly useful for teaching and workshops. you can also use iframes to embed external content, such as videos or websites, in your slides in a more seamless fashion than PowerPoint.</p>
 </section>
-<section id="web-native-output" class="level3">
-<h3 class="anchored" data-anchor-id="web-native-output">Web-Native Output</h3>
-<p>HTML slides are easy to share and update, and they work well for teaching or conference talks.</p>
+<section id="portability-and-shareability" class="level3">
+<h3 class="anchored" data-anchor-id="portability-and-shareability">Portability and shareability</h3>
+<p>As mentioned above, Quarto slides can be outputted as PowerPoint. However the results is sometimes not perfect and some features may be lost for complex slides. However, another alternative is to use the built-in plugin: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf">Print-to-PDF</a> to convert your slides to PDF.</p>
 </section>
 <section id="customizable-themes" class="level3">
 <h3 class="anchored" data-anchor-id="customizable-themes">Customizable Themes</h3>
-<p>Quarto provides 11 built in <a href="https://quarto.org/docs/presentations/revealjs/themes.html">themes for reveal.js slides</a> or you can prepare your own lightweight CSS theme based on your own <a href="../advanced/brand-yml.html">branding</a> and apply it to your slides as a <a href="./advanced/templates-and-extensions.qmd">template</a>.</p>
+<p>Quarto provides 11 built in <a href="https://quarto.org/docs/presentations/revealjs/themes.html">themes for reveal.js slides</a> or you can prepare your own lightweight CSS theme based on your own <a href="../advanced/brand-yml.html">branding</a> and apply it to your slides as a <a href="../advanced/templates-and-extensions.html">template</a>.</p>
 </section>
 <section id="established-ecosystem-with-continued-development" class="level3">
 <h3 class="anchored" data-anchor-id="established-ecosystem-with-continued-development">Established Ecosystem with continued development</h3>
-<p>reveal.js is an established ecosystem with it’s own <a href="https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware">plugins</a> to extend it’s functionality, some of which have already been adapted for Quarto: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins">Quarto Reveal Plugins</a></p>
+<p>reveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many <a href="https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware">plugins</a> available to extend its functionality, and some of these have already been adapted for Quarto: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins">Quarto Reveal Plugins</a>.</p>
 </section>
 </section>
-<section id="caveats" class="level2">
-<h2 class="anchored" data-anchor-id="caveats">Caveats</h2>
+<section id="caveat-graphical-design" class="level2">
+<h2 class="anchored" data-anchor-id="caveat-graphical-design">Caveat: Graphical Design</h2>
 <p>While we can recommend Quarto-revealjs for presentations where the actual content is the main focus, it is not a good choice for presentations where the visual design is the main focus. Specifically reveal.js offers very little capacity for creating and manipulating vector graphics compared to PowerPoint.</p>
 <p><a href="../exercises/presentations-exercise.html" class="btn btn-primary">Go to the presentations exercise</a></p>
 
