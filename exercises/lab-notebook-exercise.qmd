@@ -6,6 +6,8 @@ title: "Exercise: Build a Lab Notebook Page"
 
 Create a Quarto document for documenting ongoing research activity in a structured, readable way.
 
+The focus is not only on recording what you did. The goal is to make the reasoning, evidence, uncertainty, and next steps clear enough that you or a collaborator could understand the decision later.
+
 ## Prerequisites
 
 You should be familiar with:
@@ -16,17 +18,31 @@ You should be familiar with:
 
 ## Starter Scenario
 
-You are working on a small restoration ecology project. You want a notebook entry that captures this week's work, next steps, and one optional code area for later use.
+Choose one recent decision, comparison, or exploratory step from your own modelling work. This does not need to be a major result.
+
+Examples include:
+
+- choosing between two environmental datasets
+- excluding, transforming, or aggregating observations
+- changing a parameter value or model setting
+- comparing alternative model runs
+- diagnosing unexpected spatial or temporal patterns
+- deciding whether to trust a model output
+- recording why a result was not used
+- noting an assumption that may need to be revisited
 
 ## Step-By-Step Exercise
 
 1. Create a new file called `notebook.qmd`.
 2. Add a YAML header with a title, your name, today's date, and `format: html`.
-3. Add a heading for the current week.
-4. Write a short paragraph describing what you did.
-5. Add a bullet list of observations or decisions.
-6. Add a numbered list of next steps.
-7. Add a fenced code block or commented placeholder showing where a future chunk could go.
+3. Add a short context section explaining the project, model, dataset, or research question.
+4. Describe the recent data exploration or modelling decision you selected.
+5. List the inputs used, such as datasets, scripts, model versions, parameters, spatial extent, time period, or assumptions.
+6. Summarise the evidence you looked at by including a code chunk that prints relevant information to the html output. This could include a table, figure, map, model run ID, file path, warning message.
+7. State the decision or outcome.
+8. Explain the rationale for the decision.
+9. Note any uncertainty, limitations, or conditions under which the decision should be revisited.
+10. Add one to three concrete next steps.
 
 ## Suggested Starter Content
 
@@ -38,35 +54,72 @@ date: today
 format: html
 ---
 
-## Week 1
+## Context
 
-This week I reviewed the sampling plan and checked the latest field observations.
+Project, model, dataset, or research question:
 
-- Confirmed plot IDs
-- Flagged missing measurements
-- Noted one sensor calibration issue
+## Entry 1: dd/mm/yyyy
 
-1. Recheck the field sheet
-2. Contact collaborators about the missing values
-3. Prepare the next visit
-```
+Briefly describe the recent modelling decision or data exploration. Explain why this step mattered for the modelling workflow or research question.
 
-## Stretch Task
+## Inputs used
 
-Add a callout block with a reminder about one issue to revisit next week.
+- Dataset(s):
+- Script(s) or workflow step(s):
+- Model version or settings:
+- Spatial extent and time period:
+- Key assumptions:
+
+## Evidence
+
+Describe the evidence used to support the decision, using a code chunk to include any relevant data, summary, or visualization. 
+
+## Observations
+
+- What did you notice?
+- Were there unexpected patterns, warnings, or inconsistencies?
+- What seemed reliable or unreliable?
+
+## Decision or outcome
+
+State what you decided, changed, kept, rejected, or postponed.
+
+## Rationale
+
+Explain why the decision makes sense based on the available evidence.
+
+## Uncertainty and limitations
+
+What remains uncertain? Under what conditions should this decision be revisited?
+
+## Next steps
+
+1.
+2.
+3.
+
+## Advanced tasks
+
+- Add a callout to highlight an assumption, risk, or issue to revisit.
+- Add caching to the code chunk so that it runs only when the underlying data or code changes.
+- Add a second entry for the next week and add the first entry to a collapsible callout. (works best for HTML output, not PDF)
 
 ## Expected Outcome
 
-By the end, you should have a simple notebook page that:
+By the end, you should have a lab notebook entry that:
 
 - renders as a readable HTML document
-- separates narrative, decisions, and tasks clearly
-- could be reused as a template for future entries
+- records a real environmental modelling decision or exploration
+- separates context, evidence, decision, rationale, uncertainty, and next steps
+- could help you or a collaborator understand the decision later
+- could be reused as a template for future modelling work
 
 ## Self-Check
 
 Ask yourself:
 
-- Does the page make sense if I read it again in a month?
-- Can another team member understand what happened this week?
+- Would this entry make sense if I read it again in a month?
+- Can another researcher understand why the decision was made?
+- Is the evidence specific enough to locate or reproduce the check?
+- Are uncertainty and next steps recorded clearly?
 - Is the structure simple enough to reuse consistently?
