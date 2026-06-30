@@ -475,14 +475,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction">Short Introduction</a>
-  <ul class="collapse">
-  <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link" data-scroll-target="#why-this-matters-for-researchers">Why This Matters For Researchers</a></li>
+  <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link active" data-scroll-target="#why-this-matters-for-researchers">Why This Matters For Researchers</a></li>
   <li><a href="#what-it-can-contain" id="toc-what-it-can-contain" class="nav-link" data-scroll-target="#what-it-can-contain">What It Can Contain</a></li>
-  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example">Concrete Academic Example</a></li>
-  <li><a href="#teaching-focus" id="toc-teaching-focus" class="nav-link" data-scroll-target="#teaching-focus">Teaching Focus</a></li>
-  <li><a href="#suggested-next-conversation" id="toc-suggested-next-conversation" class="nav-link" data-scroll-target="#suggested-next-conversation">Suggested Next Conversation</a></li>
-  </ul></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/advanced/brand-yml.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -509,55 +504,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="short-introduction" class="level1">
-<h1>Short Introduction</h1>
-<p><code>brand.yml</code> is a Quarto branding file used to define shared visual identity such as colors, logos, and typography across outputs. It is particularly useful for websites, presentations, and other materials that should feel consistent.</p>
+<p>A relatively new feature of Quarto is the abilty to utilise consistent cross-project branding and visual identity using a simple additional yaml file: <code>_brand.yml</code>. THis can be used to set colors, logos, and typography across websites, reports, dashboards and presentations (in combination with Sass).</p>
 <section id="why-this-matters-for-researchers" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters-for-researchers">Why This Matters For Researchers</h2>
-<p>Research groups, projects, and centers often want their outputs to look connected. Instead of styling each document separately, <code>brand.yml</code> provides a shared source of branding choices.</p>
+<p>Having a shared visual identity across the outputs of research groups and projects not only looks more professional but also reduces manually formatting when contributions need to be combined from different team members (e.g.&nbsp;chapters or presentations). Even if publishing systems other than Quarto are being used it is still helpful to have a structured, shared source of truth for colour codes, typography and logo sets.</p>
 </section>
 <section id="what-it-can-contain" class="level2">
 <h2 class="anchored" data-anchor-id="what-it-can-contain">What It Can Contain</h2>
 <p>Depending on the project, a branding file may define:</p>
 <ul>
-<li>color palette</li>
+<li>color palette (both light and dark options)</li>
 <li>logo assets</li>
 <li>typography choices</li>
-<li>reusable visual identity settings</li>
 </ul>
 </section>
-<section id="concrete-academic-example" class="level2">
-<h2 class="anchored" data-anchor-id="concrete-academic-example">Concrete Academic Example</h2>
-<p>A collaborative project can use one brand configuration so that its website, slide deck, and outreach documents share a recognizable visual style.</p>
-</section>
-<section id="teaching-focus" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-focus">Teaching Focus</h2>
-<p>In this workshop, <code>brand.yml</code> should be introduced as an advanced organizational tool rather than a first-day requirement. Participants should leave knowing:</p>
-<ul>
-<li>what problem it solves</li>
-<li>when it becomes useful</li>
-<li>why consistent branding can improve professional visibility and project coherence</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<p><code>_brand.yml</code> files can be hosted in theor own GitHUb repositories and then installed within projects using….</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Keep the priority straight
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Branding matters, but structure and clarity matter first. A plain, well-organized Quarto project is more valuable than a beautifully branded one that is hard to maintain.</p>
+<p><code>_brand.yml</code> files are particularly useful when integrated within <a href="../advanced/templates-and-extensions.html">custom templates</a> for specific document types such as reports.</p>
 </div>
 </div>
-</section>
-<section id="suggested-next-conversation" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-next-conversation">Suggested Next Conversation</h2>
-<p>If this workshop later expands, <code>brand.yml</code> would pair nicely with a follow-up session on custom themes, templates, and project-wide style conventions.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
