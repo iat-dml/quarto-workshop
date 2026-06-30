@@ -75,6 +75,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+  }
+  </style>
+  
 
 
 </head>
@@ -484,6 +491,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#customizable-themes" id="toc-customizable-themes" class="nav-link" data-scroll-target="#customizable-themes">Customizable Themes</a></li>
   <li><a href="#established-ecosystem-with-continued-development" id="toc-established-ecosystem-with-continued-development" class="nav-link" data-scroll-target="#established-ecosystem-with-continued-development">Established Ecosystem with continued development</a></li>
   </ul></li>
+  <li><a href="#a-living-example" id="toc-a-living-example" class="nav-link" data-scroll-target="#a-living-example">A Living Example:</a></li>
   <li><a href="#caveat-graphical-design" id="toc-caveat-graphical-design" class="nav-link" data-scroll-target="#caveat-graphical-design">Caveat: Graphical Design</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/presentations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -521,7 +529,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="key-benefits-of-using-quarto-revealjs-for-presentations">Key benefits of using Quarto-revealjs for presentations</h2>
 <section id="reuse-your-existing-content" class="level3">
 <h3 class="anchored" data-anchor-id="reuse-your-existing-content">Reuse your existing content</h3>
-<p>Code generated figures, tables, citations and text can be adapted from existing material in other <code>.qmd</code> files. This is particularly useful for conference talks where you want to present your latest results.</p>
+<p>Code-generated figures, tables, citations and text can be adapted from existing material in other <code>.qmd</code> files. This is particularly useful for conference talks where you want to present your latest results.</p>
 </section>
 <section id="embedded-interactive-and-dynamic-content" class="level3">
 <h3 class="anchored" data-anchor-id="embedded-interactive-and-dynamic-content">Embedded interactive and dynamic content</h3>
@@ -539,6 +547,15 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="established-ecosystem-with-continued-development">Established Ecosystem with continued development</h3>
 <p>reveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many <a href="https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware">plugins</a> available to extend its functionality, and some of these have already been adapted for Quarto: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins">Quarto Reveal Plugins</a>.</p>
 </section>
+</section>
+<section id="a-living-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-living-example">A Living Example:</h2>
+<p>This a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the <a href="https://github.com/iat-dml/templates/tree/main/dml-revealjs">GitHub repository</a></p>
+    <p><a href="../assets/dml-revealjs.html" target="_blank">View slides in full screen</a></p>
+       <div>
+      <iframe class="slide-deck" src="../assets/dml-revealjs.html" height="475px" width="100%"></iframe>
+    </div>
+  
 </section>
 <section id="caveat-graphical-design" class="level2">
 <h2 class="anchored" data-anchor-id="caveat-graphical-design">Caveat: Graphical Design</h2>

@@ -35,6 +35,12 @@ Quarto provides 11 built in [themes for reveal.js slides](https://quarto.org/doc
 
 reveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many [plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware) available to extend its functionality, and some of these have already been adapted for Quarto: [Quarto Reveal Plugins](https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins).
 
+## A Living Example:
+
+This a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the [GitHub repository](https://github.com/iat-dml/templates/tree/main/dml-revealjs) 
+
+{{< revealjs "../assets/dml-revealjs.html" >}}
+
 ## Caveat: Graphical Design
 
 While we can recommend Quarto-revealjs for presentations where the actual content is the main focus, it is not a good choice for presentations where the visual design is the main focus. Specifically reveal.js offers very little capacity for creating and manipulating vector graphics compared to PowerPoint.

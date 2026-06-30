@@ -6,17 +6,17 @@ Another neat feature that comes from Quarto being an open source project is the 
 
 ## Why This Matters For Researchers
 
-Academic workflows often repeat familiar patterns:
+Common academic ouputs often repeat familiar patterns:
 
-- manuscripts have pre-defined sections 
-- projects required standardized reports
-- teaching materials share structure 
+- Manuscripts have pre-defined sections 
+- Projects required standardized reports
+- Teaching materials are structured according to lectures/sessions. 
 
-Templates reduce setup time, and extensions can add features that are not included by default.
+Creating templates for these reduces setup time, and extensions can add features that are not included by default.
 
 ## Templates
 
-Templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.
+Quarto templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.
 
 ## Extensions
 
@@ -38,12 +38,9 @@ A lab could keep:
 
 Extensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.
 
-::: {.callout-tip}
-## Good habit
+## Examples of templates we have created
 
-Treat extensions like dependencies: document them clearly and only add them when they solve a real need.
-:::
-
-## What To Emphasize In The Workshop
-
-For beginners, the key lesson is not memorizing many extensions. It is learning that Quarto can grow with them, from simple documents to more customized publishing workflows.
+- ETH PhD thesis template.
+- Research group presentation template: Includes interactive diagrams as descriptions for key activities.
+- Invoice extension
+- Internal documents for an organisation (ZALF)
