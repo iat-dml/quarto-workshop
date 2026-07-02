@@ -3,11 +3,14 @@ title: "Creating Presentations"
 ---
 
 Quarto can create presentations in several different formats:
--   [reveal.js](https://revealjs.com/) (HTML)
--   PowerPoint (MS Office)
--   [Beamer](https://ctan.org/pkg/beamer?lang=en) (LaTeX/PDF)
 
-and we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.
+- [reveal.js](https://revealjs.com/) (HTML)
+
+- PowerPoint (MS Office)
+
+- [Beamer](https://ctan.org/pkg/beamer?lang=en) (LaTeX/PDF)
+
+and we agree with the Quarto developers that the most useful of these is `reveal.js`. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.
 
 ## Why This Matters For Researchers
 
@@ -21,23 +24,28 @@ Code-generated figures, tables, citations and text can be adapted from existing 
 
 ### Embedded interactive and dynamic content
 
-HTML and JavaScript diagrams can be directly embedded in slides, and code cells can be run live in the browser. This is particularly useful for teaching and workshops. you can also use iframes to embed external content, such as videos or websites, in your slides in a more seamless fashion than PowerPoint. 
+HTML and JavaScript diagrams can be directly embedded in slides, and code cells can be run live in the browser. This is particularly useful for teaching and workshops. you can also use iframes to embed external content, such as videos or websites, in your slides in a more seamless fashion than PowerPoint.
 
 ### Portability and shareability
 
-As mentioned above, Quarto slides can be outputted as PowerPoint. However the results is sometimes not perfect and some features may be lost for complex slides. However, another alternative is to use the built-in plugin: [Print-to-PDF](https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf) to convert your slides to PDF. 
+As mentioned above, because reveal.js is a web-native format, it can be viewed in most browsers. This also means that the content automatically scales to the dimensions of the viewing window (try it yourself by resizing the window of the embedded example below). 
+In addition, when you need to provide presentations in other formats Quarto slides can be outputted as PowerPoint (although the result is sometimes not perfect) or the built-in plugin: [Print-to-PDF](https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf) can be used to convert your slides to PDF.
 
 ### Customizable Themes
 
-Quarto provides 11 built in [themes for reveal.js slides](https://quarto.org/docs/presentations/revealjs/themes.html) or you can prepare your own lightweight CSS theme based on your own [branding](../advanced/brand-yml.qmd) and apply it to your slides as a [template](../advanced/templates-and-extensions.qmd). 
+Quarto provides 11 built in [themes for reveal.js slides](https://quarto.org/docs/presentations/revealjs/themes.html) or you can prepare your own lightweight CSS theme based on your own [branding](../advanced/brand-yml.qmd) and apply it to your slides as a [template](../advanced/templates-and-extensions.qmd).
 
 ### Established Ecosystem with continued development
 
-reveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many [plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware) available to extend its functionality, and some of these have already been adapted for Quarto: [Quarto Reveal Plugins](https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins).
+`reveal.js` has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many [plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware) available to extend its functionality, and some of these have already been adapted for Quarto: [Quarto Reveal Plugins](https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins).
 
-## A Living Example:
+::: callout-tip
+One particularly nice built in Quarto-reveal.js plugin is [`Multiplex`](https://quarto.org/docs/presentations/revealjs/presenting.html#multiplex)  which allows your audience to follow your slides on their own phone, tablet or laptop and when you change slides everyone sees the same content on their own device.
+:::
 
-This a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the [GitHub repository](https://github.com/iat-dml/templates/tree/main/dml-revealjs) 
+## A Living Example
+
+This a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the [GitHub repository](https://github.com/iat-dml/templates/tree/main/dml-revealjs)
 
 {{< revealjs "../assets/dml-revealjs.html" >}}
 

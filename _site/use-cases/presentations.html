@@ -491,7 +491,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#customizable-themes" id="toc-customizable-themes" class="nav-link" data-scroll-target="#customizable-themes">Customizable Themes</a></li>
   <li><a href="#established-ecosystem-with-continued-development" id="toc-established-ecosystem-with-continued-development" class="nav-link" data-scroll-target="#established-ecosystem-with-continued-development">Established Ecosystem with continued development</a></li>
   </ul></li>
-  <li><a href="#a-living-example" id="toc-a-living-example" class="nav-link" data-scroll-target="#a-living-example">A Living Example:</a></li>
+  <li><a href="#a-living-example" id="toc-a-living-example" class="nav-link" data-scroll-target="#a-living-example">A Living Example</a></li>
   <li><a href="#caveat-graphical-design" id="toc-caveat-graphical-design" class="nav-link" data-scroll-target="#caveat-graphical-design">Caveat: Graphical Design</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/presentations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -519,8 +519,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Quarto can create presentations in several different formats: - <a href="https://revealjs.com/">reveal.js</a> (HTML) - PowerPoint (MS Office) - <a href="https://ctan.org/pkg/beamer?lang=en">Beamer</a> (LaTeX/PDF)</p>
-<p>and we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.</p>
+<p>Quarto can create presentations in several different formats:</p>
+<ul>
+<li><p><a href="https://revealjs.com/">reveal.js</a> (HTML)</p></li>
+<li><p>PowerPoint (MS Office)</p></li>
+<li><p><a href="https://ctan.org/pkg/beamer?lang=en">Beamer</a> (LaTeX/PDF)</p></li>
+</ul>
+<p>and we agree with the Quarto developers that the most useful of these is <code>reveal.js</code>. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.</p>
 <section id="why-this-matters-for-researchers" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters-for-researchers">Why This Matters For Researchers</h2>
 <p>The typical presentations we have to give as researchers often incorporate the same text content, figures, tables, and sometimes even code that we use in our manuscripts and other outputs so it makes sense to use the same publishing system to create them. Quarto allows you to do this in a way that is reproducible and easy to update, so that your slides are always consistent with your other outputs.</p>
@@ -537,7 +542,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="portability-and-shareability" class="level3">
 <h3 class="anchored" data-anchor-id="portability-and-shareability">Portability and shareability</h3>
-<p>As mentioned above, Quarto slides can be outputted as PowerPoint. However the results is sometimes not perfect and some features may be lost for complex slides. However, another alternative is to use the built-in plugin: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf">Print-to-PDF</a> to convert your slides to PDF.</p>
+<p>As mentioned above, because reveal.js is a web-native format, it can be viewed in most browsers. This also means that the content automatically scales to the dimensions of the viewing window (try it yourself by resizing the window of the embedded example below). In addition, when you need to provide presentations in other formats Quarto slides can be outputted as PowerPoint (although the result is sometimes not perfect) or the built-in plugin: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf">Print-to-PDF</a> can be used to convert your slides to PDF.</p>
 </section>
 <section id="customizable-themes" class="level3">
 <h3 class="anchored" data-anchor-id="customizable-themes">Customizable Themes</h3>
@@ -545,11 +550,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="established-ecosystem-with-continued-development" class="level3">
 <h3 class="anchored" data-anchor-id="established-ecosystem-with-continued-development">Established Ecosystem with continued development</h3>
-<p>reveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many <a href="https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware">plugins</a> available to extend its functionality, and some of these have already been adapted for Quarto: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins">Quarto Reveal Plugins</a>.</p>
+<p><code>reveal.js</code> has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many <a href="https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware">plugins</a> available to extend its functionality, and some of these have already been adapted for Quarto: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#reveal-plugins">Quarto Reveal Plugins</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One particularly nice built in Quarto-reveal.js plugin is <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#multiplex"><code>Multiplex</code></a> which allows your audience to follow your slides on their own phone, tablet or laptop and when you change slides everyone sees the same content on their own device.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="a-living-example" class="level2">
-<h2 class="anchored" data-anchor-id="a-living-example">A Living Example:</h2>
+<h2 class="anchored" data-anchor-id="a-living-example">A Living Example</h2>
 <p>This a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the <a href="https://github.com/iat-dml/templates/tree/main/dml-revealjs">GitHub repository</a></p>
     <p><a href="../assets/dml-revealjs.html" target="_blank">View slides in full screen</a></p>
        <div>

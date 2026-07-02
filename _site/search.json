@@ -52,7 +52,7 @@
     "href": "use-cases/presentations.html",
     "title": "Creating Presentations",
     "section": "",
-    "text": "Quarto can create presentations in several different formats: - reveal.js (HTML) - PowerPoint (MS Office) - Beamer (LaTeX/PDF)\nand we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.",
+    "text": "Quarto can create presentations in several different formats:\nand we agree with the Quarto developers that the most useful of these is reveal.js. This is because as a web-native format it can be shared and viewed in any modern browser but also because it can be converted, relatively painlessly, to PowerPoint later.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -76,7 +76,7 @@
     "href": "use-cases/presentations.html#key-benefits-of-using-quarto-revealjs-for-presentations",
     "title": "Creating Presentations",
     "section": "Key benefits of using Quarto-revealjs for presentations",
-    "text": "Key benefits of using Quarto-revealjs for presentations\n\nReuse your existing content\nCode-generated figures, tables, citations and text can be adapted from existing material in other .qmd files. This is particularly useful for conference talks where you want to present your latest results.\n\n\nEmbedded interactive and dynamic content\nHTML and JavaScript diagrams can be directly embedded in slides, and code cells can be run live in the browser. This is particularly useful for teaching and workshops. you can also use iframes to embed external content, such as videos or websites, in your slides in a more seamless fashion than PowerPoint.\n\n\nPortability and shareability\nAs mentioned above, Quarto slides can be outputted as PowerPoint. However the results is sometimes not perfect and some features may be lost for complex slides. However, another alternative is to use the built-in plugin: Print-to-PDF to convert your slides to PDF.\n\n\nCustomizable Themes\nQuarto provides 11 built in themes for reveal.js slides or you can prepare your own lightweight CSS theme based on your own branding and apply it to your slides as a template.\n\n\nEstablished Ecosystem with continued development\nreveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many plugins available to extend its functionality, and some of these have already been adapted for Quarto: Quarto Reveal Plugins.",
+    "text": "Key benefits of using Quarto-revealjs for presentations\n\nReuse your existing content\nCode-generated figures, tables, citations and text can be adapted from existing material in other .qmd files. This is particularly useful for conference talks where you want to present your latest results.\n\n\nEmbedded interactive and dynamic content\nHTML and JavaScript diagrams can be directly embedded in slides, and code cells can be run live in the browser. This is particularly useful for teaching and workshops. you can also use iframes to embed external content, such as videos or websites, in your slides in a more seamless fashion than PowerPoint.\n\n\nPortability and shareability\nAs mentioned above, because reveal.js is a web-native format, it can be viewed in most browsers. This also means that the content automatically scales to the dimensions of the viewing window (try it yourself by resizing the window of the embedded example below). In addition, when you need to provide presentations in other formats Quarto slides can be outputted as PowerPoint (although the result is sometimes not perfect) or the built-in plugin: Print-to-PDF can be used to convert your slides to PDF.\n\n\nCustomizable Themes\nQuarto provides 11 built in themes for reveal.js slides or you can prepare your own lightweight CSS theme based on your own branding and apply it to your slides as a template.\n\n\nEstablished Ecosystem with continued development\nreveal.js has many of the features you would expect from a presentation software, such as slide transitions, full-screen viewing, animations and speaker notes. Also, because it is open source there are also many plugins available to extend its functionality, and some of these have already been adapted for Quarto: Quarto Reveal Plugins.\n\n\n\n\n\n\nTip\n\n\n\nOne particularly nice built in Quarto-reveal.js plugin is Multiplex which allows your audience to follow your slides on their own phone, tablet or laptop and when you change slides everyone sees the same content on their own device.",
     "crumbs": [
       "Home",
       "Academic Use Cases",
@@ -759,7 +759,7 @@
     "href": "advanced/templates-and-extensions.html#why-this-matters-for-researchers",
     "title": "Creating Custom Templates and Extensions",
     "section": "Why This Matters For Researchers",
-    "text": "Why This Matters For Researchers\nCommon academic ouputs often repeat familiar patterns:\n\nManuscripts have pre-defined sections\nProjects required standardized reports\nTeaching materials are structured according to lectures/sessions.\n\nCreating templates for these reduces setup time, and extensions can add features that are not included by default.",
+    "text": "Why This Matters For Researchers\nCommon academic ouputs often repeat familiar patterns:\n\nManuscripts have pre-defined sections\nProjects required standardized reports\nTeaching materials are structured according to lectures/sessions.\n\nCreating templates and extensions for these reduces setup time, and extensions can add features that are not included by default.",
     "crumbs": [
       "Home",
       "Advanced Topics",
@@ -771,7 +771,7 @@
     "href": "advanced/templates-and-extensions.html#templates",
     "title": "Creating Custom Templates and Extensions",
     "section": "Templates",
-    "text": "Templates\nQuarto templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.",
+    "text": "Templates\nQuarto templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.\nA template pairs two things: example content (a starter .qmd with the right YAML options and section structure already filled in) and the styling that goes with it (theme files, CSS/Sass, logos). Bundling these together brings a couple of real benefits for teams:\n\nConsistency without the learning curve — everyone’s documents share the same look and structure, and individual group members don’t each need to learn HTML, CSS, or LaTeX to produce something polished.\nBuilt-in guidance — the starter content can double as documentation: worked examples of figures and cross-references, notes on house style, or demo code for internal packages, which saves experienced colleagues from answering the same setup questions repeatedly.\n\nTemplates are distributed as extensions (see below), typically hosted on GitHub. Starting a new document from one is a single command, which copies the template files and starter .qmd into a fresh directory:\nquarto use template iat-dml/templates/dml-revealjs\nFor templates that are only for internal use, the same files can also be shipped inside an internal package or shared repository, so long as the _extensions folder ends up alongside the new document.\n\nTemplates we have created\n\n\n\n\nETH PhD thesis template\nA template tailored for cumulative PhD theses, following ETH Zurich’s formatting requirements.\n\n\n\n\n\nResearch group presentation template\nA RevealJS template for talks, lectures, and updates — includes interactive diagrams describing key activities.\n\n\n\n\n\nInternal document for an organisation (IAT)\nA template for internal reports and documents with a custom Typst format.",
     "crumbs": [
       "Home",
       "Advanced Topics",
@@ -783,7 +783,7 @@
     "href": "advanced/templates-and-extensions.html#extensions",
     "title": "Creating Custom Templates and Extensions",
     "section": "Extensions",
-    "text": "Extensions\nQuarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.\nExample install command:\nquarto add quarto-ext/fontawesome",
+    "text": "Extensions\nExtensions are the general mechanism for modifying and extending Quarto’s behaviour, and there are now hundreds of community-contributed ones available. They come in several flavours:\n\nShortcodes — small inline commands that insert content, like icons, videos, or badges\nFilters — scripts (usually written in Lua) that transform documents during rendering, adding things like word counts, accordions, or styled code blocks\nCustom formats — entirely new output formats, including journal article formats that match specific publishers’ requirements\nRevealJS plugins — extra features for presentations such as pointers, drawing tools, and slide headers\nProject types — templates for whole multi-file projects rather than single documents\n\nExtensions are installed per project rather than system-wide, with a single command:\nquarto add quarto-ext/fontawesome\nThis downloads the extension into an _extensions directory next to your document, which means the project remains self-contained — anyone who clones it gets the same rendering behaviour. For that reason it is recommended to commit _extensions to version control. Installed extensions can later be kept current or cleaned up with quarto update and quarto remove.\nThis website uses three extensions:\n\nembedio extension to easily embed interactive content like revealjs presentations\niconify extension for easy icon integration\nfontawesome extension for easy font integration\n\n\n\n\n\n\n\nTip\n\n\n\nMickaël Canouil, a Quarto developer and author of some great extensions and templates himself, has created a very helpful listing of all Quarto extensions: https://m.canouil.dev/quarto-extensions/",
     "crumbs": [
       "Home",
       "Advanced Topics",
@@ -937,25 +937,25 @@
   {
     "objectID": "advanced/brand-yml.html",
     "href": "advanced/brand-yml.html",
-    "title": "Consistent Branding with brand.yml",
+    "title": "Consistent Branding with _brand.yml",
     "section": "",
     "text": "A relatively new feature of Quarto is the abilty to utilise consistent cross-project branding and visual identity using a simple additional yaml file: _brand.yml. THis can be used to set colors, logos, and typography across websites, reports, dashboards and presentations (in combination with Sass).",
     "crumbs": [
       "Home",
       "Advanced Topics",
-      "Consistent Branding with brand.yml"
+      "Consistent Branding with `_brand.yml`"
     ]
   },
   {
     "objectID": "advanced/brand-yml.html#why-this-matters-for-researchers",
     "href": "advanced/brand-yml.html#why-this-matters-for-researchers",
-    "title": "Consistent Branding with brand.yml",
+    "title": "Consistent Branding with _brand.yml",
     "section": "Why This Matters For Researchers",
     "text": "Why This Matters For Researchers\nHaving a shared visual identity across the outputs of research groups and projects not only looks more professional but also reduces manually formatting when contributions need to be combined from different team members (e.g. chapters or presentations). Even if publishing systems other than Quarto are being used it is still helpful to have a structured, shared source of truth for colour codes, typography and logo sets.",
     "crumbs": [
       "Home",
       "Advanced Topics",
-      "Consistent Branding with brand.yml"
+      "Consistent Branding with `_brand.yml`"
     ]
   },
   {
@@ -1924,25 +1924,49 @@
   {
     "objectID": "advanced/brand-yml.html#usage",
     "href": "advanced/brand-yml.html#usage",
-    "title": "Consistent Branding with brand.yml",
+    "title": "Consistent Branding with _brand.yml",
     "section": "Usage",
     "text": "Usage\n_brand.yml files can be hosted in theor own GitHUb repositories and then installed within projects using….\n\n\n\n\n\n\nTip\n\n\n\n_brand.yml files are particularly useful when integrated within custom templates for specific document types such as reports.",
     "crumbs": [
       "Home",
       "Advanced Topics",
-      "Consistent Branding with brand.yml"
+      "Consistent Branding with `_brand.yml`"
     ]
   },
   {
     "objectID": "use-cases/presentations.html#a-living-example",
     "href": "use-cases/presentations.html#a-living-example",
     "title": "Creating Presentations",
-    "section": "A Living Example:",
-    "text": "A Living Example:\nThis a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the GitHub repository\n    View slides in full screen",
+    "section": "A Living Example",
+    "text": "A Living Example\nThis a reveal.js template one of the authors created for their own working group with a custom theme and containing interactive diagrams and code cells. The source code for the slides is available in the GitHub repository\n    View slides in full screen",
     "crumbs": [
       "Home",
       "Academic Use Cases",
       "Creating Presentations"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#a-living-example",
+    "href": "advanced/brand-yml.html#a-living-example",
+    "title": "Consistent Branding with _brand.yml",
+    "section": "A Living Example",
+    "text": "A Living Example\n\n\n\n\n\n\nWebsite\n\n\n\n\n\n\n\nPresentation\n\n\n\n\n\n\n\nReport\n\n\n\n\n\nThese screenshots show a website, presentation and report template for a research group all generated with the same _brand.yml file:\nmeta:\n  name:\n    short: DML\n    full: Data and Modelling Infrastructure for Living Labs (DML)\n  link:\n    home: https://www.zalf.de/en/struktur/iat/Pages/default.aspx\n\nlogo:\n  images:\n    logo-dml:\n      path: dml-strata-deep-favicon.svg\n      alt: \"Data and Modelling Infrastructure for Living Labs (DML)\"\n    logo-dml-full:\n      path: dml-strata-deep.svg\n      alt: \"Data and Modelling Infrastructure for Living Labs (DML)\"\n    logo-dml-lockup:\n      path: dml-strata-lockup-deep.svg\n      alt: \"Data and Modelling Infrastructure for Living Labs (DML)\"\n  medium: logo-dml-lockup\n  large:  logo-dml-lockup\n  small:  logo-dml\n\ncolor:\n  palette:\n    # Primary greens\n    green:           \"#46A84F\"\n    green-light:     \"#9EBC83\"\n    green-mid:       \"#80BDBD\"\n    # Teal family\n    teal:            \"#36AE6C\"\n    teal-dark:       \"#356259\"\n    # Accents\n    olive:           \"#B1BE4D\"\n    sage:            \"#657A4E\"\n    # Service colours\n    transfer:        \"#3E7775\"\n    support:         \"#2B5D45\"\n    integration:     \"#A4713D\"\n    # Neutrals\n    slate:           \"#465555\"\n    white:           \"#FFFFFF\"\n    black:           \"#1A1A1A\"\n    dark-surface:    \"#162520\"\n    dark-border:     \"#1F3530\"\n    paper:           \"#F5F3EE\"\n    gray-light:      \"#F5F5F5\"\n    gray:            \"#6C6C6C\"\n  foreground:  slate\n  background:  paper\n  primary:     teal-dark\n  secondary:   teal\n  tertiary:    teal\n  success:     teal-dark\n  info:        green-mid\n  warning:     olive\n  danger:      \"#C0392B\"\n  light:       paper\n  dark:        slate\n\ntypography:\n  fonts:\n    - family: \"DM Serif Display\"\n      source: google\n    - family: \"DM Sans\"\n      source: google\n    - family: \"Segoe UI Mono\"\n      source: system\n\n  base:\n    family: \"DM Sans\"\n    weight: 400\n    size: 28pt\n    line-height: 1.45\n\n  headings:\n    family: \"DM Serif Display\"\n    weight: 400\n    color: teal-dark\n    line-height: 1.15\n\n  monospace:\n    family: \"Segoe UI Mono\"\n    weight: 400\n    size: 0.85em\n\n  monospace-inline:\n    background-color: \"#EAE6DF\"\n\n  link:\n    color: primary\n    weight: 500\n    decoration: underline",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with `_brand.yml`"
+    ]
+  },
+  {
+    "objectID": "advanced/brand-yml.html#using-and-sharing-your-brand-files",
+    "href": "advanced/brand-yml.html#using-and-sharing-your-brand-files",
+    "title": "Consistent Branding with _brand.yml",
+    "section": "Using and sharing your brand files",
+    "text": "Using and sharing your brand files\nQuarto applies branding automatically: drop a _brand.yml file in your project root (next to _quarto.yml) and it is picked up by every supported format — websites, reports, and dashboards — with no further configuration (certain presentation format require a little more work). A single document outside a project works the same way if _brand.yml sits in the same directory.\nIf you’d rather keep the file elsewhere, point the brand key at it in _quarto.yml:\nbrand: brand/_brand.yml\nYou can also supply separate brands for light and dark appearance, or switch branding off for an individual document:\nbrand:\n  light: light-brand.yml\n  dark: dark-brand.yml\nBecause a _brand.yml is just a small, structured file, the natural way to share one across a group is to keep it in its own Git repository as the single source of truth. To pull it into a project, run:\nquarto use brand &lt;target&gt;\nwhere &lt;target&gt; can be a GitHub repo (myorg/group-brand), a local path, or a URL to an archive. Quarto copies the brand file and its assets (logos, fonts) into the project — they must live inside the project directory — so each project gets a self-contained, version-controlled copy that you can refresh by running the command again.\n\n\n\n\n\n\nTip\n\n\n\n_brand.yml files are particularly useful when integrated within custom templates for specific document types such as reports.",
+    "crumbs": [
+      "Home",
+      "Advanced Topics",
+      "Consistent Branding with `_brand.yml`"
     ]
   }
 ]

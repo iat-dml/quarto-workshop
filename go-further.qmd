@@ -18,7 +18,7 @@ Watch this 20-minute overview of Quarto for academic workflows by Mine Çetinkay
 Quarto is well suited for writing long-form academic documents such as term papers, theses, and dissertations. Several researchers have shared their experiences and templates:
 
 - [Cameron Patrick's Quarto thesis formatting guide](https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/#html-output) — lessons learned from writing a doctoral thesis in Quarto
-- [Ben Black's ETH doctoral thesis template](https://blenback.github.io/posts/PhD_template.html) — a template tailored for cumulative PhD theses
+- [Ben Black's ETH doctoral thesis template](https://blenback.github.io/posts/2025-04-23-PhD_template.html) — a template tailored for cumulative PhD theses
 - [Gina Reinhard's term paper and thesis template](https://github.com/ginareinhard/thesisTemplate) — an open-access template for M.A. theses and term papers
 - [James D. H.'s PhD thesis template](https://github.com/james-d-h/quarto-phd-thesis) — a clean, general-purpose Quarto PhD template
 - [Monash University thesis template](https://github.com/quarto-monash/thesis) — an extension-based template from Monash
