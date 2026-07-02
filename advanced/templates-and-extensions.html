@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-72a41d5afbb7476efe1cbefffcc7f80c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-128b69ee389176c86d2480a3f6e702ef.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-72a41d5afbb7476efe1cbefffcc7f80c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d4344eba3b859740c683415bdf4be639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f4d0dd6d2ce12eed32f6f21e78fa6ca0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d4344eba3b859740c683415bdf4be639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -460,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/brand-yml.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consistent Branding with brand.yml</span></a>
+ <span class="menu-text">Consistent Branding with <code>_brand.yml</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -511,10 +511,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link active" data-scroll-target="#why-this-matters-for-researchers">Why This Matters For Researchers</a></li>
-  <li><a href="#templates" id="toc-templates" class="nav-link" data-scroll-target="#templates">Templates</a></li>
+  <li><a href="#templates" id="toc-templates" class="nav-link" data-scroll-target="#templates">Templates</a>
+  <ul class="collapse">
+  <li><a href="#templates-we-have-created" id="toc-templates-we-have-created" class="nav-link" data-scroll-target="#templates-we-have-created">Templates we have created</a></li>
+  </ul></li>
   <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
-  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example">Concrete Academic Example</a></li>
-  <li><a href="#examples-of-templates-we-have-created" id="toc-examples-of-templates-we-have-created" class="nav-link" data-scroll-target="#examples-of-templates-we-have-created">Examples of templates we have created</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/advanced/templates-and-extensions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -550,36 +551,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Projects required standardized reports</li>
 <li>Teaching materials are structured according to lectures/sessions.</li>
 </ul>
-<p>Creating templates for these reduces setup time, and extensions can add features that are not included by default.</p>
+<p>Creating templates and extensions for these reduces setup time, and extensions can add features that are not included by default.</p>
 </section>
 <section id="templates" class="level2">
 <h2 class="anchored" data-anchor-id="templates">Templates</h2>
 <p>Quarto templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.</p>
+<p>A template pairs two things: example content (a starter <code>.qmd</code> with the right YAML options and section structure already filled in) and the styling that goes with it (theme files, CSS/Sass, logos). Bundling these together brings a couple of benefits for teams:</p>
+<ul>
+<li><strong>Consistency</strong> — everyone’s documents share the same look and structure.</li>
+<li><strong>Built-in guidance</strong> — the starter content can double as documentation: worked examples of figures and cross-references, or demo code for internal packages.</li>
+</ul>
+<p>Templates are distributed as extensions (see below), typically hosted on GitHub. Starting a new document from one is a single command, which copies the template files and starter <code>.qmd</code> into a fresh directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template iat-dml/templates/dml-revealjs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For templates that are only for internal use, the same files can also be shipped inside an internal package or shared repository, so long as the <code>_extensions</code> folder ends up alongside the new document.</p>
+<section id="templates-we-have-created" class="level3">
+<h3 class="anchored" data-anchor-id="templates-we-have-created">Templates we have created</h3>
+<div class="showcase-cards">
+<div class="card">
+<p><img src="../assets/templates-thesis.png" class="showcase-thumb img-fluid"></p>
+<div class="showcase-body">
+<p><a href="https://blenback.github.io/posts/2025-04-23-PhD_template.html" class="showcase-title">ETH PhD thesis template</a></p>
+<p><span class="showcase-desc">A template tailored for cumulative PhD theses, following ETH Zurich’s formatting requirements.</span></p>
+</div>
+</div>
+<div class="card">
+<p><img src="../assets/templates-dml-revealjs.png" class="showcase-thumb img-fluid"></p>
+<div class="showcase-body">
+<p><a href="https://github.com/iat-dml/templates/tree/main/dml-revealjs" class="showcase-title">Research group presentation template</a></p>
+<p><span class="showcase-desc">A RevealJS template for talks, lectures, and updates — includes interactive diagrams describing key activities.</span></p>
+</div>
+</div>
+<div class="card">
+<p><img src="../assets/templates-iat-typst.png" class="showcase-thumb img-fluid"></p>
+<div class="showcase-body">
+<p><a href="https://github.com/iat-dml/templates/tree/main/IAT-internal-typst" class="showcase-title">Internal document for an organisation (IAT)</a></p>
+<p><span class="showcase-desc">A template for internal reports and documents with a custom Typst format.</span></p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="extensions" class="level2">
 <h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
-<p>Quarto extensions can add custom formats, filters, shortcodes, or presentation features. They are installed into a project and become part of its publishing toolkit.</p>
-<p>Example install command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/fontawesome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="concrete-academic-example" class="level2">
-<h2 class="anchored" data-anchor-id="concrete-academic-example">Concrete Academic Example</h2>
-<p>A lab could keep:</p>
+<p>Extensions are the general mechanism for modifying and extending Quarto’s behaviour, and there are now hundreds of community-contributed ones available. They come in several flavours:</p>
 <ul>
-<li>a manuscript starter structure for new papers</li>
-<li>a workshop exercise template</li>
-<li>a project website template with agreed navigation and style</li>
+<li><strong>Shortcodes</strong> — small inline commands that insert content, like icons, videos, or badges</li>
+<li><strong>Filters</strong> — scripts (usually written in Lua) that transform documents during rendering, adding things like word counts, accordions, or styled code blocks</li>
+<li><strong>Custom formats</strong> — entirely new output formats, including <a href="https://quarto.org/docs/journals/">journal article formats</a> that match specific publishers’ requirements</li>
+<li><strong>RevealJS plugins</strong> — extra features for presentations such as pointers, drawing tools, and slide headers</li>
+<li><strong>Project types</strong> — templates for whole multi-file projects rather than single documents</li>
 </ul>
-<p>Extensions become especially helpful when a project needs journal formats, icons, or specialized presentation behavior.</p>
-</section>
-<section id="examples-of-templates-we-have-created" class="level2">
-<h2 class="anchored" data-anchor-id="examples-of-templates-we-have-created">Examples of templates we have created</h2>
-<ul>
-<li>ETH PhD thesis template.</li>
-<li>Research group presentation template: Includes interactive diagrams as descriptions for key activities.</li>
-<li>Invoice extension</li>
-<li>Internal documents for an organisation (ZALF)</li>
-</ul>
+<p>Extensions are installed <em>per project</em> rather than system-wide, with a single command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/fontawesome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads the extension into an <code>_extensions</code> directory next to your document, which means the project remains self-contained — anyone who clones it gets the same rendering behaviour. For that reason it is recommended to commit <code>_extensions</code> to version control. Installed extensions can later be kept current or cleaned up with <code>quarto update</code> and <code>quarto remove</code>.</p>
+<p>This website uses three extensions:</p>
+<p>This website uses three extensions: - <a href="https://github.com/coatless-quarto/embedio"><code>embedio</code></a> extension to easily embed interactive content like revealjs presentations - <a href="https://github.com/mcanouil/quarto-iconify"><code>iconify</code></a> extension for including free and open source icons provided by <a href="https://icon-sets.iconify.design/">Iconify</a>. - <a href="https://github.com/quarto-ext/fontawesome"><code>fontawesome</code></a> extension for including free icons provided by <a href="https://fontawesome.com">Font Awesome</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mickaël Canouil, a Quarto developer and author of some great extensions and templates himself, has created a very helpful listing of all Quarto extensions: <a href="https://m.canouil.dev/quarto-extensions/">https://m.canouil.dev/quarto-extensions/</a></p>
+</div>
+</div>
 
 
 </section>
