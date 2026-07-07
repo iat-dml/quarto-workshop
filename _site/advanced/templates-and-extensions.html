@@ -556,10 +556,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="templates" class="level2">
 <h2 class="anchored" data-anchor-id="templates">Templates</h2>
 <p>Quarto templates are useful when you want a consistent starting point for recurring work. A research group might maintain a preferred manuscript skeleton or workshop-page pattern so new documents begin with the right sections already in place.</p>
-<p>A template pairs two things: example content (a starter <code>.qmd</code> with the right YAML options and section structure already filled in) and the styling that goes with it (theme files, CSS/Sass, logos). Bundling these together brings a couple of real benefits for teams:</p>
+<p>A template pairs two things: example content (a starter <code>.qmd</code> with the right YAML options and section structure already filled in) and the styling that goes with it (theme files, CSS/Sass, logos). Bundling these together brings a couple of benefits for teams:</p>
 <ul>
-<li><strong>Consistency without the learning curve</strong> — everyone’s documents share the same look and structure, and individual group members don’t each need to learn HTML, CSS, or LaTeX to produce something polished.</li>
-<li><strong>Built-in guidance</strong> — the starter content can double as documentation: worked examples of figures and cross-references, notes on house style, or demo code for internal packages, which saves experienced colleagues from answering the same setup questions repeatedly.</li>
+<li><strong>Consistency</strong> — everyone’s documents share the same look and structure.</li>
+<li><strong>Built-in guidance</strong> — the starter content can double as documentation: worked examples of figures and cross-references, or demo code for internal packages.</li>
 </ul>
 <p>Templates are distributed as extensions (see below), typically hosted on GitHub. Starting a new document from one is a single command, which copies the template files and starter <code>.qmd</code> into a fresh directory:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template iat-dml/templates/dml-revealjs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -605,11 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/fontawesome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This downloads the extension into an <code>_extensions</code> directory next to your document, which means the project remains self-contained — anyone who clones it gets the same rendering behaviour. For that reason it is recommended to commit <code>_extensions</code> to version control. Installed extensions can later be kept current or cleaned up with <code>quarto update</code> and <code>quarto remove</code>.</p>
 <p>This website uses three extensions:</p>
-<ul>
-<li><a href="https://github.com/coatless-quarto/embedio"><code>embedio</code></a> extension to easily embed interactive content like revealjs presentations</li>
-<li><a href="https://github.com/iconify/iconify"><code>iconify</code></a> extension for easy icon integration</li>
-<li><a href="https://github.com/quarto-ext/fontawesome"><code>fontawesome</code></a> extension for easy font integration</li>
-</ul>
+<p>This website uses three extensions: - <a href="https://github.com/coatless-quarto/embedio"><code>embedio</code></a> extension to easily embed interactive content like revealjs presentations - <a href="https://github.com/mcanouil/quarto-iconify"><code>iconify</code></a> extension for including free and open source icons provided by <a href="https://icon-sets.iconify.design/">Iconify</a>. - <a href="https://github.com/quarto-ext/fontawesome"><code>fontawesome</code></a> extension for including free icons provided by <a href="https://fontawesome.com">Font Awesome</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

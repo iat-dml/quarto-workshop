@@ -25,6 +25,11 @@ jobs:
         with:
           extra-packages: |
             any::rmarkdown
+            
+      - name: Render slides
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          profile: revealjs
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

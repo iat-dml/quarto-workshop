@@ -9,7 +9,7 @@ execute:
   message: false
 profile:
   group:
-    - [website]
+    - [website, revealjs]
 
 
 

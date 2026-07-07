@@ -1,5 +1,16 @@
 project:
   output-dir: _slides
+  render:
+  - slides/workshop-presentation.qmd
+  - "!index.qmd"
+  - "!DESIGN.md"
+  - "!PRODUCT.md"
+  - "!advanced/"
+  - "!dashboards/"
+  - "!exercises/"
+  - "!foundations/"
+  - "!use-cases/"
+  - "!go-further.qmd"
 
 format:
   revealjs:
