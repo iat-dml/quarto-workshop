@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "slides/workshop-presentation.html#why-quarto",
+    "href": "slides/workshop-presentation.html#why-quarto",
+    "title": "One Tool to Rule Them All",
+    "section": "Why Quarto?",
+    "text": "Why Quarto?\n\nResearch produces many related outputs: notes, manuscripts, slides, websites, dashboards\nThese are usually made with disconnected tools and manual formatting\nQuarto: write once in plain text, render to HTML, PDF, DOCX, slides, and more\nFocus on content, not tool juggling"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#workshop-roadmap",
+    "href": "slides/workshop-presentation.html#workshop-roadmap",
+    "title": "One Tool to Rule Them All",
+    "section": "Workshop Roadmap",
+    "text": "Workshop Roadmap\n\nFoundations: Quarto, Markdown, YAML, installation\nUse cases: research diary, manuscripts, presentations, websites, dashboards\nEach section has a guided exercise with an academic scenario"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#what-is-quarto",
+    "href": "slides/workshop-presentation.html#what-is-quarto",
+    "title": "One Tool to Rule Them All",
+    "section": "What Is Quarto?",
+    "text": "What Is Quarto?\n\nOpen-source scientific publishing system from Posit\nThe multi-language, multi-format successor to R Markdown\nThree ingredients in one .qmd file:\n\nYAML for metadata and configuration\nMarkdown for written content\nCode chunks (R, Python, Julia, OJS) for computation"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#key-strengths",
+    "href": "slides/workshop-presentation.html#key-strengths",
+    "title": "One Tool to Rule Them All",
+    "section": "Key Strengths",
+    "text": "Key Strengths\n\nPlain text: every change is a visible, trackable line (version control friendly)\nOne source, many outputs: HTML, PDF, DOCX, slides from the same file\nExecutable code: results are computed at render time, not pasted in\nFamiliar if you know LaTeX, but simpler markup and more output formats"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#markdown-in-30-seconds",
+    "href": "slides/workshop-presentation.html#markdown-in-30-seconds",
+    "title": "One Tool to Rule Them All",
+    "section": "Markdown in 30 Seconds",
+    "text": "Markdown in 30 Seconds\n\nLightweight syntax for structure: headings, lists, links, images, emphasis\n# Title, ## Section, **bold**, *italic*, [link](url)\nQuarto adds academic extras: citations, cross-references, callouts, figures with captions\nMindset: describe what things are, let the renderer handle how they look"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#yaml-configuring-your-document",
+    "href": "slides/workshop-presentation.html#yaml-configuring-your-document",
+    "title": "One Tool to Rule Them All",
+    "section": "YAML: Configuring Your Document",
+    "text": "YAML: Configuring Your Document\n\nThe block between --- fences at the top of a file\nControls title, authors, date, output format, and options\n\n---\ntitle: \"My Analysis\"\nauthor: \"Jane Doe\"\nformat: pdf\n---\n\nKey : value pairs; indentation matters\nSame content, different YAML = different publication"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#installing-quarto",
+    "href": "slides/workshop-presentation.html#installing-quarto",
+    "title": "One Tool to Rule Them All",
+    "section": "Installing Quarto",
+    "text": "Installing Quarto\n\nOne install covers every output format\nYou may already have it (bundled with RStudio and Positron)\nRecommended: Quarto CLI + an IDE (RStudio, VS Code, or Positron)\nPDF output needs a LaTeX distribution: quarto install tinytex\nSelf-check: run quarto check in your terminal"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#research-diary",
+    "href": "slides/workshop-presentation.html#research-diary",
+    "title": "One Tool to Rule Them All",
+    "section": "Research Diary",
+    "text": "Research Diary\n\nCapture what you tried, what worked, and why you decided\nMarkdown headings separate entries by date or experiment\nCode chunks put data checks and figures right beside your notes\nRender to HTML for browsing, PDF for archiving\nDurable, shareable, searchable plain text"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#manuscripts",
+    "href": "slides/workshop-presentation.html#manuscripts",
+    "title": "One Tool to Rule Them All",
+    "section": "Manuscripts",
+    "text": "Manuscripts\n\nNarrative, citations, figures, and tables in one reproducible workflow\nHTML/DOCX for collaborators, PDF/LaTeX for journal submission\nJournal templates available (quarto-journals)\nInline code pulls statistics straight from your data: no stale numbers\nBonus: papers written in Quarto combine easily into a cumulative thesis"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#presentations",
+    "href": "slides/workshop-presentation.html#presentations",
+    "title": "One Tool to Rule Them All",
+    "section": "Presentations",
+    "text": "Presentations\n\nreveal.js slides: web-native, viewable in any browser\nReuse figures, tables, and citations from your other .qmd files\nEmbed interactive content: live code, diagrams, iframes\nExport to PowerPoint or PDF when required\n11 built-in themes, or your own CSS branding\nCaveat: not the tool for design-heavy, graphics-first slides"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#websites",
+    "href": "slides/workshop-presentation.html#websites",
+    "title": "One Tool to Rule Them All",
+    "section": "Websites",
+    "text": "Websites\n\nFull websites from the same Markdown + YAML you already know\nFree hosting via GitHub Pages or Netlify\n_quarto.yml manages navigation, themes, and shared settings\nindex.qmd is the front page\nGreat for lab pages, project sites, teaching materials, personal profiles"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#dashboards",
+    "href": "slides/workshop-presentation.html#dashboards",
+    "title": "One Tool to Rule Them All",
+    "section": "Dashboards",
+    "text": "Dashboards\n\nformat: dashboard turns a .qmd into a visual overview page\nHeadings define rows; cards hold value boxes, charts, and tables\nInteractive in the browser with no server: Plotly charts, sortable tables, tabsets\nLimit: real reactivity (recomputing on input) needs Shiny and a server"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#one-system-many-outputs",
+    "href": "slides/workshop-presentation.html#one-system-many-outputs",
+    "title": "One Tool to Rule Them All",
+    "section": "One System, Many Outputs",
+    "text": "One System, Many Outputs\n\nSame skills everywhere: Markdown + YAML + optional code\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project\nStart with the foundations, then pick the use case you need today\nExercises and reference pages: this workshop website"
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#before-you-start",
+    "href": "slides/workshop-presentation.html#before-you-start",
+    "title": "One Tool to Rule Them All",
+    "section": "Before You Start",
+    "text": "Before You Start\n\nInstall Quarto &gt;= 1.5\nRun quarto check to verify your setup\nPick an editor: RStudio, VS Code, or Positron\nQuestions? Ask us, or see quarto.org"
+  }
+]

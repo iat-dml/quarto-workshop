@@ -9,7 +9,7 @@ number-sections: false
 
 [Jump to use cases](use-cases/research-diary.qmd){.btn .btn-outline}
 
-[View in presentation format](_slides/slides/workshop-presentation.html){.btn .btn-outline}
+[View as presentation](_slides/slides/workshop-presentation.html){.btn .btn-outline}
 :::
 
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by [Posit](https://posit.co/). It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
