@@ -118,7 +118,7 @@ format: pdf
 - Same skills everywhere: Markdown + YAML + optional code
 - Diary -> manuscript -> slides -> website -> dashboard, from one project
 - Start with the foundations, then pick the use case you need today
-- Exercises and reference pages: this workshop website
+- Exercises and reference pages can be found on workshop website
 
 ## Before You Start
 
