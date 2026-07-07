@@ -123,7 +123,7 @@
     "href": "slides/workshop-presentation.html#one-system-many-outputs",
     "title": "One Tool to Rule Them All",
     "section": "One System, Many Outputs",
-    "text": "One System, Many Outputs\n\nSame skills everywhere: Markdown + YAML + optional code\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project\nStart with the foundations, then pick the use case you need today\nExercises and reference pages: this workshop website"
+    "text": "One System, Many Outputs\n\nSame skills everywhere: Markdown + YAML + optional code\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project\nStart with the foundations, then pick the use case you need today\nExercises and reference pages can be found on workshop website"
   },
   {
     "objectID": "slides/workshop-presentation.html#before-you-start",
