@@ -31,6 +31,12 @@ Examples include:
 - Recording why a result was not used
 - Noting an assumption that may need to be revisited
 
+## Data
+
+We recommend using this as an opportunity to practice with your own data. If you do not have a dataset handy, you can use the `restoration-sites.csv` sample data. 
+
+[Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
+
 ## Step-By-Step Exercise
 
 1. Create a new file called `notebook.qmd`.
