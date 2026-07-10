@@ -46,7 +46,7 @@
     "href": "slides/workshop-presentation.html#installing-quarto",
     "title": "One Tool to Rule Them All",
     "section": "Installing Quarto",
-    "text": "Installing Quarto\n\nOne install covers every output format\nYou may already have it (bundled with RStudio and Positron)\nRecommended: Quarto CLI + an IDE (RStudio, VS Code, or Positron)\nPDF output needs a LaTeX distribution: quarto install tinytex\nSelf-check: run quarto check in your terminal"
+    "text": "Installing Quarto\n\nOne install unlocks every output format\nYou may already have it: Quarto ships with RStudio and Positron\nAny editor works; RStudio, VS Code, and Positron support .qmd out of the box\nYou are ready when quarto check reports a working setup\nStep-by-step guide on the workshop website"
   },
   {
     "objectID": "slides/workshop-presentation.html#research-diary",
@@ -88,7 +88,7 @@
     "href": "slides/workshop-presentation.html#one-system-many-outputs",
     "title": "One Tool to Rule Them All",
     "section": "One System, Many Outputs",
-    "text": "One System, Many Outputs\n\nSame skills everywhere: Markdown + YAML + optional code\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project\nStart with the foundations, then pick the use case you need today\nExercises and reference pages: this workshop website"
+    "text": "One System, Many Outputs\n\nSame skills everywhere: Markdown + YAML + optional code\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project\nStart with the foundations, then pick the use case you need today\nExercises and reference pages can be found on workshop website"
   },
   {
     "objectID": "slides/workshop-presentation.html#before-you-start",
