@@ -63,11 +63,11 @@ format: pdf
 
 ## Installing Quarto
 
-- One install covers every output format
-- You may already have it (bundled with RStudio and Positron)
-- Recommended: Quarto CLI + an IDE (RStudio, VS Code, or Positron)
-- PDF output needs a LaTeX distribution: `quarto install tinytex`
-- Self-check: run `quarto check` in your terminal
+- One install unlocks every output format
+- You may already have it: Quarto ships with RStudio and Positron
+- Any editor works; RStudio, VS Code, and Positron support `.qmd` out of the box
+- You are ready when `quarto check` reports a working setup
+- Step-by-step guide on the workshop website
 
 # Use Cases
 

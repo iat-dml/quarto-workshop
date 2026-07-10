@@ -8,7 +8,7 @@ Quarto is an open-source publishing system developed by Posit. It is built for t
 
 Quarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.
 
-## Why This Matters For Researchers
+## Research Needs More Than One Format
 
 Research outputs rarely stay in one format. The same project may need:
 
@@ -18,7 +18,7 @@ Research outputs rarely stay in one format. The same project may need:
 - a project website
 - an interactive communication piece
 
-Quarto supports all of these with a common syntax and shared project structure.
+Quarto supports all of these with a common syntax and shared project structure. That is the larger theme of this workshop: one authoring system, many academic uses.
 
 ## Key Strengths
 
@@ -57,17 +57,6 @@ Quarto can *run* code inside the document, not just display it. The result below
 ```
 
 Quarto supports R, Python, Julia, and Observable JavaScript. Swap `r` for `python` or `julia` in the chunk header and the same idea works, so everyone can stay in the language they know.
-
-## Concrete Academic Example
-
-A doctoral researcher might use:
-
-- one Quarto file as a research diary for ongoing observations
-- another as a manuscript draft that renders to PDF and DOCX
-- a slide deck generated from the same project for a conference talk
-- a simple website to share outputs and project updates
-
-That is the larger theme of this workshop: one authoring system, many academic uses.
 
 ::: {.callout-important}
 ## Quarto, Markdown, and YAML

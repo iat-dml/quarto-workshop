@@ -52,7 +52,7 @@ execute:
 
 This hides the code and any warnings across the whole document, so the output shows only the results.
 
-## Concrete Academic Example
+## Example: A Manuscript Header
 
 A manuscript draft might use a header like this:
 

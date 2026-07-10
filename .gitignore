@@ -2,3 +2,6 @@
 **/*.quarto_ipynb
 /skills
 .planning/HANDOFF.json
+WORKING-NOTES.md
+.DS_Store
+**/.DS_Store

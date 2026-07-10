@@ -6,7 +6,7 @@ title: "Markdown for Beginners"
 
 Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.
 
-## Why This Matters For Researchers
+## Why Markdown Is Worth Learning
 
 Markdown is worth learning because it is:
 
@@ -88,7 +88,7 @@ Quarto keeps standard Markdown, but it also makes room for:
 You do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.
 :::
 
-## Concrete Academic Example
+## Example: A Methods Note in Markdown
 
 A methods note written in Quarto might use:
 

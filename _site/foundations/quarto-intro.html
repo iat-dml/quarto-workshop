@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8df400f185b37363df4d0012543c3773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9b5fba79b0e413035d27731d07bd22fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-8df400f185b37363df4d0012543c3773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ffa423004e1dbe72d0f04763e605882.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-29ac99572aab8aa0b0ccf1a2d7e650cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5ffa423004e1dbe72d0f04763e605882.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -512,14 +512,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#short-introduction" id="toc-short-introduction" class="nav-link active" data-scroll-target="#short-introduction">Short Introduction</a>
   <ul class="collapse">
-  <li><a href="#why-this-matters-for-researchers" id="toc-why-this-matters-for-researchers" class="nav-link" data-scroll-target="#why-this-matters-for-researchers">Why This Matters For Researchers</a></li>
+  <li><a href="#research-needs-more-than-one-format" id="toc-research-needs-more-than-one-format" class="nav-link" data-scroll-target="#research-needs-more-than-one-format">Research Needs More Than One Format</a></li>
   <li><a href="#key-strengths" id="toc-key-strengths" class="nav-link" data-scroll-target="#key-strengths">Key Strengths</a>
   <ul class="collapse">
   <li><a href="#universal-plain-text-syntax" id="toc-universal-plain-text-syntax" class="nav-link" data-scroll-target="#universal-plain-text-syntax">Universal Plain-Text Syntax</a></li>
   <li><a href="#multiple-outputs-from-one-source" id="toc-multiple-outputs-from-one-source" class="nav-link" data-scroll-target="#multiple-outputs-from-one-source">Multiple Outputs From One Source</a></li>
   <li><a href="#executable-code-in-multiple-languages" id="toc-executable-code-in-multiple-languages" class="nav-link" data-scroll-target="#executable-code-in-multiple-languages">Executable Code In Multiple Languages</a></li>
   </ul></li>
-  <li><a href="#concrete-academic-example" id="toc-concrete-academic-example" class="nav-link" data-scroll-target="#concrete-academic-example">Concrete Academic Example</a></li>
   <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next Step</a></li>
   </ul></li>
   </ul>
@@ -552,8 +551,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Short Introduction</h1>
 <p>Quarto is an open-source publishing system developed by Posit. It is built for technical and scientific communication, which makes it especially useful for research settings where writing, analysis, and presentation often belong together.</p>
 <p>Quarto is closely related to R Markdown, and many researchers meet it as the newer, broader continuation of ideas that became popular in the R Markdown ecosystem. The biggest shift is that Quarto was designed from the start as a multi-language, multi-format publishing system rather than as a tool mainly associated with R.</p>
-<section id="why-this-matters-for-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-matters-for-researchers">Why This Matters For Researchers</h2>
+<section id="research-needs-more-than-one-format" class="level2">
+<h2 class="anchored" data-anchor-id="research-needs-more-than-one-format">Research Needs More Than One Format</h2>
 <p>Research outputs rarely stay in one format. The same project may need:</p>
 <ul>
 <li>notes during exploration</li>
@@ -562,7 +561,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>a project website</li>
 <li>an interactive communication piece</li>
 </ul>
-<p>Quarto supports all of these with a common syntax and shared project structure.</p>
+<p>Quarto supports all of these with a common syntax and shared project structure. That is the larger theme of this workshop: one authoring system, many academic uses.</p>
 </section>
 <section id="key-strengths" class="level2">
 <h2 class="anchored" data-anchor-id="key-strengths">Key Strengths</h2>
@@ -572,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="fig-plain-text-diff" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plain-text-diff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="..\assets/plain-text-diff.png" class="img-fluid figure-img">
+<img src="../assets/plain-text-diff.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plain-text-diff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what changed between two versions of this very page, with added lines in green. This kind of line-by-line history only works because Quarto files are plain text.
@@ -588,7 +587,7 @@ Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="..\assets/formats/html.png" class="img-fluid figure-img"></p>
+<p><img src="../assets/formats/html.png" class="img-fluid figure-img"></p>
 <figcaption>HTML page</figcaption>
 </figure>
 </div>
@@ -596,7 +595,7 @@ Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="..\assets/formats/pdf.png" class="img-fluid figure-img"></p>
+<p><img src="../assets/formats/pdf.png" class="img-fluid figure-img"></p>
 <figcaption>PDF</figcaption>
 </figure>
 </div>
@@ -604,7 +603,7 @@ Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="..\assets/formats/docx.png" class="img-fluid figure-img"></p>
+<p><img src="../assets/formats/docx.png" class="img-fluid figure-img"></p>
 <figcaption>Word (DOCX)</figcaption>
 </figure>
 </div>
@@ -636,18 +635,6 @@ Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what
 </div>
 </div>
 <p>Quarto supports R, Python, Julia, and Observable JavaScript. Swap <code>r</code> for <code>python</code> or <code>julia</code> in the chunk header and the same idea works, so everyone can stay in the language they know.</p>
-</section>
-</section>
-<section id="concrete-academic-example" class="level2">
-<h2 class="anchored" data-anchor-id="concrete-academic-example">Concrete Academic Example</h2>
-<p>A doctoral researcher might use:</p>
-<ul>
-<li>one Quarto file as a research diary for ongoing observations</li>
-<li>another as a manuscript draft that renders to PDF and DOCX</li>
-<li>a slide deck generated from the same project for a conference talk</li>
-<li>a simple website to share outputs and project updates</li>
-</ul>
-<p>That is the larger theme of this workshop: one authoring system, many academic uses.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -666,6 +653,7 @@ Figure&nbsp;1: A version-control tool (here GitHub Desktop) showing exactly what
 </ul>
 </div>
 </div>
+</section>
 </section>
 <section id="next-step" class="level2">
 <h2 class="anchored" data-anchor-id="next-step">Next Step</h2>

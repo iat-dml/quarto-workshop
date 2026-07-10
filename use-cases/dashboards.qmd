@@ -14,7 +14,7 @@ A Quarto dashboard is built from a few simple pieces:
 
 - [**`format: dashboard`**]{.nowrap} in the YAML turns the document into a dashboard.
 - **Headings** lay out the page: `##` starts a row, and the cards inside it sit side by side as columns.
-- **Cards** are the panels that hold your content. Two special kinds are **value boxes** (a single headline number) and **plot cards** (a chart).
+- **Cards** are the panels that hold your content, such as a chart, a table, or plain text. A special kind is the **value box**, which displays a single headline number.
 
 In code, the shape looks like this (each code cell uses an executable `{r}` block, shown here as plain text):
 
@@ -42,11 +42,7 @@ plot_ly(...)
 
 ## What You Will Build
 
-In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. It looks like this:
-
-![A restoration-monitoring dashboard: value boxes across the top, interactive charts below.](/assets/restoration-dashboard.png)
-
-You can also explore the live version right here. Hover over the charts to read values, and click items in the legend to toggle sites:
+In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. You can explore it right here: hover over the chart to read values, and click items in the legend to toggle sites.
 
 <iframe src="../dashboards/restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard"></iframe>
 
@@ -60,6 +56,8 @@ Quarto dashboards can be interactive in several ways, all running entirely in th
 - **Sortable tables**: click a column header in the table above to reorder the rows (built with the `DT` package).
 - **Tabsets**: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.
 
-The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs a running server which a static host like GitHub Pages cannot provide. To build such a dashboard you can use the [Shiny](https://shiny.posit.co/) framework. 
+The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs a running server which a static host like GitHub Pages cannot provide. To build such a dashboard you can use the [Shiny](https://shiny.posit.co/) framework.
+
+For inspiration on what dashboards can look like, browse the [official Quarto dashboard examples](https://quarto.org/docs/dashboards/examples/).
 
 [Go to the dashboards exercise](../exercises/dashboards-exercise.qmd){.btn .btn-primary}
