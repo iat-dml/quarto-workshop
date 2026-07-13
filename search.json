@@ -46,7 +46,7 @@
     "href": "slides/workshop-presentation.html#workshop-roadmap",
     "title": "One Tool to Rule Them All",
     "section": "Workshop Roadmap",
-    "text": "Workshop Roadmap\n\n\nFoundations: Quarto, Markdown, YAML, installation\nUse cases: research diary, manuscripts, presentations, websites, dashboards\nEach section has a guided exercise with an academic scenario which you will have time to test today."
+    "text": "Workshop Roadmap\n\nFoundations: Quarto, Markdown, YAML\nUse cases:\n\nResearch diary\nManuscripts\nPresentations\nWebsites\nDashboards\n\nEach section has a guided exercise with an academic scenario which you will have time to test today."
   },
   {
     "objectID": "slides/workshop-presentation.html#what-is-quarto",
@@ -75,13 +75,6 @@
     "title": "One Tool to Rule Them All",
     "section": "YAML: Configuring Your Document",
     "text": "YAML: Configuring Your Document\n\nThe block between --- fences at the top of a file\nControls title, authors, date, output format, and options\n\n---\ntitle: \"My Analysis\"\nauthor: \"Jane Doe\"\nformat: pdf\n---\n\nKey : value pairs; indentation matters\nSame content, different YAML = different publication"
-  },
-  {
-    "objectID": "slides/workshop-presentation.html#installing-quarto",
-    "href": "slides/workshop-presentation.html#installing-quarto",
-    "title": "One Tool to Rule Them All",
-    "section": "Installing Quarto",
-    "text": "Installing Quarto\n\nOne install unlocks every output format\nYou may already have it: Quarto ships with RStudio and Positron\nAny editor works; RStudio, VS Code, and Positron support .qmd out of the box\nYou are ready when quarto check reports a working setup\nStep-by-step guide on the workshop website"
   },
   {
     "objectID": "slides/workshop-presentation.html#research-diary",
@@ -133,11 +126,11 @@
     "text": "One System, Many Outputs\n\nSame skills everywhere: Markdown + YAML + optional code\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project\nStart with the foundations, then pick the use case you need today\nExercises and reference pages can be found on workshop website"
   },
   {
-    "objectID": "slides/workshop-presentation.html#before-you-start",
-    "href": "slides/workshop-presentation.html#before-you-start",
+    "objectID": "slides/workshop-presentation.html#before-you-start-installing-quarto",
+    "href": "slides/workshop-presentation.html#before-you-start-installing-quarto",
     "title": "One Tool to Rule Them All",
-    "section": "Before You Start",
-    "text": "Before You Start\n\nInstall Quarto &gt;= 1.5\nRun quarto check to verify your setup\nPick an editor: RStudio, VS Code, or Positron\nQuestions? Ask us, or see quarto.org"
+    "section": "Before You Start: Installing Quarto",
+    "text": "Before You Start: Installing Quarto\n\nOne install unlocks every output format\nYou may already have it: Quarto ships with RStudio and Positron\nAny editor works; RStudio, VS Code, and Positron support .qmd out of the box\nYou are ready when quarto check reports a working setup\nStep-by-step guide on the workshop website; questions? Ask us, or see quarto.org"
   },
   {
     "objectID": "exercises/presentations-exercise.html",
