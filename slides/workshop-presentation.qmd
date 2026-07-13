@@ -7,6 +7,10 @@ format:
     incremental: false
 ---
 
+<!-- Ben TODO: add a slide with a screenshot or iframe of the website, the full URL and a QR code. -->
+
+<!-- Ben TODO: Add a slide with short intro of us. -->
+
 ## Why Quarto?
 
 - Research produces many related outputs: notes, manuscripts, slides, websites, dashboards
@@ -16,15 +20,17 @@ format:
 
 ## Workshop Roadmap
 
-1. **Foundations**: Quarto, Markdown, YAML, installation
-2. **Use cases**: research diary, manuscripts, presentations, websites, dashboards
-3. Each section has a guided exercise with an academic scenario
+<!-- Manuel TODO: Use-cases as a 2nd level list -->
+
+1.  **Foundations**: Quarto, Markdown, YAML, installation
+2.  **Use cases**: research diary, manuscripts, presentations, websites, dashboards
+3.  Each section has a guided exercise with an academic scenario which you will have time to test today.
 
 # Foundations
 
 ## What Is Quarto?
 
-- Open-source scientific publishing system from Posit
+- **Open-source** scientific publishing system from Posit
 - The multi-language, multi-format successor to R Markdown
 - Three ingredients in one `.qmd` file:
   - **YAML** for metadata and configuration
@@ -50,7 +56,7 @@ format:
 - The block between `---` fences at the top of a file
 - Controls title, authors, date, output format, and options
 
-```yaml
+``` yaml
 ---
 title: "My Analysis"
 author: "Jane Doe"
@@ -61,6 +67,7 @@ format: pdf
 - Key : value pairs; indentation matters
 - Same content, different YAML = different publication
 
+<!-- Manuel TODO: move this content to the end of the presentation -->
 ## Installing Quarto
 
 - One install unlocks every output format
@@ -70,6 +77,8 @@ format: pdf
 - Step-by-step guide on the workshop website
 
 # Use Cases
+
+<!-- Ben TODO: Add some images and iframes, final text polish. -->
 
 ## Research Diary
 
@@ -111,18 +120,24 @@ format: pdf
 - Interactive in the browser with no server: Plotly charts, sortable tables, tabsets
 - Limit: real reactivity (recomputing on input) needs Shiny and a server
 
+# A quick demo
+<!-- Ben TODO: prepare for simple live demo with our slides, make a small edit and show visual editor, then preview to show changes. -->
+
 # Wrap-Up
 
 ## One System, Many Outputs
 
 - Same skills everywhere: Markdown + YAML + optional code
-- Diary -> manuscript -> slides -> website -> dashboard, from one project
+- Diary -\> manuscript -\> slides -\> website -\> dashboard, from one project
 - Start with the foundations, then pick the use case you need today
 - Exercises and reference pages can be found on workshop website
 
 ## Before You Start
 
-- Install Quarto >= 1.5
+- Install Quarto \>= 1.5
 - Run `quarto check` to verify your setup
 - Pick an editor: RStudio, VS Code, or Positron
 - Questions? Ask us, or see quarto.org
+
+<!-- Ben TODO: add a copy of the slide linking to the website and stating they should pick an exercise to try today. -->
+
