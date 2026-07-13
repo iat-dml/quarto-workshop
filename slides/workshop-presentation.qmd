@@ -18,7 +18,7 @@ format:
 - Quarto: write once in plain text, render to HTML, PDF, DOCX, slides, and more
 - Focus on content, not tool juggling
 
-## Workshop Roadmap
+## Workshop Roadmap {.smaller}
 
 1.  **Foundations**: Quarto, Markdown, YAML
 2.  **Use cases**:
