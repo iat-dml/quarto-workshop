@@ -88,6 +88,9 @@ format: pdf
 - Render to HTML for browsing, PDF for archiving
 - Durable, shareable, searchable plain text
 
+## Research Diary
+![](assets/lab-notebook-w-figs.jpg){.research-diary}
+
 ## Manuscripts
 
 - Narrative, citations, figures, and tables in one reproducible workflow
