@@ -46,7 +46,7 @@
     "href": "slides/workshop-presentation.html#workshop-roadmap",
     "title": "One Tool to Rule Them All",
     "section": "Workshop Roadmap",
-    "text": "Workshop Roadmap\n\nFoundations: Quarto, Markdown, YAML, installation\nUse cases: research diary, manuscripts, presentations, websites, dashboards\nEach section has a guided exercise with an academic scenario"
+    "text": "Workshop Roadmap\n\n\nFoundations: Quarto, Markdown, YAML, installation\nUse cases: research diary, manuscripts, presentations, websites, dashboards\nEach section has a guided exercise with an academic scenario which you will have time to test today."
   },
   {
     "objectID": "slides/workshop-presentation.html#what-is-quarto",
