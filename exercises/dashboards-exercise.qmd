@@ -6,14 +6,24 @@ title: "Exercise: Build a Dashboard"
 
 Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how `format: dashboard` arranges a page into rows and columns.
 
-You are building toward the dashboard shown on the [Dashboards](../use-cases/dashboards.qmd) page. The complete, ready-to-run version lives in the repository as `dashboards/restoration-dashboard.qmd`, so you can copy exact code from there or compare as you go.
+This is what you are building toward:
+
+<iframe src="../dashboards/restoration-dashboard.html" width="100%" height="850" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="The finished restoration monitoring dashboard"></iframe>
+
+The complete, ready-to-run version lives in the repository as `dashboards/restoration-dashboard.qmd`, so you can copy exact code from there or compare as you go.
+
+::: {.callout-note}
+## Yours will look slightly different
+The version above inherits this website's custom fonts and colours. A fresh dashboard uses Quarto's default styling, so expect the same layout with a plainer look.
+:::
 
 ### The Data
 
 You will use a small synthetic dataset, `data/restoration-sites.csv`. Each row is one survey of one site:
 
 ```{r}
-#| eval: false
+#| echo: false
+#| message: false
 library(readr)
 sites <- read_csv("../data/restoration-sites.csv")
 head(sites)
@@ -28,6 +38,19 @@ It has five columns:
 - `soil_moisture_pct` — soil moisture, in percent
 
 [Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
+
+### Turning a Document into a Dashboard
+
+A dashboard is an ordinary `.qmd` file with one decisive setting: the output format in the YAML header is set to `dashboard`.
+
+```yaml
+---
+title: "My Dashboard"
+format: dashboard
+---
+```
+
+Everything else, the Markdown, the code chunks, stays exactly as you know it. What changes is how Quarto arranges the content on the page, which is what the next section is about.
 
 ### How a Dashboard Is Laid Out: Rows and Columns
 
@@ -87,14 +110,14 @@ format:
     orientation: columns
 ```
 
-::: {.callout-note}
-## A note on the code fences below
-Every code cell in a dashboard is an executable chunk, so in your own file its fence is ```` ```{r} ```` (with curly braces). In the sketches on this page we write ```` ```r ```` without braces only so they display as text instead of running.
+::: {.callout-important}
+## In your own file, you must write `{r}` with curly braces
+The code cells on this page are written as ```` ```r ```` (no braces) purely so this website can *display* them without running them. When you copy them into your own dashboard, **you need to add the curly braces**, ```` ```{r} ````, otherwise the code will not run and your dashboard will show the code as plain text instead of charts and numbers.
 :::
 
 ## Build It Step by Step
 
-Create a file `my-dashboard.qmd`. Use the path to the CSV relative to *your* file (for example `data/restoration-sites.csv` if the file sits in the project root).
+Create a file `my-dashboard.qmd` in your project folder, and place the downloaded CSV in a subfolder called `data` next to it. The snippets below assume exactly this layout, so the path `data/restoration-sites.csv` is relative to your `.qmd` file; adjust it if you store the CSV somewhere else. And remember: add the curly braces around `r` in every code cell you copy.
 
 **1. Header and setup.**
 
@@ -114,7 +137,7 @@ library(dplyr)
 library(plotly)
 library(DT)
 
-sites <- read_csv("../data/restoration-sites.csv") |>
+sites <- read_csv("data/restoration-sites.csv") |>
   mutate(date = as.Date(date))
 
 latest <- sites |>
@@ -125,7 +148,7 @@ first <- sites |>
 ```
 ````
 
-`echo: false` hides the code, so the dashboard shows only results. `latest` keeps the most recent survey per site (used by the value boxes and the table), and `first` keeps the earliest one, so we can show how much cover has changed.
+`echo: false` hides the code, so the dashboard shows only results, and `include: false` keeps this setup cell from becoming a card of its own. The chunk loads the packages and the data, then prepares two subsets: `latest` keeps the most recent survey per site (used by the value boxes and the table), and `first` keeps the earliest one, so we can show how much cover has changed.
 
 **2. A row of headline numbers (value boxes).**
 
@@ -154,6 +177,8 @@ list(value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$ve
 ```
 ````
 
+The `value` can be any small computation: `n_distinct(sites$site)` counts the unique sites, `nrow(sites)` counts the rows (one per survey), and the third box subtracts the mean cover of the first survey round from the mean of the latest one to get the change.
+
 Render. Three coloured boxes appear side by side, three cards in one row. The `icon` names come from the [Bootstrap Icons library](https://icons.getbootstrap.com/), where you can browse all available icons and copy their names.
 
 ::: {.callout-tip}
@@ -180,6 +205,8 @@ plot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,
          legend = list(title = list(text = "")))
 ```
 ````
+
+`plot_ly()` builds the chart from the `sites` data: `x` and `y` say which columns go on the axes, `color = ~site` draws one line per site, and `type`/`mode` make it a line chart with visible points (the `~` tells plotly to look the name up as a column). The `layout()` call afterwards just tidies up the axis titles and the legend.
 
 Render and hover the lines to read values. That is plotly's interactivity, and it needs no server.
 
@@ -211,6 +238,8 @@ latest |>
 ```
 ````
 
+The table cell works in two steps: `select()` picks the columns to show and renames them into readable headers (backticks allow spaces like `` `Cover (%)` ``), then `datatable()` turns the result into an interactive table. The option `dom = "t"` shows only the table itself, without a search box or pagination, and `rownames = FALSE` drops the row numbers.
+
 Render. The chart and the table now sit side by side under the value boxes. Click a column header in the table to sort it. That is your finished dashboard.
 
 ## Stretch: a what-if scenario explorer (optional)
@@ -223,10 +252,10 @@ Here is what it produces. Switch the tabs above the chart to compare the scenari
 
 <iframe src="../dashboards/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset"></iframe>
 
-Read it in your setup chunk and add a small helper:
+Read it in your setup chunk and add a small helper function. The helper wraps the whole chart recipe once, so each tab later needs only a single line; `filter()` keeps just the rows of the chosen scenario:
 
 ```r
-scenarios <- read_csv("../data/restoration-scenarios.csv") |>
+scenarios <- read_csv("data/restoration-scenarios.csv") |>
   mutate(date = as.Date(date))
 
 plot_cover <- function(scenario_name) {

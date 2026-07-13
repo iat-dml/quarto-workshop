@@ -70,6 +70,13 @@
     "text": "Research Diary"
   },
   {
+    "objectID": "slides/workshop-presentation.html#research-diary-1",
+    "href": "slides/workshop-presentation.html#research-diary-1",
+    "title": "One Tool to Rule Them All",
+    "section": "Research Diary",
+    "text": "Research Diary"
+  },
+  {
     "objectID": "slides/workshop-presentation.html#manuscripts",
     "href": "slides/workshop-presentation.html#manuscripts",
     "title": "One Tool to Rule Them All",
@@ -142,7 +149,11 @@
   {
     "objectID": "slides/workshop-presentation.html#before-you-start-installing-quarto",
     "href": "slides/workshop-presentation.html#before-you-start-installing-quarto",
+    "objectID": "slides/workshop-presentation.html#before-you-start-installing-quarto",
+    "href": "slides/workshop-presentation.html#before-you-start-installing-quarto",
     "title": "One Tool to Rule Them All",
+    "section": "Before You Start: Installing Quarto",
+    "text": "Before You Start: Installing Quarto\n\nOne install unlocks every output format\nYou may already have it: Quarto ships with RStudio and Positron\nAny editor works; RStudio, VS Code, and Positron support .qmd out of the box\nYou are ready when quarto check reports a working setup\nStep-by-step guide on the workshop website; questions? Ask us, or see quarto.org"
     "section": "Before You Start: Installing Quarto",
     "text": "Before You Start: Installing Quarto\n\nOne install unlocks every output format\nYou may already have it: Quarto ships with RStudio and Positron\nAny editor works; RStudio, VS Code, and Positron support .qmd out of the box\nYou are ready when quarto check reports a working setup\nStep-by-step guide on the workshop website; questions? Ask us, or see quarto.org"
   }
