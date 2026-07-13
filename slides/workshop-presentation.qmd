@@ -20,11 +20,14 @@ format:
 
 ## Workshop Roadmap
 
-<!-- Manuel TODO: Use-cases as a 2nd level list -->
-
-1.  **Foundations**: Quarto, Markdown, YAML, installation
-2.  **Use cases**: research diary, manuscripts, presentations, websites, dashboards
-3.  Each section has a guided exercise with an academic scenario which you will have time to test today.
+1.  **Foundations**: Quarto, Markdown, YAML
+2.  **Use cases**:
+    -   Research diary
+    -   Manuscripts
+    -   Presentations
+    -   Websites
+    -   Dashboards
+3.  Each section has a guided **exercise** with an academic scenario which you will have time to test today.
 
 # Foundations
 
@@ -66,15 +69,6 @@ format: pdf
 
 - Key : value pairs; indentation matters
 - Same content, different YAML = different publication
-
-<!-- Manuel TODO: move this content to the end of the presentation -->
-## Installing Quarto
-
-- One install unlocks every output format
-- You may already have it: Quarto ships with RStudio and Positron
-- Any editor works; RStudio, VS Code, and Positron support `.qmd` out of the box
-- You are ready when `quarto check` reports a working setup
-- Step-by-step guide on the workshop website
 
 # Use Cases
 
@@ -132,12 +126,13 @@ format: pdf
 - Start with the foundations, then pick the use case you need today
 - Exercises and reference pages can be found on workshop website
 
-## Before You Start
+## Before You Start: Installing Quarto
 
-- Install Quarto \>= 1.5
-- Run `quarto check` to verify your setup
-- Pick an editor: RStudio, VS Code, or Positron
-- Questions? Ask us, or see quarto.org
+- One install unlocks every output format
+- You may already have it: Quarto ships with RStudio and Positron
+- Any editor works; RStudio, VS Code, and Positron support `.qmd` out of the box
+- You are ready when `quarto check` reports a working setup
+- Step-by-step guide on the workshop website; questions? Ask us, or see quarto.org
 
 <!-- Ben TODO: add a copy of the slide linking to the website and stating they should pick an exercise to try today. -->
 
