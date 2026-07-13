@@ -18,3 +18,5 @@ format:
     slide-number: true
     chalkboard: false
     preview-links: auto
+    template-partials:
+      - title-slide.html

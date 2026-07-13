@@ -1,0 +1,30 @@
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$ class="quarto-title-block">
+  <div class="title-slide__panel">
+    <h1 class="title">$title$</h1>
+$if(subtitle)$
+    <p class="title-slide__subtitle subtitle">$subtitle$</p>
+$endif$
+$if(by-author)$
+    <div class="quarto-title-authors">
+$for(by-author)$
+      <div class="quarto-title-author">
+        <div class="quarto-title-author-name">$if(by-author.url)$<a href="$by-author.url$">$endif$$if(by-author.name.literal)$$by-author.name.literal$$endif$$if(by-author.url)$</a>$endif$</div>
+$if(by-author.affiliations)$
+$for(by-author.affiliations)$
+        <p class="quarto-title-affiliation">$if(it.url)$<a href="$it.url$">$endif$$it.name$$if(it.url)$</a>$endif$</p>
+$endfor$
+$endif$
+      </div>
+$endfor$
+    </div>
+$endif$
+$if(date)$
+    <p class="date">$date$</p>
+$endif$
+  </div>
+
+  <div class="title-slide__tagline">
+    <span class="title-slide__tagline-text">a workshop presented at iEMSs 2026</span>
+    <img src="../assets/iemss2026_logo.png" alt="iEMSs 2026, hosted at University College Dublin" class="title-slide__tagline-logo" />
+  </div>
+</section>

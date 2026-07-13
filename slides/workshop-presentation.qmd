@@ -1,37 +1,132 @@
 ---
-title: "One Tool to Rule Them All"
-subtitle: "Quarto for Documentation, Presentations, Manuscripts and Outreach"
+title: "One Tool to *Rule Them All*"
+subtitle: "![](../assets/logo-quarto.svg){.inline-logo} for Documentation, Presentations, Manuscripts and Outreach"
 format:
   revealjs:
     slide-number: true
     incremental: false
 ---
 
-<!-- Ben TODO: add a slide with a screenshot or iframe of the website, the full URL and a QR code. -->
+## Workshop Website
 
-<!-- Ben TODO: Add a slide with short intro of us. -->
+[https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/){.center}
 
-## Why Quarto?
+::: {.columns}
+
+::: {.column width="70%" .center}
+![](../assets/website-screenshots/workshop-website-dark.png){"height=50%"}
+:::
+
+::: {.column width="30%" .center}
+![](../assets/workshop-qr-code.png)
+:::
+
+:::
+
+
+## Who We Are
+
+::::::: {.team-grid}
+::: {.card-team}
+::: team-image-container
+![](../assets/ben.jpg){.team-image}
+:::
+
+[Ben Black]{.team-member-name}
+
+[Head of the group Data and Modelling Infrastructure for Living Labs]{.team-job-title}
+
+[Leibniz Centre for Agricultural Landscape Research (ZALF)]{.team-employer}
+:::
+
+::: {.card-team}
+::: team-image-container
+![](../assets/isabel.jpg){.team-image}
+:::
+
+[Isabel Nicholson-Thomas]{.team-member-name}
+
+[Doctoral Researcher at Planning of Landscape and Urban Systems (PLUS)]{.team-job-title}
+
+[ETH Zürich]{.team-employer}
+:::
+
+::: {.card-team}
+::: team-image-container
+![](../assets/manuel.jpg){.team-image}
+:::
+
+[Manuel Kurmann]{.team-member-name}
+
+[Research Assistant at Planning of Landscape and Urban Systems (PLUS)]{.team-job-title}
+
+[ETH Zürich]{.team-employer}
+:::
+:::::::
+
+## Why ![](../assets/logo-quarto.svg){.inline-logo}?
 
 - Research produces many related outputs: notes, manuscripts, slides, websites, dashboards
 - These are usually made with disconnected tools and manual formatting
 - Quarto: write once in plain text, render to HTML, PDF, DOCX, slides, and more
 - Focus on content, not tool juggling
 
-## Workshop Roadmap {.smaller}
+## Workshop Structure {.smaller}
 
-1.  **Foundations**: Quarto, Markdown, YAML
-2.  **Use cases**:
-    -   Research diary
-    -   Manuscripts
-    -   Presentations
-    -   Websites
-    -   Dashboards
-3.  Each section has a guided **exercise** with an academic scenario which you will have time to test today.
+- **Foundations** — Quarto, Markdown, YAML 
+- **Academic use cases**:
+
+::: {.use-case-grid}
+
+::: {.use-case}
+[{{< iconify fa6-solid flask >}}]{.use-case-icon aria-hidden="true"}
+
+[Research Diary]{.use-case-name}
+
+[Documenting your research in a reproducible way from the very beginning.]{.use-case-desc}
+:::
+
+::: {.use-case}
+[{{< iconify fa6-solid file-lines >}}]{.use-case-icon aria-hidden="true"}
+
+[Manuscripts]{.use-case-name}
+
+[Write in plain text; render to PDF, HTML, or DOCX, then share with collaborators.]{.use-case-desc}
+:::
+
+::: {.use-case}
+[{{< iconify fa6-solid person-chalkboard >}}]{.use-case-icon aria-hidden="true"}
+
+[Presentations]{.use-case-name}
+
+[Build reveal.js talks from the same source as your research.]{.use-case-desc}
+:::
+
+::: {.use-case}
+[{{< iconify fa6-solid globe >}}]{.use-case-icon aria-hidden="true"}
+
+[Websites]{.use-case-name}
+
+[Project, lab, and personal websites to improve outreach.]{.use-case-desc}
+:::
+
+::: {.use-case}
+[{{< iconify fa6-solid chart-line >}}]{.use-case-icon aria-hidden="true"}
+
+[Dashboards]{.use-case-name}
+
+[Interactive dashboards for exploring and communicating your research.]{.use-case-desc}
+:::
+
+:::
+
+::: {.use-case-note}
+Each use case has a guided **exercise** which you will have time to test today.
+:::
 
 # Foundations
 
-## What Is Quarto?
+## What Is ![](../assets/logo-quarto.svg){.inline-logo}?
 
 - **Open-source** scientific publishing system from Posit
 - The multi-language, multi-format successor to R Markdown
@@ -40,7 +135,7 @@ format:
   - **Markdown** for written content
   - **Code chunks** (R, Python, Julia, OJS) for computation
 
-## Key Strengths
+## Key Benefits
 
 - **Plain text**: every change is a visible, trackable line (version control friendly)
 - **One source, many outputs**: HTML, PDF, DOCX, slides from the same file
@@ -72,18 +167,23 @@ format: pdf
 
 # Use Cases
 
-<!-- Ben TODO: Add some images and iframes, final text polish. -->
+## Research Diary {.smaller}
 
-## Research Diary
+::: {.columns}
 
+::: {.column width="60%" .center}
 - Capture what you tried, what worked, and *why you decided*
 - Markdown headings separate entries by date or experiment
 - Code chunks put data checks and figures right beside your notes
 - Render to HTML for browsing, PDF for archiving
 - Durable, shareable, searchable plain text
+:::
 
-## Research Diary
-![](assets/lab-notebook-w-figs.jpg){.research-diary}
+::: {.column width="40%" .center}
+![](../assets/lab-notebook-w-figs.jpg)
+:::
+
+:::
 
 ## Manuscripts
 
@@ -91,7 +191,23 @@ format: pdf
 - HTML/DOCX for collaborators, PDF/LaTeX for journal submission
 - Journal templates available (quarto-journals)
 - Inline code pulls statistics straight from your data: no stale numbers
-- Bonus: papers written in Quarto combine easily into a cumulative thesis
+
+
+## Manuscripts
+
+::: {.columns .v-center-container}
+
+::: {.column width="50%" .center}
+![](../assets/manuscript-demo.png){height="480"}
+:::
+
+::: {.column width="50%" .center}
+![](../assets/templates-thesis.png){height="480"}
+:::
+
+:::
+
+**Bonus**: papers written in Quarto can be easily combined into a cumulative thesis
 
 ## Presentations
 
@@ -102,13 +218,45 @@ format: pdf
 - 11 built-in themes, or your own CSS branding
 - Caveat: not the tool for design-heavy, graphics-first slides
 
+## Presentations
+
+{{< revealjs "../assets/dml-revealjs.html" >}}
+
 ## Websites
 
 - Full websites from the same Markdown + YAML you already know
 - Free hosting via GitHub Pages or Netlify
-- `_quarto.yml` manages navigation, themes, and shared settings
-- `index.qmd` is the front page
 - Great for lab pages, project sites, teaching materials, personal profiles
+
+## Websites
+
+:::: {.site-showcase}
+
+::: {.site}
+![](../assets/website-screenshots/blenback-website.png)
+[Personal academic profile]{.site-name}
+[A researcher's personal homepage, profile, and publication list.]{.site-desc}
+:::
+
+::: {.site}
+![](../assets/website-screenshots/nascent-website.png)
+[NASCENT-Peru]{.site-name}
+[A multi-lingual research project website.]{.site-desc}
+:::
+
+::: {.site}
+![](../assets/website-screenshots/iat-dml-website.png)
+[Academic group website]{.site-name}
+[A research group's homepage, with team, projects, and outputs.]{.site-desc}
+:::
+
+::: {.site}
+![](../assets/website-screenshots/LCSfFE-website.png)
+[LCSfFE Handbook]{.site-name}
+[A web version of an instructional guide for building field monitoring systems.]{.site-desc}
+:::
+
+::::
 
 ## Dashboards
 
@@ -117,17 +265,22 @@ format: pdf
 - Interactive in the browser with no server: Plotly charts, sortable tables, tabsets
 - Limit: real reactivity (recomputing on input) needs Shiny and a server
 
-# A quick demo
+## Dashboards
+
+<iframe src="https://iat-dml.github.io/quarto-workshop/dashboards/restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard"></iframe>
+
+# A Quick Demo
 <!-- Ben TODO: prepare for simple live demo with our slides, make a small edit and show visual editor, then preview to show changes. -->
 
-# Wrap-Up
+## Wrap-Up
 
-## One System, Many Outputs
-
-- Same skills everywhere: Markdown + YAML + optional code
+- **One System, Many Outputs**
+- Same skills everywhere: Markdown + YAML + code chunks + a sprinkling of CSS 
 - Diary -\> manuscript -\> slides -\> website -\> dashboard, from one project
-- Start with the foundations, then pick the use case you need today
-- Exercises and reference pages can be found on workshop website
+
+## Now It's Your Turn
+- Start with the foundations, then pick the use case you want to try today
+- More detailed introductory material and exercises can be found on the website: [https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/)
 
 ## Before You Start: Installing Quarto
 
