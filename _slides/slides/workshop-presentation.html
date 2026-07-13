@@ -6,7 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
   <title>One Tool to Rule Them All</title>
@@ -97,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-abac06e4d7481df1d5d4c332a562a1d5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0ea01e120c661828f16095a977b1c184.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -189,26 +190,70 @@
       margin-right: 0; 
     }
   </style>
+   
+    <style>
+    .slide-deck {
+        border: 3px solid #dee2e6;
+    }
+    </style>
+    
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">One Tool to Rule Them All</h1>
-  <p class="subtitle">Quarto for Documentation, Presentations, Manuscripts and Outreach</p>
+  <div class="title-slide__panel">
+    <h1 class="title">One Tool to <em>Rule Them All</em></h1>
+    <p class="title-slide__subtitle subtitle"><img data-src="../assets/logo-quarto.svg" class="inline-logo"> for Documentation, Presentations, Manuscripts and Outreach</p>
+  </div>
 
-<div class="quarto-title-authors">
+  <div class="title-slide__tagline">
+    <span class="title-slide__tagline-text">a workshop presented at iEMSs 2026</span>
+    <img src="../assets/iemss2026_logo.png" alt="iEMSs 2026, hosted at University College Dublin" class="title-slide__tagline-logo">
+  </div>
+</section>
+<section id="workshop-website" class="slide level2">
+<h2>Workshop Website</h2>
+<p><a href="https://iat-dml.github.io/quarto-workshop/" class="center">https://iat-dml.github.io/quarto-workshop/</a></p>
+<div class="columns">
+<div class="column center" style="width:70%;">
+<p><img data-src="../assets/website-screenshots/workshop-website-dark.png">{“height=50%”}</p>
+</div><div class="column center" style="width:30%;">
+<p><img data-src="../assets/workshop-qr-code.png"></p>
+</div></div>
+</section>
+<section id="who-we-are" class="slide level2">
+<h2>Who We Are</h2>
+<div class="team-grid">
+<div class="card-team">
+<div class="team-image-container">
+<p><img data-src="../assets/ben.jpg" class="team-image"></p>
 </div>
-
+<p><span class="team-member-name">Ben Black</span></p>
+<p><span class="team-job-title">Head of the group Data and Modelling Infrastructure for Living Labs</span></p>
+<p><span class="team-employer">Leibniz Centre for Agricultural Landscape Research (ZALF)</span></p>
+</div>
+<div class="card-team">
+<div class="team-image-container">
+<p><img data-src="../assets/isabel.jpg" class="team-image"></p>
+</div>
+<p><span class="team-member-name">Isabel Nicholson-Thomas</span></p>
+<p><span class="team-job-title">Doctoral Researcher at Planning of Landscape and Urban Systems (PLUS)</span></p>
+<p><span class="team-employer">ETH Zürich</span></p>
+</div>
+<div class="card-team">
+<div class="team-image-container">
+<p><img data-src="../assets/manuel.jpg" class="team-image"></p>
+</div>
+<p><span class="team-member-name">Manuel Kurmann</span></p>
+<p><span class="team-job-title">Research Assistant at Planning of Landscape and Urban Systems (PLUS)</span></p>
+<p><span class="team-employer">ETH Zürich</span></p>
+</div>
+</div>
 </section>
-<section class="slide level2">
-
-<!-- Ben TODO: add a slide with a screenshot or iframe of the website, the full URL and a QR code. -->
-<!-- Ben TODO: Add a slide with short intro of us. -->
-</section>
-<section id="why-quarto" class="slide level2">
-<h2>Why Quarto?</h2>
+<section id="why" class="slide level2">
+<h2>Why <img data-src="../assets/logo-quarto.svg" class="inline-logo">?</h2>
 <ul>
 <li>Research produces many related outputs: notes, manuscripts, slides, websites, dashboards</li>
 <li>These are usually made with disconnected tools and manual formatting</li>
@@ -216,28 +261,50 @@
 <li>Focus on content, not tool juggling</li>
 </ul>
 </section>
-<section id="workshop-roadmap" class="slide level2 smaller">
-<h2>Workshop Roadmap</h2>
-<ol type="1">
-<li><strong>Foundations</strong>: Quarto, Markdown, YAML</li>
-<li><strong>Use cases</strong>:
+<section id="workshop-structure" class="slide level2 smaller">
+<h2>Workshop Structure</h2>
 <ul>
-<li>Research diary</li>
-<li>Manuscripts</li>
-<li>Presentations</li>
-<li>Websites</li>
-<li>Dashboards</li>
-</ul></li>
-<li>Each section has a guided <strong>exercise</strong> with an academic scenario which you will have time to test today.</li>
-</ol>
+<li><strong>Foundations</strong> — Quarto, Markdown, YAML</li>
+<li><strong>Academic use cases</strong>:</li>
+</ul>
+<div class="use-case-grid">
+<div class="use-case">
+<p><span class="use-case-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:flask" aria-label="Icon flask from fa6-solid Iconify.design set." title="Icon flask from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="use-case-name">Research Diary</span></p>
+<p><span class="use-case-desc">Documenting your research in a reproducible way from the very beginning.</span></p>
+</div>
+<div class="use-case">
+<p><span class="use-case-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:file-lines" aria-label="Icon file-lines from fa6-solid Iconify.design set." title="Icon file-lines from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="use-case-name">Manuscripts</span></p>
+<p><span class="use-case-desc">Write in plain text; render to PDF, HTML, or DOCX, then share with collaborators.</span></p>
+</div>
+<div class="use-case">
+<p><span class="use-case-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:person-chalkboard" aria-label="Icon person-chalkboard from fa6-solid Iconify.design set." title="Icon person-chalkboard from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="use-case-name">Presentations</span></p>
+<p><span class="use-case-desc">Build reveal.js talks from the same source as your research.</span></p>
+</div>
+<div class="use-case">
+<p><span class="use-case-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:globe" aria-label="Icon globe from fa6-solid Iconify.design set." title="Icon globe from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="use-case-name">Websites</span></p>
+<p><span class="use-case-desc">Project, lab, and personal websites to improve outreach.</span></p>
+</div>
+<div class="use-case">
+<p><span class="use-case-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:chart-line" aria-label="Icon chart-line from fa6-solid Iconify.design set." title="Icon chart-line from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="use-case-name">Dashboards</span></p>
+<p><span class="use-case-desc">Interactive dashboards for exploring and communicating your research.</span></p>
+</div>
+</div>
+<div class="use-case-note">
+<p>Each use case has a guided <strong>exercise</strong> which you will have time to test today.</p>
+</div>
 </section>
 <section>
 <section id="foundations" class="title-slide slide level1 center">
 <h1>Foundations</h1>
 
 </section>
-<section id="what-is-quarto" class="slide level2">
-<h2>What Is Quarto?</h2>
+<section id="what-is" class="slide level2">
+<h2>What Is <img data-src="../assets/logo-quarto.svg" class="inline-logo">?</h2>
 <ul>
 <li><strong>Open-source</strong> scientific publishing system from Posit</li>
 <li>The multi-language, multi-format successor to R Markdown</li>
@@ -249,8 +316,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="key-strengths" class="slide level2">
-<h2>Key Strengths</h2>
+<section id="key-benefits" class="slide level2">
+<h2>Key Benefits</h2>
 <ul>
 <li><strong>Plain text</strong>: every change is a visible, trackable line (version control friendly)</li>
 <li><strong>One source, many outputs</strong>: HTML, PDF, DOCX, slides from the same file</li>
@@ -286,10 +353,12 @@
 <section>
 <section id="use-cases" class="title-slide slide level1 center">
 <h1>Use Cases</h1>
-<!-- Ben TODO: Add some images and iframes, final text polish. -->
+
 </section>
-<section id="research-diary" class="slide level2">
+<section id="research-diary" class="slide level2 smaller">
 <h2>Research Diary</h2>
+<div class="columns">
+<div class="column center" style="width:60%;">
 <ul>
 <li>Capture what you tried, what worked, and <em>why you decided</em></li>
 <li>Markdown headings separate entries by date or experiment</li>
@@ -297,11 +366,10 @@
 <li>Render to HTML for browsing, PDF for archiving</li>
 <li>Durable, shareable, searchable plain text</li>
 </ul>
+</div><div class="column center" style="width:40%;">
+<p><img data-src="../assets/lab-notebook-w-figs.jpg"></p>
+</div></div>
 </section>
-<section id="research-diary-1" class="slide level2">
-<h2>Research Diary</h2>
-
-<img data-src="assets/lab-notebook-w-figs.jpg" class="research-diary r-stretch"></section>
 <section id="manuscripts" class="slide level2">
 <h2>Manuscripts</h2>
 <ul>
@@ -309,8 +377,17 @@
 <li>HTML/DOCX for collaborators, PDF/LaTeX for journal submission</li>
 <li>Journal templates available (quarto-journals)</li>
 <li>Inline code pulls statistics straight from your data: no stale numbers</li>
-<li>Bonus: papers written in Quarto combine easily into a cumulative thesis</li>
 </ul>
+</section>
+<section id="manuscripts-1" class="slide level2">
+<h2>Manuscripts</h2>
+<div class="columns v-center-container">
+<div class="column center" style="width:50%;">
+<p><img data-src="../assets/manuscript-demo.png" height="480"></p>
+</div><div class="column center" style="width:50%;">
+<p><img data-src="../assets/templates-thesis.png" height="480"></p>
+</div></div>
+<p><strong>Bonus</strong>: papers written in Quarto can be easily combined into a cumulative thesis</p>
 </section>
 <section id="presentations" class="slide level2">
 <h2>Presentations</h2>
@@ -323,15 +400,38 @@
 <li>Caveat: not the tool for design-heavy, graphics-first slides</li>
 </ul>
 </section>
+<section id="presentations-1" class="slide level2">
+<h2>Presentations</h2>
+    <p><a href="../assets/dml-revealjs.html" target="_blank">View slides in full screen</a></p>
+       <div>
+      <iframe class="slide-deck" src="../assets/dml-revealjs.html" height="475px" width="100%"></iframe>
+    </div>
+  
+</section>
 <section id="websites" class="slide level2">
 <h2>Websites</h2>
 <ul>
 <li>Full websites from the same Markdown + YAML you already know</li>
 <li>Free hosting via GitHub Pages or Netlify</li>
-<li><code>_quarto.yml</code> manages navigation, themes, and shared settings</li>
-<li><code>index.qmd</code> is the front page</li>
 <li>Great for lab pages, project sites, teaching materials, personal profiles</li>
 </ul>
+</section>
+<section id="websites-1" class="slide level2">
+<h2>Websites</h2>
+<div class="site-showcase">
+<div class="site">
+<p><img data-src="../assets/website-screenshots/blenback-website.png"> <span class="site-name">Personal academic profile</span> <span class="site-desc">A researcher’s personal homepage, profile, and publication list.</span></p>
+</div>
+<div class="site">
+<p><img data-src="../assets/website-screenshots/nascent-website.png"> <span class="site-name">NASCENT-Peru</span> <span class="site-desc">A multi-lingual research project website.</span></p>
+</div>
+<div class="site">
+<p><img data-src="../assets/website-screenshots/iat-dml-website.png"> <span class="site-name">Academic group website</span> <span class="site-desc">A research group’s homepage, with team, projects, and outputs.</span></p>
+</div>
+<div class="site">
+<p><img data-src="../assets/website-screenshots/LCSfFE-website.png"> <span class="site-name">LCSfFE Handbook</span> <span class="site-desc">A web version of an instructional guide for building field monitoring systems.</span></p>
+</div>
+</div>
 </section>
 <section id="dashboards" class="slide level2">
 <h2>Dashboards</h2>
@@ -341,24 +441,30 @@
 <li>Interactive in the browser with no server: Plotly charts, sortable tables, tabsets</li>
 <li>Limit: real reactivity (recomputing on input) needs Shiny and a server</li>
 </ul>
+</section>
+<section id="dashboards-1" class="slide level2">
+<h2>Dashboards</h2>
+<iframe src="../dashboards/restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard">
+</iframe>
 </section></section>
+<section>
 <section id="a-quick-demo" class="title-slide slide level1 center">
-<h1>A quick demo</h1>
+<h1>A Quick Demo</h1>
 <!-- Ben TODO: prepare for simple live demo with our slides, make a small edit and show visual editor, then preview to show changes. -->
 </section>
-
-<section>
-<section id="wrap-up" class="title-slide slide level1 center">
-<h1>Wrap-Up</h1>
-
-</section>
-<section id="one-system-many-outputs" class="slide level2">
-<h2>One System, Many Outputs</h2>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-Up</h2>
 <ul>
-<li>Same skills everywhere: Markdown + YAML + optional code</li>
+<li><strong>One System, Many Outputs</strong></li>
+<li>Same skills everywhere: Markdown + YAML + code chunks + a sprinkling of CSS</li>
 <li>Diary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project</li>
-<li>Start with the foundations, then pick the use case you need today</li>
-<li>Exercises and reference pages can be found on workshop website</li>
+</ul>
+</section>
+<section id="now-its-your-turn" class="slide level2">
+<h2>Now It’s Your Turn</h2>
+<ul>
+<li>Start with the foundations, then pick the use case you want to try today</li>
+<li>More detailed introductory material and exercises can be found on the website: <a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></li>
 </ul>
 </section>
 <section id="before-you-start-installing-quarto" class="slide level2">
