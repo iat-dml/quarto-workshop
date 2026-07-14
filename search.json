@@ -53,7 +53,7 @@
     "href": "slides/workshop-presentation.html#why",
     "title": "One Tool to Rule Them All",
     "section": "Why ?",
-    "text": "Why ?\n\nResearch produces many related outputs: notes, manuscripts, slides, websites, dashboards\nThese are usually made with disconnected tools and manual formatting\nQuarto: write once in plain text, render to HTML, PDF, DOCX, slides, and more\nFocus on content, not tool juggling"
+    "text": "Why ?\n\nResearch produces many related outputs: Notes, manuscripts, slides etc.\nThese are usually made with disconnected tools and manual formatting\nQuarto lets you write once in plain text, render to HTML, PDF, DOCX, slides, and more\nFocus on content, not juggling tools"
   },
   {
     "objectID": "slides/workshop-presentation.html#workshop-structure",
@@ -95,14 +95,14 @@
     "href": "slides/workshop-presentation.html#research-diary",
     "title": "One Tool to Rule Them All",
     "section": "Research Diary",
-    "text": "Research Diary\n\n\n\nCapture what you tried, what worked, and why you decided\nMarkdown headings separate entries by date or experiment\nCode chunks put data checks and figures right beside your notes\nRender to HTML for browsing, PDF for archiving\nDurable, shareable, searchable plain text"
+    "text": "Research Diary\n\n\n\nCapture what you tried, what worked, and why you made decisions\nMarkdown headings separate entries by date or experiment\nCode chunks put data checks and figures right beside your notes\nRender to HTML for browsing, PDF for archiving\nDurable, shareable, searchable plain text"
   },
   {
     "objectID": "slides/workshop-presentation.html#manuscripts",
     "href": "slides/workshop-presentation.html#manuscripts",
     "title": "One Tool to Rule Them All",
     "section": "Manuscripts",
-    "text": "Manuscripts\n\nNarrative, citations, figures, and tables in one reproducible workflow\nHTML/DOCX for collaborators, PDF/LaTeX for journal submission\nJournal templates available (quarto-journals)\nInline code pulls statistics straight from your data: no stale numbers"
+    "text": "Manuscripts\n\nNarrative, citations, figures, and tables in one reproducible document\nHTML/DOCX for collaborators, PDF/LaTeX for journal submission\nNumerous citation methods: from DOI or direct integration with Zotero and databases like CrossRef and PubMed\nTemplates for popular journals available (quarto-journals)\nInline code chunks pull statistics straight from your data: no stale numbers"
   },
   {
     "objectID": "slides/workshop-presentation.html#manuscripts-1",
@@ -116,7 +116,7 @@
     "href": "slides/workshop-presentation.html#presentations",
     "title": "One Tool to Rule Them All",
     "section": "Presentations",
-    "text": "Presentations\n\nreveal.js: web-native, viewable in any browser\nReuse figures, tables, and citations from your other .qmd files\nEmbed interactive content: live code, diagrams, iframes\nExport to PowerPoint or PDF when required\n11 built-in themes, or your own CSS branding\nCaveat: not the tool for slides requiring a lot of manual graphics design/manipulation."
+    "text": "Presentations\n\nreveal.js: web-native, viewable in any browser\nReuse figures, tables, and citations from your other .qmd files\nEmbed interactive content: live code, diagrams, iframes\nExport to PowerPoint or PDF when required\n11 built-in themes, or create your own CSS branding\nCaveat: not the tool for slides requiring a lot of manual graphics design/manipulation."
   },
   {
     "objectID": "slides/workshop-presentation.html#presentations-1",
