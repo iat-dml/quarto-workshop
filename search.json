@@ -39,7 +39,7 @@
     "href": "slides/workshop-presentation.html#workshop-website",
     "title": "One Tool to Rule Them All",
     "section": "Workshop Website",
-    "text": "Workshop Website\nhttps://iat-dml.github.io/quarto-workshop/\n\n\n{“height=50%”}"
+    "text": "Workshop Website\nhttps://iat-dml.github.io/quarto-workshop/"
   },
   {
     "objectID": "slides/workshop-presentation.html#who-we-are",
@@ -165,7 +165,7 @@
     "href": "slides/workshop-presentation.html#now-its-your-turn",
     "title": "One Tool to Rule Them All",
     "section": "Now It’s Your Turn",
-    "text": "Now It’s Your Turn\n\nStart with the foundations, then pick the use case you want to try today\nMore detailed introductory material and exercises can be found on the website: https://iat-dml.github.io/quarto-workshop/"
+    "text": "Now It’s Your Turn\n\nStart with the foundations, then pick the use case you want to try today\nMore detailed introductory material and exercises can be found on the website:\n\nhttps://iat-dml.github.io/quarto-workshop/"
   },
   {
     "objectID": "slides/workshop-presentation.html#before-you-start-installing-quarto",

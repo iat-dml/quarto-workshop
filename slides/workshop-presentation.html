@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3d6c5219e095dda8a491ee7fba4f19bd.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0ea01e120c661828f16095a977b1c184.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -203,19 +203,22 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">One Tool to <em>Rule Them All</em></h1>
-  <p class="subtitle"><img data-src="../assets/logo-quarto.svg" class="inline-logo"> for Documentation, Presentations, Manuscripts and Outreach</p>
+  <div class="title-slide__panel">
+    <h1 class="title">One Tool to <em>Rule Them All</em></h1>
+    <p class="title-slide__subtitle subtitle"><img data-src="../assets/logo-quarto.svg" class="inline-logo"> for Documentation, Presentations, Manuscripts and Outreach</p>
+  </div>
 
-<div class="quarto-title-authors">
-</div>
-
+  <div class="title-slide__tagline">
+    <span class="title-slide__tagline-text">a workshop presented at iEMSs 2026</span>
+    <img src="../assets/iemss2026_logo.png" alt="iEMSs 2026, hosted at University College Dublin" class="title-slide__tagline-logo">
+  </div>
 </section>
-<section id="workshop-website" class="slide level2">
+<section id="workshop-website" class="slide level2 centered-slide">
 <h2>Workshop Website</h2>
-<p><a href="https://iat-dml.github.io/quarto-workshop/" class="center">https://iat-dml.github.io/quarto-workshop/</a></p>
+<p><a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></p>
 <div class="columns">
 <div class="column center" style="width:70%;">
-<p><img data-src="../assets/website-screenshots/workshop-website-dark.png">{“height=50%”}</p>
+<p><img data-src="../assets/website-screenshots/workshop-website-dark.png" style="height:50.0%"></p>
 </div><div class="column center" style="width:30%;">
 <p><img data-src="../assets/workshop-qr-code.png"></p>
 </div></div>
@@ -461,8 +464,9 @@
 <h2>Now It’s Your Turn</h2>
 <ul>
 <li>Start with the foundations, then pick the use case you want to try today</li>
-<li>More detailed introductory material and exercises can be found on the website: <a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></li>
+<li>More detailed introductory material and exercises can be found on the website:</li>
 </ul>
+<p><a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></p>
 </section>
 <section id="before-you-start-installing-quarto" class="slide level2">
 <h2>Before You Start: Installing Quarto</h2>
@@ -506,7 +510,7 @@
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
