@@ -73,10 +73,10 @@ format:
 
 ## Why ![](../assets/logo-quarto.svg){.inline-logo}?
 
-- Research produces many related outputs: notes, manuscripts, slides, websites, dashboards
-- These are usually made with disconnected tools and manual formatting
-- Quarto: write once in plain text, render to HTML, PDF, DOCX, slides, and more
-- Focus on content, not tool juggling
+- Research produces **many related outputs**: Notes, manuscripts, slides etc.
+- These are usually made with **disconnected tools and manual formatting**
+- Quarto lets you write once in plain text, render to HTML, PDF, DOCX, slides, and more
+- Focus on content, not juggling tools
 
 ## Workshop Structure {.smaller}
 
@@ -181,7 +181,7 @@ format: pdf
 ::: {.columns}
 
 ::: {.column width="60%" .center}
-- Capture what you tried, what worked, and *why you decided*
+- Capture what you tried, what worked, and *why you made decisions*
 - Markdown headings separate entries by date or experiment
 - Code chunks put data checks and figures right beside your notes
 - Render to HTML for browsing, PDF for archiving
@@ -196,10 +196,11 @@ format: pdf
 
 ## Manuscripts
 
-- Narrative, citations, figures, and tables in one reproducible workflow
-- HTML/DOCX for collaborators, PDF/LaTeX for journal submission
-- Journal templates available (quarto-journals)
-- Inline code pulls statistics straight from your data: no stale numbers
+- Narrative, citations, figures, and tables in **one reproducible document**
+- **HTML/DOCX** for collaborators, **PDF/LaTeX** for journal submission
+- **Numerous citation methods**: from DOI or direct integration with Zotero and databases like CrossRef and PubMed
+- Templates for popular journals available (quarto-journals)
+- Inline code chunks pull statistics straight from your data: no stale numbers
 
 
 ## Manuscripts
@@ -224,7 +225,7 @@ format: pdf
 - Reuse figures, tables, and citations from your other `.qmd` files
 - Embed interactive content: live code, diagrams, iframes
 - Export to **PowerPoint** or **PDF** when required
-- 11 built-in themes, or your own CSS branding
+- 11 built-in themes, or create your own CSS branding
 - **Caveat**: not the tool for slides requiring a lot of manual graphics design/manipulation.
 
 ## Presentations
@@ -317,5 +318,5 @@ format: pdf
 - You are ready when `quarto check` reports a working setup
 - Step-by-step guide on the workshop website; questions? Ask us, or see quarto.org
 
-<!-- Ben TODO: add a copy of the slide linking to the website and stating they should pick an exercise to try today. -->
+
 
