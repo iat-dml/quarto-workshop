@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3d6c5219e095dda8a491ee7fba4f19bd.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0ea01e120c661828f16095a977b1c184.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -203,20 +203,23 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">One Tool to <em>Rule Them All</em></h1>
-  <p class="subtitle"><img data-src="../assets/logo-quarto.svg" class="inline-logo"> for Documentation, Presentations, Manuscripts and Outreach</p>
+  <div class="title-slide__panel">
+    <h1 class="title">One Tool to <em>Rule Them All</em></h1>
+    <p class="title-slide__subtitle subtitle"><img data-src="../assets/logo-quarto.svg" class="inline-logo"> for Documentation, Presentations, Manuscripts and Outreach</p>
+  </div>
 
-<div class="quarto-title-authors">
-</div>
-
+  <div class="title-slide__tagline">
+    <span class="title-slide__tagline-text">a workshop presented at iEMSs 2026</span>
+    <img src="../assets/iemss2026_logo.png" alt="iEMSs 2026, hosted at University College Dublin" class="title-slide__tagline-logo">
+  </div>
 </section>
-<section id="workshop-website" class="slide level2">
+<section id="workshop-website" class="slide level2 centered-slide">
 <h2>Workshop Website</h2>
-<p><a href="https://iat-dml.github.io/quarto-workshop/" class="center">https://iat-dml.github.io/quarto-workshop/</a></p>
+<p><a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></p>
 <div class="columns">
-<div class="column center" style="width:60%;">
-<p><img data-src="../assets/website-screenshots/workshop-website-dark.png"></p>
-</div><div class="column center" style="width:40%;">
+<div class="column center" style="width:70%;">
+<p><img data-src="../assets/website-screenshots/workshop-website-dark.png" style="height:50.0%"></p>
+</div><div class="column center" style="width:30%;">
 <p><img data-src="../assets/workshop-qr-code.png"></p>
 </div></div>
 </section>
@@ -258,7 +261,7 @@
 <li>Focus on content, not tool juggling</li>
 </ul>
 </section>
-<section id="workshop-structure" class="slide level2 smaller">
+<section id="workshop-structure" class="slide level2 smaller incremental">
 <h2>Workshop Structure</h2>
 <ul>
 <li><strong>Foundations</strong> — Quarto, Markdown, YAML</li>
@@ -294,6 +297,9 @@
 <div class="use-case-note">
 <p>Each use case has a guided <strong>exercise</strong> which you will have time to test today.</p>
 </div>
+<ul>
+<li><strong>Advanced Topics</strong>: Templates, multi-lingual outputs, consistent branding, AI assistance and more</li>
+</ul>
 </section>
 <section>
 <section id="foundations" class="title-slide slide level1 center">
@@ -352,8 +358,10 @@
 <h1>Use Cases</h1>
 
 </section>
-<section id="research-diary" class="slide level2">
+<section id="research-diary" class="slide level2 smaller">
 <h2>Research Diary</h2>
+<div class="columns">
+<div class="column center" style="width:60%;">
 <ul>
 <li>Capture what you tried, what worked, and <em>why you decided</em></li>
 <li>Markdown headings separate entries by date or experiment</li>
@@ -361,11 +369,10 @@
 <li>Render to HTML for browsing, PDF for archiving</li>
 <li>Durable, shareable, searchable plain text</li>
 </ul>
+</div><div class="column center" style="width:40%;">
+<p><img data-src="../assets/lab-notebook-w-figs.jpg"></p>
+</div></div>
 </section>
-<section id="research-diary-1" class="slide level2">
-<h2>Research Diary</h2>
-
-<img data-src="../assets/lab-notebook-w-figs.jpg" class="r-stretch"></section>
 <section id="manuscripts" class="slide level2">
 <h2>Manuscripts</h2>
 <ul>
@@ -377,23 +384,23 @@
 </section>
 <section id="manuscripts-1" class="slide level2">
 <h2>Manuscripts</h2>
-<div class="columns">
+<div class="columns v-center-container">
 <div class="column center" style="width:50%;">
-<p><img data-src="../assets/manuscript-demo.png"></p>
+<p><img data-src="../assets/manuscript-demo.png" height="480"></p>
 </div><div class="column center" style="width:50%;">
-<p><img data-src="../assets/templates-thesis.png"></p>
+<p><img data-src="../assets/templates-thesis.png" height="480"></p>
 </div></div>
 <p><strong>Bonus</strong>: papers written in Quarto can be easily combined into a cumulative thesis</p>
 </section>
 <section id="presentations" class="slide level2">
 <h2>Presentations</h2>
 <ul>
-<li>reveal.js slides: web-native, viewable in any browser</li>
+<li><strong>reveal.js</strong>: web-native, viewable in any browser</li>
 <li>Reuse figures, tables, and citations from your other <code>.qmd</code> files</li>
 <li>Embed interactive content: live code, diagrams, iframes</li>
-<li>Export to PowerPoint or PDF when required</li>
+<li>Export to <strong>PowerPoint</strong> or <strong>PDF</strong> when required</li>
 <li>11 built-in themes, or your own CSS branding</li>
-<li>Caveat: not the tool for design-heavy, graphics-first slides</li>
+<li><strong>Caveat</strong>: not the tool for slides requiring a lot of manual graphics design/manipulation.</li>
 </ul>
 </section>
 <section id="presentations-1" class="slide level2">
@@ -409,7 +416,7 @@
 <ul>
 <li>Full websites from the same Markdown + YAML you already know</li>
 <li>Free hosting via GitHub Pages or Netlify</li>
-<li>Great for lab pages, project sites, teaching materials, personal profiles</li>
+<li>Great for personal researcher profiles, lab pages, project sites, teaching materials</li>
 </ul>
 </section>
 <section id="websites-1" class="slide level2">
@@ -429,6 +436,13 @@
 </div>
 </div>
 </section>
+<section id="websites-2" class="slide level2">
+<h2>Websites</h2>
+<div style="width: 100%; height: 900px; overflow: hidden; border: 1px solid var(--ds-rule); border-radius: 0.6rem;">
+<iframe src="https://blenback.github.io/" style="width: 133.33%; height: 1200px; max-width: none; max-height: none; border: none; transform: scale(0.75); transform-origin: 0 0;" title="Ben Black's personal website">
+</iframe>
+</div>
+</section>
 <section id="dashboards" class="slide level2">
 <h2>Dashboards</h2>
 <ul>
@@ -440,7 +454,7 @@
 </section>
 <section id="dashboards-1" class="slide level2">
 <h2>Dashboards</h2>
-<iframe src="../dashboards/restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard">
+<iframe src="https://iat-dml.github.io/quarto-workshop/dashboards/restoration-dashboard.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration monitoring dashboard">
 </iframe>
 </section></section>
 <section>
@@ -451,17 +465,22 @@
 <section id="wrap-up" class="slide level2">
 <h2>Wrap-Up</h2>
 <ul>
-<li><strong>One System, Many Outputs</strong></li>
-<li>Same skills everywhere: Markdown + YAML + code chunks + a sprinkling of CSS</li>
-<li>Diary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project</li>
+<li><strong>One System, Many Outputs</strong>: Research diary, manuscript, slides, website, dashboard, all are possible using the same content</li>
+<li><strong>Same skills everywhere</strong>: Markdown + YAML + code chunks + a sprinkling of CSS</li>
 </ul>
 </section>
 <section id="now-its-your-turn" class="slide level2">
 <h2>Now It’s Your Turn</h2>
 <ul>
-<li>Start with the foundations, then pick the use case you want to try today</li>
-<li>More detailed introductory material and exercises can be found on the website: <a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></li>
+<li>Start with the <strong>foundations</strong>, then pick the <strong>use case</strong> you want to try today</li>
+<li>More detailed introductory material and exercises can be found on the website:</li>
 </ul>
+<div class="columns">
+<div class="column center" style="width:60%;">
+<p><a href="https://iat-dml.github.io/quarto-workshop/">https://iat-dml.github.io/quarto-workshop/</a></p>
+</div><div class="column center" style="width:40%;">
+<p><img data-src="../assets/workshop-qr-code.png"></p>
+</div></div>
 </section>
 <section id="before-you-start-installing-quarto" class="slide level2">
 <h2>Before You Start: Installing Quarto</h2>
@@ -505,7 +524,7 @@
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,

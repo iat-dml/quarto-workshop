@@ -131,6 +131,8 @@ format:
 Each use case has a guided **exercise** which you will have time to test today.
 :::
 
+- **Advanced Topics**: Templates, multi-lingual outputs, consistent branding, AI assistance and more 
+
 # Foundations
 
 ## What Is ![](../assets/logo-quarto.svg){.inline-logo}?
@@ -218,12 +220,12 @@ format: pdf
 
 ## Presentations
 
-- reveal.js slides: web-native, viewable in any browser
+- **reveal.js**: web-native, viewable in any browser
 - Reuse figures, tables, and citations from your other `.qmd` files
 - Embed interactive content: live code, diagrams, iframes
-- Export to PowerPoint or PDF when required
+- Export to **PowerPoint** or **PDF** when required
 - 11 built-in themes, or your own CSS branding
-- Caveat: not the tool for design-heavy, graphics-first slides
+- **Caveat**: not the tool for slides requiring a lot of manual graphics design/manipulation.
 
 ## Presentations
 
@@ -233,7 +235,7 @@ format: pdf
 
 - Full websites from the same Markdown + YAML you already know
 - Free hosting via GitHub Pages or Netlify
-- Great for lab pages, project sites, teaching materials, personal profiles
+- Great for personal researcher profiles, lab pages, project sites, teaching materials 
 
 ## Websites
 
@@ -265,6 +267,12 @@ format: pdf
 
 ::::
 
+## Websites
+
+<div style="width: 100%; height: 900px; overflow: hidden; border: 1px solid var(--ds-rule); border-radius: 0.6rem;">
+<iframe src="https://blenback.github.io/" style="width: 133.33%; height: 1200px; max-width: none; max-height: none; border: none; transform: scale(0.75); transform-origin: 0 0;" title="Ben Black's personal website"></iframe>
+</div>
+
 ## Dashboards
 
 - `format: dashboard` turns a `.qmd` into a visual overview page
@@ -281,15 +289,25 @@ format: pdf
 
 ## Wrap-Up
 
-- **One System, Many Outputs**
-- Same skills everywhere: Markdown + YAML + code chunks + a sprinkling of CSS 
-- Diary -\> manuscript -\> slides -\> website -\> dashboard, from one project
+- **One System, Many Outputs**: Research diary, manuscript, slides, website, dashboard, all are possible using the same content
+- **Same skills everywhere**: Markdown + YAML + code chunks + a sprinkling of CSS 
+
 
 ## Now It's Your Turn
-- Start with the foundations, then pick the use case you want to try today
+- Start with the **foundations**, then pick the **use case** you want to try today
 - More detailed introductory material and exercises can be found on the website: 
 
+::: {.columns}
+
+::: {.column width="60%" .center}
 [https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/)
+:::
+
+::: {.column width="40%" .center}
+![](../assets/workshop-qr-code.png)
+:::
+
+:::
 
 ## Before You Start: Installing Quarto
 

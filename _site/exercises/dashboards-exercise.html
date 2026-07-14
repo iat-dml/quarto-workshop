@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5ffa423004e1dbe72d0f04763e605882.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-29ac99572aab8aa0b0ccf1a2d7e650cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-5ffa423004e1dbe72d0f04763e605882.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8df400f185b37363df4d0012543c3773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-9b5fba79b0e413035d27731d07bd22fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8df400f185b37363df4d0012543c3773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -571,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You will use a small synthetic dataset, <code>data/restoration-sites.csv</code>. Each row is one survey of one site:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 x 5
+<pre><code># A tibble: 6 × 5
   site   date       vegetation_cover_pct species_richness soil_moisture_pct
   &lt;chr&gt;  &lt;date&gt;                    &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;
 1 Site A 2023-04-01                   51               13                28
@@ -590,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>species_richness</code> — number of species recorded</li>
 <li><code>soil_moisture_pct</code> — soil moisture, in percent</li>
 </ul>
-<p><a href="../data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a></p>
+<p><a href="..\data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a></p>
 </section>
 <section id="turning-a-document-into-a-dashboard" class="level3">
 <h3 class="anchored" data-anchor-id="turning-a-document-into-a-dashboard">Turning a Document into a Dashboard</h3>
@@ -776,7 +776,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="stretch-a-what-if-scenario-explorer-optional" class="level2">
 <h2 class="anchored" data-anchor-id="stretch-a-what-if-scenario-explorer-optional">Stretch: a what-if scenario explorer (optional)</h2>
 <p>To give the dashboard the feel of an interactive tool, you can let readers switch between precomputed views with a <strong>tabset</strong>. We provide a second dataset, <code>data/restoration-scenarios.csv</code>, holding vegetation cover under three management scenarios (Baseline, Moderate, Intensive).</p>
-<p><a href="../data/restoration-scenarios.csv" class="btn btn-secondary" download="restoration-scenarios.csv">Download restoration-scenarios.csv</a></p>
+<p><a href="..\data/restoration-scenarios.csv" class="btn btn-secondary" download="restoration-scenarios.csv">Download restoration-scenarios.csv</a></p>
 <p>Here is what it produces. Switch the tabs above the chart to compare the scenarios:</p>
 <iframe src="../dashboards/restoration-dashboard-scenarios.html" width="100%" height="900" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="Restoration dashboard with a scenario tabset">
 </iframe>
