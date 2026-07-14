@@ -3,18 +3,25 @@ title: "One Tool to *Rule Them All*"
 subtitle: "![](../assets/logo-quarto.svg){.inline-logo} for Documentation, Presentations, Manuscripts and Outreach"
 format:
   revealjs:
+    theme: [default, ../revealjs.scss]
     slide-number: true
     incremental: false
+    chalkboard: false
+    preview-links: auto
+    template-partials:
+      - ../title-slide.html
 ---
 
-## Workshop Website
+## Workshop Website {.centered-slide}
 
-[https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/){.center}
+[https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/)
+
+
 
 ::: {.columns}
 
 ::: {.column width="70%" .center}
-![](../assets/website-screenshots/workshop-website-dark.png){"height=50%"}
+![](../assets/website-screenshots/workshop-website-dark.png){height=50%}
 :::
 
 ::: {.column width="30%" .center}
@@ -280,7 +287,9 @@ format: pdf
 
 ## Now It's Your Turn
 - Start with the foundations, then pick the use case you want to try today
-- More detailed introductory material and exercises can be found on the website: [https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/)
+- More detailed introductory material and exercises can be found on the website: 
+
+[https://iat-dml.github.io/quarto-workshop/](https://iat-dml.github.io/quarto-workshop/)
 
 ## Before You Start: Installing Quarto
 

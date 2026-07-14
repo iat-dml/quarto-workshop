@@ -1,7 +1,6 @@
 project:
   output-dir: _site
   resources:
-    - _slides/**
     - assets/publications.yaml
     - assets/publication_yearly.ejs
     - data/restoration-sites.csv
