@@ -60,7 +60,7 @@
     "href": "slides/workshop-presentation.html#workshop-structure",
     "title": "One Tool to Rule Them All",
     "section": "Workshop Structure",
-    "text": "Workshop Structure\n\nFoundations — Quarto, Markdown, YAML\nAcademic use cases:\n\n\n\n\nResearch Diary\nDocumenting your research in a reproducible way from the very beginning.\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\nPresentations\nBuild reveal.js talks from the same source as your research.\n\n\n\nWebsites\nProject, lab, and personal websites to improve outreach.\n\n\n\nDashboards\nInteractive dashboards for exploring and communicating your research.\n\n\n\nEach use case has a guided exercise which you will have time to test today."
+    "text": "Workshop Structure\n\nFoundations — Quarto, Markdown, YAML\nAcademic use cases:\n\n\n\n\nResearch Diary\nDocumenting your research in a reproducible way from the very beginning.\n\n\n\nManuscripts\nWrite in plain text; render to PDF, HTML, or DOCX, then share with collaborators.\n\n\n\nPresentations\nBuild reveal.js talks from the same source as your research.\n\n\n\nWebsites\nProject, lab, and personal websites to improve outreach.\n\n\n\nDashboards\nInteractive dashboards for exploring and communicating your research.\n\n\n\nEach use case has a guided exercise which you will have time to test today.\n\n\nAdvanced Topics: Templates, multi-lingual outputs, consistent branding, AI assistance and more"
   },
   {
     "objectID": "slides/workshop-presentation.html#what-is",
@@ -116,7 +116,7 @@
     "href": "slides/workshop-presentation.html#presentations",
     "title": "One Tool to Rule Them All",
     "section": "Presentations",
-    "text": "Presentations\n\nreveal.js slides: web-native, viewable in any browser\nReuse figures, tables, and citations from your other .qmd files\nEmbed interactive content: live code, diagrams, iframes\nExport to PowerPoint or PDF when required\n11 built-in themes, or your own CSS branding\nCaveat: not the tool for design-heavy, graphics-first slides"
+    "text": "Presentations\n\nreveal.js: web-native, viewable in any browser\nReuse figures, tables, and citations from your other .qmd files\nEmbed interactive content: live code, diagrams, iframes\nExport to PowerPoint or PDF when required\n11 built-in themes, or your own CSS branding\nCaveat: not the tool for slides requiring a lot of manual graphics design/manipulation."
   },
   {
     "objectID": "slides/workshop-presentation.html#presentations-1",
@@ -130,7 +130,7 @@
     "href": "slides/workshop-presentation.html#websites",
     "title": "One Tool to Rule Them All",
     "section": "Websites",
-    "text": "Websites\n\nFull websites from the same Markdown + YAML you already know\nFree hosting via GitHub Pages or Netlify\nGreat for lab pages, project sites, teaching materials, personal profiles"
+    "text": "Websites\n\nFull websites from the same Markdown + YAML you already know\nFree hosting via GitHub Pages or Netlify\nGreat for personal researcher profiles, lab pages, project sites, teaching materials"
   },
   {
     "objectID": "slides/workshop-presentation.html#websites-1",
@@ -138,6 +138,13 @@
     "title": "One Tool to Rule Them All",
     "section": "Websites",
     "text": "Websites\n\n\n Personal academic profile A researcher’s personal homepage, profile, and publication list.\n\n\n NASCENT-Peru A multi-lingual research project website.\n\n\n Academic group website A research group’s homepage, with team, projects, and outputs.\n\n\n LCSfFE Handbook A web version of an instructional guide for building field monitoring systems."
+  },
+  {
+    "objectID": "slides/workshop-presentation.html#websites-2",
+    "href": "slides/workshop-presentation.html#websites-2",
+    "title": "One Tool to Rule Them All",
+    "section": "Websites",
+    "text": "Websites"
   },
   {
     "objectID": "slides/workshop-presentation.html#dashboards",
@@ -158,14 +165,14 @@
     "href": "slides/workshop-presentation.html#wrap-up",
     "title": "One Tool to Rule Them All",
     "section": "Wrap-Up",
-    "text": "Wrap-Up\n\nOne System, Many Outputs\nSame skills everywhere: Markdown + YAML + code chunks + a sprinkling of CSS\nDiary -&gt; manuscript -&gt; slides -&gt; website -&gt; dashboard, from one project"
+    "text": "Wrap-Up\n\nOne System, Many Outputs: Research diary, manuscript, slides, website, dashboard, all are possible using the same content\nSame skills everywhere: Markdown + YAML + code chunks + a sprinkling of CSS"
   },
   {
     "objectID": "slides/workshop-presentation.html#now-its-your-turn",
     "href": "slides/workshop-presentation.html#now-its-your-turn",
     "title": "One Tool to Rule Them All",
     "section": "Now It’s Your Turn",
-    "text": "Now It’s Your Turn\n\nStart with the foundations, then pick the use case you want to try today\nMore detailed introductory material and exercises can be found on the website:\n\nhttps://iat-dml.github.io/quarto-workshop/"
+    "text": "Now It’s Your Turn\n\nStart with the foundations, then pick the use case you want to try today\nMore detailed introductory material and exercises can be found on the website:\n\n\n\nhttps://iat-dml.github.io/quarto-workshop/"
   },
   {
     "objectID": "slides/workshop-presentation.html#before-you-start-installing-quarto",
