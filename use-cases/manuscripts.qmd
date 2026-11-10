@@ -57,20 +57,51 @@ Long code chunks in manuscript qmds for figures can be cumbersome, better to sep
 
 Quarto's in-line code chunks allow you to pull values directly from your data, for example, p-values or summary statistics, ensuring that your manuscript always reflects the most current results without manual updates.
 
-TODO Insert in line code chunk example here, e.g. "The mean pollinator diversity was `r mean(diversity)` across all sites."
+For example, with the restoration data loaded in a setup chunk, you can write the following sentence in your manuscript. Quarto runs the inline code at render time, so if a new monitoring round is added to the data the sentence updates on the next render.
+
+::: {.panel-tabset}
+## R
+
+````markdown
+```{r}
+#| include: false
+sites <- read.csv("data/restoration-sites.csv")
+```
+
+We monitored `r length(unique(sites$site))` restoration sites, with a mean
+species richness of `r round(mean(sites$species_richness), 1)` species
+per site.
+````
+
+## Python
+
+````markdown
+```{python}
+#| include: false
+import pandas as pd
+sites = pd.read_csv("data/restoration-sites.csv")
+```
+
+We monitored `{python} sites["site"].nunique()` restoration sites, with a mean
+species richness of `{python} round(sites["species_richness"].mean(), 1)`
+species per site.
+````
+:::
+
+Both versions render as plain text in the finished document, for example: "We monitored 4 restoration sites, with a mean species richness of 14.6 species per site."
 
 ### Integrated citation support
 
 Integration with [Zotero](https://www.zotero.org/) to keep citations in the same workflow as writing. In the visual editor you can also add a citation directly from the DOI
 
-When you add a citation using the `@` syntax Quarto automatically adds it to the bibliography (`.bib`) file and then upon rednering applies the citation style you have specified in the YAML header. This means you can easily switch between different citation styles (e.g., APA, MLA, Chicago) without having to manually reformat your references.
+When you add a citation using the `@` syntax Quarto automatically adds it to the bibliography (`.bib`) file and then upon rendering applies the citation style you have specified in the YAML header. This means you can easily switch between different citation styles (e.g., APA, MLA, Chicago) without having to manually reformat your references.
 
 ### Cross-referencing
 
-Quarto supports hypewrlinked cross-referencing of figures, tables, and sections to keep everything aligned as the manuscript evolves.
+Quarto supports hyperlinked cross-referencing of figures, tables, and sections to keep everything aligned as the manuscript evolves.
 
 ### Supplementary Material Management
 
 Supplementary material, including code for reproducing analyses, can be kept in the same project and linked to the main manuscript.
 
-[Go to the excercise to try writing your own manuscript](../exercises/manuscripts-exercise.qmd){.btn .btn-primary}
+[Go to the exercise to try writing your own manuscript](../exercises/manuscripts-exercise.qmd){.btn .btn-primary}
