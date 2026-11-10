@@ -5,3 +5,15 @@
 WORKING-NOTES.md
 .DS_Store
 **/.DS_Store
+
+# Rendered site: CI renders and publishes to gh-pages, so it is not tracked
+/_site/
+
+# Local AI agent instructions (not part of the published workshop)
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+# Large media kept locally
+_pitch-video/*.mp4
