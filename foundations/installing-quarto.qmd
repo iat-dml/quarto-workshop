@@ -18,7 +18,45 @@ Quarto ships with recent versions of RStudio (v2022.07 and later) and with Posit
 quarto --version
 ```
 
-If a version number appears (1.5 or newer is recommended for this workshop), you are ready. If you instead see "command not found", install it using the steps below.
+If a version number appears (1.8 or newer is recommended for this workshop), you are ready. If you instead see "command not found", install it using the steps below.
+
+## Setting Up on a ZALF Laptop {#sec-zalf}
+
+If you are joining the workshop at the ZALF Science Conference, you probably have most of what you need already. We tested the steps below on a ZALF laptop in November 2026.
+
+**RStudio from the Baramundi Kiosk includes Quarto.** RStudio 2026.01 comes with Quarto 1.8.25, which is new enough for every exercise. Install RStudio and R from the Kiosk if you have not already. Positron (available from IT on request) also comes with its own copy of Quarto.
+
+**Set `R_USER` once, or R code will not run.** On ZALF laptops the Documents folder is stored in OneDrive under a path containing "für". R cannot read that path, so every document with an R chunk fails to render with `file name conversion problem -- name too long?`. Point R to your plain user folder by running this once in PowerShell, then restart RStudio, Positron or VS Code:
+
+```powershell
+[Environment]::SetEnvironmentVariable('R_USER', $env:USERPROFILE, 'User')
+```
+
+**Keep workshop projects outside OneDrive.** Create them in a plain folder such as `C:\Users\<you>\quarto-workshop`. Some Quarto extensions also fail on paths with umlauts.
+
+**VS Code needs to be told where Quarto is.** RStudio's copy of Quarto is not on your PATH, and the VS Code Quarto extension does not look in RStudio's folder. Either add this line to your VS Code `settings.json`:
+
+```json
+"quarto.path": "C:\Program Files\RStudio\resources\app\bin\quarto\bin\quarto.exe"
+```
+
+or install the per-user version of Quarto from [quarto.org](https://quarto.org/docs/get-started/), which does not need administrator rights and adds itself to your PATH.
+
+**Install the R packages used in the exercises** by running this in the R console:
+
+```r
+install.packages(c("knitr", "rmarkdown", "readr", "dplyr", "ggplot2", "plotly", "DT"))
+```
+
+### Check Your Setup Automatically
+
+Download [check-quarto-setup.ps1](../downloads/check-quarto-setup.ps1) and run it from a PowerShell window in your Downloads folder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\check-quarto-setup.ps1
+```
+
+The script changes nothing on your computer. It lists every copy of Quarto it finds, checks whether a terminal and VS Code can use one, checks R and the packages above, and renders a small test document to HTML, Word and PDF. Each problem it finds is printed with the fix. "Ready for the workshop." at the end means you are set.
 
 ## What To Install
 
@@ -93,7 +131,7 @@ Notice that each step reports `OK` even though some optional tools, such as Tiny
 ::: {.callout-tip}
 ## Rendering to PDF
 
-PDF output relies on a LaTeX installation. If you do not already have one, the simplest option is to let Quarto manage it for you:
+Quarto can make PDFs with Typst, which is built into Quarto and needs no extra install: use `format: typst`. The classic `format: pdf` route uses LaTeX instead. If you want that and do not already have LaTeX, let Quarto manage it for you:
 
 ```bash
 quarto install tinytex

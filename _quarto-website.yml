@@ -5,6 +5,7 @@ project:
     - assets/publication_yearly.ejs
     - data/restoration-sites.csv
     - data/restoration-scenarios.csv
+    - downloads/check-quarto-setup.ps1
 
 website:
   title: ""

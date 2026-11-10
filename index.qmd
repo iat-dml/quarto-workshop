@@ -159,5 +159,5 @@ We have broken the workshop down into foundations and five academic use cases, p
 ::: callout-warning
 ## Before you start
 
-Make sure Quarto `≥ 1.5` is installed and that you can run `quarto check` in your terminal. If you hit issues, see the [Installing Quarto](foundations/installing-quarto.qmd) page.
+Make sure Quarto `≥ 1.8` is installed and that you can run `quarto check` in your terminal. If you hit issues, see the [Installing Quarto](foundations/installing-quarto.qmd) page.
 :::

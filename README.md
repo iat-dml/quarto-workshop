@@ -39,7 +39,7 @@ Each section has a companion page with a guided exercise to practice the workflo
 
 ## Requirements
 
-Quarto `≥ 1.5` must be installed, and `quarto check` should run cleanly in your terminal before starting.
+Quarto `≥ 1.8` must be installed (it comes with RStudio 2026.01 and Positron), and `quarto check` should run cleanly in your terminal before starting.
 
 
 
