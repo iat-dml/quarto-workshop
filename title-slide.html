@@ -1,4 +1,4 @@
-<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$ class="quarto-title-block">
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$ class="quarto-title-block$if(title-style)$ title-slide--$title-style$$endif$">
   <div class="title-slide__panel">
     <h1 class="title">$title$</h1>
 $if(subtitle)$
@@ -23,8 +23,14 @@ $if(date)$
 $endif$
   </div>
 
+$if(event)$
   <div class="title-slide__tagline">
-    <span class="title-slide__tagline-text">a workshop presented at iEMSs 2026</span>
-    <img src="../assets/iemss2026_logo.png" alt="iEMSs 2026, hosted at University College Dublin" class="title-slide__tagline-logo" />
+$if(event.tagline)$
+    <span class="title-slide__tagline-text">$event.tagline$</span>
+$endif$
+$if(event.logo)$
+    <img src="$event.logo$" alt="$event.logo-alt$" class="title-slide__tagline-logo" />
+$endif$
   </div>
+$endif$
 </section>

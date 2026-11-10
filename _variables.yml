@@ -1,0 +1,12 @@
+# Event details used on the homepage, in the ZALF deck and in the README.
+# Change a value here and every page that uses {{< var ... >}} updates.
+zalf:
+  event: "ZALF Science Conference 2026"
+  date: "19 November 2026"
+  time: "13:00 to 14:30"
+  room: "K1, Building 4"
+  place: "ZALF campus, Müncheberg"
+postdoc-session:
+  title: "Keeping a personal website and CV up to date with Quarto"
+  date: "date to be announced"
+site-url: "https://iat-dml.github.io/quarto-workshop/"

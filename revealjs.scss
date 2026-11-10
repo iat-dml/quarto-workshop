@@ -13,28 +13,16 @@ $presentation-font-size-root: 40px !default;
 $presentation-font-smaller: 0.7 !default;
 $presentation-line-height: 1.5 !default;
 
-// ── Colors (light defaults — brand paper/ink palette) ───────────────────
-$body-bg:    #FBF7F0 !default;   // paper
-$body-color: #1A1B2E !default;   // ink
+// Colours, fonts and code colours come from light-brand.yml (project-level
+// `brand:`). Only values brand.yml has no slot for are set here.
+$text-muted: #6B6275 !default;   // brand muted; needed at SCSS time
 
-$link-color:       #3D2F8C !default;   // indigo
-$link-color-hover: lighten(#3D2F8C, 15%) !default;
-$selection-bg:     #EDE9FA !default;   // indigo-soft
-$selection-color:  #1A1B2E !default;   // ink
-
-$text-muted: #6B6275 !default;   // muted
-
-// Light/dark bg text helpers
-$light-bg-text-color: #1A1B2E !default;
-$light-bg-link-color: #3D2F8C !default;
-$light-bg-code-color: #2F7D6A !default;   // moss
-$dark-bg-text-color:  #F2EBE0 !default;   // paper (dark brand)
-$dark-bg-link-color:  #A899FF !default;   // indigo (dark brand)
-$dark-bg-code-color:  #6BCFB3 !default;   // moss (dark brand)
+// Text colours used on dark slide backgrounds (section dividers)
+$dark-bg-text-color:  #FBF7F0 !default;   // paper
+$dark-bg-link-color:  #F5EAD3 !default;   // amber-soft
+$dark-bg-code-color:  #E0EFE9 !default;   // moss-soft
 
 // ── Headings ────────────────────────────────────────────────────────────
-$presentation-heading-font:           "Newsreader", "Iowan Old Style", Georgia, serif !default;
-$presentation-heading-color:          #1A1B2E !default;   // ink
 $presentation-heading-line-height:    1.15 !default;
 $presentation-heading-letter-spacing: -0.012em !default;
 $presentation-heading-font-weight:    600 !default;
@@ -48,16 +36,9 @@ $presentation-h3-font-size: 1.25em !default;
 $presentation-h4-font-size: 1.0em !default;
 
 // ── Code blocks ─────────────────────────────────────────────────────────
-$code-block-bg:           #F4EFE4 !default;   // paper-2
-$code-block-border-color: #E8E1D2 !default;   // paper-3
 $code-block-font-size:    0.58em !default;
 
-// ── Inline code ─────────────────────────────────────────────────────────
-$code-color: #2F7D6A !default;   // moss
-$code-bg:    #E0EFE9 !default;   // moss-soft
-
 // ── Layout ──────────────────────────────────────────────────────────────
-$border-color:  #E8E1D2 !default;   // paper-3
 $border-width:  1px !default;
 $border-radius: 0.5rem !default;
 
@@ -72,34 +53,29 @@ $callout-icon-scale:    10% !default;
 $callout-margin-top:    1rem !default;
 $callout-margin-bottom: 1rem !default;
 
-$callout-color-note:      #3D2F8C !default;   // indigo
-$callout-color-tip:       #2F7D6A !default;   // moss
-$callout-color-warning:   #C98A2B !default;   // amber
-$callout-color-important: #D9543F !default;   // coral
-$callout-color-caution:   #D9543F !default;   // coral
 
 /*-- scss:rules --*/
 
 // ── CSS variables (mirrors styles.scss :root block) ─────────────────────
 // Makes all brand tokens available to slide HTML via var()
 .reveal {
-  --ds-paper:       #{$body-bg};
-  --ds-paper-2:     #F4EFE4;
-  --ds-paper-3:     #E8E1D2;
-  --ds-ink:         #{$body-color};
-  --ds-ink-2:       #3A3B52;
-  --ds-muted:       #6B6275;
-  --ds-indigo:      #3D2F8C;
-  --ds-coral:       #D9543F;
-  --ds-moss:        #2F7D6A;
-  --ds-amber:       #C98A2B;
-  --ds-indigo-soft: #EDE9FA;
-  --ds-coral-soft:  #FBE7E1;
-  --ds-moss-soft:   #E0EFE9;
-  --ds-amber-soft:  #F5EAD3;
-  --ds-rule:        color-mix(in oklab, #{$body-color} 12%, transparent);
-  --ds-shadow:      0 1px 2px color-mix(in oklab, #{$body-color} 4%, transparent),
-                    0 6px 24px -10px color-mix(in oklab, #{$body-color} 10%, transparent);
+  --ds-paper:       var(--brand-paper);
+  --ds-paper-2:     var(--brand-paper-2);
+  --ds-paper-3:     var(--brand-paper-3);
+  --ds-ink:         var(--brand-ink);
+  --ds-ink-2:       var(--brand-ink-2);
+  --ds-muted:       var(--brand-muted);
+  --ds-indigo:      var(--brand-indigo);
+  --ds-coral:       var(--brand-coral);
+  --ds-moss:        var(--brand-moss);
+  --ds-amber:       var(--brand-amber);
+  --ds-indigo-soft: var(--brand-indigo-soft);
+  --ds-coral-soft:  var(--brand-coral-soft);
+  --ds-moss-soft:   var(--brand-moss-soft);
+  --ds-amber-soft:  var(--brand-amber-soft);
+  --ds-rule:        color-mix(in oklab, var(--brand-ink) 12%, transparent);
+  --ds-shadow:      0 1px 2px color-mix(in oklab, var(--brand-ink) 4%, transparent),
+                    0 6px 24px -10px color-mix(in oklab, var(--brand-ink) 10%, transparent);
   --ds-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --ds-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
   --ds-sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
@@ -675,4 +651,205 @@ $callout-color-caution:   #D9543F !default;   // coral
 .reveal ::selection {
   background: color-mix(in oklab, var(--ds-coral) 35%, transparent);
   color: var(--ds-ink);
+}
+
+// ════════════════════════════════════════════════════════════════════════
+// 16:9 deck components (ZALF 2026 deck, 1600×900 canvas)
+// ════════════════════════════════════════════════════════════════════════
+
+// ── Footer and slide number ──────────────────────────────────────────────
+.reveal .footer {
+  font-family: var(--ds-mono);
+  font-size: 0.45em;
+  letter-spacing: 0.02em;
+  color: var(--ds-muted);
+}
+.reveal .footer a { color: inherit; text-decoration: none; }
+.reveal.has-dark-background .footer,
+.reveal.has-dark-background .slide-number {
+  color: color-mix(in oklab, var(--ds-paper) 70%, transparent);
+}
+
+// ── Editorial title slide (`title-style: editorial`) ─────────────────────
+// Left-aligned title block over a hairline, with presenter and event as a
+// colophon line at the foot of the slide.
+.reveal #title-slide.title-slide--editorial {
+  text-align: left;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+.reveal #title-slide.title-slide--editorial .title-slide__panel { text-align: left; }
+.reveal #title-slide.title-slide--editorial .title {
+  font-size: 3.1em;
+  line-height: 1.02;
+  white-space: normal;
+  margin: 0 0 0.3em;
+}
+.reveal #title-slide.title-slide--editorial .title-slide__subtitle {
+  font-size: 1.05em;
+  white-space: normal;
+  max-width: 30em;
+  padding-bottom: 1.1em;
+  border-bottom: 1px solid var(--ds-rule);
+  margin-bottom: 1.1em;
+}
+.reveal #title-slide.title-slide--editorial .quarto-title-authors {
+  display: block;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+.reveal #title-slide.title-slide--editorial .quarto-title-author {
+  padding: 0;
+  margin: 0;
+}
+.reveal #title-slide.title-slide--editorial .quarto-title-author-name {
+  font-weight: 600;
+  font-size: 0.8em;
+}
+.reveal #title-slide.title-slide--editorial .quarto-title-affiliation {
+  font-size: 0.6em;
+  color: var(--ds-ink-2);
+  margin: 0.1em 0 0;
+}
+.reveal #title-slide.title-slide--editorial .title-slide__tagline {
+  align-items: flex-start;
+  margin-top: 1.4em;
+}
+.reveal #title-slide.title-slide--editorial .title-slide__tagline-text {
+  font-family: var(--ds-mono);
+  font-style: normal;
+  font-size: 0.5em;
+  letter-spacing: 0.04em;
+  color: var(--ds-muted);
+}
+
+// ── Section dividers (`# Title {.divider background-color="…"}`) ───────
+// Full-bleed accent background from the Quartile Rule; paper-coloured type.
+.reveal .slides section.divider {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.reveal .slides section.divider h1 {
+  color: var(--ds-paper);
+  font-size: 3em;
+  margin-bottom: 0.25em;
+}
+.reveal .slides section.divider p {
+  color: color-mix(in oklab, var(--ds-paper) 85%, transparent);
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-size: 1.05em;
+  max-width: 28em;
+}
+
+// ── Problem slide (`.problem`) ───────────────────────────────────────────
+// Picture on the left, the problem in plain words on the right, and the
+// Quarto answer set off by a hairline.
+.reveal .slides section.problem .columns { align-items: center; gap: 2.2em; }
+.reveal .slides section.problem img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+}
+.reveal .slides section.problem p { font-size: 0.85em; line-height: 1.5; }
+.reveal .slides section.problem .answer {
+  display: block;
+  margin-top: 1em;
+  padding-top: 0.9em;
+  border-top: 1px solid var(--ds-rule);
+  font-family: var(--ds-serif);
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ds-ink);
+}
+
+// ── Source and result side by side (`.source-result`) ───────────────────
+.reveal .slides section.source-result .columns { gap: 2em; align-items: stretch; }
+.reveal .file-label {
+  display: block;
+  font-family: var(--ds-mono);
+  font-size: 0.45em;
+  letter-spacing: 0.04em;
+  color: var(--ds-muted);
+  margin-bottom: 0.4em;
+}
+.reveal .slides section.source-result div.sourceCode { margin: 0; }
+.reveal .slides section.source-result pre code { font-size: 0.95em; line-height: 1.6; }
+.reveal .rendered {
+  background: #FFFDF9;   // a sheet of paper on the paper ground
+  border: 1px solid var(--ds-rule);
+  border-radius: 0.5rem;
+  box-shadow: var(--ds-shadow);
+  padding: 1em 1.2em 0.6em;
+  font-family: var(--ds-serif);
+  font-size: 0.72em;
+  line-height: 1.5;
+}
+.reveal .rendered img {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 0.4em 0 0;
+}
+
+// ── Walk-through checkpoint (`.checkpoint`) ──────────────────────────────
+.reveal .slides section.checkpoint .columns { gap: 2.4em; }
+.reveal .slides section.checkpoint p { font-size: 0.8em; }
+.reveal .slides section.checkpoint pre code { font-size: 1.05em; line-height: 1.6; }
+.reveal .catch-up {
+  display: block;
+  margin-top: 1.2em;
+  font-size: 0.85em;
+  color: var(--ds-ink-2);
+}
+
+// The six steps: the current one (bold in the source) in indigo, earlier
+// ones ticked off in muted ink, later ones in secondary ink.
+.reveal .steps ol {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  font-size: 0.68em;
+}
+.reveal .steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.55em 0 0.55em 2.4em;
+  border-bottom: 1px solid var(--ds-rule);
+  color: var(--ds-ink-2);
+  line-height: 1.3;
+}
+.reveal .steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  border: 1px solid var(--ds-paper-3);
+  font-family: var(--ds-mono);
+  font-size: 0.85em;
+  line-height: 1.6em;
+  text-align: center;
+  color: var(--ds-muted);
+}
+.reveal .steps li:has(~ li strong) { color: var(--ds-muted); }
+.reveal .steps li:has(~ li strong)::before {
+  content: "✓";
+  background: var(--ds-paper-2);
+}
+.reveal .steps li:has(strong) { color: var(--ds-indigo); }
+.reveal .steps li:has(strong) strong { font-weight: 600; }
+.reveal .steps li:has(strong)::before {
+  background: var(--ds-indigo);
+  border-color: var(--ds-indigo);
+  color: var(--ds-paper);
 }

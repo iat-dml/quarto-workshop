@@ -1,0 +1,123 @@
+---
+title: "One Tool to *Rule Them All*"
+subtitle: "Quarto for documentation, presentations, manuscripts and outreach"
+author:
+  - name: Ben Black
+    affiliations:
+      - name: Data and Modelling Infrastructure for Living Labs (DML), ZALF
+title-style: editorial
+event:
+  tagline: "{{< var zalf.event >}}, {{< var zalf.date >}}"
+format:
+  revealjs:
+    theme: [default, ../revealjs.scss, zalf-2026.scss]
+    code-line-numbers: false
+    width: 1600
+    height: 900
+    margin: 0.06
+    slide-number: c/t
+    footer: "iat-dml.github.io/quarto-workshop"
+    incremental: false
+    preview-links: auto
+    template-partials:
+      - ../title-slide.html
+execute:
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+sites <- read.csv("../data/restoration-sites.csv")
+sites$date <- as.Date(sites$date)
+n_sites <- length(unique(sites$site))
+by_date <- aggregate(species_richness ~ date, data = sites, FUN = mean)
+first_richness <- round(by_date$species_richness[1], 1)
+last_richness <- round(by_date$species_richness[nrow(by_date)], 1)
+```
+
+# Manuscripts {#sec-manuscripts .divider .divider-moss background-color="#2F7D6A"}
+
+From analysis to submission without copying a single number by hand.
+
+## A reviewer's correction should be fixed in one place, not three {#problem-final .problem}
+
+:::: {.columns}
+::: {.column width="56%"}
+![](../assets/lab-notebook-w-figs.jpg){fig-alt="Stand-in image until the pitch-video still is exported: a lab notebook with figures"}
+:::
+
+::: {.column width="44%"}
+Co-authors want Word, the journal wants LaTeX, and every revision changes a figure. Values in the text quietly fall out of date.
+
+[With Quarto, the text, the numbers and the figures come from one source file.]{.answer}
+:::
+::::
+
+## Numbers in the text come from the same code as the figures {#source-result .source-result}
+
+:::: {.columns}
+::: {.column width="48%"}
+[manuscript.qmd]{.file-label}
+
+```` markdown
+```{{r}}
+sites <- read.csv("restoration-sites.csv")
+```
+
+We monitored `r knitr::inline_expr("n_sites")` restoration sites.
+Mean species richness rose from
+`r knitr::inline_expr("first_richness")` to `r knitr::inline_expr("last_richness")` species.
+````
+:::
+
+::: {.column width="52%"}
+[manuscript.html]{.file-label}
+
+::: {.rendered}
+We monitored `r n_sites` restoration sites. Mean species richness rose from `r first_richness` to `r last_richness` species.
+
+```{r}
+#| label: richness-plot
+#| fig-width: 7
+#| fig-height: 3.2
+#| fig-alt: "Line chart of mean species richness across monitoring dates"
+par(family = "sans", mar = c(4, 4, 0.5, 0.5), bg = NA, col.axis = "#3A3B52", fg = "#3A3B52")
+plot(by_date$date, by_date$species_richness, type = "b", pch = 19, lwd = 2,
+     col = "#2F7D6A", xlab = "Monitoring date", ylab = "Mean species richness",
+     bty = "n")
+```
+:::
+:::
+::::
+
+::: {.notes}
+This slide is itself rendered by Quarto: the numbers on the right were computed from the workshop data when the deck was built.
+:::
+
+## Step 3 of 6: put numbers from the data into the text {#checkpoint-3 .checkpoint}
+
+:::: {.columns}
+::: {.column width="60%"}
+Below the setup chunk, type `ms3`, press Tab, then render.
+
+```` markdown
+We monitored `r knitr::inline_expr("n_sites")` restoration sites.
+Mean species richness rose from
+`r knitr::inline_expr("first_richness")` to `r knitr::inline_expr("last_richness")` species.
+````
+
+[Behind? Download checkpoint 2 from the walk-through page and carry on from there.]{.catch-up}
+:::
+
+::: {.column width="40%"}
+::: {.steps}
+1. Create a manuscript project
+2. Add authors and a setup chunk
+3. **Put numbers from the data into the text**
+4. Add a figure and cross-reference it
+5. Cite a paper by its DOI
+6. Render to Word and PDF
+:::
+:::
+::::

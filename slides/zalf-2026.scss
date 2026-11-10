@@ -1,0 +1,7 @@
+/*-- scss:defaults --*/
+// ZALF 2026 deck: sentence-style titles on a 1600×900 canvas need a smaller
+// h2 than the 4:3 iEMSs deck.
+$presentation-h2-font-size: 1.2em !default;
+$presentation-font-size-root: 38px !default;
+
+/*-- scss:rules --*/

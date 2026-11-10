@@ -10,6 +10,10 @@ format:
     preview-links: auto
     template-partials:
       - ../title-slide.html
+event:
+  tagline: "a workshop presented at iEMSs 2026"
+  logo: ../assets/iemss2026_logo.png
+  logo-alt: "iEMSs 2026, hosted at University College Dublin"
 ---
 
 ## Workshop Website {.centered-slide}
