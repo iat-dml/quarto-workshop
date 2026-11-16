@@ -4,7 +4,7 @@ title: "Exercise: Write a Reproducible Manuscript"
 
 ## Learning Goal
 
-Build a real Quarto **manuscript** project: a single source that renders to both a web article (HTML) and a journal-styled **PDF**, with full author metadata, a figure drawn from data, summary numbers pulled straight from that data, and a citation. Along the way you will see how `project: type: manuscript` turns one folder into a small scholarly publishing pipeline.
+Build a real Quarto **manuscript** project: a single source that renders to both a web article (HTML) and a **PDF**, with full author metadata, a figure drawn from data, summary numbers pulled straight from that data, and a citation. A final optional step applies a journal template. Along the way you will see how `project: type: manuscript` turns one folder into a small scholarly publishing pipeline.
 
 This is the hands-on companion to the [Writing Manuscripts](../use-cases/manuscripts.qmd) page. The full reference for everything below is the [Quarto manuscript authoring guide](https://quarto.org/docs/manuscripts/authoring/rstudio.html).
 
@@ -40,12 +40,11 @@ A manuscript is a *project*, not a single file, so let Quarto scaffold the folde
 quarto create project manuscript my-manuscript
 ```
 
-This makes a folder `my-manuscript/` with the basic structure a manuscript needs:
+Quarto asks for a title (press Enter to accept the folder name) and then makes a folder `my-manuscript/` with the three files a manuscript needs:
 
-- **`index.qmd`** — the article itself: metadata, narrative text, and code, all in one file.
-- **`_quarto.yml`** — project settings. The line `project: type: manuscript` is what tells Quarto to treat this folder as a manuscript and build the article website.
-- **`references.bib`** — your bibliography. Citations you add land here automatically.
-- **`notebooks/`** — optional extra computational notebooks you can link from the article.
+- `index.qmd` is the article itself: metadata, narrative text, and code, all in one file.
+- `_quarto.yml` holds the project settings. The line `project: type: manuscript` tells Quarto to treat this folder as a manuscript and build the article website.
+- `references.bib` is your bibliography. Citations you add in the visual editor land here automatically.
 
 ::: {.callout-tip}
 ## Prefer buttons to typing?
@@ -63,7 +62,7 @@ Every R chunk in your real `index.qmd` opens with ```` ```{r} ```` — with curl
 
 ## Step 2 — Add Your Authors
 
-Open `index.qmd`. Replace the starter front matter with your own title and a proper author block. Add **yourself and one co-author** — pick a real colleague — each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline and, later, the journal PDF.
+Open `index.qmd`. Replace the starter front matter (everything between the two `---` lines) with your own title and a proper author block. You can delete the placeholder section below it. Add **yourself and one co-author** — pick a real colleague — each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.
 
 ```yaml
 ---
@@ -95,40 +94,25 @@ bibliography: references.bib
 Every researcher can register for a free ORCID at [orcid.org](https://orcid.org/) — it is the 16-digit ID in their profile URL. Use real ones if you have them; the placeholders above will still render fine.
 :::
 
-## Step 3 — Choose and Apply a Journal Template
+## Step 3 — Choose Your Output Formats
 
-The point of a manuscript is to produce a journal-ready document. Quarto maintains a set of journal templates at [github.com/quarto-journals](https://github.com/quarto-journals/) — including **Elsevier**, **PLOS**, **ACS** (American Chemical Society), **AGU** (American Geophysical Union), **ACM**, and **JSS**.
-
-Add one to your project from inside the `my-manuscript/` folder. We'll use Elsevier as a general-purpose example:
-
-```bash
-quarto add quarto-journals/elsevier
-```
-
-This installs an extension that provides a new format, `elsevier-pdf`. Now tell the manuscript to build *both* the web article and the journal PDF by editing the `format:` block in **`_quarto.yml`**:
+The output formats of a manuscript are listed in `_quarto.yml`. Open it and replace everything in it with:
 
 ```yaml
 project:
   type: manuscript
 
 format:
+  typst: default
   html: default
-  elsevier-pdf: default
 ```
 
-`html` is the article webpage; `elsevier-pdf` is the typeset PDF. Each journal extension names its formats after the journal — swap in `plos-pdf`, `acs-pdf`, `agu-pdf`, and so on if you install a different one.
+`typst` makes a PDF with [Typst](https://quarto.org/docs/output-formats/typst.html), a typesetting system that is built into Quarto, so there is nothing extra to install. `html` is the article webpage.
 
-::: {.callout-warning}
-## PDF needs a LaTeX engine
+Two details matter here:
 
-The first time you render a PDF, Quarto needs LaTeX. Install the lightweight bundle it manages for you, once, with:
-
-```bash
-quarto install tinytex
-```
-
-If you'd rather skip the journal extension for now, the built-in `pdf: default` format also works and needs the same TinyTeX install.
-:::
+- Keep the PDF format first in the list. On Quarto 1.8, the version that comes with RStudio, the PDF fails with a "file not found" error for figures if `html` is listed before it. Newer versions accept either order.
+- The starter `_quarto.yml` contains `execute: freeze: true`. With that setting Quarto reuses saved results instead of running your code again, so a change to the data would not show up in the article. Replacing the file as above removes it, which is what you want while you are still writing.
 
 ## Step 4 — Load Your Data in a Setup Chunk
 
@@ -204,7 +188,25 @@ Either way, Quarto inserts an `@citation-key` in your text, appends the entry to
 Our monitoring follows recognised restoration standards [@gann2019].
 ```
 
-renders the citation in text and the full reference under a **References** heading.
+renders the citation in text and the full reference under a **References** heading. The key Quarto creates may differ slightly from `gann2019`; use whichever key appears in your text.
+
+::: {.callout-tip collapse="true"}
+## No visual editor, or the DOI lookup does not respond?
+
+Add the reference by hand. Paste this entry at the end of `references.bib`, then cite it in your text with `[@gann2019]`:
+
+```bibtex
+@article{gann2019,
+  title   = {International principles and standards for the practice of ecological restoration. Second edition},
+  author  = {Gann, George D. and McDonald, Tein and Walder, Bethanie and Aronson, James and Nelson, Cara R. and Jonson, Justin and Hallett, James G. and Eisenberg, Cristina and Guariguata, Manuel R. and Liu, Junguo and Hua, Fangyuan and Echeverría, Cristian and Gonzales, Emily and Shaw, Nancy and Decleer, Kris and Dixon, Kingsley W.},
+  journal = {Restoration Ecology},
+  volume  = {27},
+  number  = {S1},
+  year    = {2019},
+  doi     = {10.1111/rec.13035}
+}
+```
+:::
 
 ::: {.callout-tip}
 ## Switching citation styles
@@ -214,28 +216,59 @@ renders the citation in text and the full reference under a **References** headi
 
 ## Step 8 — Render to PDF and HTML
 
-You now have everything the seven previous steps promised. Build all formats at once:
+Build all formats at once by running this in a terminal inside the `my-manuscript/` folder:
 
 ```bash
 quarto render
 ```
 
-Or, while writing, run `quarto preview` for a live HTML view that refreshes on every save. Open the rendered article (`_manuscript/` or the preview): it shows your byline, the inline numbers, the figure, and the references. In the margin, an **Other Formats** section now offers a download link to your Elsevier **PDF** — one source, two outputs.
+The results land in a new `_manuscript/` folder. Open `_manuscript/index.html` in your browser: the article shows your byline, the inline numbers, the figure, and the references. In the margin, an **Other Formats** section offers a download link to the **PDF**, which is `_manuscript/index.pdf`.
+
+While writing, the **Render** button in your editor (or `quarto preview` in the terminal) gives a live view that refreshes on every save. It shows the first format in your list, so here it shows the PDF.
 
 ::: {.callout-note}
 ## What just happened
 
-`quarto render` ran your R code once, injected the results into the text and the figure, and laid the same content out twice: as a web page and as a typeset PDF. That single-source, multi-format render is the whole reason to write a manuscript in Quarto.
+`quarto render` ran your R code, placed the results in the text and the figure, and laid the same content out twice: as a web page and as a typeset PDF. Rendering several formats from one source is the main reason to write a manuscript in Quarto.
 :::
+
+## Step 9 — Apply a Journal Template (Optional)
+
+Journals expect their own layout. Quarto maintains a set of journal templates at [github.com/quarto-journals](https://github.com/quarto-journals/), including Elsevier, PLOS, ACS (American Chemical Society), AGU (American Geophysical Union), ACM, and JSS (Journal of Statistical Software).
+
+These templates use LaTeX, so this step needs a LaTeX installation. If you do not have one, Quarto can install TinyTeX, a small LaTeX distribution, for you. The download and the first PDF render, which fetches missing LaTeX packages, can each take several minutes, so start this step only if you have the time and a good connection:
+
+```bash
+quarto install tinytex
+```
+
+Then add a template from inside the `my-manuscript/` folder. We use Elsevier as a general-purpose example:
+
+```bash
+quarto add quarto-journals/elsevier
+```
+
+This installs an extension into a new `_extensions/` folder. The extension provides a new format, `elsevier-pdf`. Swap it in for `typst` in `_quarto.yml`, keeping it first in the list:
+
+```yaml
+project:
+  type: manuscript
+
+format:
+  elsevier-pdf: default
+  html: default
+```
+
+Run `quarto render` again. The PDF now follows the Elsevier article layout, and nothing in `index.qmd` had to change. Each journal extension names its formats after the journal, so use `plos-pdf`, `acs-pdf` or `agu-pdf` if you install a different one.
 
 ## Stretch Tasks
 
 If you finish early, try one of these:
 
 - **Add an abstract and keywords** to the front matter (`abstract: |` and `keywords:`) and see them appear in both outputs.
-- **Add a table** from the data — for example the latest reading per site with `knitr::kable()` — give it a `#| label: tbl-` and cross-reference it with `@tbl-...`.
-- **Compare scenarios.** Read `restoration-scenarios.csv` and add a second figure faceted or coloured by `scenario` (Baseline / Moderate / Intensive).
-- **Add a Word output** for collaborators who want track-changes: add `docx: default` to the `format:` block and render again.
+- **Add a table** from the data, for example the latest reading per site with `knitr::kable()`. Give it a `#| label: tbl-` and cross-reference it with `@tbl-...`.
+- **Compare scenarios.** Read `restoration-scenarios.csv` and add a second figure faceted or coloured by `scenario` (Baseline, Moderate, Intensive).
+- **Add a Word output** for collaborators who want track changes: add `docx: default` at the end of the `format:` block and render again.
 
 ## Adapting Path A (Your Own Manuscript)
 
@@ -249,7 +282,7 @@ Converting your own work follows exactly the same skeleton:
 
 ## Self-Check
 
-- Does `quarto render` produce **both** an HTML article and a PDF without errors?
+- Does `quarto render` produce **both** an HTML article and a PDF in `_manuscript/` without errors?
 - Does the byline show you and your co-author, with ORCIDs and affiliations?
 - Do the numbers in your opening paragraph come from inline code, not typed by hand?
 - Does `@fig-cover` render as a numbered, clickable "Figure 1"?

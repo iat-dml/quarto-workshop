@@ -14,7 +14,13 @@ number-sections: false
 
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by [Posit](https://posit.co/). It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
 
-This website is designed as a guided reference to our workshop that was first given at the [13th International Congress on Environmental Modelling and Software in 2026](https://conference.iemss.org/timetable/event/wsc1/). You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.
+This website is designed as a guided reference to our workshop that was first given at the [13th International Congress on Environmental Modelling and Software in 2026](https://conference.iemss.org/). You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.
+
+::: callout-note
+## Joining us at the {{< var zalf.event >}}?
+
+The workshop runs on {{< var zalf.date >}}, {{< var zalf.time >}}, in {{< var zalf.room >}}, {{< var zalf.place >}}. Bring a laptop, and please check it beforehand with the steps in [Setting up on a ZALF laptop](foundations/installing-quarto.qmd#sec-zalf). One setting there has to be in place before R code will run.
+:::
 
 ## Who We Are
 

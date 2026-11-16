@@ -4,7 +4,7 @@
 
 This repository contains the source for a guided workshop website on the open-source scientific and technical publishing system [Quarto](https://quarto.org/) and it's application to typical scientific publishing applications. THe workshop can be followed top to bottom as a live session, or used later as a reference for a specific output format.
 
-This workshop was prepared by the [Data and Modelling Infrastructure for Living Labs (DML)](https://iat-dml.github.io) Service Working Group within the Innovation Center for Agricultural System Transformation (IAT) and first given at the [13th International Congress on Environmental Modelling and Software (2026)](https://conference.iemss.org/timetable/event/wsc1/).
+This workshop was prepared by the [Data and Modelling Infrastructure for Living Labs (DML)](https://iat-dml.github.io) Service Working Group within the Innovation Center for Agricultural System Transformation (IAT) and first given at the [13th International Congress on Environmental Modelling and Software (2026)](https://conference.iemss.org/).
 
 ## Who This Workshop Is For
 

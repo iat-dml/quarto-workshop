@@ -125,17 +125,19 @@ format:
 
 A talk needs a way in. Add a section divider and an opening content slide before you reach any results. Two reveal.js features make these feel like slides rather than a wall of text:
 
-- a list marked `{.incremental}` reveals its bullets **one click at a time**;
-- a line containing just `. . .` inserts a **pause** — the next content appears on the following click.
+- a list wrapped in a `::: {.incremental}` block reveals its bullets **one click at a time**;
+- a line containing just `. . .` (three full stops separated by spaces) inserts a **pause**, and the content after it appears on the next click.
 
 ```markdown
 # Background {background-color="#2c3e50"}
 
-## Why monitor restoration? {.incremental}
+## Why monitor restoration?
 
-- Restoration projects *promise* recovery — but do sites actually recover?
+::: {.incremental}
+- Restoration projects *promise* recovery, but do sites actually recover?
 - We surveyed four sites every quarter for two years
 - That gives a simple, testable signal: change in vegetation cover
+:::
 
 ## Our question
 
@@ -144,7 +146,7 @@ A talk needs a way in. Add a section divider and an opening content slide before
 How fast is vegetation cover recovering — and does the pace differ by site?
 ```
 
-The `# Background` line is a section slide (the `{background-color=...}` gives it a coloured backdrop); the two `##` lines are content slides. Click through the preview to see the bullets and the pause reveal in turn.
+The `# Background` line is a section slide (the `{background-color=...}` gives it a coloured backdrop), and the two `##` lines are content slides. Click through the preview to see the bullets and the pause reveal in turn.
 
 ## Step 5 — Load Your Data in a Setup Chunk
 
@@ -199,7 +201,6 @@ ggplot(sites, aes(date, vegetation_cover_pct, colour = site)) +
 :::
 
 ::::
-```
 ````
 
 Three things to notice:
@@ -252,7 +253,7 @@ Now try a few: swap `serif` for `simple`, `moon`, `solarized`, `sky`, `league`, 
 For a more distinctive title slide, install a community theme — Grant McDermott's widely used [quarto-revealjs-clean](https://github.com/grantmcdermott/quarto-revealjs-clean). From a terminal inside your `my-talk/` folder:
 
 ```bash
-quarto install extension grantmcdermott/quarto-revealjs-clean
+quarto add grantmcdermott/quarto-revealjs-clean
 ```
 
 This adds an `_extensions/` folder providing a new format, `clean-revealjs`. Switch to it by changing **only the format line** — the clean theme understands the same reveal.js options, so your logo and footer carry over:
@@ -280,18 +281,20 @@ While writing you have been using `quarto preview`. For the finished file, rende
 quarto render talk.qmd
 ```
 
-This produces `talk.html` — a complete, self-contained slide deck that opens in any modern browser, no internet or server required. That single HTML file *is* your presentation: open it to present, or send it to a colleague.
+This produces `talk.html` and a folder `talk_files/` that holds the styles, scripts and figures the deck needs. Open `talk.html` in any modern browser to present; no internet connection or server is required. To share the deck, send both the file and the folder.
 
 ::: {.callout-tip}
 ## Make it one shareable file
 
-By default the HTML references a few supporting folders. To bundle everything into a single file you can email or drop on a USB stick, add one line under the format:
+To bundle everything into a single HTML file you can email or put on a USB stick, add one line under the format:
 
 ```yaml
 format:
   revealjs:
     embed-resources: true
 ```
+
+Use the format name you ended up with (`revealjs` or `clean-revealjs`). The chalkboard in the stretch tasks does not work together with `embed-resources`, so remove this line again before you try it.
 :::
 
 ## Stretch Tasks
@@ -301,8 +304,8 @@ If you finish early, try one of these:
 - **Compare management scenarios.** Read `restoration-scenarios.csv` in your setup chunk and add a results slide with a second figure coloured or faceted by `scenario` (Baseline / Moderate / Intensive) — the same data behind the [scenarios dashboard](../dashboards/restoration-dashboard-scenarios.qmd).
 - **Embed an interactive chart.** Reuse a `plotly` chart from the dashboard exercise on a slide — it stays live and hoverable in the browser, something PowerPoint can't do.
 - **Animate a transition.** Put `{auto-animate=true}` on two consecutive `##` slides and move or resize an element between them; reveal.js tweens it. Or set `transition: slide` under the format for a global slide transition.
-- **Add a chalkboard.** Set `chalkboard: true` under the format, then press <kbd>B</kbd> while presenting to draw on the slide live.
-- **Export a PDF or PowerPoint.** Press <kbd>E</kbd> then print-to-PDF for a handout, or add `pptx: default` to the `format:` block and render again for a PowerPoint version colleagues can edit.
+- **Add a chalkboard.** Set `chalkboard: true` under the format, then press <kbd>C</kbd> while presenting to draw on the current slide, or <kbd>B</kbd> to open a blank chalkboard. This needs `embed-resources` to be off.
+- **Export a PDF or PowerPoint.** Press <kbd>E</kbd> and then print to PDF from the browser (<kbd>Ctrl</kbd> + <kbd>P</kbd>) for a handout, or add `pptx: default` to the `format:` block and render again for a PowerPoint version colleagues can edit.
 
 ## Adapting Path A (Your Own Talk)
 

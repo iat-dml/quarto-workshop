@@ -172,12 +172,12 @@ list(value = nrow(sites), icon = "clipboard-data", color = "secondary")
 ```r
 #| content: valuebox
 #| title: "Cover change since 2023"
-list(value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), "%"),
+list(value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), " pts"),
      icon = "graph-up-arrow", color = "success")
 ```
 ````
 
-The `value` can be any small computation: `n_distinct(sites$site)` counts the unique sites, `nrow(sites)` counts the rows (one per survey), and the third box subtracts the mean cover of the first survey round from the mean of the latest one to get the change.
+The `value` can be any small computation: `n_distinct(sites$site)` counts the unique sites, `nrow(sites)` counts the rows (one per survey), and the third box subtracts the mean cover of the first survey round from the mean of the latest one to get the change in percentage points.
 
 Render. Three coloured boxes appear side by side, three cards in one row. The `icon` names come from the [Bootstrap Icons library](https://icons.getbootstrap.com/), where you can browse all available icons and copy their names.
 

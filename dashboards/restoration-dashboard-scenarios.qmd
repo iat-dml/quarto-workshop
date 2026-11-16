@@ -62,7 +62,7 @@ list(value = nrow(sites), icon = "clipboard-data", color = "secondary")
 #| content: valuebox
 #| title: "Cover change since 2023"
 list(
-  value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), "%"),
+  value = paste0("+", round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct)), " pts"),
   icon = "graph-up-arrow",
   color = "success"
 )

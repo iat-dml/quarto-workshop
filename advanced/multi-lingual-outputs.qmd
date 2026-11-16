@@ -2,7 +2,7 @@
 title: "Multi-Lingual Quarto with Babelquarto"
 ---
 
-Thanks to the nifty R package (`babelquarto`)[https://docs.ropensci.org/babelquarto/] you can also produce quarto-based content content in multiple languages with a link to switch between them. THe package currently allows you to do this for project types with html output format e.g. books and websites, and one of the authors has recently contributed [some code](https://blenback.github.io/posts/2026-06-04-babelquarto-revealjs.html) to expand this to presentations (revealjs) as well.
+Thanks to the nifty R package [`babelquarto`](https://docs.ropensci.org/babelquarto/) you can also produce quarto-based content content in multiple languages with a link to switch between them. THe package currently allows you to do this for project types with html output format e.g. books and websites, and one of the authors has recently contributed [some code](https://blenback.github.io/posts/2026-06-04-babelquarto-revealjs.html) to expand this to presentations (revealjs) as well.
 
 The packages website provides full vignettes of how to use it but in simple terms you enter the details of the languages options within your `_quarto.yml` file.
 
@@ -37,8 +37,8 @@ You will see that pages then have a button in the navbar for changing languages:
 ::: callout-tip
 The appearance of the language button can be modified with Sass/CSS here is an example from one of our own websites:
 
-``` css
-
+```{.scss code-fold="true" code-summary="Show the Sass"}
+.navbar {
   /* The wrapping <li> is the flex item inside .navbar-nav. Push it to
      the right and give it nav-link horizontal padding so the gap to
      the next nav-item matches the rest of the navbar. */

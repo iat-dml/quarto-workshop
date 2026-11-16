@@ -22,7 +22,7 @@ Quarto is well suited for writing long-form academic documents such as term pape
 - [Gina Reinhard's term paper and thesis template](https://github.com/ginareinhard/thesisTemplate) — an open-access template for M.A. theses and term papers
 - [James D. H.'s PhD thesis template](https://github.com/james-d-h/quarto-phd-thesis) — a clean, general-purpose Quarto PhD template
 - [Monash University thesis template](https://github.com/quarto-monash/thesis) — an extension-based template from Monash
-- [UPF thesis template](https://gongcastro.github.io/blog/upfthesis/upfthesis.html) — a Quarto extension for Universitat Pompeu Fabra theses
+- [UPF thesis template](https://github.com/gongcastro/upfthesis) — a Quarto extension for Universitat Pompeu Fabra theses
 
 ## Writing a Book or Open Textbook
 

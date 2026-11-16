@@ -26,14 +26,15 @@ You will need three things:
 - **A terminal** (the Terminal app, PowerShell, or the terminal panel inside your editor). Every
   command below is typed there.
 - **A free GitHub account**, which you will only need for the publishing step near the end. If you
-  do not have one, you can sign up at [github.com](https://github.com/) — or skip Step 6 and still
-  complete everything else locally.
+  do not have one, you can sign up at [github.com](https://github.com/), or skip Steps 8 and 9 and
+  still complete everything else locally. Publishing also needs [Git](https://git-scm.com/)
+  installed on your computer.
 
 ## What You Will Build
 
-A small site with two pages — a **home page** and an **about page** — connected by a navigation
-bar at the top, given a colour theme, and finally published to the web. It is intentionally tiny:
-the point is to see the full path from empty folder to live website.
+A small site with three pages: a **home page**, an **about page** and a **publications page**. They
+are connected by a navigation bar at the top, given a colour theme, and finally published to the
+web. It is intentionally tiny: the point is to see the full path from empty folder to live website.
 
 ## Step 1 — Create the Website Project
 
@@ -72,13 +73,14 @@ same starter folder.
 quarto preview
 ```
 
-The page will be opened in the viewer window on the right side of your editor. You can also open it in your default browser by clicking the link in the terminal. Leave this command going while you work — every time you save a file, the preview refreshes automatically so you can see changes instantly.
+With Option 1 the page opens in the viewer pane of your editor; with Option 2 it opens in your default browser, and the terminal prints the address in case you need it again. Leave the preview running while you work: every time you save a file, it refreshes so you can see your changes.
 Press `Ctrl + C` in the terminal to stop it later.
 
 ## Step 3 — Understand `_quarto.yml`
 
-Open `_quarto.yml`. This is the one file that ties the site together. A minimal version looks
-like this:
+Open `_quarto.yml`. This is the one file that ties the site together. Yours will look much like
+this (the starter file also lists `brand` and a `css` line under `theme`, which you can leave for
+now):
 
 ```yaml
 project:
@@ -228,6 +230,10 @@ fields such as `title`, `authors`, `year`, `doi`, and an optional `summary`. To 
 your own work, copy the whole block and fill in your details; empty fields like
 `code_url: ''` simply don't appear.
 
+The template highlights one author name in each entry. It is set to `Black, B.`,
+so open `publication_yearly.ejs`, search for that text (it appears twice on one
+line) and replace it with your own name as you write it in the `authors` field.
+
 ::: {.callout-tip}
 ## Let your reference manager do the typing
 
@@ -243,6 +249,7 @@ a new file called `publications.qmd` next to your other pages and paste in:
 
 ```markdown
 ---
+title: "Publications"
 format:
   html:
     anchor-sections: true
@@ -257,13 +264,15 @@ listing:
       summary: raw
 ---
 
-## Journal Articles
+## Journal articles
+
 ::: {#Journal-articles}
 :::
 ```
 
 Reading the front matter:
 
+- `title:` is the page heading and the name shown in the browser tab.
 - `listing:` tells Quarto to build a listing, here given the id `Journal-articles`.
 - `template:` points at the `.ejs` file in your `ejs/` folder, which decides how each entry looks.
 - `contents:` points at the data file in your `publications/` folder.
@@ -320,7 +329,7 @@ format:
     toc: true
 ```
 
-(You can now remove the original `styles.css` line if your config still references it.)
+This replaces the starter file's `theme` list, so `brand` is no longer in it. You can also remove the `css: styles.css` line if your `_quarto.yml` still has it.
 
 ::: {.callout-note}
 ## Going further with branding
@@ -340,7 +349,16 @@ First, put your project on GitHub:
 
 1. On [github.com](https://github.com/), create a **new, empty repository** (no README) named, for
    example, `my-site`.
-2. Back in your terminal, inside the project folder, connect your files to it:
+2. In your project folder, create a file named `.gitignore` (with the leading dot and no file
+   extension) containing these two lines. They keep Quarto's working files and the rendered site
+   out of your source branch:
+
+```default
+/.quarto/
+/_site/
+```
+
+3. Back in your terminal, inside the project folder, connect your files to the repository:
 
 ```bash
 git init

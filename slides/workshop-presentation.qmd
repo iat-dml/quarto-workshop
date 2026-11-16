@@ -229,7 +229,7 @@ format: pdf
 - Reuse figures, tables, and citations from your other `.qmd` files
 - Embed interactive content: live code, diagrams, iframes
 - Export to **PowerPoint** or **PDF** when required
-- 11 built-in themes, or create your own CSS branding
+- 12 built-in themes, or create your own CSS branding
 - **Caveat**: not the tool for slides requiring a lot of manual graphics design/manipulation.
 
 ## Presentations
