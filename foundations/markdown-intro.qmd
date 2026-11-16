@@ -1,12 +1,10 @@
 ---
-title: "Markdown for Beginners"
+title: "Markdown for beginners"
 ---
-
-# Short Introduction
 
 Markdown is a lightweight writing syntax. Instead of clicking formatting buttons, you type small symbols directly into plain text. Quarto builds on standard Markdown and adds publishing features that are especially helpful for technical and academic work.
 
-## Why Markdown Is Worth Learning
+## Why Markdown is worth learning
 
 Markdown is worth learning because it is:
 
@@ -15,9 +13,9 @@ Markdown is worth learning because it is:
 - suitable for version control
 - flexible across websites, reports, and manuscripts
 
-Once you are comfortable with Markdown, most of Quarto opens up to you.
+Once you are comfortable with Markdown, you can use most of Quarto.
 
-## Core Syntax
+## Core syntax
 
 ### Headings
 
@@ -43,7 +41,7 @@ Once you are comfortable with Markdown, most of Quarto opens up to you.
 2. second step
 ```
 
-### Links and Images
+### Links and images
 
 ```markdown
 [Quarto](https://quarto.org)
@@ -73,7 +71,7 @@ print("Hello from R")
 
 Wrapping the language name in curly braces instead, such as `{r}`, turns the block into an executable chunk that Quarto runs when the document renders, placing the result in the output.
 
-## Quarto-Focused Additions
+## Quarto-focused additions
 
 Quarto keeps standard Markdown, but it also makes room for:
 
@@ -85,10 +83,10 @@ Quarto keeps standard Markdown, but it also makes room for:
 ::: {.callout-tip}
 ## Beginner mindset
 
-You do not need to memorize every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.
+You do not need to memorise every Markdown feature at once. For most workshop tasks, headings, lists, links, emphasis, and fenced code blocks are enough to get started.
 :::
 
-## Example: A Methods Note in Markdown
+## Example: a methods note in Markdown
 
 A methods note written in Quarto might use:
 
@@ -97,7 +95,7 @@ A methods note written in Quarto might use:
 - links to protocols or repositories
 - fenced code blocks to show commands used in the workflow
 
-## Mini Practice
+## Mini practice
 
 **Task**
 
@@ -131,6 +129,6 @@ If you are not sure how to create the file or render it, the **Setup and renderi
 
    Replace `path/to/practice.qmd` with the real path to your file, including the filename. This step requires Quarto to be installed; see [Installing Quarto](installing-quarto.qmd) if you have not set it up yet.
 
-## Next Step
+## Next step
 
-Continue to [YAML Headers](yaml-intro.qmd) to see how Quarto stores document settings at the top of a file.
+Continue to [YAML headers](yaml-intro.qmd) to see how Quarto stores document settings at the top of a file.

@@ -1,16 +1,14 @@
 ---
-title: "YAML Headers in Quarto"
+title: "YAML headers in Quarto"
 ---
-
-# Short Introduction
 
 YAML is the metadata block at the top of a Quarto document. It sits between two lines of [`---`]{.nowrap} and controls document information such as title, author, date, output formats, and execution settings.
 
-## From Plain Note to Configured Publication
+## The header decides what the document becomes
 
 The header is only a few lines, but it decides what your document becomes. Because it sits separately from your writing, you can turn the same text into a webpage, a PDF, or a slide deck by changing the header alone, without touching a word of your content.
 
-## Basic Example
+## Basic example
 
 ```yaml
 ---
@@ -21,7 +19,7 @@ format: html
 ---
 ```
 
-## How YAML Is Written
+## How YAML is written
 
 YAML is a list of settings, one per line, written as `key: value`:
 
@@ -30,17 +28,17 @@ YAML is a list of settings, one per line, written as `key: value`:
 
 Some settings group several values underneath them. You create that grouping by **indenting** the lines below with spaces, as with the multiple formats in the example further down. Because the indentation is what defines the grouping, it has to be consistent.
 
-## What YAML Usually Controls
+## What YAML usually controls
 
-### Document Metadata
+### Document metadata
 
 This includes the title, subtitle, authors, date, and sometimes affiliations or keywords.
 
-### Output Format
+### Output format
 
 This tells Quarto what to create, such as HTML, PDF, DOCX, or `revealjs` slides.
 
-### Execution Defaults
+### Execution defaults
 
 This controls how code chunks behave across the file, for example whether code is shown or whether warnings are hidden:
 
@@ -52,7 +50,7 @@ execute:
 
 This hides the code and any warnings across the whole document, so the output shows only the results.
 
-## Example: A Manuscript Header
+## Example: a manuscript header
 
 A manuscript draft might use a header like this:
 
@@ -77,7 +75,7 @@ That one header already signals a multi-format (html, docx, and pdf) workflow.
 YAML is sensitive to indentation. If spacing is inconsistent, rendering can fail even when the content looks almost correct.
 :::
 
-## YAML vs Markdown vs Code Chunks
+## YAML, Markdown and code chunks
 
 - YAML configures the document
 - Markdown writes the document
@@ -85,6 +83,6 @@ YAML is sensitive to indentation. If spacing is inconsistent, rendering can fail
 
 Keeping these roles separate makes Quarto much easier to understand.
 
-## Next Step
+## Next step
 
 Continue to [Installing Quarto](installing-quarto.qmd) for a practical overview of what you need on your machine.

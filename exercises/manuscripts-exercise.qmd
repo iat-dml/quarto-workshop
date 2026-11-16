@@ -1,38 +1,38 @@
 ---
-title: "Exercise: Write a Reproducible Manuscript"
+title: "Exercise: write a reproducible manuscript"
 ---
 
-## Learning Goal
+## Learning goal
 
 Build a real Quarto **manuscript** project: a single source that renders to both a web article (HTML) and a **PDF**, with full author metadata, a figure drawn from data, summary numbers pulled straight from that data, and a citation. A final optional step applies a journal template. Along the way you will see how `project: type: manuscript` turns one folder into a small scholarly publishing pipeline.
 
-This is the hands-on companion to the [Writing Manuscripts](../use-cases/manuscripts.qmd) page. The full reference for everything below is the [Quarto manuscript authoring guide](https://quarto.org/docs/manuscripts/authoring/rstudio.html).
+This is the hands-on companion to the [Writing manuscripts](../use-cases/manuscripts.qmd) page. The full reference for everything below is the [Quarto manuscript authoring guide](https://quarto.org/docs/manuscripts/authoring/rstudio.html).
 
-## Two Ways to Do This Exercise
+## Two ways to do this exercise
 
-Pick whichever is more useful to you — the steps are the same either way:
+Pick whichever is more useful to you. The steps are the same either way:
 
-- **Path A — Bring your own.** Take a current or previous research project or manuscript of your own and rebuild its skeleton as a Quarto manuscript. You will get the most out of the exercise this way, because you end with something you can actually keep working on.
-- **Path B — Use our sample data.** Build a mock manuscript about ecological restoration from the two datasets below. Choose this if you would rather not wrangle your own data right now.
+- **Path A: Bring your own.** Take a current or previous research project or manuscript of your own and rebuild its skeleton as a Quarto manuscript. You will get the most out of the exercise this way, because you end with something you can actually keep working on.
+- **Path B: Use our sample data.** Build a mock manuscript about ecological restoration from the two datasets below. Choose this if you would rather not wrangle your own data right now.
 
 Wherever a step needs concrete code, we show it for the **sample data**. If you are on Path A, swap in your own file names, columns, and text.
 
-## The Sample Data (Path B)
+## The sample data (Path B)
 
 `restoration-sites.csv` records quarterly monitoring of four restoration sites. Each row is one survey of one site:
 
-- `site` — the monitoring site (A–D)
-- `date` — survey date (quarterly)
-- `vegetation_cover_pct` — vegetation cover, in percent
-- `species_richness` — number of species recorded
-- `soil_moisture_pct` — soil moisture, in percent
+- `site`: the monitoring site (A–D)
+- `date`: survey date (quarterly)
+- `vegetation_cover_pct`: vegetation cover, in percent
+- `species_richness`: number of species recorded
+- `soil_moisture_pct`: soil moisture, in percent
 
 [Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
 [Download restoration-scenarios.csv](/data/restoration-scenarios.csv){.btn .btn-secondary download="restoration-scenarios.csv"}
 
 (`restoration-scenarios.csv` holds vegetation cover under three management scenarios and is only needed for the stretch task.)
 
-## Step 1 — Create the Manuscript Project
+## Step 1: Create the manuscript project
 
 A manuscript is a *project*, not a single file, so let Quarto scaffold the folder for you. In your terminal, move to wherever you keep projects and run:
 
@@ -52,17 +52,17 @@ Quarto asks for a title (press Enter to accept the folder name) and then makes a
 You don't have to use the terminal. In RStudio choose **New Project → Quarto Manuscript**; in Positron or VS Code open the command palette and pick **Quarto: Create Project → Manuscript Project**. The result is the same starter folder.
 :::
 
-Open the folder in your editor and switch `index.qmd` to the **visual editor** (the **Source / Visual** toggle in RStudio or Positron) — it makes adding authors, figures, and citations much easier in the steps below.
+Open the folder in your editor and switch `index.qmd` to the **visual editor** (the **Source / Visual** toggle in RStudio or Positron). It makes adding authors, figures, and citations much easier in the steps below.
 
 ::: {.callout-note}
 ## A note on the code chunks below
 
-Every R chunk in your real `index.qmd` opens with ```` ```{r} ```` — with curly braces — so Quarto runs it. In the sketches on this page we write ```` ```r ```` *without* braces only so they display as text instead of executing. When you copy them into your file, add the braces back.
+Every R chunk in your real `index.qmd` opens with ```` ```{r} ````, with curly braces, so Quarto runs it. In the sketches on this page we write ```` ```r ```` *without* braces only so they display as text instead of executing. When you copy them into your file, add the braces back.
 :::
 
-## Step 2 — Add Your Authors
+## Step 2: Add your authors
 
-Open `index.qmd`. Replace the starter front matter (everything between the two `---` lines) with your own title and a proper author block. You can delete the placeholder section below it. Add **yourself and one co-author** — pick a real colleague — each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.
+Open `index.qmd`. Replace the starter front matter (everything between the two `---` lines) with your own title and a proper author block. You can delete the placeholder section below it. Add **yourself and one co-author** (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.
 
 ```yaml
 ---
@@ -91,10 +91,10 @@ bibliography: references.bib
 ::: {.callout-note}
 ## Where to find an ORCID
 
-Every researcher can register for a free ORCID at [orcid.org](https://orcid.org/) — it is the 16-digit ID in their profile URL. Use real ones if you have them; the placeholders above will still render fine.
+Every researcher can register for a free ORCID at [orcid.org](https://orcid.org/). It is the 16-digit ID in their profile URL. Use real ones if you have them; the placeholders above will still render fine.
 :::
 
-## Step 3 — Choose Your Output Formats
+## Step 3: Choose your output formats
 
 The output formats of a manuscript are listed in `_quarto.yml`. Open it and replace everything in it with:
 
@@ -114,7 +114,7 @@ Two details matter here:
 - Keep the PDF format first in the list. On Quarto 1.8, the version that comes with RStudio, the PDF fails with a "file not found" error for figures if `html` is listed before it. Newer versions accept either order.
 - The starter `_quarto.yml` contains `execute: freeze: true`. With that setting Quarto reuses saved results instead of running your code again, so a change to the data would not show up in the article. Replacing the file as above removes it, which is what you want while you are still writing.
 
-## Step 4 — Load Your Data in a Setup Chunk
+## Step 4: Load your data in a setup chunk
 
 Make a `data/` folder inside `my-manuscript/` and copy `restoration-sites.csv` into it (use the download button above). Then add a **setup chunk** near the top of `index.qmd`, below the front matter. `include: false` runs the code but keeps it and its output out of the article:
 
@@ -137,22 +137,22 @@ first  <- sites |> filter(date == min(date))   # earliest survey per site
 
 `latest` and `first` give us the start and end of the monitoring period, which the next two steps use.
 
-## Step 5 — Pull Summary Numbers Into Your Text With Inline Code
+## Step 5: Pull summary numbers into your text with inline code
 
-This is where a reproducible manuscript earns its keep: numbers in the prose come from the data, so they can never drift out of sync with it. Inline R code uses single backticks, `` `r expr` ``. Write an opening paragraph like this:
+This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, `` `r expr` ``. Write an opening paragraph like this:
 
 ```markdown
 We monitored vegetation recovery at `r n_distinct(sites$site)` restoration
 sites across `r n_distinct(sites$date)` quarterly surveys. Mean vegetation
 cover rose from `r round(mean(first$vegetation_cover_pct))`% at the first
-survey to `r round(mean(latest$vegetation_cover_pct))`% at the most recent —
+survey to `r round(mean(latest$vegetation_cover_pct))`% at the most recent,
 an increase of `r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))`
 percentage points.
 ```
 
 When rendered, the backticked expressions become real values (4 sites, 8 surveys, and so on). Change the CSV and the sentence updates itself.
 
-## Step 6 — Add a Figure From Code
+## Step 6: Add a figure from code
 
 Add a code chunk that draws a **ggplot** figure. The `fig-` prefix on the label makes it cross-referenceable, and `fig-cap` gives it a numbered caption:
 
@@ -175,12 +175,12 @@ Then refer to it in your text. Quarto turns `@fig-cover` into "Figure 1" and lin
 Cover increased at every site over the monitoring period (@fig-cover).
 ```
 
-## Step 7 — Add a Citation
+## Step 7: Add a citation
 
 In the **visual editor**, put your cursor where the citation should go and choose **Insert → Citation**. The dialog can pull references straight from a **DOI** or from your **Zotero** library (as well as Crossref, PubMed, and DataCite):
 
-- **From a DOI:** paste a DOI and Quarto fetches the full reference. For example, try `10.1111/rec.13035` (the SER international standards for ecological restoration).
-- **From Zotero:** if you have Zotero installed and the integration enabled, search your own library by author or title.
+- From a DOI: paste a DOI and Quarto fetches the full reference. For example, try `10.1111/rec.13035` (the SER international standards for ecological restoration).
+- From Zotero: if you have Zotero installed and the integration enabled, search your own library by author or title.
 
 Either way, Quarto inserts an `@citation-key` in your text, appends the entry to `references.bib`, and adds a formatted reference list at the end on render. A sentence like:
 
@@ -214,7 +214,7 @@ Add the reference by hand. Paste this entry at the end of `references.bib`, then
 `references.bib` stores the *facts*; a CSL style decides the *formatting*. To format references for a specific journal, add a `csl:` line to your front matter pointing at a style file (browse thousands at the [Zotero Style Repository](https://www.zotero.org/styles)). No re-typing required.
 :::
 
-## Step 8 — Render to PDF and HTML
+## Step 8: Render to PDF and HTML
 
 Build all formats at once by running this in a terminal inside the `my-manuscript/` folder:
 
@@ -232,7 +232,7 @@ While writing, the **Render** button in your editor (or `quarto preview` in the 
 `quarto render` ran your R code, placed the results in the text and the figure, and laid the same content out twice: as a web page and as a typeset PDF. Rendering several formats from one source is the main reason to write a manuscript in Quarto.
 :::
 
-## Step 9 — Apply a Journal Template (Optional)
+## Step 9: Apply a journal template (optional)
 
 Journals expect their own layout. Quarto maintains a set of journal templates at [github.com/quarto-journals](https://github.com/quarto-journals/), including Elsevier, PLOS, ACS (American Chemical Society), AGU (American Geophysical Union), ACM, and JSS (Journal of Statistical Software).
 
@@ -261,26 +261,26 @@ format:
 
 Run `quarto render` again. The PDF now follows the Elsevier article layout, and nothing in `index.qmd` had to change. Each journal extension names its formats after the journal, so use `plos-pdf`, `acs-pdf` or `agu-pdf` if you install a different one.
 
-## Stretch Tasks
+## Stretch tasks
 
 If you finish early, try one of these:
 
-- **Add an abstract and keywords** to the front matter (`abstract: |` and `keywords:`) and see them appear in both outputs.
-- **Add a table** from the data, for example the latest reading per site with `knitr::kable()`. Give it a `#| label: tbl-` and cross-reference it with `@tbl-...`.
-- **Compare scenarios.** Read `restoration-scenarios.csv` and add a second figure faceted or coloured by `scenario` (Baseline, Moderate, Intensive).
-- **Add a Word output** for collaborators who want track changes: add `docx: default` at the end of the `format:` block and render again.
+- Add an abstract and keywords to the front matter (`abstract: |` and `keywords:`) and see them appear in both outputs.
+- Add a table from the data, for example the latest reading per site with `knitr::kable()`. Give it a `#| label: tbl-` and cross-reference it with `@tbl-...`.
+- Compare scenarios. Read `restoration-scenarios.csv` and add a second figure faceted or coloured by `scenario` (Baseline, Moderate, Intensive).
+- Add a Word output for collaborators who want track changes: add `docx: default` at the end of the `format:` block and render again.
 
-## Adapting Path A (Your Own Manuscript)
+## Adapting Path A (your own manuscript)
 
 Converting your own work follows exactly the same skeleton:
 
 - Paste your existing prose into `index.qmd` under Introduction / Methods / Results / Discussion headings.
-- Drop your data into `data/` and your analysis into the setup chunk (or `source()` a separate script — see the tip on the [Writing Manuscripts](../use-cases/manuscripts.qmd) page).
+- Drop your data into `data/` and your analysis into the setup chunk (or `source()` a separate script; see the tip on the [Writing manuscripts](../use-cases/manuscripts.qmd) page).
 - Replace every hard-typed statistic in your Results with inline `` `r ...` `` code.
 - Re-create your key figure as a labelled code chunk and cross-reference it.
 - Import your existing `.bib` (or pull citations from Zotero) and cite with `@key`.
 
-## Self-Check
+## Self-check
 
 - Does `quarto render` produce **both** an HTML article and a PDF in `_manuscript/` without errors?
 - Does the byline show you and your co-author, with ORCIDs and affiliations?

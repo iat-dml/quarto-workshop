@@ -4,17 +4,17 @@ title: "Dashboards"
 
 A dashboard presents several results together on a single screen, combining key figures and charts into one clear, visual overview. Quarto builds one from the same plain-text, reproducible workflow you use for everything else, with [`format: dashboard`]{.nowrap}.
 
-## When a Dashboard Helps
+## When a dashboard helps
 
 Dashboards are useful whenever you want to show data and results directly, for example in a meeting or on a project website, rather than write a full report. The people looking will often just want a quick, current view of a few key indicators. A dashboard gives them that, drawn from the same reproducible analysis as the rest of your work rather than built in a separate tool.
 
-## How A Dashboard Is Structured
+## How a dashboard is structured
 
 A Quarto dashboard is built from a few simple pieces:
 
-- [**`format: dashboard`**]{.nowrap} in the YAML turns the document into a dashboard.
-- **Headings** lay out the page: `##` starts a row, and the cards inside it sit side by side as columns.
-- **Cards** are the panels that hold your content, such as a chart, a table, or plain text. A special kind is the **value box**, which displays a single headline number.
+- [`format: dashboard`]{.nowrap} in the YAML turns the document into a dashboard.
+- Headings lay out the page: `##` starts a row, and the cards inside it sit side by side as columns.
+- Cards are the panels that hold your content, such as a chart, a table, or plain text. A special kind is the value box, which displays a single headline number.
 
 In code, the shape looks like this (each code cell uses an executable `{r}` block, shown here as plain text):
 
@@ -40,7 +40,7 @@ plot_ly(...)
 ```
 ````
 
-## What You Will Build
+## What you will build
 
 In the exercise you will build a small restoration-monitoring dashboard with three value boxes, an interactive chart, and a sortable table. You can explore it right here: hover over the chart to read values, and click items in the legend to toggle sites.
 
@@ -48,15 +48,15 @@ In the exercise you will build a small restoration-monitoring dashboard with thr
 
 A dashboard is normally a full-screen page of its own. [See it in full screen here](../dashboards/restoration-dashboard.html){target="_blank"}.
 
-## How Interactive Can a Dashboard Be?
+## How interactive can a dashboard be?
 
 Quarto dashboards can be interactive in several ways, all running entirely in the browser with no server. You can try the first two on the live dashboard above:
 
-- **[Plotly charts](https://plotly.com/)**: hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.
-- **Sortable tables**: click a column header in the table above to reorder the rows (built with the `DT` package).
-- **Tabsets**: switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.
+- With [Plotly charts](https://plotly.com/) you can hover to read exact values, zoom and pan, and click items in the legend to show or hide individual series.
+- In a sortable table (built with the `DT` package) you can click a column header to reorder the rows.
+- Tabsets switch between several precomputed views, for example the same metric under different management scenarios. Because every view is built when the document is rendered, this feels like a what-if explorer while the page stays completely static. The exercise shows how to add this.
 
-The boundary is genuine reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs a running server which a static host like GitHub Pages cannot provide. To build such a dashboard you can use the [Shiny](https://shiny.posit.co/) framework.
+The limit is reactivity. A dashboard that recomputes its data in response to user input, such as filters or sliders that re-run the analysis, needs a running server which a static host like GitHub Pages cannot provide. To build such a dashboard you can use the [Shiny](https://shiny.posit.co/) framework.
 
 For inspiration on what dashboards can look like, browse the [official Quarto dashboard examples](https://quarto.org/docs/dashboards/examples/).
 
