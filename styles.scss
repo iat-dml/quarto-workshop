@@ -1,23 +1,32 @@
 /*-- scss:defaults --*/
-// Most tokens come from brand.yml. We only override structural Bootstrap
-// variables that brand.yml does not expose, and add a few design tokens
-// used by the rules layer below.
+// Colours and fonts come from _brand.yml. Only structural Bootstrap and Quarto
+// variables that brand.yml has no slot for are set here. Brand variables are
+// not yet defined at this point, so the few colours below are written out;
+// each comment names the brand token it matches.
 
-$body-font-size: 1.0625rem !default;
-$h1-font-size: 2.6rem !default;
-$h2-font-size: 1.9rem !default;
-$h3-font-size: 1.45rem !default;
-$h4-font-size: 1.15rem !default;
-$headings-letter-spacing: -0.012em;
+$h1-font-size: 2.9rem !default;
+$h2-font-size: 2.1rem !default;
+$h3-font-size: 1.5rem !default;
+$h4-font-size: 1.2rem !default;
+$headings-font-weight: 400 !default;   // DM Serif Display has one weight
 
-$border-radius: 0.5rem !default;
-$border-radius-sm: 0.35rem !default;
-$border-radius-lg: 0.75rem !default;
+$border-radius: 0.75rem !default;
+$border-radius-sm: 0.375rem !default;
+$border-radius-lg: 1.125rem !default;
 
-$navbar-padding-y: 0.85rem !default;
-$navbar-brand-font-size: 1.05rem !default;
+$navbar-padding-y: 0.55rem !default;
+$navbar-bg: #FFFFFF !default;          // white; Quarto would otherwise use the primary green
+$navbar-fg: #16322B !default;          // ink
+$navbar-hl: #2F7F43 !default;          // green
+$footer-bg: transparent !default;      // the forest band is drawn in the rules layer
+$footer-fg: #CFE3C8 !default;          // sage-light
 
-// Content container — wider than Bootstrap default for richer layouts
+$callout-color-note: #153D31 !default;       // forest
+$callout-color-tip: #2F7F43 !default;        // green
+$callout-color-warning: #8A5A00 !default;    // amber
+$callout-color-important: #B3261E !default;  // red
+$callout-color-caution: #B3261E !default;    // red
+
 $content-padding-top: 1.5rem !default;
 
 /*-- scss:rules --*/
@@ -29,72 +38,83 @@ $content-padding-top: 1.5rem !default;
 .nowrap code { white-space: nowrap !important; }
 
 // ─── Design tokens ──────────────────────────────────────────────────────
-// Expose every brand color as a CSS variable so JS/HTML and components
-// outside the Bootstrap pipeline can use them. Names mirror brand.yml.
+// Every brand colour as a CSS variable, named as in _brand.yml, plus the few
+// derived values the components share. DESIGN.md documents their use.
 :root {
-  // Semantic colors — map to Bootstrap variables derived from brand.yml
-  --ds-paper:        #{$body-bg};
-  --ds-paper-2:      #{$light};
-  --ds-paper-3:      #{$brand-paper-3};
-  --ds-ink:          #{$body-color};
-  --ds-ink-2:        #{$secondary};
-  --ds-muted:        #{$tertiary};
-  --ds-indigo:       #{$primary};
-  --ds-coral:        #{$danger};
-  --ds-moss:         #{$success};
-  --ds-amber:        #{$warning};
+  --ds-white:      #{$brand-white};
+  --ds-mint:       #{$brand-mint};
+  --ds-mint-deep:  #{$brand-mint-deep};
+  --ds-mint-pale:  #{$brand-mint-pale};
+  --ds-leaf:       #{$brand-leaf};
+  --ds-green:      #{$brand-green};
+  --ds-forest:     #{$brand-forest};
+  --ds-forest-2:   #{$brand-forest-2};
+  --ds-ink:        #{$brand-ink};
+  --ds-muted:      #{$brand-muted};
+  --ds-sage-light: #{$brand-sage-light};
+  --ds-leaf-light: #{$brand-leaf-light};
+  --ds-amber:      #{$brand-amber};
+  --ds-red:        #{$brand-red};
+  --ds-teal-ink:   #{$brand-teal-ink};
 
-  // Tinted surfaces — palette keys are identical in both brand files
-  --ds-indigo-soft:  #{$brand-indigo-soft};
-  --ds-coral-soft:   #{$brand-coral-soft};
-  --ds-moss-soft:    #{$brand-moss-soft};
-  --ds-amber-soft:   #{$brand-amber-soft};
+  --ds-rule:       #{rgba($brand-forest, 0.14)};
+  --ds-rule-soft:  #{rgba($brand-forest, 0.08)};
+  --ds-band:       linear-gradient(135deg, var(--ds-forest) 0%, var(--ds-forest-2) 100%);
+  --ds-shadow:     0 14px 30px -22px #{rgba($brand-forest, 0.7)};
+  --ds-shadow-lift: 0 22px 40px -24px #{rgba($brand-forest, 0.75)};
+  --ds-cut:        clamp(2.25rem, 5vw, 4.5rem);   // height of a slanted section edge
 
-  --ds-rule: color-mix(in oklab, #{$body-color} 12%, transparent);
-  --ds-shadow: 0 1px 2px color-mix(in oklab, #{$body-color} 4%, transparent),
-               0 6px 24px -10px color-mix(in oklab, #{$body-color} 10%, transparent);
-
-  --ds-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --ds-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --ds-sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --ds-serif: "DM Serif Display", Georgia, serif;
+  --ds-sans:  "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ds-mono:  "IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
 
-// ─── Typography refinements ─────────────────────────────────────────────
+// ─── Typography ─────────────────────────────────────────────────────────
 
 body {
-  font-feature-settings: "ss01", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  letter-spacing: $headings-letter-spacing;
-  font-feature-settings: "ss01";
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
+  letter-spacing: -0.01em;
 }
 
-// Page title — slightly oversized + tight, italic emphasis available via <em>
+// Small headings read better in the sans than in a display serif.
+h5, h6, .h5, .h6 {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+// Quarto draws a rule under every h2; the serif headings carry the break alone.
+#quarto-document-content h2,
+main h2 {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+// Page title: oversized and tight, italic emphasis available via <em>
 h1.title {
-  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-  line-height: 1.04;
+  font-size: clamp(2.4rem, 4.6vw, 3.5rem);
+  line-height: 1.05;
   margin-bottom: 0.4rem;
 }
-h1.title em { font-style: italic; color: var(--ds-coral); }
-h1.title code { font-size: 0.58em; }
+h1.title em { font-style: italic; color: var(--ds-green); }
+h1.title code { font-size: 0.55em; }
 
 .subtitle, p.subtitle {
-  font-family: var(--ds-serif);
-  font-style: italic;
+  font-family: var(--ds-sans);
   font-weight: 400;
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-  color: var(--ds-ink-2);
-  line-height: 1.35;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  color: var(--ds-muted);
+  line-height: 1.45;
   margin-bottom: 1.5rem;
 }
 
-// Quarto wordmark used inline in place of the word "Quarto" (homepage
-// subtitle). The SVG is a wide wordmark, so size it off the text height and
-// leave a word space after it, as the decks do in revealjs.scss.
+// Quarto wordmark used inline in place of the word "Quarto". The SVG is a wide
+// wordmark, so size it off the text height and leave a word space after it.
 img.inline-logo {
   height: 0.85em;
   width: auto;
@@ -102,19 +122,16 @@ img.inline-logo {
   margin: 0 0.3em 0 0;
 }
 
-// Section numbers from Quarto's `number-sections: true` — tone them down
 .header-section-number {
   color: var(--ds-muted);
   font-feature-settings: "tnum";
-  font-weight: 500;
   margin-right: 0.4em;
 }
 
-// Lead paragraph after a title — bigger, looser
-.quarto-title-block + p,
-.quarto-title-block + .lead {
-  font-size: 1.15em;
-  color: var(--ds-ink-2);
+// Bullets: a leaf-green square marker, as on the conference site.
+#quarto-document-content ul:not(.list-unstyled):not(.nav) {
+  list-style: square;
+  > li::marker { color: var(--ds-leaf); }
 }
 
 // ─── Links ──────────────────────────────────────────────────────────────
@@ -122,162 +139,176 @@ img.inline-logo {
 a {
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  text-decoration-color: color-mix(in oklab, currentColor 40%, transparent);
   transition: text-decoration-color 120ms ease, color 120ms ease;
 
   &:hover {
+    color: var(--ds-forest);
     text-decoration-color: currentColor;
   }
 }
 
 // ─── Navbar ─────────────────────────────────────────────────────────────
+// White bar, DML mark and the site title in the display serif.
 
 .navbar {
-  border-bottom: 1px solid var(--ds-rule);
-  background-color: var(--ds-paper) !important;
-  backdrop-filter: saturate(1.1) blur(6px);
-}
-.quarto-dark .navbar { background-color: var(--ds-paper) !important; }
-
-.navbar-brand {
-  font-family: var(--ds-serif);
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
+  background-color: var(--ds-white) !important;
+  border-bottom: 0;
+  box-shadow: 0 1px 0 var(--ds-rule-soft);
 }
 
-.navbar-brand-logo,
-.navbar-brand .navbar-logo,
-.navbar .navbar-logo {
-  height: 28px;       // pick the height you want
+.navbar .navbar-logo,
+.navbar-brand-logo .navbar-logo {
+  height: 40px;
+  max-height: 40px;
   width: auto;
-  display: inline-block;
-  vertical-align: middle;
 }
 
+.navbar .navbar-title {
+  font-family: var(--ds-serif);
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  color: var(--ds-forest) !important;
+}
+
+// No active marker: with one sidebar for the whole site, Quarto marks the
+// first navbar item active on every page in it.
 .navbar .nav-link {
   font-weight: 500;
-  color: var(--ds-ink-2) !important;
-  &:hover, &.active { color: var(--ds-ink) !important; }
+  color: var(--ds-ink) !important;
+  &:hover { color: var(--ds-green) !important; }
 }
 
-.navbar .navbar-brand,
-.navbar .navbar-title {
-  color: var(--ds-ink) !important;
-}
+// Quarto repeats the brand logo above the sidebar; the navbar already shows it.
+.sidebar-logo-link { display: none !important; }
 
 // ─── Sidebar ────────────────────────────────────────────────────────────
 
-.sidebar {
-  font-size: 0.94rem;
-}
-// Section labels in the sidebar — force the sans face.
-// The `>` direct-child combinator ensures only the section header container is
-// targeted, not the leaf items nested inside it.
+.sidebar { font-size: 0.94rem; }
+
+// Section labels: sentence case in the sans, forest green.
 .sidebar .sidebar-item-section > .sidebar-item-container .sidebar-item-text,
-.sidebar .sidebar-item-section > .sidebar-item-container .menu-text,
-.sidebar .sidebar-item-section > .sidebar-item-text,
-.sidebar .sidebar-item-section > .sidebar-item-text .menu-text {
-  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif !important;
+.sidebar .sidebar-item-section > .sidebar-item-container .menu-text {
+  font-family: var(--ds-sans) !important;
   font-weight: 600 !important;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--ds-muted);
+  font-size: 0.84rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ds-forest);
 }
-.sidebar .sidebar-item .sidebar-item-text {
-  color: var(--ds-ink-2);
-  font-weight: 400;
+
+.sidebar a.sidebar-link {
+  border-radius: 0.6rem;
+  padding: 0.25rem 0.65rem;
+  color: var(--ds-ink);
+  &:hover { background-color: var(--ds-mint-pale); color: var(--ds-ink); }
 }
-.sidebar .sidebar-item.active .sidebar-item-text,
-.sidebar .sidebar-item .sidebar-item-text:hover {
-  color: var(--ds-indigo);
+.sidebar a.sidebar-link.active,
+.sidebar a.sidebar-link.active .menu-text {
+  background-color: var(--ds-mint);
+  color: var(--ds-green);
+  font-weight: 600;
 }
-.sidebar .sidebar-item.active .sidebar-item-container {
-  border-left: 2px solid var(--ds-indigo);
-  padding-left: 0.6rem;
-  margin-left: -0.6rem;
-}
-// "Go Further" is a single-page section — hide the duplicate child item
+
+// "Go further" is a single-page section: hide the duplicate child item
 // so only the clickable header link shows.
 .sidebar-item-section:last-child > ul.sidebar-section {
   display: none !important;
 }
 
+// ─── TOC (right rail) ───────────────────────────────────────────────────
+
+#TOC, .quarto-secondary-nav { font-size: 0.88rem; }
+
+#toc-title {
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  font-size: 0.84rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ds-forest) !important;
+}
+
+nav[role="doc-toc"] a.nav-link { color: var(--ds-muted); }
+nav[role="doc-toc"] a.nav-link:hover { color: var(--ds-ink); }
+nav[role="doc-toc"] a.nav-link.active {
+  color: var(--ds-green) !important;
+  font-weight: 600;
+  border-left-color: var(--ds-leaf) !important;
+}
+
 // ─── Callouts ───────────────────────────────────────────────────────────
-// A hairline on all four sides, like every other surface. The callout type is
-// carried by the header text and icon colour only, never by a side stripe.
+// A mint fill and no frame. The type shows in the header text and icon
+// colour only, never in a side stripe.
 
 div.callout,
 div.callout.callout-style-default,
 div.callout.callout-style-simple {
-  border-radius: $border-radius-lg !important;
-  border: 1px solid var(--ds-rule) !important;
-  background-color: var(--ds-paper-2);
+  border: 0 !important;
+  border-radius: $border-radius !important;
+  background-color: var(--ds-mint);
   box-shadow: none;
 }
 div.callout .callout-header {
   font-family: var(--ds-sans);
   font-weight: 600;
-  letter-spacing: -0.005em;
   background-color: transparent !important;
-  border-bottom: 1px solid var(--ds-rule);
+  border-bottom: 1px solid var(--ds-rule-soft);
 }
-// Collapsed callouts show no body, so no rule under the header.
-div.callout .callout-header.collapsed { border-bottom: none; }
+div.callout .callout-header.collapsed { border-bottom: 0; }
 
-.callout-note      .callout-header { color: var(--ds-indigo); }
-.callout-tip       .callout-header { color: var(--ds-moss); }
+.callout-note      .callout-header { color: var(--ds-forest); }
+.callout-tip       .callout-header { color: var(--ds-green); }
 .callout-warning   .callout-header { color: var(--ds-amber); }
 .callout-important .callout-header,
-.callout-caution   .callout-header { color: var(--ds-coral); }
+.callout-caution   .callout-header { color: var(--ds-red); }
 
 // ─── Step accordion (exercises) ─────────────────────────────────────────
-// Headings marked {.step} become <details> panels via
-// assets/step-accordion.html. Same surface as callouts: Paper 2 fill, lg
-// radius, a hairline on all four sides; the open/closed state is shown by a
-// chevron only.
+// Headings marked {.step} become <details> panels via assets/step-accordion.html.
+// The page stays white; the tint marks what can be opened. Closed steps are
+// mint bars, the open step has a deeper mint header over a white body.
 
-.steps {
-  margin: 1.25rem 0 2rem;
-}
+.steps { margin: 1.5rem 0 2rem; }
+
 .steps-toolbar {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
 }
+
 .steps-toggle {
+  min-height: 2.5rem;
+  padding: 0.35rem 1.15rem;
   font-family: var(--ds-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ds-ink-2);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ds-forest);
   background: transparent;
-  border: 1px solid var(--ds-rule);
+  border: 2px solid var(--ds-forest);
   border-radius: 999px;
-  padding: 0.3rem 0.9rem;
   cursor: pointer;
-  &:hover { color: var(--ds-indigo); border-color: var(--ds-indigo); }
-  &:focus-visible { outline: 2px solid var(--ds-indigo); outline-offset: 2px; }
+  &:hover { background: var(--ds-forest); color: var(--ds-white); }
+  &:focus-visible { outline: 2px solid var(--ds-green); outline-offset: 2px; }
 }
 
 .steps > section.step {
   margin: 0;
-  & + section.step { margin-top: 0.6rem; }
+  & + section.step { margin-top: 0.65rem; }
 }
 
 details.step-item {
-  background-color: var(--ds-paper-2);
-  border: 1px solid var(--ds-rule);
-  border-radius: $border-radius-lg;
+  border-radius: 0.875rem;
 
   > summary {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.85rem 1.15rem;
+    padding: 0.9rem 1.25rem;
     cursor: pointer;
     list-style: none;
-    border-radius: $border-radius-lg;
+    background-color: var(--ds-mint);
+    border-radius: 0.875rem;
+    transition: background-color 0.15s ease;
     &::-webkit-details-marker { display: none; }
     &::marker { content: ""; }
 
@@ -285,10 +316,11 @@ details.step-item {
       flex: 1;
       min-width: 0;
       margin: 0;
-      font-family: var(--ds-sans);
-      font-size: 1.15rem;
-      font-weight: 600;
-      line-height: 1.35;
+      font-family: var(--ds-serif);
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.25;
+      color: var(--ds-forest);
       border: 0;
       padding: 0;
     }
@@ -300,31 +332,32 @@ details.step-item {
       width: 0.55rem;
       height: 0.55rem;
       margin: -0.2rem 0.2rem 0 0;
-      border-right: 2px solid var(--ds-muted);
-      border-bottom: 2px solid var(--ds-muted);
+      border-right: 2px solid var(--ds-forest);
+      border-bottom: 2px solid var(--ds-forest);
       transform: rotate(45deg);
       transition: transform 0.2s ease;
     }
 
-    &:hover > :is(h2, h3, h4) { color: var(--ds-indigo); }
-    &:hover::after { border-color: var(--ds-indigo); }
-    &:focus-visible { outline: 2px solid var(--ds-indigo); outline-offset: 2px; }
+    &:hover { background-color: color-mix(in oklab, var(--ds-mint-deep) 55%, var(--ds-mint)); }
+    &:focus-visible { outline: 2px solid var(--ds-green); outline-offset: 2px; }
   }
 
   &[open] > summary {
-    border-bottom: 1px solid var(--ds-rule);
-    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    background-color: var(--ds-mint-deep);
+    border-radius: 0.875rem 0.875rem 0 0;
     &::after { transform: rotate(-135deg); margin-top: 0.25rem; }
   }
 }
 
 .step-body {
-  padding: 1rem 1.15rem 1.15rem;
+  padding: 1.1rem 1.25rem 1.2rem;
   min-width: 0;
+  background-color: var(--ds-white);
+  border: 1px solid var(--ds-mint-deep);
+  border-top: 0;
+  border-radius: 0 0 0.875rem 0.875rem;
   > :first-child { margin-top: 0; }
   > :last-child { margin-bottom: 0; }
-  // Code blocks and callouts sit on Paper 2 already; lift them to Paper.
-  div.sourceCode, pre.sourceCode, div.callout { background-color: var(--ds-paper) !important; }
 }
 
 // Opening animation where the browser can size to `auto` (Chromium 131+);
@@ -342,12 +375,13 @@ details.step-item {
 }
 
 @media (max-width: 575.98px) {
-  details.step-item > summary { padding: 0.75rem 0.85rem; gap: 0.5rem; }
-  details.step-item > summary > :is(h2, h3, h4) { font-size: 1.02rem; }
-  .step-body { padding: 0.85rem 0.85rem 1rem; }
+  details.step-item > summary { padding: 0.75rem 0.9rem; gap: 0.5rem; }
+  details.step-item > summary > :is(h2, h3, h4) { font-size: 1.15rem; }
+  .step-body { padding: 0.85rem 0.9rem 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  details.step-item > summary,
   details.step-item > summary::after { transition: none; }
   details.step-item::details-content { transition: none; }
 }
@@ -356,68 +390,72 @@ details.step-item {
   details.step-item::details-content { block-size: auto; }
 }
 
-// ─── Code blocks & inline code ──────────────────────────────────────────
+// ─── Code ───────────────────────────────────────────────────────────────
 
-code, kbd, samp, pre {
-  font-family: var(--ds-mono);
-  font-feature-settings: "ss01", "calt";
-}
+code, kbd, samp, pre { font-family: var(--ds-mono); }
 
 :not(pre) > code {
-  padding: 0.12em 0.38em;
+  padding: 0.12em 0.4em;
   border-radius: $border-radius-sm;
-  font-size: 0.9em;
-  background: var(--ds-moss-soft);
-  color: var(--ds-moss);
-  border: 1px solid color-mix(in oklab, var(--ds-moss) 18%, transparent);
+  font-size: 0.88em;
+  background: var(--ds-mint-deep);
+  color: var(--ds-forest-2);
+  border: 0;
 }
 
 div.sourceCode, pre.sourceCode {
   border-radius: $border-radius;
-  background: var(--ds-paper-2) !important;
-  border: 1px solid var(--ds-rule);
+  background: var(--ds-mint-pale) !important;
+  border: 1px solid var(--ds-rule-soft);
   position: relative;
 }
 div.sourceCode { margin: 1.1rem 0; }
 pre.sourceCode {
-  padding: 1rem 1.1rem !important;
-  font-size: 0.92em;
+  padding: 1rem 1.15rem !important;
+  font-size: 0.9em;
   line-height: 1.55;
 }
 
-// Language tag in the corner of code blocks
 div.sourceCode[class*="cell-"]::before,
 div.sourceCode.cell-code::before { content: none; }
 
-// "Copy" button styling
-.code-copy-button {
-  color: var(--ds-muted) !important;
-  &:hover { color: var(--ds-indigo) !important; }
+// Syntax colours from the palette (Pandoc's highlighting classes).
+div.sourceCode code span {
+  &.kw, &.cf, &.im { color: var(--ds-forest); font-weight: 500; }
+  &.fu, &.bu, &.ex { color: var(--ds-green); }
+  &.st, &.ch, &.ss, &.vs, &.sc { color: var(--ds-teal-ink); }
+  &.co, &.do, &.an, &.cv, &.in { color: var(--ds-muted); font-style: italic; }
+  &.dv, &.bn, &.fl, &.cn { color: var(--ds-amber); }
+  &.ot, &.at, &.va, &.op, &.dt, &.pp { color: var(--ds-ink); }
+  &.al, &.er, &.wa { color: var(--ds-red); }
 }
 
-// kbd
+.code-copy-button {
+  color: var(--ds-muted) !important;
+  &:hover { color: var(--ds-green) !important; }
+}
+
 kbd {
-  background: var(--ds-paper);
+  background: var(--ds-white);
   border: 1px solid var(--ds-rule);
   border-bottom-width: 2px;
   border-radius: $border-radius-sm;
   padding: 0.05em 0.45em;
   font-size: 0.85em;
   color: var(--ds-ink);
-  box-shadow: 0 1px 0 var(--ds-rule);
+  box-shadow: none;
 }
 
 // ─── Blockquote ─────────────────────────────────────────────────────────
 
 blockquote, .blockquote {
-  border-left: 3px solid var(--ds-indigo) !important;
-  background: var(--ds-indigo-soft);
-  border-radius: 0 $border-radius $border-radius 0;
-  padding: 0.85rem 1.1rem !important;
+  border-left: 3px solid var(--ds-leaf) !important;
+  background: transparent;
+  padding: 0.2rem 0 0.2rem 1.1rem !important;
   font-family: var(--ds-serif);
-  font-style: italic;
-  font-size: 1.08em;
-  color: var(--ds-ink);
+  font-size: 1.2em;
+  line-height: 1.4;
+  color: var(--ds-forest);
 }
 
 // ─── Tables ─────────────────────────────────────────────────────────────
@@ -426,197 +464,116 @@ table, .table {
   font-variant-numeric: tabular-nums;
   font-size: 0.95em;
 }
-.table > thead {
-  border-bottom: 2px solid var(--ds-ink);
-}
+.table > thead { border-bottom: 2px solid var(--ds-forest); }
 .table > thead th {
   font-family: var(--ds-sans);
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 0.78em;
-  color: var(--ds-ink-2);
-}
-
-// ─── TOC (right rail) ───────────────────────────────────────────────────
-
-#TOC, .quarto-secondary-nav {
-  font-size: 0.88rem;
-}
-.toc-active > a, #toc-title { color: var(--ds-indigo) !important; }
-#toc-title {
-  font-family: var(--ds-sans);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--ds-muted) !important;
+  color: var(--ds-forest);
 }
 
 // ─── Buttons ────────────────────────────────────────────────────────────
+// Pills, as on the conference site: solid green for the main action,
+// a forest outline for the others.
 
 .btn {
   border-radius: 999px;
-  font-weight: 500;
-  padding: 0.55rem 1.1rem;
-  letter-spacing: 0.005em;
+  border-width: 2px;
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .btn-primary {
-  background: var(--ds-ink);
-  border-color: var(--ds-ink);
-  color: var(--ds-paper);
-  &:hover {
-    background: var(--ds-indigo);
-    border-color: var(--ds-indigo);
-    color: var(--ds-paper);
+  background-color: var(--ds-green);
+  border-color: var(--ds-green);
+  color: var(--ds-white);
+  &:hover, &:focus-visible {
+    background-color: var(--ds-forest);
+    border-color: var(--ds-forest);
+    color: var(--ds-white);
+    transform: translateY(-2px);
   }
 }
-.btn-outline {
-  color: var(--ds-ink);
-  border-color: var(--ds-rule) !important;
-  background: transparent;
-  &:hover {
-    background: var(--ds-paper-2);
-    border-color: var(--ds-ink-2);
-    color: var(--ds-ink);
+.btn-outline,
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--ds-forest) !important;
+  color: var(--ds-forest);
+  &:hover, &:focus-visible {
+    background-color: var(--ds-forest);
+    color: var(--ds-white);
   }
 }
-.btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.25rem 0; }
-
-// ─── Tags / chips for exercise labels etc. ──────────────────────────────
-
-.tag, .badge.bg-primary, .badge.bg-secondary {
-  font-family: var(--ds-mono);
-  font-size: 0.74em;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.25em 0.7em;
-  border-radius: 999px;
+.btn-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.25rem 0;
+  > p { margin: 0; }
 }
 
-// ─── Figures + images ───────────────────────────────────────────────────
+// ─── Figures, rules, selection ──────────────────────────────────────────
 
-figure, .figure {
-  margin: 1.5rem 0;
-}
+figure, .figure { margin: 1.5rem 0; }
 figcaption, .figure-caption {
-  font-family: var(--ds-serif);
-  font-style: italic;
-  font-size: 0.95em;
+  font-family: var(--ds-sans);
+  font-size: 0.92em;
   color: var(--ds-muted);
   margin-top: 0.5rem;
 }
 
-// ─── HR — decorative quartile rule ──────────────────────────────────────
-
 hr {
-  border: none;
+  border: 0;
   height: 1px;
   background: var(--ds-rule);
   margin: 2.5rem 0;
-  position: relative;
+  opacity: 1;
 }
-hr::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background: var(--ds-paper);
-  background-image:
-    linear-gradient(var(--ds-indigo), var(--ds-indigo)),
-    linear-gradient(var(--ds-coral),  var(--ds-coral)),
-    linear-gradient(var(--ds-moss),   var(--ds-moss)),
-    linear-gradient(var(--ds-amber),  var(--ds-amber));
-  background-size: 50% 50%;
-  background-position: top left, top right, bottom left, bottom right;
-  background-repeat: no-repeat;
-  border-radius: 2px;
-}
-
-// ─── Selection ──────────────────────────────────────────────────────────
 
 ::selection {
-  background: color-mix(in oklab, var(--ds-coral) 35%, transparent);
+  background: var(--ds-mint-deep);
   color: var(--ds-ink);
 }
 
-// ───── Subject cards ──────────────────────────────────────────────────────
-// A breakpoint-free grid of navigation cards. The quartile color is carried by
-// each card's icon (and a hover border tint), never a side-stripe; the title is
-// a stretched link so the whole card is one accessible, keyboard-focusable target.
+// ─── Subject cards (homepage) ───────────────────────────────────────────
+// White cards on the mint band. The title is a stretched link, so the whole
+// card is one accessible, keyboard-focusable target.
+
 .subject-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 0;
 }
 
 .subject-cards .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 1.3rem 1.35rem 1.2rem;
-  background: var(--ds-paper-2);
-  border: 1px solid var(--ds-rule);
+  gap: 0.55rem;
+  padding: 1.5rem 1.5rem 1.3rem;
+  background: var(--ds-white);
+  border: 0;
   border-radius: $border-radius-lg;
   box-shadow: var(--ds-shadow);
   color: var(--ds-ink);
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 180ms ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  &:hover,
-  &:focus-within {
+  &:hover, &:focus-within {
     transform: translateY(-3px);
-    box-shadow: 0 6px 22px rgba(26, 27, 46, 0.13), 0 2px 6px rgba(26, 27, 46, 0.07);
-    border-color: color-mix(in oklab, var(--card-accent, var(--ds-ink)) 45%, var(--ds-rule));
+    box-shadow: var(--ds-shadow-lift);
   }
 }
 
-// Pandoc wraps each bracketed span/link in its own <p>; flatten those wrappers so
-// the card's flex column lays out the real elements. The last <p> (the arrow) takes
-// margin-top:auto to bottom-align it across cards of differing description length.
-.subject-cards .card > p { margin: 0; width: 100%; }
+// Pandoc wraps each bracketed span or link in its own <p>; flatten those so the
+// card's flex column lays out the real elements, and bottom-align the last one.
+.subject-cards .card > p { margin: 0; }
 .subject-cards .card > p:last-child { margin-top: auto; }
 
-// Quartile accent per card — the four brand hues rotate across the six cards.
-.subject-cards .card:nth-child(1) { --card-accent: var(--ds-indigo); }
-.subject-cards .card:nth-child(2) { --card-accent: var(--ds-coral); }
-.subject-cards .card:nth-child(3) { --card-accent: var(--ds-moss); }
-.subject-cards .card:nth-child(4) { --card-accent: var(--ds-amber); }
-.subject-cards .card:nth-child(5) { --card-accent: var(--ds-indigo); }
-.subject-cards .card:nth-child(6) { --card-accent: var(--ds-coral); }
-
-.subject-cards .card .card-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.6rem;
-  font-size: 1.2rem;
-  color: var(--card-accent, var(--ds-indigo));
-  background: color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 12%, transparent);
-}
-
-// Title is a real link; its ::after overlay stretches the hit area over the
-// whole card so mouse and keyboard both reach one target with the link's name.
 .subject-cards .card .card-title {
   font-family: var(--ds-serif);
-  font-size: 1.18rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  margin: 0.15rem 0 0;
-  color: var(--ds-ink);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: var(--ds-forest);
   text-decoration: none;
 
   &::after {
@@ -625,120 +582,34 @@ hr::after {
     inset: 0;
     border-radius: inherit;
   }
-  &:hover { color: var(--ds-ink); text-decoration: none; }
+  &:hover { color: var(--ds-forest); }
   &:focus-visible {
-    outline: 2px solid var(--card-accent, var(--ds-indigo));
+    outline: 2px solid var(--ds-green);
     outline-offset: 4px;
     border-radius: 3px;
   }
 }
 
 .subject-cards .card .card-desc {
-  font-size: 0.92rem;
-  color: var(--ds-ink-2);
-  margin: 0;
-  line-height: 1.5;
-  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ds-muted);
 }
 
 .subject-cards .card .card-go {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
-  color: var(--card-accent, var(--ds-muted));
-  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-.subject-cards .card:hover .card-go,
-.subject-cards .card:focus-within .card-go { transform: translateX(4px); }
-
-@media (prefers-reduced-motion: reduce) {
-  .subject-cards .card,
-  .subject-cards .card .card-go { transition: none; }
-  .subject-cards .card:hover,
-  .subject-cards .card:focus-within { transform: none; }
-  .subject-cards .card:hover .card-go,
-  .subject-cards .card:focus-within .card-go { transform: none; }
-}
-
-// ─── Team members (homepage) ────────────────────────────────────────────
-// A quiet row of people: small photo, name, role, employer. No card box,
-// no ring around the photo, no icon row.
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 1.5rem 2rem;
-  margin: 1rem 0 1.5rem;
-}
-
-.team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.7rem;
-
-  > p:first-child { margin: 0; flex: 0 0 auto; }
-}
-
-.team-photo {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-
-.team-text {
-  min-width: 0;
-  > p { margin: 0; }
-}
-
-.team-name,
-.team-role,
-.team-employer,
-.team-contact { display: block; }
-
-.team-name {
-  font-family: var(--ds-serif);
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 1.05rem;
-  line-height: 1.3;
-  color: var(--ds-ink);
-}
-a.team-name { text-decoration: none; }
-a.team-name:hover { color: var(--ds-indigo); text-decoration: underline; }
-
-.team-role {
-  font-size: 0.86rem;
-  line-height: 1.4;
-  color: var(--ds-ink-2);
-  margin-top: 0.15rem;
-}
-
-.team-employer {
-  font-family: var(--ds-mono);
-  font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ds-ink-2);
-  margin-top: 0.35rem;
-}
-
-.team-contact {
-  font-size: 0.84rem;
-  margin-top: 0.25rem;
-  overflow-wrap: anywhere;
+  color: var(--ds-green);
 }
 
 // ─── Showcase cards (website examples) ──────────────────────────────────
-// Like .subject-cards, but each card leads with a full-bleed screenshot of the
-// site. The card has no padding of its own — the image runs edge-to-edge and a
-// nested .showcase-body supplies the text padding. The title is a stretched link
-// so the whole card (screenshot included) is one accessible, focusable target.
+// Like the subject cards, but each card leads with a full-bleed screenshot.
+
 .showcase-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0 2.5rem;
 }
@@ -748,72 +619,51 @@ a.team-name:hover { color: var(--ds-indigo); text-decoration: underline; }
   display: flex;
   flex-direction: column;
   padding: 0;
-  overflow: hidden;            // clips the screenshot to the card's rounded corners
-  background: var(--ds-paper-2);
-  border: 1px solid var(--ds-rule);
+  overflow: hidden;
+  background: var(--ds-white);
+  border: 1px solid var(--ds-rule-soft);
   border-radius: $border-radius-lg;
   box-shadow: var(--ds-shadow);
   color: var(--ds-ink);
   text-decoration: none !important;
-  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 180ms ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  &:hover,
-  &:focus-within {
+  &:hover, &:focus-within {
     transform: translateY(-3px);
-    box-shadow: 0 6px 22px rgba(26, 27, 46, 0.13), 0 2px 6px rgba(26, 27, 46, 0.07);
-    border-color: color-mix(in oklab, var(--card-accent, var(--ds-ink)) 45%, var(--ds-rule));
+    box-shadow: var(--ds-shadow-lift);
   }
 }
 
-// Pandoc wraps the image and the body div each in their own <p>/block; flatten
-// those wrappers so the flex column lays out the real elements.
 .showcase-cards .card > p { margin: 0; }
 
-// Screenshot — cropped to a consistent browser-shaped frame, anchored to the top
-// so each site's header/hero is what shows. Subtle zoom on hover.
 .showcase-cards .card .showcase-thumb {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top center;
-  border-bottom: 1px solid var(--ds-rule);
-  background: var(--ds-paper-3);
-  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  border-bottom: 1px solid var(--ds-rule-soft);
+  background: var(--ds-mint-pale);
+  transition: transform 0.24s ease;
 }
 .showcase-cards .card:hover .showcase-thumb,
 .showcase-cards .card:focus-within .showcase-thumb { transform: scale(1.035); }
 
-// Text body — supplies the padding the card itself drops.
 .showcase-cards .card .showcase-body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  padding: 1.05rem 1.2rem 1.2rem;
+  padding: 1.1rem 1.25rem 1.25rem;
   flex: 1;
 }
 .showcase-cards .card .showcase-body > p { margin: 0; }
 .showcase-cards .card .showcase-body > p:last-child { margin-top: auto; }
 
-// Quartile accent per card — the four brand hues rotate across the cards.
-.showcase-cards .card:nth-child(1) { --card-accent: var(--ds-indigo); }
-.showcase-cards .card:nth-child(2) { --card-accent: var(--ds-coral); }
-.showcase-cards .card:nth-child(3) { --card-accent: var(--ds-moss); }
-.showcase-cards .card:nth-child(4) { --card-accent: var(--ds-amber); }
-.showcase-cards .card:nth-child(5) { --card-accent: var(--ds-indigo); }
-.showcase-cards .card:nth-child(6) { --card-accent: var(--ds-coral); }
-
-// Title is a real link; its ::after overlay stretches the hit area over the
-// whole card so mouse and keyboard both reach one target with the link's name.
 .showcase-cards .card .showcase-title {
   font-family: var(--ds-serif);
-  font-size: 1.12rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  color: var(--ds-ink);
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--ds-forest);
   text-decoration: none;
 
   &::after {
@@ -822,18 +672,18 @@ a.team-name:hover { color: var(--ds-indigo); text-decoration: underline; }
     inset: 0;
     border-radius: inherit;
   }
-  &:hover { color: var(--card-accent, var(--ds-ink)); text-decoration: none; }
+  &:hover { color: var(--ds-forest); }
   &:focus-visible {
-    outline: 2px solid var(--card-accent, var(--ds-indigo));
+    outline: 2px solid var(--ds-green);
     outline-offset: 4px;
     border-radius: 3px;
   }
 }
 
 .showcase-cards .card .showcase-desc {
-  font-size: 0.9rem;
-  color: var(--ds-ink-2);
+  font-size: 0.92rem;
   line-height: 1.5;
+  color: var(--ds-muted);
   flex: 1;
 }
 
@@ -841,21 +691,350 @@ a.team-name:hover { color: var(--ds-indigo); text-decoration: underline; }
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-family: var(--ds-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--card-accent, var(--ds-muted));
-  transition: gap 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ds-green);
+  transition: gap 0.18s ease;
 }
 .showcase-cards .card:hover .showcase-go,
 .showcase-cards .card:focus-within .showcase-go { gap: 0.6rem; }
 
+// ─── Team (homepage) ────────────────────────────────────────────────────
+// Round photos, name in the serif. Sits on the forest band on the homepage.
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 2rem 2.5rem;
+  margin: 2rem 0 0;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  > p:first-child { margin: 0; }
+}
+
+.team-photo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.team-text > p { margin: 0; }
+
+.team-name,
+.team-role,
+.team-employer,
+.team-contact { display: block; }
+
+.team-name {
+  font-family: var(--ds-serif);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--ds-forest);
+  text-decoration: none;
+}
+.team-role {
+  margin-top: 0.35rem;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--ds-muted);
+}
+.team-employer {
+  margin-top: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ds-green);
+}
+.team-contact {
+  margin-top: 0.3rem;
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+
+// ─── Homepage ───────────────────────────────────────────────────────────
+// Full-width bands with slanted edges, as on the conference site. Each band
+// overlaps the one before by one cut, so the slant shows the colour behind.
+// The event box is white because the conference logo has a white ground.
+
+body.home #title-block-header { display: none; }
+body.home main.content { margin-top: 0; padding-top: 0; }
+
+.home-wrap {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+// Quarto's .column-screen sets z-index 998, which would paint the last band
+// over the footer; the homepage has no sidebar for it to rise above.
+body.home .home-band.column-screen { z-index: 0; }
+
+.home-band {
+  position: relative;
+  isolation: isolate;
+  margin-top: calc(var(--ds-cut) * -1);
+  padding: calc(var(--ds-cut) + 3.5rem) 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--band-bg, var(--ds-white));
+    clip-path: polygon(0 var(--ds-cut), 100% 0, 100% calc(100% - var(--ds-cut)), 0 100%);
+  }
+
+  > .home-wrap > :first-child,
+  > .home-wrap > section:first-child > :first-child { margin-top: 0; }
+}
+
+.home-band--white  { --band-bg: var(--ds-white); }
+.home-band--mint   { --band-bg: var(--ds-mint); }
+.home-band--forest {
+  --band-bg: var(--ds-band);
+  color: var(--ds-mint);
+
+  h2, h3 { color: var(--ds-white); }
+  a { color: var(--ds-leaf-light); }
+  a:hover { color: var(--ds-white); }
+  .team-name { color: var(--ds-white); }
+  .team-role { color: var(--ds-sage-light); }
+  .team-employer { color: var(--ds-leaf-light); }
+}
+
+// The last band keeps a straight bottom edge, and its ground runs on under the
+// footer: Quarto leaves about 80px between <main> and the footer, which would
+// otherwise show white through the footer's slant.
+.home-band--last { padding-bottom: 3.5rem; }
+.home-band--last::before {
+  bottom: -7rem;
+  clip-path: polygon(0 var(--ds-cut), 100% 0, 100% 100%, 0 100%);
+}
+
+.home-hero {
+  margin-top: 0;
+  padding-top: 4rem;
+  padding-bottom: calc(var(--ds-cut) + 4.5rem);
+
+  &::before {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--ds-cut)), 0 100%);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--ds-mint) 45%, var(--ds-white)) 0%, var(--ds-mint) 75%);
+  }
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+h1.home-title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--ds-serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 6.2vw, 5.1rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--ds-forest);
+
+  em {
+    display: block;
+    font-style: italic;
+    color: var(--ds-green);
+  }
+}
+
+.home-subtitle {
+  display: block;
+  margin-top: 1.4rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ds-muted);
+
+  .inline-logo { height: 0.95em; vertical-align: -0.12em; }
+}
+
+.home-hero .btn-row { margin: 2rem 0 0; }
+
+// Video frame: white border and a forest ground. Holds the placeholder now and
+// the {{< video >}} shortcode's output later.
+.home-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--ds-band);
+  border: 6px solid var(--ds-white);
+  border-radius: $border-radius-lg;
+  box-shadow: 0 30px 60px -30px #{rgba($brand-forest, 0.55)};
+
+  > p { margin: 0; }
+  .quarto-video, video, iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.video-placeholder__play {
+  position: relative;
+  display: block;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: var(--ds-white);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 38%;
+    top: 30%;
+    border-style: solid;
+    border-width: 1.1rem 0 1.1rem 1.8rem;
+    border-color: transparent transparent transparent var(--ds-green);
+  }
+}
+
+.video-placeholder__label {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--ds-sage-light);
+}
+
+.home-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+// Long prose keeps a reading measure but stays aligned with the other bands.
+.home-narrow > * { max-width: 48rem; }
+
+.home-lead p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.home-event {
+  background: var(--ds-white);
+  border: 1px solid var(--ds-rule-soft);
+  border-radius: $border-radius-lg;
+  box-shadow: var(--ds-shadow);
+  padding: 1.75rem 1.75rem 1.5rem;
+
+  .home-event-logo {
+    display: block;
+    height: 2.9rem;
+    width: auto;
+  }
+  p:first-child { margin-bottom: 1.25rem; }
+  h2 { font-size: 1.55rem; margin: 0 0 0.8rem; }
+  dl {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.35rem 1.1rem;
+    margin: 0 0 1.1rem;
+    font-size: 0.97rem;
+  }
+  dt { font-weight: 600; color: var(--ds-forest); }
+  dd { margin: 0; }
+  p { font-size: 0.97rem; }
+  > :last-child { margin-bottom: 0; }
+}
+
+.home-note {
+  margin-top: 2rem;
+  padding: 1.4rem 1.6rem;
+  background: var(--ds-white);
+  border-radius: $border-radius-lg;
+  box-shadow: var(--ds-shadow);
+
+  h3 {
+    margin: 0 0 0.3rem;
+    font-family: var(--ds-sans);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0;
+    color: var(--ds-forest);
+  }
+  > :last-child { margin-bottom: 0; }
+}
+
+@media (max-width: 860px) {
+  .home-hero-grid,
+  .home-two { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .home-hero { padding-top: 2.5rem; }
+}
+
+// ─── Footer ─────────────────────────────────────────────────────────────
+// The forest band with a slanted top edge and the DML logo.
+
+footer.footer {
+  position: relative;
+  isolation: isolate;
+  margin-top: 3rem;
+  padding: calc(var(--ds-cut) + 1.25rem) 0 1.25rem;
+  background: transparent;
+  border: 0;
+  color: var(--ds-sage-light);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ds-band);
+    clip-path: polygon(0 var(--ds-cut), 100% 0, 100% 100%, 0 100%);
+  }
+
+  .nav-footer {
+    align-items: center;
+    min-height: 0;
+    max-width: 87.5rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    background: transparent;
+    border: 0;
+    color: var(--ds-sage-light);
+  }
+
+  a, .nav-link { color: var(--ds-leaf-light) !important; }
+  a:hover, .nav-link:hover { color: var(--ds-white) !important; }
+  .footer-dml { display: block; height: 4.25rem; width: auto; }
+}
+
+// On the homepage the footer overlaps the last band, so its slant shows mint.
+body.home footer.footer { margin-top: calc(var(--ds-cut) * -1); }
+
+// ─── Reduced motion ─────────────────────────────────────────────────────
+
 @media (prefers-reduced-motion: reduce) {
+  .btn,
+  .subject-cards .card,
   .showcase-cards .card,
   .showcase-cards .card .showcase-thumb,
   .showcase-cards .card .showcase-go { transition: none; }
+  .btn:hover,
+  .subject-cards .card:hover,
+  .subject-cards .card:focus-within,
   .showcase-cards .card:hover,
   .showcase-cards .card:focus-within { transform: none; }
   .showcase-cards .card:hover .showcase-thumb,

@@ -1,31 +1,28 @@
 /*-- scss:defaults --*/
-// Reveal.js theme for the workshop — mirrors brand tokens from
-// light-brand.yml / dark-brand.yml and inherits structural rules from styles.scss.
+// Reveal.js theme for the workshop decks. Colours and fonts come from
+// _brand.yml (project level); only values brand.yml has no slot for are set
+// here. Brand variables are not yet defined in this layer, so the colours
+// below are written out; each comment names the brand token it matches.
 // Usage in a .qmd front matter:
 //   format:
 //     revealjs:
 //       theme: [default, revealjs.scss]
 
-// ── Fonts ──────────────────────────────────────────────────────────────
-$font-family-sans-serif:  "IBM Plex Sans", system-ui, -apple-system, sans-serif !default;
-$font-family-monospace:   "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace !default;
 $presentation-font-size-root: 40px !default;
 $presentation-font-smaller: 0.7 !default;
 $presentation-line-height: 1.5 !default;
 
-// Colours, fonts and code colours come from light-brand.yml (project-level
-// `brand:`). Only values brand.yml has no slot for are set here.
-$text-muted: #6B6275 !default;   // brand muted; needed at SCSS time
+$text-muted: #53675E !default;            // muted
 
-// Text colours used on dark slide backgrounds (section dividers)
-$dark-bg-text-color:  #FBF7F0 !default;   // paper
-$dark-bg-link-color:  #F5EAD3 !default;   // amber-soft
-$dark-bg-code-color:  #E0EFE9 !default;   // moss-soft
+// Text colours on dark slide backgrounds (section dividers)
+$dark-bg-text-color: #FFFFFF !default;
+$dark-bg-link-color: #A9DB8F !default;    // leaf-light
+$dark-bg-code-color: #DDEFCB !default;    // mint-deep
 
 // ── Headings ────────────────────────────────────────────────────────────
-$presentation-heading-line-height:    1.15 !default;
-$presentation-heading-letter-spacing: -0.012em !default;
-$presentation-heading-font-weight:    600 !default;
+$presentation-heading-line-height:    1.1 !default;
+$presentation-heading-letter-spacing: -0.01em !default;
+$presentation-heading-font-weight:    400 !default;   // DM Serif Display has one weight
 $presentation-heading-text-transform: none !default;
 $presentation-heading-text-shadow:    none !default;
 $presentation-h1-text-shadow:         none !default;
@@ -36,83 +33,84 @@ $presentation-h3-font-size: 1.25em !default;
 $presentation-h4-font-size: 1.0em !default;
 
 // ── Code blocks ─────────────────────────────────────────────────────────
-$code-block-font-size:    0.58em !default;
+$code-block-font-size: 0.58em !default;
 
 // ── Layout ──────────────────────────────────────────────────────────────
 $border-width:  1px !default;
-$border-radius: 0.5rem !default;
+$border-radius: 0.75rem !default;
 
 $presentation-block-margin:           14px !default;
 $presentation-slide-text-align:       left !default;
 $presentation-title-slide-text-align: center !default;
 
 // ── Callouts ────────────────────────────────────────────────────────────
-$callout-border-width:  0.3rem !default;
+$callout-border-width:  0 !default;
 $callout-border-scale:  0% !default;
 $callout-icon-scale:    10% !default;
 $callout-margin-top:    1rem !default;
 $callout-margin-bottom: 1rem !default;
+$callout-color-note: #153D31 !default;       // forest
+$callout-color-tip: #2F7F43 !default;        // green
+$callout-color-warning: #8A5A00 !default;    // amber
+$callout-color-important: #B3261E !default;  // red
+$callout-color-caution: #B3261E !default;    // red
 
 
 /*-- scss:rules --*/
 
-// ── CSS variables (mirrors styles.scss :root block) ─────────────────────
-// Makes all brand tokens available to slide HTML via var()
+// ── Design tokens (mirrors the :root block in styles.scss) ──────────────
 .reveal {
-  --ds-paper:       var(--brand-paper);
-  --ds-paper-2:     var(--brand-paper-2);
-  --ds-paper-3:     var(--brand-paper-3);
-  --ds-ink:         var(--brand-ink);
-  --ds-ink-2:       var(--brand-ink-2);
-  --ds-muted:       var(--brand-muted);
-  --ds-indigo:      var(--brand-indigo);
-  --ds-coral:       var(--brand-coral);
-  --ds-moss:        var(--brand-moss);
-  --ds-amber:       var(--brand-amber);
-  --ds-indigo-soft: var(--brand-indigo-soft);
-  --ds-coral-soft:  var(--brand-coral-soft);
-  --ds-moss-soft:   var(--brand-moss-soft);
-  --ds-amber-soft:  var(--brand-amber-soft);
-  --ds-rule:        color-mix(in oklab, var(--brand-ink) 12%, transparent);
-  --ds-shadow:      0 1px 2px color-mix(in oklab, var(--brand-ink) 4%, transparent),
-                    0 6px 24px -10px color-mix(in oklab, var(--brand-ink) 10%, transparent);
-  --ds-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --ds-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --ds-sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --ds-white:      #{$brand-white};
+  --ds-mint:       #{$brand-mint};
+  --ds-mint-deep:  #{$brand-mint-deep};
+  --ds-mint-pale:  #{$brand-mint-pale};
+  --ds-leaf:       #{$brand-leaf};
+  --ds-green:      #{$brand-green};
+  --ds-forest:     #{$brand-forest};
+  --ds-forest-2:   #{$brand-forest-2};
+  --ds-ink:        #{$brand-ink};
+  --ds-muted:      #{$brand-muted};
+  --ds-sage-light: #{$brand-sage-light};
+  --ds-leaf-light: #{$brand-leaf-light};
+  --ds-amber:      #{$brand-amber};
+  --ds-red:        #{$brand-red};
+  --ds-teal-ink:   #{$brand-teal-ink};
+
+  --ds-rule:       #{rgba($brand-forest, 0.14)};
+  --ds-rule-soft:  #{rgba($brand-forest, 0.08)};
+  --ds-band:       linear-gradient(135deg, var(--ds-forest) 0%, var(--ds-forest-2) 100%);
+  --ds-shadow:     0 14px 30px -22px #{rgba($brand-forest, 0.7)};
+
+  --ds-serif: "DM Serif Display", Georgia, serif;
+  --ds-sans:  "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ds-mono:  "IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
+
+// Slides sit on the mint ground; panels, code and callouts are white on it.
+:root { --r-background-color: #{$brand-mint}; }
+.reveal-viewport { background-color: #{$brand-mint}; }
 
 // ── Typography ───────────────────────────────────────────────────────────
 
 .reveal {
-  font-feature-settings: "ss01", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  font-feature-settings: "ss01";
-}
-
-// Italic emphasis in titles picks up coral accent (mirrors h1.title em)
-.reveal h1 em { font-style: italic; color: var(--ds-coral); }
+// Italic emphasis in titles picks up the green (mirrors h1.title em)
+.reveal h1 em,
+.reveal h2 em { font-style: italic; color: var(--ds-green); }
 
 .reveal .subtitle,
 .reveal p.subtitle {
-  font-family: var(--ds-serif);
-  font-style: italic;
+  font-family: var(--ds-sans);
+  font-style: normal;
   font-weight: 400;
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
 }
 
-// Quarto wordmark used inline in place of the word "Quarto" (title subtitle,
-// "Why Quarto?" heading). The SVG is a wide wordmark (~4.2:1), so size it off
-// the surrounding text's height rather than a fixed width, and nudge the
-// baseline so it sits level with adjacent text instead of hanging low.
+// Quarto wordmark used inline in place of the word "Quarto". The SVG is a wide
+// wordmark (~4.2:1), so size it off the surrounding text's height.
 .reveal .inline-logo {
   height: 0.78em;
   width: auto;
@@ -120,50 +118,64 @@ $callout-margin-bottom: 1rem !default;
   margin: 0 0.05em;
 }
 
+// Slide number: Quarto moves it to the top right when a deck has a logo
+// (footer.css, `.reveal.has-logo .slide-number`); only its look is set here.
 .reveal .slide-number {
-  font-family: var(--ds-mono);
+  font-family: var(--ds-sans);
   font-size: 0.7rem;
   color: var(--ds-muted);
   background: transparent;
+
+  a { color: inherit; text-decoration: none; }
+}
+
+// DML mark, from `logo:` in the deck's YAML header.
+.reveal .slide-logo {
+  max-height: 3.2rem !important;
+  bottom: 10px !important;
+  right: 14px !important;
 }
 
 // ── Links ────────────────────────────────────────────────────────────────
 
 .reveal a {
+  color: var(--ds-green);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  text-decoration-color: color-mix(in oklab, currentColor 40%, transparent);
   transition: text-decoration-color 120ms ease, color 120ms ease;
 
-  &:hover { text-decoration-color: currentColor; }
+  &:hover { color: var(--ds-forest); text-decoration-color: currentColor; }
 }
+
+// ── Lists ────────────────────────────────────────────────────────────────
+
+.reveal ul > li::marker { color: var(--ds-leaf); }
+.reveal ul { list-style: square; }
 
 // ── Code ─────────────────────────────────────────────────────────────────
 
 .reveal code,
 .reveal kbd,
 .reveal samp,
-.reveal pre {
-  font-family: var(--ds-mono);
-  font-feature-settings: "ss01", "calt";
-}
+.reveal pre { font-family: var(--ds-mono); }
 
-// Inline code
 .reveal :not(pre) > code {
   padding: 0.1em 0.35em;
-  border-radius: 0.35rem;
+  border-radius: 0.375rem;
   font-size: 0.88em;
-  background: var(--ds-moss-soft);
-  color: var(--ds-moss);
-  border: 1px solid color-mix(in oklab, var(--ds-moss) 18%, transparent);
+  background: var(--ds-mint-deep);
+  color: var(--ds-forest-2);
+  border: 0;
 }
 
-// Code block container
+// Code blocks are white panels on the mint ground.
 .reveal div.sourceCode,
 .reveal pre.sourceCode {
-  border-radius: 0.5rem;
-  background: var(--ds-paper-2) !important;
-  border: 1px solid var(--ds-rule);
+  border-radius: 0.9rem;
+  background: var(--ds-white) !important;
+  border: 0;
+  box-shadow: var(--ds-shadow);
 }
 
 .reveal pre.sourceCode {
@@ -171,43 +183,53 @@ $callout-margin-bottom: 1rem !default;
   line-height: 1.5;
 }
 
+// Syntax colours from the palette (Pandoc's highlighting classes).
+.reveal div.sourceCode code span {
+  &.kw, &.cf, &.im { color: var(--ds-forest); font-weight: 500; }
+  &.fu, &.bu, &.ex { color: var(--ds-green); }
+  &.st, &.ch, &.ss, &.vs, &.sc { color: var(--ds-teal-ink); }
+  &.co, &.do, &.an, &.cv, &.in { color: var(--ds-muted); font-style: italic; }
+  &.dv, &.bn, &.fl, &.cn { color: var(--ds-amber); }
+  &.ot, &.at, &.va, &.op, &.dt, &.pp { color: var(--ds-ink); }
+  &.al, &.er, &.wa { color: var(--ds-red); }
+}
+
 // ── Blockquote ───────────────────────────────────────────────────────────
 
 .reveal blockquote {
-  border-left: 3px solid var(--ds-indigo) !important;
-  background: var(--ds-indigo-soft);
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 0.75rem 1rem !important;
+  border-left: 3px solid var(--ds-leaf) !important;
+  background: transparent;
+  padding: 0.2rem 0 0.2rem 1rem !important;
   font-family: var(--ds-serif);
-  font-style: italic;
-  font-size: 0.95em;
-  color: var(--ds-ink);
+  font-style: normal;
+  font-size: 1.05em;
+  color: var(--ds-forest);
   box-shadow: none;
   width: auto;
 }
 
 // ── Callouts ─────────────────────────────────────────────────────────────
-// Hairline on all four sides; the type is carried by the header colour only.
+// White on the mint ground, no frame; the type shows in the header colour.
 
 .reveal div.callout {
-  border-radius: 0.75rem !important;
-  border: 1px solid var(--ds-rule) !important;
-  background-color: var(--ds-paper-2);
-  box-shadow: none;
+  border: 0 !important;
+  border-radius: 0.9rem !important;
+  background-color: var(--ds-white);
+  box-shadow: var(--ds-shadow);
   font-size: 0.85em;
 }
 .reveal div.callout .callout-header {
   font-family: var(--ds-sans);
   font-weight: 600;
   background-color: transparent !important;
-  border-bottom: 1px solid var(--ds-rule);
+  border-bottom: 1px solid var(--ds-rule-soft);
 }
 
-.reveal .callout-note      .callout-header { color: var(--ds-indigo); }
-.reveal .callout-tip       .callout-header { color: var(--ds-moss); }
+.reveal .callout-note      .callout-header { color: var(--ds-forest); }
+.reveal .callout-tip       .callout-header { color: var(--ds-green); }
 .reveal .callout-warning   .callout-header { color: var(--ds-amber); }
 .reveal .callout-important .callout-header,
-.reveal .callout-caution   .callout-header { color: var(--ds-coral); }
+.reveal .callout-caution   .callout-header { color: var(--ds-red); }
 
 // ── Tables ───────────────────────────────────────────────────────────────
 
@@ -217,16 +239,11 @@ $callout-margin-bottom: 1rem !default;
   font-size: 0.85em;
   border-collapse: collapse;
 }
-.reveal table thead {
-  border-bottom: 2px solid var(--ds-ink);
-}
+.reveal table thead { border-bottom: 2px solid var(--ds-forest); }
 .reveal table thead th {
   font-family: var(--ds-sans);
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 0.78em;
-  color: var(--ds-ink-2);
+  color: var(--ds-forest);
 }
 .reveal table td,
 .reveal table th {
@@ -237,7 +254,7 @@ $callout-margin-bottom: 1rem !default;
 // ── HR ───────────────────────────────────────────────────────────────────
 
 .reveal hr {
-  border: none;
+  border: 0;
   height: 1px;
   background: var(--ds-rule);
   margin: 1.5rem 0;
@@ -253,12 +270,10 @@ $callout-margin-bottom: 1rem !default;
 }
 
 .reveal .subject-cards .card {
-  border: 1px solid var(--ds-rule);
-  border-left-width: 3px;
-  border-left-color: var(--card-accent, var(--ds-indigo));
-  border-radius: 0.75rem;
+  border: 0;
+  border-radius: 0.9rem;
   padding: 0.85rem 1rem;
-  background: var(--ds-paper-2);
+  background: var(--ds-white);
   color: var(--ds-ink);
   display: flex;
   flex-direction: column;
@@ -266,18 +281,8 @@ $callout-margin-bottom: 1rem !default;
   box-shadow: var(--ds-shadow);
 }
 
-// Pandoc wraps each bracketed span in its own <p>; zero those wrappers so the
-// card's flex column lays out the icon and title directly.
+// Pandoc wraps each bracketed span in its own <p>; zero those wrappers.
 .reveal .subject-cards .card > p { margin: 0; }
-
-// The four brand hues rotate across the cards, exposed as --card-accent so the
-// left border and icon tile share one colour per card.
-.reveal .subject-cards .card:nth-child(1) { --card-accent: var(--ds-indigo); }
-.reveal .subject-cards .card:nth-child(2) { --card-accent: var(--ds-coral);  }
-.reveal .subject-cards .card:nth-child(3) { --card-accent: var(--ds-moss);   }
-.reveal .subject-cards .card:nth-child(4) { --card-accent: var(--ds-amber);  }
-.reveal .subject-cards .card:nth-child(5) { --card-accent: var(--ds-indigo); }
-.reveal .subject-cards .card:nth-child(6) { --card-accent: var(--ds-coral);  }
 
 .reveal .subject-cards .card .card-icon {
   display: inline-flex;
@@ -287,37 +292,34 @@ $callout-margin-bottom: 1rem !default;
   height: 2.2rem;
   border-radius: 0.55rem;
   font-size: 1.15rem;
-  color: var(--card-accent, var(--ds-indigo));
-  background: color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 14%, transparent);
+  color: var(--ds-green);
+  background: var(--ds-mint);
 }
 
 .reveal .subject-cards .card .card-num {
-  font-family: var(--ds-mono);
+  font-family: var(--ds-sans);
   font-size: 0.68rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  font-weight: 600;
   color: var(--ds-muted);
 }
 
 .reveal .subject-cards .card .card-title {
   font-family: var(--ds-serif);
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--ds-ink);
+  color: var(--ds-forest);
 }
 
 .reveal .subject-cards .card .card-desc {
   font-size: 0.82rem;
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
   line-height: 1.4;
 }
 
 // ── Use-case grid ────────────────────────────────────────────────────────
-// Mirrors the team grid: five centred columns, each an accent icon medallion
-// over a name and the website tagline. Subgrid rows keep the icons, names, and
-// taglines aligned across columns regardless of tagline length.
+// Five centred columns, each an icon medallion over a name and a tagline.
+// Subgrid rows keep icons, names and taglines aligned across columns.
+
 .reveal .use-case-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -336,16 +338,7 @@ $callout-margin-bottom: 1rem !default;
   gap: 0.5rem;
 }
 
-// Pandoc wraps each bracketed span in its own <p>; those <p> are the subgrid
-// rows, so zero their margins.
 .reveal .use-case-grid .use-case > p { margin: 0; }
-
-// The four brand hues rotate across the five columns, mirroring the team grid.
-.reveal .use-case-grid .use-case:nth-child(1) { --card-accent: var(--ds-indigo); }
-.reveal .use-case-grid .use-case:nth-child(2) { --card-accent: var(--ds-coral);  }
-.reveal .use-case-grid .use-case:nth-child(3) { --card-accent: var(--ds-moss);   }
-.reveal .use-case-grid .use-case:nth-child(4) { --card-accent: var(--ds-amber);  }
-.reveal .use-case-grid .use-case:nth-child(5) { --card-accent: var(--ds-indigo); }
 
 .reveal .use-case-grid .use-case-icon {
   display: inline-flex;
@@ -356,25 +349,23 @@ $callout-margin-bottom: 1rem !default;
   margin-top: 0.3rem;
   border-radius: 50%;
   font-size: 1.8rem;
-  color: var(--card-accent, var(--ds-indigo));
-  background: color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 12%, transparent);
-  border: 2px solid color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 45%, var(--ds-paper-3));
+  color: var(--ds-green);
+  background: var(--ds-white);
+  box-shadow: var(--ds-shadow);
 }
 
 .reveal .use-case-grid .use-case-name {
   display: block;
   font-family: var(--ds-serif);
-  font-weight: 600;
   font-size: 0.92em;
-  letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--ds-ink);
+  color: var(--ds-forest);
 }
 
 .reveal .use-case-grid .use-case-desc {
   display: block;
   font-size: 0.58em;
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
   line-height: 1.4;
 }
 
@@ -384,7 +375,6 @@ $callout-margin-bottom: 1rem !default;
 }
 
 // ── Team cards (reuse .team-grid / .card-team on slides) ─────────────────
-// Mirrors the website team cards in styles.scss, scaled for reveal slides.
 // Markup on a slide:
 //   ::: {.team-grid}
 //   ::: {.card-team}
@@ -417,16 +407,7 @@ $callout-margin-bottom: 1rem !default;
   padding: 0 1rem;
 }
 
-// Pandoc wraps each bracketed span in its own <p>; those <p> are the grid
-// items, so zero their margins and let the elements' own margins set rhythm.
 .reveal .team-grid .card-team > p { margin: 0; }
-
-// Per-card accent colors mirror the subject-cards sequence, carried on the
-// avatar ring.
-.reveal .team-grid .card-team:nth-child(1) { --card-accent: var(--ds-indigo); }
-.reveal .team-grid .card-team:nth-child(2) { --card-accent: var(--ds-coral);  }
-.reveal .team-grid .card-team:nth-child(3) { --card-accent: var(--ds-moss);   }
-.reveal .team-grid .card-team:nth-child(4) { --card-accent: var(--ds-amber);  }
 
 .reveal .team-grid .team-image-container {
   position: relative;
@@ -445,49 +426,40 @@ $callout-margin-bottom: 1rem !default;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    background: var(--ds-paper-2);
-    border: 3px solid color-mix(in oklab, var(--card-accent, var(--ds-indigo)) 45%, var(--ds-paper-3));
+    background: var(--ds-white);
+    border: 4px solid var(--ds-white);
   }
 }
 
 .reveal .team-grid .team-member-name {
   display: block;
   font-family: var(--ds-serif);
-  font-weight: 600;
   font-size: 0.95em;
-  letter-spacing: -0.01em;
   line-height: 1.25;
-  color: var(--ds-ink);
+  color: var(--ds-forest);
   margin: 0 0 0.3rem;
 }
 
 .reveal .team-grid .team-job-title {
   display: block;
-  font-family: var(--ds-serif);
-  font-weight: 400;
-  font-style: italic;
   font-size: 0.62em;
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
   line-height: 1.4;
   margin: 0;
 }
 
 .reveal .team-grid .team-employer {
   display: inline-block;
-  font-family: var(--ds-mono);
-  font-weight: 500;
-  font-size: 0.5em;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--card-accent, var(--ds-indigo));
+  font-weight: 600;
+  font-size: 0.55em;
+  color: var(--ds-green);
   margin-top: 0.6rem;
 }
 
 // ── Column centering helper ──────────────────────────────────────────────
-// Reveal's built-in `.center` only vertically centers whole slides
-// (`section.center`); on a Quarto `.column` div it does nothing. This helper
-// horizontally centers a column's content (images, text) and vertically
-// centers the column against its siblings in the flex row.
+// Reveal's built-in `.center` only centres whole slides; on a Quarto `.column`
+// div it does nothing. This centres a column's content horizontally and the
+// column itself vertically against its siblings.
 .reveal .columns .column.center {
   text-align: center;
   align-self: center;
@@ -496,22 +468,16 @@ $callout-margin-bottom: 1rem !default;
 }
 
 // ── Standard in-slide images ─────────────────────────────────────────────
-// Plain content images (bare `![](…)` with no class) pick up the same
-// treatment as the website screenshots: rounded corners, a hairline border,
-// and a soft shadow. The exclusions live inside `:where()` so this rule
-// contributes near-zero specificity — images that carry their own styling
-// (`.inline-logo`, `.team-image`, the `.site-showcase` thumbnails, and the
-// `.title-slide__tagline-logo`) keep winning via their more specific rules.
-.reveal .slides section img:where(:not(.inline-logo):not(.team-image):not(.title-slide__tagline-logo)) {
+// Plain content images get rounded corners, a hairline and a soft shadow. The
+// exclusions sit inside :where() so images with their own styling keep winning.
+.reveal .slides section img:where(:not(.inline-logo):not(.team-image):not(.title-slide__tagline-logo):not(.title-slide__event-logo)) {
   border-radius: 10px;
   border: 1px solid var(--ds-rule);
   box-shadow: var(--ds-shadow);
 }
 
 // ── Website showcase (2×2 grid, no card chrome) ──────────────────────────
-// Screenshots with rounded corners plus a name and subtitle underneath — no
-// border, fill, or shadow, so it reads as a plain image gallery rather than
-// cards. Markup on a slide:
+// Markup on a slide:
 //   ::: {.site-showcase}
 //   ::: {.site}
 //   ![](../assets/website-screenshots/foo.png)
@@ -546,29 +512,23 @@ $callout-margin-bottom: 1rem !default;
 .reveal .site-showcase .site-name {
   display: block;
   font-family: var(--ds-serif);
-  font-weight: 600;
   font-size: 0.6em;
   line-height: 1.2;
-  color: var(--ds-ink);
+  color: var(--ds-forest);
 }
 
 .reveal .site-showcase .site-desc {
   display: block;
   font-size: 0.42em;
   line-height: 1.35;
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
 }
 
-// ── Title slide ───────────────────────────────────────────────────────────
-// Custom layout from the title-slide.html template partial. Brand tokens carry
-// the styling: the h1 (with its italic-coral <em>) and serif subtitle inherit
-// from the rules above; this block adds the iEMSs co-brand tagline underneath.
-.reveal .title-slide__panel {
-  text-align: center;
-}
+// ── Title slide, default style ───────────────────────────────────────────
+// Centred layout from title-slide.html (decks without `title-style`), with the
+// event caption and logo underneath.
+.reveal .title-slide__panel { text-align: center; }
 
-// Title and subtitle are shrunk and held to a single line each (nowrap) so the
-// long strings don't wrap the way they do at the default centered heading size.
 .reveal #title-slide .title {
   font-size: 1.8em;
   white-space: nowrap;
@@ -581,7 +541,6 @@ $callout-margin-bottom: 1rem !default;
   margin: 0;
 }
 
-// Caption + logo sit below the title block as a quiet co-brand mark.
 .reveal .title-slide__tagline {
   display: flex;
   flex-direction: column;
@@ -591,10 +550,7 @@ $callout-margin-bottom: 1rem !default;
 }
 
 .reveal .title-slide__tagline-text {
-  font-family: var(--ds-serif);
-  font-style: italic;
   font-size: 0.62em;
-  letter-spacing: 0.01em;
   color: var(--ds-muted);
 }
 
@@ -607,9 +563,8 @@ $callout-margin-bottom: 1rem !default;
 }
 
 // ── Centered slide ─────────────────────────────────────────────────────────
-// Add `.centered-slide` to a slide's class to vertically and horizontally
-// center its content, with headings and paragraphs centered and lists kept
-// left-aligned inside a centered inline-block.
+// Add `.centered-slide` to centre a slide's content both ways, with headings
+// and paragraphs centred and lists kept left-aligned in a centred block.
 .reveal .slides section.centered-slide {
   display: flex;
   flex-direction: column;
@@ -624,15 +579,7 @@ $callout-margin-bottom: 1rem !default;
   margin-right: auto;
 }
 
-.reveal .slides section.centered-slide h1,
-.reveal .slides section.centered-slide h2,
-.reveal .slides section.centered-slide h3,
-.reveal .slides section.centered-slide h4,
-.reveal .slides section.centered-slide h5,
-.reveal .slides section.centered-slide h6,
-.reveal .slides section.centered-slide p {
-  text-align: center;
-}
+.reveal .slides section.centered-slide :is(h1, h2, h3, h4, h5, h6, p) { text-align: center; }
 
 .reveal .slides section.centered-slide ul,
 .reveal .slides section.centered-slide ol {
@@ -645,7 +592,7 @@ $callout-margin-bottom: 1rem !default;
 // ── Selection ────────────────────────────────────────────────────────────
 
 .reveal ::selection {
-  background: color-mix(in oklab, var(--ds-coral) 35%, transparent);
+  background: var(--ds-mint-deep);
   color: var(--ds-ink);
 }
 
@@ -653,77 +600,143 @@ $callout-margin-bottom: 1rem !default;
 // 16:9 deck components (ZALF 2026 deck, 1600×900 canvas)
 // ════════════════════════════════════════════════════════════════════════
 
-// ── Footer and slide number ──────────────────────────────────────────────
+// ── Footer ───────────────────────────────────────────────────────────────
 .reveal .footer {
-  font-family: var(--ds-mono);
+  font-family: var(--ds-sans);
   font-size: 0.45em;
-  letter-spacing: 0.02em;
   color: var(--ds-muted);
 }
 .reveal .footer a { color: inherit; text-decoration: none; }
-.reveal.has-dark-background .footer,
-.reveal.has-dark-background .slide-number {
-  color: color-mix(in oklab, var(--ds-paper) 70%, transparent);
+.reveal.has-dark-background .slide-number { color: var(--ds-sage-light); }
+
+// The title slide carries its own band, and dividers their own colours:
+// no footer or DML mark on either.
+.reveal:has(#title-slide.present) :is(.footer, .slide-number, .slide-logo),
+.reveal.has-dark-background :is(.footer, .slide-logo) {
+  opacity: 0;
+  pointer-events: none;
 }
 
 // ── Editorial title slide (`title-style: editorial`) ─────────────────────
-// Left-aligned title block over a hairline, with presenter and event as a
-// colophon line at the foot of the slide.
+// Event logo top left, the title large in the serif, and a forest band across
+// the foot with the presenter and the event. The band is drawn inside the
+// slide and runs past its edges, so the text stays on it at any aspect ratio.
 .reveal #title-slide.title-slide--editorial {
-  text-align: left;
   height: 100%;
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0;
+  text-align: left;
 }
-.reveal #title-slide.title-slide--editorial .title-slide__panel { text-align: left; }
+
+.reveal #title-slide.title-slide--editorial .title-slide__event-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 62px;
+  width: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.reveal #title-slide.title-slide--editorial .title-slide__panel {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  text-align: left;
+}
+
 .reveal #title-slide.title-slide--editorial .title {
-  font-size: 3.1em;
-  line-height: 1.02;
+  margin: 0;
+  font-size: 3.3em;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
   white-space: normal;
-  margin: 0 0 0.3em;
+  color: var(--ds-forest);
+
+  em { display: block; }
 }
+
 .reveal #title-slide.title-slide--editorial .title-slide__subtitle {
-  font-size: 1.05em;
+  margin: 0.75em 0 0;
+  max-width: 34em;
+  font-size: 0.9em;
+  line-height: 1.35;
   white-space: normal;
-  max-width: 30em;
-  padding-bottom: 1.1em;
-  border-bottom: 1px solid var(--ds-rule);
-  margin-bottom: 1.1em;
 }
+
+.reveal #title-slide.title-slide--editorial .title-slide__band {
+  position: absolute;
+  top: 650px;
+  bottom: -400px;
+  left: -400px;
+  right: -400px;
+  z-index: 0;
+  background: var(--ds-band);
+  clip-path: polygon(0 110px, 100% 0, 100% 100%, 0 100%);
+}
+
+.reveal #title-slide.title-slide--editorial .title-slide__meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2em;
+}
+
 .reveal #title-slide.title-slide--editorial .quarto-title-authors {
   display: block;
-  text-align: left;
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 .reveal #title-slide.title-slide--editorial .quarto-title-author {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 .reveal #title-slide.title-slide--editorial .quarto-title-author-name {
-  font-weight: 600;
-  font-size: 0.8em;
+  font-family: var(--ds-serif);
+  font-size: 1em;
+  line-height: 1.15;
+  color: var(--ds-white);
 }
 .reveal #title-slide.title-slide--editorial .quarto-title-affiliation {
-  font-size: 0.6em;
-  color: var(--ds-ink-2);
-  margin: 0.1em 0 0;
-}
-.reveal #title-slide.title-slide--editorial .title-slide__tagline {
-  align-items: flex-start;
-  margin-top: 1.4em;
+  margin: 0.15em 0 0;
+  font-size: 0.58em;
+  color: var(--ds-sage-light);
 }
 .reveal #title-slide.title-slide--editorial .title-slide__tagline-text {
-  font-family: var(--ds-mono);
-  font-style: normal;
-  font-size: 0.5em;
-  letter-spacing: 0.04em;
-  color: var(--ds-muted);
+  margin: 0;
+  font-family: var(--ds-serif);
+  font-size: 0.8em;
+  text-align: right;
+  color: var(--ds-white);
 }
 
 // ── Section dividers (`# Title {.divider background-color="…"}`) ───────
-// Full-bleed accent background from the Quartile Rule; paper-coloured type.
+// Forest band with a mint wedge rising to the right, white serif title.
+// Reveal copies a slide's classes onto its background element, so the
+// background can be restyled here. !important beats the inline colour that
+// reveal.js sets from the slide's background-color attribute.
+.reveal .slide-background.divider .slide-background-content {
+  background: var(--ds-band) !important;
+}
+.reveal .slide-background.divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 16%;
+  background: var(--ds-mint);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
 .reveal .slides section.divider {
   display: flex !important;
   flex-direction: column;
@@ -731,16 +744,18 @@ $callout-margin-bottom: 1rem !default;
   height: 100%;
 }
 .reveal .slides section.divider h1 {
-  color: var(--ds-paper);
-  font-size: 3em;
-  margin-bottom: 0.25em;
+  color: var(--ds-white);
+  font-size: 3.15em;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.3em;
 }
 .reveal .slides section.divider p {
-  color: color-mix(in oklab, var(--ds-paper) 85%, transparent);
-  font-family: var(--ds-serif);
-  font-style: italic;
-  font-size: 1.05em;
-  max-width: 28em;
+  color: var(--ds-sage-light);
+  font-family: var(--ds-sans);
+  font-style: normal;
+  font-size: 0.9em;
+  max-width: 30em;
 }
 
 // ── Problem slide (`.problem`) ───────────────────────────────────────────
@@ -760,35 +775,33 @@ $callout-margin-bottom: 1rem !default;
   border-top: 1px solid var(--ds-rule);
   font-family: var(--ds-serif);
   font-size: 1.15em;
-  font-weight: 500;
   line-height: 1.3;
-  color: var(--ds-ink);
+  color: var(--ds-forest);
 }
 
 // ── Source and result side by side (`.source-result`) ───────────────────
 .reveal .slides section.source-result .columns { gap: 2em; align-items: stretch; }
 .reveal .file-label {
   display: block;
-  font-family: var(--ds-mono);
+  font-family: var(--ds-sans);
   font-size: 0.45em;
-  letter-spacing: 0.04em;
-  color: var(--ds-muted);
-  margin-bottom: 0.4em;
+  font-weight: 600;
+  color: var(--ds-green);
+  margin-bottom: 0.45em;
 }
 .reveal .slides section.source-result div.sourceCode { margin: 0; }
 .reveal .slides section.source-result pre code { font-size: 0.95em; line-height: 1.6; }
 .reveal .rendered {
-  background: #FFFDF9;   // a sheet of paper on the paper ground
-  border: 1px solid var(--ds-rule);
-  border-radius: 0.5rem;
+  background: var(--ds-white);
+  border-radius: 0.9rem;
   box-shadow: var(--ds-shadow);
   padding: 1em 1.2em 0.6em;
-  font-family: var(--ds-serif);
+  font-family: var(--ds-sans);
   font-size: 0.72em;
   line-height: 1.5;
 }
 .reveal .rendered img {
-  border: none !important;
+  border: 0 !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   margin: 0.4em 0 0;
@@ -802,11 +815,11 @@ $callout-margin-bottom: 1rem !default;
   display: block;
   margin-top: 1.2em;
   font-size: 0.85em;
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
 }
 
-// The six steps: the current one (bold in the source) in indigo, earlier
-// ones ticked off in muted ink, later ones in secondary ink.
+// The six steps: the current one (bold in the source) in green, earlier
+// ones ticked off, later ones in muted ink.
 .reveal .steps ol {
   list-style: none;
   counter-reset: step;
@@ -819,7 +832,7 @@ $callout-margin-bottom: 1rem !default;
   position: relative;
   padding: 0.55em 0 0.55em 2.4em;
   border-bottom: 1px solid var(--ds-rule);
-  color: var(--ds-ink-2);
+  color: var(--ds-muted);
   line-height: 1.3;
 }
 .reveal .steps li::before {
@@ -830,22 +843,22 @@ $callout-margin-bottom: 1rem !default;
   width: 1.6em;
   height: 1.6em;
   border-radius: 50%;
-  border: 1px solid var(--ds-paper-3);
-  font-family: var(--ds-mono);
+  background: var(--ds-white);
+  font-family: var(--ds-sans);
   font-size: 0.85em;
+  font-weight: 600;
   line-height: 1.6em;
   text-align: center;
   color: var(--ds-muted);
 }
-.reveal .steps li:has(~ li strong) { color: var(--ds-muted); }
 .reveal .steps li:has(~ li strong)::before {
   content: "✓";
-  background: var(--ds-paper-2);
+  background: var(--ds-mint-deep);
+  color: var(--ds-forest);
 }
-.reveal .steps li:has(strong) { color: var(--ds-indigo); }
+.reveal .steps li:has(strong) { color: var(--ds-forest); }
 .reveal .steps li:has(strong) strong { font-weight: 600; }
 .reveal .steps li:has(strong)::before {
-  background: var(--ds-indigo);
-  border-color: var(--ds-indigo);
-  color: var(--ds-paper);
+  background: var(--ds-green);
+  color: var(--ds-white);
 }

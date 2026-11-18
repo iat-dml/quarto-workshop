@@ -1,8 +1,5 @@
 project:
   type: website
-brand:
-  light: light-brand.yml
-  dark: dark-brand.yml
 execute:
   echo: true
   warning: false

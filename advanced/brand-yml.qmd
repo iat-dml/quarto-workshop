@@ -19,7 +19,7 @@ If you'd rather keep the file elsewhere, point the `brand` key at it in `_quarto
 brand: brand/_brand.yml
 ```
 
-You can also supply separate brands for light and dark appearance, as this website does:
+You can also supply separate brands for light and dark appearance, which gives readers a toggle between the two:
 
 ```yaml
 brand:

@@ -8,9 +8,12 @@ author:
 title-style: editorial
 event:
   tagline: "{{< var zalf.event >}}, {{< var zalf.date >}}"
+  logo: ../assets/zalf-sci-conf-logo.png
+  logo-alt: "ZALF Science Conference"
 format:
   revealjs:
     theme: [default, ../revealjs.scss, zalf-2026.scss]
+    logo: ../assets/dml-mark.svg
     code-line-numbers: false
     width: 1600
     height: 900
