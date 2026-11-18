@@ -92,6 +92,16 @@ h1.title code { font-size: 0.58em; }
   margin-bottom: 1.5rem;
 }
 
+// Quarto wordmark used inline in place of the word "Quarto" (homepage
+// subtitle). The SVG is a wide wordmark, so size it off the text height and
+// leave a word space after it, as the decks do in revealjs.scss.
+img.inline-logo {
+  height: 0.85em;
+  width: auto;
+  vertical-align: baseline;
+  margin: 0 0.3em 0 0;
+}
+
 // Section numbers from Quarto's `number-sections: true` — tone them down
 .header-section-number {
   color: var(--ds-muted);

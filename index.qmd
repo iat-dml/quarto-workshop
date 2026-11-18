@@ -1,6 +1,6 @@
 ---
 title: "One Tool to *Rule Them All*"
-subtitle: "![](assets/logo-quarto.svg){width=1in}for Documentation, Presentations, Manuscripts and Outreach"
+subtitle: "![Quarto](assets/logo-quarto.svg){.inline-logo} for Documentation, Presentations, Manuscripts and Outreach"
 number-sections: false
 ---
 
