@@ -6,6 +6,8 @@ toc: false
 anchor-sections: false
 body-classes: home
 number-sections: false
+resources:
+  - assets/pitch-video-poster.jpg
 ---
 
 ::::: {.home-band .home-hero .column-screen}
@@ -25,20 +27,17 @@ number-sections: false
 :::
 
 <!--
-Placeholder for the shortened pitch video. When the clip is ready, save it as
-assets/pitch-video-short.mp4 and replace the raw HTML block below with the
-video shortcode, for example:
-
-  {{{< video assets/pitch-video-short.mp4 title="A year in research" >}}}
-
-The .home-video frame keeps its white border and 16:9 shape around the video.
+Website cut of the pitch video (source: _pitch-video/quarto-workshop-pitch-website-version.mp4,
+remuxed with -movflags +faststart so it streams). Raw HTML rather than the video
+shortcode so the poster frame shows before playback.
 -->
 ::: {.home-video}
 ```{=html}
-<div class="video-placeholder" role="img" aria-label="Placeholder for the shortened pitch video">
-  <span class="video-placeholder__play" aria-hidden="true"></span>
-  <span class="video-placeholder__label">Placeholder: shortened pitch video</span>
-</div>
+<video controls preload="metadata" playsinline
+       poster="assets/pitch-video-poster.jpg"
+       aria-label="A year in research: a short animated pitch for the Quarto workshop">
+  <source src="assets/pitch-video.mp4" type="video/mp4">
+</video>
 ```
 :::
 ::::
@@ -83,7 +82,7 @@ Bring a laptop, and please check it beforehand with the steps in [Setting up on 
 
 ::::: {.home-band .home-band--forest .column-screen}
 :::: {.home-wrap}
-## Who we are
+## Who developed this workshop
 
 ::: {.team-grid}
 ::: {.team-member}

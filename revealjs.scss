@@ -193,6 +193,26 @@ $callout-color-caution: #B3261E !default;    // red
   &.ot, &.at, &.va, &.op, &.dt, &.pp { color: var(--ds-ink); }
   &.al, &.er, &.wa { color: var(--ds-red); }
 }
+// Copy button (shown on hover). Quarto draws its icon at 1rem, which is tiny
+// on a 1600px slide; this enlarges it and gives it a surface, so people
+// following on their own laptops can find it.
+.reveal .code-copy-button {
+  margin: 0.45rem 0.45rem 0 0;
+  padding: 0.3rem 0.35rem 0.15rem;
+  border-radius: 0.5rem;
+}
+.reveal div.code-copy-outer-scaffold:hover > .code-copy-button {
+  background-color: var(--ds-mint);
+}
+.reveal div.code-copy-outer-scaffold:hover > .code-copy-button > .bi::before {
+  width: 1.7rem;
+  height: 1.7rem;
+  background-size: 1.7rem 1.7rem;
+}
+
+// The Markdown highlighter tags image syntax `![...](...)` as an alert;
+// in Markdown blocks it is ordinary syntax, not an error.
+.reveal div.sourceCode code.markdown span.al { color: var(--ds-teal-ink); }
 
 // ── Blockquote ───────────────────────────────────────────────────────────
 
@@ -861,4 +881,203 @@ $callout-color-caution: #B3261E !default;    // red
 .reveal .steps li:has(strong)::before {
   background: var(--ds-green);
   color: var(--ds-white);
+}
+
+// ── Agenda with a timeline (`.agenda` > `.agenda-row`) ──────────────────
+// One row per part: start time, title over a one-line description, a bar on
+// a shared timeline and the length. Each row sets `--start` and `--len` in
+// minutes from the session start; `--agenda-total` is the session length.
+.reveal .agenda {
+  --agenda-total: 90;
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--ds-rule);
+}
+.reveal .agenda-row {
+  display: grid;
+  grid-template-columns: 3.6em 1fr 30% 3.6em;
+  grid-template-rows: auto auto;
+  column-gap: 1.4em;
+  row-gap: 0.1em;
+  align-items: center;
+  padding: 0.7em 0;
+  border-bottom: 1px solid var(--ds-rule);
+
+  // Pandoc wraps the spans in a <p>; let them join the row's grid instead.
+  > p { display: contents; }
+
+  // The timeline: a white track for the whole session and a green bar for
+  // this part, both in the third column.
+  &::before,
+  &::after {
+    content: "";
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    height: 0.55em;
+    border-radius: 999px;
+  }
+  &::before { background: var(--ds-white); }
+  &::after {
+    justify-self: start;
+    margin-left: calc(var(--start) / var(--agenda-total) * 100%);
+    width: calc(var(--len) / var(--agenda-total) * 100%);
+    background: var(--ds-green);
+  }
+}
+.reveal .agenda-time,
+.reveal .agenda-len {
+  grid-row: 1 / span 2;
+  font-family: var(--ds-sans);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.68em;
+}
+.reveal .agenda-time { grid-column: 1; font-weight: 600; color: var(--ds-green); }
+.reveal .agenda-len  { grid-column: 4; text-align: right; color: var(--ds-muted); }
+.reveal .agenda-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--ds-serif);
+  font-size: 0.95em;
+  line-height: 1.2;
+  color: var(--ds-forest);
+}
+.reveal .agenda-desc {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 0.6em;
+  line-height: 1.35;
+  color: var(--ds-muted);
+}
+
+// ── Website slide: the URL, its QR code and a screen recording ──────────
+.reveal .site-url {
+  display: block;
+  margin: 0.4em 0 0.8em;
+  font-family: var(--ds-serif);
+  font-size: 1.05em;
+  line-height: 1.2;
+  color: var(--ds-forest);
+  text-decoration: none;
+}
+.reveal img.qr-code {
+  width: 200px;
+  height: auto;
+  margin: 0 0 0.6em;
+}
+.reveal .slides section:has(img.screencast) p { font-size: 0.8em; }
+.reveal .slides section:has(img.screencast) li { font-size: 0.85em; }
+.reveal img.screencast {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.reveal .screencast-caption {
+  display: block;
+  margin-top: 0.8em;
+  font-size: 0.85em;
+  color: var(--ds-muted);
+}
+
+// ── Question to the audience (`.question`) ───────────────────────────────
+// The question large and vertically centred, with prompts underneath.
+// !important beats the inline `display: block` reveal.js puts on the
+// current slide, as for the dividers.
+.reveal .slides section.question {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.reveal .slides section.question h2 {
+  max-width: 20em;
+  margin-bottom: 0.7em;
+  font-size: 2.1em;
+  line-height: 1.08;
+}
+.reveal .slides section.question p { color: var(--ds-muted); }
+
+// Denser text and table for a slide that needs both (`::: {.compact}`).
+.reveal .compact > p { font-size: 0.78em; line-height: 1.45; }
+.reveal .compact table { font-size: 0.68em; width: 100%; }
+.reveal .compact td:first-child { width: 44%; }
+
+// Problem-slide picture of a page: show its top, where the title is.
+.reveal .slides section.problem img.page-top { object-position: top; }
+
+// Lists on dividers match the divider's paragraph text.
+.reveal .slides section.divider ul {
+  max-width: 30em;
+  margin: 0 0 1em 1em;
+  font-family: var(--ds-sans);
+  font-size: 0.9em;
+  color: var(--ds-sage-light);
+}
+.reveal .slides section.divider ul > li::marker { color: var(--ds-leaf-light); }
+
+// ── Keyboard keys ────────────────────────────────────────────────────────
+.reveal kbd {
+  display: inline-block;
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--ds-rule);
+  border-bottom-width: 2px;
+  border-radius: 0.375rem;
+  background: var(--ds-white);
+  font-size: 0.82em;
+  line-height: 1.3;
+  color: var(--ds-forest);
+}
+
+// ── Tabsets on slides (`::: {.panel-tabset}`) ────────────────────────────
+// Quarto builds revealjs tabsets with tabby.js: a [role=tablist] list of
+// [role=tab] links, the open one with aria-selected. Tabs are set as text
+// with a green rule under the open one; the content sits on a white panel,
+// like the other surfaces on the mint ground.
+.reveal .panel-tabset {
+  margin-top: 1rem;
+}
+.reveal .panel-tabset [role="tablist"] {
+  display: flex;
+  gap: 0.4em;
+  border-bottom: 1px solid var(--ds-rule);
+}
+.reveal .slides section .panel-tabset [role="tablist"] li { margin: 0; }
+.reveal .panel-tabset [role="tab"],
+.reveal .panel-tabset [role="tab"]:hover:not([aria-selected="true"]) {
+  display: block;
+  padding: 0.3em 0.8em;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  background: transparent;
+  font-family: var(--ds-sans);
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--ds-muted);
+  text-decoration: none;
+}
+.reveal .panel-tabset [role="tab"]:hover { color: var(--ds-forest); }
+.reveal .panel-tabset [role="tab"][aria-selected="true"] {
+  border: 0;
+  border-bottom: 3px solid var(--ds-green);
+  background: transparent;
+  color: var(--ds-forest);
+}
+.reveal .panel-tabset .tab-content {
+  margin-top: 1rem;
+  padding: 0.9em 1.2em;
+  border: 0;
+  border-radius: 0.9rem;
+  background: var(--ds-white);
+  box-shadow: var(--ds-shadow);
+  font-size: 0.8em;
+}
+.reveal .panel-tabset .tab-content p { margin: 0 0 0.6em; }
+.reveal .panel-tabset .tab-content div.sourceCode {
+  box-shadow: none;
+  background: var(--ds-mint-pale) !important;
+  margin: 0.4em 0 0.6em;
+}
+.reveal .panel-tabset .tab-content pre.sourceCode {
+  background: var(--ds-mint-pale) !important;
+  box-shadow: none;
 }

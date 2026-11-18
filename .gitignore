@@ -17,6 +17,10 @@ CLAUDE.local.md
 
 # Large media kept locally
 _pitch-video/*.mp4
+_pitch-video/*.mov
+_pitch-video/*.webm
+_pitch-video/*.mkv
 iemss-application/iEMSs2026WorkshopApplication.docx
 iemss-application/iEMSs2026WorkshopApplication.docx
 _pitch-video/cue-sheet.md
+_pitch-video/practice-still.png

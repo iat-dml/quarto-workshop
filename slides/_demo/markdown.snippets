@@ -1,0 +1,58 @@
+snippet ms2
+	---
+	title: "Vegetation Recovery Across Four Restoration Sites"
+	author:
+	  - name: Ben Black
+	    orcid: 0000-0002-8113-2114
+	    corresponding: true
+	    email: benjaminsamuel.black@zalf.de
+	    affiliations:
+	      - name: Leibniz Centre for Agricultural Landscape Research (ZALF)
+	        city: Müncheberg
+	        country: Germany
+	date: today
+	number-sections: true
+	bibliography: references.bib
+	---
+	
+	```{r}
+	#| label: setup
+	#| include: false
+	
+	library(readr)
+	library(dplyr)
+	library(ggplot2)
+	
+	sites <- read_csv("data/restoration-sites.csv") |>
+	  mutate(date = as.Date(date))
+	
+	latest <- sites |> filter(date == max(date))   # most recent survey per site
+	first  <- sites |> filter(date == min(date))   # earliest survey per site
+	```
+
+snippet ms3
+	## Methods {#sec-methods}
+	
+	We monitored vegetation recovery at `r "\x60"`r n_distinct(sites\$site)` restoration
+	sites across `r "\x60"`r n_distinct(sites\$date)` quarterly surveys. Mean vegetation
+	cover rose from `r "\x60"`r round(mean(first\$vegetation_cover_pct))`% at the first
+	survey to `r "\x60"`r round(mean(latest\$vegetation_cover_pct))`% at the most recent,
+	an increase of `r "\x60"`r round(mean(latest\$vegetation_cover_pct) - mean(first\$vegetation_cover_pct))`
+	percentage points.
+
+snippet ms4
+	```{r}
+	#| label: fig-cover
+	#| fig-cap: "Vegetation cover at four restoration sites, quarterly 2023–2025."
+	
+	ggplot(sites, aes(date, vegetation_cover_pct, colour = site)) +
+	  geom_line() +
+	  geom_point() +
+	  labs(x = NULL, y = "Vegetation cover (%)", colour = "Site") +
+	  theme_minimal()
+	```
+	
+	Cover increased at every site over the monitoring period (@fig-cover).
+
+snippet ms5
+	The survey design in @sec-methods follows recognised restoration standards [@gann2019].

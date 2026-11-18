@@ -866,8 +866,7 @@ h1.home-title {
 
 .home-hero .btn-row { margin: 2rem 0 0; }
 
-// Video frame: white border and a forest ground. Holds the placeholder now and
-// the {{< video >}} shortcode's output later.
+// Video frame: white border and a forest ground around the pitch video.
 .home-video {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -887,35 +886,7 @@ h1.home-title {
     height: 100%;
     margin: 0;
   }
-}
-
-.video-placeholder__play {
-  position: relative;
-  display: block;
-  width: 5.5rem;
-  height: 5.5rem;
-  border-radius: 50%;
-  background: var(--ds-white);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 38%;
-    top: 30%;
-    border-style: solid;
-    border-width: 1.1rem 0 1.1rem 1.8rem;
-    border-color: transparent transparent transparent var(--ds-green);
-  }
-}
-
-.video-placeholder__label {
-  position: absolute;
-  left: 1.4rem;
-  right: 1.4rem;
-  bottom: 1rem;
-  font-size: 0.875rem;
-  color: var(--ds-sage-light);
+  video { object-fit: cover; }
 }
 
 .home-two {

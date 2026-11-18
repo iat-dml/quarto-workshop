@@ -161,6 +161,11 @@ Mint ground; content panels, code, callouts and the `.rendered` output are white
 - **Title slide** (`title-style: editorial`): event logo top left (`event: logo:`), the title with its italic part on its own line in green, the subtitle in DM Sans, and a forest band across the foot with the presenter and `event.tagline`. The band is drawn inside the slide and runs past its edges, so the text stays on it at any aspect ratio.
 - **Dividers** (`# Title {.divider}`): forest gradient with a mint wedge rising to the right. The deck's `background-color` attributes are overridden from the stylesheet, so they need no editing.
 - **Checkpoints**: the current step has a green numbered disc, earlier steps a mint-deep tick.
+- **Agenda** (`.agenda` > `.agenda-row`): time in green, the part in the serif over a muted line, a green bar on a white timeline track and the length. Each row sets `--start` and `--len` in minutes.
+- **Question** (`.question`): a question to the room, large and vertically centred, with prompts underneath.
+- **Tabsets**: tabs as DM Sans 600 text with a green rule under the open tab; the content on a white panel.
+- **Screen recordings** (`img.screencast`): GIFs in `assets/screencasts/`, made by `_screencasts/record-screencasts.py` from the rendered site. Re-record them when the home page or the deck changes visibly.
+- **Lists** in the ZALF deck have 0.6em between items (`slides/zalf-2026.scss`), except the checkpoint steps and the mock output in `.rendered`.
 
 ## 6. Do's and don'ts
 
