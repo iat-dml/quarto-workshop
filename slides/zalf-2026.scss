@@ -5,3 +5,11 @@ $presentation-h2-font-size: 1.38em !default;
 $presentation-font-size-root: 38px !default;
 
 /*-- scss:rules --*/
+
+// Room between list items, so each bullet reads as its own point.
+.reveal .slides section :is(ul, ol) > li + li { margin-top: 0.6em; }
+
+// Lists that set their own rhythm: the checkpoint steps (padding and
+// hairlines) and the mock output in `.rendered`, which imitates a web page.
+.reveal .slides section .steps li + li { margin-top: 0; }
+.reveal .slides section .rendered li + li { margin-top: 0.2em; }
