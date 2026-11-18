@@ -7,6 +7,7 @@ zalf:
   room: "K1, Building 4"
   place: "ZALF campus, Müncheberg"
 postdoc-session:
-  title: "Keeping a personal website and CV up to date with Quarto"
-  date: "date to be announced"
+  title: "An efficient approach to keeping your research profile up to date"
+  date: "10 December 2026"
+  time: "13:00 to 14:00"
 site-url: "https://iat-dml.github.io/quarto-workshop/"
