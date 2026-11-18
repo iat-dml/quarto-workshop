@@ -36,7 +36,7 @@ A small site with three pages: a **home page**, an **about page** and a **public
 are connected by a navigation bar at the top, given a colour theme, and finally published to the
 web. It is intentionally tiny: the point is to see the full path from empty folder to live website.
 
-## Step 1: Create the website project
+## Step 1: Create the website project {.step}
 
 Quarto can generate a ready-to-use website folder for you. In your terminal, move to wherever you
 keep projects and run:
@@ -64,7 +64,7 @@ Project → Website Project**; in RStudio use **New Project → Quarto Website**
 same starter folder.
 :::
 
-## Step 2: Preview your site
+## Step 2: Preview your site {.step}
 
 **Option 1**: Open one of your pages such as `index.qmd` in your editor and click the **Preview** button at the top of the file editor window. This opens a live preview of the page in your browser.
 
@@ -76,7 +76,7 @@ quarto preview
 With Option 1 the page opens in the viewer pane of your editor; with Option 2 it opens in your default browser, and the terminal prints the address in case you need it again. Leave the preview running while you work: every time you save a file, it refreshes so you can see your changes.
 Press `Ctrl + C` in the terminal to stop it later.
 
-## Step 3: Understand `_quarto.yml`
+## Step 3: Understand `_quarto.yml` {.step}
 
 Open `_quarto.yml`. This is the one file that ties the site together. Yours will look much like
 this (the starter file also lists `brand` and a `css` line under `theme`, which you can leave for
@@ -114,7 +114,7 @@ Reading it from top to bottom:
 
 Change the `title` to your own and save. Watch the preview update.
 
-## Step 4: Edit the home page
+## Step 4: Edit the home page {.step}
 
 Open `index.qmd`. Below the `---` header, the content is just Markdown: the same headings,
 lists, links, and callouts you have already met in this workshop. Replace the starter text with a
@@ -128,7 +128,7 @@ title: "Welcome"
 A small site I built while learning Quarto. Use the menu above to look around.
 ```
 
-## Step 5: Add an about page
+## Step 5: Add an about page {.step}
 
 Your starter project already includes a second page, `about.qmd`. Quarto has a dedicated
 **About** layout that turns an ordinary page into a tidy profile: a photo, a short bio, and a
@@ -201,7 +201,7 @@ Brand icons need the `brands` keyword. Browse the full set at
 [fontawesome.com](https://fontawesome.com/search?m=free).
 :::
 
-## Step 6: Add a publications page (a listing)
+## Step 6: Add a publications page (a listing) {.step}
 
 So far you have written every page by hand. Quarto can also build a page *for* you
 from a data file. This is called a **listing**. Listings can be used for [blogs](https://iat-dml.github.io/news.html), [presentations](https://blenback.github.io/presentations.html) or even [staff pages](https://nascent-peru.github.io/about/team.html) and the [Quarto guide to listings](https://quarto.org/docs/websites/website-listings.html) covers them in detail. In this exercise we use a listing to make a page of your scientific publications. This is a more advanced use, with a custom listing template that the authors developed for their own sites.
@@ -302,7 +302,7 @@ built this way, see [Ben's publications page](https://blenback.github.io/publica
 which combines multiple listings for different kinds of research output.
 :::
 
-## Step 7: Change how it looks
+## Step 7: Change how it looks {.step}
 
 The quickest way to restyle a site is to pick a different built-in **theme**. Quarto ships with
 many; try swapping `cosmo` for another such as `flatly`, `litera`, or `sandstone` in `_quarto.yml`
@@ -340,7 +340,7 @@ branding file. See [Consistent branding with `_brand.yml`](../advanced/brand-yml
 that as a later step; clear structure matters more than polish when you are starting out.
 :::
 
-## Step 8: Publish to GitHub Pages
+## Step 8: Publish to GitHub Pages {.step}
 
 Your site only exists on your laptop so far. **GitHub Pages** is a free service that turns a
 GitHub repository into a live website, and Quarto can publish to it with a single command.
@@ -397,7 +397,7 @@ no one has to remember to publish. Once you are comfortable with the manual comm
 automatic version up.
 :::
 
-## Step 9: Make a change and republish
+## Step 9: Make a change and republish {.step}
 
 Edit one of your pages (add a sentence to the home page, for instance) and save. Then run:
 

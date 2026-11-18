@@ -232,6 +232,130 @@ div.callout .callout-header.collapsed { border-bottom: none; }
 .callout-important .callout-header,
 .callout-caution   .callout-header { color: var(--ds-coral); }
 
+// ─── Step accordion (exercises) ─────────────────────────────────────────
+// Headings marked {.step} become <details> panels via
+// assets/step-accordion.html. Same surface as callouts: Paper 2 fill, lg
+// radius, a hairline on all four sides; the open/closed state is shown by a
+// chevron only.
+
+.steps {
+  margin: 1.25rem 0 2rem;
+}
+.steps-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.6rem;
+}
+.steps-toggle {
+  font-family: var(--ds-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ds-ink-2);
+  background: transparent;
+  border: 1px solid var(--ds-rule);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+  &:hover { color: var(--ds-indigo); border-color: var(--ds-indigo); }
+  &:focus-visible { outline: 2px solid var(--ds-indigo); outline-offset: 2px; }
+}
+
+.steps > section.step {
+  margin: 0;
+  & + section.step { margin-top: 0.6rem; }
+}
+
+details.step-item {
+  background-color: var(--ds-paper-2);
+  border: 1px solid var(--ds-rule);
+  border-radius: $border-radius-lg;
+
+  > summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.15rem;
+    cursor: pointer;
+    list-style: none;
+    border-radius: $border-radius-lg;
+    &::-webkit-details-marker { display: none; }
+    &::marker { content: ""; }
+
+    > h2, > h3, > h4 {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+      font-family: var(--ds-sans);
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.35;
+      border: 0;
+      padding: 0;
+    }
+
+    // Chevron: points down when closed, up when open.
+    &::after {
+      content: "";
+      flex: none;
+      width: 0.55rem;
+      height: 0.55rem;
+      margin: -0.2rem 0.2rem 0 0;
+      border-right: 2px solid var(--ds-muted);
+      border-bottom: 2px solid var(--ds-muted);
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    &:hover > :is(h2, h3, h4) { color: var(--ds-indigo); }
+    &:hover::after { border-color: var(--ds-indigo); }
+    &:focus-visible { outline: 2px solid var(--ds-indigo); outline-offset: 2px; }
+  }
+
+  &[open] > summary {
+    border-bottom: 1px solid var(--ds-rule);
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    &::after { transform: rotate(-135deg); margin-top: 0.25rem; }
+  }
+}
+
+.step-body {
+  padding: 1rem 1.15rem 1.15rem;
+  min-width: 0;
+  > :first-child { margin-top: 0; }
+  > :last-child { margin-bottom: 0; }
+  // Code blocks and callouts sit on Paper 2 already; lift them to Paper.
+  div.sourceCode, pre.sourceCode, div.callout { background-color: var(--ds-paper) !important; }
+}
+
+// Opening animation where the browser can size to `auto` (Chromium 131+);
+// other browsers open the step instantly.
+@supports (interpolate-size: allow-keywords) {
+  details.step-item {
+    interpolate-size: allow-keywords;
+    &::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition: block-size 0.25s ease, content-visibility 0.25s allow-discrete;
+    }
+    &[open]::details-content { block-size: auto; }
+  }
+}
+
+@media (max-width: 575.98px) {
+  details.step-item > summary { padding: 0.75rem 0.85rem; gap: 0.5rem; }
+  details.step-item > summary > :is(h2, h3, h4) { font-size: 1.02rem; }
+  .step-body { padding: 0.85rem 0.85rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.step-item > summary::after { transition: none; }
+  details.step-item::details-content { transition: none; }
+}
+
+@media print {
+  details.step-item::details-content { block-size: auto; }
+}
+
 // ─── Code blocks & inline code ──────────────────────────────────────────
 
 code, kbd, samp, pre {

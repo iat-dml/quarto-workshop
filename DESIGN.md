@@ -222,6 +222,11 @@ The system is mostly flat, lifted by a single soft ambient shadow that warms rat
 ### Callouts
 - **Style:** Paper 2 body, `lg` radius, a hairline rule on all four sides, no shadow, header in Plex Sans 600 with a hairline rule beneath it. The callout type is carried only by the header text and icon colour: indigo (note), moss (tip), amber (warning), coral (important/caution). No coloured left edge: Quarto's default 4px stripe is overridden.
 
+### Exercise steps
+- **Use:** Mark each step heading in an exercise with `{.step}` (`## Step 1: Create the project {.step}`). `assets/step-accordion.html` turns each run of consecutive steps into native `<details>` panels; the first step starts open, and a pill button above the group opens or closes all of them. Headings stay in place, so the TOC and `#step-…` links keep working, and a link to a closed step opens it.
+- **Style:** The callout surface: Paper 2, `lg` radius, a hairline rule on all four sides, no shadow. The summary row holds the step heading in Plex Sans 600 at `1.15rem` and a Muted chevron that turns Deep Indigo on hover. Code blocks and callouts inside a step lift to Paper. Opening animates height only where the browser supports `interpolate-size`, and never under `prefers-reduced-motion`.
+- **Not for:** Short numbered lists of instructions (the research diary exercise keeps its list) or content readers should see without clicking.
+
 ### Code
 - **Inline:** Moss text on Moss Soft fill, `sm` radius, a hairline moss-tinted border, `0.9em`.
 - **Block:** Paper 2 fill, hairline rule, `md` radius, `0.92em` Plex Mono at line-height 1.55. Copy button in Muted → Deep Indigo on hover.

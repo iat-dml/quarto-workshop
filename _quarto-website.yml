@@ -79,3 +79,4 @@ format:
     toc-location: right
     number-sections: false
     smooth-scroll: true
+    include-after-body: assets/step-accordion.html
