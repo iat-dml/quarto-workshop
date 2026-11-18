@@ -35,22 +35,22 @@ Scholarly and editorial. Warm, literate, quietly confident, the feel of a well-m
 - **Generic default docs theme** — the out-of-the-box Bootstrap/Quarto look: undifferentiated and clearly templated.
 - **Corporate SaaS landing** — gradient hero, hero-metric stat blocks, identical feature-card grids, buzzword copy.
 - **Overdesigned / flashy** — heavy animation, glassmorphism, decorative effects that compete with learning.
-- **AI-slop card scaffolding** — the current homepage subject cards and after-body nav cards lean on numbered section markers (`01 ·` / `02 ·`) and colored left-stripe borders, both recognised tells. Treat these as the first thing to rework, not a pattern to extend.
+- **AI-slop card scaffolding** — numbered section markers (`01 ·` / `02 ·`), coloured left-stripe borders and eyebrow labels above headings are recognised tells. The homepage cards were reworked in November 2026 to drop them; do not bring them back.
 
 ## Design Principles
 
 1. **Practice what you preach.** The site is itself exemplary Quarto output; every page is proof the tool can make beautiful, credible work. This is why the landing is brand even though interior reference pages serve their content like a product.
 2. **Teach by showing.** Real rendered output and runnable code over abstract description.
 3. **Reference-first navigation.** A learner mid-session and a returner-in-a-hurry both find the right page fast; structure and findability beat decoration on interior pages.
-4. **Earn every flourish.** Warmth comes from typography, warm paper, and the quartile accents, not from effects. If a decorative element does not aid comprehension, cut it.
+4. **Earn every flourish.** Warmth comes from the type, the mint and forest palette and the slanted section edges shared with the ZALF Science Conference site, not from effects. If a decorative element does not aid comprehension, cut it.
 5. **Credible, not corporate.** Scholarly restraint throughout; no marketing cadence, no hype.
 
 ## Accessibility & Inclusion
 
 Target **WCAG 2.1 AA**.
 
-- Body text ≥ 4.5:1 against its background (watch muted text on warm paper); large text ≥ 3:1.
+- Body text ≥ 4.5:1 against its background (watch muted text on mint); large text ≥ 3:1.
 - Visible keyboard focus and full keyboard navigability.
 - Full `prefers-reduced-motion` alternatives for any motion.
-- Both the light and dark `brand.yml` themes must pass contrast.
+- The site has one light theme (`_brand.yml`); there is no dark mode to check.
 - Content must stay usable when rendered to other Quarto formats (PDF / DOCX) and at small viewports on shared screens during a live session.

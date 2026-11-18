@@ -1,0 +1,88 @@
+meta:
+  name: One Tool to Rule Them All, a Quarto workshop
+  link: https://iat-dml.github.io/quarto-workshop/
+
+logo:
+  images:
+    dml-mark:
+      path: assets/dml-mark.svg
+      alt: "Data and Modelling Infrastructure for Living Labs (DML)"
+  small: dml-mark
+  medium: dml-mark
+
+color:
+  palette:
+    # Greens from the ZALF Science Conference 2026 site, with the DML ground
+    mint: "#EFF8E5"         # homepage sections, slide ground, closed step bars, callouts
+    mint-deep: "#DDEFCB"    # open step header, inline code
+    mint-pale: "#F5F8F2"    # code blocks
+    leaf: "#4A9E48"         # logo green: list markers, underlines, large shapes only
+    green: "#2F7F43"        # links and buttons (4.9:1 on white)
+    forest: "#153D31"       # headings, dark bands, footer
+    forest-2: "#1F5646"     # second stop of the dark band gradient
+    ink: "#16322B"          # body text
+    muted: "#53675E"        # secondary text (6.1:1 on white, 5.5:1 on mint)
+    sage-light: "#CFE3C8"   # secondary text on forest
+    leaf-light: "#A9DB8F"   # links on forest
+    teal-ink: "#2B6A66"     # strings in code (5.8:1 on mint-pale)
+    amber: "#8A5A00"        # warning text (6.0:1 on white)
+    red: "#B3261E"          # important and caution text
+    white: "#FFFFFF"
+
+  background: white
+  foreground: ink
+  primary: green
+  secondary: muted
+  tertiary: leaf
+  success: green
+  info: forest
+  warning: amber
+  danger: red
+  light: mint
+  dark: forest
+
+typography:
+  fonts:
+    # The DML brand fonts (iat-dml/dml-brand-yml)
+    - family: DM Serif Display
+      source: google
+      weight: [400]
+      style: [normal, italic]
+    - family: DM Sans
+      source: google
+      weight: [400, 500, 600, 700]
+      style: [normal, italic]
+    - family: IBM Plex Mono
+      source: google
+      weight: [400, 500]
+      style: [normal, italic]
+
+  base:
+    family: DM Sans
+    size: 1.0625rem
+    line-height: 1.65
+    weight: 400
+
+  headings:
+    family: DM Serif Display
+    weight: 400
+    style: normal
+    line-height: 1.12
+    color: forest
+
+  monospace:
+    family: IBM Plex Mono
+    size: 0.9em
+
+  monospace-inline:
+    color: forest-2
+    background-color: mint-deep
+
+  monospace-block:
+    color: ink
+    background-color: mint-pale
+
+  link:
+    color: green
+    weight: 500
+    decoration: underline

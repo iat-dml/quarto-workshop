@@ -32,7 +32,7 @@ Wherever a step needs concrete code, we show it for the **sample data**. If you 
 
 (`restoration-scenarios.csv` holds vegetation cover under three management scenarios and is only needed for a stretch task.)
 
-## Step 1: Create the presentation file
+## Step 1: Create the presentation file {.step}
 
 A reveal.js presentation is just one `.qmd` file with `format: revealjs`. Make a folder to keep this exercise in (say `my-talk/`), and inside it create a file called `talk.qmd` with this minimal starter:
 
@@ -78,7 +78,7 @@ Everything you write under a `##` (text, bullets, a figure) lands on that slide.
 Every R chunk in your real `talk.qmd` opens with ```` ```{r} ````, with curly braces, so Quarto runs it. In the sketches on this page we write ```` ```r ```` *without* braces only so they display as text instead of executing. When you copy them into your file, add the braces back.
 :::
 
-## Step 2: Add your title slide and author details
+## Step 2: Add your title slide and author details {.step}
 
 The title slide is built automatically from the document's metadata. Replace the front matter with your own title, a subtitle naming the venue, and a proper author block: add **yourself**, with an ORCID, email, and affiliation:
 
@@ -104,7 +104,7 @@ Save and watch the preview: the title, subtitle, your name, affiliation, and dat
 Every researcher can register for a free ORCID at [orcid.org](https://orcid.org/). It is the 16-digit ID in their profile URL. Use a real one if you have it; the placeholder above still renders fine.
 :::
 
-## Step 3: Add a logo
+## Step 3: Add a logo {.step}
 
 A conference talk usually carries a logo: your institution's, or the conference's. Download the iEMSs 2026 logo (or use your own university's):
 
@@ -121,7 +121,7 @@ format:
 
 `logo:` pins your image to the bottom-right of every slide; `footer:` adds a line of text along the bottom. Render and you will see both.
 
-## Step 4: Build your introductory slides
+## Step 4: Build your introductory slides {.step}
 
 A talk needs a way in. Add a section divider and an opening content slide before you reach any results. Two reveal.js features make these feel like slides rather than a wall of text:
 
@@ -148,7 +148,7 @@ How fast is vegetation cover recovering, and does the pace differ by site?
 
 The `# Background` line is a section slide (the `{background-color=...}` gives it a coloured backdrop), and the two `##` lines are content slides. Click through the preview to see the bullets and the pause reveal in turn.
 
-## Step 5: Load your data in a setup chunk
+## Step 5: Load your data in a setup chunk {.step}
 
 Your results slide will draw a figure from the data, so load it once near the top. Make a `data/` folder inside `my-talk/` and copy `restoration-sites.csv` into it (use the download button above). Then add a **setup chunk** just below the front matter. `include: false` runs the code but keeps it, and any messages, off your slides:
 
@@ -171,7 +171,7 @@ latest <- sites |> filter(date == max(date))   # most recent survey per site
 
 `first` and `latest` give the start and end of the monitoring period, which the next slide uses.
 
-## Step 6: Add a content slide with a figure and a main message
+## Step 6: Add a content slide with a figure and a main message {.step}
 
 This is the central slide of the talk. A good results slide makes **one** point, so put the message in the slide *title* and let a figure carry the evidence. Use a two-column layout to set the chart beside a few takeaways:
 
@@ -211,7 +211,7 @@ Three things to notice:
 
 The `{.smaller}` after the title shrinks the text on this one slide, which helps when a slide is busy.
 
-## Step 7: Add speaker notes
+## Step 7: Add speaker notes {.step}
 
 Reveal.js has a presenter view that shows notes only *you* can see. Add a `::: {.notes}` block to the bottom of your results slide:
 
@@ -234,7 +234,7 @@ The notes never appear on the slide itself. To read them while presenting, press
 With the deck open in a browser: <kbd>S</kbd> opens speaker view, <kbd>F</kbd> goes fullscreen, <kbd>O</kbd> shows a slide **overview** grid, and <kbd>E</kbd> switches to a print layout for exporting to PDF.
 :::
 
-## Step 8: Switch between the built-in themes
+## Step 8: Switch between the built-in themes {.step}
 
 Quarto ships with a set of reveal.js [themes](https://quarto.org/docs/presentations/revealjs/themes.html). Pick one with a `theme:` line under the format:
 
@@ -248,7 +248,7 @@ format:
 
 Now try a few: swap `serif` for `simple`, `moon`, `solarized`, `sky`, `league`, `night`, or `dracula` and watch the preview restyle instantly. The content stays the same and only the look changes.
 
-## Step 9: Try the community "clean" theme
+## Step 9: Try the community "clean" theme {.step}
 
 For a more distinctive title slide, install a community theme: Grant McDermott's widely used [quarto-revealjs-clean](https://github.com/grantmcdermott/quarto-revealjs-clean). From a terminal inside your `my-talk/` folder:
 
@@ -273,7 +273,7 @@ Render again. Your title slide now uses the clean theme's layout, and because th
 `clean-revealjs` is a Quarto **extension**: a small bundle of CSS and templates that adds a new output format. It is the same mechanism behind the journal templates in the manuscript exercise. Browse more at the [Quarto extensions listing](https://quarto.org/docs/extensions/).
 :::
 
-## Step 10: Render to HTML
+## Step 10: Render to HTML {.step}
 
 While writing you have been using `quarto preview`. For the finished file, render it:
 

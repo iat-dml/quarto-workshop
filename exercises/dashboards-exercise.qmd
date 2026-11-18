@@ -119,7 +119,7 @@ The code cells on this page are written as ```` ```r ```` (no braces) purely so 
 
 Create a file `my-dashboard.qmd` in your project folder, and place the downloaded CSV in a subfolder called `data` next to it. The snippets below assume exactly this layout, so the path `data/restoration-sites.csv` is relative to your `.qmd` file; adjust it if you store the CSV somewhere else. And remember: add the curly braces around `r` in every code cell you copy.
 
-**1. Header and setup.**
+### Step 1: Header and setup {.step}
 
 ````markdown
 ---
@@ -150,7 +150,7 @@ first <- sites |>
 
 `echo: false` hides the code, so the dashboard shows only results, and `include: false` keeps this setup cell from becoming a card of its own. The chunk loads the packages and the data, then prepares two subsets: `latest` keeps the most recent survey per site (used by the value boxes and the table), and `first` keeps the earliest one, so we can show how much cover has changed.
 
-**2. A row of headline numbers (value boxes).**
+### Step 2: Add a row of headline numbers {.step}
 
 A value box is a code cell with `#| content: valuebox` that returns a small list:
 
@@ -192,7 +192,7 @@ Vegetation cover is recovering across all four restoration sites.
 ````
 :::
 
-**3. Add the first chart: cover over time.**
+### Step 3: Chart vegetation cover over time {.step}
 
 ````markdown
 ## Row
@@ -210,7 +210,7 @@ plot_ly(sites, x = ~date, y = ~vegetation_cover_pct, color = ~site,
 
 Render and hover the lines to read values. That is plotly's interactivity, and it needs no server.
 
-**4. Put a table beside it: the latest readings.**
+### Step 4: Put a table of the latest readings beside the chart {.step}
 
 A dashboard card can hold a table just as easily as a chart. Give the row two explicit columns, the chart in one and a sortable `DT` table in the other:
 
