@@ -11,7 +11,7 @@ Having a shared visual identity across the outputs of research groups and projec
 
 ## Using and sharing your brand files
 
-Quarto applies branding automatically: drop a `_brand.yml` file in your project root (next to `_quarto.yml`) and it is picked up by every supported format — websites, reports, and dashboards  — with no further configuration (certain presentation format require a little more work). A single document outside a project works the same way if `_brand.yml` sits in the same directory.
+Quarto applies branding automatically: put a `_brand.yml` file in your project root (next to `_quarto.yml`) and every supported format picks it up with no further configuration. The supported formats are `html` (including websites), `dashboard`, `revealjs` and `typst`. A single document outside a project works the same way if `_brand.yml` sits in the same directory.
 
 If you'd rather keep the file elsewhere, point the `brand` key at it in `_quarto.yml`:
 
@@ -19,7 +19,7 @@ If you'd rather keep the file elsewhere, point the `brand` key at it in `_quarto
 brand: brand/_brand.yml
 ```
 
-You can also supply separate brands for light and dark appearance, or switch branding off for an individual document:
+You can also supply separate brands for light and dark appearance, as this website does:
 
 ```yaml
 brand:
@@ -27,13 +27,15 @@ brand:
   dark: dark-brand.yml
 ```
 
-Because a `_brand.yml` is just a small, structured file, the natural way to share one across a group is to keep it in its own Git repository as the single source of truth. To pull it into a project, run:
+To switch branding off for an individual document, set `brand: false` in its YAML header.
+
+Because a `_brand.yml` is a small, structured file, a good way to share one across a group is to keep it in its own Git repository as the single source of truth. From Quarto 1.9 you can pull it into a project with:
 
 ```bash
-quarto use brand <target>
+quarto use brand myorg/group-brand
 ```
 
-where `<target>` can be a GitHub repo (`myorg/group-brand`), a local path, or a URL to an archive. Quarto copies the brand file and its assets (logos, fonts) into the project — they must live inside the project directory — so each project gets a self-contained, version-controlled copy that you can refresh by running the command again.
+The target can be a GitHub repository (as here), a local folder, or a URL to a zip archive. Quarto copies the brand file and its assets (logos, fonts) into a `_brand/` folder in the project, so each project gets a self-contained, version-controlled copy that you can refresh by running the command again. On Quarto 1.8, the version that comes with RStudio 2026.01, the command does not exist yet: copy the brand file and its assets into the project by hand.
 
 ::: callout-tip
 `_brand.yml` files are particularly useful when integrated within [custom templates](../advanced/templates-and-extensions.qmd) for specific document types such as reports.

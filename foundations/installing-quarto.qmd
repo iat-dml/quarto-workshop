@@ -34,10 +34,10 @@ If you are joining the workshop at the ZALF Science Conference, you probably hav
 
 **Keep workshop projects outside OneDrive.** Create them in a plain folder such as `C:\Users\<you>\quarto-workshop`. Some Quarto extensions also fail on paths with umlauts.
 
-**VS Code needs to be told where Quarto is.** RStudio's copy of Quarto is not on your PATH, and the VS Code Quarto extension does not look in RStudio's folder. Either add this line to your VS Code `settings.json`:
+**VS Code needs to be told where Quarto is.** RStudio's copy of Quarto is not on your PATH, and the VS Code Quarto extension does not look in RStudio's folder. Either add this line to your VS Code `settings.json` (JSON needs the doubled backslashes):
 
 ```json
-"quarto.path": "C:\Program Files\RStudio\resources\app\bin\quarto\bin\quarto.exe"
+"quarto.path": "C:\\Program Files\\RStudio\\resources\\app\\bin\\quarto\\bin\\quarto.exe"
 ```
 
 or install the per-user version of Quarto from [quarto.org](https://quarto.org/docs/get-started/), which does not need administrator rights and adds itself to your PATH.
@@ -142,11 +142,12 @@ quarto install tinytex
 
 What you need depends on what you want to produce:
 
-| If you want to…                     | You need                  |
-|-------------------------------------|---------------------------|
-| Write and render to HTML or Word    | Quarto + an editor        |
-| Also export PDF                     | + TinyTeX                 |
-| Run R or Python inside the document | + that language runtime   |
+| If you want to…                     | You need                                |
+|-------------------------------------|-----------------------------------------|
+| Write and render to HTML or Word    | Quarto and an editor                    |
+| Also export PDF with `format: typst`| nothing more, Typst is part of Quarto   |
+| Also export PDF with `format: pdf`  | TinyTeX or another LaTeX installation   |
+| Run R or Python inside the document | that language runtime                   |
 
 You can start minimal and add pieces later. Writing and rendering to HTML or Word needs nothing beyond Quarto and an editor; the language runtime only matters once you want to execute code.
 

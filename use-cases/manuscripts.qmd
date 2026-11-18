@@ -1,5 +1,7 @@
 ---
 title: "Writing Manuscripts"
+# The code on this page is shown, not run. Without this line knitr would try to run the examples.
+engine: markdown
 ---
 
 Everyone knows that managing the drafting, feedback and submission of manuscripts is a lot of work. Some colleagues require .docx format to allow for track changes, some work with LaTeX. Journals each have their own arcane formatting requirements, which are rarely corrected documented in their own author guides...
@@ -35,7 +37,7 @@ Leverage Quarto's ability to render to multiple formats from the same source fil
 
 - `.html` or `.docx` for internal review and sharing with collaborators.
 
-- `.pdf` and `.tex` (LaTeX) for journal submission.
+- `.pdf` and `.tex` (LaTeX) for journal submission. Quarto can also make PDFs with [Typst](https://quarto.org/docs/output-formats/typst.html), which is built in and needs no LaTeX installation.
 
 There are quite a number of [journal templates available for Quarto](https://github.com/quarto-journals/) that can be used to format your manuscript according to specific journal requirements. But equally using journals LaTeX submission portal is often the easiest approach.
 
@@ -50,7 +52,7 @@ A major benefit for PhD researchers doing cumulative theses is if you write each
 When analysis is embedded, manuscript results become easier to update and verify. By setting up a custom `ggplot` or `matplotlib` theme in a separate script, you can ensure that all your figures have a consistent style and easily change colours or fonts according to journal requirements without having to manually edit each figure. This also makes it easier to maintain a consistent visual identity across all your publications.
 
 ::: callout-tip
-Long code chunks in manuscript qmds for figures can be cumbersome, better to separate out into a script and source it in the header the manuscript. For example, you can have a `figures.R` script that generates all your figures and saves them to the `figures/` directory. Then in your manuscript.qmd, you can source this script in the YAML header or at the beginning of the document to ensure all figures are re-generated before rendering.
+Long code chunks for figures make a manuscript `.qmd` hard to read, so it is better to move them into a script. For example, a `figures.R` script can define a function for each figure. Call `source("scripts/figures.R")` in a setup chunk at the top of `manuscript.qmd`, then call one function per figure chunk, so every figure is regenerated from the data each time you render.
 :::
 
 ### Inline statistics from data
@@ -63,7 +65,7 @@ For example, with the restoration data loaded in a setup chunk, you can write th
 ## R
 
 ````markdown
-```{r}
+```{{r}}
 #| include: false
 sites <- read.csv("data/restoration-sites.csv")
 ```
@@ -76,14 +78,14 @@ per site.
 ## Python
 
 ````markdown
-```{python}
+```{{python}}
 #| include: false
 import pandas as pd
 sites = pd.read_csv("data/restoration-sites.csv")
 ```
 
-We monitored `{python} sites["site"].nunique()` restoration sites, with a mean
-species richness of `{python} round(sites["species_richness"].mean(), 1)`
+We monitored `{{python}} sites["site"].nunique()` restoration sites, with a mean
+species richness of `{{python}} round(sites["species_richness"].mean(), 1)`
 species per site.
 ````
 :::
@@ -92,9 +94,9 @@ Both versions render as plain text in the finished document, for example: "We mo
 
 ### Integrated citation support
 
-Integration with [Zotero](https://www.zotero.org/) to keep citations in the same workflow as writing. In the visual editor you can also add a citation directly from the DOI
+You cite a source by typing `@` and its key, for example `[@gann2019]`, and Quarto builds the reference list when it renders. The visual editor in RStudio, Positron and VS Code can insert a citation from your [Zotero](https://www.zotero.org/) library or directly from a DOI, and it adds the entry to your bibliography (`.bib`) file for you.
 
-When you add a citation using the `@` syntax Quarto automatically adds it to the bibliography (`.bib`) file and then upon rendering applies the citation style you have specified in the YAML header. This means you can easily switch between different citation styles (e.g., APA, MLA, Chicago) without having to manually reformat your references.
+The citation style comes from a CSL file named in the YAML header (`csl: journal-style.csl`), so you can switch between styles such as APA, Chicago or a journal's own without reformatting any references by hand.
 
 ### Cross-referencing
 

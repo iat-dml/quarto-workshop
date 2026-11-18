@@ -33,7 +33,7 @@ In addition, when you need to provide presentations in other formats Quarto slid
 
 ### Customizable Themes
 
-Quarto provides 11 built in [themes for reveal.js slides](https://quarto.org/docs/presentations/revealjs/themes.html) or you can prepare your own lightweight CSS theme based on your own [branding](../advanced/brand-yml.qmd) and apply it to your slides as a [template](../advanced/templates-and-extensions.qmd).
+Quarto provides 12 built-in [themes for reveal.js slides](https://quarto.org/docs/presentations/revealjs/themes.html) or you can prepare your own lightweight CSS theme based on your own [branding](../advanced/brand-yml.qmd) and apply it to your slides as a [template](../advanced/templates-and-extensions.qmd).
 
 ### Established Ecosystem with continued development
 

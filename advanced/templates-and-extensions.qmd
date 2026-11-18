@@ -87,7 +87,6 @@ This downloads the extension into an `_extensions` directory next to your docume
 
 This website uses three extensions:
 
-This website uses three extensions:
 - [`embedio`](https://github.com/coatless-quarto/embedio) extension to easily embed interactive content like revealjs presentations
 - [`iconify`](https://github.com/mcanouil/quarto-iconify) extension for including free and open source icons provided by [Iconify](https://icon-sets.iconify.design/).
 - [`fontawesome`](https://github.com/quarto-ext/fontawesome) extension for including free icons provided by [Font Awesome](https://fontawesome.com)
