@@ -2,20 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Creating Websites for Research Outreach</title>
+<title>Creating websites for research outreach</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -70,18 +73,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a3703a0dc74fdf50fbc673dfac110324.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9f18ae6aabaf6c0e00f98c5a006862d7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e6aacd54bf6b5dd9b3b58f0889065d38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -115,11 +119,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta name="twitter:title" content="One Tool to *Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach">
 <meta name="twitter:description" content="A guided workshop demonstrating how to use Quarto to create academic websites, presentations, manuscripts and outreach materials.">
-<meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/use-cases/assets/website-screenshots/workshop-website-light.png">
+<meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/assets/website-screenshots/workshop-website-light.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -142,6 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -171,13 +176,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -271,6 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -285,10 +297,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -303,26 +314,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../use-cases/research-diary.html"> 
-<span class="menu-text">Academic Use Cases</span></a>
+<span class="menu-text">Academic use cases</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../advanced/templates-and-extensions.html"> 
-<span class="menu-text">Advanced Topics</span></a>
+<span class="menu-text">Advanced topics</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/websites.html">Creating Project and Personal Websites</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../use-cases/websites.html">Creating project and personal websites</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -333,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -343,29 +355,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Foundations</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/quarto-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What Is Quarto?</span></a>
+ <span class="menu-text">What is Quarto?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/markdown-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown for Beginners</span></a>
+ <span class="menu-text">Markdown for beginners</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/yaml-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YAML Headers in Quarto</span></a>
+ <span class="menu-text">YAML headers in Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -378,17 +387,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Academic Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Academic use cases</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documenting Research in Progress</span></a>
+ <span class="menu-text">Documenting research in progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -400,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/manuscripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Manuscripts</span></a>
+ <span class="menu-text">Writing manuscripts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -412,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Presentations</span></a>
+ <span class="menu-text">Creating presentations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -424,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/websites.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Creating Project and Personal Websites</span></a>
+ <span class="menu-text">Creating project and personal websites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -449,35 +455,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Advanced topics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/templates-and-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Custom Templates and Extensions</span></a>
+ <span class="menu-text">Creating custom templates and extensions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/brand-yml.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consistent Branding with <code>_brand.yml</code></span></a>
+ <span class="menu-text">Consistent branding with <code>_brand.yml</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+ <span class="menu-text">Multi-lingual Quarto with babelquarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+ <span class="menu-text">Personalised mass communications: invitations and letters</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -491,16 +494,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Go further</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Go further">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
+ <span class="menu-text">Go further</span></a>
   </div>
 </li>
       </ul>
@@ -511,30 +514,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-this-use-case-matters-for-researchers" id="toc-why-this-use-case-matters-for-researchers" class="nav-link active" data-scroll-target="#why-this-use-case-matters-for-researchers">Why This Use-Case Matters For Researchers</a></li>
+  <li><a href="#why-researchers-build-websites" id="toc-why-researchers-build-websites" class="nav-link active" data-scroll-target="#why-researchers-build-websites">Why researchers build websites</a></li>
   <li><a href="#the-basics-of-websites-with-quarto" id="toc-the-basics-of-websites-with-quarto" class="nav-link" data-scroll-target="#the-basics-of-websites-with-quarto">The basics of websites with Quarto</a>
   <ul class="collapse">
   <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
   <li><a href="#project-level-configuration" id="toc-project-level-configuration" class="nav-link" data-scroll-target="#project-level-configuration">Project-level configuration</a></li>
-  <li><a href="#the-front-page-index.qmd" id="toc-the-front-page-index.qmd" class="nav-link" data-scroll-target="#the-front-page-index.qmd">The Front Page: index.qmd</a></li>
-  <li><a href="#reusable-authoring-patterns" id="toc-reusable-authoring-patterns" class="nav-link" data-scroll-target="#reusable-authoring-patterns">Reusable Authoring Patterns</a></li>
-  <li><a href="#formatting-and-theming" id="toc-formatting-and-theming" class="nav-link" data-scroll-target="#formatting-and-theming">Formatting and Theming</a></li>
+  <li><a href="#the-front-page-index.qmd" id="toc-the-front-page-index.qmd" class="nav-link" data-scroll-target="#the-front-page-index.qmd">The front page: index.qmd</a></li>
+  <li><a href="#reusable-authoring-patterns" id="toc-reusable-authoring-patterns" class="nav-link" data-scroll-target="#reusable-authoring-patterns">Reusable authoring patterns</a></li>
+  <li><a href="#formatting-and-theming" id="toc-formatting-and-theming" class="nav-link" data-scroll-target="#formatting-and-theming">Formatting and theming</a></li>
   </ul></li>
-  <li><a href="#concrete-examples" id="toc-concrete-examples" class="nav-link" data-scroll-target="#concrete-examples">Concrete Examples</a></li>
+  <li><a href="#websites-we-have-built" id="toc-websites-we-have-built" class="nav-link" data-scroll-target="#websites-we-have-built">Websites we have built</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/use-cases/websites.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../use-cases/websites.html">Creating Project and Personal Websites</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../use-cases/websites.html">Creating project and personal websites</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Creating Websites for Research Outreach</h1>
+<h1 class="title">Creating websites for research outreach</h1>
 </div>
 
 
@@ -553,8 +556,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Quarto allows you to generate full websites which can then be deployed for free using services such as GitHub Pages or Netlify. This provides an easy solution to create web content for research groups, project pages, course and teaching materials, as well as personal academic profiles.</p>
 <p>In the exercise for this section, you will create a simple website to share your research outputs.</p>
-<section id="why-this-use-case-matters-for-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-use-case-matters-for-researchers">Why This Use-Case Matters For Researchers</h2>
+<section id="why-researchers-build-websites" class="level2">
+<h2 class="anchored" data-anchor-id="why-researchers-build-websites">Why researchers build websites</h2>
 <p>Doing some form of outreach activities has become increasingly important for:</p>
 <ul>
 <li>Increasing your professional visibility</li>
@@ -566,19 +569,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the-basics-of-websites-with-quarto">The basics of websites with Quarto</h2>
 <section id="rendering" class="level3">
 <h3 class="anchored" data-anchor-id="rendering">Rendering</h3>
-<p>The websites functionality of Quarto is built on top of <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">Bootstrap</a> which is a free front-end framework which is very popular for fast and easy web development.</p>
-<p>Like all websites Quarto website pages render as .HTML files. In many IDEs such as RStudio, VScode and Positron these can be viewed locally directly in the ‘viewer pane’ by clicking the ‘Preview’ button at the top of the file editor window ir right clicking on the file itself.</p>
+<p>Quarto websites are built on top of <a href="https://getbootstrap.com/">Bootstrap</a>, a free and widely used front-end framework.</p>
+<p>Like all websites, Quarto website pages render as HTML files. In RStudio, VS Code and Positron you can view them locally in the viewer pane by clicking the Preview button at the top of the editor window, or by right-clicking the file.</p>
 </section>
 <section id="project-level-configuration" class="level3">
 <h3 class="anchored" data-anchor-id="project-level-configuration">Project-level configuration</h3>
 <p>Like all Quarto projects, websites should use a project-level <code>_quarto.yml</code> file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site.</p>
 </section>
 <section id="the-front-page-index.qmd" class="level3">
-<h3 class="anchored" data-anchor-id="the-front-page-index.qmd">The Front Page: index.qmd</h3>
+<h3 class="anchored" data-anchor-id="the-front-page-index.qmd">The front page: index.qmd</h3>
 <p>Websites must have an <code>index.qmd</code> file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.</p>
 </section>
 <section id="reusable-authoring-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="reusable-authoring-patterns">Reusable Authoring Patterns</h3>
+<h3 class="anchored" data-anchor-id="reusable-authoring-patterns">Reusable authoring patterns</h3>
 <p>The same Markdown, YAML, callouts, images, and code chunk patterns used in other Quarto output formats can all be used in websites too. You can also include additional HTML or JavaScript blocks or scripts to add custom functionality to your site.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -590,23 +593,23 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Websites can include other Quarto content such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other content such as PDFs, videos or even google forms by embedding them with iframes.</p>
+<p>Websites can include other Quarto content such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other content such as PDFs, videos or Google Forms by embedding them with iframes.</p>
 </div>
 </div>
 </section>
 <section id="formatting-and-theming" class="level3">
-<h3 class="anchored" data-anchor-id="formatting-and-theming">Formatting and Theming</h3>
-<section id="inbuilt-themes" class="level4">
-<h4 class="anchored" data-anchor-id="inbuilt-themes">Inbuilt themes</h4>
+<h3 class="anchored" data-anchor-id="formatting-and-theming">Formatting and theming</h3>
+<section id="built-in-themes" class="level4">
+<h4 class="anchored" data-anchor-id="built-in-themes">Built-in themes</h4>
 <p>Quarto ships with 25 built-in themes drawn from the <a href="https://bootswatch.com/">Bootswatch</a> project (such as <code>cosmo</code>, <code>flatly</code>, <code>journal</code>, and <code>litera</code>). Because a website is a project, you set the theme once in <code>_quarto.yml</code> and every page inherits it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Swap the name to preview alternatives until you find one that fits — see the full list in the <a href="https://quarto.org/docs/output-formats/html-themes.html">Quarto theme documentation</a>.</p>
+<p>Swap the name to preview alternatives until you find one that fits. The full list is in the <a href="https://quarto.org/docs/output-formats/html-themes.html">Quarto theme documentation</a>.</p>
 </section>
 <section id="customising-with-sass-and-css" class="level4">
 <h4 class="anchored" data-anchor-id="customising-with-sass-and-css">Customising with Sass and CSS</h4>
-<p>While a built-in theme gets you most of the way there, it can feel a bit generic. To change things up you can layer your own styling on top. CSS (Cascading Style Sheets) is the language browsers read directly to style a page, while Sass is a more powerful superset that adds conveniences like variables, nesting, and reusable rules — it compiles down to plain CSS before the browser ever sees it. For Quarto, the recommended route is a <a href="https://sass-lang.com/">Sass</a> theme file (<code>.scss</code>), which lets you override Bootstrap variables (colours, fonts, spacing) and add custom rules. You can include this in your project by adding it to the <code>_quarto.yml</code> file:</p>
+<p>While a built-in theme gets you most of the way there, it can feel a bit generic. To change things up you can layer your own styling on top. CSS (Cascading Style Sheets) is the language browsers read directly to style a page, while Sass is a superset that adds conveniences like variables, nesting, and reusable rules, and it compiles down to plain CSS before the browser sees it. For Quarto, the recommended route is a <a href="https://sass-lang.com/">Sass</a> theme file (<code>.scss</code>), which lets you override Bootstrap variables (colours, fonts, spacing) and add custom rules. You can include this in your project by adding it to the <code>_quarto.yml</code> file:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
@@ -633,13 +636,13 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given the depth of Sass and CSS, don’t be afraid to bring in some help. AI agents or chat services are really quite good at writing CSS and there are even specific agentic harnesses such as <a href="https://claude.ai/design">Claude Design</a>, <a href="https://impeccable.style/">Impeccable</a> and <a href="https://open-design.ai/">Open Design</a> that can help you take your website to the next level.</p>
+<p>Sass and CSS run deep, so don’t be afraid to bring in some help. AI chat services and coding agents are good at writing CSS, and there are tools aimed at design work in particular, such as <a href="https://claude.ai/design">Claude Design</a>, <a href="https://impeccable.style/">Impeccable</a> and <a href="https://open-design.ai/">Open Design</a>.</p>
 </div>
 </div>
 </section>
 <section id="light-and-dark-mode" class="level4">
 <h4 class="anchored" data-anchor-id="light-and-dark-mode">Light and dark mode</h4>
-<p>Quarto has the option to add light and dark modes for websites. Simply provide two themes in the yaml file and Quarto automatically adds a toggle to the navbar. The first entry is the default, and each side can be paired with its own <code>.scss</code>:</p>
+<p>Quarto can give a website a light and a dark mode. Provide two themes in the YAML and Quarto adds a toggle to the navbar. The first entry is the default, and each side can be paired with its own <code>.scss</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
@@ -648,13 +651,13 @@ Tip
 </section>
 <section id="building-a-consistent-visual-identity" class="level4">
 <h4 class="anchored" data-anchor-id="building-a-consistent-visual-identity">Building a consistent visual identity</h4>
-<p>For maintaining a consistent identity across your website, presentations, and reports, Quarto can also read a shared <code>_brand.yml</code> file that defines your colours, fonts, and logo in one place, this is covered in the <a href="../advanced/brand-yml.html">advanced topics section</a>.</p>
+<p>For maintaining a consistent identity across your website, presentations, and reports, Quarto can also read a shared <code>_brand.yml</code> file that defines your colours, fonts, and logo in one place. This is covered in the <a href="../advanced/brand-yml.html">advanced topics section</a>.</p>
 </section>
 </section>
 </section>
-<section id="concrete-examples" class="level2">
-<h2 class="anchored" data-anchor-id="concrete-examples">Concrete Examples</h2>
-<p>Here are some real websites that the authors have built with Quarto — academic profiles, project pages, a handbook, and even a personal wedding site:</p>
+<section id="websites-we-have-built" class="level2">
+<h2 class="anchored" data-anchor-id="websites-we-have-built">Websites we have built</h2>
+<p>Here are some websites that the authors have built with Quarto: academic profiles, project pages, a handbook, and a wedding site.</p>
 <div class="showcase-cards">
 <div class="card">
 <p><img src="../assets/website-screenshots/blenback-website.png" class="showcase-thumb img-fluid"></p>
@@ -668,7 +671,7 @@ Tip
 <p><img src="../assets/website-screenshots/nascent-website.png" class="showcase-thumb img-fluid"></p>
 <div class="showcase-body">
 <p><a href="https://nascent-peru.github.io/" class="showcase-title">NASCENT-Peru</a></p>
-<p><span class="showcase-desc">A multi-lingual research project website — discussed further in the advanced topics section.</span></p>
+<p><span class="showcase-desc">A multi-lingual research project website, discussed further in the advanced topics section.</span></p>
 <p><span class="showcase-go" aria-hidden="true">Visit site <iconify-icon role="img" inline="" icon="fa6-solid:arrow-up-right-from-square" aria-label="Icon arrow-up-right-from-square from fa6-solid Iconify.design set." title="Icon arrow-up-right-from-square from fa6-solid Iconify.design set."></iconify-icon></span></p>
 </div>
 </div>
@@ -692,12 +695,12 @@ Tip
 <p><img src="../assets/website-screenshots/wedding-website.png" class="showcase-thumb img-fluid"></p>
 <div class="showcase-body">
 <p><a href="https://janna-and-ben.github.io/" class="showcase-title">Wedding website</a></p>
-<p><span class="showcase-desc">Quarto isn’t limited to academic use — it works just as well for personal projects.</span></p>
+<p><span class="showcase-desc">Quarto also works for personal projects.</span></p>
 <p><span class="showcase-go" aria-hidden="true">Visit site <iconify-icon role="img" inline="" icon="fa6-solid:arrow-up-right-from-square" aria-label="Icon arrow-up-right-from-square from fa6-solid Iconify.design set." title="Icon arrow-up-right-from-square from fa6-solid Iconify.design set."></iconify-icon></span></p>
 </div>
 </div>
 </div>
-<p>Of course, the website you are reading right now is also built with Quarto, you can <a href="https://github.com/iat-dml/quarto-workshop">view the source code for this site on GitHub</a>.</p>
+<p>The website you are reading is also built with Quarto, and you can <a href="https://github.com/iat-dml/quarto-workshop">view its source code on GitHub</a>.</p>
 <p><a href="../exercises/websites-exercise.html" class="btn btn-primary">Go to the exercise to build your own personal website</a></p>
 
 
@@ -708,15 +711,50 @@ Tip
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -795,7 +833,8 @@ Tip
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -804,8 +843,69 @@ Tip
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -819,6 +919,7 @@ Tip
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -981,44 +1082,54 @@ Tip
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1116,6 +1227,9 @@ Tip
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 

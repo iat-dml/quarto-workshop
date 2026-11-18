@@ -2,20 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise: Build a Dashboard</title>
+<title>Exercise: build a dashboard</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -70,18 +73,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a3703a0dc74fdf50fbc673dfac110324.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9f18ae6aabaf6c0e00f98c5a006862d7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e6aacd54bf6b5dd9b3b58f0889065d38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,11 +118,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta name="twitter:title" content="One Tool to *Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach">
 <meta name="twitter:description" content="A guided workshop demonstrating how to use Quarto to create academic websites, presentations, manuscripts and outreach materials.">
-<meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/exercises/assets/website-screenshots/workshop-website-light.png">
+<meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/assets/website-screenshots/workshop-website-light.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -141,6 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -170,13 +175,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -270,6 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -284,10 +296,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -302,26 +313,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../use-cases/research-diary.html"> 
-<span class="menu-text">Academic Use Cases</span></a>
+<span class="menu-text">Academic use cases</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../advanced/templates-and-extensions.html"> 
-<span class="menu-text">Advanced Topics</span></a>
+<span class="menu-text">Advanced topics</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -332,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -342,29 +354,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Foundations</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/quarto-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What Is Quarto?</span></a>
+ <span class="menu-text">What is Quarto?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/markdown-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown for Beginners</span></a>
+ <span class="menu-text">Markdown for beginners</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/yaml-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YAML Headers in Quarto</span></a>
+ <span class="menu-text">YAML headers in Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,17 +386,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Academic Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Academic use cases</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documenting Research in Progress</span></a>
+ <span class="menu-text">Documenting research in progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/manuscripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Manuscripts</span></a>
+ <span class="menu-text">Writing manuscripts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -411,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Presentations</span></a>
+ <span class="menu-text">Creating presentations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -423,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/websites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Project and Personal Websites</span></a>
+ <span class="menu-text">Creating project and personal websites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -448,35 +454,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Advanced topics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/templates-and-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Custom Templates and Extensions</span></a>
+ <span class="menu-text">Creating custom templates and extensions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/brand-yml.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consistent Branding with <code>_brand.yml</code></span></a>
+ <span class="menu-text">Consistent branding with <code>_brand.yml</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+ <span class="menu-text">Multi-lingual Quarto with babelquarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+ <span class="menu-text">Personalised mass communications: invitations and letters</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -490,16 +493,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Go further</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Go further">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
+ <span class="menu-text">Go further</span></a>
   </div>
 </li>
       </ul>
@@ -510,30 +513,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning Goal</a>
+  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning goal</a>
   <ul class="collapse">
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#turning-a-document-into-a-dashboard" id="toc-turning-a-document-into-a-dashboard" class="nav-link" data-scroll-target="#turning-a-document-into-a-dashboard">Turning a Document into a Dashboard</a></li>
-  <li><a href="#how-a-dashboard-is-laid-out-rows-and-columns" id="toc-how-a-dashboard-is-laid-out-rows-and-columns" class="nav-link" data-scroll-target="#how-a-dashboard-is-laid-out-rows-and-columns">How a Dashboard Is Laid Out: Rows and Columns</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The data</a></li>
+  <li><a href="#turning-a-document-into-a-dashboard" id="toc-turning-a-document-into-a-dashboard" class="nav-link" data-scroll-target="#turning-a-document-into-a-dashboard">Turning a document into a dashboard</a></li>
+  <li><a href="#how-a-dashboard-is-laid-out-rows-and-columns" id="toc-how-a-dashboard-is-laid-out-rows-and-columns" class="nav-link" data-scroll-target="#how-a-dashboard-is-laid-out-rows-and-columns">How a dashboard is laid out: rows and columns</a></li>
   </ul></li>
-  <li><a href="#build-it-step-by-step" id="toc-build-it-step-by-step" class="nav-link" data-scroll-target="#build-it-step-by-step">Build It Step by Step</a></li>
+  <li><a href="#build-it-step-by-step" id="toc-build-it-step-by-step" class="nav-link" data-scroll-target="#build-it-step-by-step">Build it step by step</a></li>
   <li><a href="#stretch-a-what-if-scenario-explorer-optional" id="toc-stretch-a-what-if-scenario-explorer-optional" class="nav-link" data-scroll-target="#stretch-a-what-if-scenario-explorer-optional">Stretch: a what-if scenario explorer (optional)</a></li>
-  <li><a href="#adapt-it-to-your-own-data" id="toc-adapt-it-to-your-own-data" class="nav-link" data-scroll-target="#adapt-it-to-your-own-data">Adapt It to Your Own Data</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
+  <li><a href="#adapt-it-to-your-own-data" id="toc-adapt-it-to-your-own-data" class="nav-link" data-scroll-target="#adapt-it-to-your-own-data">Adapt it to your own data</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-check</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/dashboards-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../exercises/dashboards-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercise: Build a Dashboard</h1>
+<h1 class="title">Exercise: build a dashboard</h1>
 </div>
 
 
@@ -551,7 +554,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="learning-goal" class="level2">
-<h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
+<h2 class="anchored" data-anchor-id="learning-goal">Learning goal</h2>
 <p>Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how <code>format: dashboard</code> arranges a page into rows and columns.</p>
 <p>This is what you are building toward:</p>
 <iframe src="../dashboards/restoration-dashboard.html" width="100%" height="850" style="border: 1px solid var(--ds-rule); border-radius: 0.6rem;" title="The finished restoration monitoring dashboard">
@@ -571,7 +574,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="the-data" class="level3">
-<h3 class="anchored" data-anchor-id="the-data">The Data</h3>
+<h3 class="anchored" data-anchor-id="the-data">The data</h3>
 <p>You will use a small synthetic dataset, <code>data/restoration-sites.csv</code>. Each row is one survey of one site:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -588,16 +591,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>It has five columns:</p>
 <ul>
-<li><code>site</code> — the monitoring site (A to D)</li>
-<li><code>date</code> — survey date (quarterly)</li>
-<li><code>vegetation_cover_pct</code> — vegetation cover, in percent</li>
-<li><code>species_richness</code> — number of species recorded</li>
-<li><code>soil_moisture_pct</code> — soil moisture, in percent</li>
+<li><code>site</code>: the monitoring site (A to D)</li>
+<li><code>date</code>: survey date (quarterly)</li>
+<li><code>vegetation_cover_pct</code>: vegetation cover, in percent</li>
+<li><code>species_richness</code>: number of species recorded</li>
+<li><code>soil_moisture_pct</code>: soil moisture, in percent</li>
 </ul>
 <p><a href="../data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a></p>
 </section>
 <section id="turning-a-document-into-a-dashboard" class="level3">
-<h3 class="anchored" data-anchor-id="turning-a-document-into-a-dashboard">Turning a Document into a Dashboard</h3>
+<h3 class="anchored" data-anchor-id="turning-a-document-into-a-dashboard">Turning a document into a dashboard</h3>
 <p>A dashboard is an ordinary <code>.qmd</code> file with one decisive setting: the output format in the YAML header is set to <code>dashboard</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Dashboard"</span></span>
@@ -606,8 +609,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Everything else, the Markdown, the code chunks, stays exactly as you know it. What changes is how Quarto arranges the content on the page, which is what the next section is about.</p>
 </section>
 <section id="how-a-dashboard-is-laid-out-rows-and-columns" class="level3">
-<h3 class="anchored" data-anchor-id="how-a-dashboard-is-laid-out-rows-and-columns">How a Dashboard Is Laid Out: Rows and Columns</h3>
-<p>This is the part that trips most people up at first, so it is worth getting clear before you build.</p>
+<h3 class="anchored" data-anchor-id="how-a-dashboard-is-laid-out-rows-and-columns">How a dashboard is laid out: rows and columns</h3>
+<p>This part trips most people up at first, so it is worth getting clear before you build.</p>
 <p>A dashboard fills the browser window and arranges your content into a grid of <strong>cards</strong>. Two heading levels control that grid:</p>
 <ul>
 <li><code>##</code> starts a new <strong>row</strong></li>
@@ -671,7 +674,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="build-it-step-by-step" class="level2">
-<h2 class="anchored" data-anchor-id="build-it-step-by-step">Build It Step by Step</h2>
+<h2 class="anchored" data-anchor-id="build-it-step-by-step">Build it step by step</h2>
 <p>Create a file <code>my-dashboard.qmd</code> in your project folder, and place the downloaded CSV in a subfolder called <code>data</code> next to it. The snippets below assume exactly this layout, so the path <code>data/restoration-sites.csv</code> is relative to your <code>.qmd</code> file; adjust it if you store the CSV somewhere else. And remember: add the curly braces around <code>r</code> in every code cell you copy.</p>
 <p><strong>1. Header and setup.</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -718,10 +721,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Cover change since 2023"</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">value =</span> <span class="fu">paste0</span>(<span class="st">"+"</span>, <span class="fu">round</span>(<span class="fu">mean</span>(latest<span class="sc">$</span>vegetation_cover_pct) <span class="sc">-</span> <span class="fu">mean</span>(first<span class="sc">$</span>vegetation_cover_pct)), <span class="st">"%"</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">value =</span> <span class="fu">paste0</span>(<span class="st">"+"</span>, <span class="fu">round</span>(<span class="fu">mean</span>(latest<span class="sc">$</span>vegetation_cover_pct) <span class="sc">-</span> <span class="fu">mean</span>(first<span class="sc">$</span>vegetation_cover_pct)), <span class="st">" pts"</span>),</span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">icon =</span> <span class="st">"graph-up-arrow"</span>, <span class="at">color =</span> <span class="st">"success"</span>)</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <code>value</code> can be any small computation: <code>n_distinct(sites$site)</code> counts the unique sites, <code>nrow(sites)</code> counts the rows (one per survey), and the third box subtracts the mean cover of the first survey round from the mean of the latest one to get the change.</p>
+<p>The <code>value</code> can be any small computation: <code>n_distinct(sites$site)</code> counts the unique sites, <code>nrow(sites)</code> counts the rows (one per survey), and the third box subtracts the mean cover of the first survey round from the mean of the latest one to get the change in percentage points.</p>
 <p>Render. Three coloured boxes appear side by side, three cards in one row. The <code>icon</code> names come from the <a href="https://icons.getbootstrap.com/">Bootstrap Icons library</a>, where you can browse all available icons and copy their names.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -817,7 +820,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Because all three charts share a fixed y-axis (<code>range = c(30, 95)</code>), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.</p>
 </section>
 <section id="adapt-it-to-your-own-data" class="level2">
-<h2 class="anchored" data-anchor-id="adapt-it-to-your-own-data">Adapt It to Your Own Data</h2>
+<h2 class="anchored" data-anchor-id="adapt-it-to-your-own-data">Adapt it to your own data</h2>
 <p>The same structure works for any tidy dataset:</p>
 <ul>
 <li>swap <code>restoration-sites.csv</code> for your own CSV</li>
@@ -826,7 +829,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="self-check" class="level2">
-<h2 class="anchored" data-anchor-id="self-check">Self-Check</h2>
+<h2 class="anchored" data-anchor-id="self-check">Self-check</h2>
 <ul>
 <li>Does your dashboard render with <code>format: dashboard</code>?</li>
 <li>Do the three value boxes sit together in one row?</li>
@@ -842,15 +845,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -929,7 +967,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -938,8 +977,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -953,6 +1053,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1115,44 +1216,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1250,6 +1361,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 

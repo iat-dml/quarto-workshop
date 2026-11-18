@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -35,18 +38,19 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-a3703a0dc74fdf50fbc673dfac110324.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9f18ae6aabaf6c0e00f98c5a006862d7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e6aacd54bf6b5dd9b3b58f0889065d38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -81,12 +85,10 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:title" content="One Tool to *Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach">
 <meta name="twitter:description" content="A guided workshop demonstrating how to use Quarto to create academic websites, presentations, manuscripts and outreach materials.">
 <meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/assets/website-screenshots/workshop-website-light.png">
-<meta name="twitter:image-height" content="877">
-<meta name="twitter:image-width" content="1864">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -109,6 +111,7 @@ ul.task-list li input[type="checkbox"] {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -138,13 +141,19 @@ ul.task-list li input[type="checkbox"] {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -238,6 +247,7 @@ ul.task-list li input[type="checkbox"] {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -252,10 +262,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -270,26 +279,27 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./use-cases/research-diary.html"> 
-<span class="menu-text">Academic Use Cases</span></a>
+<span class="menu-text">Academic use cases</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./advanced/templates-and-extensions.html"> 
-<span class="menu-text">Advanced Topics</span></a>
+<span class="menu-text">Advanced topics</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">One Tool to <em>Rule Them All</em></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item">One Tool to <em>Rule Them All</em></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -300,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -310,29 +320,26 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Foundations</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./foundations/quarto-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What Is Quarto?</span></a>
+ <span class="menu-text">What is Quarto?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./foundations/markdown-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown for Beginners</span></a>
+ <span class="menu-text">Markdown for beginners</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./foundations/yaml-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YAML Headers in Quarto</span></a>
+ <span class="menu-text">YAML headers in Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -345,17 +352,14 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Academic Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Academic use cases</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documenting Research in Progress</span></a>
+ <span class="menu-text">Documenting research in progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -367,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./use-cases/manuscripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Manuscripts</span></a>
+ <span class="menu-text">Writing manuscripts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -379,7 +383,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./use-cases/presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Presentations</span></a>
+ <span class="menu-text">Creating presentations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -391,7 +395,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./use-cases/websites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Project and Personal Websites</span></a>
+ <span class="menu-text">Creating project and personal websites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -416,35 +420,32 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Advanced topics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./advanced/templates-and-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Custom Templates and Extensions</span></a>
+ <span class="menu-text">Creating custom templates and extensions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./advanced/brand-yml.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consistent Branding with <code>_brand.yml</code></span></a>
+ <span class="menu-text">Consistent branding with <code>_brand.yml</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+ <span class="menu-text">Multi-lingual Quarto with babelquarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./advanced/invites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+ <span class="menu-text">Personalised mass communications: invitations and letters</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -458,16 +459,16 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Go further</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Go further">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
+ <span class="menu-text">Go further</span></a>
   </div>
 </li>
       </ul>
@@ -478,19 +479,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#who-we-are" id="toc-who-we-are" class="nav-link active" data-scroll-target="#who-we-are">Who We Are</a></li>
-  <li><a href="#who-this-workshop-is-for" id="toc-who-this-workshop-is-for" class="nav-link" data-scroll-target="#who-this-workshop-is-for">Who This Workshop Is For</a></li>
-  <li><a href="#why-quarto-matters-for-researchers" id="toc-why-quarto-matters-for-researchers" class="nav-link" data-scroll-target="#why-quarto-matters-for-researchers">Why Quarto Matters For Researchers</a></li>
-  <li><a href="#how-to-use-this-site-what-you-will-learn" id="toc-how-to-use-this-site-what-you-will-learn" class="nav-link" data-scroll-target="#how-to-use-this-site-what-you-will-learn">How To Use This Site &amp; What You Will Learn</a></li>
+  <li><a href="#who-we-are" id="toc-who-we-are" class="nav-link active" data-scroll-target="#who-we-are">Who we are</a></li>
+  <li><a href="#who-this-workshop-is-for" id="toc-who-this-workshop-is-for" class="nav-link" data-scroll-target="#who-this-workshop-is-for">Who this workshop is for</a></li>
+  <li><a href="#one-system-for-the-many-outputs-of-research" id="toc-one-system-for-the-many-outputs-of-research" class="nav-link" data-scroll-target="#one-system-for-the-many-outputs-of-research">One system for the many outputs of research</a></li>
+  <li><a href="#how-to-use-this-site-and-what-you-will-learn" id="toc-how-to-use-this-site-and-what-you-will-learn" class="nav-link" data-scroll-target="#how-to-use-this-site-and-what-you-will-learn">How to use this site and what you will learn</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -519,16 +520,29 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="slides/workshop-presentation.html" class="btn btn-outline">View as presentation</a></p>
 </div>
 <p><a href="https://quarto.org/">Quarto</a> is an open-source scientific and technical publishing system created by <a href="https://posit.co/">Posit</a>. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.</p>
-<p>This website is designed as a guided reference to our workshop that was first given at the <a href="https://conference.iemss.org/timetable/event/wsc1/">13th International Congress on Environmental Modelling and Software in 2026</a>. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.</p>
+<p>This website is designed as a guided reference to our workshop that was first given at the <a href="https://conference.iemss.org/">13th International Congress on Environmental Modelling and Software in 2026</a>. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Joining us at the ZALF Science Conference 2026?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The workshop runs on 19 November 2026, 13:00 to 14:30, in K1, Building 4, ZALF campus, Müncheberg. Bring a laptop, and please check it beforehand with the steps in <a href="./foundations/installing-quarto.html#sec-zalf">Setting up on a ZALF laptop</a>. One setting there has to be in place before R code will run.</p>
+</div>
+</div>
 <section id="who-we-are" class="level2">
-<h2 class="anchored" data-anchor-id="who-we-are">Who We Are</h2>
+<h2 class="anchored" data-anchor-id="who-we-are">Who we are</h2>
 <div class="team-grid">
 <div class="quarto-grid-item card-team">
 <div class="team-image-container">
 <p><img src="assets/ben.jpg" class="team-image img-fluid"></p>
 </div>
 <p><span class="team-member-name">Ben Black</span></p>
-<p><span class="team-job-title">Head of the group Data and Modelling Infrastructure for Living Labs</span></p>
+<p><span class="team-job-title">Head of the group Data and Modelling Infrastructure for Living Labs (DML)</span></p>
 <p><a href="https://iat-dml.github.io/" class="team-employer">Leibniz Centre for Agricultural Landscape Research (ZALF)</a></p>
 <div class="team-member-links">
 <p><a href="https://blenback.github.io/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:house-chimney-user" style="font-size: 1.5em;" aria-label="Icon house-chimney-user from fa6-solid Iconify.design set." title="Icon house-chimney-user from fa6-solid Iconify.design set."></iconify-icon></a> <a href="mailto:bblack@ethz.ch" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:envelope" style="font-size: 1.5em;" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon></a> <a href="https://www.linkedin.com/in/ben-black-9889a1150/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:linkedin" style="font-size: 1.5em;" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/blenback/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:github" style="font-size: 1.5em;" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://www.researchgate.net/profile/Benjamin-Black-5/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:researchgate" style="font-size: 1.5em;" aria-label="Icon researchgate from fa6-brands Iconify.design set." title="Icon researchgate from fa6-brands Iconify.design set."></iconify-icon></a></p>
@@ -541,9 +555,6 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="team-member-name">Isabel Nicholson-Thomas</span></p>
 <p><span class="team-job-title">Doctoral Researcher at Planning of Landscape and Urban Systems (PLUS)</span></p>
 <p><a href="https://plus.ethz.ch/" class="team-employer">ETH Zürich</a></p>
-<div class="team-member-links">
-<p><a href="https://irl.ethz.ch/people/person-detail.Mjg5Mjgx.TGlzdC8zNzc5LC0xMzk1OTgzMDM3.html" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:house-chimney-user" style="font-size: 1.5em;" aria-label="Icon house-chimney-user from fa6-solid Iconify.design set." title="Icon house-chimney-user from fa6-solid Iconify.design set."></iconify-icon></a> <a href="mailto:nharisena@ethz.ch" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:envelope" style="font-size: 1.5em;" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon></a> <a href="https://www.linkedin.com/in/nivedita-varma-harisena-667298141/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:linkedin" style="font-size: 1.5em;" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/NVHarisena1" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:github" style="font-size: 1.5em;" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></a></p>
-</div>
 </div>
 <div class="quarto-grid-item card-team">
 <div class="team-image-container">
@@ -552,27 +563,23 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="team-member-name">Manuel Kurmann</span></p>
 <p><span class="team-job-title">Research Assistant at Planning of Landscape and Urban Systems (PLUS)</span></p>
 <p><a href="https://plus.ethz.ch/" class="team-employer">ETH Zürich</a></p>
-<div class="team-member-links">
-<p><a href="https://pedroribalmeida.com.br/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:house-chimney-user" style="font-size: 1.5em;" aria-label="Icon house-chimney-user from fa6-solid Iconify.design set." title="Icon house-chimney-user from fa6-solid Iconify.design set."></iconify-icon></a> <a href="mailto:pedroribalmeida@gmail.com" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:envelope" style="font-size: 1.5em;" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon></a> <a href="https://www.linkedin.com/in/perial/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:linkedin" style="font-size: 1.5em;" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/Zapiano" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:github" style="font-size: 1.5em;" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></a></p>
-</div>
 </div>
 </div>
 </section>
 <section id="who-this-workshop-is-for" class="level2">
-<h2 class="anchored" data-anchor-id="who-this-workshop-is-for">Who This Workshop Is For</h2>
+<h2 class="anchored" data-anchor-id="who-this-workshop-is-for">Who this workshop is for</h2>
 <p>This material is especially useful for:</p>
 <ul>
 <li>Early career researchers building their first durable workflow</li>
 <li>Experienced researchers who want fewer disconnected tools</li>
 <li>Teams that care about reproducibility, transparency, and reuse</li>
-<li>Anyone who wants websites, manuscripts, presentations, and notes to feel part of the same system</li>
+<li>Anyone who wants websites, manuscripts, presentations, and notes to be part of the same system</li>
 </ul>
 <p>Basic familiarity with at least one programming language such as R, Python, or Julia can help, but it is not required for most of the lessons here.</p>
 </section>
-<section id="why-quarto-matters-for-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="why-quarto-matters-for-researchers">Why Quarto Matters For Researchers</h2>
-<p>In a nutshell, academic work usually produces and involves many related outputs:</p>
-<p>We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.</p>
+<section id="one-system-for-the-many-outputs-of-research" class="level2">
+<h2 class="anchored" data-anchor-id="one-system-for-the-many-outputs-of-research">One system for the many outputs of research</h2>
+<p>Academic work usually produces many related outputs. We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done with tools that are not integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.</p>
 <p>Quarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -588,9 +595,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="how-to-use-this-site-what-you-will-learn" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-this-site-what-you-will-learn">How To Use This Site &amp; What You Will Learn</h2>
-<p>We have broken down the workshop into six main sections (with an advanced section for those who want to go deeper). Each section has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.</p>
+<section id="how-to-use-this-site-and-what-you-will-learn" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-this-site-and-what-you-will-learn">How to use this site and what you will learn</h2>
+<p>We have broken the workshop down into foundations and five academic use cases, plus an advanced section for those who want to go deeper. Each use case has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.</p>
 <div class="subject-cards">
 <div class="card">
 <p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:layer-group" aria-label="Icon layer-group from fa6-solid Iconify.design set." title="Icon layer-group from fa6-solid Iconify.design set."></iconify-icon></span></p>
@@ -624,7 +631,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="card">
 <p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:chart-line" aria-label="Icon chart-line from fa6-solid Iconify.design set." title="Icon chart-line from fa6-solid Iconify.design set."></iconify-icon></span></p>
-<p><a href="./advanced/templates-and-extensions.html" class="card-title">Dashboards</a></p>
+<p><a href="./use-cases/dashboards.html" class="card-title">Dashboards</a></p>
 <p><span class="card-desc">Interactive dashboards for exploring and communicating your research.</span></p>
 <p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
 </div>
@@ -639,7 +646,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make sure Quarto <code>≥ 1.5</code> is installed and that you can run <code>quarto check</code> in your terminal. If you hit issues, see the <a href="#">Installing Quarto</a> page.</p>
+<p>Make sure Quarto <code>≥ 1.8</code> is installed and that you can run <code>quarto check</code> in your terminal. If you hit issues, see the <a href="./foundations/installing-quarto.html">Installing Quarto</a> page.</p>
 </div>
 </div>
 
@@ -651,15 +658,50 @@ ul.task-list li input[type="checkbox"] {
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -738,7 +780,8 @@ ul.task-list li input[type="checkbox"] {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -747,8 +790,69 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -762,6 +866,7 @@ ul.task-list li input[type="checkbox"] {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -924,44 +1029,54 @@ ul.task-list li input[type="checkbox"] {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1059,6 +1174,9 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 

@@ -2,20 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise: Write a Reproducible Manuscript</title>
+<title>Exercise: write a reproducible manuscript</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -70,18 +73,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a3703a0dc74fdf50fbc673dfac110324.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-34d578f5c66cc91f3a0d6b67e9812be3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9f18ae6aabaf6c0e00f98c5a006862d7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e6aacd54bf6b5dd9b3b58f0889065d38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-f4d0bbcf54cf39d1b7b73e9dd63eec2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,11 +118,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta name="twitter:title" content="One Tool to *Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach">
 <meta name="twitter:description" content="A guided workshop demonstrating how to use Quarto to create academic websites, presentations, manuscripts and outreach materials.">
-<meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/exercises/assets/website-screenshots/workshop-website-light.png">
+<meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/assets/website-screenshots/workshop-website-light.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -141,6 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -170,13 +175,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -270,6 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -284,10 +296,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -302,26 +313,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../use-cases/research-diary.html"> 
-<span class="menu-text">Academic Use Cases</span></a>
+<span class="menu-text">Academic use cases</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../advanced/templates-and-extensions.html"> 
-<span class="menu-text">Advanced Topics</span></a>
+<span class="menu-text">Advanced topics</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/manuscripts-exercise.html">↳ Exercise</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../exercises/manuscripts-exercise.html">↳ Exercise</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -332,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -342,29 +354,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Foundations</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/quarto-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What Is Quarto?</span></a>
+ <span class="menu-text">What is Quarto?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/markdown-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown for Beginners</span></a>
+ <span class="menu-text">Markdown for beginners</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../foundations/yaml-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YAML Headers in Quarto</span></a>
+ <span class="menu-text">YAML headers in Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,17 +386,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Academic Use Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Academic use cases</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documenting Research in Progress</span></a>
+ <span class="menu-text">Documenting research in progress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/manuscripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Manuscripts</span></a>
+ <span class="menu-text">Writing manuscripts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -411,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Presentations</span></a>
+ <span class="menu-text">Creating presentations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -423,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../use-cases/websites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Project and Personal Websites</span></a>
+ <span class="menu-text">Creating project and personal websites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -448,35 +454,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced Topics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Advanced topics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/templates-and-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating Custom Templates and Extensions</span></a>
+ <span class="menu-text">Creating custom templates and extensions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/brand-yml.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consistent Branding with <code>_brand.yml</code></span></a>
+ <span class="menu-text">Consistent branding with <code>_brand.yml</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-Lingual Quarto with Babelquarto</span></a>
+ <span class="menu-text">Multi-lingual Quarto with babelquarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advanced/invites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personalized Mass Communications: Invitations and Letters</span></a>
+ <span class="menu-text">Personalised mass communications: invitations and letters</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -490,16 +493,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Go further</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Go further">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go Further</span></a>
+ <span class="menu-text">Go further</span></a>
   </div>
 </li>
       </ul>
@@ -510,34 +513,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning Goal</a></li>
-  <li><a href="#two-ways-to-do-this-exercise" id="toc-two-ways-to-do-this-exercise" class="nav-link" data-scroll-target="#two-ways-to-do-this-exercise">Two Ways to Do This Exercise</a></li>
-  <li><a href="#the-sample-data-path-b" id="toc-the-sample-data-path-b" class="nav-link" data-scroll-target="#the-sample-data-path-b">The Sample Data (Path B)</a></li>
-  <li><a href="#step-1-create-the-manuscript-project" id="toc-step-1-create-the-manuscript-project" class="nav-link" data-scroll-target="#step-1-create-the-manuscript-project">Step 1 — Create the Manuscript Project</a></li>
-  <li><a href="#step-2-add-your-authors" id="toc-step-2-add-your-authors" class="nav-link" data-scroll-target="#step-2-add-your-authors">Step 2 — Add Your Authors</a></li>
-  <li><a href="#step-3-choose-and-apply-a-journal-template" id="toc-step-3-choose-and-apply-a-journal-template" class="nav-link" data-scroll-target="#step-3-choose-and-apply-a-journal-template">Step 3 — Choose and Apply a Journal Template</a></li>
-  <li><a href="#step-4-load-your-data-in-a-setup-chunk" id="toc-step-4-load-your-data-in-a-setup-chunk" class="nav-link" data-scroll-target="#step-4-load-your-data-in-a-setup-chunk">Step 4 — Load Your Data in a Setup Chunk</a></li>
-  <li><a href="#step-5-pull-summary-numbers-into-your-text-with-inline-code" id="toc-step-5-pull-summary-numbers-into-your-text-with-inline-code" class="nav-link" data-scroll-target="#step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5 — Pull Summary Numbers Into Your Text With Inline Code</a></li>
-  <li><a href="#step-6-add-a-figure-from-code" id="toc-step-6-add-a-figure-from-code" class="nav-link" data-scroll-target="#step-6-add-a-figure-from-code">Step 6 — Add a Figure From Code</a></li>
-  <li><a href="#step-7-add-a-citation" id="toc-step-7-add-a-citation" class="nav-link" data-scroll-target="#step-7-add-a-citation">Step 7 — Add a Citation</a></li>
-  <li><a href="#step-8-render-to-pdf-and-html" id="toc-step-8-render-to-pdf-and-html" class="nav-link" data-scroll-target="#step-8-render-to-pdf-and-html">Step 8 — Render to PDF and HTML</a></li>
-  <li><a href="#stretch-tasks" id="toc-stretch-tasks" class="nav-link" data-scroll-target="#stretch-tasks">Stretch Tasks</a></li>
-  <li><a href="#adapting-path-a-your-own-manuscript" id="toc-adapting-path-a-your-own-manuscript" class="nav-link" data-scroll-target="#adapting-path-a-your-own-manuscript">Adapting Path A (Your Own Manuscript)</a></li>
-  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-Check</a></li>
+  <li><a href="#learning-goal" id="toc-learning-goal" class="nav-link active" data-scroll-target="#learning-goal">Learning goal</a></li>
+  <li><a href="#two-ways-to-do-this-exercise" id="toc-two-ways-to-do-this-exercise" class="nav-link" data-scroll-target="#two-ways-to-do-this-exercise">Two ways to do this exercise</a></li>
+  <li><a href="#the-sample-data-path-b" id="toc-the-sample-data-path-b" class="nav-link" data-scroll-target="#the-sample-data-path-b">The sample data (Path B)</a></li>
+  <li><a href="#step-1-create-the-manuscript-project" id="toc-step-1-create-the-manuscript-project" class="nav-link" data-scroll-target="#step-1-create-the-manuscript-project">Step 1: Create the manuscript project</a></li>
+  <li><a href="#step-2-add-your-authors" id="toc-step-2-add-your-authors" class="nav-link" data-scroll-target="#step-2-add-your-authors">Step 2: Add your authors</a></li>
+  <li><a href="#step-3-choose-your-output-formats" id="toc-step-3-choose-your-output-formats" class="nav-link" data-scroll-target="#step-3-choose-your-output-formats">Step 3: Choose your output formats</a></li>
+  <li><a href="#step-4-load-your-data-in-a-setup-chunk" id="toc-step-4-load-your-data-in-a-setup-chunk" class="nav-link" data-scroll-target="#step-4-load-your-data-in-a-setup-chunk">Step 4: Load your data in a setup chunk</a></li>
+  <li><a href="#step-5-pull-summary-numbers-into-your-text-with-inline-code" id="toc-step-5-pull-summary-numbers-into-your-text-with-inline-code" class="nav-link" data-scroll-target="#step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5: Pull summary numbers into your text with inline code</a></li>
+  <li><a href="#step-6-add-a-figure-from-code" id="toc-step-6-add-a-figure-from-code" class="nav-link" data-scroll-target="#step-6-add-a-figure-from-code">Step 6: Add a figure from code</a></li>
+  <li><a href="#step-7-add-a-citation" id="toc-step-7-add-a-citation" class="nav-link" data-scroll-target="#step-7-add-a-citation">Step 7: Add a citation</a></li>
+  <li><a href="#step-8-render-to-pdf-and-html" id="toc-step-8-render-to-pdf-and-html" class="nav-link" data-scroll-target="#step-8-render-to-pdf-and-html">Step 8: Render to PDF and HTML</a></li>
+  <li><a href="#step-9-apply-a-journal-template-optional" id="toc-step-9-apply-a-journal-template-optional" class="nav-link" data-scroll-target="#step-9-apply-a-journal-template-optional">Step 9: Apply a journal template (optional)</a></li>
+  <li><a href="#stretch-tasks" id="toc-stretch-tasks" class="nav-link" data-scroll-target="#stretch-tasks">Stretch tasks</a></li>
+  <li><a href="#adapting-path-a-your-own-manuscript" id="toc-adapting-path-a-your-own-manuscript" class="nav-link" data-scroll-target="#adapting-path-a-your-own-manuscript">Adapting Path A (your own manuscript)</a></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check">Self-check</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/manuscripts-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic Use Cases</a></li><li class="breadcrumb-item"><a href="../exercises/manuscripts-exercise.html">↳ Exercise</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../exercises/manuscripts-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercise: Write a Reproducible Manuscript</h1>
+<h1 class="title">Exercise: write a reproducible manuscript</h1>
 </div>
 
 
@@ -555,42 +559,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="learning-goal" class="level2">
-<h2 class="anchored" data-anchor-id="learning-goal">Learning Goal</h2>
-<p>Build a real Quarto <strong>manuscript</strong> project: a single source that renders to both a web article (HTML) and a journal-styled <strong>PDF</strong>, with full author metadata, a figure drawn from data, summary numbers pulled straight from that data, and a citation. Along the way you will see how <code>project: type: manuscript</code> turns one folder into a small scholarly publishing pipeline.</p>
-<p>This is the hands-on companion to the <a href="../use-cases/manuscripts.html">Writing Manuscripts</a> page. The full reference for everything below is the <a href="https://quarto.org/docs/manuscripts/authoring/rstudio.html">Quarto manuscript authoring guide</a>.</p>
+<h2 class="anchored" data-anchor-id="learning-goal">Learning goal</h2>
+<p>Build a real Quarto <strong>manuscript</strong> project: a single source that renders to both a web article (HTML) and a <strong>PDF</strong>, with full author metadata, a figure drawn from data, summary numbers pulled straight from that data, and a citation. A final optional step applies a journal template. Along the way you will see how <code>project: type: manuscript</code> turns one folder into a small scholarly publishing pipeline.</p>
+<p>This is the hands-on companion to the <a href="../use-cases/manuscripts.html">Writing manuscripts</a> page. The full reference for everything below is the <a href="https://quarto.org/docs/manuscripts/authoring/rstudio.html">Quarto manuscript authoring guide</a>.</p>
 </section>
 <section id="two-ways-to-do-this-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="two-ways-to-do-this-exercise">Two Ways to Do This Exercise</h2>
-<p>Pick whichever is more useful to you — the steps are the same either way:</p>
+<h2 class="anchored" data-anchor-id="two-ways-to-do-this-exercise">Two ways to do this exercise</h2>
+<p>Pick whichever is more useful to you. The steps are the same either way:</p>
 <ul>
-<li><strong>Path A — Bring your own.</strong> Take a current or previous research project or manuscript of your own and rebuild its skeleton as a Quarto manuscript. You will get the most out of the exercise this way, because you end with something you can actually keep working on.</li>
-<li><strong>Path B — Use our sample data.</strong> Build a mock manuscript about ecological restoration from the two datasets below. Choose this if you would rather not wrangle your own data right now.</li>
+<li><strong>Path A: Bring your own.</strong> Take a current or previous research project or manuscript of your own and rebuild its skeleton as a Quarto manuscript. You will get the most out of the exercise this way, because you end with something you can actually keep working on.</li>
+<li><strong>Path B: Use our sample data.</strong> Build a mock manuscript about ecological restoration from the two datasets below. Choose this if you would rather not wrangle your own data right now.</li>
 </ul>
 <p>Wherever a step needs concrete code, we show it for the <strong>sample data</strong>. If you are on Path A, swap in your own file names, columns, and text.</p>
 </section>
 <section id="the-sample-data-path-b" class="level2">
-<h2 class="anchored" data-anchor-id="the-sample-data-path-b">The Sample Data (Path B)</h2>
+<h2 class="anchored" data-anchor-id="the-sample-data-path-b">The sample data (Path B)</h2>
 <p><code>restoration-sites.csv</code> records quarterly monitoring of four restoration sites. Each row is one survey of one site:</p>
 <ul>
-<li><code>site</code> — the monitoring site (A–D)</li>
-<li><code>date</code> — survey date (quarterly)</li>
-<li><code>vegetation_cover_pct</code> — vegetation cover, in percent</li>
-<li><code>species_richness</code> — number of species recorded</li>
-<li><code>soil_moisture_pct</code> — soil moisture, in percent</li>
+<li><code>site</code>: the monitoring site (A–D)</li>
+<li><code>date</code>: survey date (quarterly)</li>
+<li><code>vegetation_cover_pct</code>: vegetation cover, in percent</li>
+<li><code>species_richness</code>: number of species recorded</li>
+<li><code>soil_moisture_pct</code>: soil moisture, in percent</li>
 </ul>
 <p><a href="../data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a> <a href="../data/restoration-scenarios.csv" class="btn btn-secondary" download="restoration-scenarios.csv">Download restoration-scenarios.csv</a></p>
 <p>(<code>restoration-scenarios.csv</code> holds vegetation cover under three management scenarios and is only needed for the stretch task.)</p>
 </section>
 <section id="step-1-create-the-manuscript-project" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-create-the-manuscript-project">Step 1 — Create the Manuscript Project</h2>
+<h2 class="anchored" data-anchor-id="step-1-create-the-manuscript-project">Step 1: Create the manuscript project</h2>
 <p>A manuscript is a <em>project</em>, not a single file, so let Quarto scaffold the folder for you. In your terminal, move to wherever you keep projects and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project manuscript my-manuscript</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This makes a folder <code>my-manuscript/</code> with the basic structure a manuscript needs:</p>
+<p>Quarto asks for a title (press Enter to accept the folder name) and then makes a folder <code>my-manuscript/</code> with the three files a manuscript needs:</p>
 <ul>
-<li><strong><code>index.qmd</code></strong> — the article itself: metadata, narrative text, and code, all in one file.</li>
-<li><strong><code>_quarto.yml</code></strong> — project settings. The line <code>project: type: manuscript</code> is what tells Quarto to treat this folder as a manuscript and build the article website.</li>
-<li><strong><code>references.bib</code></strong> — your bibliography. Citations you add land here automatically.</li>
-<li><strong><code>notebooks/</code></strong> — optional extra computational notebooks you can link from the article.</li>
+<li><code>index.qmd</code> is the article itself: metadata, narrative text, and code, all in one file.</li>
+<li><code>_quarto.yml</code> holds the project settings. The line <code>project: type: manuscript</code> tells Quarto to treat this folder as a manuscript and build the article website.</li>
+<li><code>references.bib</code> is your bibliography. Citations you add in the visual editor land here automatically.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -605,7 +608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You don’t have to use the terminal. In RStudio choose <strong>New Project → Quarto Manuscript</strong>; in Positron or VS Code open the command palette and pick <strong>Quarto: Create Project → Manuscript Project</strong>. The result is the same starter folder.</p>
 </div>
 </div>
-<p>Open the folder in your editor and switch <code>index.qmd</code> to the <strong>visual editor</strong> (the <strong>Source / Visual</strong> toggle in RStudio or Positron) — it makes adding authors, figures, and citations much easier in the steps below.</p>
+<p>Open the folder in your editor and switch <code>index.qmd</code> to the <strong>visual editor</strong> (the <strong>Source / Visual</strong> toggle in RStudio or Positron). It makes adding authors, figures, and citations much easier in the steps below.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -616,13 +619,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Every R chunk in your real <code>index.qmd</code> opens with <code>```{r}</code> — with curly braces — so Quarto runs it. In the sketches on this page we write <code>```r</code> <em>without</em> braces only so they display as text instead of executing. When you copy them into your file, add the braces back.</p>
+<p>Every R chunk in your real <code>index.qmd</code> opens with <code>```{r}</code>, with curly braces, so Quarto runs it. In the sketches on this page we write <code>```r</code> <em>without</em> braces only so they display as text instead of executing. When you copy them into your file, add the braces back.</p>
 </div>
 </div>
 </section>
 <section id="step-2-add-your-authors" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-add-your-authors">Step 2 — Add Your Authors</h2>
-<p>Open <code>index.qmd</code>. Replace the starter front matter with your own title and a proper author block. Add <strong>yourself and one co-author</strong> — pick a real colleague — each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline and, later, the journal PDF.</p>
+<h2 class="anchored" data-anchor-id="step-2-add-your-authors">Step 2: Add your authors</h2>
+<p>Open <code>index.qmd</code>. Replace the starter front matter (everything between the two <code>---</code> lines) with your own title and a proper author block. You can delete the placeholder section below it. Add <strong>yourself and one co-author</strong> (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation Recovery Across Four Restoration Sites"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
@@ -654,95 +657,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Every researcher can register for a free ORCID at <a href="https://orcid.org/">orcid.org</a> — it is the 16-digit ID in their profile URL. Use real ones if you have them; the placeholders above will still render fine.</p>
+<p>Every researcher can register for a free ORCID at <a href="https://orcid.org/">orcid.org</a>. It is the 16-digit ID in their profile URL. Use real ones if you have them; the placeholders above will still render fine.</p>
 </div>
 </div>
 </section>
-<section id="step-3-choose-and-apply-a-journal-template" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-choose-and-apply-a-journal-template">Step 3 — Choose and Apply a Journal Template</h2>
-<p>The point of a manuscript is to produce a journal-ready document. Quarto maintains a set of journal templates at <a href="https://github.com/quarto-journals/">github.com/quarto-journals</a> — including <strong>Elsevier</strong>, <strong>PLOS</strong>, <strong>ACS</strong> (American Chemical Society), <strong>AGU</strong> (American Geophysical Union), <strong>ACM</strong>, and <strong>JSS</strong>.</p>
-<p>Add one to your project from inside the <code>my-manuscript/</code> folder. We’ll use Elsevier as a general-purpose example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-journals/elsevier</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This installs an extension that provides a new format, <code>elsevier-pdf</code>. Now tell the manuscript to build <em>both</em> the web article and the journal PDF by editing the <code>format:</code> block in <strong><code>_quarto.yml</code></strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">elsevier-pdf</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>html</code> is the article webpage; <code>elsevier-pdf</code> is the typeset PDF. Each journal extension names its formats after the journal — swap in <code>plos-pdf</code>, <code>acs-pdf</code>, <code>agu-pdf</code>, and so on if you install a different one.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<section id="step-3-choose-your-output-formats" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-choose-your-output-formats">Step 3: Choose your output formats</h2>
+<p>The output formats of a manuscript are listed in <code>_quarto.yml</code>. Open it and replace everything in it with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>typst</code> makes a PDF with <a href="https://quarto.org/docs/output-formats/typst.html">Typst</a>, a typesetting system that is built into Quarto, so there is nothing extra to install. <code>html</code> is the article webpage.</p>
+<p>Two details matter here:</p>
+<ul>
+<li>Keep the PDF format first in the list. On Quarto 1.8, the version that comes with RStudio, the PDF fails with a “file not found” error for figures if <code>html</code> is listed before it. Newer versions accept either order.</li>
+<li>The starter <code>_quarto.yml</code> contains <code>execute: freeze: true</code>. With that setting Quarto reuses saved results instead of running your code again, so a change to the data would not show up in the article. Replacing the file as above removes it, which is what you want while you are still writing.</li>
+</ul>
+</section>
+<section id="step-4-load-your-data-in-a-setup-chunk" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-load-your-data-in-a-setup-chunk">Step 4: Load your data in a setup chunk</h2>
+<p>Make a <code>data/</code> folder inside <code>my-manuscript/</code> and copy <code>restoration-sites.csv</code> into it (use the download button above). Then add a <strong>setup chunk</strong> near the top of <code>index.qmd</code>, below the front matter. <code>include: false</code> runs the code but keeps it and its output out of the article:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/restoration-sites.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>latest <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">max</span>(date))   <span class="co"># most recent survey per site</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>first  <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">min</span>(date))   <span class="co"># earliest survey per site</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>latest</code> and <code>first</code> give us the start and end of the monitoring period, which the next two steps use.</p>
+</section>
+<section id="step-5-pull-summary-numbers-into-your-text-with-inline-code" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5: Pull summary numbers into your text with inline code</h2>
+<p>This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, <code>`r expr`</code>. Write an opening paragraph like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>We monitored vegetation recovery at <span class="in">`r n_distinct(sites$site)`</span> restoration</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sites across <span class="in">`r n_distinct(sites$date)`</span> quarterly surveys. Mean vegetation</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cover rose from <span class="in">`r round(mean(first$vegetation_cover_pct))`</span>% at the first</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>survey to <span class="in">`r round(mean(latest$vegetation_cover_pct))`</span>% at the most recent,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>an increase of <span class="in">`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))`</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>percentage points.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>When rendered, the backticked expressions become real values (4 sites, 8 surveys, and so on). Change the CSV and the sentence updates itself.</p>
+</section>
+<section id="step-6-add-a-figure-from-code" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-add-a-figure-from-code">Step 6: Add a figure from code</h2>
+<p>Add a code chunk that draws a <strong>ggplot</strong> figure. The <code>fig-</code> prefix on the label makes it cross-referenceable, and <code>fig-cap</code> gives it a numbered caption:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-cover</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Vegetation cover at four restoration sites, quarterly 2023–2025."</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sites, <span class="fu">aes</span>(date, vegetation_cover_pct, <span class="at">colour =</span> site)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Vegetation cover (%)"</span>, <span class="at">colour =</span> <span class="st">"Site"</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then refer to it in your text. Quarto turns <code>@fig-cover</code> into “Figure 1” and links to it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Cover increased at every site over the monitoring period (@fig-cover).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-7-add-a-citation" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-add-a-citation">Step 7: Add a citation</h2>
+<p>In the <strong>visual editor</strong>, put your cursor where the citation should go and choose <strong>Insert → Citation</strong>. The dialog can pull references straight from a <strong>DOI</strong> or from your <strong>Zotero</strong> library (as well as Crossref, PubMed, and DataCite):</p>
+<ul>
+<li>From a DOI: paste a DOI and Quarto fetches the full reference. For example, try <code>10.1111/rec.13035</code> (the SER international standards for ecological restoration).</li>
+<li>From Zotero: if you have Zotero installed and the integration enabled, search your own library by author or title.</li>
+</ul>
+<p>Either way, Quarto inserts an <code>@citation-key</code> in your text, appends the entry to <code>references.bib</code>, and adds a formatted reference list at the end on render. A sentence like:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Our monitoring follows recognised restoration standards <span class="co">[</span><span class="ot">@gann2019</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>renders the citation in text and the full reference under a <strong>References</strong> heading. The key Quarto creates may differ slightly from <code>gann2019</code>; use whichever key appears in your text.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>PDF needs a LaTeX engine
+<span class="screen-reader-only">Tip</span>No visual editor, or the DOI lookup does not respond?
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The first time you render a PDF, Quarto needs LaTeX. Install the lightweight bundle it manages for you, once, with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you’d rather skip the journal extension for now, the built-in <code>pdf: default</code> format also works and needs the same TinyTeX install.</p>
+<p>Add the reference by hand. Paste this entry at the end of <code>references.bib</code>, then cite it in your text with <code>[@gann2019]</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">gann2019</span>,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>   = {International principles and standards for the practice of ecological restoration. Second edition},</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>  = {Gann, George D. and McDonald, Tein and Walder, Bethanie and Aronson, James and Nelson, Cara R. and Jonson, Justin and Hallett, James G. and Eisenberg, Cristina and Guariguata, Manuel R. and Liu, Junguo and Hua, Fangyuan and Echeverría, Cristian and Gonzales, Emily and Shaw, Nancy and Decleer, Kris and Dixon, Kingsley W.},</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span> = {Restoration Ecology},</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">volume</span>  = {27},</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">number</span>  = {S1},</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>    = {2019},</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>     = {10.1111/rec.13035}</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</section>
-<section id="step-4-load-your-data-in-a-setup-chunk" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-load-your-data-in-a-setup-chunk">Step 4 — Load Your Data in a Setup Chunk</h2>
-<p>Make a <code>data/</code> folder inside <code>my-manuscript/</code> and copy <code>restoration-sites.csv</code> into it (use the download button above). Then add a <strong>setup chunk</strong> near the top of <code>index.qmd</code>, below the front matter. <code>include: false</code> runs the code but keeps it and its output out of the article:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/restoration-sites.csv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>latest <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">max</span>(date))   <span class="co"># most recent survey per site</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>first  <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">min</span>(date))   <span class="co"># earliest survey per site</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>latest</code> and <code>first</code> give us the start and end of the monitoring period, which the next two steps use.</p>
-</section>
-<section id="step-5-pull-summary-numbers-into-your-text-with-inline-code" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5 — Pull Summary Numbers Into Your Text With Inline Code</h2>
-<p>This is where a reproducible manuscript earns its keep: numbers in the prose come from the data, so they can never drift out of sync with it. Inline R code uses single backticks, <code>`r expr`</code>. Write an opening paragraph like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>We monitored vegetation recovery at <span class="in">`r n_distinct(sites$site)`</span> restoration</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sites across <span class="in">`r n_distinct(sites$date)`</span> quarterly surveys. Mean vegetation</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>cover rose from <span class="in">`r round(mean(first$vegetation_cover_pct))`</span>% at the first</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>survey to <span class="in">`r round(mean(latest$vegetation_cover_pct))`</span>% at the most recent —</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>an increase of <span class="in">`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))`</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>percentage points.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>When rendered, the backticked expressions become real values (4 sites, 8 surveys, and so on). Change the CSV and the sentence updates itself.</p>
-</section>
-<section id="step-6-add-a-figure-from-code" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-add-a-figure-from-code">Step 6 — Add a Figure From Code</h2>
-<p>Add a code chunk that draws a <strong>ggplot</strong> figure. The <code>fig-</code> prefix on the label makes it cross-referenceable, and <code>fig-cap</code> gives it a numbered caption:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-cover</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Vegetation cover at four restoration sites, quarterly 2023–2025."</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sites, <span class="fu">aes</span>(date, vegetation_cover_pct, <span class="at">colour =</span> site)) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Vegetation cover (%)"</span>, <span class="at">colour =</span> <span class="st">"Site"</span>) <span class="sc">+</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then refer to it in your text. Quarto turns <code>@fig-cover</code> into “Figure 1” and links to it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Cover increased at every site over the monitoring period (@fig-cover).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-7-add-a-citation" class="level2">
-<h2 class="anchored" data-anchor-id="step-7-add-a-citation">Step 7 — Add a Citation</h2>
-<p>In the <strong>visual editor</strong>, put your cursor where the citation should go and choose <strong>Insert → Citation</strong>. The dialog can pull references straight from a <strong>DOI</strong> or from your <strong>Zotero</strong> library (as well as Crossref, PubMed, and DataCite):</p>
-<ul>
-<li><strong>From a DOI:</strong> paste a DOI and Quarto fetches the full reference. For example, try <code>10.1111/rec.13035</code> (the SER international standards for ecological restoration).</li>
-<li><strong>From Zotero:</strong> if you have Zotero installed and the integration enabled, search your own library by author or title.</li>
-</ul>
-<p>Either way, Quarto inserts an <code>@citation-key</code> in your text, appends the entry to <code>references.bib</code>, and adds a formatted reference list at the end on render. A sentence like:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Our monitoring follows recognised restoration standards <span class="co">[</span><span class="ot">@gann2019</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>renders the citation in text and the full reference under a <strong>References</strong> heading.</p>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -758,10 +773,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="step-8-render-to-pdf-and-html" class="level2">
-<h2 class="anchored" data-anchor-id="step-8-render-to-pdf-and-html">Step 8 — Render to PDF and HTML</h2>
-<p>You now have everything the seven previous steps promised. Build all formats at once:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Or, while writing, run <code>quarto preview</code> for a live HTML view that refreshes on every save. Open the rendered article (<code>_manuscript/</code> or the preview): it shows your byline, the inline numbers, the figure, and the references. In the margin, an <strong>Other Formats</strong> section now offers a download link to your Elsevier <strong>PDF</strong> — one source, two outputs.</p>
+<h2 class="anchored" data-anchor-id="step-8-render-to-pdf-and-html">Step 8: Render to PDF and HTML</h2>
+<p>Build all formats at once by running this in a terminal inside the <code>my-manuscript/</code> folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The results land in a new <code>_manuscript/</code> folder. Open <code>_manuscript/index.html</code> in your browser: the article shows your byline, the inline numbers, the figure, and the references. In the margin, an <strong>Other Formats</strong> section offers a download link to the <strong>PDF</strong>, which is <code>_manuscript/index.pdf</code>.</p>
+<p>While writing, the <strong>Render</strong> button in your editor (or <code>quarto preview</code> in the terminal) gives a live view that refreshes on every save. It shows the first format in your list, so here it shows the PDF.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -772,35 +788,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>quarto render</code> ran your R code once, injected the results into the text and the figure, and laid the same content out twice: as a web page and as a typeset PDF. That single-source, multi-format render is the whole reason to write a manuscript in Quarto.</p>
+<p><code>quarto render</code> ran your R code, placed the results in the text and the figure, and laid the same content out twice: as a web page and as a typeset PDF. Rendering several formats from one source is the main reason to write a manuscript in Quarto.</p>
 </div>
 </div>
 </section>
+<section id="step-9-apply-a-journal-template-optional" class="level2">
+<h2 class="anchored" data-anchor-id="step-9-apply-a-journal-template-optional">Step 9: Apply a journal template (optional)</h2>
+<p>Journals expect their own layout. Quarto maintains a set of journal templates at <a href="https://github.com/quarto-journals/">github.com/quarto-journals</a>, including Elsevier, PLOS, ACS (American Chemical Society), AGU (American Geophysical Union), ACM, and JSS (Journal of Statistical Software).</p>
+<p>These templates use LaTeX, so this step needs a LaTeX installation. If you do not have one, Quarto can install TinyTeX, a small LaTeX distribution, for you. The download and the first PDF render, which fetches missing LaTeX packages, can each take several minutes, so start this step only if you have the time and a good connection:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then add a template from inside the <code>my-manuscript/</code> folder. We use Elsevier as a general-purpose example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-journals/elsevier</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This installs an extension into a new <code>_extensions/</code> folder. The extension provides a new format, <code>elsevier-pdf</code>. Swap it in for <code>typst</code> in <code>_quarto.yml</code>, keeping it first in the list:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">elsevier-pdf</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run <code>quarto render</code> again. The PDF now follows the Elsevier article layout, and nothing in <code>index.qmd</code> had to change. Each journal extension names its formats after the journal, so use <code>plos-pdf</code>, <code>acs-pdf</code> or <code>agu-pdf</code> if you install a different one.</p>
+</section>
 <section id="stretch-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="stretch-tasks">Stretch Tasks</h2>
+<h2 class="anchored" data-anchor-id="stretch-tasks">Stretch tasks</h2>
 <p>If you finish early, try one of these:</p>
 <ul>
-<li><strong>Add an abstract and keywords</strong> to the front matter (<code>abstract: |</code> and <code>keywords:</code>) and see them appear in both outputs.</li>
-<li><strong>Add a table</strong> from the data — for example the latest reading per site with <code>knitr::kable()</code> — give it a <code>#| label: tbl-</code> and cross-reference it with <code>@tbl-...</code>.</li>
-<li><strong>Compare scenarios.</strong> Read <code>restoration-scenarios.csv</code> and add a second figure faceted or coloured by <code>scenario</code> (Baseline / Moderate / Intensive).</li>
-<li><strong>Add a Word output</strong> for collaborators who want track-changes: add <code>docx: default</code> to the <code>format:</code> block and render again.</li>
+<li>Add an abstract and keywords to the front matter (<code>abstract: |</code> and <code>keywords:</code>) and see them appear in both outputs.</li>
+<li>Add a table from the data, for example the latest reading per site with <code>knitr::kable()</code>. Give it a <code>#| label: tbl-</code> and cross-reference it with <code>@tbl-...</code>.</li>
+<li>Compare scenarios. Read <code>restoration-scenarios.csv</code> and add a second figure faceted or coloured by <code>scenario</code> (Baseline, Moderate, Intensive).</li>
+<li>Add a Word output for collaborators who want track changes: add <code>docx: default</code> at the end of the <code>format:</code> block and render again.</li>
 </ul>
 </section>
 <section id="adapting-path-a-your-own-manuscript" class="level2">
-<h2 class="anchored" data-anchor-id="adapting-path-a-your-own-manuscript">Adapting Path A (Your Own Manuscript)</h2>
+<h2 class="anchored" data-anchor-id="adapting-path-a-your-own-manuscript">Adapting Path A (your own manuscript)</h2>
 <p>Converting your own work follows exactly the same skeleton:</p>
 <ul>
 <li>Paste your existing prose into <code>index.qmd</code> under Introduction / Methods / Results / Discussion headings.</li>
-<li>Drop your data into <code>data/</code> and your analysis into the setup chunk (or <code>source()</code> a separate script — see the tip on the <a href="../use-cases/manuscripts.html">Writing Manuscripts</a> page).</li>
+<li>Drop your data into <code>data/</code> and your analysis into the setup chunk (or <code>source()</code> a separate script; see the tip on the <a href="../use-cases/manuscripts.html">Writing manuscripts</a> page).</li>
 <li>Replace every hard-typed statistic in your Results with inline <code>`r ...`</code> code.</li>
 <li>Re-create your key figure as a labelled code chunk and cross-reference it.</li>
 <li>Import your existing <code>.bib</code> (or pull citations from Zotero) and cite with <code>@key</code>.</li>
 </ul>
 </section>
 <section id="self-check" class="level2">
-<h2 class="anchored" data-anchor-id="self-check">Self-Check</h2>
+<h2 class="anchored" data-anchor-id="self-check">Self-check</h2>
 <ul>
-<li>Does <code>quarto render</code> produce <strong>both</strong> an HTML article and a PDF without errors?</li>
+<li>Does <code>quarto render</code> produce <strong>both</strong> an HTML article and a PDF in <code>_manuscript/</code> without errors?</li>
 <li>Does the byline show you and your co-author, with ORCIDs and affiliations?</li>
 <li>Do the numbers in your opening paragraph come from inline code, not typed by hand?</li>
 <li>Does <code>@fig-cover</code> render as a numbered, clickable “Figure 1”?</li>
@@ -815,15 +847,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -902,7 +969,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -911,8 +979,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -926,6 +1055,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1088,44 +1218,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1223,6 +1363,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 
