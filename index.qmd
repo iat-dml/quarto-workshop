@@ -9,7 +9,7 @@ number-sections: false
 
 [Jump to use cases](use-cases/research-diary.qmd){.btn .btn-outline}
 
-[View as presentation](slides/workshop-presentation.html){.btn .btn-outline}
+[View as presentation](slides/zalf-2026.html){.btn .btn-outline}
 :::
 
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing system created by [Posit](https://posit.co/). It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.
@@ -24,49 +24,38 @@ The workshop runs on {{< var zalf.date >}}, {{< var zalf.time >}}, in {{< var za
 
 ## Who we are
 
-:::::::::::: {.team-grid}
-::::: {.quarto-grid-item .card-team}
-::: team-image-container
-![](assets/ben.jpg){.team-image}
+::::: {.team-grid}
+:::: {.team-member}
+![](assets/ben.jpg){.team-photo fig-alt="Portrait of Ben Black"}
+
+::: {.team-text}
+[Ben Black](https://blenback.github.io/){.team-name}
+[Head of the service working group Data and Modelling Infrastructure for Living Labs (DML)]{.team-role}
+[ZALF]{.team-employer}
+[benjaminsamuel.black@zalf.de](mailto:benjaminsamuel.black@zalf.de){.team-contact}
 :::
+::::
 
-[Ben Black]{.team-member-name}
+:::: {.team-member}
+![](assets/isabel.jpg){.team-photo fig-alt="Portrait of Isabel Nicholson-Thomas"}
 
-[Head of the group Data and Modelling Infrastructure for Living Labs (DML)]{.team-job-title}
-
-[Leibniz Centre for Agricultural Landscape Research (ZALF)](https://iat-dml.github.io/){.team-employer}
-
-::: team-member-links
-[{{< iconify fa6-solid house-chimney-user size=xl >}}](https://blenback.github.io/){.listing-link-icon} [{{< iconify fa6-solid envelope size=xl >}}](mailto:bblack@ethz.ch){.listing-link-icon} [{{< iconify fa6-brands linkedin size=xl >}}](https://www.linkedin.com/in/ben-black-9889a1150/){.listing-link-icon} [{{< iconify fa6-brands github size=xl >}}](https://github.com/blenback/){.listing-link-icon} [{{< iconify fa6-brands researchgate size=xl >}}](https://www.researchgate.net/profile/Benjamin-Black-5/){.listing-link-icon}
+::: {.team-text}
+[Isabel Nicholson-Thomas]{.team-name}
+[Doctoral researcher, Planning of Landscape and Urban Systems (PLUS)]{.team-role}
+[ETH Zürich]{.team-employer}
 :::
+::::
+
+:::: {.team-member}
+![](assets/manuel.jpg){.team-photo fig-alt="Portrait of Manuel Kurmann"}
+
+::: {.team-text}
+[Manuel Kurmann]{.team-name}
+[Research assistant, Planning of Landscape and Urban Systems (PLUS)]{.team-role}
+[ETH Zürich]{.team-employer}
+:::
+::::
 :::::
-
-::::: {.quarto-grid-item .card-team}
-::: team-image-container
-![](assets/isabel.jpg){.team-image}
-:::
-
-[Isabel Nicholson-Thomas]{.team-member-name}
-
-[Doctoral Researcher at Planning of Landscape and Urban Systems (PLUS)]{.team-job-title}
-
-[ETH Zürich](https://plus.ethz.ch/){.team-employer}
-
-:::::
-
-::::: {.quarto-grid-item .card-team}
-::: team-image-container
-![](assets/manuel.jpg){.team-image}
-:::
-
-[Manuel Kurmann]{.team-member-name}
-
-[Research Assistant at Planning of Landscape and Urban Systems (PLUS)]{.team-job-title}
-
-[ETH Zürich](https://plus.ethz.ch/){.team-employer}
-
-:::::
-::::::::::::
 
 ## Who this workshop is for
 

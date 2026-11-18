@@ -12,7 +12,7 @@ The deliberately modest version of the promise is **one reusable source, many po
 
 ## Title slide — about 45 seconds
 
-Good morning, and welcome. We are Ben Black from ZALF, and Isabel Nicholson-Thomas and Manuel Kurmann from ETH Zürich. Ben leads Data and Modelling Infrastructure for Living Labs, Isabel is a doctoral researcher, and I am a research assistant.
+Good afternoon, and welcome. I'm Ben Black, and I lead the DML service working group, Data and Modelling Infrastructure for Living Labs, here at ZALF. I prepared this workshop with Isabel Nicholson-Thomas and Manuel Kurmann from ETH Zürich, who are not here today.
 
 The title is deliberately a little dramatic: Quarto does not replace every tool. Think about your last project—your notes, the paper, and perhaps a talk or website. Much of the material overlapped, but you probably rebuilt and reformatted it in several places. Today is about a more modest and useful idea: keeping that material in one coherent source and reusing it across outputs.
 
@@ -28,9 +28,9 @@ Quarto separates the source from the way it is presented. In many cases, produci
 
 ## Workshop Roadmap — about 40 seconds
 
-The morning has two halves. First, we establish the small set of concepts shared by every Quarto project. Then we apply the same concepts to different research outputs.
+The session has two halves. First, we establish the small set of concepts shared by every Quarto project. Then we apply the same concepts to different research outputs.
 
-The use cases are a menu, not a checklist. You do not need research diaries, manuscripts, presentations, websites, and dashboards all at once; choose what is useful for your own work. The slides give you orientation, but the actual learning starts when you try an exercise this afternoon. The workshop website keeps the instructions and examples available afterwards.
+The use cases are a menu, not a checklist. You do not need research diaries, manuscripts, presentations, websites, and dashboards all at once; choose what is useful for your own work. The slides give you orientation, but the actual learning starts when you try an exercise in the second half. The workshop website keeps the instructions and examples available afterwards.
 
 **Bridge:** Let us first build the shared mental model.
 

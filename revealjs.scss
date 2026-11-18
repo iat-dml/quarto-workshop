@@ -187,29 +187,25 @@ $callout-margin-bottom: 1rem !default;
 }
 
 // ── Callouts ─────────────────────────────────────────────────────────────
+// Hairline on all four sides; the type is carried by the header colour only.
 
-.reveal .callout {
+.reveal div.callout {
   border-radius: 0.75rem !important;
   border: 1px solid var(--ds-rule) !important;
-  border-left-width: 4px !important;
   background-color: var(--ds-paper-2);
-  box-shadow: var(--ds-shadow);
+  box-shadow: none;
   font-size: 0.85em;
 }
-.reveal .callout-header {
+.reveal div.callout .callout-header {
   font-family: var(--ds-sans);
   font-weight: 600;
   background-color: transparent !important;
+  border-bottom: 1px solid var(--ds-rule);
 }
 
-.reveal .callout-note      { border-left-color: var(--ds-indigo) !important; }
 .reveal .callout-note      .callout-header { color: var(--ds-indigo); }
-.reveal .callout-tip       { border-left-color: var(--ds-moss) !important; }
 .reveal .callout-tip       .callout-header { color: var(--ds-moss); }
-.reveal .callout-warning   { border-left-color: var(--ds-amber) !important; }
 .reveal .callout-warning   .callout-header { color: var(--ds-amber); }
-.reveal .callout-important,
-.reveal .callout-caution   { border-left-color: var(--ds-coral) !important; }
 .reveal .callout-important .callout-header,
 .reveal .callout-caution   .callout-header { color: var(--ds-coral); }
 

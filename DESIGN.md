@@ -169,7 +169,7 @@ A warm-neutral ground carrying four deliberately spaced accents — one cool-dee
 - **Title** (Newsreader 600, `1.45rem`, line-height 1.2): `h3` subsection headings.
 - **Body** (IBM Plex Sans 400, `1.0625rem`, line-height 1.65): All prose. Cap measure at 65–75ch.
 - **Subtitle** (Newsreader 400 italic, `clamp(1.1rem, 1.6vw, 1.35rem)`, Ink 2): The line under a page title.
-- **Label** (IBM Plex Mono 500, `0.74em`, tracking 0.04em, UPPERCASE): Chips, tags, table headers, the employer line on team cards, sidebar/TOC section labels. ≤4 words only.
+- **Label** (IBM Plex Mono 500, `0.74em`, tracking 0.04em, UPPERCASE): Chips, tags, table headers, the employer line in the homepage team list, sidebar/TOC section labels. ≤4 words only.
 - **Mono** (IBM Plex Mono 400, `0.92em`, line-height 1.55): Code blocks and inline code.
 
 ### Named Rules
@@ -206,7 +206,7 @@ The system is mostly flat, lifted by a single soft ambient shadow that warms rat
 - **Corner Style:** `0.75rem` (lg) radius.
 - **Background:** Paper 2 on the Paper ground.
 - **Shadow Strategy:** Ambient rest → Lifted hover (see Elevation). Clickable cards get `cursor: pointer` and the 2px lift.
-- **Border:** A single hairline rule on **all four sides** — `1px solid` of the 12%-ink rule color. **No colored left-stripe.** (The current homepage subject cards and team cards still carry a 3px colored `border-left`; that is the flagged slop and is being removed, not the pattern to copy.)
+- **Border:** A single hairline rule on **all four sides** — `1px solid` of the 12%-ink rule color. **No colored left-stripe.**
 - **Internal Padding:** ~`1.1rem` to `1.2rem`.
 
 ### Inputs / Fields
@@ -220,7 +220,7 @@ The system is mostly flat, lifted by a single soft ambient shadow that warms rat
 - **TOC (right rail):** Small (`0.88rem`), mono uppercase title, active entry in Deep Indigo.
 
 ### Callouts
-- **Style:** Paper 2 body, `lg` radius, hairline rule, ambient-rest shadow, header in Plex Sans 600. The colored accent rides the **left edge (4px)** and the header text matches: indigo (note), moss (tip), amber (warning), coral (important/caution). This left-accent is Quarto's native callout idiom and is the **one** place a thick colored left-edge is allowed — it is not licence to put stripes on cards.
+- **Style:** Paper 2 body, `lg` radius, a hairline rule on all four sides, no shadow, header in Plex Sans 600 with a hairline rule beneath it. The callout type is carried only by the header text and icon colour: indigo (note), moss (tip), amber (warning), coral (important/caution). No coloured left edge: Quarto's default 4px stripe is overridden.
 
 ### Code
 - **Inline:** Moss text on Moss Soft fill, `sm` radius, a hairline moss-tinted border, `0.9em`.
@@ -248,7 +248,7 @@ Horizontal rules render not as a line but as a 10px four-square mark: indigo / c
 - **Don't** ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.
 - **Don't** build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy ("streamline", "empower", "seamless", "world-class").
 - **Don't** overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.
-- **Don't** use colored left-stripe borders greater than 1px on cards, list items, or grid items (the homepage subject/team cards currently do; they are being reworked). The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.
+- **Don't** use colored left-stripe borders greater than 1px on cards, list items, or grid items The active-sidebar accent is the only sanctioned exception.
 - **Don't** scaffold sections with numbered markers (`01 ·` / `02 ·`) by reflex — numbers earn their place only in a genuine ordered sequence.
 - **Don't** use gradient text (`background-clip: text`) or pure-white/pure-black anywhere.
 - **Don't** add a fourth typeface, and don't set sentences or headings in all caps.

@@ -117,7 +117,42 @@ Mean species richness rose from
 3. **Put numbers from the data into the text**
 4. Add a figure and cross-reference it
 5. Cite a paper by its DOI
-6. Render to Word and PDF
+6. Render to PDF, HTML and Word
 :::
 :::
 ::::
+
+## Step 6 of 6: one render gives PDF, web page and Word {#checkpoint-6 .checkpoint}
+
+:::: {.columns}
+::: {.column width="60%"}
+Replace `_quarto.yml` with this, then run `quarto render`.
+
+```` yaml
+project:
+  type: manuscript
+
+format:
+  typst: default
+  html: default
+  docx: default
+````
+
+[Keep the PDF format first: on Quarto 1.8, the version in RStudio, the PDF fails if `html` comes before it.]{.catch-up}
+:::
+
+::: {.column width="40%"}
+::: {.steps}
+1. Create a manuscript project
+2. Add authors and a setup chunk
+3. Put numbers from the data into the text
+4. Add a figure and cross-reference it
+5. Cite a paper by its DOI
+6. **Render to PDF, HTML and Word**
+:::
+:::
+::::
+
+::: {.notes}
+The results land in `_manuscript/`. Open `index.html`: the margin links to the PDF and the Word file under Other Formats. Typst is built into Quarto, so no LaTeX install is needed.
+:::
