@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../assets/dml-mark.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -10,7 +11,7 @@
   <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Ben Black">
-  <title>One Tool to Rule Them All</title>
+  <title>Quarto workshop – One Tool to Rule Them All</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2200f028402847cf21149ffb5a3e05ac.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2ff6f50f0113d30da584e9518f3b9225.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -203,21 +204,23 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block title-slide--editorial center">
+  <img src="../assets/zalf-sci-conf-logo.png" alt="ZALF Science Conference" class="title-slide__event-logo">
   <div class="title-slide__panel">
     <h1 class="title">One Tool to <em>Rule Them All</em></h1>
     <p class="title-slide__subtitle subtitle">Quarto for documentation, presentations, manuscripts and outreach</p>
+  </div>
+  <div class="title-slide__band" aria-hidden="true"></div>
+  <div class="title-slide__meta">
     <div class="quarto-title-authors">
       <div class="quarto-title-author">
         <div class="quarto-title-author-name">Ben Black</div>
         <p class="quarto-title-affiliation">Data and Modelling Infrastructure for Living Labs (DML), ZALF</p>
       </div>
     </div>
-  </div>
-
-  <div class="title-slide__tagline">
-    <span class="title-slide__tagline-text">ZALF Science Conference 2026, 19 November 2026</span>
+    <p class="title-slide__tagline-text">ZALF Science Conference 2026, 19 November 2026</p>
   </div>
 </section>
+
 <section>
 <section id="sec-manuscripts" class="title-slide slide level1 divider divider-moss center" data-background-color="#2F7D6A">
 <h1>Manuscripts</h1>
@@ -291,15 +294,55 @@
 <li><strong>Put numbers from the data into the text</strong></li>
 <li>Add a figure and cross-reference it</li>
 <li>Cite a paper by its DOI</li>
-<li>Render to Word and PDF</li>
+<li>Render to PDF, HTML and Word</li>
 </ol>
 </div>
 </div></div>
+</section>
+<section id="checkpoint-6" class="slide level2 checkpoint">
+<h2>Step 6 of 6: one render gives PDF, web page and Word</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Replace <code>_quarto.yml</code> with this, then run <code>quarto render</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Keep the PDF format first: on Quarto 1.8, the version in RStudio, the PDF fails if <code>html</code> comes before it.</span></p>
+</div><div class="column" style="width:40%;">
+<div class="steps">
+<ol type="1">
+<li>Create a manuscript project</li>
+<li>Add authors and a setup chunk</li>
+<li>Put numbers from the data into the text</li>
+<li>Add a figure and cross-reference it</li>
+<li>Cite a paper by its DOI</li>
+<li><strong>Render to PDF, HTML and Word</strong></li>
+</ol>
+</div>
+</div></div>
+<aside class="notes">
+<p>The results land in <code>_manuscript/</code>. Open <code>index.html</code>: the margin links to the PDF and the Word file under Other Formats. Typst is built into Quarto, so no LaTeX install is needed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../assets/dml-mark.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>iat-dml.github.io/quarto-workshop</p>
 </div>

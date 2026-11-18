@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A scholarly-editorial publishing site that is itself exemplary Quarto output.">
+<meta name="description" content="The workshop site and decks in the look of the ZALF Science Conference 2026, with the DML brand fonts.">
 
-<title>design</title>
+<title>design – Quarto workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,6 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/dml-mark.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
@@ -49,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,182 +89,21 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455).
-    // Not run on load: stylesheets are set before first paint there, and
-    // scrolling would undo the scroll to a URL fragment (#14973).
-    // The one pixel nudge keeps the reader where they were.
-    const refreshSafariScrollbar = () => {
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        const scrollY = window.scrollY;
-        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
-        setTimeout(() => {
-          window.scrollTo(0, scrollY);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      refreshSafariScrollbar();
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="navbar-logo light-content">
+    <img src="./assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Quarto workshop</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -288,7 +128,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -311,6 +150,12 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -486,42 +331,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#design-system-one-tool-to-rule-them-all-quarto-workshop" id="toc-design-system-one-tool-to-rule-them-all-quarto-workshop" class="nav-link active" data-scroll-target="#design-system-one-tool-to-rule-them-all-quarto-workshop">Design System: One Tool to Rule Them All — Quarto Workshop</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">1. Overview</a></li>
-  <li><a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors">2. Colors</a>
-  <ul class="collapse">
-  <li><a href="#primary" id="toc-primary" class="nav-link" data-scroll-target="#primary">Primary</a></li>
-  <li><a href="#secondary" id="toc-secondary" class="nav-link" data-scroll-target="#secondary">Secondary</a></li>
-  <li><a href="#tertiary" id="toc-tertiary" class="nav-link" data-scroll-target="#tertiary">Tertiary</a></li>
-  <li><a href="#neutral" id="toc-neutral" class="nav-link" data-scroll-target="#neutral">Neutral</a></li>
-  <li><a href="#tinted-surfaces" id="toc-tinted-surfaces" class="nav-link" data-scroll-target="#tinted-surfaces">Tinted Surfaces</a></li>
-  <li><a href="#named-rules" id="toc-named-rules" class="nav-link" data-scroll-target="#named-rules">Named Rules</a></li>
-  </ul></li>
-  <li><a href="#typography" id="toc-typography" class="nav-link" data-scroll-target="#typography">3. Typography</a>
-  <ul class="collapse">
-  <li><a href="#hierarchy" id="toc-hierarchy" class="nav-link" data-scroll-target="#hierarchy">Hierarchy</a></li>
-  <li><a href="#named-rules-1" id="toc-named-rules-1" class="nav-link" data-scroll-target="#named-rules-1">Named Rules</a></li>
-  </ul></li>
-  <li><a href="#elevation" id="toc-elevation" class="nav-link" data-scroll-target="#elevation">4. Elevation</a>
-  <ul class="collapse">
-  <li><a href="#shadow-vocabulary" id="toc-shadow-vocabulary" class="nav-link" data-scroll-target="#shadow-vocabulary">Shadow Vocabulary</a></li>
-  <li><a href="#named-rules-2" id="toc-named-rules-2" class="nav-link" data-scroll-target="#named-rules-2">Named Rules</a></li>
-  </ul></li>
+  <li><a href="#colours" id="toc-colours" class="nav-link" data-scroll-target="#colours">2. Colours</a></li>
+  <li><a href="#typography" id="toc-typography" class="nav-link" data-scroll-target="#typography">3. Typography</a></li>
+  <li><a href="#shapes-and-depth" id="toc-shapes-and-depth" class="nav-link" data-scroll-target="#shapes-and-depth">4. Shapes and depth</a></li>
   <li><a href="#components" id="toc-components" class="nav-link" data-scroll-target="#components">5. Components</a>
   <ul class="collapse">
-  <li><a href="#buttons" id="toc-buttons" class="nav-link" data-scroll-target="#buttons">Buttons</a></li>
-  <li><a href="#chips-tags" id="toc-chips-tags" class="nav-link" data-scroll-target="#chips-tags">Chips / Tags</a></li>
-  <li><a href="#cards-containers" id="toc-cards-containers" class="nav-link" data-scroll-target="#cards-containers">Cards / Containers</a></li>
-  <li><a href="#inputs-fields" id="toc-inputs-fields" class="nav-link" data-scroll-target="#inputs-fields">Inputs / Fields</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
+  <li><a href="#navbar-and-footer" id="toc-navbar-and-footer" class="nav-link" data-scroll-target="#navbar-and-footer">Navbar and footer</a></li>
+  <li><a href="#homepage" id="toc-homepage" class="nav-link" data-scroll-target="#homepage">Homepage</a></li>
+  <li><a href="#subject-cards" id="toc-subject-cards" class="nav-link" data-scroll-target="#subject-cards">Subject cards</a></li>
+  <li><a href="#exercise-steps" id="toc-exercise-steps" class="nav-link" data-scroll-target="#exercise-steps">Exercise steps</a></li>
   <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts">Callouts</a></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
-  <li><a href="#blockquote" id="toc-blockquote" class="nav-link" data-scroll-target="#blockquote">Blockquote</a></li>
-  <li><a href="#signature-component-the-quartile-rule-hr" id="toc-signature-component-the-quartile-rule-hr" class="nav-link" data-scroll-target="#signature-component-the-quartile-rule-hr">Signature Component — The Quartile Rule (<code>&lt;hr&gt;</code>)</a></li>
+  <li><a href="#slides-revealjs.scss-title-slide.html" id="toc-slides-revealjs.scss-title-slide.html" class="nav-link" data-scroll-target="#slides-revealjs.scss-title-slide.html">Slides (<code>revealjs.scss</code>, <code>title-slide.html</code>)</a></li>
   </ul></li>
-  <li><a href="#dos-and-donts" id="toc-dos-and-donts" class="nav-link" data-scroll-target="#dos-and-donts">6. Do’s and Don’ts</a>
-  <ul class="collapse">
-  <li><a href="#do" id="toc-do" class="nav-link" data-scroll-target="#do">Do:</a></li>
-  <li><a href="#dont" id="toc-dont" class="nav-link" data-scroll-target="#dont">Don’t:</a></li>
-  </ul></li>
+  <li><a href="#dos-and-donts" id="toc-dos-and-donts" class="nav-link" data-scroll-target="#dos-and-donts">6. Do’s and don’ts</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/DESIGN.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -532,252 +355,269 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
 <section id="design-system-one-tool-to-rule-them-all-quarto-workshop" class="level1">
 <h1>Design System: One Tool to Rule Them All — Quarto Workshop</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">1. Overview</h2>
-<p><strong>Creative North Star: “The Quartile Press”</strong></p>
-<p>This is an editorial press rendered in HTML. The page is warm paper stock; the type is set, not typed; and the system carries four signature accent colors — indigo, coral, moss, amber — as its four “quarters,” one per family of Quarto output. The whole site is its own proof of concept: a Quarto site that teaches Quarto, so every surface has to read as something a careful researcher would be proud to publish. Restraint is the house style. Warmth comes from the paper, the Newsreader serif, and the quartile accents, never from effects.</p>
-<p>The system rejects four things by name. It is <strong>not</strong> the out-of-the-box Bootstrap/Quarto default theme — undifferentiated, obviously templated. It is <strong>not</strong> a corporate SaaS landing page — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy. It is <strong>not</strong> overdesigned — no decorative animation, no glassmorphism, nothing that competes with reading. And it is done with <strong>AI-slop card scaffolding</strong>: numbered section markers (<code>01 ·</code> / <code>02 ·</code>) and colored left-stripe borders are recognised tells, slated for removal, never to be extended.</p>
-<p>The reader is either mid-workshop or returning in a hurry; both must find the right page fast. On interior reference pages, structure and findability outrank decoration. On the landing page, the design is allowed to carry the message.</p>
-<p><strong>Key Characteristics:</strong> - Warm paper ground (<code>#FBF7F0</code>), deep indigo-black ink (<code>#1A1B2E</code>) — never pure white, never pure black. - Four-accent “quartile” system, used sparingly and meaningfully, one accent per use-case family. - Serif display (Newsreader) over sans body (IBM Plex Sans) over mono (IBM Plex Mono) — a three-axis contrast, not three competing voices. - Soft ambient depth at rest, a gentle 2px lift on hover. Nothing floats. - First-party light and dark <code>brand.yml</code> themes, both contrast-checked to WCAG 2.1 AA.</p>
-</section>
-<section id="colors" class="level2">
-<h2 class="anchored" data-anchor-id="colors">2. Colors</h2>
-<p>A warm-neutral ground carrying four deliberately spaced accents — one cool-deep, one warm, one green, one gold — so each Quarto use-case can own a hue without the palette fragmenting.</p>
-<section id="primary" class="level3">
-<h3 class="anchored" data-anchor-id="primary">Primary</h3>
+<p>The site and the ZALF deck share the look of the ZALF Science Conference 2026 website (science-conference.zalf.de): a mint ground, forest-green headings and dark bands, slanted section edges and rounded white surfaces. The type is the DML brand pair (iat-dml/dml-brand-yml): DM Serif Display for headings, DM Sans for text. The DML mark sits in the navbar and the slide corner, the full DML lockup in the footer.</p>
+<p>The site is itself a showcase of Quarto output, so it must look like something a careful researcher would publish. On the homepage the design carries the message; on interior reference pages findability comes first and the colour is held back.</p>
+<p>Chosen in November 2026 from three mock-ups (institutional ZALF frame, conference look, editorial ZALF gradient). The institutional design system in iat-zalf-slides was judged too plain for a workshop site; this system keeps its greens and its restraint but takes the conference’s typography and shapes.</p>
+<p><strong>Key characteristics</strong></p>
 <ul>
-<li><strong>Deep Indigo</strong> (<code>#3D2F8C</code>): The brand spine. Links, the active sidebar item, primary emphasis, the Foundations quarter. Conveys depth and trust. In dark theme it lifts to <code>#A899FF</code> for contrast.</li>
+<li>White pages, with mint for homepage bands, slide grounds, callouts and the closed exercise steps.</li>
+<li>Forest (<code>#153D31</code>) for headings and dark bands; green (<code>#2F7F43</code>) for links and buttons; leaf (<code>#4A9E48</code>) only for bullets, underlines and large shapes.</li>
+<li>Two typefaces and a mono: serif to display, sans to read, mono for code.</li>
+<li>Slanted edges on full-width bands, never on cards.</li>
+<li>One light theme. There is no dark mode.</li>
 </ul>
 </section>
-<section id="secondary" class="level3">
-<h3 class="anchored" data-anchor-id="secondary">Secondary</h3>
-<ul>
-<li><strong>Warm Coral</strong> (<code>#D9543F</code>): Energy and warning. Callout accents (important/caution), the italic emphasis inside the page title, the Notebooks quarter, text selection. The single warmest note in the system; deploy it where you want the eye to land.</li>
-</ul>
-</section>
-<section id="tertiary" class="level3">
-<h3 class="anchored" data-anchor-id="tertiary">Tertiary</h3>
-<ul>
-<li><strong>Forest Moss</strong> (<code>#2F7D6A</code>): Code and success. Inline code text on a moss-soft fill, success callouts, the Manuscripts quarter. The “this works” color.</li>
-<li><strong>Golden Amber</strong> (<code>#C98A2B</code>): Signal and highlight. Warning callouts, the Outreach/Advanced quarters. A measured gold, never neon.</li>
-</ul>
-</section>
-<section id="neutral" class="level3">
-<h3 class="anchored" data-anchor-id="neutral">Neutral</h3>
-<ul>
-<li><strong>Paper</strong> (<code>#FBF7F0</code>): The page ground. Warm off-white, the default body background.</li>
-<li><strong>Paper 2</strong> (<code>#F4EFE4</code>): Subtle raised surfaces — cards, code blocks, callout bodies.</li>
-<li><strong>Paper 3</strong> (<code>#E8E1D2</code>): Borders and dividers at full strength.</li>
-<li><strong>Ink</strong> (<code>#1A1B2E</code>): Primary text and the primary button fill. A deep indigo-black, not neutral black.</li>
-<li><strong>Ink 2</strong> (<code>#3A3B52</code>): Secondary text, lead paragraphs, nav links at rest.</li>
-<li><strong>Muted</strong> (<code>#6B6275</code>): Tertiary text, captions, section numbers, label/eyebrow text. <strong>Audit:</strong> muted on paper is the system’s tightest contrast pairing — verify ≥4.5:1 before using it for anything a reader must actually read; reserve it for genuinely secondary text.</li>
-</ul>
-</section>
-<section id="tinted-surfaces" class="level3">
-<h3 class="anchored" data-anchor-id="tinted-surfaces">Tinted Surfaces</h3>
-<ul>
-<li><strong>Indigo / Coral / Moss / Amber Soft</strong> (<code>#EDE9FA</code> / <code>#FBE7E1</code> / <code>#E0EFE9</code> / <code>#F5EAD3</code>): Fills for callout bodies, inline code, blockquotes, and chips. Each is a near-white wash of its parent accent.</li>
-</ul>
-</section>
-<section id="named-rules" class="level3">
-<h3 class="anchored" data-anchor-id="named-rules">Named Rules</h3>
-<p><strong>The Quartile Rule.</strong> Each of the four accents maps to a use-case family and keeps that meaning everywhere: indigo = Foundations/links, coral = energy/notebooks, moss = code/success, amber = signal/advanced. Never pick an accent for decoration alone; pick it because it carries that meaning here.</p>
-<p><strong>The Warm-Ground Rule.</strong> Pure <code>#FFFFFF</code> and pure <code>#000000</code> are forbidden. The page is paper and ink. Every neutral carries a trace of the brand’s warmth.</p>
-</section>
+<section id="colours" class="level2">
+<h2 class="anchored" data-anchor-id="colours">2. Colours</h2>
+<p>All colours live in <code>_brand.yml</code>. <code>styles.scss</code> and <code>revealjs.scss</code> expose each one as a CSS variable named after its brand token (<code>--ds-mint</code>, <code>--ds-forest</code>, …); use those, never hex values, in rules and markup.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Token</th>
+<th>Hex</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mint</td>
+<td><code>#EFF8E5</code></td>
+<td>Homepage bands, slide ground, callouts, closed exercise steps, the active sidebar item</td>
+</tr>
+<tr class="even">
+<td>mint-deep</td>
+<td><code>#DDEFCB</code></td>
+<td>Open exercise step header and its border, inline code</td>
+</tr>
+<tr class="odd">
+<td>mint-pale</td>
+<td><code>#F5F8F2</code></td>
+<td>Code blocks, sidebar hover</td>
+</tr>
+<tr class="even">
+<td>leaf</td>
+<td><code>#4A9E48</code></td>
+<td>Bullet markers, active TOC rule, large shapes. Not for text: 3.4:1 on white</td>
+</tr>
+<tr class="odd">
+<td>green</td>
+<td><code>#2F7F43</code></td>
+<td>Links, primary buttons, italic emphasis in titles, labels on cards (4.9:1 on white)</td>
+</tr>
+<tr class="even">
+<td>forest</td>
+<td><code>#153D31</code></td>
+<td>Headings, outline buttons, dark bands (with forest-2 as a 135° gradient), footer</td>
+</tr>
+<tr class="odd">
+<td>ink</td>
+<td><code>#16322B</code></td>
+<td>Body text</td>
+</tr>
+<tr class="even">
+<td>muted</td>
+<td><code>#53675E</code></td>
+<td>Secondary text, captions (6.1:1 on white, 5.5:1 on mint)</td>
+</tr>
+<tr class="odd">
+<td>sage-light, leaf-light</td>
+<td><code>#CFE3C8</code>, <code>#A9DB8F</code></td>
+<td>Secondary text and links on forest</td>
+</tr>
+<tr class="even">
+<td>teal-ink, amber, red</td>
+<td></td>
+<td>Strings in code, warning text, important and caution text</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The tint marks what you can open or what stands apart.</strong> Long reading happens on white. Mint fills callouts and the closed exercise steps; on the homepage it alternates with white and forest bands. A mint surface never sits on a mint band: on mint, surfaces are white.</p>
 </section>
 <section id="typography" class="level2">
 <h2 class="anchored" data-anchor-id="typography">3. Typography</h2>
-<p><strong>Display Font:</strong> Newsreader (with Iowan Old Style, Georgia, serif) <strong>Body Font:</strong> IBM Plex Sans (with system-ui, -apple-system, sans-serif) <strong>Label/Mono Font:</strong> IBM Plex Mono (with ui-monospace, Menlo, monospace)</p>
-<p><strong>Character:</strong> A literary serif paired with a clear, slightly technical humanist sans and an honest mono. The pairing works on a true contrast axis (serif display + sans body + mono labels), so it reads as edited, not indecisive. Newsreader supplies the editorial warmth; Plex Sans keeps long instructional prose comfortable; Plex Mono signals “this is code or a literal token.”</p>
-<section id="hierarchy" class="level3">
-<h3 class="anchored" data-anchor-id="hierarchy">Hierarchy</h3>
 <ul>
-<li><strong>Display</strong> (Newsreader 600, <code>clamp(2.2rem, 4.2vw, 3.4rem)</code>, line-height 1.04, tracking -0.012em): Page titles only. Italic <code>&lt;em&gt;</code> inside a title renders in Warm Coral.</li>
-<li><strong>Headline</strong> (Newsreader 600, <code>1.9rem</code>, line-height 1.15): <code>h2</code> section headings.</li>
-<li><strong>Title</strong> (Newsreader 600, <code>1.45rem</code>, line-height 1.2): <code>h3</code> subsection headings.</li>
-<li><strong>Body</strong> (IBM Plex Sans 400, <code>1.0625rem</code>, line-height 1.65): All prose. Cap measure at 65–75ch.</li>
-<li><strong>Subtitle</strong> (Newsreader 400 italic, <code>clamp(1.1rem, 1.6vw, 1.35rem)</code>, Ink 2): The line under a page title.</li>
-<li><strong>Label</strong> (IBM Plex Mono 500, <code>0.74em</code>, tracking 0.04em, UPPERCASE): Chips, tags, table headers, the employer line on team cards, sidebar/TOC section labels. ≤4 words only.</li>
-<li><strong>Mono</strong> (IBM Plex Mono 400, <code>0.92em</code>, line-height 1.55): Code blocks and inline code.</li>
+<li><strong>DM Serif Display</strong> (one weight, 400, with italic): page titles, h1 to h4, card titles, team names, exercise step titles, slide titles. Its weight is fixed, so hierarchy comes from size alone.</li>
+<li><strong>DM Sans</strong> (400 to 700): body text, navigation, buttons, h5 and h6, callout headers, sidebar and TOC labels.</li>
+<li><strong>IBM Plex Mono</strong>: code.</li>
 </ul>
+<p>Italic in a title (<code>*Rule Them All*</code>) renders in green. Labels are sentence case in DM Sans 600; nothing is set in capitals, and there are no eyebrow labels above headings.</p>
 </section>
-<section id="named-rules-1" class="level3">
-<h3 class="anchored" data-anchor-id="named-rules-1">Named Rules</h3>
-<p><strong>The Three-Voice Rule.</strong> Three families, no more: serif to display, sans to read, mono to signal code. Adding a fourth typeface is forbidden; hierarchy comes from weight and scale within these three.</p>
-<p><strong>The Caps-Label-Only Rule.</strong> Uppercase is permitted only for labels of four words or fewer (chips, table headers, the mono section labels). Sentences and headings are never set in all caps.</p>
-</section>
-</section>
-<section id="elevation" class="level2">
-<h2 class="anchored" data-anchor-id="elevation">4. Elevation</h2>
-<p>The system is mostly flat, lifted by a single soft ambient shadow that warms rather than darkens (it is mixed from the ink color, not black). Surfaces sit quietly on the paper at rest and rise a gentle 2px on hover. Depth is a response to interaction, not a permanent decoration.</p>
-<section id="shadow-vocabulary" class="level3">
-<h3 class="anchored" data-anchor-id="shadow-vocabulary">Shadow Vocabulary</h3>
+<section id="shapes-and-depth" class="level2">
+<h2 class="anchored" data-anchor-id="shapes-and-depth">4. Shapes and depth</h2>
 <ul>
-<li><strong>Ambient rest</strong> (<code>box-shadow: 0 1px 2px color-mix(in oklab, #1A1B2E 4%, transparent), 0 6px 24px -10px color-mix(in oklab, #1A1B2E 10%, transparent)</code>): The resting shadow under cards, callouts, and code blocks. Barely there; it separates the surface from the paper without announcing itself.</li>
-<li><strong>Lifted hover</strong> (<code>box-shadow: 0 4px 20px rgba(26,27,46,0.12), 0 2px 6px rgba(26,27,46,0.07)</code> paired with <code>transform: translateY(-2px)</code>): The interactive state for clickable cards.</li>
+<li><strong>Slanted edges</strong> (<code>--ds-cut</code>, up to 72px): full-width homepage bands, the footer, the title slide’s band and the dividers’ mint wedge. Each band overlaps the previous one by one cut.</li>
+<li><strong>Radii</strong>: 18px for cards and the video frame, 12px for callouts and code, 14px for exercise steps, pills for buttons.</li>
+<li><strong>Shadow</strong>: one soft forest shadow (<code>--ds-shadow</code>) under white surfaces on mint, and a deeper one on hover for clickable cards, which also rise by 3px. Shadows are mixed from forest, never black.</li>
+<li><strong>Borders</strong>: hairlines only, mixed from forest. No coloured side stripes.</li>
 </ul>
-</section>
-<section id="named-rules-2" class="level3">
-<h3 class="anchored" data-anchor-id="named-rules-2">Named Rules</h3>
-<p><strong>The Warm-Shadow Rule.</strong> Shadows are mixed from Ink (<code>#1A1B2E</code>), never pure black. A neutral-black shadow on warm paper reads as cheap and cold.</p>
-<p><strong>The Lift-On-Intent Rule.</strong> The 2px rise is reserved for surfaces the reader can actually click. Don’t lift static containers; the motion is a signal, not a flourish.</p>
-</section>
 </section>
 <section id="components" class="level2">
 <h2 class="anchored" data-anchor-id="components">5. Components</h2>
-<section id="buttons" class="level3">
-<h3 class="anchored" data-anchor-id="buttons">Buttons</h3>
-<ul>
-<li><strong>Shape:</strong> Fully pill (999px radius), weight 500, padding <code>0.55rem 1.1rem</code>.</li>
-<li><strong>Primary:</strong> Ink fill (<code>#1A1B2E</code>), Paper text. On hover the fill shifts to Deep Indigo — the button “warms into” the brand color rather than just darkening.</li>
-<li><strong>Outline:</strong> Transparent fill, Ink text, hairline rule border. On hover, a Paper 2 fill and an Ink 2 border.</li>
-<li><strong>Hover / Focus:</strong> Color transitions ~120ms ease. Keep a visible <code>:focus-visible</code> ring for keyboard users.</li>
-</ul>
+<section id="navbar-and-footer" class="level3">
+<h3 class="anchored" data-anchor-id="navbar-and-footer">Navbar and footer</h3>
+<p>White navbar with a hairline shadow, the DML mark (<code>assets/dml-mark.svg</code>) and “Quarto workshop” in the serif. No active underline: with one sidebar for the whole site, Quarto marks the first item active on every page. The footer is a forest band with a slanted top, the DML lockup for dark grounds (<code>assets/dml-lockup-dark.png</code>, rendered from <code>dml-strata-lockup-deep-dark.svg</code> with its fonts baked in) and two links.</p>
 </section>
-<section id="chips-tags" class="level3">
-<h3 class="anchored" data-anchor-id="chips-tags">Chips / Tags</h3>
-<ul>
-<li><strong>Style:</strong> Mono Label type (uppercase, tracked), pill shape, a soft-accent fill with its parent accent as text (e.g.&nbsp;indigo-soft bg / indigo text).</li>
-<li><strong>Use:</strong> Exercise labels, metadata badges. Never as decorative sprinkles.</li>
-</ul>
+<section id="homepage" class="level3">
+<h3 class="anchored" data-anchor-id="homepage">Homepage</h3>
+<p>Built from full-width divs in <code>index.qmd</code>: <code>.home-band</code> with <code>--white</code>, <code>--mint</code> or <code>--forest</code>, the hero <code>.home-hero</code>, and <code>.home-band--last</code> before the footer. Inside, <code>.home-wrap</code> holds the 70rem content width. The hero has the title, subtitle, three buttons and <code>.home-video</code>, a 16:9 frame with a white border that holds a placeholder until the shortened pitch video replaces it (instructions in the comment above it). The event box is white because the conference logo has a white ground.</p>
 </section>
-<section id="cards-containers" class="level3">
-<h3 class="anchored" data-anchor-id="cards-containers">Cards / Containers</h3>
-<ul>
-<li><strong>Corner Style:</strong> <code>0.75rem</code> (lg) radius.</li>
-<li><strong>Background:</strong> Paper 2 on the Paper ground.</li>
-<li><strong>Shadow Strategy:</strong> Ambient rest → Lifted hover (see Elevation). Clickable cards get <code>cursor: pointer</code> and the 2px lift.</li>
-<li><strong>Border:</strong> A single hairline rule on <strong>all four sides</strong> — <code>1px solid</code> of the 12%-ink rule color. <strong>No colored left-stripe.</strong> (The current homepage subject cards and team cards still carry a 3px colored <code>border-left</code>; that is the flagged slop and is being removed, not the pattern to copy.)</li>
-<li><strong>Internal Padding:</strong> ~<code>1.1rem</code> to <code>1.2rem</code>.</li>
-</ul>
+<section id="subject-cards" class="level3">
+<h3 class="anchored" data-anchor-id="subject-cards">Subject cards</h3>
+<p>White cards on the mint band: serif title as a stretched link, description in muted, a green line (“Guide and exercise”) at the foot. No icons.</p>
 </section>
-<section id="inputs-fields" class="level3">
-<h3 class="anchored" data-anchor-id="inputs-fields">Inputs / Fields</h3>
-<ul>
-<li><strong>Style:</strong> Hairline rule border, Paper or Paper 2 fill, <code>md</code> (0.5rem) radius, body type.</li>
-<li><strong>Focus:</strong> Border shifts to Deep Indigo with a soft indigo focus ring. No glow, no glassmorphism.</li>
-<li><strong>Placeholder:</strong> Must clear 4.5:1 — use Ink 2, not Muted.</li>
-</ul>
-</section>
-<section id="navigation" class="level3">
-<h3 class="anchored" data-anchor-id="navigation">Navigation</h3>
-<ul>
-<li><strong>Navbar:</strong> Paper background with a hairline bottom rule and a faint <code>saturate(1.1) blur(6px)</code> backdrop. Brand in Newsreader; nav links in Plex Sans 500, Ink 2 at rest → Ink on hover/active.</li>
-<li><strong>Sidebar:</strong> Mono uppercase section labels (Muted); item text in Ink 2 → Deep Indigo on hover/active. The active item carries a 2px indigo left-accent — the one sanctioned left-accent in the system, because it marks position in a list rather than decorating a card.</li>
-<li><strong>TOC (right rail):</strong> Small (<code>0.88rem</code>), mono uppercase title, active entry in Deep Indigo.</li>
-</ul>
+<section id="exercise-steps" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-steps">Exercise steps</h3>
+<p><code>{.step}</code> headings become <code>&lt;details&gt;</code> panels (<code>assets/step-accordion.html</code>). Closed steps are mint bars with the step title in the serif; the open step has a mint-deep header over a white body with a mint-deep border. The “Open all steps” button is a forest outline pill.</p>
 </section>
 <section id="callouts" class="level3">
 <h3 class="anchored" data-anchor-id="callouts">Callouts</h3>
-<ul>
-<li><strong>Style:</strong> Paper 2 body, <code>lg</code> radius, hairline rule, ambient-rest shadow, header in Plex Sans 600. The colored accent rides the <strong>left edge (4px)</strong> and the header text matches: indigo (note), moss (tip), amber (warning), coral (important/caution). This left-accent is Quarto’s native callout idiom and is the <strong>one</strong> place a thick colored left-edge is allowed — it is not licence to put stripes on cards.</li>
-</ul>
+<p>Mint fill, no frame, header in DM Sans 600 coloured by type: forest (note), green (tip), amber (warning), red (important, caution). On slides they are white.</p>
 </section>
 <section id="code" class="level3">
 <h3 class="anchored" data-anchor-id="code">Code</h3>
-<ul>
-<li><strong>Inline:</strong> Moss text on Moss Soft fill, <code>sm</code> radius, a hairline moss-tinted border, <code>0.9em</code>.</li>
-<li><strong>Block:</strong> Paper 2 fill, hairline rule, <code>md</code> radius, <code>0.92em</code> Plex Mono at line-height 1.55. Copy button in Muted → Deep Indigo on hover.</li>
-</ul>
+<p>Inline: mint-deep fill, forest-2 text. Blocks: mint-pale with a hairline on the site, white panels with a shadow on slides. Syntax colours come from the palette (keywords forest, functions green, strings teal-ink, comments muted italic, numbers amber).</p>
 </section>
-<section id="blockquote" class="level3">
-<h3 class="anchored" data-anchor-id="blockquote">Blockquote</h3>
+<section id="slides-revealjs.scss-title-slide.html" class="level3">
+<h3 class="anchored" data-anchor-id="slides-revealjs.scss-title-slide.html">Slides (<code>revealjs.scss</code>, <code>title-slide.html</code>)</h3>
+<p>Mint ground; content panels, code, callouts and the <code>.rendered</code> output are white. Slide titles in the serif, forest. The DML mark sits bottom right via <code>logo:</code> in the deck’s YAML; Quarto then moves the slide number to the top right. Footer and mark are hidden on the title slide and on dividers.</p>
 <ul>
-<li>Indigo Soft fill, 3px indigo left border, Newsreader italic at <code>1.08em</code>. The editorial pull-quote voice of the system.</li>
+<li><strong>Title slide</strong> (<code>title-style: editorial</code>): event logo top left (<code>event: logo:</code>), the title with its italic part on its own line in green, the subtitle in DM Sans, and a forest band across the foot with the presenter and <code>event.tagline</code>. The band is drawn inside the slide and runs past its edges, so the text stays on it at any aspect ratio.</li>
+<li><strong>Dividers</strong> (<code># Title {.divider}</code>): forest gradient with a mint wedge rising to the right. The deck’s <code>background-color</code> attributes are overridden from the stylesheet, so they need no editing.</li>
+<li><strong>Checkpoints</strong>: the current step has a green numbered disc, earlier steps a mint-deep tick.</li>
 </ul>
-</section>
-<section id="signature-component-the-quartile-rule-hr" class="level3">
-<h3 class="anchored" data-anchor-id="signature-component-the-quartile-rule-hr">Signature Component — The Quartile Rule (<code>&lt;hr&gt;</code>)</h3>
-<p>Horizontal rules render not as a line but as a 10px four-square mark: indigo / coral / moss / amber in a 2×2, the system’s logo in miniature. Use it as a section break with meaning; it is the press’s colophon.</p>
 </section>
 </section>
 <section id="dos-and-donts" class="level2">
-<h2 class="anchored" data-anchor-id="dos-and-donts">6. Do’s and Don’ts</h2>
-<section id="do" class="level3">
-<h3 class="anchored" data-anchor-id="do">Do:</h3>
-<ul>
-<li><strong>Do</strong> keep the warm paper-and-ink ground. Background is Paper (<code>#FBF7F0</code>), text is Ink (<code>#1A1B2E</code>).</li>
-<li><strong>Do</strong> honor the Quartile Rule — each accent carries its use-case meaning everywhere it appears.</li>
-<li><strong>Do</strong> border cards on all four sides with a single hairline rule; let the ambient shadow and the 2px hover lift carry separation and interactivity.</li>
-<li><strong>Do</strong> keep prose at 65–75ch and body type at line-height 1.65.</li>
-<li><strong>Do</strong> restrict uppercase to mono labels of ≤4 words.</li>
-<li><strong>Do</strong> mix shadows from Ink, never black, and reserve the 2px lift for clickable surfaces.</li>
-<li><strong>Do</strong> provide a <code>prefers-reduced-motion</code> alternative for every transition, and a visible <code>:focus-visible</code> ring everywhere.</li>
-<li><strong>Do</strong> verify Muted-on-Paper hits ≥4.5:1 before using it for readable text; bump to Ink 2 if it’s close.</li>
-</ul>
-</section>
-<section id="dont" class="level3">
-<h3 class="anchored" data-anchor-id="dont">Don’t:</h3>
-<ul>
-<li><strong>Don’t</strong> ship the generic default docs theme look — the out-of-the-box Bootstrap/Quarto template is an explicit anti-reference.</li>
-<li><strong>Don’t</strong> build a corporate SaaS landing — no gradient hero, no hero-metric stat blocks, no identical feature-card grids, no buzzword copy (“streamline”, “empower”, “seamless”, “world-class”).</li>
-<li><strong>Don’t</strong> overdesign — no decorative animation, no glassmorphism, no effect that competes with reading.</li>
-<li><strong>Don’t</strong> use colored left-stripe borders greater than 1px on cards, list items, or grid items (the homepage subject/team cards currently do; they are being reworked). The callout left-accent and the active-sidebar accent are the only sanctioned exceptions.</li>
-<li><strong>Don’t</strong> scaffold sections with numbered markers (<code>01 ·</code> / <code>02 ·</code>) by reflex — numbers earn their place only in a genuine ordered sequence.</li>
-<li><strong>Don’t</strong> use gradient text (<code>background-clip: text</code>) or pure-white/pure-black anywhere.</li>
-<li><strong>Don’t</strong> add a fourth typeface, and don’t set sentences or headings in all caps.</li>
-<li><strong>Don’t</strong> use Muted gray for body text or placeholders — it fails contrast on warm paper.</li>
-</ul>
+<h2 class="anchored" data-anchor-id="dos-and-donts">6. Do’s and don’ts</h2>
+<p><strong>Do</strong> - Take every colour and font from <code>_brand.yml</code> through the <code>--ds-*</code> variables. - Keep interior pages white; use mint for callouts, steps and homepage bands. - Put white surfaces on mint and mint surfaces on white. - Check text against WCAG 2.1 AA: leaf and mint-deep are never text colours on white. - Give every transition a <code>prefers-reduced-motion</code> fallback and keep visible focus rings.</p>
+<p><strong>Don’t</strong> - Bring back the old Quartile Press system (warm paper, Newsreader, IBM Plex Sans, indigo/coral/moss/amber). - Add a third typeface, set headings in capitals or put eyebrow labels above headings. - Use coloured side stripes, gradient text, glassmorphism or decorative icons. - Slant cards or panels; slants belong to full-width bands only. - Add a dark theme without drawing and contrast-checking a full dark palette first.</p>
 
 
-</section>
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+// Step accordion for exercise pages.
+//
+// Mark a heading as a step in the .qmd source:
+//
+//   ## Step 1: Create the project {.step}
+//
+// Pandoc wraps each heading and its content in <section class="step">. This
+// script turns every run of consecutive step sections into a group of
+// <details> elements, with a button to open or close them all. The sections
+// and headings stay in place, so the table of contents, its scroll tracking
+// and links to #step-ids keep working. Without JavaScript the page reads as
+// one long document, as before.
+//
+// <details> rather than a Bootstrap accordion: the browser supplies keyboard
+// and screen-reader behaviour, and Ctrl+F still finds text in closed steps
+// (it opens the step), which Bootstrap's hidden panels prevent.
+(function () {
+  "use strict";
+
+  var allSteps = Array.prototype.slice.call(document.querySelectorAll("section.step"));
+  if (allSteps.length === 0) return;
+
+  // Group consecutive sibling step sections.
+  var groups = [];
+  allSteps.forEach(function (section) {
+    var prev = section.previousElementSibling;
+    var last = groups[groups.length - 1];
+    if (last && prev === last[last.length - 1]) {
+      last.push(section);
+    } else {
+      groups.push([section]);
+    }
+  });
+
+  groups.forEach(function (sections) {
+    var wrapper = document.createElement("div");
+    wrapper.className = "steps";
+    sections[0].parentNode.insertBefore(wrapper, sections[0]);
+
+    var toolbar = document.createElement("div");
+    toolbar.className = "steps-toolbar";
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "steps-toggle";
+    toolbar.appendChild(toggle);
+    wrapper.appendChild(toolbar);
+
+    var items = sections.map(function (section, i) {
+      var heading = section.querySelector(":scope > h2, :scope > h3, :scope > h4");
+      var details = document.createElement("details");
+      details.className = "step-item";
+      // Open the first step so the reader sees where to begin.
+      if (i === 0) details.open = true;
+
+      var summary = document.createElement("summary");
+      if (heading) summary.appendChild(heading);
+
+      var body = document.createElement("div");
+      body.className = "step-body";
+      while (section.firstChild) body.appendChild(section.firstChild);
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      section.appendChild(details);
+      wrapper.appendChild(section);
+      return details;
+    });
+
+    function allOpen() {
+      return items.every(function (d) { return d.open; });
+    }
+    function updateToggle() {
+      var open = allOpen();
+      toggle.textContent = open ? "Collapse all steps" : "Expand all steps";
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    toggle.addEventListener("click", function () {
+      var open = !allOpen();
+      items.forEach(function (d) { d.open = open; });
+      updateToggle();
+    });
+    items.forEach(function (d) { d.addEventListener("toggle", updateToggle); });
+    updateToggle();
+  });
+
+  // Open the step that holds a link target, so in-page links and the table
+  // of contents never land on hidden content.
+  function openStepFor(id) {
+    if (!id) return;
+    var target = document.getElementById(decodeURIComponent(id));
+    if (!target) return;
+    var details = target.closest("details.step-item") ||
+      (target.matches("section.step") ? target.querySelector(":scope > details.step-item") : null);
+    if (details) details.open = true;
+  }
+
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest('a[href^="#"]');
+    if (link) openStepFor(link.getAttribute("href").slice(1));
+  }, true);
+  window.addEventListener("hashchange", function () { openStepFor(location.hash.slice(1)); });
+  openStepFor(location.hash.slice(1));
+
+  // Print every step.
+  window.addEventListener("beforeprint", function () {
+    document.querySelectorAll("details.step-item").forEach(function (d) { d.open = true; });
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const toggle = window.document.createElement('button');
-      toggle.type = "button";
-      toggle.setAttribute("role", "switch");
-      toggle.setAttribute("aria-checked", "false");
-      toggle.classList.add('top-right');
-      toggle.classList.add('quarto-color-scheme-toggle');
-      toggle.setAttribute("aria-label", "Toggle dark mode");
-      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      toggle.appendChild(i);
-      // Put the toggle in a landmark of its own, so that landmark navigation
-      // can reach it.
-      //
-      // The container is always a fresh direct child of body, and the toggle is
-      // never moved into page furniture that the theme or the author controls.
-      // The toggle is positioned against the page, so any ancestor that
-      // establishes a containing block captures it: a positioned element or a
-      // grid for position: absolute, and transform, filter, will-change or
-      // contain for position: fixed. A direct child of body has none of these
-      // to inherit, and the shift when one appears is silent and visual.
-      //
-      // ARIA says a document should have at most one banner, and axe reports a
-      // duplicate whether or not the banners carry distinct labels. So use a
-      // header when the page has no banner yet, and a named region otherwise.
-      //
-      // A header is a banner wherever it sits, unless it is inside sectioning
-      // content, so this cannot just look at the children of body: a custom
-      // page layout wraps the title block header in a plain div. An explicit
-      // role="banner" always counts.
-      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
-      const hasBanner = Array.from(
-        window.document.querySelectorAll('header:not([role]), [role="banner"]')
-      ).some(function(el) {
-        return el.hasAttribute("role") || el.closest(sectioning) === null;
-      });
-      const container = window.document.createElement(hasBanner ? "div" : "header");
-      if (hasBanner) {
-        container.setAttribute("role", "region");
-        container.setAttribute("aria-label", "Toggle dark mode");
-      }
-      container.classList.add('quarto-color-scheme-toggle-container');
-      container.appendChild(toggle);
-      window.document.body.appendChild(container);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1253,9 +1093,33 @@ ul.task-list li input[type="checkbox"] {
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://iat-dml.github.io/"><img src="./assets/dml-lockup-dark.png" class="footer-dml img-fluid" alt="Data and Modelling Infrastructure for Living Labs (DML)"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/DESIGN.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://iat-dml.github.io/">
+<p>DML website</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/iat-dml/quarto-workshop">
+<p>Source on GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/DESIGN.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

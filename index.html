@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>One Tool to Rule Them All</title>
+<title>One Tool to Rule Them All – Quarto workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,22 +36,21 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/dml-mark.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-9f18ae6aabaf6c0e00f98c5a006862d7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,182 +87,21 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455).
-    // Not run on load: stylesheets are set before first paint there, and
-    // scrolling would undo the scroll to a URL fragment (#14973).
-    // The one pixel nudge keeps the reader where they were.
-    const refreshSafariScrollbar = () => {
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        const scrollY = window.scrollY;
-        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
-        setTimeout(() => {
-          window.scrollTo(0, scrollY);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      refreshSafariScrollbar();
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed home quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="navbar-logo light-content">
+    <img src="./assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Quarto workshop</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -288,221 +126,27 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item">One Tool to <em>Rule Them All</em></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">Foundations</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./foundations/quarto-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What is Quarto?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./foundations/markdown-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown for beginners</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./foundations/yaml-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YAML headers in Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./foundations/installing-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Installing Quarto</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">Academic use cases</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use-cases/research-diary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documenting research in progress</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercises/research-diary-exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">↳ Exercise</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use-cases/manuscripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing manuscripts</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercises/manuscripts-exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">↳ Exercise</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use-cases/presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating presentations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercises/presentations-exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">↳ Exercise</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use-cases/websites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating project and personal websites</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercises/websites-exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">↳ Exercise</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./use-cases/dashboards.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dashboards</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercises/dashboards-exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">↳ Exercise</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-3-label">Advanced topics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advanced/templates-and-extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating custom templates and extensions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advanced/brand-yml.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consistent branding with <code>_brand.yml</code></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advanced/multi-lingual-outputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-lingual Quarto with babelquarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advanced/invites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personalised mass communications: invitations and letters</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advanced/ai-assistance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A helping hand from AI</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text" id="quarto-sidebar-section-4-label">Go further</span></a>
-            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section: Go further">
-              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
-            </button> 
-      </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./go-further.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Go further</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#who-we-are" id="toc-who-we-are" class="nav-link active" data-scroll-target="#who-we-are">Who we are</a></li>
-  <li><a href="#who-this-workshop-is-for" id="toc-who-this-workshop-is-for" class="nav-link" data-scroll-target="#who-this-workshop-is-for">Who this workshop is for</a></li>
-  <li><a href="#one-system-for-the-many-outputs-of-research" id="toc-one-system-for-the-many-outputs-of-research" class="nav-link" data-scroll-target="#one-system-for-the-many-outputs-of-research">One system for the many outputs of research</a></li>
-  <li><a href="#how-to-use-this-site-and-what-you-will-learn" id="toc-how-to-use-this-site-and-what-you-will-learn" class="nav-link" data-scroll-target="#how-to-use-this-site-and-what-you-will-learn">How to use this site and what you will learn</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
-
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">One Tool to <em>Rule Them All</em></h1>
-<p class="subtitle lead"><img src="assets/logo-quarto.svg" class="img-fluid" style="width:1in">for Documentation, Presentations, Manuscripts and Outreach</p>
+<h1 class="title">One Tool to Rule Them All</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -514,71 +158,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="home-band home-hero column-screen">
+<div class="home-wrap home-hero-grid">
+<section id="one-tool-to-rule-them-all" class="level1 home-title unnumbered unlisted home-hero-text">
+<h1 class="home-title unnumbered unlisted">One Tool to <em>Rule Them All</em></h1>
+<p><span class="home-subtitle"><img src="assets/logo-quarto.svg" class="inline-logo img-fluid" alt="Quarto"> for documentation, presentations, manuscripts and outreach</span></p>
 <div class="btn-row">
-<p><a href="./foundations/quarto-intro.html" class="btn btn-primary">Start with the foundations →</a></p>
-<p><a href="./use-cases/research-diary.html" class="btn btn-outline">Jump to use cases</a></p>
-<p><a href="slides/workshop-presentation.html" class="btn btn-outline">View as presentation</a></p>
-</div>
-<p><a href="https://quarto.org/">Quarto</a> is an open-source scientific and technical publishing system created by <a href="https://posit.co/">Posit</a>. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting, and sharing their work.</p>
-<p>This website is designed as a guided reference to our workshop that was first given at the <a href="https://conference.iemss.org/">13th International Congress on Environmental Modelling and Software in 2026</a>. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Joining us at the ZALF Science Conference 2026?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The workshop runs on 19 November 2026, 13:00 to 14:30, in K1, Building 4, ZALF campus, Müncheberg. Bring a laptop, and please check it beforehand with the steps in <a href="./foundations/installing-quarto.html#sec-zalf">Setting up on a ZALF laptop</a>. One setting there has to be in place before R code will run.</p>
-</div>
-</div>
-<section id="who-we-are" class="level2">
-<h2 class="anchored" data-anchor-id="who-we-are">Who we are</h2>
-<div class="team-grid">
-<div class="quarto-grid-item card-team">
-<div class="team-image-container">
-<p><img src="assets/ben.jpg" class="team-image img-fluid"></p>
-</div>
-<p><span class="team-member-name">Ben Black</span></p>
-<p><span class="team-job-title">Head of the group Data and Modelling Infrastructure for Living Labs (DML)</span></p>
-<p><a href="https://iat-dml.github.io/" class="team-employer">Leibniz Centre for Agricultural Landscape Research (ZALF)</a></p>
-<div class="team-member-links">
-<p><a href="https://blenback.github.io/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:house-chimney-user" style="font-size: 1.5em;" aria-label="Icon house-chimney-user from fa6-solid Iconify.design set." title="Icon house-chimney-user from fa6-solid Iconify.design set."></iconify-icon></a> <a href="mailto:bblack@ethz.ch" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-solid:envelope" style="font-size: 1.5em;" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon></a> <a href="https://www.linkedin.com/in/ben-black-9889a1150/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:linkedin" style="font-size: 1.5em;" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/blenback/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:github" style="font-size: 1.5em;" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon></a> <a href="https://www.researchgate.net/profile/Benjamin-Black-5/" class="listing-link-icon"><iconify-icon role="img" inline="" icon="fa6-brands:researchgate" style="font-size: 1.5em;" aria-label="Icon researchgate from fa6-brands Iconify.design set." title="Icon researchgate from fa6-brands Iconify.design set."></iconify-icon></a></p>
-</div>
-</div>
-<div class="quarto-grid-item card-team">
-<div class="team-image-container">
-<p><img src="assets/isabel.jpg" class="team-image img-fluid"></p>
-</div>
-<p><span class="team-member-name">Isabel Nicholson-Thomas</span></p>
-<p><span class="team-job-title">Doctoral Researcher at Planning of Landscape and Urban Systems (PLUS)</span></p>
-<p><a href="https://plus.ethz.ch/" class="team-employer">ETH Zürich</a></p>
-</div>
-<div class="quarto-grid-item card-team">
-<div class="team-image-container">
-<p><img src="assets/manuel.jpg" class="team-image img-fluid"></p>
-</div>
-<p><span class="team-member-name">Manuel Kurmann</span></p>
-<p><span class="team-job-title">Research Assistant at Planning of Landscape and Urban Systems (PLUS)</span></p>
-<p><a href="https://plus.ethz.ch/" class="team-employer">ETH Zürich</a></p>
-</div>
+<p><a href="./foundations/quarto-intro.html" class="btn btn-primary">Start with the foundations</a></p>
+<p><a href="#use-cases" class="btn btn-outline">Jump to use cases</a></p>
+<p><a href="slides/zalf-2026.html" class="btn btn-outline">View as presentation</a></p>
 </div>
 </section>
+<!--
+Placeholder for the shortened pitch video. When the clip is ready, save it as
+assets/pitch-video-short.mp4 and replace the raw HTML block below with the
+video shortcode, for example:
+
+  {{< video assets/pitch-video-short.mp4 title="A year in research" >}}
+
+The .home-video frame keeps its white border and 16:9 shape around the video.
+-->
+<div class="home-video">
+<div class="video-placeholder" role="img" aria-label="Placeholder for the shortened pitch video">
+  <span class="video-placeholder__play" aria-hidden="true"></span>
+  <span class="video-placeholder__label">Placeholder: shortened pitch video</span>
+</div>
+</div>
+</div>
+</div>
+<div class="home-band home-band--white column-screen">
+<div class="home-wrap home-two">
+<div class="home-intro">
+<div class="home-lead">
+<p><a href="https://quarto.org/">Quarto</a> is an open-source scientific and technical publishing system created by <a href="https://posit.co/">Posit</a>. It helps researchers move from scattered workflows to a more integrated way of writing, documenting, presenting and sharing their work.</p>
+</div>
+<p>This website is a guided reference to our workshop, first given at the <a href="https://conference.iemss.org/">13th International Congress on Environmental Modelling and Software in 2026</a>. You can follow it from top to bottom during a live session, or return to individual pages later when you need help with a specific output format.</p>
 <section id="who-this-workshop-is-for" class="level2">
-<h2 class="anchored" data-anchor-id="who-this-workshop-is-for">Who this workshop is for</h2>
+<h2 data-anchor-id="who-this-workshop-is-for">Who this workshop is for</h2>
 <p>This material is especially useful for:</p>
 <ul>
 <li>Early career researchers building their first durable workflow</li>
 <li>Experienced researchers who want fewer disconnected tools</li>
-<li>Teams that care about reproducibility, transparency, and reuse</li>
-<li>Anyone who wants websites, manuscripts, presentations, and notes to be part of the same system</li>
+<li>Teams that care about reproducibility, transparency and reuse</li>
+<li>Anyone who wants websites, manuscripts, presentations and notes to be part of the same system</li>
 </ul>
-<p>Basic familiarity with at least one programming language such as R, Python, or Julia can help, but it is not required for most of the lessons here.</p>
+<p>Basic familiarity with at least one programming language such as R, Python or Julia can help, but it is not required for most of the lessons here.</p>
 </section>
-<section id="one-system-for-the-many-outputs-of-research" class="level2">
-<h2 class="anchored" data-anchor-id="one-system-for-the-many-outputs-of-research">One system for the many outputs of research</h2>
+</div>
+<div class="home-event">
+<p><img src="assets/zalf-sci-conf-logo.png" class="home-event-logo img-fluid" alt="ZALF Science Conference"></p>
+<section id="joining-us-at-the-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20766172207a616c662e6576656e74203e7d7d" class="level2">
+<h2 data-anchor-id="joining-us-at-the-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20766172207a616c662e6576656e74203e7d7d">Joining us at the ZALF Science Conference 2026?</h2>
+<dl>
+<dt>When</dt>
+<dd>
+19 November 2026, 13:00 to 14:30
+</dd>
+<dt>Where</dt>
+<dd>
+K1, Building 4, ZALF campus, Müncheberg
+</dd>
+</dl>
+<p>Bring a laptop, and please check it beforehand with the steps in <a href="./foundations/installing-quarto.html#sec-zalf">Setting up on a ZALF laptop</a>. One setting there has to be in place before R code will run.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="home-band home-band--forest column-screen">
+<section id="who-we-are" class="level2 home-wrap">
+<h2 data-anchor-id="who-we-are">Who we are</h2>
+<div class="team-grid">
+<div class="team-member">
+<p><img src="assets/ben.jpg" class="team-photo img-fluid" alt="Portrait of Ben Black"></p>
+<div class="team-text">
+<p><a href="https://blenback.github.io/" class="team-name">Ben Black</a> <span class="team-role">Head of the service working group Data and Modelling Infrastructure for Living Labs (DML)</span> <span class="team-employer">ZALF</span> <a href="mailto:benjaminsamuel.black@zalf.de" class="team-contact">benjaminsamuel.black@zalf.de</a></p>
+</div>
+</div>
+<div class="team-member">
+<p><img src="assets/isabel.jpg" class="team-photo img-fluid" alt="Portrait of Isabel Nicholson-Thomas"></p>
+<div class="team-text">
+<p><span class="team-name">Isabel Nicholson-Thomas</span> <span class="team-role">Doctoral researcher, Planning of Landscape and Urban Systems (PLUS)</span> <span class="team-employer">ETH Zürich</span></p>
+</div>
+</div>
+<div class="team-member">
+<p><img src="assets/manuel.jpg" class="team-photo img-fluid" alt="Portrait of Manuel Kurmann"></p>
+<div class="team-text">
+<p><span class="team-name">Manuel Kurmann</span> <span class="team-role">Research assistant, Planning of Landscape and Urban Systems (PLUS)</span> <span class="team-employer">ETH Zürich</span></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="home-band home-band--white column-screen">
+<section id="one-system-for-the-many-outputs-of-research" class="level2 home-wrap home-narrow">
+<h2 data-anchor-id="one-system-for-the-many-outputs-of-research">One system for the many outputs of research</h2>
 <p>Academic work usually produces many related outputs. We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done with tools that are not integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.</p>
 <p>Quarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -595,122 +268,165 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="how-to-use-this-site-and-what-you-will-learn" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-this-site-and-what-you-will-learn">How to use this site and what you will learn</h2>
-<p>We have broken the workshop down into foundations and five academic use cases, plus an advanced section for those who want to go deeper. Each use case has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.</p>
+</div>
+<div class="home-band home-band--mint home-band--last column-screen">
+<section id="use-cases" class="level2 home-wrap">
+<h2 data-anchor-id="use-cases">How to use this site and what you will learn</h2>
+<p>We have broken the workshop down into foundations and five academic use cases, plus an advanced section for those who want to go deeper. Each use case has a separate page with a guided exercise to help you practise the workflow with an academic scenario. You don’t have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.</p>
 <div class="subject-cards">
 <div class="card">
-<p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:layer-group" aria-label="Icon layer-group from fa6-solid Iconify.design set." title="Icon layer-group from fa6-solid Iconify.design set."></iconify-icon></span></p>
 <p><a href="./foundations/quarto-intro.html" class="card-title">Foundations</a></p>
 <p><span class="card-desc">Markdown, YAML, and Quarto’s project model: the building blocks every output shares.</span></p>
-<p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="card-go" aria-hidden="true">Start here</span></p>
 </div>
 <div class="card">
-<p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:flask" aria-label="Icon flask from fa6-solid Iconify.design set." title="Icon flask from fa6-solid Iconify.design set."></iconify-icon></span></p>
-<p><a href="./use-cases/research-diary.html" class="card-title">Research Diary</a></p>
+<p><a href="./use-cases/research-diary.html" class="card-title">Research diary</a></p>
 <p><span class="card-desc">Documenting your research in a reproducible way from the very beginning.</span></p>
-<p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="card-go" aria-hidden="true">Guide and exercise</span></p>
 </div>
 <div class="card">
-<p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:file-lines" aria-label="Icon file-lines from fa6-solid Iconify.design set." title="Icon file-lines from fa6-solid Iconify.design set."></iconify-icon></span></p>
 <p><a href="./use-cases/manuscripts.html" class="card-title">Manuscripts</a></p>
 <p><span class="card-desc">Write in plain text; render to PDF, HTML, or DOCX, then share with collaborators.</span></p>
-<p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="card-go" aria-hidden="true">Guide and exercise</span></p>
 </div>
 <div class="card">
-<p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:person-chalkboard" aria-label="Icon person-chalkboard from fa6-solid Iconify.design set." title="Icon person-chalkboard from fa6-solid Iconify.design set."></iconify-icon></span></p>
 <p><a href="./use-cases/presentations.html" class="card-title">Slides</a></p>
 <p><span class="card-desc">Build reveal.js talks from the same source as your research.</span></p>
-<p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="card-go" aria-hidden="true">Guide and exercise</span></p>
 </div>
 <div class="card">
-<p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:globe" aria-label="Icon globe from fa6-solid Iconify.design set." title="Icon globe from fa6-solid Iconify.design set."></iconify-icon></span></p>
 <p><a href="./use-cases/websites.html" class="card-title">Websites</a></p>
 <p><span class="card-desc">Project, lab, and personal websites to improve outreach.</span></p>
-<p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="card-go" aria-hidden="true">Guide and exercise</span></p>
 </div>
 <div class="card">
-<p><span class="card-icon" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:chart-line" aria-label="Icon chart-line from fa6-solid Iconify.design set." title="Icon chart-line from fa6-solid Iconify.design set."></iconify-icon></span></p>
 <p><a href="./use-cases/dashboards.html" class="card-title">Dashboards</a></p>
 <p><span class="card-desc">Interactive dashboards for exploring and communicating your research.</span></p>
-<p><span class="card-go" aria-hidden="true"><iconify-icon role="img" inline="" icon="fa6-solid:arrow-right" aria-label="Icon arrow-right from fa6-solid Iconify.design set." title="Icon arrow-right from fa6-solid Iconify.design set."></iconify-icon></span></p>
+<p><span class="card-go" aria-hidden="true">Guide and exercise</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Before you start
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure Quarto <code>≥ 1.8</code> is installed and that you can run <code>quarto check</code> in your terminal. If you hit issues, see the <a href="./foundations/installing-quarto.html">Installing Quarto</a> page.</p>
-</div>
-</div>
-
-
+<section id="before-you-start" class="level3 home-note">
+<h3 data-anchor-id="before-you-start">Before you start</h3>
+<p>Make sure Quarto 1.8 or later is installed and that you can run <code>quarto check</code> in your terminal. If you hit issues, see the <a href="./foundations/installing-quarto.html">Installing Quarto</a> page.</p>
 </section>
+</section>
+</div>
+
+
 
 </main> <!-- /main -->
+<script>
+// Step accordion for exercise pages.
+//
+// Mark a heading as a step in the .qmd source:
+//
+//   ## Step 1: Create the project {.step}
+//
+// Pandoc wraps each heading and its content in <section class="step">. This
+// script turns every run of consecutive step sections into a group of
+// <details> elements, with a button to open or close them all. The sections
+// and headings stay in place, so the table of contents, its scroll tracking
+// and links to #step-ids keep working. Without JavaScript the page reads as
+// one long document, as before.
+//
+// <details> rather than a Bootstrap accordion: the browser supplies keyboard
+// and screen-reader behaviour, and Ctrl+F still finds text in closed steps
+// (it opens the step), which Bootstrap's hidden panels prevent.
+(function () {
+  "use strict";
+
+  var allSteps = Array.prototype.slice.call(document.querySelectorAll("section.step"));
+  if (allSteps.length === 0) return;
+
+  // Group consecutive sibling step sections.
+  var groups = [];
+  allSteps.forEach(function (section) {
+    var prev = section.previousElementSibling;
+    var last = groups[groups.length - 1];
+    if (last && prev === last[last.length - 1]) {
+      last.push(section);
+    } else {
+      groups.push([section]);
+    }
+  });
+
+  groups.forEach(function (sections) {
+    var wrapper = document.createElement("div");
+    wrapper.className = "steps";
+    sections[0].parentNode.insertBefore(wrapper, sections[0]);
+
+    var toolbar = document.createElement("div");
+    toolbar.className = "steps-toolbar";
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "steps-toggle";
+    toolbar.appendChild(toggle);
+    wrapper.appendChild(toolbar);
+
+    var items = sections.map(function (section, i) {
+      var heading = section.querySelector(":scope > h2, :scope > h3, :scope > h4");
+      var details = document.createElement("details");
+      details.className = "step-item";
+      // Open the first step so the reader sees where to begin.
+      if (i === 0) details.open = true;
+
+      var summary = document.createElement("summary");
+      if (heading) summary.appendChild(heading);
+
+      var body = document.createElement("div");
+      body.className = "step-body";
+      while (section.firstChild) body.appendChild(section.firstChild);
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      section.appendChild(details);
+      wrapper.appendChild(section);
+      return details;
+    });
+
+    function allOpen() {
+      return items.every(function (d) { return d.open; });
+    }
+    function updateToggle() {
+      var open = allOpen();
+      toggle.textContent = open ? "Collapse all steps" : "Expand all steps";
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    toggle.addEventListener("click", function () {
+      var open = !allOpen();
+      items.forEach(function (d) { d.open = open; });
+      updateToggle();
+    });
+    items.forEach(function (d) { d.addEventListener("toggle", updateToggle); });
+    updateToggle();
+  });
+
+  // Open the step that holds a link target, so in-page links and the table
+  // of contents never land on hidden content.
+  function openStepFor(id) {
+    if (!id) return;
+    var target = document.getElementById(decodeURIComponent(id));
+    if (!target) return;
+    var details = target.closest("details.step-item") ||
+      (target.matches("section.step") ? target.querySelector(":scope > details.step-item") : null);
+    if (details) details.open = true;
+  }
+
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest('a[href^="#"]');
+    if (link) openStepFor(link.getAttribute("href").slice(1));
+  }, true);
+  window.addEventListener("hashchange", function () { openStepFor(location.hash.slice(1)); });
+  openStepFor(location.hash.slice(1));
+
+  // Print every step.
+  window.addEventListener("beforeprint", function () {
+    document.querySelectorAll("details.step-item").forEach(function (d) { d.open = true; });
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const toggle = window.document.createElement('button');
-      toggle.type = "button";
-      toggle.setAttribute("role", "switch");
-      toggle.setAttribute("aria-checked", "false");
-      toggle.classList.add('top-right');
-      toggle.classList.add('quarto-color-scheme-toggle');
-      toggle.setAttribute("aria-label", "Toggle dark mode");
-      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      toggle.appendChild(i);
-      // Put the toggle in a landmark of its own, so that landmark navigation
-      // can reach it.
-      //
-      // The container is always a fresh direct child of body, and the toggle is
-      // never moved into page furniture that the theme or the author controls.
-      // The toggle is positioned against the page, so any ancestor that
-      // establishes a containing block captures it: a positioned element or a
-      // grid for position: absolute, and transform, filter, will-change or
-      // contain for position: fixed. A direct child of body has none of these
-      // to inherit, and the shift when one appears is silent and visual.
-      //
-      // ARIA says a document should have at most one banner, and axe reports a
-      // duplicate whether or not the banners carry distinct labels. So use a
-      // header when the page has no banner yet, and a named region otherwise.
-      //
-      // A header is a banner wherever it sits, unless it is inside sectioning
-      // content, so this cannot just look at the children of body: a custom
-      // page layout wraps the title block header in a plain div. An explicit
-      // role="banner" always counts.
-      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
-      const hasBanner = Array.from(
-        window.document.querySelectorAll('header:not([role]), [role="banner"]')
-      ).some(function(el) {
-        return el.hasAttribute("role") || el.closest(sectioning) === null;
-      });
-      const container = window.document.createElement(hasBanner ? "div" : "header");
-      if (hasBanner) {
-        container.setAttribute("role", "region");
-        container.setAttribute("aria-label", "Toggle dark mode");
-      }
-      container.classList.add('quarto-color-scheme-toggle-container');
-      container.appendChild(toggle);
-      window.document.body.appendChild(container);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -1179,9 +895,33 @@ ul.task-list li input[type="checkbox"] {
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://iat-dml.github.io/"><img src="./assets/dml-lockup-dark.png" class="footer-dml img-fluid" alt="Data and Modelling Infrastructure for Living Labs (DML)"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://iat-dml.github.io/">
+<p>DML website</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/iat-dml/quarto-workshop">
+<p>Source on GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

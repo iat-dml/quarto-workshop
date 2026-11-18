@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise: write a reproducible manuscript</title>
+<title>Exercise: write a reproducible manuscript – Quarto workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,6 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/dml-mark.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
@@ -83,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d05ae54af0e716806bb90a319d154b04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1249a28d37faeaca758fac2f5e584498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -122,182 +123,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455).
-    // Not run on load: stylesheets are set before first paint there, and
-    // scrolling would undo the scroll to a URL fragment (#14973).
-    // The one pixel nudge keeps the reader where they were.
-    const refreshSafariScrollbar = () => {
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        const scrollY = window.scrollY;
-        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
-        setTimeout(() => {
-          window.scrollTo(0, scrollY);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      refreshSafariScrollbar();
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="navbar-logo light-content">
+    <img src="../assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Quarto workshop</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -322,7 +162,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -345,6 +184,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/dml-mark.svg" alt="Data and Modelling Infrastructure for Living Labs (DML)" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -538,7 +383,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
-
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../use-cases/research-diary.html">Academic use cases</a></li><li class="breadcrumb-item"><a href="../exercises/manuscripts-exercise.html">↳ Exercise</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exercise: write a reproducible manuscript</h1>
@@ -585,8 +429,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="../data/restoration-sites.csv" class="btn btn-primary" download="restoration-sites.csv">Download restoration-sites.csv</a> <a href="../data/restoration-scenarios.csv" class="btn btn-secondary" download="restoration-scenarios.csv">Download restoration-scenarios.csv</a></p>
 <p>(<code>restoration-scenarios.csv</code> holds vegetation cover under three management scenarios and is only needed for the stretch task.)</p>
 </section>
-<section id="step-1-create-the-manuscript-project" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-create-the-manuscript-project">Step 1: Create the manuscript project</h2>
+<section id="step-1-create-the-manuscript-project" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-1-create-the-manuscript-project">Step 1: Create the manuscript project</h2>
 <p>A manuscript is a <em>project</em>, not a single file, so let Quarto scaffold the folder for you. In your terminal, move to wherever you keep projects and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project manuscript my-manuscript</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Quarto asks for a title (press Enter to accept the folder name) and then makes a folder <code>my-manuscript/</code> with the three files a manuscript needs:</p>
@@ -623,8 +467,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-2-add-your-authors" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-add-your-authors">Step 2: Add your authors</h2>
+<section id="step-2-add-your-authors" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-2-add-your-authors">Step 2: Add your authors</h2>
 <p>Open <code>index.qmd</code>. Replace the starter front matter (everything between the two <code>---</code> lines) with your own title and a proper author block. You can delete the placeholder section below it. Add <strong>yourself and one co-author</strong> (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation Recovery Across Four Restoration Sites"</span></span>
@@ -661,8 +505,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-3-choose-your-output-formats" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-choose-your-output-formats">Step 3: Choose your output formats</h2>
+<section id="step-3-choose-your-output-formats" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-3-choose-your-output-formats">Step 3: Choose your output formats</h2>
 <p>The output formats of a manuscript are listed in <code>_quarto.yml</code>. Open it and replace everything in it with:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
@@ -677,8 +521,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The starter <code>_quarto.yml</code> contains <code>execute: freeze: true</code>. With that setting Quarto reuses saved results instead of running your code again, so a change to the data would not show up in the article. Replacing the file as above removes it, which is what you want while you are still writing.</li>
 </ul>
 </section>
-<section id="step-4-load-your-data-in-a-setup-chunk" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-load-your-data-in-a-setup-chunk">Step 4: Load your data in a setup chunk</h2>
+<section id="step-4-load-your-data-in-a-setup-chunk" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-4-load-your-data-in-a-setup-chunk">Step 4: Load your data in a setup chunk</h2>
 <p>Make a <code>data/</code> folder inside <code>my-manuscript/</code> and copy <code>restoration-sites.csv</code> into it (use the download button above). Then add a <strong>setup chunk</strong> near the top of <code>index.qmd</code>, below the front matter. <code>include: false</code> runs the code but keeps it and its output out of the article:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
@@ -696,8 +540,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>latest</code> and <code>first</code> give us the start and end of the monitoring period, which the next two steps use.</p>
 </section>
-<section id="step-5-pull-summary-numbers-into-your-text-with-inline-code" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5: Pull summary numbers into your text with inline code</h2>
+<section id="step-5-pull-summary-numbers-into-your-text-with-inline-code" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5: Pull summary numbers into your text with inline code</h2>
 <p>This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, <code>`r expr`</code>. Write an opening paragraph like this:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>We monitored vegetation recovery at <span class="in">`r n_distinct(sites$site)`</span> restoration</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sites across <span class="in">`r n_distinct(sites$date)`</span> quarterly surveys. Mean vegetation</span>
@@ -707,8 +551,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>percentage points.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When rendered, the backticked expressions become real values (4 sites, 8 surveys, and so on). Change the CSV and the sentence updates itself.</p>
 </section>
-<section id="step-6-add-a-figure-from-code" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-add-a-figure-from-code">Step 6: Add a figure from code</h2>
+<section id="step-6-add-a-figure-from-code" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-6-add-a-figure-from-code">Step 6: Add a figure from code</h2>
 <p>Add a code chunk that draws a <strong>ggplot</strong> figure. The <code>fig-</code> prefix on the label makes it cross-referenceable, and <code>fig-cap</code> gives it a numbered caption:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-cover</span></span>
@@ -723,8 +567,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then refer to it in your text. Quarto turns <code>@fig-cover</code> into “Figure 1” and links to it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Cover increased at every site over the monitoring period (@fig-cover).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-7-add-a-citation" class="level2">
-<h2 class="anchored" data-anchor-id="step-7-add-a-citation">Step 7: Add a citation</h2>
+<section id="step-7-add-a-citation" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-7-add-a-citation">Step 7: Add a citation</h2>
 <p>In the <strong>visual editor</strong>, put your cursor where the citation should go and choose <strong>Insert → Citation</strong>. The dialog can pull references straight from a <strong>DOI</strong> or from your <strong>Zotero</strong> library (as well as Crossref, PubMed, and DataCite):</p>
 <ul>
 <li>From a DOI: paste a DOI and Quarto fetches the full reference. For example, try <code>10.1111/rec.13035</code> (the SER international standards for ecological restoration).</li>
@@ -772,8 +616,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-8-render-to-pdf-and-html" class="level2">
-<h2 class="anchored" data-anchor-id="step-8-render-to-pdf-and-html">Step 8: Render to PDF and HTML</h2>
+<section id="step-8-render-to-pdf-and-html" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-8-render-to-pdf-and-html">Step 8: Render to PDF and HTML</h2>
 <p>Build all formats at once by running this in a terminal inside the <code>my-manuscript/</code> folder:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The results land in a new <code>_manuscript/</code> folder. Open <code>_manuscript/index.html</code> in your browser: the article shows your byline, the inline numbers, the figure, and the references. In the margin, an <strong>Other Formats</strong> section offers a download link to the <strong>PDF</strong>, which is <code>_manuscript/index.pdf</code>.</p>
@@ -792,8 +636,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-9-apply-a-journal-template-optional" class="level2">
-<h2 class="anchored" data-anchor-id="step-9-apply-a-journal-template-optional">Step 9: Apply a journal template (optional)</h2>
+<section id="step-9-apply-a-journal-template-optional" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-9-apply-a-journal-template-optional">Step 9: Apply a journal template (optional)</h2>
 <p>Journals expect their own layout. Quarto maintains a set of journal templates at <a href="https://github.com/quarto-journals/">github.com/quarto-journals</a>, including Elsevier, PLOS, ACS (American Chemical Society), AGU (American Geophysical Union), ACM, and JSS (Journal of Statistical Software).</p>
 <p>These templates use LaTeX, so this step needs a LaTeX installation. If you do not have one, Quarto can install TinyTeX, a small LaTeX distribution, for you. The download and the first PDF render, which fetches missing LaTeX packages, can each take several minutes, so start this step only if you have the time and a good connection:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -843,56 +687,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 
 </main> <!-- /main -->
+<script>
+// Step accordion for exercise pages.
+//
+// Mark a heading as a step in the .qmd source:
+//
+//   ## Step 1: Create the project {.step}
+//
+// Pandoc wraps each heading and its content in <section class="step">. This
+// script turns every run of consecutive step sections into a group of
+// <details> elements, with a button to open or close them all. The sections
+// and headings stay in place, so the table of contents, its scroll tracking
+// and links to #step-ids keep working. Without JavaScript the page reads as
+// one long document, as before.
+//
+// <details> rather than a Bootstrap accordion: the browser supplies keyboard
+// and screen-reader behaviour, and Ctrl+F still finds text in closed steps
+// (it opens the step), which Bootstrap's hidden panels prevent.
+(function () {
+  "use strict";
+
+  var allSteps = Array.prototype.slice.call(document.querySelectorAll("section.step"));
+  if (allSteps.length === 0) return;
+
+  // Group consecutive sibling step sections.
+  var groups = [];
+  allSteps.forEach(function (section) {
+    var prev = section.previousElementSibling;
+    var last = groups[groups.length - 1];
+    if (last && prev === last[last.length - 1]) {
+      last.push(section);
+    } else {
+      groups.push([section]);
+    }
+  });
+
+  groups.forEach(function (sections) {
+    var wrapper = document.createElement("div");
+    wrapper.className = "steps";
+    sections[0].parentNode.insertBefore(wrapper, sections[0]);
+
+    var toolbar = document.createElement("div");
+    toolbar.className = "steps-toolbar";
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "steps-toggle";
+    toolbar.appendChild(toggle);
+    wrapper.appendChild(toolbar);
+
+    var items = sections.map(function (section, i) {
+      var heading = section.querySelector(":scope > h2, :scope > h3, :scope > h4");
+      var details = document.createElement("details");
+      details.className = "step-item";
+      // Open the first step so the reader sees where to begin.
+      if (i === 0) details.open = true;
+
+      var summary = document.createElement("summary");
+      if (heading) summary.appendChild(heading);
+
+      var body = document.createElement("div");
+      body.className = "step-body";
+      while (section.firstChild) body.appendChild(section.firstChild);
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      section.appendChild(details);
+      wrapper.appendChild(section);
+      return details;
+    });
+
+    function allOpen() {
+      return items.every(function (d) { return d.open; });
+    }
+    function updateToggle() {
+      var open = allOpen();
+      toggle.textContent = open ? "Collapse all steps" : "Expand all steps";
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    toggle.addEventListener("click", function () {
+      var open = !allOpen();
+      items.forEach(function (d) { d.open = open; });
+      updateToggle();
+    });
+    items.forEach(function (d) { d.addEventListener("toggle", updateToggle); });
+    updateToggle();
+  });
+
+  // Open the step that holds a link target, so in-page links and the table
+  // of contents never land on hidden content.
+  function openStepFor(id) {
+    if (!id) return;
+    var target = document.getElementById(decodeURIComponent(id));
+    if (!target) return;
+    var details = target.closest("details.step-item") ||
+      (target.matches("section.step") ? target.querySelector(":scope > details.step-item") : null);
+    if (details) details.open = true;
+  }
+
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest('a[href^="#"]');
+    if (link) openStepFor(link.getAttribute("href").slice(1));
+  }, true);
+  window.addEventListener("hashchange", function () { openStepFor(location.hash.slice(1)); });
+  openStepFor(location.hash.slice(1));
+
+  // Print every step.
+  window.addEventListener("beforeprint", function () {
+    document.querySelectorAll("details.step-item").forEach(function (d) { d.open = true; });
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const toggle = window.document.createElement('button');
-      toggle.type = "button";
-      toggle.setAttribute("role", "switch");
-      toggle.setAttribute("aria-checked", "false");
-      toggle.classList.add('top-right');
-      toggle.classList.add('quarto-color-scheme-toggle');
-      toggle.setAttribute("aria-label", "Toggle dark mode");
-      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      toggle.appendChild(i);
-      // Put the toggle in a landmark of its own, so that landmark navigation
-      // can reach it.
-      //
-      // The container is always a fresh direct child of body, and the toggle is
-      // never moved into page furniture that the theme or the author controls.
-      // The toggle is positioned against the page, so any ancestor that
-      // establishes a containing block captures it: a positioned element or a
-      // grid for position: absolute, and transform, filter, will-change or
-      // contain for position: fixed. A direct child of body has none of these
-      // to inherit, and the shift when one appears is silent and visual.
-      //
-      // ARIA says a document should have at most one banner, and axe reports a
-      // duplicate whether or not the banners carry distinct labels. So use a
-      // header when the page has no banner yet, and a named region otherwise.
-      //
-      // A header is a banner wherever it sits, unless it is inside sectioning
-      // content, so this cannot just look at the children of body: a custom
-      // page layout wraps the title block header in a plain div. An explicit
-      // role="banner" always counts.
-      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
-      const hasBanner = Array.from(
-        window.document.querySelectorAll('header:not([role]), [role="banner"]')
-      ).some(function(el) {
-        return el.hasAttribute("role") || el.closest(sectioning) === null;
-      });
-      const container = window.document.createElement(hasBanner ? "div" : "header");
-      if (hasBanner) {
-        container.setAttribute("role", "region");
-        container.setAttribute("aria-label", "Toggle dark mode");
-      }
-      container.classList.add('quarto-color-scheme-toggle-container');
-      container.appendChild(toggle);
-      window.document.body.appendChild(container);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1368,9 +1274,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://iat-dml.github.io/"><img src="../assets/dml-lockup-dark.png" class="footer-dml img-fluid" alt="Data and Modelling Infrastructure for Living Labs (DML)"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/manuscripts-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://iat-dml.github.io/">
+<p>DML website</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/iat-dml/quarto-workshop">
+<p>Source on GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/iat-dml/quarto-workshop/edit/main/exercises/manuscripts-exercise.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
