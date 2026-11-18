@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-4-load-your-data-in-a-setup-chunk" id="toc-step-4-load-your-data-in-a-setup-chunk" class="nav-link" data-scroll-target="#step-4-load-your-data-in-a-setup-chunk">Step 4: Load your data in a setup chunk</a></li>
   <li><a href="#step-5-pull-summary-numbers-into-your-text-with-inline-code" id="toc-step-5-pull-summary-numbers-into-your-text-with-inline-code" class="nav-link" data-scroll-target="#step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5: Pull summary numbers into your text with inline code</a></li>
   <li><a href="#step-6-add-a-figure-from-code" id="toc-step-6-add-a-figure-from-code" class="nav-link" data-scroll-target="#step-6-add-a-figure-from-code">Step 6: Add a figure from code</a></li>
-  <li><a href="#step-7-add-a-citation" id="toc-step-7-add-a-citation" class="nav-link" data-scroll-target="#step-7-add-a-citation">Step 7: Add a citation</a></li>
+  <li><a href="#step-7-refer-to-a-section-and-add-a-citation" id="toc-step-7-refer-to-a-section-and-add-a-citation" class="nav-link" data-scroll-target="#step-7-refer-to-a-section-and-add-a-citation">Step 7: Refer to a section and add a citation</a></li>
   <li><a href="#step-8-render-to-pdf-and-html" id="toc-step-8-render-to-pdf-and-html" class="nav-link" data-scroll-target="#step-8-render-to-pdf-and-html">Step 8: Render to PDF and HTML</a></li>
   <li><a href="#step-9-apply-a-journal-template-optional" id="toc-step-9-apply-a-journal-template-optional" class="nav-link" data-scroll-target="#step-9-apply-a-journal-template-optional">Step 9: Apply a journal template (optional)</a></li>
   <li><a href="#stretch-tasks" id="toc-stretch-tasks" class="nav-link" data-scroll-target="#stretch-tasks">Stretch tasks</a></li>
@@ -469,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-2-add-your-authors" class="level2 step">
 <h2 class="step anchored" data-anchor-id="step-2-add-your-authors">Step 2: Add your authors</h2>
-<p>Open <code>index.qmd</code>. Replace the starter front matter (everything between the two <code>---</code> lines) with your own title and a proper author block. You can delete the placeholder section below it. Add <strong>yourself and one co-author</strong> (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.</p>
+<p>Open <code>index.qmd</code>. Replace the starter front matter (everything between the two <code>---</code> lines) with your own title and a proper author block. You can delete the placeholder section below it. Add <strong>yourself and one co-author</strong> (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format. <code>number-sections: true</code> numbers your headings, which Step 7 needs to refer to a section.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Vegetation Recovery Across Four Restoration Sites"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
@@ -489,8 +489,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Their Institute</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">department</span><span class="kw">:</span><span class="at"> Department of Soil Science</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> today</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -542,14 +543,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-5-pull-summary-numbers-into-your-text-with-inline-code" class="level2 step">
 <h2 class="step anchored" data-anchor-id="step-5-pull-summary-numbers-into-your-text-with-inline-code">Step 5: Pull summary numbers into your text with inline code</h2>
-<p>This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, <code>`r expr`</code>. Write an opening paragraph like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>We monitored vegetation recovery at <span class="in">`r n_distinct(sites$site)`</span> restoration</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sites across <span class="in">`r n_distinct(sites$date)`</span> quarterly surveys. Mean vegetation</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cover rose from <span class="in">`r round(mean(first$vegetation_cover_pct))`</span>% at the first</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>survey to <span class="in">`r round(mean(latest$vegetation_cover_pct))`</span>% at the most recent,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>an increase of <span class="in">`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))`</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>percentage points.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, <code>`r expr`</code>. Start a Methods section with a heading, then write an opening paragraph like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods {#sec-methods}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>We monitored vegetation recovery at <span class="in">`r n_distinct(sites$site)`</span> restoration</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sites across <span class="in">`r n_distinct(sites$date)`</span> quarterly surveys. Mean vegetation</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>cover rose from <span class="in">`r round(mean(first$vegetation_cover_pct))`</span>% at the first</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>survey to <span class="in">`r round(mean(latest$vegetation_cover_pct))`</span>% at the most recent,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>an increase of <span class="in">`r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))`</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>percentage points.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When rendered, the backticked expressions become real values (4 sites, 8 surveys, and so on). Change the CSV and the sentence updates itself.</p>
+<p><code>##</code> makes a level 2 heading, and <code>{#sec-methods}</code> gives it a label so that you can refer to the section in Step 7. Because the front matter sets <code>number-sections: true</code>, it renders as “1 Methods”. In RStudio, the <strong>Outline</strong> button at the top right of the editor lists your headings; click one to jump to it.</p>
 </section>
 <section id="step-6-add-a-figure-from-code" class="level2 step">
 <h2 class="step anchored" data-anchor-id="step-6-add-a-figure-from-code">Step 6: Add a figure from code</h2>
@@ -567,16 +571,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then refer to it in your text. Quarto turns <code>@fig-cover</code> into “Figure 1” and links to it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Cover increased at every site over the monitoring period (@fig-cover).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-7-add-a-citation" class="level2 step">
-<h2 class="step anchored" data-anchor-id="step-7-add-a-citation">Step 7: Add a citation</h2>
-<p>In the <strong>visual editor</strong>, put your cursor where the citation should go and choose <strong>Insert → Citation</strong>. The dialog can pull references straight from a <strong>DOI</strong> or from your <strong>Zotero</strong> library (as well as Crossref, PubMed, and DataCite):</p>
+<section id="step-7-refer-to-a-section-and-add-a-citation" class="level2 step">
+<h2 class="step anchored" data-anchor-id="step-7-refer-to-a-section-and-add-a-citation">Step 7: Refer to a section and add a citation</h2>
+<p>In the <strong>visual editor</strong>, start a new paragraph at the end and type “The survey design in”. Choose <strong>Insert → Cross Reference</strong> and pick <code>sec-methods</code>. Quarto inserts <code>@sec-methods</code>, which renders as “Section 1” and links to the heading, just as <code>@fig-cover</code> did for the figure. In Source mode, type <code>@sec-methods</code> directly.</p>
+<p>Continue the sentence, put your cursor where the citation should go and choose <strong>Insert → Citation</strong>. The dialog can pull references straight from a <strong>DOI</strong> or from your <strong>Zotero</strong> library (as well as Crossref, PubMed, and DataCite):</p>
 <ul>
 <li>From a DOI: paste a DOI and Quarto fetches the full reference. For example, try <code>10.1111/rec.13035</code> (the SER international standards for ecological restoration).</li>
 <li>From Zotero: if you have Zotero installed and the integration enabled, search your own library by author or title.</li>
 </ul>
 <p>Either way, Quarto inserts an <code>@citation-key</code> in your text, appends the entry to <code>references.bib</code>, and adds a formatted reference list at the end on render. A sentence like:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Our monitoring follows recognised restoration standards <span class="co">[</span><span class="ot">@gann2019</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>renders the citation in text and the full reference under a <strong>References</strong> heading. The key Quarto creates may differ slightly from <code>gann2019</code>; use whichever key appears in your text.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>The survey design in @sec-methods follows recognised restoration standards <span class="co">[</span><span class="ot">@gann2019</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>renders the section reference and the citation in text and the full reference under a <strong>References</strong> heading. The key Quarto creates may differ slightly from <code>gann2019</code>; use whichever key appears in your text.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -621,7 +626,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Build all formats at once by running this in a terminal inside the <code>my-manuscript/</code> folder:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The results land in a new <code>_manuscript/</code> folder. Open <code>_manuscript/index.html</code> in your browser: the article shows your byline, the inline numbers, the figure, and the references. In the margin, an <strong>Other Formats</strong> section offers a download link to the <strong>PDF</strong>, which is <code>_manuscript/index.pdf</code>.</p>
-<p>While writing, the <strong>Render</strong> button in your editor (or <code>quarto preview</code> in the terminal) gives a live view that refreshes on every save. It shows the first format in your list, so here it shows the PDF.</p>
+<p>While writing, the <strong>Render</strong> button in your editor gives a quick preview. In a manuscript project, RStudio’s Render button shows only the HTML article; the PDF is built only by <code>quarto render</code> or by <strong>Render Project</strong> in the Build tab. <code>quarto preview</code> in a terminal shows the first format in your list instead, here the PDF, and refreshes it on every save.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Section references need numbered sections
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the PDF fails with “cannot reference heading without numbering”, check that the front matter contains <code>number-sections: true</code>. Typst, which makes the PDF, can only refer to numbered headings. The HTML preview does not show this error.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -680,6 +698,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Does the byline show you and your co-author, with ORCIDs and affiliations?</li>
 <li>Do the numbers in your opening paragraph come from inline code, not typed by hand?</li>
 <li>Does <code>@fig-cover</code> render as a numbered, clickable “Figure 1”?</li>
+<li>Does <code>@sec-methods</code> render as “Section 1” and link to the Methods heading?</li>
 <li>Does your citation appear in the text and in a References list, with the entry now in <code>references.bib</code>?</li>
 </ul>
 

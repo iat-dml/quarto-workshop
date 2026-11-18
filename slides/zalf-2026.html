@@ -7,7 +7,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Ben Black">
@@ -102,7 +104,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2ff6f50f0113d30da584e9518f3b9225.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-d0832e7ddb35cf01b462867e35309bf1.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -194,6 +196,8 @@
       margin-right: 0; 
     }
   </style>
+  <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta name="twitter:title" content="One Tool to *Rule Them All: Quarto for Documentation, Presentations, Manuscripts and Outreach">
 <meta name="twitter:description" content="A guided workshop demonstrating how to use Quarto to create academic websites, presentations, manuscripts and outreach materials.">
 <meta name="twitter:image" content="https://iat-dml.github.io/quarto-workshop/assets/website-screenshots/workshop-website-light.png">
@@ -221,42 +225,319 @@
   </div>
 </section>
 
-<section>
-<section id="sec-manuscripts" class="title-slide slide level1 divider divider-moss center" data-background-color="#2F7D6A">
-<h1>Manuscripts</h1>
-<p>From analysis to submission without copying a single number by hand.</p>
+<section id="plan" class="slide level2">
+<h2>Workshop Structure</h2>
+<!-- --start and --len are minutes from 13:00; they place each bar on the 90-minute timeline. -->
+<div class="agenda">
+<div class="agenda-row" style="--start: 0; --len: 15;">
+<p><span class="agenda-time">13:00</span> <span class="agenda-title">The basics</span> <span class="agenda-desc">Welcome, what Quarto is, Markdown and YAML</span> <span class="agenda-len">15 min</span></p>
+</div>
+<div class="agenda-row" style="--start: 15; --len: 30;">
+<p><span class="agenda-time">13:15</span> <span class="agenda-title">Demo: a manuscript, built together</span> <span class="agenda-desc">You follow along on your laptop, one step at a time</span> <span class="agenda-len">30 min</span></p>
+</div>
+<div class="agenda-row" style="--start: 45; --len: 40;">
+<p><span class="agenda-time">13:45</span> <span class="agenda-title">Your turn</span> <span class="agenda-desc">Pick a use case and work through its exercise on the website</span> <span class="agenda-len">40 min</span></p>
+</div>
+<div class="agenda-row" style="--start: 85; --len: 5;">
+<p><span class="agenda-time">14:25</span> <span class="agenda-title">Wrap-up and questions</span> <span class="agenda-desc">Where to go next, and a follow-up talk on 10 December 2026</span> <span class="agenda-len">5 min</span></p>
+</div>
+</div>
+<p><span class="catch-up">If you already know Quarto, skip the demo and start on an exercise straight away.</span></p>
+<aside class="notes">
+<p>Three parts, in the same order as the end of the pitch video. In the demo everyone builds the same manuscript on their own laptop while I do it on screen. The website stays online after today.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="problem-final" class="slide level2 problem">
-<h2>A reviewer’s correction should be fixed in one place, not three</h2>
+<section id="website" class="slide level2">
+<h2>Open the workshop website on your laptop now</h2>
 <div class="columns">
-<div class="column" style="width:56%;">
-<p><img data-src="../assets/lab-notebook-w-figs.jpg" alt="Stand-in image until the pitch-video still is exported: a lab notebook with figures"></p>
-</div><div class="column" style="width:44%;">
-<p>Co-authors want Word, the journal wants LaTeX, and every revision changes a figure. Values in the text quietly fall out of date.</p>
-<p><span class="answer">With Quarto, the text, the numbers and the figures come from one source file.</span></p>
+<div class="column" style="width:36%;">
+<p><a href="https://iat-dml.github.io/quarto-workshop/" class="site-url">iat-dml.github.io/quarto-workshop</a></p>
+<p><img data-src="../assets/workshop-qr-code.png" class="qr-code" alt="QR code that opens the workshop website"></p>
+<p>Everything for today is on it: these slides, and a guide and an exercise for each use case. It stays online after today.</p>
+</div><div class="column" style="width:64%;">
+<p><img data-src="../assets/screencasts/open-slides.gif" class="screencast" alt="Screen recording: on the workshop home page, a click on View as presentation opens these slides in the browser"></p>
+<p><span class="screencast-caption"><strong>View as presentation</strong> on the home page opens these slides, so you can follow them on your own screen.</span></p>
 </div></div>
+<aside class="notes">
+<p>Give everyone a minute to open the site; the QR code goes to the home page. The rest of the afternoon runs off this page, so it is worth getting it open now rather than during the demo.</p>
+<p>On their own copy of the slides, the arrow keys move between slides; they can match the slide number at the top right to the one on the projector.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="source-result" class="slide level2 source-result">
-<h2>Numbers in the text come from the same code as the figures</h2>
+<section id="copy-code" class="slide level2">
+<h2>Copy any code block from the slides if you fall behind</h2>
 <div class="columns">
-<div class="column" style="width:48%;">
-<p><span class="file-label">manuscript.qmd</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"restoration-sites.csv"</span>)</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>We monitored <span class="in">`r n_sites`</span> restoration sites.</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>Mean species richness rose from</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="in">`r first_richness`</span> to <span class="in">`r last_richness`</span> species.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column" style="width:52%;">
-<p><span class="file-label">manuscript.html</span></p>
+<div class="column" style="width:60%;">
+<p><img data-src="../assets/screencasts/copy-code.gif" class="screencast" alt="Screen recording: the mouse moves over a code block on a slide, a copy button appears in its corner, and a click copies the code"></p>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>Move the mouse over a code block and a copy button appears in its top right corner.</li>
+<li>Click it, then paste the code into RStudio with Ctrl+V.</li>
+<li>Every code block in the exercises on the website has the same button.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>This is the safety net for the demo. If someone misses a step while I am typing, they copy that step’s code from their own copy of the slides and are back in step with everyone else. I’d still rather they type it where they can; more on that just before the demo starts.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="sec-basics" class="title-slide slide level1 divider divider-indigo center" data-background-color="#3D2F8C">
+<h1>The basics</h1>
+<p>Markdown for the text, YAML for the settings and, where you need it, code for the results.</p>
+</section>
+<section id="what-is-quarto" class="slide level2">
+<h2>Quarto turns a plain-text file into documents, slides and websites</h2>
+<ul>
+<li>Quarto is an open-source publishing system from Posit, the company behind RStudio.</li>
+<li>If you know R Markdown, most of it will look familiar: Quarto is its successor.</li>
+<li>It works with R, Python or Julia, or with no code at all.</li>
+<li>You keep your editor: RStudio, Positron and VS Code all support <code>.qmd</code> files.</li>
+</ul>
+<aside class="notes">
+<p>Quarto is the publishing step: it takes a source file and turns it into a document, a slide deck or a website. It is not a new programming language, and you don’t need a new editor.</p>
+<p>If you’ve used R Markdown, Quarto is the newer and broader version of the same idea. If you haven’t, you haven’t missed a prerequisite. This deck is itself a Quarto file.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qmd-anatomy" class="slide level2">
+<h2>A .qmd file combines YAML settings, Markdown text and optional code</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><span class="file-label">report.qmd</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Restoration monitoring"</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Results</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>The boxplot shows vegetation cover at **each** site.</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"restoration-sites.csv"</span>)</span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(vegetation_cover_pct <span class="sc">~</span> site, <span class="at">data =</span> sites)</span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:48%;">
+<ul>
+<li>The YAML header between the <code>---</code> lines holds the settings, such as the title and the output format.</li>
+<li>Markdown marks up the text: <code>##</code> starts a heading and <code>**</code> makes text bold.</li>
+<li>A code chunk runs when you render, and its output, here a boxplot, appears in the document.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>This is the one model to keep in mind for the whole afternoon: YAML for the settings, Markdown for the text, and code where you want computed results. Quarto renders the three into the output you ask for. The demo and every exercise apply this same model.</p>
+<p>Because the file is plain text, version control can show every change line by line.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="markdown-everywhere" class="slide level2">
+<h2>You have probably written Markdown already, even without programming</h2>
+<div class="compact">
+<p>John Gruber designed Markdown in 2004 so that formatted text still reads naturally as plain text. Many tools researchers use every day now format text with it.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Where you have seen it</th>
+<th>What Markdown does there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AI assistants such as ChatGPT and Copilot</td>
+<td>The headings, bold text and lists in each answer are Markdown</td>
+</tr>
+<tr class="even">
+<td>Chat in Teams and Slack</td>
+<td>Asterisks around a word make it bold</td>
+</tr>
+<tr class="odd">
+<td>README files on GitHub and GitLab</td>
+<td>The start page of a repository is a <code>README.md</code> file</td>
+</tr>
+<tr class="even">
+<td>Jupyter notebooks</td>
+<td>The text cells between the code cells are Markdown</td>
+</tr>
+<tr class="odd">
+<td>Note apps such as Obsidian and Joplin</td>
+<td>Every note is written in Markdown</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="notes">
+<p>Ask for a show of hands: who has bolded a word in Teams by typing asterisks around it? That was Markdown. Who has used ChatGPT or Copilot? The answers arrive as Markdown, and the chat window renders it; copy an answer as plain text and the hashes and asterisks show.</p>
+<p>Gruber’s aim was text that reads well as it is, like an email, and that a program can turn into a web page. That is why it spread: the source is readable without the program that made it, so it suits version control and outlives any one editor.</p>
+<p>Quarto uses Pandoc’s version of Markdown, which adds what academic writing needs on top: citations, footnotes, cross-references and figure captions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="markdown" class="slide level2 source-result">
+<h2>Markdown marks what the text is, and Quarto decides how it looks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="file-label">methods.qmd</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### Field methods</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>We surveyed **every plot** twice a year</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>and recorded *all* vascular plants.</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spring survey in May</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Autumn survey in September</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>The full protocol is on the</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">website</span><span class="co">](https://iat-dml.github.io/quarto-workshop/)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><span class="file-label">methods.html</span></p>
+<!-- A Markdown heading here would split the slide into a vertical stack, so the rendered side uses an HTML heading. -->
 <div class="rendered">
-<p>We monitored 4 restoration sites. Mean species richness rose from 12.5 to 16.8 species.</p>
+<h3>
+Field methods
+</h3>
+<p>We surveyed <strong>every plot</strong> twice a year and recorded <em>all</em> vascular plants.</p>
+<ul>
+<li>Spring survey in May</li>
+<li>Autumn survey in September</li>
+</ul>
+<p>The full protocol is on the <a href="https://iat-dml.github.io/quarto-workshop/">website</a>.</p>
+</div>
+</div></div>
+<aside class="notes">
+<p>Markdown describes what something is, not how it looks. Hashes mean “this is a heading”; the output format decides the font and size, so the same source works as a web page, a PDF or a slide.</p>
+<p>Walk through it line by line: one hash per heading level, two asterisks for bold, one for italic, a hyphen for each bullet, and square brackets then round brackets for a link.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="markdown-more" class="slide level2 source-result">
+<h2>Numbered lists, tables and images are plain text too</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="file-label">methods.qmd</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Clip the vegetation in each plot.</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Dry the samples at 60 °C for 48 hours.</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Site   <span class="pp">|</span> Cover (%) <span class="pp">|</span> Species <span class="pp">|</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|--------|----------:|--------:|</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Site A <span class="pp">|</span>        62 <span class="pp">|</span>      17 <span class="pp">|</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Site B <span class="pp">|</span>        50 <span class="pp">|</span>      15 <span class="pp">|</span></span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Site C <span class="pp">|</span>        44 <span class="pp">|</span>      14 <span class="pp">|</span></span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Site D <span class="pp">|</span>        70 <span class="pp">|</span>      21 <span class="pp">|</span></span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="al">![Vegetation cover in January 2025](cover.png)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Quotes, footnotes and equations are just as short: see Markdown for beginners on the website.</span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="file-label">methods.html</span></p>
+<div class="rendered">
+<ol type="1">
+<li>Clip the vegetation in each plot.</li>
+<li>Dry the samples at 60 °C for 48 hours.</li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Site</th>
+<th style="text-align: right;">Cover (%)</th>
+<th style="text-align: right;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Site A</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td>Site B</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td>Site C</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td>Site D</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">21</td>
+</tr>
+</tbody>
+</table>
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="zalf-2026_files/figure-revealjs/richness-plot-1.png" alt="Line chart of mean species richness across monitoring dates" width="672"></p>
+<p><img data-src="zalf-2026_files/figure-revealjs/cover-by-site-1.png" alt="Horizontal bar chart of vegetation cover at the four sites in January 2025" width="672"></p>
+<figcaption>Vegetation cover in January 2025</figcaption>
 </figure>
 </div>
 </div>
@@ -264,7 +545,510 @@
 </div>
 </div></div>
 <aside class="notes">
-<p>This slide is itself rendered by Quarto: the numbers on the right were computed from the workshop data when the deck was built.</p>
+<p>A number and a full stop start a numbered list; Quarto numbers the items for you, so you can insert a step without renumbering. The table is drawn with pipes and hyphens, and the colons in the line under the header right-align the numbers. An image is a link with an exclamation mark in front, and the text in the square brackets becomes the caption.</p>
+<p>The numbers are the latest survey in the workshop data, the same data we use in the demo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="yaml" class="slide level2">
+<h2>One line in the YAML header decides the output format</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><span class="file-label">report.qmd</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Restoration monitoring"</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Ben Black"</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:55%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><code>format:</code></th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>html</code></td>
+<td>A web page</td>
+</tr>
+<tr class="even">
+<td><code>docx</code></td>
+<td>A Word document</td>
+</tr>
+<tr class="odd">
+<td><code>typst</code></td>
+<td>A PDF, with no LaTeX install needed</td>
+</tr>
+<tr class="even">
+<td><code>revealjs</code></td>
+<td>Slides like these</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<aside class="notes">
+<p>YAML is a settings panel written as text, between the two <code>---</code> lines at the top. Each line is a <code>key: value</code> pair. Change <code>html</code> to <code>docx</code>, render again, and the same text comes out as a Word file. A paper and a talk still need different editing, but the switch itself is this small.</p>
+<p>Typst is a typesetting system that ships with Quarto. <code>format: pdf</code> goes through LaTeX instead.</p>
+<p>Indentation matters in YAML. If a render fails before it reaches your text, check the header first for a stray space or a missing colon.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="sec-demo" class="title-slide slide level1 divider divider-moss center" data-background-color="#2F7D6A">
+<h1>Demo: writing a manuscript together</h1>
+<p>We build one short article step by step, you on your laptop and I on screen, from the data to a PDF, a web page and a Word file.</p>
+</section>
+<section id="ask-manuscripts" class="slide level2 question">
+<h2>How do you prepare a manuscript today, and what goes wrong?</h2>
+<p>Think about the software rather than the science:</p>
+<ul>
+<li>Where do you analyse the data and make the figures?</li>
+<li>Where do you and your co-authors write the text?</li>
+<li>How does it end up in the format the journal asks for?</li>
+</ul>
+<aside class="notes">
+<p>Ask for two or three answers from the room before moving on.</p>
+<p>Answers I expect: R, Python, SPSS or Excel for the analysis; Word with track changes, passed round by email or shared on OneDrive; Zotero, EndNote or Citavi for the references; the journal’s template applied at the very end. Problems I expect: pasting in updated figures, numbers in the text that no longer match the analysis, merging co-authors’ versions, reference fields breaking, reformatting for the journal.</p>
+<p>Pick up the two that come up most and lead into the next two slides: analysis and writing happen in different programs, and every journal wants a different file.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="problem-two-programs" class="slide level2 problem">
+<h2>The back and forth between analysis and writing</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<svg class="loop-diagram" viewbox="0 0 800 560" role="img" aria-labelledby="loop-title">
+  <title id="loop-title">R and Python produce a figure, a table and a number, which are copied by hand into a Word document and an Overleaf LaTeX project. A dashed arrow runs back from the writing to the analysis: new data or a reviewer's request means changing the analysis and copying everything again.</title>
+  <defs>
+    <marker id="loop-head" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="7" markerheight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="loop-arrowhead"></path>
+    </marker>
+    <marker id="loop-head-back" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="7" markerheight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="loop-arrowhead-back"></path>
+    </marker>
+  </defs>
+
+  <!-- Column headings -->
+  <text class="loop-heading" x="120" y="46" text-anchor="middle">Analysis</text>
+  <text class="loop-heading" x="680" y="46" text-anchor="middle">Writing</text>
+
+  <!-- R logo, simplified: grey ring and blue R -->
+  <g transform="translate(120 160)">
+    <ellipse class="logo-r-ring" cx="0" cy="-4" rx="62" ry="40"></ellipse>
+    <text class="logo-r-letter" x="14" y="34" text-anchor="middle">R</text>
+  </g>
+
+  <!-- Python logo, simplified: two interlocking rounded shapes -->
+  <g transform="translate(120 340)">
+    <rect class="logo-py-blue" x="-20" y="-46" width="42" height="34" rx="10"></rect>
+    <rect class="logo-py-blue" x="-46" y="-22" width="54" height="40" rx="10"></rect>
+    <rect class="logo-py-blue" x="-20" y="-22" width="22" height="12"></rect>
+    <g class="logo-py-halo">
+      <rect x="-8" y="-18" width="54" height="40" rx="10"></rect>
+      <rect x="-22" y="12" width="42" height="34" rx="10"></rect>
+    </g>
+    <g class="logo-py-yellow">
+      <rect x="-8" y="-18" width="54" height="40" rx="10"></rect>
+      <rect x="-22" y="12" width="42" height="34" rx="10"></rect>
+      <rect x="-6" y="10" width="20" height="10"></rect>
+    </g>
+    <circle class="logo-eye" cx="-8" cy="-34" r="4.5"></circle>
+    <circle class="logo-eye" cx="8" cy="34" r="4.5"></circle>
+  </g>
+
+  <!-- Results produced by the analysis: a figure, a table and a number -->
+  <g transform="translate(400 150)">
+    <rect class="loop-card" x="-78" y="-20" width="156" height="118" rx="10"></rect>
+    <line class="loop-axis" x1="-58" y1="80" x2="60" y2="80"></line>
+    <line class="loop-axis" x1="-58" y1="80" x2="-58" y2="-4"></line>
+    <rect class="loop-bar" x="-46" y="46" width="20" height="34"></rect>
+    <rect class="loop-bar" x="-16" y="22" width="20" height="58"></rect>
+    <rect class="loop-bar" x="14" y="34" width="20" height="46"></rect>
+    <rect class="loop-bar" x="44" y="8" width="12" height="72"></rect>
+    <rect class="loop-card" x="-78" y="114" width="156" height="66" rx="10"></rect>
+    <line class="loop-rule" x1="-62" y1="136" x2="62" y2="136"></line>
+    <line class="loop-rule" x1="-62" y1="158" x2="62" y2="158"></line>
+    <line class="loop-rule" x1="-10" y1="122" x2="-10" y2="172"></line>
+    <text class="loop-number" x="0" y="232" text-anchor="middle">4.2 t/ha</text>
+  </g>
+
+  <!-- Word document, with earlier versions stacked behind it -->
+  <g transform="translate(680 160)">
+    <rect class="loop-page loop-page-old" x="-24" y="-60" width="72" height="94" rx="6"></rect>
+    <rect class="loop-page loop-page-old" x="-30" y="-54" width="72" height="94" rx="6"></rect>
+    <rect class="loop-page" x="-36" y="-48" width="72" height="94" rx="6"></rect>
+    <line class="loop-rule" x1="-22" y1="-28" x2="22" y2="-28"></line>
+    <line class="loop-rule" x1="-22" y1="-14" x2="22" y2="-14"></line>
+    <line class="loop-rule" x1="-22" y1="0" x2="22" y2="0"></line>
+    <line class="loop-rule" x1="-22" y1="14" x2="8" y2="14"></line>
+    <rect class="logo-word" x="-58" y="2" width="44" height="44" rx="6"></rect>
+    <text class="logo-word-letter" x="-36" y="34" text-anchor="middle">W</text>
+  </g>
+
+  <!-- Overleaf, simplified: a green leaf -->
+  <g transform="translate(680 340)">
+    <path class="logo-overleaf" d="M0,-46 C40,-30 44,22 0,46 C-44,22 -40,-30 0,-46 Z"></path>
+    <path class="logo-overleaf-vein" d="M0,-30 L0,40 M0,0 L16,-14 M0,18 L-16,4"></path>
+  </g>
+
+  <text class="loop-label" x="120" y="420" text-anchor="middle">R and Python</text>
+  <text class="loop-label" x="680" y="420" text-anchor="middle">Word and Overleaf</text>
+
+  <!-- Forward: results are copied by hand into the manuscript -->
+  <path class="loop-arrow" d="M196,240 C240,240 270,240 312,240" marker-end="url(#loop-head)"></path>
+  <path class="loop-arrow" d="M488,240 C530,240 560,240 604,240" marker-end="url(#loop-head)"></path>
+  <text class="loop-label" x="400" y="104" text-anchor="middle">copied by hand</text>
+
+  <!-- Back: every revision sends the work back to the analysis -->
+  <path class="loop-arrow-back" d="M680,440 C680,530 120,530 120,440" marker-end="url(#loop-head-back)"></path>
+  <text class="loop-label loop-label-back" x="400" y="548" text-anchor="middle">new data, reviewer comments: analyse and copy again</text>
+</svg>
+</div><div class="column" style="width:44%;">
+<p>We use different tools for analysis and for writing, so as the manuscript develops we keep going back and forth between them. That takes time and leaves room for mistakes.</p>
+<p><span class="answer">With Quarto the analysis and the text share one file, so one render updates both.</span></p>
+</div></div>
+<aside class="notes">
+<p>This is the problem most people name. A changed filter, a corrected data point or a reviewer’s request for a different model, and every figure, table and number that depends on it has to be found in the Word file and replaced. The risk is not the work but the one value nobody remembers to update.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="source-result" class="slide level2 source-result live-slide">
+<h2>Numbers in the text come from the same code as the figures</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="file-label">index.qmd</span></p>
+<div class="cell" data-autorun="true" data-define="[&quot;n_sites&quot;,&quot;cover_first&quot;,&quot;cover_latest&quot;,&quot;by_date&quot;]">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImRlZmluZSI6WyJuX3NpdGVzIiwiY292ZXJfZmlyc3QiLCJjb3Zlcl9sYXRlc3QiLCJieV9kYXRlIl0sImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2l0ZXMgPC0gcmVhZC5jc3YoXCJkYXRhL3Jlc3RvcmF0aW9uLXNpdGVzLmNzdlwiKVxuXG5maXJzdCAgPC0gc3Vic2V0KHNpdGVzLCBkYXRlID09IG1pbihkYXRlKSlcbmxhdGVzdCA8LSBzdWJzZXQoc2l0ZXMsIGRhdGUgPT0gbWF4KGRhdGUpKVxuXG5uX3NpdGVzICAgICAgPC0gbGVuZ3RoKHVuaXF1ZShzaXRlcyRzaXRlKSlcbmNvdmVyX2ZpcnN0ICA8LSByb3VuZChtZWFuKGZpcnN0JHZlZ2V0YXRpb25fY292ZXJfcGN0KSlcbmNvdmVyX2xhdGVzdCA8LSByb3VuZChtZWFuKGxhdGVzdCR2ZWdldGF0aW9uX2NvdmVyX3BjdCkpXG5cbmJ5X2RhdGUgPC0gYWdncmVnYXRlKHZlZ2V0YXRpb25fY292ZXJfcGN0IH4gZGF0ZSxcbiAgICAgICAgICAgICAgICAgICAgIGRhdGEgPSBzaXRlcywgRlVOID0gbWVhbikifQ==
+</script>
+</div>
+</div>
+<div class="chart-source">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>We monitored ${n_sites} restoration sites. Mean vegetation cover</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>rose from ${cover_first}% to ${cover_latest}%.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-startfrom="502" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 501;"><span id="cb6-502"><a aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb6-503"><a aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: fenced</span></span>
+<span id="cb6-504"><a aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
+<span id="cb6-505"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">...</span>slide_style<span class="op">,</span></span>
+<span id="cb6-506"><a aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span>Plot<span class="op">.</span><span class="fu">line</span><span class="op">(</span>by_date<span class="op">,</span> <span class="op">{</span></span>
+<span id="cb6-507"><a aria-hidden="true" tabindex="-1"></a>    x<span class="op">:</span> d <span class="op">=&gt;</span> <span class="kw">new</span> <span class="bu">Date</span><span class="op">(</span>d<span class="op">.</span><span class="fu">date</span><span class="op">),</span> y<span class="op">:</span> <span class="st">"vegetation_cover_pct"</span><span class="op">,</span></span>
+<span id="cb6-508"><a aria-hidden="true" tabindex="-1"></a>    stroke<span class="op">:</span> green<span class="op">,</span> strokeWidth<span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span> marker<span class="op">:</span> <span class="st">"circle"</span></span>
+<span id="cb6-509"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">})]</span></span>
+<span id="cb6-510"><a aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
+<span id="cb6-511"><a aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="file-label">index.html</span></p>
+<div class="rendered">
+<p>We monitored <span><span id="ojs-element-id-1"></span></span> restoration sites. Mean vegetation cover rose from <span><span id="ojs-element-id-2"></span>%</span> to <span><span id="ojs-element-id-3"></span>%.</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="525" data-source-offset="-136"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 524;"><span id="cb7-525"><a aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> <span class="fu">getComputedStyle</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".reveal"</span>))</span>
+<span id="cb7-526"><a aria-hidden="true" tabindex="-1"></a>green <span class="op">=</span> tokens<span class="op">.</span><span class="fu">getPropertyValue</span>(<span class="st">"--ds-green"</span>)<span class="op">.</span><span class="fu">trim</span>()</span>
+<span id="cb7-527"><a aria-hidden="true" tabindex="-1"></a>slide_style <span class="op">=</span> ({</span>
+<span id="cb7-528"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">720</span><span class="op">,</span></span>
+<span id="cb7-529"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb7-530"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">56</span><span class="op">,</span></span>
+<span id="cb7-531"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">56</span><span class="op">,</span></span>
+<span id="cb7-532"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb7-533"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"16px"</span><span class="op">,</span> <span class="dt">background</span><span class="op">:</span> <span class="st">"transparent"</span><span class="op">,</span></span>
+<span id="cb7-534"><a aria-hidden="true" tabindex="-1"></a>           <span class="dt">color</span><span class="op">:</span> tokens<span class="op">.</span><span class="fu">getPropertyValue</span>(<span class="st">"--ds-muted"</span>)<span class="op">.</span><span class="fu">trim</span>() }<span class="op">,</span></span>
+<span id="cb7-535"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">type</span><span class="op">:</span> <span class="st">"utc"</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Monitoring date"</span><span class="op">,</span> <span class="dt">labelAnchor</span><span class="op">:</span> <span class="st">"center"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">48</span><span class="op">,</span></span>
+<span id="cb7-536"><a aria-hidden="true" tabindex="-1"></a>       <span class="dt">ticks</span><span class="op">:</span> <span class="st">"6 months"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> <span class="st">"%b %Y"</span> }<span class="op">,</span></span>
+<span id="cb7-537"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Mean vegetation cover (%)"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span> }</span>
+<span id="cb7-538"><a aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-539"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-540"><a aria-hidden="true" tabindex="-1"></a><span class="co">// The chart cell on the left draws the figure; its own output is hidden, so a</span></span>
+<span id="cb7-541"><a aria-hidden="true" tabindex="-1"></a><span class="co">// copy is shown here. It updates whenever the R code re-runs.</span></span>
+<span id="cb7-542"><a aria-hidden="true" tabindex="-1"></a>chart<span class="op">.</span><span class="fu">cloneNode</span>(<span class="kw">true</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>The code on the left runs live in the browser with webR (the quarto-live extension), so it needs an internet connection and takes a few seconds to start when the deck opens. Edit the code and press Run Code (or Ctrl+Enter): the sentence and the figure on the right update together. A good live edit is to drop a site, for example <code>sites &lt;- subset(sites, site != "Site A")</code> after the first line.</p>
+<p>The chunk under the R code is Observable JS: it draws the figure from <code>by_date</code>, the table the R code just made. The sentence pulls <code>n_sites</code>, <code>cover_first</code> and <code>cover_latest</code> the same way, so nothing on the right is typed by hand.</p>
+<p>In a real manuscript the sentence would use inline R code, <code>`r n_sites`</code>, and update on render rather than live.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="problem-formats" class="slide level2 problem">
+<h2>Final submission headaches</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<p><img data-src="../assets/manuscript-demo.png" class="page-top" alt="A manuscript rendered by Quarto in the PNAS journal template, set in LaTeX"></p>
+</div><div class="column" style="width:44%;">
+<p>Manuscript submission often creates challenges, as journals require different formats. Over time I have increasingly opted to submit in LaTeX so that my tables keep their formatting, but moving a Word draft into LaTeX means redoing the formatting and references by hand.</p>
+<p><span class="answer">Quarto renders one source to Word, PDF and LaTeX, and journal templates apply each publisher’s style.</span></p>
+</div></div>
+<aside class="notes">
+<p>The image is a Quarto manuscript in the PNAS template. There are templates for Elsevier, PLOS, ACS and other publishers in the quarto-journals collection on GitHub, and the optional last step of the manuscript exercise uses the Elsevier one. With <code>keep-tex: true</code> the LaTeX source is kept next to the PDF, ready to upload.</p>
+<p>Co-authors who only use Word still get a Word file from the same source, which is Step 6 of the demo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="follow-along" class="slide level2">
+<h2>Build the manuscript on your laptop as I build it on screen</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<ul>
+<li>I go through six steps on screen, and you do each one on your own laptop.</li>
+<li>Type the code yourself where you can. You will remember it better than code you pasted.</li>
+<li>If you fall behind, copy the code from the slide on your own screen and carry on with the next step.</li>
+<li>Each step slide also names the matching step of the manuscript exercise on the website.</li>
+</ul>
+</div><div class="column" style="width:42%;">
+<div class="steps">
+<ol type="1">
+<li>Create a manuscript project</li>
+<li>Add authors and a setup chunk</li>
+<li>Put numbers from the data into the text</li>
+<li>Add a figure and cross-reference it</li>
+<li>Refer to a section and cite a DOI</li>
+<li>Render to PDF, HTML and Word</li>
+</ol>
+</div>
+</div></div>
+<aside class="notes">
+<p>Say it plainly: I want everyone typing, not watching. Copying is there so nobody gets stuck for long, not as the default. Before Step 1 we check two things on every laptop: that Quarto runs and that R is set up.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-quarto" class="slide level2">
+<h2>Check that your editor can find Quarto before we start</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">RStudio</a></li><li><a href="#tabset-1-2">Positron</a></li><li><a href="#tabset-1-3">VS Code</a></li><li><a href="#tabset-1-4">Terminal</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>RStudio 2022.07 and later include Quarto. In the <strong>Terminal</strong> tab, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2">
+<p>Positron includes Quarto. Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and run <strong>Quarto: Verify Installation</strong>. A dialog shows the version and where Quarto is installed.</p>
+</div>
+<div id="tabset-1-3">
+<p>Install the <strong>Quarto</strong> extension, then press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and run <strong>Quarto: Verify Installation</strong>. On a ZALF laptop, VS Code finds RStudio’s copy of Quarto only once you set <code>quarto.path</code>, as described on the website.</p>
+</div>
+<div id="tabset-1-4">
+<p>In any terminal, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It lists the versions of Quarto and its tools, then checks R and Python.</p>
+</div>
+</div>
+</div>
+<p><span class="catch-up">You need Quarto 1.8 or newer. Not found, or too old? Installing Quarto on the website covers each editor.</span></p>
+<aside class="notes">
+<p>On ZALF laptops RStudio 2026.01 from the Baramundi Kiosk comes with Quarto 1.8.25, which is enough for everything today. Positron brings its own, newer copy.</p>
+<p>VS Code users on a ZALF laptop need the <code>quarto.path</code> setting from “Setting up on a ZALF laptop” on the Installing Quarto page, or the per-user Quarto installer, which needs no admin rights.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="setup-r" class="slide level2">
+<h2>Set up R: one setting on ZALF laptops, then three packages</h2>
+<ol type="1">
+<li><p>On a ZALF laptop, run this once in PowerShell, then restart RStudio. Without it, documents with R code fail to render.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Environment<span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'R_USER'</span><span class="op">,</span> <span class="va">$env</span><span class="op">:</span><span class="va">USERPROFILE</span><span class="op">,</span> <span class="st">'User'</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Install the packages the demo uses, in the RStudio console:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"readr"</span>, <span class="st">"dplyr"</span>, <span class="st">"ggplot2"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<p><span class="catch-up">Both steps are under “Setting up on a ZALF laptop” on the website.</span></p>
+<aside class="notes">
+<p>The ZALF Documents folder lives in OneDrive under a path with “für” in it, and R cannot read that path. Setting <code>R_USER</code> points R at the plain user folder instead.</p>
+<p>The package install takes a few minutes. Start it now and let it run while we create the project in Step 1; the packages are first needed in Step 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="checkpoint-1" class="slide level2 checkpoint">
+<h2>Step 1 of 6: create a manuscript project and choose its formats</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Open the manuscript exercise on the website. In RStudio choose <strong>File → New Project → New Directory → Quarto Manuscript</strong>, in a folder outside OneDrive. Then replace <code>_quarto.yml</code> with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Behind? These are Steps 1 and 3 of the exercise.</span></p>
+</div><div class="column" style="width:40%;">
+<div class="steps">
+<ol type="1">
+<li><strong>Create a manuscript project</strong></li>
+<li>Add authors and a setup chunk</li>
+<li>Put numbers from the data into the text</li>
+<li>Add a figure and cross-reference it</li>
+<li>Refer to a section and cite a DOI</li>
+<li>Render to PDF, HTML and Word</li>
+</ol>
+</div>
+</div></div>
+<aside class="notes">
+<p>Every code block on the exercise page has a copy button, so nobody has to type from the screen.</p>
+<p>Two reasons to replace <code>_quarto.yml</code> straight away. The starter file has <code>freeze: true</code>, which reuses old results, so the numbers in Step 3 would not update when the data changes. And on Quarto 1.8, the version in RStudio, the PDF fails if <code>html</code> comes before it in the list. Typst is built into Quarto, so the PDF needs no LaTeX install.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="checkpoint-2" class="slide level2 checkpoint">
+<h2>Step 2 of 6: add authors and a setup chunk that loads the data</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Save <code>restoration-sites.csv</code> from the exercise page in a new <code>data/</code> folder. In <code>index.qmd</code>, replace everything with your own front matter and this setup chunk, then click <strong>Render</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/restoration-sites.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))</span>
+<span id="cb13-9"><a aria-hidden="true" tabindex="-1"></a>latest <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">max</span>(date))</span>
+<span id="cb13-10"><a aria-hidden="true" tabindex="-1"></a>first  <span class="ot">&lt;-</span> sites <span class="sc">|&gt;</span> <span class="fu">filter</span>(date <span class="sc">==</span> <span class="fu">min</span>(date))</span>
+<span id="cb13-11"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Behind? The front matter is in Step 2 of the exercise and the setup chunk in Step 4.</span></p>
+</div><div class="column" style="width:40%;">
+<div class="steps">
+<ol type="1">
+<li>Create a manuscript project</li>
+<li><strong>Add authors and a setup chunk</strong></li>
+<li>Put numbers from the data into the text</li>
+<li>Add a figure and cross-reference it</li>
+<li>Refer to a section and cite a DOI</li>
+<li>Render to PDF, HTML and Word</li>
+</ol>
+</div>
+</div></div>
+<aside class="notes">
+<p>The front matter holds the title, the authors with ORCID and affiliation, <code>number-sections: true</code> and the bibliography file. Quarto builds the byline from it in every format. Numbered sections are needed for the section cross-reference in Step 5. <code>include: false</code> runs the setup chunk but keeps the code and its output out of the article.</p>
+<p>In a manuscript project the Render button previews only the HTML article, so the Viewer shows the web page. The PDF and Word file come in Step 6, when we render the whole project. If a render fails with “file name conversion problem”, <code>R_USER</code> is not set yet.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -281,11 +1065,13 @@
 <h2>Step 3 of 6: put numbers from the data into the text</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Below the setup chunk, type <code>ms3</code>, press Tab, then render.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>We monitored <span class="in">`r n_sites`</span> restoration sites.</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>Mean species richness rose from</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">`r first_richness`</span> to <span class="in">`r last_richness`</span> species.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="catch-up">Behind? Download checkpoint 2 from the walk-through page and carry on from there.</span></p>
+<p>Below the setup chunk, add the Methods heading and the paragraph from the exercise, then render. It starts like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods {#sec-methods}</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>We monitored vegetation recovery at</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">`r n_distinct(sites$site)`</span> restoration sites</span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>across <span class="in">`r n_distinct(sites$date)`</span> quarterly surveys.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Behind? The heading and the full paragraph are in Step 5 of the exercise.</span></p>
 </div><div class="column" style="width:40%;">
 <div class="steps">
 <ol type="1">
@@ -293,25 +1079,69 @@
 <li>Add authors and a setup chunk</li>
 <li><strong>Put numbers from the data into the text</strong></li>
 <li>Add a figure and cross-reference it</li>
-<li>Cite a paper by its DOI</li>
+<li>Refer to a section and cite a DOI</li>
 <li>Render to PDF, HTML and Word</li>
 </ol>
 </div>
 </div></div>
+<aside class="notes">
+<p><code>##</code> makes a level 2 heading and <code>{#sec-methods}</code> gives it a label, which Step 5 refers to. Click <strong>Outline</strong> at the top right of the editor (Ctrl+Shift+O) and click Methods to jump there; in a full paper this is the quickest way to move between sections.</p>
+<p>The heading renders as “1 Methods”. The rendered text should read: 4 sites, 8 surveys, cover from 46% to 56%, an increase of 10 percentage points.</p>
+<p>If there is time: change one cover value in the CSV, render again and show that the sentence changes. Then change it back.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="checkpoint-6" class="slide level2 checkpoint">
-<h2>Step 6 of 6: one render gives PDF, web page and Word</h2>
+<section id="checkpoint-4" class="slide level2 checkpoint">
+<h2>Step 4 of 6: a labelled figure gets a number and a link</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Replace <code>_quarto.yml</code> with this, then run <code>quarto render</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="catch-up">Keep the PDF format first: on Quarto 1.8, the version in RStudio, the PDF fails if <code>html</code> comes before it.</span></p>
+<p>Below the paragraph, add the figure chunk from the exercise. Its label is <code>fig-cover</code>, so the text can refer to it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>Cover increased at every site over the</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>monitoring period (@fig-cover).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Behind? The chunk and this sentence are in Step 6 of the exercise.</span></p>
+</div><div class="column" style="width:40%;">
+<div class="steps">
+<ol type="1">
+<li>Create a manuscript project</li>
+<li>Add authors and a setup chunk</li>
+<li>Put numbers from the data into the text</li>
+<li><strong>Add a figure and cross-reference it</strong></li>
+<li>Refer to a section and cite a DOI</li>
+<li>Render to PDF, HTML and Word</li>
+</ol>
+</div>
+</div></div>
+<aside class="notes">
+<p>After rendering, <code>@fig-cover</code> reads “Figure 1” and links to the figure, and the caption is numbered. Add a second figure above it and both numbers update.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="checkpoint-5" class="slide level2 checkpoint">
+<h2>Step 5 of 6: the Insert menu adds cross-references and citations</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>In the <strong>Visual</strong> editor, start a new paragraph at the end and write this sentence. Insert <code>@sec-methods</code> with <strong>Insert → Cross Reference</strong>, and the citation with <strong>Insert → Citation</strong>, <strong>From DOI</strong>, <code>10.1111/rec.13035</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>The survey design in @sec-methods follows</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>recognised restoration standards <span class="co">[</span><span class="ot">@gann2019</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">No internet, or no dialog? Paste the reference from the tip in Step 7 of the exercise into <code>references.bib</code> and type the sentence in Source mode.</span></p>
 </div><div class="column" style="width:40%;">
 <div class="steps">
 <ol type="1">
@@ -319,13 +1149,119 @@
 <li>Add authors and a setup chunk</li>
 <li>Put numbers from the data into the text</li>
 <li>Add a figure and cross-reference it</li>
-<li>Cite a paper by its DOI</li>
+<li><strong>Refer to a section and cite a DOI</strong></li>
+<li>Render to PDF, HTML and Word</li>
+</ol>
+</div>
+</div></div>
+<aside class="notes">
+<p>After rendering, <code>@sec-methods</code> reads “Section 1” and links to the heading, the citation reads “(Gann et al.&nbsp;2019)”, and a reference list appears at the end. Quarto has added the entry to <code>references.bib</code>.</p>
+<p>The DOI belongs to the SER international standards for ecological restoration (Gann et al.&nbsp;2019). The same dialog can search Zotero, Crossref, PubMed and DataCite. The visual editor may rewrap the paragraph when you switch back to Source; the text itself does not change.</p>
+<p>Without <code>number-sections: true</code> in the front matter, the PDF fails with “cannot reference heading without numbering”. The Viewer does not show this, because the Render button builds only the web page; it surfaces in Step 6.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="checkpoint-6" class="slide level2 checkpoint">
+<h2>Step 6 of 6: one render gives PDF, web page and Word</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Add <code>docx: default</code> to the formats in <code>_quarto.yml</code>. Then click <strong>Render Project</strong> in the Build tab, or run <code>quarto render</code> in the Terminal tab.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="catch-up">Behind? Rendering is Step 8 of the exercise.</span></p>
+</div><div class="column" style="width:40%;">
+<div class="steps">
+<ol type="1">
+<li>Create a manuscript project</li>
+<li>Add authors and a setup chunk</li>
+<li>Put numbers from the data into the text</li>
+<li>Add a figure and cross-reference it</li>
+<li>Refer to a section and cite a DOI</li>
 <li><strong>Render to PDF, HTML and Word</strong></li>
 </ol>
 </div>
 </div></div>
 <aside class="notes">
-<p>The results land in <code>_manuscript/</code>. Open <code>index.html</code>: the margin links to the PDF and the Word file under Other Formats. Typst is built into Quarto, so no LaTeX install is needed.</p>
+<p>The results land in <code>_manuscript/</code>. Open <code>index.html</code> in the browser: the margin links to the PDF and the Word file under Other Formats. The Render button only builds the HTML article, which is why this step renders the whole project.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="sec-your-turn" class="title-slide slide level1 divider divider-indigo center" data-background-color="#3D2F8C">
+<h1>Your turn</h1>
+<p>pick another use case and work through it</p>
+</section>
+<section id="explore-independently" class="slide level2">
+<h2>Explore independently</h2>
+<p>Each use case on the website has a guide with tips and an exercise. Work on one until 14:25, on either of two paths:</p>
+<ul>
+<li>Path A: bring your own content, such as a draft paper, a talk you need to give or your own data.</li>
+<li>Path B: use the sample data and text we provide.</li>
+</ul>
+<p>I’ll come round the room to answer questions and help when something does not render.</p>
+<aside class="notes">
+<p>Leave this slide up for the whole 40 minutes. Path A pays off more, because people leave with something they keep working on; Path B is better for anyone who would rather not wrangle their own files today. People who skipped the demo can do the manuscript exercise now.</p>
+<p>Walk the room. The problems we found when testing on ZALF laptops: <code>R_USER</code> not set, projects inside OneDrive, and VS Code not finding Quarto.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="sec-wrap-up" class="title-slide slide level1 divider divider-indigo center" data-background-color="#3D2F8C">
+<h1>Wrap-up and questions</h1>
+<p>All the material stays online after today, and the exercises work on your own laptop too.</p>
+</section>
+<section id="profile-talk" class="slide level2">
+<h2>Upcoming talk for postdocs</h2>
+<div class="columns talk">
+<div class="column" style="width:48%;">
+<p><span class="talk-title">An efficient approach to keeping your research profile up to date</span></p>
+<div class="talk-meta">
+<p>10 December 2026, 13:00 to 14:00<br>
+Haus 13 and on Teams</p>
+</div>
+<ul>
+<li>I log each paper, talk and project once, in a YAML file.</li>
+<li>My CV and website are Quarto projects that read it.</li>
+<li>GitHub Actions rebuild both when I add an entry.</li>
+</ul>
+<p><span class="talk-contact">Ask <a href="mailto:Camille.Imbert@zalf.de">Camille Imbert</a> for more details.</span></p>
+</div><div class="column" style="width:52%;">
+<p><img data-src="../assets/website-screenshots/blenback-website.png" alt="Screenshot of Ben Black's personal website, built with Quarto"></p>
+</div></div>
+<aside class="notes">
+<p>This is the “Your site and CV, always current” scene from the pitch video. In the talk I go through the whole setup: the YAML files, the check that stops a typo from breaking the CV, and how a new entry triggers both rebuilds. Camille Imbert is the contact for the invitation and details.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -339,6 +1275,28 @@
       }</style></aside>
 
 
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC42LjAvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xLCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgY29uc3QgYW5hbHlzaXMgPSBhd2FpdCB3ZWJSLkZTLmFuYWx5emVQYXRoKHBhdGgpO1xuICAgICAgICBpZiAoIWFuYWx5c2lzLmV4aXN0cykge1xuICAgICAgICAgIHRyeSB7XG4gICAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvcjogXCIke2UubWVzc2FnZX1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyIuLi9kYXRhL3Jlc3RvcmF0aW9uLXNpdGVzLmNzdiJd
+</script>
+<div class="ojs-auto-generated hidden">
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bl9zaXRlc308L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2NvdmVyX2ZpcnN0fTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7Y292ZXJfbGF0ZXN0fTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMyJ9XX0=
+</script>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -555,6 +1513,17 @@
           RevealZoom
         ]
       });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImNoYXJ0ID0gUGxvdC5wbG90KHtcbiAgLi4uc2xpZGVfc3R5bGUsXG4gIG1hcmtzOiBbUGxvdC5saW5lKGJ5X2RhdGUsIHtcbiAgICB4OiBkID0+IG5ldyBEYXRlKGQuZGF0ZSksIHk6IFwidmVnZXRhdGlvbl9jb3Zlcl9wY3RcIixcbiAgICBzdHJva2U6IGdyZWVuLCBzdHJva2VXaWR0aDogMi41LCBtYXJrZXI6IFwiY2lyY2xlXCJcbiAgfSldXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gU2xpZGUgc2l6aW5nIGFuZCBicmFuZCBjb2xvdXJzLCBrZXB0IG91dCBvZiB0aGUgY29kZSBvbiBzaG93LiBUaGUgY29sb3Vyc1xuLy8gY29tZSBmcm9tIHRoZSBkZXNpZ24gdG9rZW5zIG9uIC5yZXZlYWwsIG5vdCBoZXggdmFsdWVzLlxudG9rZW5zID0gZ2V0Q29tcHV0ZWRTdHlsZShkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbFwiKSlcbmdyZWVuID0gdG9rZW5zLmdldFByb3BlcnR5VmFsdWUoXCItLWRzLWdyZWVuXCIpLnRyaW0oKVxuc2xpZGVfc3R5bGUgPSAoe1xuICB3aWR0aDogNzIwLFxuICBoZWlnaHQ6IDMwMCxcbiAgbWFyZ2luTGVmdDogNTYsXG4gIG1hcmdpbkJvdHRvbTogNTYsXG4gIG1hcmdpblJpZ2h0OiA0MCxcbiAgc3R5bGU6IHsgZm9udFNpemU6IFwiMTZweFwiLCBiYWNrZ3JvdW5kOiBcInRyYW5zcGFyZW50XCIsXG4gICAgICAgICAgIGNvbG9yOiB0b2tlbnMuZ2V0UHJvcGVydHlWYWx1ZShcIi0tZHMtbXV0ZWRcIikudHJpbSgpIH0sXG4gIHg6IHsgdHlwZTogXCJ1dGNcIiwgbGFiZWw6IFwiTW9uaXRvcmluZyBkYXRlXCIsIGxhYmVsQW5jaG9yOiBcImNlbnRlclwiLCBsYWJlbE9mZnNldDogNDgsXG4gICAgICAgdGlja3M6IFwiNiBtb250aHNcIiwgdGlja0Zvcm1hdDogXCIlYiAlWVwiIH0sXG4gIHk6IHsgbGFiZWw6IFwiTWVhbiB2ZWdldGF0aW9uIGNvdmVyICglKVwiLCBncmlkOiB0cnVlIH1cbn0pXG5cbi8vIFRoZSBjaGFydCBjZWxsIG9uIHRoZSBsZWZ0IGRyYXdzIHRoZSBmaWd1cmU7IGl0cyBvd24gb3V0cHV0IGlzIGhpZGRlbiwgc28gYVxuLy8gY29weSBpcyBzaG93biBoZXJlLiBJdCB1cGRhdGVzIHdoZW5ldmVyIHRoZSBSIGNvZGUgcmUtcnVucy5cbmNoYXJ0LmNsb25lTm9kZSh0cnVlKVxuIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../slides";
+    window._ojs.paths.runtimeToRoot = "../..";
+    window._ojs.paths.docToRoot = "..";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
     </script>
     
     <script>

@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -493,6 +493,11 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Title slide</strong> (<code>title-style: editorial</code>): event logo top left (<code>event: logo:</code>), the title with its italic part on its own line in green, the subtitle in DM Sans, and a forest band across the foot with the presenter and <code>event.tagline</code>. The band is drawn inside the slide and runs past its edges, so the text stays on it at any aspect ratio.</li>
 <li><strong>Dividers</strong> (<code># Title {.divider}</code>): forest gradient with a mint wedge rising to the right. The deck’s <code>background-color</code> attributes are overridden from the stylesheet, so they need no editing.</li>
 <li><strong>Checkpoints</strong>: the current step has a green numbered disc, earlier steps a mint-deep tick.</li>
+<li><strong>Agenda</strong> (<code>.agenda</code> &gt; <code>.agenda-row</code>): time in green, the part in the serif over a muted line, a green bar on a white timeline track and the length. Each row sets <code>--start</code> and <code>--len</code> in minutes.</li>
+<li><strong>Question</strong> (<code>.question</code>): a question to the room, large and vertically centred, with prompts underneath.</li>
+<li><strong>Tabsets</strong>: tabs as DM Sans 600 text with a green rule under the open tab; the content on a white panel.</li>
+<li><strong>Screen recordings</strong> (<code>img.screencast</code>): GIFs in <code>assets/screencasts/</code>, made by <code>_screencasts/record-screencasts.py</code> from the rendered site. Re-record them when the home page or the deck changes visibly.</li>
+<li><strong>Lists</strong> in the ZALF deck have 0.6em between items (<code>slides/zalf-2026.scss</code>), except the checkpoint steps and the mock output in <code>.rendered</code>.</li>
 </ul>
 </section>
 </section>

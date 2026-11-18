@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-916e1d957aa2e2d21c4002595b1ed413.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-e5df3202a8bc9a37f9df92fc8591e42c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27ea6182143317b96e9648cec6952dec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -170,19 +170,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <!--
-Placeholder for the shortened pitch video. When the clip is ready, save it as
-assets/pitch-video-short.mp4 and replace the raw HTML block below with the
-video shortcode, for example:
-
-  {{< video assets/pitch-video-short.mp4 title="A year in research" >}}
-
-The .home-video frame keeps its white border and 16:9 shape around the video.
+Website cut of the pitch video (source: _pitch-video/quarto-workshop-pitch-website-version.mp4,
+remuxed with -movflags +faststart so it streams). Raw HTML rather than the video
+shortcode so the poster frame shows before playback.
 -->
 <div class="home-video">
-<div class="video-placeholder" role="img" aria-label="Placeholder for the shortened pitch video">
-  <span class="video-placeholder__play" aria-hidden="true"></span>
-  <span class="video-placeholder__label">Placeholder: shortened pitch video</span>
-</div>
+<video controls="" preload="metadata" playsinline="" poster="assets/pitch-video-poster.jpg" aria-label="A year in research: a short animated pitch for the Quarto workshop">
+  <source src="assets/pitch-video.mp4" type="video/mp4">
+</video>
 </div>
 </div>
 </div>
@@ -225,8 +220,8 @@ K1, Building 4, ZALF campus, Müncheberg
 </div>
 </div>
 <div class="home-band home-band--forest column-screen">
-<section id="who-we-are" class="level2 home-wrap">
-<h2 data-anchor-id="who-we-are">Who we are</h2>
+<section id="who-developed-this-workshop" class="level2 home-wrap">
+<h2 data-anchor-id="who-developed-this-workshop">Who developed this workshop</h2>
 <div class="team-grid">
 <div class="team-member">
 <p><img src="assets/ben.jpg" class="team-photo img-fluid" alt="Portrait of Ben Black"></p>
