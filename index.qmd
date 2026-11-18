@@ -82,7 +82,7 @@ Bring a laptop, and please check it beforehand with the steps in [Setting up on 
 
 ::::: {.home-band .home-band--forest .column-screen}
 :::: {.home-wrap}
-## Who we are
+## Who developed this workshop
 
 ::: {.team-grid}
 ::: {.team-member}
