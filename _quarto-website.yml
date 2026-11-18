@@ -23,9 +23,9 @@ website:
       - href: foundations/quarto-intro.qmd
         text: Foundations
       - href: use-cases/research-diary.qmd
-        text: Academic Use Cases
+        text: Academic use cases
       - href: advanced/templates-and-extensions.qmd
-        text: Advanced Topics
+        text: Advanced topics
   sidebar:
     style: floating
     search: true
@@ -37,21 +37,21 @@ website:
           - foundations/markdown-intro.qmd
           - foundations/yaml-intro.qmd
           - foundations/installing-quarto.qmd
-      - section: "Academic Use Cases"
+      - section: "Academic use cases"
         contents:
-          - text: "Documenting Research in Progress"
+          - text: "Documenting research in progress"
             href: use-cases/research-diary.qmd
           - text: "   ↳ Exercise"
             href: exercises/research-diary-exercise.qmd
-          - text: "Writing Manuscripts"
+          - text: "Writing manuscripts"
             href: use-cases/manuscripts.qmd
           - text: "   ↳ Exercise"
             href: exercises/manuscripts-exercise.qmd
-          - text: "Creating Presentations"
+          - text: "Creating presentations"
             href: use-cases/presentations.qmd
           - text: "   ↳ Exercise"
             href: exercises/presentations-exercise.qmd
-          - text: "Creating Project and Personal Websites"
+          - text: "Creating project and personal websites"
             href: use-cases/websites.qmd
           - text: "   ↳ Exercise"
             href: exercises/websites-exercise.qmd
@@ -59,14 +59,14 @@ website:
             href: use-cases/dashboards.qmd
           - text: "   ↳ Exercise"
             href: exercises/dashboards-exercise.qmd
-      - section: "Advanced Topics"
+      - section: "Advanced topics"
         contents:
           - advanced/templates-and-extensions.qmd
           - advanced/brand-yml.qmd
           - advanced/multi-lingual-outputs.qmd
           - advanced/invites.qmd
           - advanced/ai-assistance.qmd
-      - section: "Go Further"
+      - section: "Go further"
         href: go-further.qmd
         contents:
           - go-further.qmd

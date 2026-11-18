@@ -1,12 +1,12 @@
 ---
-title: "Creating Websites for Research Outreach"
+title: "Creating websites for research outreach"
 ---
 
 Quarto allows you to generate full websites which can then be deployed for free using services such as GitHub Pages or Netlify. This provides an easy solution to create web content for research groups, project pages, course and teaching materials, as well as personal academic profiles.
 
 In the exercise for this section, you will create a simple website to share your research outputs.
 
-## Why This Use-Case Matters For Researchers
+## Why researchers build websites
 
 Doing some form of outreach activities has become increasingly important for:
 
@@ -16,31 +16,31 @@ Doing some form of outreach activities has become increasingly important for:
 
 ## The basics of websites with Quarto
 
-### Rendering 
+### Rendering
 
-The websites functionality of Quarto is built on top of [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) which is a free front-end framework which is very popular for fast and easy web development.
+Quarto websites are built on top of [Bootstrap](https://getbootstrap.com/), a free and widely used front-end framework.
 
-Like all websites Quarto website pages render as .HTML files. In many IDEs such as RStudio,  VScode and Positron these can be viewed locally directly in the 'viewer pane' by clicking the 'Preview' button at the top of the file editor window ir right clicking on the file itself. 
+Like all websites, Quarto website pages render as HTML files. In RStudio, VS Code and Positron you can view them locally in the viewer pane by clicking the Preview button at the top of the editor window, or by right-clicking the file.
 
 ### Project-level configuration
 
 Like all Quarto projects, websites should use a project-level `_quarto.yml` file to define the website structure and formatting. This allows you to easily manage navigation, themes, and other shared settings across all pages of the site.
 
-### The Front Page: index.qmd
+### The front page: index.qmd
 
 Websites must have an `index.qmd` file in the root directory which serves as the front page of the site. This page can include any content you like, but it is often used to provide an overview of the site and highlight key information.
 
-### Reusable Authoring Patterns
+### Reusable authoring patterns
 
 The same Markdown, YAML, callouts, images, and code chunk patterns used in other Quarto output formats can all be used in websites too. You can also include additional HTML or JavaScript blocks or scripts to add custom functionality to your site.
 
 ::: {.callout-tip}
-Websites can include other Quarto content such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other content such as PDFs, videos or even google forms by embedding them with iframes.
+Websites can include other Quarto content such as dashboards and RevealJS presentations as part of the site, but they are not required to be built with Quarto. You can also include any other content such as PDFs, videos or Google Forms by embedding them with iframes.
 :::
 
-### Formatting and Theming
+### Formatting and theming
 
-#### Inbuilt themes
+#### Built-in themes
 
 Quarto ships with 25 built-in themes drawn from the [Bootswatch](https://bootswatch.com/) project (such as `cosmo`, `flatly`, `journal`, and `litera`). Because a website is a project, you set the theme once in `_quarto.yml` and every page inherits it:
 
@@ -50,11 +50,11 @@ format:
     theme: cosmo
 ```
 
-Swap the name to preview alternatives until you find one that fits — see the full list in the [Quarto theme documentation](https://quarto.org/docs/output-formats/html-themes.html).
+Swap the name to preview alternatives until you find one that fits. The full list is in the [Quarto theme documentation](https://quarto.org/docs/output-formats/html-themes.html).
 
 #### Customising with Sass and CSS
 
-While a built-in theme gets you most of the way there, it can feel a bit generic. To change things up you can layer your own styling on top. CSS (Cascading Style Sheets) is the language browsers read directly to style a page, while Sass is a more powerful superset that adds conveniences like variables, nesting, and reusable rules — it compiles down to plain CSS before the browser ever sees it. For Quarto, the recommended route is a [Sass](https://sass-lang.com/) theme file (`.scss`), which lets you override Bootstrap variables (colours, fonts, spacing) and add custom rules. You can include this in your project by adding it to the `_quarto.yml` file:
+While a built-in theme gets you most of the way there, it can feel a bit generic. To change things up you can layer your own styling on top. CSS (Cascading Style Sheets) is the language browsers read directly to style a page, while Sass is a superset that adds conveniences like variables, nesting, and reusable rules, and it compiles down to plain CSS before the browser sees it. For Quarto, the recommended route is a [Sass](https://sass-lang.com/) theme file (`.scss`), which lets you override Bootstrap variables (colours, fonts, spacing) and add custom rules. You can include this in your project by adding it to the `_quarto.yml` file:
 
 ```yaml
 format:
@@ -83,12 +83,12 @@ format:
     css: styles.css
 ```
 ::: {.callout-tip}
-Given the depth of Sass and CSS, don't be afraid to bring in some help. AI agents or chat services are really quite good at writing CSS and there are even specific agentic harnesses such as [Claude Design](https://claude.ai/design), [Impeccable](https://impeccable.style/) and [Open Design](https://open-design.ai/) that can help you take your website to the next level.
+Sass and CSS run deep, so don't be afraid to bring in some help. AI chat services and coding agents are good at writing CSS, and there are tools aimed at design work in particular, such as [Claude Design](https://claude.ai/design), [Impeccable](https://impeccable.style/) and [Open Design](https://open-design.ai/).
 :::
 
 #### Light and dark mode
 
-Quarto has the option to add light and dark modes for websites. Simply provide two themes in the yaml file and Quarto automatically adds a toggle to the navbar. The first entry is the default, and each side can be paired with its own `.scss`:
+Quarto can give a website a light and a dark mode. Provide two themes in the YAML and Quarto adds a toggle to the navbar. The first entry is the default, and each side can be paired with its own `.scss`:
 
 ```yaml
 format:
@@ -100,11 +100,11 @@ format:
 
 #### Building a consistent visual identity
 
-For maintaining a consistent identity across your website, presentations, and reports, Quarto can also read a shared `_brand.yml` file that defines your colours, fonts, and logo in one place, this is covered in the [advanced topics section](../advanced/brand-yml.qmd).
+For maintaining a consistent identity across your website, presentations, and reports, Quarto can also read a shared `_brand.yml` file that defines your colours, fonts, and logo in one place. This is covered in the [advanced topics section](../advanced/brand-yml.qmd).
 
-## Concrete Examples
+## Websites we have built
 
-Here are some real websites that the authors have built with Quarto — academic profiles, project pages, a handbook, and even a personal wedding site:
+Here are some websites that the authors have built with Quarto: academic profiles, project pages, a handbook, and a wedding site.
 
 ::::: {.showcase-cards}
 
@@ -126,7 +126,7 @@ Here are some real websites that the authors have built with Quarto — academic
 ::: {.showcase-body}
 [NASCENT-Peru](https://nascent-peru.github.io/){.showcase-title}
 
-[A multi-lingual research project website — discussed further in the advanced topics section.]{.showcase-desc}
+[A multi-lingual research project website, discussed further in the advanced topics section.]{.showcase-desc}
 
 [Visit site {{< iconify fa6-solid arrow-up-right-from-square >}}]{.showcase-go aria-hidden="true"}
 :::
@@ -162,7 +162,7 @@ Here are some real websites that the authors have built with Quarto — academic
 ::: {.showcase-body}
 [Wedding website](https://janna-and-ben.github.io/){.showcase-title}
 
-[Quarto isn't limited to academic use — it works just as well for personal projects.]{.showcase-desc}
+[Quarto also works for personal projects.]{.showcase-desc}
 
 [Visit site {{< iconify fa6-solid arrow-up-right-from-square >}}]{.showcase-go aria-hidden="true"}
 :::
@@ -170,6 +170,6 @@ Here are some real websites that the authors have built with Quarto — academic
 
 :::::
 
-Of course, the website you are reading right now is also built with Quarto, you can [view the source code for this site on GitHub](https://github.com/iat-dml/quarto-workshop).
+The website you are reading is also built with Quarto, and you can [view its source code on GitHub](https://github.com/iat-dml/quarto-workshop).
 
 [Go to the exercise to build your own personal website](../exercises/websites-exercise.qmd){.btn .btn-primary}

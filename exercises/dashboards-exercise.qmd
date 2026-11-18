@@ -1,8 +1,8 @@
 ---
-title: "Exercise: Build a Dashboard"
+title: "Exercise: build a dashboard"
 ---
 
-## Learning Goal
+## Learning goal
 
 Build a small, interactive Quarto dashboard from monitoring data: a row of headline numbers, a chart, and a table, all drawn from the same source. Along the way you will see how `format: dashboard` arranges a page into rows and columns.
 
@@ -17,7 +17,7 @@ The complete, ready-to-run version lives in the repository as `dashboards/restor
 The version above inherits this website's custom fonts and colours. A fresh dashboard uses Quarto's default styling, so expect the same layout with a plainer look.
 :::
 
-### The Data
+### The data
 
 You will use a small synthetic dataset, `data/restoration-sites.csv`. Each row is one survey of one site:
 
@@ -31,15 +31,15 @@ head(sites)
 
 It has five columns:
 
-- `site` — the monitoring site (A to D)
-- `date` — survey date (quarterly)
-- `vegetation_cover_pct` — vegetation cover, in percent
-- `species_richness` — number of species recorded
-- `soil_moisture_pct` — soil moisture, in percent
+- `site`: the monitoring site (A to D)
+- `date`: survey date (quarterly)
+- `vegetation_cover_pct`: vegetation cover, in percent
+- `species_richness`: number of species recorded
+- `soil_moisture_pct`: soil moisture, in percent
 
 [Download restoration-sites.csv](/data/restoration-sites.csv){.btn .btn-primary download="restoration-sites.csv"}
 
-### Turning a Document into a Dashboard
+### Turning a document into a dashboard
 
 A dashboard is an ordinary `.qmd` file with one decisive setting: the output format in the YAML header is set to `dashboard`.
 
@@ -52,9 +52,9 @@ format: dashboard
 
 Everything else, the Markdown, the code chunks, stays exactly as you know it. What changes is how Quarto arranges the content on the page, which is what the next section is about.
 
-### How a Dashboard Is Laid Out: Rows and Columns
+### How a dashboard is laid out: rows and columns
 
-This is the part that trips most people up at first, so it is worth getting clear before you build.
+This part trips most people up at first, so it is worth getting clear before you build.
 
 A dashboard fills the browser window and arranges your content into a grid of **cards**. Two heading levels control that grid:
 
@@ -115,7 +115,7 @@ format:
 The code cells on this page are written as ```` ```r ```` (no braces) purely so this website can *display* them without running them. When you copy them into your own dashboard, **you need to add the curly braces**, ```` ```{r} ````, otherwise the code will not run and your dashboard will show the code as plain text instead of charts and numbers.
 :::
 
-## Build It Step by Step
+## Build it step by step
 
 Create a file `my-dashboard.qmd` in your project folder, and place the downloaded CSV in a subfolder called `data` next to it. The snippets below assume exactly this layout, so the path `data/restoration-sites.csv` is relative to your `.qmd` file; adjust it if you store the CSV somewhere else. And remember: add the curly braces around `r` in every code cell you copy.
 
@@ -292,7 +292,7 @@ plot_cover("Intensive")
 
 Because all three charts share a fixed y-axis (`range = c(30, 95)`), switching tabs shows the real difference rather than plotly rescaling each one. It feels like a what-if explorer, yet every view is precomputed, so the page is still fully static.
 
-## Adapt It to Your Own Data
+## Adapt it to your own data
 
 The same structure works for any tidy dataset:
 
@@ -300,7 +300,7 @@ The same structure works for any tidy dataset:
 - change the column names in the value boxes, the `plot_ly()` call, and the table
 - keep the layout (`##` for rows, `###` for columns) as it is
 
-## Self-Check
+## Self-check
 
 - Does your dashboard render with `format: dashboard`?
 - Do the three value boxes sit together in one row?

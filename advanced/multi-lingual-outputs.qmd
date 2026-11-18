@@ -1,10 +1,10 @@
 ---
-title: "Multi-Lingual Quarto with Babelquarto"
+title: "Multi-lingual Quarto with babelquarto"
 ---
 
-Thanks to the nifty R package [`babelquarto`](https://docs.ropensci.org/babelquarto/) you can also produce quarto-based content content in multiple languages with a link to switch between them. THe package currently allows you to do this for project types with html output format e.g. books and websites, and one of the authors has recently contributed [some code](https://blenback.github.io/posts/2026-06-04-babelquarto-revealjs.html) to expand this to presentations (revealjs) as well.
+Thanks to the nifty R package [`babelquarto`](https://docs.ropensci.org/babelquarto/) you can also produce Quarto content in multiple languages with a link to switch between them. The package currently does this for project types with HTML output, such as books and websites, and one of the authors has recently contributed [some code](https://blenback.github.io/posts/2026-06-04-babelquarto-revealjs.html) to expand this to presentations (revealjs) as well.
 
-The packages website provides full vignettes of how to use it but in simple terms you enter the details of the languages options within your `_quarto.yml` file.
+The package's website has full vignettes on how to use it. In short, you enter the language options in your `_quarto.yml` file.
 
 ``` yaml
 babelquarto:
@@ -23,19 +23,19 @@ lang: en
 ```
 
 ::: callout-tip
-`babelquarto` contains several functions, e.g. `quarto_multilingual_book` to initialise projects and complete the required yaml entries for you automatically.
+`babelquarto` has functions such as `quarto_multilingual_book()` that initialise a project and fill in the required YAML entries for you.
 :::
 
-Then you create copes of any of the `.qmd` files in the project that you would like to have in different languages with corresponding langauge short codes suffixes in the file names, for example; `index.qmd` (the English version) and `index.de.qmd` the German version.
+Then you create a copy of each `.qmd` file that you would like to offer in another language, with the language code as a suffix in the file name: for example `index.qmd` (the English version) and `index.de.qmd` (the German version).
 
-The project is then rendered with the appropriate babelquarto function (`render_website()` or `render_book()`) and the rendered files from the alternative languages are placed within an appropriately sub-directory of the project output dir.
+The project is then rendered with the appropriate babelquarto function (`render_website()` or `render_book()`) and the rendered files for the other languages are placed in a sub-directory of the project's output directory named after the language code.
 
 You will see that pages then have a button in the navbar for changing languages:
 
 ![babelquarto language switcher](/assets/language-navbar.png)
 
 ::: callout-tip
-The appearance of the language button can be modified with Sass/CSS here is an example from one of our own websites:
+The appearance of the language button can be changed with Sass or CSS. Here is an example from one of our own websites:
 
 ```{.scss code-fold="true" code-summary="Show the Sass"}
 .navbar {

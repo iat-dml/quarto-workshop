@@ -1,16 +1,16 @@
 ---
-title: "Creating Custom Templates and Extensions"
+title: "Creating custom templates and extensions"
 ---
 
-Another neat feature that comes from Quarto being an open source project is the ability to create and contribute your own templates and exentensions for customized outputs such as project/institutional reports, letters, invoices or slide decks. 
+Another neat feature that comes from Quarto being an open source project is the ability to create and contribute your own templates and extensions for customised outputs such as project or institutional reports, letters, invoices or slide decks.
 
-## Why This Matters For Researchers
+## Academic outputs repeat familiar patterns
 
-Common academic ouputs often repeat familiar patterns:
+Common academic outputs often repeat familiar patterns:
 
-- Manuscripts have pre-defined sections 
-- Projects required standardized reports
-- Teaching materials are structured according to lectures/sessions. 
+- Manuscripts have pre-defined sections.
+- Projects require standardised reports.
+- Teaching materials are structured by lecture or session.
 
 Creating templates and extensions for these reduces setup time, and extensions can add features that are not included by default.
 
@@ -20,8 +20,8 @@ Quarto templates are useful when you want a consistent starting point for recurr
 
 A template pairs two things: example content (a starter `.qmd` with the right YAML options and section structure already filled in) and the styling that goes with it (theme files, CSS/Sass, logos). Bundling these together brings a couple of benefits for teams: 
 
-- **Consistency** — everyone's documents share the same look and structure.
-- **Built-in guidance** — the starter content can double as documentation: worked examples of figures and cross-references, or demo code for internal packages.
+- Everyone's documents share the same look and structure.
+- The starter content can double as documentation, with worked examples of figures and cross-references or demo code for internal packages.
 
 Templates are distributed as extensions (see below), typically hosted on GitHub. Starting a new document from one is a single command, which copies the template files and starter `.qmd` into a fresh directory:
 
@@ -51,7 +51,7 @@ For templates that are only for internal use, the same files can also be shipped
 ::: {.showcase-body}
 [Research group presentation template](https://github.com/iat-dml/templates/tree/main/dml-revealjs){.showcase-title}
 
-[A RevealJS template for talks, lectures, and updates — includes interactive diagrams describing key activities.]{.showcase-desc}
+[A RevealJS template for talks, lectures, and updates, with interactive diagrams describing key activities.]{.showcase-desc}
 :::
 ::::
 
@@ -71,11 +71,11 @@ For templates that are only for internal use, the same files can also be shipped
 
 Extensions are the general mechanism for modifying and extending Quarto's behaviour, and there are now hundreds of community-contributed ones available. They come in several flavours:
 
-- **Shortcodes** — small inline commands that insert content, like icons, videos, or badges
-- **Filters** — scripts (usually written in Lua) that transform documents during rendering, adding things like word counts, accordions, or styled code blocks
-- **Custom formats** — entirely new output formats, including [journal article formats](https://quarto.org/docs/journals/) that match specific publishers' requirements
-- **RevealJS plugins** — extra features for presentations such as pointers, drawing tools, and slide headers
-- **Project types** — templates for whole multi-file projects rather than single documents
+- Shortcodes are small inline commands that insert content, like icons, videos, or badges.
+- Filters are scripts (usually written in Lua) that transform documents during rendering, adding things like word counts, accordions, or styled code blocks.
+- Custom formats are entirely new output formats, including [journal article formats](https://quarto.org/docs/journals/) that match specific publishers' requirements.
+- RevealJS plugins add features to presentations, such as pointers, drawing tools, and slide headers.
+- Project types are templates for whole multi-file projects rather than single documents.
 
 Extensions are installed *per project* rather than system-wide, with a single command:
 
@@ -83,13 +83,13 @@ Extensions are installed *per project* rather than system-wide, with a single co
 quarto add quarto-ext/fontawesome
 ```
 
-This downloads the extension into an `_extensions` directory next to your document, which means the project remains self-contained — anyone who clones it gets the same rendering behaviour. For that reason it is recommended to commit `_extensions` to version control. Installed extensions can later be kept current or cleaned up with `quarto update` and `quarto remove`.
+This downloads the extension into an `_extensions` directory next to your document, which means the project remains self-contained, and anyone who clones it gets the same rendering behaviour. For that reason it is recommended to commit `_extensions` to version control. Installed extensions can later be kept current or cleaned up with `quarto update` and `quarto remove`.
 
 This website uses three extensions:
 
-- [`embedio`](https://github.com/coatless-quarto/embedio) extension to easily embed interactive content like revealjs presentations
-- [`iconify`](https://github.com/mcanouil/quarto-iconify) extension for including free and open source icons provided by [Iconify](https://icon-sets.iconify.design/).
-- [`fontawesome`](https://github.com/quarto-ext/fontawesome) extension for including free icons provided by [Font Awesome](https://fontawesome.com)
+- [`embedio`](https://github.com/coatless-quarto/embedio) embeds interactive content such as revealjs presentations.
+- [`iconify`](https://github.com/mcanouil/quarto-iconify) provides the free and open source icons collected by [Iconify](https://icon-sets.iconify.design/).
+- [`fontawesome`](https://github.com/quarto-ext/fontawesome) provides the free icons of [Font Awesome](https://fontawesome.com).
 
 ::: callout-tip
 Mickaël Canouil, a Quarto developer and author of some great extensions and templates himself, has created a very helpful listing of all Quarto extensions: [https://m.canouil.dev/quarto-extensions/](https://m.canouil.dev/quarto-extensions/)

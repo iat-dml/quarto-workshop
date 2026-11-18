@@ -22,7 +22,7 @@ This website is designed as a guided reference to our workshop that was first gi
 The workshop runs on {{< var zalf.date >}}, {{< var zalf.time >}}, in {{< var zalf.room >}}, {{< var zalf.place >}}. Bring a laptop, and please check it beforehand with the steps in [Setting up on a ZALF laptop](foundations/installing-quarto.qmd#sec-zalf). One setting there has to be in place before R code will run.
 :::
 
-## Who We Are
+## Who we are
 
 :::::::::::: {.team-grid}
 ::::: {.quarto-grid-item .card-team}
@@ -32,7 +32,7 @@ The workshop runs on {{< var zalf.date >}}, {{< var zalf.time >}}, in {{< var za
 
 [Ben Black]{.team-member-name}
 
-[Head of the group Data and Modelling Infrastructure for Living Labs]{.team-job-title}
+[Head of the group Data and Modelling Infrastructure for Living Labs (DML)]{.team-job-title}
 
 [Leibniz Centre for Agricultural Landscape Research (ZALF)](https://iat-dml.github.io/){.team-employer}
 
@@ -68,22 +68,20 @@ The workshop runs on {{< var zalf.date >}}, {{< var zalf.time >}}, in {{< var za
 :::::
 ::::::::::::
 
-## Who This Workshop Is For
+## Who this workshop is for
 
 This material is especially useful for:
 
 - Early career researchers building their first durable workflow
 - Experienced researchers who want fewer disconnected tools
 - Teams that care about reproducibility, transparency, and reuse
-- Anyone who wants websites, manuscripts, presentations, and notes to feel part of the same system
+- Anyone who wants websites, manuscripts, presentations, and notes to be part of the same system
 
 Basic familiarity with at least one programming language such as R, Python, or Julia can help, but it is not required for most of the lessons here.
 
-## Why Quarto Matters For Researchers
+## One system for the many outputs of research
 
-In a nutshell, academic work usually produces and involves many related outputs: 
-
-We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done in using tools that are not necessarily integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.
+Academic work usually produces many related outputs. We take rough notes and exploratory analysis in the early stages of research. These then evolve into polished text as well as figures and tables (which are often produced programmatically). We then combine these into manuscripts for publication, talks for conferences or sometimes reports and interactive communication for stakeholders or project partners. At the same time, there is an increasing need to share our work in other forms of public outreach and build our own online presence. Typically, many of these activities are done with tools that are not integrated or compatible, which can lead to a fragmented workflow and a lot of time spent on manual formatting.
 
 Quarto makes all of these activities easier to manage by allowing you to perform them in a single system. You can write your notes, code, and text in plain text files, and then render them into different formats (like HTML, PDF, DOCX, slides) without having to switch tools or worry about compatibility. This means you can focus more on the content of your research and less on the technicalities of formatting and tool management.
 
@@ -94,7 +92,7 @@ Quarto makes all of these activities easier to manage by allowing you to perform
 The core promise of Quarto is simple: write once in a plain text source file and render to multiple professional outputs such as HTML, PDF, DOCX, and slides.
 :::
 
-## How To Use This Site & What You Will Learn
+## How to use this site and what you will learn
 
 We have broken the workshop down into foundations and five academic use cases, plus an advanced section for those who want to go deeper. Each use case has a separate page with a guided exercise to help you practice the workflow with an academic scenario. You don't have to follow the sections in order, or indeed complete them all, but we recommend starting with the foundations if you are new to Quarto.
 

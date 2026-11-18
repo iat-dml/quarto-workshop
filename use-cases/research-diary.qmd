@@ -1,10 +1,10 @@
 ---
-title: "Documenting Research in Progress"
+title: "Documenting research in progress"
 ---
 
-Quarto works well as a research diary or experiment log because it combines readable text, structured metadata, and optional code in one plain text document. That makes it a strong fit for exploratory work that changes over time.
+Quarto works well as a research diary or experiment log because it combines readable text, structured metadata, and optional code in one plain text document. That suits exploratory work that changes over time.
 
-## Why This Matters For Researchers
+## Research in progress produces context that is easy to lose
 
 Research in progress generates many small but important pieces of context:
 
@@ -18,15 +18,12 @@ A Quarto notebook helps capture that context in a durable and shareable format.
 
 ## Key benefits of using Quarto for research diaries
 
-- **Clear Daily or Weekly Entries:** Markdown headings make it easy to separate entries by date, experiment, or task.
+- Markdown headings separate entries by date, experiment, or task.
+- The YAML header records authorship, date, project name, and output preferences.
+- If you use R or Python, code chunks put data summaries or quick visual checks directly beside your notes.
+- The same file renders to HTML for browsing and to PDF for archiving or sharing.
 
-- **Metadata At The Top:** YAML can record authorship, date, project name, and output preferences.
-
-- **Optional Code Chunks:** If you are using R or Python, you can place data summaries or quick visual checks directly beside your notes.
-
-- **Multiple Outputs:** An HTML version may be useful for browsing, while PDF can work for archiving or sharing.
-
-## Concrete Academic Example
+## A concrete example
 
 Think of a recent modelling project you've worked on. How did you keep track of your decisions, observations and intermediate results? 
 
@@ -40,7 +37,7 @@ A researcher can keep one `.qmd` file for weekly notes that includes:
 ::: {.callout-note}
 ## Good notebook habit
 
-Write what you decided and why, not only what you did. Future-you will care about the reasoning.
+Write down what you decided and why, as well as what you did. Future-you will care about the reasoning.
 :::
 
 [Go to the research diary exercise](../exercises/research-diary-exercise.qmd){.btn .btn-primary}

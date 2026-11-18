@@ -2,15 +2,13 @@
 title: "Installing Quarto"
 ---
 
-## Short Introduction
+Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your Quarto documents.
 
-Before creating projects, you need Quarto installed on your computer. You also need a way to edit plain text files, and optionally a programming environment if you want to run code chunks within your quarto documents.
+## One installation covers every output
 
-## One Install, Every Output
+A single Quarto installation is all you need for everything that Quarto can produce, including lab notes, manuscripts, slides, websites and dashboards. The installation itself is quick. You can start with just Quarto and a text editor, and then add a programming language when you want to run code and include its outputs (e.g. figures and tables) directly in your documents.
 
-A single Quarto installation powers everything that Quarto can produce, including lab notes, manuscripts, slides, websites and dashboards. Setting it up once unlocks all of these features for your own research, and the install itself is quick and straightforward. You can initially use just Quarto and a text editor, and then add a programming language when you want to run code and include its outputs (e.g. figures and tables) directly in your documents.
-
-## You Might Already Have Quarto
+## You might already have Quarto
 
 Quarto ships with recent versions of RStudio (v2022.07 and later) and with Positron, so you may not need a separate install. To check, open a terminal and run:
 
@@ -20,7 +18,7 @@ quarto --version
 
 If a version number appears (1.8 or newer is recommended for this workshop), you are ready. If you instead see "command not found", install it using the steps below.
 
-## Setting Up on a ZALF Laptop {#sec-zalf}
+## Setting up on a ZALF laptop {#sec-zalf}
 
 If you are joining the workshop at the ZALF Science Conference, you probably have most of what you need already. We tested the steps below on a ZALF laptop in November 2026.
 
@@ -48,7 +46,7 @@ or install the per-user version of Quarto from [quarto.org](https://quarto.org/d
 install.packages(c("knitr", "rmarkdown", "readr", "dplyr", "ggplot2", "plotly", "DT"))
 ```
 
-### Check Your Setup Automatically
+### Check your setup automatically
 
 Download [check-quarto-setup.ps1](../downloads/check-quarto-setup.ps1) and run it from a PowerShell window in your Downloads folder:
 
@@ -58,33 +56,33 @@ powershell -ExecutionPolicy Bypass -File .\check-quarto-setup.ps1
 
 The script changes nothing on your computer. It lists every copy of Quarto it finds, checks whether a terminal and VS Code can use one, checks R and the packages above, and renders a small test document to HTML, Word and PDF. Each problem it finds is printed with the fix. "Ready for the workshop." at the end means you are set.
 
-## What To Install
+## What to install
 
 ### Quarto
 
 Quarto is the core tool that does the actual work, turning your `.qmd` files into finished documents such as web pages, PDFs, or slides. Download the installer for your operating system from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), which provides a Windows `.msi`, a macOS `.pkg`, and Linux packages. Run the installer and Quarto is added to your system.
 
-### An Editor
+### An editor
 
 You can use:
 
-- **Positron** or **RStudio**, which support `.qmd` files out of the box:
+- Positron or RStudio, which support `.qmd` files out of the box:
     - syntax highlighting for the YAML, Markdown, and code
     - a Render button with live preview, instead of typing `quarto render`
     - code-chunk output shown inline
-- **VS Code** with the official [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) for live preview and syntax highlighting
+- VS Code with the official [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) for live preview and syntax highlighting
 - another plain text editor you are comfortable with
 
-### Optional Language Runtime
+### Optional language runtime
 
 If you want to run executable code chunks, you also need at least one language runtime such as R, Python, or Julia. You only need the language you actually plan to use.
 
-## Suggested Installation Workflow
+## Suggested installation workflow
 
 1. Download Quarto from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
 2. Install it using the standard installer for your operating system.
 3. Open a terminal and run `quarto check` to confirm the installation.
-4. Confirm your editor recognizes `.qmd` files.
+4. Confirm your editor recognises `.qmd` files.
 5. If you want live code execution, confirm that R, Python, or Julia is also available.
 
 The `quarto check` command verifies the whole setup and reports on each part. The full output is longer than what is shown below, but a healthy result looks roughly like this:
@@ -138,7 +136,7 @@ quarto install tinytex
 ```
 :::
 
-## Choosing Your Setup
+## Choosing your setup
 
 What you need depends on what you want to produce:
 
@@ -151,7 +149,7 @@ What you need depends on what you want to produce:
 
 You can start minimal and add pieces later. Writing and rendering to HTML or Word needs nothing beyond Quarto and an editor; the language runtime only matters once you want to execute code.
 
-## Self-Check
+## Self-check
 
 After installation, you should be able to answer yes to these questions:
 
@@ -159,6 +157,6 @@ After installation, you should be able to answer yes to these questions:
 - Does `quarto check` report a working installation?
 - Do I know which editor I will use?
 
-## Next Step
+## Next step
 
-Once the foundations are in place, move into the first use case: [Documenting Research in Progress](../use-cases/research-diary.qmd).
+Once the foundations are in place, move into the first use case: [Documenting research in progress](../use-cases/research-diary.qmd).
