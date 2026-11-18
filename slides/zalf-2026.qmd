@@ -11,7 +11,7 @@ event:
   logo: ../assets/zalf-sci-conf-logo.png
   logo-alt: "ZALF Science Conference"
 format:
-  revealjs:
+  live-revealjs:
     theme: [default, ../revealjs.scss, zalf-2026.scss]
     logo: ../assets/dml-mark.svg
     code-line-numbers: false
@@ -26,7 +26,12 @@ format:
       - ../title-slide.html
 execute:
   echo: false
+webr:
+  resources:
+    - ../data/restoration-sites.csv
 ---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
 ```{r}
 #| label: setup
@@ -46,7 +51,7 @@ by_date <- sites |> group_by(date) |> summarise(cover = mean(vegetation_cover_pc
 brand_colours <- yaml::read_yaml("../_brand.yml")$color$palette
 ```
 
-## We build one manuscript together, then you pick your own use case {#plan}
+## Workshop Structure {#plan}
 
 <!-- --start and --len are minutes from 13:00; they place each bar on the 90-minute timeline. -->
 ::: {.agenda}
@@ -357,17 +362,104 @@ Answers I expect: R, Python, SPSS or Excel for the analysis; Word with track cha
 Pick up the two that come up most and lead into the next two slides: analysis and writing happen in different programs, and every journal wants a different file.
 :::
 
-## Analysis and text in separate programs drift apart {#problem-two-programs .problem}
+## The back and forth between analysis and writing {#problem-two-programs .problem}
 
 :::: {.columns}
 ::: {.column width="56%"}
-![](../assets/lab-notebook-w-figs.jpg){fig-alt="Stand-in image until the pitch-video still is exported: a lab notebook with figures"}
+```{=html}
+<svg class="loop-diagram" viewBox="0 0 800 560" role="img" aria-labelledby="loop-title">
+  <title id="loop-title">R and Python produce a figure, a table and a number, which are copied by hand into a Word document and an Overleaf LaTeX project. A dashed arrow runs back from the writing to the analysis: new data or a reviewer's request means changing the analysis and copying everything again.</title>
+  <defs>
+    <marker id="loop-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="loop-arrowhead"/>
+    </marker>
+    <marker id="loop-head-back" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="loop-arrowhead-back"/>
+    </marker>
+  </defs>
+
+  <!-- Column headings -->
+  <text class="loop-heading" x="120" y="46" text-anchor="middle">Analysis</text>
+  <text class="loop-heading" x="680" y="46" text-anchor="middle">Writing</text>
+
+  <!-- R logo, simplified: grey ring and blue R -->
+  <g transform="translate(120 160)">
+    <ellipse class="logo-r-ring" cx="0" cy="-4" rx="62" ry="40"/>
+    <text class="logo-r-letter" x="14" y="34" text-anchor="middle">R</text>
+  </g>
+
+  <!-- Python logo, simplified: two interlocking rounded shapes -->
+  <g transform="translate(120 340)">
+    <rect class="logo-py-blue" x="-20" y="-46" width="42" height="34" rx="10"/>
+    <rect class="logo-py-blue" x="-46" y="-22" width="54" height="40" rx="10"/>
+    <rect class="logo-py-blue" x="-20" y="-22" width="22" height="12"/>
+    <g class="logo-py-halo">
+      <rect x="-8" y="-18" width="54" height="40" rx="10"/>
+      <rect x="-22" y="12" width="42" height="34" rx="10"/>
+    </g>
+    <g class="logo-py-yellow">
+      <rect x="-8" y="-18" width="54" height="40" rx="10"/>
+      <rect x="-22" y="12" width="42" height="34" rx="10"/>
+      <rect x="-6" y="10" width="20" height="10"/>
+    </g>
+    <circle class="logo-eye" cx="-8" cy="-34" r="4.5"/>
+    <circle class="logo-eye" cx="8" cy="34" r="4.5"/>
+  </g>
+
+  <!-- Results produced by the analysis: a figure, a table and a number -->
+  <g transform="translate(400 150)">
+    <rect class="loop-card" x="-78" y="-20" width="156" height="118" rx="10"/>
+    <line class="loop-axis" x1="-58" y1="80" x2="60" y2="80"/>
+    <line class="loop-axis" x1="-58" y1="80" x2="-58" y2="-4"/>
+    <rect class="loop-bar" x="-46" y="46" width="20" height="34"/>
+    <rect class="loop-bar" x="-16" y="22" width="20" height="58"/>
+    <rect class="loop-bar" x="14" y="34" width="20" height="46"/>
+    <rect class="loop-bar" x="44" y="8" width="12" height="72"/>
+    <rect class="loop-card" x="-78" y="114" width="156" height="66" rx="10"/>
+    <line class="loop-rule" x1="-62" y1="136" x2="62" y2="136"/>
+    <line class="loop-rule" x1="-62" y1="158" x2="62" y2="158"/>
+    <line class="loop-rule" x1="-10" y1="122" x2="-10" y2="172"/>
+    <text class="loop-number" x="0" y="232" text-anchor="middle">4.2 t/ha</text>
+  </g>
+
+  <!-- Word document, with earlier versions stacked behind it -->
+  <g transform="translate(680 160)">
+    <rect class="loop-page loop-page-old" x="-24" y="-60" width="72" height="94" rx="6"/>
+    <rect class="loop-page loop-page-old" x="-30" y="-54" width="72" height="94" rx="6"/>
+    <rect class="loop-page" x="-36" y="-48" width="72" height="94" rx="6"/>
+    <line class="loop-rule" x1="-22" y1="-28" x2="22" y2="-28"/>
+    <line class="loop-rule" x1="-22" y1="-14" x2="22" y2="-14"/>
+    <line class="loop-rule" x1="-22" y1="0" x2="22" y2="0"/>
+    <line class="loop-rule" x1="-22" y1="14" x2="8" y2="14"/>
+    <rect class="logo-word" x="-58" y="2" width="44" height="44" rx="6"/>
+    <text class="logo-word-letter" x="-36" y="34" text-anchor="middle">W</text>
+  </g>
+
+  <!-- Overleaf, simplified: a green leaf -->
+  <g transform="translate(680 340)">
+    <path class="logo-overleaf" d="M0,-46 C40,-30 44,22 0,46 C-44,22 -40,-30 0,-46 Z"/>
+    <path class="logo-overleaf-vein" d="M0,-30 L0,40 M0,0 L16,-14 M0,18 L-16,4"/>
+  </g>
+
+  <text class="loop-label" x="120" y="420" text-anchor="middle">R and Python</text>
+  <text class="loop-label" x="680" y="420" text-anchor="middle">Word and Overleaf</text>
+
+  <!-- Forward: results are copied by hand into the manuscript -->
+  <path class="loop-arrow" d="M196,240 C240,240 270,240 312,240" marker-end="url(#loop-head)"/>
+  <path class="loop-arrow" d="M488,240 C530,240 560,240 604,240" marker-end="url(#loop-head)"/>
+  <text class="loop-label" x="400" y="104" text-anchor="middle">copied by hand</text>
+
+  <!-- Back: every revision sends the work back to the analysis -->
+  <path class="loop-arrow-back" d="M680,440 C680,530 120,530 120,440" marker-end="url(#loop-head-back)"/>
+  <text class="loop-label loop-label-back" x="400" y="548" text-anchor="middle">new data, reviewer comments: analyse and copy again</text>
+</svg>
+```
 :::
 
 ::: {.column width="44%"}
-The data are analysed in R, Python or Excel, and the text is written in Word. Every figure, table and number is copied across by hand, and every new analysis means copying them again. Sooner or later one is missed.
+We use different tools for analysis and for writing, so as the manuscript develops we keep going back and forth between them. That takes time and leaves room for mistakes.
 
-[In Quarto the analysis and the text share one file, so one render updates both.]{.answer}
+[With Quarto the analysis and the text share one file, so one render updates both.]{.answer}
 :::
 ::::
 
@@ -375,50 +467,93 @@ The data are analysed in R, Python or Excel, and the text is written in Word. Ev
 This is the problem most people name. A changed filter, a corrected data point or a reviewer's request for a different model, and every figure, table and number that depends on it has to be found in the Word file and replaced. The risk is not the work but the one value nobody remembers to update.
 :::
 
-## Numbers in the text come from the same code as the figures {#source-result .source-result}
+## Numbers in the text come from the same code as the figures {#source-result .source-result .live-slide}
 
 :::: {.columns}
-::: {.column width="48%"}
+::: {.column width="50%"}
 [index.qmd]{.file-label}
 
-```` markdown
-```{{r}}
-sites <- read_csv("data/restoration-sites.csv")
+```{webr}
+#| autorun: true
+#| define:
+#|   - n_sites
+#|   - cover_first
+#|   - cover_latest
+#|   - by_date
+sites <- read.csv("data/restoration-sites.csv")
+
+first  <- subset(sites, date == min(date))
+latest <- subset(sites, date == max(date))
+
+n_sites      <- length(unique(sites$site))
+cover_first  <- round(mean(first$vegetation_cover_pct))
+cover_latest <- round(mean(latest$vegetation_cover_pct))
+
+by_date <- aggregate(vegetation_cover_pct ~ date,
+                     data = sites, FUN = mean)
 ```
 
-We monitored `r knitr::inline_expr("n_distinct(sites$site)")`
-restoration sites. Mean vegetation cover
-rose from `r knitr::inline_expr("round(mean(first$vegetation_cover_pct))")`%
-to `r knitr::inline_expr("round(mean(latest$vegetation_cover_pct))")`%.
-````
+::: {.chart-source}
+```markdown
+We monitored ${n_sites} restoration sites. Mean vegetation cover
+rose from ${cover_first}% to ${cover_latest}%.
+```
+
+```{ojs}
+//| echo: fenced
+chart = Plot.plot({
+  ...slide_style,
+  marks: [Plot.line(by_date, {
+    x: d => new Date(d.date), y: "vegetation_cover_pct",
+    stroke: green, strokeWidth: 2.5, marker: "circle"
+  })]
+})
+```
+:::
 :::
 
-::: {.column width="52%"}
+::: {.column width="50%"}
 [index.html]{.file-label}
 
 ::: {.rendered}
-We monitored `r n_distinct(sites$site)` restoration sites. Mean vegetation cover rose from `r round(mean(first$vegetation_cover_pct))`% to `r round(mean(latest$vegetation_cover_pct))`%.
+We monitored ${n_sites} restoration sites. Mean vegetation cover rose from ${cover_first}% to ${cover_latest}%.
 
-```{r}
-#| label: cover-plot
-#| fig-width: 7
-#| fig-height: 3.2
-#| fig-alt: "Line chart of mean vegetation cover across monitoring dates"
-par(family = "sans", mar = c(4, 4, 0.5, 0.5), bg = NA,
-    col.axis = brand_colours$muted, fg = brand_colours$muted)
-plot(by_date$date, by_date$cover, type = "b", pch = 19, lwd = 2,
-     col = brand_colours$green, xlab = "Monitoring date", ylab = "Mean vegetation cover (%)",
-     bty = "n")
+```{ojs}
+//| echo: false
+// Slide sizing and brand colours, kept out of the code on show. The colours
+// come from the design tokens on .reveal, not hex values.
+tokens = getComputedStyle(document.querySelector(".reveal"))
+green = tokens.getPropertyValue("--ds-green").trim()
+slide_style = ({
+  width: 720,
+  height: 300,
+  marginLeft: 56,
+  marginBottom: 56,
+  marginRight: 40,
+  style: { fontSize: "16px", background: "transparent",
+           color: tokens.getPropertyValue("--ds-muted").trim() },
+  x: { type: "utc", label: "Monitoring date", labelAnchor: "center", labelOffset: 48,
+       ticks: "6 months", tickFormat: "%b %Y" },
+  y: { label: "Mean vegetation cover (%)", grid: true }
+})
+
+// The chart cell on the left draws the figure; its own output is hidden, so a
+// copy is shown here. It updates whenever the R code re-runs.
+chart.cloneNode(true)
 ```
 :::
 :::
 ::::
 
 ::: {.notes}
-This slide is itself rendered by Quarto: the numbers on the right were computed from the workshop data when the deck was built. Change the data, render again, and the sentence and the figure change together.
+The code on the left runs live in the browser with webR (the quarto-live extension), so it needs an internet connection and takes a few seconds to start when the deck opens. Edit the code and press Run Code (or Ctrl+Enter): the sentence and the figure on the right update together. A good live edit is to drop a site, for example `sites <- subset(sites, site != "Site A")` after the first line.
+
+The chunk under the R code is Observable JS: it draws the figure from `by_date`, the table the R code just made. The sentence pulls `n_sites`, `cover_first` and `cover_latest` the same way, so nothing on the right is typed by hand.
+
+In a real manuscript the sentence would use inline R code, `` `r knitr::inline_expr("n_sites")` ``, and update on render rather than live.
 :::
 
-## Journals ask for different files: Word, PDF or LaTeX {#problem-formats .problem}
+## Final submission headaches {#problem-formats .problem}
 
 :::: {.columns}
 ::: {.column width="56%"}
@@ -426,7 +561,7 @@ This slide is itself rendered by Quarto: the numbers on the right were computed 
 :::
 
 ::: {.column width="44%"}
-Some journals accept Word, some a PDF and some LaTeX, which gives precise control over equations, tables and layout. Moving a Word draft into LaTeX means redoing the formatting and references by hand.
+Manuscript submission often creates challenges, as journals require different formats. Over time I have increasingly opted to submit in LaTeX so that my tables keep their formatting, but moving a Word draft into LaTeX means redoing the formatting and references by hand.
 
 [Quarto renders one source to Word, PDF and LaTeX, and journal templates apply each publisher's style.]{.answer}
 :::
@@ -454,7 +589,7 @@ Co-authors who only use Word still get a Word file from the same source, which i
 2. Add authors and a setup chunk
 3. Put numbers from the data into the text
 4. Add a figure and cross-reference it
-5. Cite a paper by its DOI
+5. Refer to a section and cite a DOI
 6. Render to PDF, HTML and Word
 :::
 :::
@@ -548,7 +683,7 @@ format:
 2. Add authors and a setup chunk
 3. Put numbers from the data into the text
 4. Add a figure and cross-reference it
-5. Cite a paper by its DOI
+5. Refer to a section and cite a DOI
 6. Render to PDF, HTML and Word
 :::
 :::
@@ -589,31 +724,33 @@ first  <- sites |> filter(date == min(date))
 2. **Add authors and a setup chunk**
 3. Put numbers from the data into the text
 4. Add a figure and cross-reference it
-5. Cite a paper by its DOI
+5. Refer to a section and cite a DOI
 6. Render to PDF, HTML and Word
 :::
 :::
 ::::
 
 ::: {.notes}
-The front matter holds the title, the authors with ORCID and affiliation, and the bibliography file. Quarto builds the byline from it in every format. `include: false` runs the setup chunk but keeps the code and its output out of the article.
+The front matter holds the title, the authors with ORCID and affiliation, `number-sections: true` and the bibliography file. Quarto builds the byline from it in every format. Numbered sections are needed for the section cross-reference in Step 5. `include: false` runs the setup chunk but keeps the code and its output out of the article.
 
-The Render button shows the first format in the list, so the Viewer shows the PDF. If a render fails with "file name conversion problem", `R_USER` is not set yet.
+In a manuscript project the Render button previews only the HTML article, so the Viewer shows the web page. The PDF and Word file come in Step 6, when we render the whole project. If a render fails with "file name conversion problem", `R_USER` is not set yet.
 :::
 
 ## Step 3 of 6: put numbers from the data into the text {#checkpoint-3 .checkpoint}
 
 :::: {.columns}
 ::: {.column width="60%"}
-Below the setup chunk, add the paragraph from the exercise, then render. It starts like this:
+Below the setup chunk, add the Methods heading and the paragraph from the exercise, then render. It starts like this:
 
 ```` markdown
+## Methods {#sec-methods}
+
 We monitored vegetation recovery at
 `r knitr::inline_expr("n_distinct(sites$site)")` restoration sites
 across `r knitr::inline_expr("n_distinct(sites$date)")` quarterly surveys.
 ````
 
-[Behind? The full paragraph is in Step 5 of the exercise.]{.catch-up}
+[Behind? The heading and the full paragraph are in Step 5 of the exercise.]{.catch-up}
 :::
 
 ::: {.column width="40%"}
@@ -622,14 +759,16 @@ across `r knitr::inline_expr("n_distinct(sites$date)")` quarterly surveys.
 2. Add authors and a setup chunk
 3. **Put numbers from the data into the text**
 4. Add a figure and cross-reference it
-5. Cite a paper by its DOI
+5. Refer to a section and cite a DOI
 6. Render to PDF, HTML and Word
 :::
 :::
 ::::
 
 ::: {.notes}
-The rendered text should read: `r n_distinct(sites$site)` sites, `r n_distinct(sites$date)` surveys, cover from `r round(mean(first$vegetation_cover_pct))`% to `r round(mean(latest$vegetation_cover_pct))`%, an increase of `r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))` percentage points.
+`##` makes a level 2 heading and `{#sec-methods}` gives it a label, which Step 5 refers to. Click **Outline** at the top right of the editor (Ctrl+Shift+O) and click Methods to jump there; in a full paper this is the quickest way to move between sections.
+
+The heading renders as "1 Methods". The rendered text should read: `r n_distinct(sites$site)` sites, `r n_distinct(sites$date)` surveys, cover from `r round(mean(first$vegetation_cover_pct))`% to `r round(mean(latest$vegetation_cover_pct))`%, an increase of `r round(mean(latest$vegetation_cover_pct) - mean(first$vegetation_cover_pct))` percentage points.
 
 If there is time: change one cover value in the CSV, render again and show that the sentence changes. Then change it back.
 :::
@@ -654,7 +793,7 @@ monitoring period (@fig-cover).
 2. Add authors and a setup chunk
 3. Put numbers from the data into the text
 4. **Add a figure and cross-reference it**
-5. Cite a paper by its DOI
+5. Refer to a section and cite a DOI
 6. Render to PDF, HTML and Word
 :::
 :::
@@ -664,19 +803,18 @@ monitoring period (@fig-cover).
 After rendering, `@fig-cover` reads "Figure 1" and links to the figure, and the caption is numbered. Add a second figure above it and both numbers update.
 :::
 
-## Step 5 of 6: a DOI is all you need to add a citation {#checkpoint-5 .checkpoint}
+## Step 5 of 6: the Insert menu adds cross-references and citations {#checkpoint-5 .checkpoint}
 
 :::: {.columns}
 ::: {.column width="60%"}
-Switch to the **Visual** editor, put the cursor at the end of the text and choose **Insert → Citation**. Pick **From DOI** and paste:
+In the **Visual** editor, start a new paragraph at the end and write this sentence. Insert `@sec-methods` with **Insert → Cross Reference**, and the citation with **Insert → Citation**, **From DOI**, `10.1111/rec.13035`.
 
-```` default
-10.1111/rec.13035
+```` markdown
+The survey design in @sec-methods follows
+recognised restoration standards [@gann2019].
 ````
 
-Quarto adds the entry to `references.bib` and a reference list to the end of the article.
-
-[No internet, or no dialog? Paste the reference from the tip in Step 7 of the exercise into `references.bib` and cite it as `[@gann2019]`.]{.catch-up}
+[No internet, or no dialog? Paste the reference from the tip in Step 7 of the exercise into `references.bib` and type the sentence in Source mode.]{.catch-up}
 :::
 
 ::: {.column width="40%"}
@@ -685,14 +823,18 @@ Quarto adds the entry to `references.bib` and a reference list to the end of the
 2. Add authors and a setup chunk
 3. Put numbers from the data into the text
 4. Add a figure and cross-reference it
-5. **Cite a paper by its DOI**
+5. **Refer to a section and cite a DOI**
 6. Render to PDF, HTML and Word
 :::
 :::
 ::::
 
 ::: {.notes}
+After rendering, `@sec-methods` reads "Section 1" and links to the heading, the citation reads "(Gann et al. 2019)", and a reference list appears at the end. Quarto has added the entry to `references.bib`.
+
 The DOI belongs to the SER international standards for ecological restoration (Gann et al. 2019). The same dialog can search Zotero, Crossref, PubMed and DataCite. The visual editor may rewrap the paragraph when you switch back to Source; the text itself does not change.
+
+Without `number-sections: true` in the front matter, the PDF fails with "cannot reference heading without numbering". The Viewer does not show this, because the Render button builds only the web page; it surfaces in Step 6.
 :::
 
 ## Step 6 of 6: one render gives PDF, web page and Word {#checkpoint-6 .checkpoint}
@@ -720,17 +862,21 @@ format:
 2. Add authors and a setup chunk
 3. Put numbers from the data into the text
 4. Add a figure and cross-reference it
-5. Cite a paper by its DOI
+5. Refer to a section and cite a DOI
 6. **Render to PDF, HTML and Word**
 :::
 :::
 ::::
 
 ::: {.notes}
-The results land in `_manuscript/`. Open `index.html` in the browser: the margin links to the PDF and the Word file under Other Formats. The Render button only shows the first format, which is why this step renders the whole project.
+The results land in `_manuscript/`. Open `index.html` in the browser: the margin links to the PDF and the Word file under Other Formats. The Render button only builds the HTML article, which is why this step renders the whole project.
 :::
 
-# Your turn: pick another use case and work through it {#sec-your-turn .divider .divider-indigo background-color="#3D2F8C"}
+# Your turn  {#sec-your-turn .divider .divider-indigo background-color="#3D2F8C"}
+
+pick another use case and work through it
+
+## Explore independently
 
 Each use case on the website has a guide with tips and an exercise. Work on one until 14:25, on either of two paths:
 
@@ -749,25 +895,29 @@ Walk the room. The problems we found when testing on ZALF laptops: `R_USER` not 
 
 All the material stays online after today, and the exercises work on your own laptop too.
 
-## On 10 December I'll show how my CV and website stay current {#profile-talk}
+## Upcoming talk for postdocs {#profile-talk}
 
-:::: {.columns}
-::: {.column width="55%"}
-**{{< var postdoc-session.title >}}**\
-{{< var postdoc-session.date >}}, {{< var postdoc-session.time >}}
+:::: {.columns .talk}
+::: {.column width="48%"}
+[{{< var postdoc-session.title >}}]{.talk-title}
 
-- I log each paper, talk and project once, as an entry in a YAML file.
-- My CV and my website are both Quarto projects that read those files.
-- GitHub Actions rebuild both whenever I add an entry.
-
-Camille Imbert and Marlene Palka will send round the details.
+::: {.talk-meta}
+{{< var postdoc-session.date >}}, {{< var postdoc-session.time >}}\
+{{< var postdoc-session.place >}}
 :::
 
-::: {.column width="45%"}
+- I log each paper, talk and project once, in a YAML file.
+- My CV and website are Quarto projects that read it.
+- GitHub Actions rebuild both when I add an entry.
+
+[Ask [Camille Imbert](mailto:Camille.Imbert@zalf.de) for more details.]{.talk-contact}
+:::
+
+::: {.column width="52%"}
 ![](../assets/website-screenshots/blenback-website.png){fig-alt="Screenshot of Ben Black's personal website, built with Quarto"}
 :::
 ::::
 
 ::: {.notes}
-This is the "Your site and CV, always current" scene from the pitch video. In the talk I go through the whole setup: the YAML files, the check that stops a typo from breaking the CV, and how a new entry triggers both rebuilds. Camille and Marlene are sending out the invitation.
+This is the "Your site and CV, always current" scene from the pitch video. In the talk I go through the whole setup: the YAML files, the check that stops a typo from breaking the CV, and how a new entry triggers both rebuilds. Camille Imbert is the contact for the invitation and details.
 :::

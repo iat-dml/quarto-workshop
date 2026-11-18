@@ -13,3 +13,129 @@ $presentation-font-size-root: 38px !default;
 // hairlines) and the mock output in `.rendered`, which imitates a web page.
 .reveal .slides section .steps li + li { margin-top: 0; }
 .reveal .slides section .rendered li + li { margin-top: 0.2em; }
+
+// Upcoming-talk slide: talk title, then date and place set off by a hairline,
+// then smaller bullets, so the details and the screenshot share the space evenly.
+.reveal .slides section .columns.talk {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-top: 1.2em;
+  .talk-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05em;
+    line-height: 1.25;
+    color: var(--ds-forest);
+  }
+  .talk-meta {
+    margin: 0.6em 0 0.8em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid var(--ds-rule);
+    font-size: 0.8em;
+    line-height: 1.45;
+    color: var(--ds-muted);
+  }
+  ul { font-size: 0.72em; line-height: 1.35; }
+  li + li { margin-top: 0.45em; }
+  .talk-contact { display: block; margin-top: 1em; font-size: 0.72em; }
+}
+
+// Live code editor (quarto-live): brand colours in place of Bootstrap blue,
+// and the deck's hairline and corner radius on the card.
+.reveal .card.exercise-editor {
+  --exercise-primary-rgb: #{red($brand-forest)}, #{green($brand-forest)}, #{blue($brand-forest)};
+  --exercise-cap-bg: var(--ds-white);
+  border: 1px solid var(--ds-rule);
+  border-radius: 0.9rem;
+  margin: 0;
+  box-shadow: var(--ds-shadow);
+  .card-header { border-bottom: 1px solid var(--ds-rule); font-family: var(--ds-sans); }
+}
+.quarto-light .reveal .btn.btn-exercise-editor.btn-primary {
+  --exercise-btn-bg: var(--ds-forest);
+  --exercise-btn-border-color: var(--ds-forest);
+  --exercise-btn-color: var(--ds-white);
+  --exercise-btn-hover-bg: var(--ds-green);
+  --exercise-btn-hover-border-color: var(--ds-green);
+  --exercise-btn-hover-color: var(--ds-white);
+}
+.quarto-light .reveal .btn.btn-exercise-editor.btn-outline-dark {
+  --exercise-btn-color: var(--ds-forest);
+  --exercise-btn-border-color: var(--ds-rule);
+  --exercise-btn-hover-bg: var(--ds-mint-pale);
+  --exercise-btn-hover-color: var(--ds-forest);
+  --exercise-btn-hover-border-color: var(--ds-rule);
+}
+
+// Analysis-and-writing loop on the first problem slide: an inline SVG, so its
+// strokes and fills come from the deck tokens. The logo colours are the
+// third-party marks' own (R, Python, Word, Overleaf), not brand tokens.
+.reveal .slides section .loop-diagram {
+  --logo-r-grey: #9DA1A8;
+  --logo-r-blue: #276DC3;
+  --logo-py-blue: #3776AB;
+  --logo-py-yellow: #FFD43B;
+  --logo-word-blue: #2B579A;
+  --logo-overleaf-green: #47A141;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  font-family: var(--ds-sans);
+
+  .loop-heading { font-family: var(--ds-serif); font-size: 34px; fill: var(--ds-forest); }
+  .loop-label { font-size: 20px; fill: var(--ds-muted); }
+  .loop-label-back { fill: var(--ds-forest); font-weight: 500; }
+  .loop-number { font-size: 26px; font-weight: 700; fill: var(--ds-forest); }
+
+  .loop-card, .loop-page { fill: var(--ds-white); stroke: var(--ds-rule); stroke-width: 1.5; }
+  .loop-page-old { fill: var(--ds-mint-pale); }
+  .loop-axis { stroke: var(--ds-muted); stroke-width: 2; }
+  .loop-rule { stroke: var(--ds-rule); stroke-width: 3; stroke-linecap: round; }
+  .loop-bar { fill: var(--ds-leaf); }
+
+  .loop-arrow { fill: none; stroke: var(--ds-green); stroke-width: 3; }
+  .loop-arrowhead { fill: var(--ds-green); }
+  .loop-arrow-back { fill: none; stroke: var(--ds-forest); stroke-width: 3; stroke-dasharray: 10 8; }
+  .loop-arrowhead-back { fill: var(--ds-forest); }
+
+  .logo-r-ring { fill: none; stroke: var(--logo-r-grey); stroke-width: 16; }
+  .logo-r-letter { font-size: 96px; font-weight: 700; fill: var(--logo-r-blue); }
+  .logo-py-blue { fill: var(--logo-py-blue); }
+  // White halo under the yellow half, so it reads as interlocking with the blue
+  .logo-py-halo { fill: var(--ds-white); stroke: var(--ds-white); stroke-width: 8; }
+  .logo-py-yellow { fill: var(--logo-py-yellow); }
+  .logo-eye { fill: var(--ds-white); }
+  .logo-word { fill: var(--logo-word-blue); }
+  .logo-word-letter { font-size: 30px; font-weight: 700; fill: var(--ds-white); }
+  .logo-overleaf { fill: var(--logo-overleaf-green); }
+  .logo-overleaf-vein { fill: none; stroke: var(--ds-white); stroke-width: 3.5; stroke-linecap: round; }
+}
+
+// Live slide: under the R editor, one card holds the rest of index.qmd, the
+// sentence with its inline expressions and the OJS chunk. The chunk shows its
+// code only; its figure is shown in the rendered page on the right (see the
+// hidden cell there). That output is clipped to nothing rather than
+// `display: none`, because the copy's line markers point at marker
+// definitions inside this original.
+.reveal .slides section.source-result .chart-source {
+  margin-top: 0.6em;
+  padding: 0.5em 1rem;
+  border-radius: 0.9rem;
+  background: var(--ds-white);
+  box-shadow: var(--ds-shadow);
+  div.sourceCode, pre.sourceCode {
+    margin: 0;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none;
+  }
+  .cell, .code-copy-outer-scaffold, pre { margin: 0; }
+  > * + * { margin-top: 0.4em !important; }
+  // Size the pre itself, not only its code, so the pre's own line box adds
+  // no strip of space under the last line.
+  pre.sourceCode { font-size: 0.46em; line-height: 1.4; }
+  pre code { font-size: 1em; line-height: inherit; padding-bottom: 0; }
+  .cell-output-display { position: absolute; width: 0; height: 0; overflow: hidden; }
+}
