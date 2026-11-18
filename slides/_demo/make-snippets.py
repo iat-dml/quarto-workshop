@@ -14,14 +14,14 @@ here = Path(__file__).parent
 qmd = (here / "index.qmd").read_text(encoding="utf-8")
 
 setup_end = qmd.index("```\n", qmd.index("#| label: setup")) + 4
-para_start = qmd.index("We monitored")
+para_start = qmd.index("## Methods")
 fig_start = qmd.index("```{r}\n#| label: fig-cover")
-cite_start = qmd.index("Our monitoring follows")
+cite_start = qmd.index("The survey design in")
 parts = {
     "ms2": qmd[:setup_end],              # front matter and setup chunk
-    "ms3": qmd[para_start:fig_start],    # paragraph with inline code
+    "ms3": qmd[para_start:fig_start],    # Methods heading and paragraph with inline code
     "ms4": qmd[fig_start:cite_start],    # figure chunk and cross-reference
-    "ms5": qmd[cite_start:],             # citation sentence (fallback)
+    "ms5": qmd[cite_start:],             # sentence with section cross-reference and citation (fallback)
 }
 
 BS = "\\"

@@ -11,6 +11,7 @@ snippet ms2
 	        city: Müncheberg
 	        country: Germany
 	date: today
+	number-sections: true
 	bibliography: references.bib
 	---
 	
@@ -30,6 +31,8 @@ snippet ms2
 	```
 
 snippet ms3
+	## Methods {#sec-methods}
+	
 	We monitored vegetation recovery at `r "\x60"`r n_distinct(sites\$site)` restoration
 	sites across `r "\x60"`r n_distinct(sites\$date)` quarterly surveys. Mean vegetation
 	cover rose from `r "\x60"`r round(mean(first\$vegetation_cover_pct))`% at the first
@@ -52,4 +55,4 @@ snippet ms4
 	Cover increased at every site over the monitoring period (@fig-cover).
 
 snippet ms5
-	Our monitoring follows recognised restoration standards [@gann2019].
+	The survey design in @sec-methods follows recognised restoration standards [@gann2019].

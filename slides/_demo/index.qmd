@@ -10,6 +10,7 @@ author:
         city: Müncheberg
         country: Germany
 date: today
+number-sections: true
 bibliography: references.bib
 ---
 
@@ -27,6 +28,8 @@ sites <- read_csv("data/restoration-sites.csv") |>
 latest <- sites |> filter(date == max(date))   # most recent survey per site
 first  <- sites |> filter(date == min(date))   # earliest survey per site
 ```
+
+## Methods {#sec-methods}
 
 We monitored vegetation recovery at `r n_distinct(sites$site)` restoration
 sites across `r n_distinct(sites$date)` quarterly surveys. Mean vegetation
@@ -48,4 +51,4 @@ ggplot(sites, aes(date, vegetation_cover_pct, colour = site)) +
 
 Cover increased at every site over the monitoring period (@fig-cover).
 
-Our monitoring follows recognised restoration standards [@gann2019].
+The survey design in @sec-methods follows recognised restoration standards [@gann2019].

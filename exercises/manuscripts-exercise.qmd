@@ -62,7 +62,7 @@ Every R chunk in your real `index.qmd` opens with ```` ```{r} ````, with curly b
 
 ## Step 2: Add your authors {.step}
 
-Open `index.qmd`. Replace the starter front matter (everything between the two `---` lines) with your own title and a proper author block. You can delete the placeholder section below it. Add **yourself and one co-author** (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format.
+Open `index.qmd`. Replace the starter front matter (everything between the two `---` lines) with your own title and a proper author block. You can delete the placeholder section below it. Add **yourself and one co-author** (pick a real colleague), each with an ORCID, email, and affiliation. This is the scholarly metadata Quarto uses to build the byline in every output format. `number-sections: true` numbers your headings, which Step 7 needs to refer to a section.
 
 ```yaml
 ---
@@ -84,6 +84,7 @@ author:
       - name: Their Institute
         department: Department of Soil Science
 date: today
+number-sections: true
 bibliography: references.bib
 ---
 ```
@@ -139,9 +140,11 @@ first  <- sites |> filter(date == min(date))   # earliest survey per site
 
 ## Step 5: Pull summary numbers into your text with inline code {.step}
 
-This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, `` `r expr` ``. Write an opening paragraph like this:
+This is the main gain of a reproducible manuscript: numbers in the prose come from the data, so they cannot drift out of sync with it. Inline R code uses single backticks, `` `r expr` ``. Start a Methods section with a heading, then write an opening paragraph like this:
 
 ```markdown
+## Methods {#sec-methods}
+
 We monitored vegetation recovery at `r n_distinct(sites$site)` restoration
 sites across `r n_distinct(sites$date)` quarterly surveys. Mean vegetation
 cover rose from `r round(mean(first$vegetation_cover_pct))`% at the first
@@ -151,6 +154,8 @@ percentage points.
 ```
 
 When rendered, the backticked expressions become real values (4 sites, 8 surveys, and so on). Change the CSV and the sentence updates itself.
+
+`##` makes a level 2 heading, and `{#sec-methods}` gives it a label so that you can refer to the section in Step 7. Because the front matter sets `number-sections: true`, it renders as "1 Methods". In RStudio, the **Outline** button at the top right of the editor lists your headings; click one to jump to it.
 
 ## Step 6: Add a figure from code {.step}
 
@@ -175,9 +180,11 @@ Then refer to it in your text. Quarto turns `@fig-cover` into "Figure 1" and lin
 Cover increased at every site over the monitoring period (@fig-cover).
 ```
 
-## Step 7: Add a citation {.step}
+## Step 7: Refer to a section and add a citation {.step}
 
-In the **visual editor**, put your cursor where the citation should go and choose **Insert → Citation**. The dialog can pull references straight from a **DOI** or from your **Zotero** library (as well as Crossref, PubMed, and DataCite):
+In the **visual editor**, start a new paragraph at the end and type "The survey design in ". Choose **Insert → Cross Reference** and pick `sec-methods`. Quarto inserts `@sec-methods`, which renders as "Section 1" and links to the heading, just as `@fig-cover` did for the figure. In Source mode, type `@sec-methods` directly.
+
+Continue the sentence, put your cursor where the citation should go and choose **Insert → Citation**. The dialog can pull references straight from a **DOI** or from your **Zotero** library (as well as Crossref, PubMed, and DataCite):
 
 - From a DOI: paste a DOI and Quarto fetches the full reference. For example, try `10.1111/rec.13035` (the SER international standards for ecological restoration).
 - From Zotero: if you have Zotero installed and the integration enabled, search your own library by author or title.
@@ -185,10 +192,10 @@ In the **visual editor**, put your cursor where the citation should go and choos
 Either way, Quarto inserts an `@citation-key` in your text, appends the entry to `references.bib`, and adds a formatted reference list at the end on render. A sentence like:
 
 ```markdown
-Our monitoring follows recognised restoration standards [@gann2019].
+The survey design in @sec-methods follows recognised restoration standards [@gann2019].
 ```
 
-renders the citation in text and the full reference under a **References** heading. The key Quarto creates may differ slightly from `gann2019`; use whichever key appears in your text.
+renders the section reference and the citation in text and the full reference under a **References** heading. The key Quarto creates may differ slightly from `gann2019`; use whichever key appears in your text.
 
 ::: {.callout-tip collapse="true"}
 ## No visual editor, or the DOI lookup does not respond?
@@ -224,7 +231,13 @@ quarto render
 
 The results land in a new `_manuscript/` folder. Open `_manuscript/index.html` in your browser: the article shows your byline, the inline numbers, the figure, and the references. In the margin, an **Other Formats** section offers a download link to the **PDF**, which is `_manuscript/index.pdf`.
 
-While writing, the **Render** button in your editor (or `quarto preview` in the terminal) gives a live view that refreshes on every save. It shows the first format in your list, so here it shows the PDF.
+While writing, the **Render** button in your editor gives a quick preview. In a manuscript project, RStudio's Render button shows only the HTML article; the PDF is built only by `quarto render` or by **Render Project** in the Build tab. `quarto preview` in a terminal shows the first format in your list instead, here the PDF, and refreshes it on every save.
+
+::: {.callout-warning}
+## Section references need numbered sections
+
+If the PDF fails with "cannot reference heading without numbering", check that the front matter contains `number-sections: true`. Typst, which makes the PDF, can only refer to numbered headings. The HTML preview does not show this error.
+:::
 
 ::: {.callout-note}
 ## What just happened
@@ -286,4 +299,5 @@ Converting your own work follows exactly the same skeleton:
 - Does the byline show you and your co-author, with ORCIDs and affiliations?
 - Do the numbers in your opening paragraph come from inline code, not typed by hand?
 - Does `@fig-cover` render as a numbered, clickable "Figure 1"?
+- Does `@sec-methods` render as "Section 1" and link to the Methods heading?
 - Does your citation appear in the text and in a References list, with the entry now in `references.bib`?
