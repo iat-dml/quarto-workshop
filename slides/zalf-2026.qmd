@@ -895,6 +895,22 @@ Walk the room. The problems we found when testing on ZALF laptops: `R_USER` not 
 
 All the material stays online after today, and the exercises work on your own laptop too.
 
+## The website's advanced topics take you further after today {#advanced-topics}
+
+| Topic | What the page shows |
+|---|---|
+| [Templates and extensions](../advanced/templates-and-extensions.qmd) | Package a report, letter or slide layout so others can reuse it |
+| [Branding with `_brand.yml`](../advanced/brand-yml.qmd) | Set colours, fonts and logos for every output in one file |
+| [Multi-lingual outputs](../advanced/multi-lingual-outputs.qmd) | Publish a website or book in several languages with babelquarto |
+| [Personalised invitations](../advanced/invites.qmd) | Render one letter per recipient from a template and a data file |
+| [AI assistance](../advanced/ai-assistance.qmd) | Give AI agents current Quarto skills inside your editor |
+
+::: {.notes}
+We had no time for these today, but each page has a worked example to copy. They are under Advanced topics in the website's navigation bar.
+
+Lead into the next slide: the postdoc talk is a full project built from the same pieces, with data kept in YAML files, a website and CV that read them, and automatic rebuilds.
+:::
+
 ## Upcoming talk for postdocs {#profile-talk}
 
 :::: {.columns .talk}
