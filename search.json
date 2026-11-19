@@ -2091,6 +2091,13 @@
     "text": "Explore independently\nEach use case on the website has a guide with tips and an exercise. Work on one until 14:25, on either of two paths:\n\nPath A: bring your own content, such as a draft paper, a talk you need to give or your own data.\nPath B: use the sample data and text we provide.\n\nI’ll come round the room to answer questions and help when something does not render.\n\nLeave this slide up for the whole 40 minutes. Path A pays off more, because people leave with something they keep working on; Path B is better for anyone who would rather not wrangle their own files today. People who skipped the demo can do the manuscript exercise now.\nWalk the room. The problems we found when testing on ZALF laptops: R_USER not set, projects inside OneDrive, and VS Code not finding Quarto."
   },
   {
+    "objectID": "slides/zalf-2026.html#advanced-topics",
+    "href": "slides/zalf-2026.html#advanced-topics",
+    "title": "One Tool to Rule Them All",
+    "section": "The website’s advanced topics take you further after today",
+    "text": "The website’s advanced topics take you further after today\n\n\n\nTopic\nWhat the page shows\n\n\n\n\nTemplates and extensions\nPackage a report, letter or slide layout so others can reuse it\n\n\nBranding with _brand.yml\nSet colours, fonts and logos for every output in one file\n\n\nMulti-lingual outputs\nPublish a website or book in several languages with babelquarto\n\n\nPersonalised invitations\nRender one letter per recipient from a template and a data file\n\n\nAI assistance\nGive AI agents current Quarto skills inside your editor\n\n\n\n\nWe had no time for these today, but each page has a worked example to copy. They are under Advanced topics in the website’s navigation bar.\nLead into the next slide: the postdoc talk is a full project built from the same pieces, with data kept in YAML files, a website and CV that read them, and automatic rebuilds."
+  },
+  {
     "objectID": "slides/zalf-2026.html#profile-talk",
     "href": "slides/zalf-2026.html#profile-talk",
     "title": "One Tool to Rule Them All",
