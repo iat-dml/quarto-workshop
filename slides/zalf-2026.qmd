@@ -699,7 +699,9 @@ Two reasons to replace `_quarto.yml` straight away. The starter file has `freeze
 
 :::: {.columns}
 ::: {.column width="60%"}
-Save `restoration-sites.csv` from the exercise page in a new `data/` folder. In `index.qmd`, replace everything with your own front matter and this setup chunk, then click **Render**.
+Save `restoration-sites.csv` in a new `data/` folder. In `index.qmd`, replace everything with your own front matter and this setup chunk, then click **Render**.
+
+[Download restoration-sites.csv](../data/restoration-sites.csv){.download-btn download="restoration-sites.csv"}
 
 ```` markdown
 ```{{r}}

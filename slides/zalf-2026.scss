@@ -41,6 +41,21 @@ $presentation-font-size-root: 38px !default;
   .talk-contact { display: block; margin-top: 1em; font-size: 0.72em; }
 }
 
+// Download link on a checkpoint slide, as the primary pill button from
+// DESIGN.md. Reveal loads no Bootstrap, so the site's .btn classes don't apply.
+.reveal .slides section a.download-btn {
+  display: inline-block;
+  padding: 0.45em 1.2em;
+  border-radius: 999px;
+  background: var(--ds-green);
+  color: var(--ds-white);
+  font-family: var(--ds-sans);
+  font-weight: 600;
+  font-size: 0.7em;
+  text-decoration: none;
+  &:hover { background: var(--ds-forest); color: var(--ds-white); }
+}
+
 // Live code editor (quarto-live): brand colours in place of Bootstrap blue,
 // and the deck's hairline and corner radius on the card.
 .reveal .card.exercise-editor {
